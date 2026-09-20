@@ -4,4 +4,4 @@ __pycache__/
 .venv/
 artifacts/
 data/CMAPSSData/
-
+metaindux-ts-reproduction/upstream/weights/syn_data/

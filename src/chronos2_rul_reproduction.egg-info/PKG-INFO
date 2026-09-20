@@ -1,0 +1,120 @@
+Metadata-Version: 2.4
+Name: chronos2-rul-reproduction
+Version: 0.1.0
+Summary: Reproduction of the Wide & Deep Chronos-2 adapter for C-MAPSS RUL prediction
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: chronos-forecasting<3,>=2.1
+Requires-Dist: numpy<3,>=1.26
+Requires-Dist: pandas<3,>=2.1
+Requires-Dist: scikit-learn<2,>=1.3
+Requires-Dist: torch<3,>=2.2
+Requires-Dist: transformers<5,>=4.41
+Requires-Dist: tqdm<5,>=4.66
+Provides-Extra: test
+Requires-Dist: pytest<9,>=8; extra == "test"
+
+# Chronos-2 embeddings for C-MAPSS RUL
+
+这是对 Abdouni、Voisin 与 Cerisara（PHM Europe 2026）论文 *Leveraging Time Series Foundation Models Embeddings for Remaining Useful Life Prediction* 的非官方复现。
+
+实现包含：
+
+- C-MAPSS FD001–FD004 数据读取；
+- 按 Engine ID 的 80/20 训练—验证划分；
+- 基于三个工况变量的 K-Means，以及逐工况、逐传感器 Z-score；
+- 上限为 125 的分段线性 RUL 标签；
+- 冻结 `amazon/chronos-2`，通过 group attention 联合编码全部 21 个传感器；
+- 共享的 `768 → 8` GELU 压缩、按传感器 flatten，以及 raw sensors + 工况 one-hot 的 Wide & Deep 融合；
+- `256 → 64 → 1` GELU MLP、Dropout 0.2、AdamW、early stopping；
+- 官方 RMSE 与 asymmetric score；
+- Only Deep 消融开关。
+
+## 论文中未公开的实现细节
+
+作者尚未发布代码，因此以下选择是本复现的明确假设：
+
+1. 每个训练 cycle 都是一个样本，Chronos 输入为从 cycle 1 到当前 cycle 的完整历史；测试时每台发动机只评估最后一个观测 cycle。
+2. Chronos-2 会把时间序列切成 patch。论文所谓“最后时间步 embedding”在这里对应最后一个真实 context patch 的 encoder token，而不是预测 token或 `[REG]` token。
+3. K-Means 和归一化统计量只在训练划分的发动机上拟合，避免验证泄漏。
+4. 冻结 embedding 先缓存为 float16，再重复训练轻量 Adapter。否则每个 epoch 重跑 120M 参数 backbone，成本过高。
+
+这些假设可能导致结果与论文表格存在差异；仓库一旦公开，应优先与作者实现对齐。
+
+## 安装
+
+建议使用带 CUDA 的 Linux 环境和至少 16 GB 显存：
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e '.[test]'
+```
+
+首次提取会从 Hugging Face 下载 `amazon/chronos-2`。如果模型下载需要鉴权，先执行 `huggingface-cli login`。
+
+## 数据目录
+
+从 NASA Prognostics Data Repository 获取 Turbofan Engine Degradation Simulation Data Set，并整理为：
+
+```text
+data/CMAPSSData/
+├── train_FD001.txt
+├── test_FD001.txt
+├── RUL_FD001.txt
+├── ...
+└── RUL_FD004.txt
+```
+
+## 运行 FD001
+
+第一步只运行一次 Chronos-2，缓存所有 prefix 的 embedding：
+
+```bash
+chronos-rul extract \
+  --dataset FD001 \
+  --data-dir data/CMAPSSData \
+  --artifacts-dir artifacts \
+  --device cuda \
+  --extract-batch-size 16
+```
+
+显存不足时减小 `--extract-batch-size`。CPU 也能运行，但完整提取会很慢。
+
+训练论文 Adapter：
+
+```bash
+chronos-rul train --dataset FD001 --artifacts-dir artifacts --device cuda
+```
+
+在官方测试终点上评估：
+
+```bash
+chronos-rul evaluate --dataset FD001 --artifacts-dir artifacts --device cuda
+```
+
+Only Deep 消融实验使用：
+
+```bash
+chronos-rul train --dataset FD001 --artifacts-dir artifacts --device cuda --deep-only
+```
+
+四个子集需要分别提取和训练。论文报告的是 10 个随机种子的均值与标准差，可使用 `--seed 0` 到 `--seed 9` 重复 `train`；同一数据集的 embedding 无需重复提取。
+
+## 快速冒烟测试
+
+`--mock-encoder` 可验证本地数据格式、缓存和训练流程，但其结果没有科研意义：
+
+```bash
+chronos-rul extract --dataset FD001 --data-dir data/CMAPSSData --mock-encoder
+chronos-rul train --dataset FD001 --epochs 2
+chronos-rul evaluate --dataset FD001
+pytest
+```
+
+## 存储与计算提示
+
+完整 prefix 提取的计算量较大，缓存也可能达到数 GB。`artifacts/FD00x/` 包含 embedding、Wide 特征、标签、划分、归一化参数与 checkpoint；该目录已加入 `.gitignore`。
+
+论文链接：https://doi.org/10.36001/phme.2026.v9i1.4906
+

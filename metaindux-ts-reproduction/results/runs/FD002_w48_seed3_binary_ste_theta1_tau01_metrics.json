@@ -1,0 +1,31 @@
+{
+  "dataset": "FD002",
+  "window_size": 48,
+  "seed": 3,
+  "builtin_evaluator_seed": 3,
+  "rmse": 30.04866596079163,
+  "mae": 24.356855024242034,
+  "rul_score": 109.23433373431057,
+  "discriminative_score": 0.4152022147327876,
+  "context_fid": 0.12715551024777444,
+  "cross_correlation_loss": 0.061265598982572556,
+  "best_diffusion_loss": 0.031893831272066735,
+  "best_epoch": 67,
+  "training_seconds": NaN,
+  "sampling_seconds": NaN,
+  "frequency_mask_mode": "binary_ste_energy",
+  "frequency_threshold_init": 1.0,
+  "frequency_mask_temperature": 0.1,
+  "learned_frequency_thresholds": [
+    {
+      "module": "ups.0.2.fn.fn",
+      "raw": 0.30132338404655457,
+      "effective": 0.8551156520843506
+    },
+    {
+      "module": "ups.1.2.fn.fn",
+      "raw": -1.6774977445602417,
+      "effective": 0.17129509150981903
+    }
+  ]
+}

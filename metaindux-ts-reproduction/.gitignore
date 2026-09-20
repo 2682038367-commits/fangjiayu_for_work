@@ -1,0 +1,14 @@
+.venv/
+.cache/
+checkpoints/*
+outputs/*
+logs/*
+data/processed/*
+upstream/wandb/
+__pycache__/
+*.pyc
+
+!checkpoints/.gitkeep
+!outputs/.gitkeep
+!logs/.gitkeep
+!data/processed/.gitkeep

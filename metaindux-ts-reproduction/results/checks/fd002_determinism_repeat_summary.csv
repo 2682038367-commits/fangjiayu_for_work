@@ -1,0 +1,5 @@
+metric,generation_seed,mean,sample_std,pooled_within_std,between_generation_std_of_means,corrected_generation_component_std,total_std
+rmse,3,27.109283905120684,nan,,,,
+rmse,aggregate,27.109283905120684,,nan,nan,0.0,nan
+discriminative_score,3,0.11639383726528651,nan,,,,
+discriminative_score,aggregate,0.11639383726528651,,nan,nan,0.0,nan

@@ -1,0 +1,21 @@
+experiment:
+  dataset: FD002
+  window_size: 48
+  generation_seeds: [3]
+  evaluator_seeds: [3]
+  fixed_split_seed: 20260915
+
+evaluation:
+  evaluator_epochs: 35
+  device: cuda
+  deterministic_torch: true
+  resume: false
+  predictive_train_rate: 0.7
+  discriminator_train_rate: 0.8
+
+outputs:
+  raw_csv: results/checks/fd002_determinism_repeat_raw.csv
+  summary_csv: results/checks/fd002_determinism_repeat_summary.csv
+  split_indices: results/checks/fd002_determinism_repeat_split.npz
+  manifest: results/checks/fd002_determinism_repeat_manifest.json
+  evaluator_checkpoints: checkpoints/evaluators/fd002_determinism_repeat

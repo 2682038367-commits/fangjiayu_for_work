@@ -1,0 +1,21 @@
+experiment:
+  dataset: FD002
+  window_size: 48
+  generation_seeds: [3, 13, 23, 33, 43]
+  evaluator_seeds: [3, 13, 23, 33, 43]
+  fixed_split_seed: 20260915
+
+evaluation:
+  evaluator_epochs: 35
+  device: cuda
+  deterministic_torch: true
+  resume: false
+  predictive_train_rate: 0.7
+  discriminator_train_rate: 0.8
+
+outputs:
+  raw_csv: results/fd002_evaluation_stability_paper70_raw.csv
+  summary_csv: results/fd002_evaluation_stability_paper70_summary.csv
+  split_indices: results/fd002_evaluation_fixed_split_paper70.npz
+  manifest: results/fd002_evaluation_stability_paper70_manifest.json
+  evaluator_checkpoints: checkpoints/evaluators/fd002_paper70

@@ -1,0 +1,15 @@
+{
+  "dataset": "FD002",
+  "window_size": 48,
+  "seed": 33,
+  "rmse": 24.529333187078045,
+  "mae": 19.096114427426606,
+  "rul_score": 26.50148146285687,
+  "discriminative_score": 0.10279248916706785,
+  "context_fid": 0.05781016108454207,
+  "cross_correlation_loss": 0.05545476824045181,
+  "best_diffusion_loss": 0.024225105971463618,
+  "best_epoch": 67,
+  "training_seconds": 200.7975206375122,
+  "sampling_seconds": 1856.1373875141144
+}

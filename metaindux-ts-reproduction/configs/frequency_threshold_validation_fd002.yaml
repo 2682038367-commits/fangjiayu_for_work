@@ -1,0 +1,29 @@
+experiment:
+  name: metaindux_ts_fd002_fixed_frequency_threshold_validation
+  artifact_tag: freq_threshold_025
+  datasets: [FD002]
+  window_sizes: [48]
+  seeds: [13, 23, 43]
+
+model:
+  name: DiffUnet_fre
+  input_size: 14
+  frequency_threshold: 0.25
+
+diffusion:
+  timesteps: 1000
+  beta_schedule: linear
+  sample_type: ddpm
+
+training:
+  epochs: 70
+  optimizer: adam
+  learning_rate: 0.002
+  lr_schedule: warmup_cosine
+  batch_size: 256
+  grad_clip: 1.0
+
+runtime:
+  state: all
+  device: cuda
+  wandb_mode: offline

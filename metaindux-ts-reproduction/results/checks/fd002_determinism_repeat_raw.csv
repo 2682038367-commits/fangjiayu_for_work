@@ -1,0 +1,2 @@
+generation_seed,evaluator_seed,rmse,mae,rul_score,discriminative_score,fake_accuracy,real_accuracy,predictive_seconds,discriminative_seconds
+3,3,27.109283905120684,22.1854157134833,20.795100222336092,0.11639383726528651,0.3636254212806933,0.8691622532498796,25.65071415901184,37.139514446258545

@@ -1,0 +1,24 @@
+experiment:
+  dataset: FD002
+  window_size: 48
+  # These are generation seeds. Seed 43 already has a separate 5-seed evaluation.
+  generation_seeds: [3, 13, 23, 33, 53, 63]
+  # Each generated dataset is evaluated with the same five evaluator seeds.
+  evaluator_seeds: [3, 13, 23, 33, 43]
+  fixed_split_seed: 20260915
+  synthetic_pattern: outputs/FD002_w48_seed{generation_seed}_soft_theta025_tau01.npz
+
+evaluation:
+  evaluator_epochs: 35
+  device: cuda
+  deterministic_torch: true
+  resume: true
+  predictive_train_rate: 0.7
+  discriminator_train_rate: 0.8
+
+outputs:
+  raw_csv: results/soft_learnable_threshold/fd002_remaining_seeds_evaluation_raw.csv
+  summary_csv: results/soft_learnable_threshold/fd002_remaining_seeds_evaluation_summary.csv
+  split_indices: results/soft_learnable_threshold/fd002_remaining_seeds_split.npz
+  manifest: results/soft_learnable_threshold/fd002_remaining_seeds_manifest.json
+  evaluator_checkpoints: checkpoints/evaluators/fd002_soft_threshold_remaining_seeds

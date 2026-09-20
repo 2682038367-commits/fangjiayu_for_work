@@ -1,0 +1,18 @@
+{
+  "best_diffusion_loss": 0.030091271364341483,
+  "best_epoch": 68,
+  "training_seconds": 199.09693837165833,
+  "sampling_seconds": 1771.1336390972137,
+  "frequency_thresholds": [
+    {
+      "module": "ups.0.2.fn.fn",
+      "raw": 0.4321889877319336,
+      "effective": 0.9324105978012085
+    },
+    {
+      "module": "ups.1.2.fn.fn",
+      "raw": 0.6366026401519775,
+      "effective": 1.0612733364105225
+    }
+  ]
+}
