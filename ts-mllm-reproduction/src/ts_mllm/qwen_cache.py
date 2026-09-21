@@ -181,7 +181,10 @@ def cache_split(
     text_adapter: QwenTextBridge | None = None,
     spectrum_transform: SpectrumTransform | None = None,
     spectrum_output_dir: Path | None = None,
+    input_modality: str = "multimodal",
 ) -> dict[str, Any]:
+    if input_modality not in {"multimodal", "text_only", "visual_only"}:
+        raise ValueError("unknown input modality")
     token_path = output_dir / f"{split}.npy"
     mask_path = output_dir / f"{split}_mask.npy"
     arrays = {
@@ -216,39 +219,52 @@ def cache_split(
         )
     offset = 0
     for batch_index, batch in enumerate(loader, start=1):
-        images = batch["image"].to(device, non_blocking=True) if spectrum_transform is None else spectrum_transform(batch["x"].to(device))
-        prompts = batch.get("prompt") or make_prompt_batch(batch["x"])
-        if "prompt" in batch and max(len(tokenizer(p)["input_ids"]) for p in prompts) > config.max_text_tokens:
-            raise ValueError("knowledge prompt exceeds text cap; refusing silent truncation")
-        encoded = tokenize_prompts(tokenizer, prompts, config.max_text_tokens, device)
-        visual = vision_encoder(images)
-        if text_adapter is not None:
-            input_embeddings = compose_multimodal_embeddings(
-                visual, encoded["input_ids"], projector, text_adapter, dtype=qwen.dtype
-            )
+        batch_size = len(batch["x"])
+        encoded = None
+        if input_modality != "visual_only":
+            prompts = batch.get("prompt") or make_prompt_batch(batch["x"])
+            if "prompt" in batch and max(len(tokenizer(p)["input_ids"]) for p in prompts) > config.max_text_tokens:
+                raise ValueError("knowledge prompt exceeds text cap; refusing silent truncation")
+            encoded = tokenize_prompts(tokenizer, prompts, config.max_text_tokens, device)
+        images = None
+        if input_modality != "text_only":
+            images = batch["image"].to(device, non_blocking=True) if spectrum_transform is None else spectrum_transform(batch["x"].to(device))
+            visual = vision_encoder(images)
+        if input_modality == "multimodal":
+            assert encoded is not None
+            if text_adapter is not None:
+                input_embeddings = compose_multimodal_embeddings(visual, encoded["input_ids"], projector, text_adapter, dtype=qwen.dtype)
+            else:
+                visual_prefix = projector(visual.float()).to(dtype=qwen.dtype).unsqueeze(1)
+                text_embeddings = qwen.get_input_embeddings()(encoded["input_ids"])
+                input_embeddings = torch.cat([visual_prefix, text_embeddings], dim=1)
+            attention_mask = torch.cat([torch.ones(batch_size, 1, dtype=encoded["attention_mask"].dtype, device=device), encoded["attention_mask"]], dim=1)
+        elif input_modality == "text_only":
+            assert encoded is not None
+            input_embeddings = text_adapter(encoded["input_ids"]).to(dtype=qwen.dtype) if text_adapter is not None else qwen.get_input_embeddings()(encoded["input_ids"])
+            attention_mask = encoded["attention_mask"]
         else:
-            # Explicit legacy-native-text branch, not an implementation of DKE96.
-            visual_prefix = projector(visual.float()).to(dtype=qwen.dtype).unsqueeze(1)
-            text_embeddings = qwen.get_input_embeddings()(encoded["input_ids"])
-            input_embeddings = torch.cat([visual_prefix, text_embeddings], dim=1)
-        attention_mask = torch.cat(
-            [
-                torch.ones(len(images), 1, dtype=encoded["attention_mask"].dtype, device=device),
-                encoded["attention_mask"],
-            ],
-            dim=1,
-        )
+            input_embeddings = projector(visual.float()).to(dtype=qwen.dtype).unsqueeze(1)
+            attention_mask = torch.ones(batch_size, 1, dtype=torch.long, device=device)
         hidden = qwen(
             inputs_embeds=input_embeddings,
             attention_mask=attention_mask,
             use_cache=False,
             return_dict=True,
         ).last_hidden_state
-        selected, selected_mask = select_cache_tokens(
-            hidden, encoded["attention_mask"], config.cached_text_tokens
-        )
-        stop = offset + len(images)
-        if spectrum_array is not None:
+        if input_modality == "multimodal":
+            assert encoded is not None
+            selected, selected_mask = select_cache_tokens(hidden, encoded["attention_mask"], config.cached_text_tokens)
+        else:
+            selected = hidden.new_zeros(batch_size, config.cached_tokens, hidden.shape[-1])
+            selected_mask = torch.zeros(batch_size, config.cached_tokens, dtype=torch.bool, device=device)
+            for row in range(batch_size):
+                valid = torch.nonzero(attention_mask[row], as_tuple=False).squeeze(-1)
+                keep = min(len(valid), config.cached_tokens)
+                selected[row, :keep] = hidden[row, valid[:keep]]
+                selected_mask[row, :keep] = True
+        stop = offset + batch_size
+        if spectrum_array is not None and images is not None:
             spectrum_array[offset:stop] = images.float().cpu().numpy()
         arrays["tokens"][offset:stop] = selected.float().cpu().numpy().astype(np.float16)
         arrays["mask"][offset:stop] = selected_mask.cpu().numpy()
@@ -318,6 +334,8 @@ def run(args: Any) -> dict[str, Any]:
 
     seed_everything(args.seed)
     device = require_cuda()
+    if getattr(args, "input_modality", "multimodal") == "text_only":
+        args.spectrum_output_dir = None
     if (args.output_dir / "manifest.json").exists():
         raise FileExistsError(f"refusing to overwrite completed cache: {args.output_dir}")
     if args.spectrum_output_dir is not None and (args.spectrum_output_dir / "manifest.json").exists():
@@ -477,6 +495,7 @@ def run(args: Any) -> dict[str, Any]:
             text_adapter=text_adapter,
             spectrum_transform=spectrum_transform,
             spectrum_output_dir=args.spectrum_output_dir,
+            input_modality=getattr(args, "input_modality", "multimodal"),
         )
     expected_counts = {name: len(dataset) for name, dataset in datasets.items()}
     audit = audit_cache(args.output_dir, expected_counts, config)
@@ -488,14 +507,18 @@ def run(args: Any) -> dict[str, Any]:
             expected_lengths = []
             for index in range(len(dataset)):
                 item = dataset[index]
-                encoded = tokenizer(item.get("prompt", build_dynamic_prompt(item["x"])), truncation=True, max_length=512)
-                expected_lengths.append(len(encoded["input_ids"]) + 1)
+                if getattr(args, "input_modality", "multimodal") == "visual_only":
+                    expected_lengths.append(1)
+                else:
+                    encoded = tokenizer(item.get("prompt", build_dynamic_prompt(item["x"])), truncation=True, max_length=512)
+                    expected_lengths.append(len(encoded["input_ids"]) + (1 if getattr(args, "input_modality", "multimodal") == "multimodal" else 0))
             np.testing.assert_array_equal(masks.sum(1), expected_lengths)
             audit[name]["mapping_and_full_text_length"] = "passed"
     sample_item = datasets["test"][0]
-    sample_prompt = sample_item.get("prompt", build_dynamic_prompt(sample_item["x"]))
+    sample_prompt = None if getattr(args, "input_modality", "multimodal") == "visual_only" else sample_item.get("prompt", build_dynamic_prompt(sample_item["x"]))
     manifest = {
         "prompt_profile": getattr(args, "prompt_profile", "legacy"),
+        "input_modality": getattr(args, "input_modality", "multimodal"),
         "prompt_template_sha256": state.get("prompt_template_sha256") if args.alignment_checkpoint is not None else None,
         "knowledge_sha256": state.get("knowledge_sha256") if args.alignment_checkpoint is not None else None,
         "dataset": args.dataset,
@@ -504,7 +527,7 @@ def run(args: Any) -> dict[str, Any]:
         "validation_stride": args.validation_stride,
         "projector_architecture": args.projector_architecture,
         "rebuilt_data_dir": str(args.rebuilt_data_dir) if args.rebuilt_data_dir is not None else None,
-        "spectrum_path": "online trained alignment spectrum" if spectrum_transform is not None else "legacy precomputed images",
+        "spectrum_path": "not generated for text-only Qwen input" if getattr(args, "input_modality", "multimodal") == "text_only" else "online trained alignment spectrum" if spectrum_transform is not None else "legacy precomputed images",
         "spectrum_output_dir": str(args.spectrum_output_dir) if args.spectrum_output_dir is not None else None,
         "data_manifest_sha256": file_sha256(args.rebuilt_data_dir / "manifest.json") if data_manifest else None,
         "alignment_checkpoint_sha256": file_sha256(projector_checkpoint),
@@ -532,7 +555,7 @@ def run(args: Any) -> dict[str, Any]:
         "projector_best_epoch": best_epoch,
         "projector_objective": "MSE to masked mean native teacher embedding (reproduction assumption)",
         "cache_config": asdict(config),
-        "cache_policy": "visual prefix + all valid text outputs; padded states zero with mask" if config.cached_text_tokens == config.max_text_tokens else "legacy last text outputs",
+        "cache_policy": f"{getattr(args, 'input_modality', 'multimodal')} Qwen input; padded states zero with mask",
         "sample_prompt": sample_prompt,
         "splits": split_reports,
         "audit": audit,

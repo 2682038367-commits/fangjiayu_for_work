@@ -1,0 +1,305 @@
+{
+  "title": "FD003 input-level modality ablation, 3-seed repeated verification",
+  "seeds": [
+    42,
+    52,
+    62
+  ],
+  "split_seed": 42,
+  "std_convention": "sample standard deviation (ddof=1)",
+  "fixed": {
+    "data_manifest_sha256": "b0cddcfd93fd487a69c996748629be9a23632dd021effd5dcd702232dcf32fb6",
+    "rebuilt_data_dir": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/data_window40_stride50/split_seed42/FD003",
+    "initial_temporal_checkpoint": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_batch_diagnostic/seed42/batch32/best.pt",
+    "initial_temporal_checkpoint_sha256": "a1002727cefd7c8d1e5f3a148bd5a49a71870e7c1f2e82dc61b56af6ecc35708",
+    "temporal_learning_rate": 0.002,
+    "freeze_temporal_epochs": 0,
+    "temporal_note": "temporal branch shares the same initial checkpoint across seeds and modalities but is jointly fine-tuned (temporal_learning_rate=0.002, no freeze)",
+    "batch_size": 32,
+    "epochs": 30,
+    "learning_rate": 0.002,
+    "context_mode": "global_broadcast",
+    "global_pooling": "mean",
+    "prompt_profile": "figure12_v1",
+    "token_mode": "full (input modality encoded in cache)"
+  },
+  "runs": [
+    {
+      "seed": 42,
+      "modality": "full",
+      "input_modality": "multimodal",
+      "label": "full (temporal + visual + textual)",
+      "output_dir": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_figure12_v1/seed42/tmaf_batch32",
+      "qwen_cache": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_figure12_v1/seed42/qwen",
+      "best_epoch": 10,
+      "validation": {
+        "rmse": 17.489785770434096,
+        "mae": 11.838363683742026,
+        "score": 752.0060018013198,
+        "prediction_std": 38.36778197502623
+      },
+      "test": {
+        "rmse": 19.24943392853304,
+        "mae": 14.125949974060058,
+        "score": 1626.7938671808079,
+        "prediction_std": 37.211348593708145
+      }
+    },
+    {
+      "seed": 42,
+      "modality": "no_visual",
+      "input_modality": "text_only",
+      "label": "w/o Visual (temporal + textual)",
+      "output_dir": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed42/tmaf_no_visual",
+      "qwen_cache": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed42/no_visual_qwen",
+      "best_epoch": 30,
+      "validation": {
+        "rmse": 17.504715863401945,
+        "mae": 10.583914497624272,
+        "score": 1164.4485900153159,
+        "prediction_std": 39.871886795119394
+      },
+      "test": {
+        "rmse": 22.881366437309033,
+        "mae": 16.063374977111817,
+        "score": 3674.935366111003,
+        "prediction_std": 40.228333689031196
+      }
+    },
+    {
+      "seed": 42,
+      "modality": "no_text",
+      "input_modality": "visual_only",
+      "label": "w/o Textual (temporal + visual)",
+      "output_dir": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed42/tmaf_no_text",
+      "qwen_cache": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed42/no_text_qwen",
+      "best_epoch": 11,
+      "validation": {
+        "rmse": 17.287549233974232,
+        "mae": 12.381630840508834,
+        "score": 755.6231150203132,
+        "prediction_std": 38.922185833582866
+      },
+      "test": {
+        "rmse": 23.056729600053448,
+        "mae": 17.187687640190124,
+        "score": 2454.895674621723,
+        "prediction_std": 38.229877817407626
+      }
+    },
+    {
+      "seed": 52,
+      "modality": "full",
+      "input_modality": "multimodal",
+      "label": "full (temporal + visual + textual)",
+      "output_dir": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed52/tmaf_full",
+      "qwen_cache": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_figure12_v1/seed42/qwen",
+      "best_epoch": 24,
+      "validation": {
+        "rmse": 18.689145650943825,
+        "mae": 11.718035353266675,
+        "score": 1162.8980250672118,
+        "prediction_std": 38.04196397962578
+      },
+      "test": {
+        "rmse": 23.543826131807418,
+        "mae": 17.486459980010988,
+        "score": 3069.242274271756,
+        "prediction_std": 37.84357263858619
+      }
+    },
+    {
+      "seed": 52,
+      "modality": "no_visual",
+      "input_modality": "text_only",
+      "label": "w/o Visual (temporal + textual)",
+      "output_dir": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed52/tmaf_no_visual",
+      "qwen_cache": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed42/no_visual_qwen",
+      "best_epoch": 6,
+      "validation": {
+        "rmse": 18.536577438605047,
+        "mae": 14.408870458602905,
+        "score": 768.6117658069091,
+        "prediction_std": 38.77060867135322
+      },
+      "test": {
+        "rmse": 20.54738459146845,
+        "mae": 15.12800786972046,
+        "score": 1593.3268001031372,
+        "prediction_std": 38.94608118379158
+      }
+    },
+    {
+      "seed": 52,
+      "modality": "no_text",
+      "input_modality": "visual_only",
+      "label": "w/o Textual (temporal + visual)",
+      "output_dir": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed52/tmaf_no_text",
+      "qwen_cache": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed42/no_text_qwen",
+      "best_epoch": 10,
+      "validation": {
+        "rmse": 17.826171174606888,
+        "mae": 12.2254406472911,
+        "score": 933.1872725570405,
+        "prediction_std": 38.65495169436423
+      },
+      "test": {
+        "rmse": 21.89246351312736,
+        "mae": 16.052365217208862,
+        "score": 2385.405551853958,
+        "prediction_std": 38.42399532440682
+      }
+    },
+    {
+      "seed": 62,
+      "modality": "full",
+      "input_modality": "multimodal",
+      "label": "full (temporal + visual + textual)",
+      "output_dir": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed62/tmaf_full",
+      "qwen_cache": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_figure12_v1/seed42/qwen",
+      "best_epoch": 30,
+      "validation": {
+        "rmse": 18.098546635817268,
+        "mae": 11.060243894224582,
+        "score": 1164.892467633082,
+        "prediction_std": 39.898268988008965
+      },
+      "test": {
+        "rmse": 21.74555495500313,
+        "mae": 15.831097650527955,
+        "score": 2207.1492010986126,
+        "prediction_std": 39.79585677210618
+      }
+    },
+    {
+      "seed": 62,
+      "modality": "no_visual",
+      "input_modality": "text_only",
+      "label": "w/o Visual (temporal + textual)",
+      "output_dir": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed62/tmaf_no_visual",
+      "qwen_cache": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed42/no_visual_qwen",
+      "best_epoch": 15,
+      "validation": {
+        "rmse": 17.014502851072056,
+        "mae": 12.300268442734428,
+        "score": 635.7148323805435,
+        "prediction_std": 37.34561924130277
+      },
+      "test": {
+        "rmse": 19.92210382048414,
+        "mae": 14.815915060043334,
+        "score": 1721.3692902205678,
+        "prediction_std": 36.8831214158073
+      }
+    },
+    {
+      "seed": 62,
+      "modality": "no_text",
+      "input_modality": "visual_only",
+      "label": "w/o Textual (temporal + visual)",
+      "output_dir": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed62/tmaf_no_text",
+      "qwen_cache": "/home/cw_boe/projects/rul/ts-mllm-reproduction/artifacts/fd003_input_ablation/seed42/no_text_qwen",
+      "best_epoch": 6,
+      "validation": {
+        "rmse": 17.75495407251437,
+        "mae": 12.505825541589571,
+        "score": 864.4518236162942,
+        "prediction_std": 38.790242761267855
+      },
+      "test": {
+        "rmse": 19.99981904611006,
+        "mae": 14.942305960655212,
+        "score": 1807.468826547333,
+        "prediction_std": 38.532552852495876
+      }
+    }
+  ],
+  "validation_aggregate": {
+    "rmse": {
+      "full_mean": 18.09249268573173,
+      "full_std": 0.599702858487273,
+      "full_min": 17.489785770434096,
+      "full_max": 18.689145650943825,
+      "no_visual_mean": 17.68526538435968,
+      "no_visual_std": 0.776933948056064,
+      "no_visual_min": 17.014502851072056,
+      "no_visual_max": 18.536577438605047,
+      "no_text_mean": 17.622891493698493,
+      "no_text_std": 0.29258980206997287,
+      "no_text_min": 17.287549233974232,
+      "no_text_max": 17.826171174606888
+    },
+    "mae": {
+      "full_mean": 11.538880977077762,
+      "full_std": 0.41885536834377196,
+      "full_min": 11.060243894224582,
+      "full_max": 11.838363683742026,
+      "no_visual_mean": 12.431017799653867,
+      "no_visual_std": 1.9158271246664271,
+      "no_visual_min": 10.583914497624272,
+      "no_visual_max": 14.408870458602905,
+      "no_text_mean": 12.37096567646317,
+      "no_text_std": 0.14049637550763355,
+      "no_text_min": 12.2254406472911,
+      "no_text_max": 12.505825541589571
+    },
+    "score": {
+      "full_mean": 1026.598831500538,
+      "full_std": 237.8064571073607,
+      "full_min": 752.0060018013198,
+      "full_max": 1164.892467633082,
+      "no_visual_mean": 856.2583960675896,
+      "no_visual_std": 275.04780577689735,
+      "no_visual_min": 635.7148323805435,
+      "no_visual_max": 1164.4485900153159,
+      "no_text_mean": 851.087403731216,
+      "no_text_std": 89.53330832478174,
+      "no_text_min": 755.6231150203132,
+      "no_text_max": 933.1872725570405
+    }
+  },
+  "test_aggregate": {
+    "rmse": {
+      "full_mean": 21.512938338447864,
+      "full_std": 2.156625597225711,
+      "full_min": 19.24943392853304,
+      "full_max": 23.543826131807418,
+      "no_visual_mean": 21.11695161642054,
+      "no_visual_std": 1.559683864047106,
+      "no_visual_min": 19.92210382048414,
+      "no_visual_max": 22.881366437309033,
+      "no_text_mean": 21.649670719763623,
+      "no_text_std": 1.5428502160237865,
+      "no_text_min": 19.99981904611006,
+      "no_text_max": 23.056729600053448
+    },
+    "mae": {
+      "full_mean": 15.814502534866335,
+      "full_std": 1.6803164652594305,
+      "full_min": 14.125949974060058,
+      "full_max": 17.486459980010988,
+      "no_visual_mean": 15.335765968958535,
+      "no_visual_std": 0.649162254003104,
+      "no_visual_min": 14.815915060043334,
+      "no_visual_max": 16.063374977111817,
+      "no_text_mean": 16.060786272684734,
+      "no_text_std": 1.1227145261949947,
+      "no_text_min": 14.942305960655212,
+      "no_text_max": 17.187687640190124
+    },
+    "score": {
+      "full_mean": 2301.061780850392,
+      "full_std": 725.7954472553056,
+      "full_min": 1626.7938671808079,
+      "full_max": 3069.242274271756,
+      "no_visual_mean": 2329.8771521449025,
+      "no_visual_std": 1166.6125830956587,
+      "no_visual_min": 1593.3268001031372,
+      "no_visual_max": 3674.935366111003,
+      "no_text_mean": 2215.9233510076715,
+      "no_text_std": 355.43430223412685,
+      "no_text_min": 1807.468826547333,
+      "no_text_max": 2454.895674621723
+    }
+  }
+}

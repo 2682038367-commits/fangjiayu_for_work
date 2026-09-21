@@ -1,0 +1,157 @@
+{
+  "comparison_scope": "Fig.12 profile versus same-subset legacy A; FD003 uses batch32 diagnostic, others fixed batch128 main protocol",
+  "datasets": {
+    "FD001": {
+      "normalization": "global_minmax",
+      "train_batch_size": 128,
+      "test_engines": 100,
+      "legacy_A": {
+        "best_epoch": 18,
+        "validation": {
+          "rmse": 17.059406615577796,
+          "mae": 12.91178970587881,
+          "score": 655.0876255144084,
+          "prediction_std": 37.72099184167166
+        },
+        "test": {
+          "rmse": 16.32330006498681,
+          "mae": 11.812213788032532,
+          "score": 575.4633156848885,
+          "prediction_std": 41.039425783729186
+        }
+      },
+      "figure12_v1": {
+        "best_epoch": 16,
+        "validation": {
+          "rmse": 17.183890805200797,
+          "mae": 12.568376658778442,
+          "score": 778.5673510265405,
+          "prediction_std": 41.9115783478816
+        },
+        "test": {
+          "rmse": 17.819178355187994,
+          "mae": 13.622291662693023,
+          "score": 776.4678885993205,
+          "prediction_std": 45.43971684075579
+        }
+      },
+      "validation_rmse_change": 0.12448418962300067,
+      "test_rmse_change_descriptive_only": 1.4958782902011833,
+      "audit": "passed: same data/temporal/model/initialization/training/test mapping; Fig12 alignment and cache hash chain valid"
+    },
+    "FD002": {
+      "normalization": "condition_minmax",
+      "train_batch_size": 128,
+      "test_engines": 259,
+      "legacy_A": {
+        "best_epoch": 29,
+        "validation": {
+          "rmse": 18.303580621797334,
+          "mae": 13.489353578518598,
+          "score": 1684.9464564800978,
+          "prediction_std": 39.6294087229332
+        },
+        "test": {
+          "rmse": 17.08621746038775,
+          "mae": 12.193380156308988,
+          "score": 1551.2045485754566,
+          "prediction_std": 41.75843920470483
+        }
+      },
+      "figure12_v1": {
+        "best_epoch": 25,
+        "validation": {
+          "rmse": 19.387116497592604,
+          "mae": 13.727687295277914,
+          "score": 2519.6851071126093,
+          "prediction_std": 37.79073812053746
+        },
+        "test": {
+          "rmse": 17.068988787992986,
+          "mae": 12.714428260979965,
+          "score": 1801.424424072086,
+          "prediction_std": 39.91639490585932
+        }
+      },
+      "validation_rmse_change": 1.0835358757952704,
+      "test_rmse_change_descriptive_only": -0.017228672394765,
+      "audit": "passed: same data/temporal/model/initialization/training/test mapping; Fig12 alignment and cache hash chain valid"
+    },
+    "FD003": {
+      "normalization": "global_minmax",
+      "train_batch_size": 32,
+      "test_engines": 100,
+      "legacy_A": {
+        "best_epoch": 13,
+        "validation": {
+          "rmse": 17.73983064038102,
+          "mae": 12.115553653758505,
+          "score": 933.3594392927542,
+          "prediction_std": 38.70561296430965
+        },
+        "test": {
+          "rmse": 22.075343079686302,
+          "mae": 16.259831075668334,
+          "score": 2505.796614793287,
+          "prediction_std": 38.94949751338141
+        }
+      },
+      "figure12_v1": {
+        "best_epoch": 10,
+        "validation": {
+          "rmse": 17.489785770434096,
+          "mae": 11.838363683742026,
+          "score": 752.0060018013198,
+          "prediction_std": 38.36778197502623
+        },
+        "test": {
+          "rmse": 19.24943392853304,
+          "mae": 14.125949974060058,
+          "score": 1626.7938671808079,
+          "prediction_std": 37.211348593708145
+        }
+      },
+      "validation_rmse_change": -0.25004486994692243,
+      "test_rmse_change_descriptive_only": -2.8259091511532617,
+      "audit": "passed: same data/temporal/model/initialization/training/test mapping; Fig12 alignment and cache hash chain valid"
+    },
+    "FD004": {
+      "normalization": "condition_minmax",
+      "train_batch_size": 128,
+      "test_engines": 248,
+      "legacy_A": {
+        "best_epoch": 28,
+        "validation": {
+          "rmse": 17.581256293834763,
+          "mae": 11.89596140384674,
+          "score": 2064.9993094316537,
+          "prediction_std": 38.84200442732355
+        },
+        "test": {
+          "rmse": 18.99580893802108,
+          "mae": 13.115561550663363,
+          "score": 2465.359494659504,
+          "prediction_std": 40.35797432009317
+        }
+      },
+      "figure12_v1": {
+        "best_epoch": 25,
+        "validation": {
+          "rmse": 18.194295884942896,
+          "mae": 12.589968475428494,
+          "score": 2160.2700440241897,
+          "prediction_std": 39.68472424464708
+        },
+        "test": {
+          "rmse": 20.17032183814172,
+          "mae": 13.948499759358745,
+          "score": 5423.891234410573,
+          "prediction_std": 41.34910130625179
+        }
+      },
+      "validation_rmse_change": 0.6130395911081337,
+      "test_rmse_change_descriptive_only": 1.1745129001206394,
+      "audit": "passed: same data/temporal/model/initialization/training/test mapping; Fig12 alignment and cache hash chain valid"
+    }
+  }
+}

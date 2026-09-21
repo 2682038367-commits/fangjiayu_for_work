@@ -121,3 +121,66 @@ def test_cache_writer_uses_bridged_dke_not_native_embeddings(tmp_path) -> None:
     )
     assert report["token_shape"] == [2, 513, 1024]
     assert np.load(tmp_path / "test_mask.npy").sum(axis=1).tolist() == [4, 4]
+
+
+@pytest.mark.parametrize(
+    ("input_modality", "expected_length", "needs_vision", "needs_tokenizer"),
+    [("text_only", 3, False, True), ("visual_only", 1, True, False)],
+)
+def test_input_level_modality_ablation_excludes_removed_qwen_input(
+    tmp_path, input_modality, expected_length, needs_vision, needs_tokenizer,
+) -> None:
+    """The ablations must happen before Qwen, not by masking its output tokens."""
+    from types import SimpleNamespace
+    from torch.utils.data import DataLoader
+    from ts_mllm.qwen_cache import cache_split
+
+    class FakeQwen:
+        dtype = torch.float32
+
+        def __init__(self):
+            self.input_lengths = []
+
+        def get_input_embeddings(self):
+            return torch.nn.Embedding(4, 1024)
+
+        def __call__(self, *, inputs_embeds, **kwargs):
+            self.input_lengths.append(inputs_embeds.shape[1])
+            return SimpleNamespace(last_hidden_state=inputs_embeds)
+
+    class FakeTokenizer:
+        def __init__(self):
+            self.called = False
+
+        def __call__(self, prompts, **kwargs):
+            self.called = True
+            return {"input_ids": torch.ones(len(prompts), 3, dtype=torch.long),
+                    "attention_mask": torch.ones(len(prompts), 3, dtype=torch.long)}
+
+    class FakeVision(torch.nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.called = False
+
+        def forward(self, images):
+            self.called = True
+            return torch.ones(len(images), 128)
+
+    row = {"x": torch.zeros(40, 14), "target": torch.tensor(25.),
+           "unit": torch.tensor(1), "cycle": torch.tensor(40)}
+    if input_modality == "text_only":
+        row["prompt"] = "only text"
+    else:
+        row["image"] = torch.zeros(3, 114, 114)
+    qwen, tokenizer, vision = FakeQwen(), FakeTokenizer(), FakeVision()
+    cache_split(
+        split="test", loader=DataLoader([row], batch_size=1), dataset_length=1,
+        output_dir=tmp_path, vision_encoder=vision, projector=SpectrumTextProjector(),
+        qwen=qwen, tokenizer=tokenizer, config=MultimodalCacheConfig(),
+        device=torch.device("cpu"), text_adapter=QwenTextBridge(4),
+        input_modality=input_modality,
+    )
+    assert qwen.input_lengths == [expected_length]
+    assert vision.called is needs_vision
+    assert tokenizer.called is needs_tokenizer
+    assert np.load(tmp_path / "test_mask.npy").sum(axis=1).tolist() == [expected_length]

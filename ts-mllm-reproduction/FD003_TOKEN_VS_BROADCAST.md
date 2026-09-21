@@ -19,3 +19,5 @@
 索引0为视觉前缀；索引3按本地Qwen tokenizer对应固定标题`### Task Describe`中的` Describe`。Qwen3是因果模型，该位置的输出可以利用视觉前缀及此前固定标题，但不能直接看到后面的动态窗口统计（min/max/median/趋势）。因此逐token版**不等于没有任何样本信息**，但它没有检索后面那些动态文本token，也几乎不随时间Query变化。当前实验不足以判断是Qwen特征尺度、Key/Query投影初始化、softmax饱和还是上游对齐共同造成；不应贸然改温度、归一化或结构并称作论文复现。
 
 新模型：`artifacts/fd003_figure12_v1/seed42/tmaf_tokens_batch32`。机制检查脚本：`scripts/audit_fd003_token_attention.py`。全局广播固定主结果与旧`legacy`文本A均保留。
+
+补充训练前后数值定位：见`FIGURE12_CROSS_SUBSET_REPORT.md`及`FD003_TOKEN_COLLAPSE_DIAGNOSIS.json`。初始注意力是分散的，训练后才塌缩到索引3；验证缓存掩码及padding正确。因此不能把塌缩直接归咎于缓存错误。

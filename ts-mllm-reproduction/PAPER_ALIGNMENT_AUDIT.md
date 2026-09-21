@@ -3,38 +3,38 @@
 当前主流程已恢复式(20)所述全局逐传感器 Min-Max，不使用按工况归一化；
 此前将条件化 Min-Max 描述为仅拟合范围的假设不够准确，它还改变了归一化分组。
 旧条件化结果保留为额外实验。新工况知识 prompt 的资料来源、窗口摘要及假设边界见
-[GLOBAL_KNOWLEDGE_PROMPT.md](GLOBAL_KNOWLEDGE_PROMPT.md)，尚未训练新版本。
+[GLOBAL_KNOWLEDGE_PROMPT.md](archive/GLOBAL_KNOWLEDGE_PROMPT.md)，尚未训练新版本。
 
 最新：FD002/FD004按条件化Min-Max已重建MAE/对齐/谱图/Qwen并完成来源核验，
-见[CONDITION_MULTIMODAL_REBUILD.md](CONDITION_MULTIMODAL_REBUILD.md)。未训练新TMAF，
+见[CONDITION_MULTIMODAL_REBUILD.md](archive/CONDITION_MULTIMODAL_REBUILD.md)。未训练新TMAF，
 下文“多模态尚未重建”是该阶段完成前的历史状态。
 
 FD004同一工况归一化协议已验证：时间Test RMSE20.7756，见
-[FD004_CONDITION_NORMALIZATION_RESULTS.md](FD004_CONDITION_NORMALIZATION_RESULTS.md)。
+[FD004_CONDITION_NORMALIZATION_RESULTS.md](archive/FD004_CONDITION_NORMALIZATION_RESULTS.md)。
 FD002/FD004均支持条件化Min-Max，但仍是未明确拟合范围的假设，多模态尚未按此重建。
 
 最新归一化专项：FD002同初值单变量对照支持每工况Min-Max，时间Test RMSE18.7242，
-详见[CONDITION_NORMALIZATION_RESULTS.md](CONDITION_NORMALIZATION_RESULTS.md)。仍为论文
+详见[CONDITION_NORMALIZATION_RESULTS.md](archive/CONDITION_NORMALIZATION_RESULTS.md)。仍为论文
 未明确的拟合范围假设；完整多模态尚未按此重建，旧退化描述对应全局归一化历史结果。
 
 最新：FD002–FD004已完成独立MAE/对齐/新Qwen缓存及B时间/完整TMAF，
 四集覆盖、指标与剩余协议差异见[FOUR_SUBSET_MULTIMODAL_RESULTS.md](FOUR_SUBSET_MULTIMODAL_RESULTS.md)。
 用户决定暂缓稳定性并停止bias调优；默认bias、B尺度固定。下文未覆盖四集描述为历史状态。
 
-最新回归头/初始化专项核验见[HEAD_INITIALIZATION_AUDIT.md](HEAD_INITIALIZATION_AUDIT.md)：
+最新回归头/初始化专项核验见[HEAD_INITIALIZATION_AUDIT.md](archive/HEAD_INITIALIZATION_AUDIT.md)：
 表II的512与dropout0.5一致，完整层次/激活/pooling仍未唯一确定，结构不改。
 两层Transformer构造时初值相同但无参数共享，B训练后已分化；初始化仍属假设。
-当前B完整TMAF结果见[TMAF_SCALE_B_RESULTS.md](TMAF_SCALE_B_RESULTS.md)，下文指标为历史状态。
+当前B完整TMAF结果见[TMAF_SCALE_B_RESULTS.md](archive/TMAF_SCALE_B_RESULTS.md)，下文指标为历史状态。
 
 最新更新：优先级4/5已在FD001生成新完整Qwen/频谱缓存并训练新时间分支及字面TMAF，
-详见[AUDITED_FD001_RESULTS.md](AUDITED_FD001_RESULTS.md)。下文未重建/训练是初次审计的
+详见[AUDITED_FD001_RESULTS.md](archive/AUDITED_FD001_RESULTS.md)。下文未重建/训练是初次审计的
 历史状态。明确参数保持，未公开部分仍按编号假设；新TMAF测试RMSE24.0989，性能未复现。
 
-更新：优先级1的四集数据窗口已独立重建，见[DATA_STRIDE50_REBUILD.md](DATA_STRIDE50_REBUILD.md)。
+更新：优先级1的四集数据窗口已独立重建，见[DATA_STRIDE50_REBUILD.md](archive/DATA_STRIDE50_REBUILD.md)。
 下文“未重建缓存/训练”仍指频谱与Qwen缓存及模型，并非新的原始数据窗口产物。
 
 更新：优先级2/3已在FD001接入96维DKE+线性桥接、重训视觉线性projector与频谱融合。
-见[SVLMA_ALIGNMENT_RESULTS.md](SVLMA_ALIGNMENT_RESULTS.md)。下表DKE未接入的描述是此前
+见[SVLMA_ALIGNMENT_RESULTS.md](archive/SVLMA_ALIGNMENT_RESULTS.md)。下表DKE未接入的描述是此前
 审计状态；现在已按披露假设实现，但没有作者确认的原始桥接/训练目标，未重训最终TMAF。
 
 依据用户提供的本地 PDF 第 III-B/C/D 节、第 IV-A/B/E 节和表 II。

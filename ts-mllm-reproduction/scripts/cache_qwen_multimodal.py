@@ -14,6 +14,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--dataset", default="FD001", choices=["FD001", "FD002", "FD003", "FD004"])
     parser.add_argument("--prompt-profile", choices=["legacy", "operating_sequence_v2", "condition_operating_sequence_v1", "figure12_v1"], default="legacy")
+    parser.add_argument("--input-modality", choices=["multimodal", "text_only", "visual_only"], default="multimodal",
+                        help="Actual Qwen input ablation; do not use cache-output masking as a substitute.")
     parser.add_argument("--data-dir", type=Path, default=project_root.parent / "data" / "CMAPSSData")
     parser.add_argument(
         "--spectrum-cache-dir", type=Path,

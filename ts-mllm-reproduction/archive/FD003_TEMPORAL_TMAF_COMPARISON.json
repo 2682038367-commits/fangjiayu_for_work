@@ -1,0 +1,1420 @@
+{
+  "device": "NVIDIA GeForce RTX 4060 Ti",
+  "protocol_checks": "passed",
+  "temporal_checkpoint_sha256": "4a575bf30c3d88f33572dc37e8ac1c6cd085872d255b4f5c9bba1ed54fd25afc",
+  "data_manifest_sha256": "b0cddcfd93fd487a69c996748629be9a23632dd021effd5dcd702232dcf32fb6",
+  "interpretation_limit": "TMAF jointly finetunes the temporal encoder and uses a different regression head; this is not an isolated causal test of the fusion layer.",
+  "overall": {
+    "temporal": {
+      "n": 100,
+      "rmse": 34.67066150061692,
+      "mae": 29.18334716796875,
+      "bias": 13.602981414794922,
+      "overestimate_fraction": 0.6,
+      "score": 9004.445496836037,
+      "prediction_std": 9.753135314024634
+    },
+    "tmaf": {
+      "n": 100,
+      "rmse": 23.42510816771393,
+      "mae": 18.10681398868561,
+      "bias": 13.385134177207947,
+      "overestimate_fraction": 0.72,
+      "score": 2976.495079829914,
+      "prediction_std": 36.0830388577778
+    },
+    "improved": 65,
+    "worsened": 35,
+    "mean_prediction_shift": -0.21784723758697566
+  },
+  "tmaf_high_error_20": {
+    "temporal": {
+      "n": 20,
+      "rmse": 40.32011667323316,
+      "mae": 35.655906677246094,
+      "bias": 33.10490341186524,
+      "overestimate_fraction": 0.9500000000000001,
+      "score": 3054.5834143450465,
+      "prediction_std": 6.921685768006536
+    },
+    "tmaf": {
+      "n": 20,
+      "rmse": 42.610633645636206,
+      "mae": 41.18436145782471,
+      "bias": 37.57329120635986,
+      "overestimate_fraction": 0.9500000000000001,
+      "score": 2665.5756992240786,
+      "prediction_std": 25.159810973599612
+    },
+    "improved": 6,
+    "worsened": 14,
+    "mean_prediction_shift": 4.468387794494631
+  },
+  "error_correlation": 0.505701564931134,
+  "prediction_correlation": 0.8959187131167637,
+  "both_overestimate": 55,
+  "temporal_under_tmaf_over": 17,
+  "top20_overlap": 6,
+  "rul_bins": {
+    "0-25": {
+      "temporal": {
+        "n": 16,
+        "rmse": 59.917238074734044,
+        "mae": 59.74648141860962,
+        "bias": 59.74648141860962,
+        "overestimate_fraction": 1.0,
+        "score": 6982.818961579807,
+        "prediction_std": 4.821455251734357
+      },
+      "tmaf": {
+        "n": 16,
+        "rmse": 19.269309889971353,
+        "mae": 15.130351692438126,
+        "bias": 12.847280830144882,
+        "overestimate_fraction": 0.8125,
+        "score": 132.72246000292537,
+        "prediction_std": 15.52758396995897
+      },
+      "improved": 16,
+      "worsened": 0,
+      "mean_prediction_shift": -46.89920058846474
+    },
+    "26-50": {
+      "temporal": {
+        "n": 13,
+        "rmse": 44.738882140655,
+        "mae": 44.278826200045074,
+        "bias": 44.278826200045074,
+        "overestimate_fraction": 1.0,
+        "score": 1305.434164371109,
+        "prediction_std": 5.172998669365077
+      },
+      "tmaf": {
+        "n": 13,
+        "rmse": 28.205939225350747,
+        "mae": 22.062237372765175,
+        "bias": 21.92512952364408,
+        "overestimate_fraction": 0.9230769230769231,
+        "score": 717.9655525417089,
+        "prediction_std": 20.48543225016361
+      },
+      "improved": 11,
+      "worsened": 2,
+      "mean_prediction_shift": -22.353696676400993
+    },
+    "51-100": {
+      "temporal": {
+        "n": 39,
+        "rmse": 20.627669811818212,
+        "mae": 16.29675997220553,
+        "bias": 14.554375672951723,
+        "overestimate_fraction": 0.7692307692307692,
+        "score": 510.49242726311763,
+        "prediction_std": 5.520715394778464
+      },
+      "tmaf": {
+        "n": 39,
+        "rmse": 29.064408622544995,
+        "mae": 24.76167757083208,
+        "bias": 23.90925549238156,
+        "overestimate_fraction": 0.9487179487179487,
+        "score": 2054.0994641699263,
+        "prediction_std": 19.81968944138218
+      },
+      "improved": 12,
+      "worsened": 27,
+      "mean_prediction_shift": 9.35487981942984
+    },
+    "101-125": {
+      "temporal": {
+        "n": 32,
+        "rmse": 25.09317761033076,
+        "mae": 23.474769830703732,
+        "bias": -23.090342283248898,
+        "overestimate_fraction": 0.03125,
+        "score": 205.69994362200316,
+        "prediction_std": 6.95507192820923
+      },
+      "tmaf": {
+        "n": 32,
+        "rmse": 13.282200513740923,
+        "mae": 9.877539396286013,
+        "bias": -2.6415851116180438,
+        "overestimate_fraction": 0.3125,
+        "score": 71.70760311535366,
+        "prediction_std": 12.142828291149094
+      },
+      "improved": 26,
+      "worsened": 6,
+      "mean_prediction_shift": 20.448757171630852
+    }
+  },
+  "worst_tmaf_engines": [
+    {
+      "unit": 16,
+      "target": 56.0,
+      "temporal": 110.39675903320312,
+      "tmaf": 125.0,
+      "temporal_error": 54.396759033203125,
+      "tmaf_error": 69.0,
+      "absolute_error_change": 14.603240966796875
+    },
+    {
+      "unit": 89,
+      "target": 41.0,
+      "temporal": 92.60552215576172,
+      "tmaf": 103.74331665039062,
+      "temporal_error": 51.60552215576172,
+      "tmaf_error": 62.743316650390625,
+      "absolute_error_change": 11.137794494628906
+    },
+    {
+      "unit": 62,
+      "target": 58.0,
+      "temporal": 90.6948699951172,
+      "tmaf": 113.90804290771484,
+      "temporal_error": 32.6948699951172,
+      "tmaf_error": 55.908042907714844,
+      "absolute_error_change": 23.213172912597642
+    },
+    {
+      "unit": 85,
+      "target": 56.0,
+      "temporal": 91.83689880371094,
+      "tmaf": 108.15345764160156,
+      "temporal_error": 35.83689880371094,
+      "tmaf_error": 52.15345764160156,
+      "absolute_error_change": 16.316558837890625
+    },
+    {
+      "unit": 33,
+      "target": 71.0,
+      "temporal": 89.52012634277344,
+      "tmaf": 118.66667938232422,
+      "temporal_error": 18.520126342773438,
+      "tmaf_error": 47.66667938232422,
+      "absolute_error_change": 29.14655303955078
+    },
+    {
+      "unit": 93,
+      "target": 67.0,
+      "temporal": 93.56842041015624,
+      "tmaf": 114.12967681884766,
+      "temporal_error": 26.568420410156236,
+      "tmaf_error": 47.129676818847656,
+      "absolute_error_change": 20.56125640869142
+    },
+    {
+      "unit": 58,
+      "target": 40.0,
+      "temporal": 86.19249725341797,
+      "tmaf": 86.27050018310547,
+      "temporal_error": 46.19249725341797,
+      "tmaf_error": 46.27050018310547,
+      "absolute_error_change": 0.0780029296875
+    },
+    {
+      "unit": 20,
+      "target": 56.0,
+      "temporal": 84.58748626708984,
+      "tmaf": 94.847412109375,
+      "temporal_error": 28.587486267089844,
+      "tmaf_error": 38.847412109375,
+      "absolute_error_change": 10.259925842285156
+    },
+    {
+      "unit": 13,
+      "target": 115.0,
+      "temporal": 89.4899673461914,
+      "tmaf": 78.88929748535156,
+      "temporal_error": -25.510032653808594,
+      "tmaf_error": -36.11070251464844,
+      "absolute_error_change": 10.600669860839844
+    },
+    {
+      "unit": 54,
+      "target": 87.0,
+      "temporal": 92.31849670410156,
+      "tmaf": 122.9238739013672,
+      "temporal_error": 5.3184967041015625,
+      "tmaf_error": 35.9238739013672,
+      "absolute_error_change": 30.60537719726564
+    },
+    {
+      "unit": 51,
+      "target": 78.0,
+      "temporal": 89.33186340332031,
+      "tmaf": 113.26399230957033,
+      "temporal_error": 11.331863403320312,
+      "tmaf_error": 35.26399230957033,
+      "absolute_error_change": 23.932128906250014
+    },
+    {
+      "unit": 79,
+      "target": 18.0,
+      "temporal": 77.82048797607422,
+      "tmaf": 51.98772811889648,
+      "temporal_error": 59.82048797607422,
+      "tmaf_error": 33.98772811889648,
+      "absolute_error_change": -25.83275985717774
+    },
+    {
+      "unit": 81,
+      "target": 15.0,
+      "temporal": 77.82645416259766,
+      "tmaf": 48.95590591430664,
+      "temporal_error": 62.826454162597656,
+      "tmaf_error": 33.95590591430664,
+      "absolute_error_change": -28.870548248291016
+    },
+    {
+      "unit": 34,
+      "target": 65.0,
+      "temporal": 83.67191314697266,
+      "tmaf": 98.69221496582033,
+      "temporal_error": 18.671913146972656,
+      "tmaf_error": 33.69221496582033,
+      "absolute_error_change": 15.02030181884767
+    },
+    {
+      "unit": 75,
+      "target": 45.0,
+      "temporal": 87.33135223388672,
+      "tmaf": 78.61383056640625,
+      "temporal_error": 42.33135223388672,
+      "tmaf_error": 33.61383056640625,
+      "absolute_error_change": -8.717521667480469
+    },
+    {
+      "unit": 2,
+      "target": 51.0,
+      "temporal": 84.46902465820312,
+      "tmaf": 84.13123321533203,
+      "temporal_error": 33.469024658203125,
+      "tmaf_error": 33.13123321533203,
+      "absolute_error_change": -0.33779144287109375
+    },
+    {
+      "unit": 38,
+      "target": 22.0,
+      "temporal": 81.7010269165039,
+      "tmaf": 54.84447479248047,
+      "temporal_error": 59.701026916503906,
+      "tmaf_error": 32.84447479248047,
+      "absolute_error_change": -26.856552124023438
+    },
+    {
+      "unit": 26,
+      "target": 11.0,
+      "temporal": 80.24937438964844,
+      "tmaf": 43.44427108764648,
+      "temporal_error": 69.24937438964844,
+      "tmaf_error": 32.44427108764648,
+      "absolute_error_change": -36.80510330200196
+    },
+    {
+      "unit": 70,
+      "target": 63.0,
+      "temporal": 86.01286315917969,
+      "tmaf": 95.41154479980467,
+      "temporal_error": 23.012863159179688,
+      "tmaf_error": 32.41154479980467,
+      "absolute_error_change": 9.398681640624986
+    },
+    {
+      "unit": 91,
+      "target": 81.0,
+      "temporal": 88.47266387939453,
+      "tmaf": 111.58837127685548,
+      "temporal_error": 7.472663879394531,
+      "tmaf_error": 30.588371276855483,
+      "absolute_error_change": 23.11570739746095
+    }
+  ],
+  "largest_worsening": [
+    {
+      "unit": 54,
+      "target": 87.0,
+      "temporal": 92.31849670410156,
+      "tmaf": 122.9238739013672,
+      "temporal_error": 5.3184967041015625,
+      "tmaf_error": 35.9238739013672,
+      "absolute_error_change": 30.60537719726564
+    },
+    {
+      "unit": 33,
+      "target": 71.0,
+      "temporal": 89.52012634277344,
+      "tmaf": 118.66667938232422,
+      "temporal_error": 18.520126342773438,
+      "tmaf_error": 47.66667938232422,
+      "absolute_error_change": 29.14655303955078
+    },
+    {
+      "unit": 67,
+      "target": 92.0,
+      "temporal": 88.5256118774414,
+      "tmaf": 120.26895904541016,
+      "temporal_error": -3.4743881225585938,
+      "tmaf_error": 28.268959045410156,
+      "absolute_error_change": 24.794570922851562
+    },
+    {
+      "unit": 27,
+      "target": 88.0,
+      "temporal": 89.53799438476562,
+      "tmaf": 113.8619613647461,
+      "temporal_error": 1.537994384765625,
+      "tmaf_error": 25.861961364746094,
+      "absolute_error_change": 24.32396697998047
+    },
+    {
+      "unit": 51,
+      "target": 78.0,
+      "temporal": 89.33186340332031,
+      "tmaf": 113.26399230957033,
+      "temporal_error": 11.331863403320312,
+      "tmaf_error": 35.26399230957033,
+      "absolute_error_change": 23.932128906250014
+    },
+    {
+      "unit": 57,
+      "target": 88.0,
+      "temporal": 86.48320770263672,
+      "tmaf": 113.00108337402344,
+      "temporal_error": -1.5167922973632812,
+      "tmaf_error": 25.001083374023438,
+      "absolute_error_change": 23.484291076660156
+    },
+    {
+      "unit": 62,
+      "target": 58.0,
+      "temporal": 90.6948699951172,
+      "tmaf": 113.90804290771484,
+      "temporal_error": 32.6948699951172,
+      "tmaf_error": 55.908042907714844,
+      "absolute_error_change": 23.213172912597642
+    },
+    {
+      "unit": 91,
+      "target": 81.0,
+      "temporal": 88.47266387939453,
+      "tmaf": 111.58837127685548,
+      "temporal_error": 7.472663879394531,
+      "tmaf_error": 30.588371276855483,
+      "absolute_error_change": 23.11570739746095
+    },
+    {
+      "unit": 53,
+      "target": 87.0,
+      "temporal": 89.65422821044922,
+      "tmaf": 112.06729888916016,
+      "temporal_error": 2.6542282104492188,
+      "tmaf_error": 25.067298889160156,
+      "absolute_error_change": 22.413070678710938
+    },
+    {
+      "unit": 68,
+      "target": 103.0,
+      "temporal": 102.91624450683594,
+      "tmaf": 125.0,
+      "temporal_error": -0.0837554931640625,
+      "tmaf_error": 22.0,
+      "absolute_error_change": 21.916244506835938
+    }
+  ],
+  "largest_improvement": [
+    {
+      "unit": 99,
+      "target": 8.0,
+      "temporal": 68.64099884033203,
+      "tmaf": 8.921184539794922,
+      "temporal_error": 60.64099884033203,
+      "tmaf_error": 0.9211845397949219,
+      "absolute_error_change": -59.71981430053711
+    },
+    {
+      "unit": 24,
+      "target": 9.0,
+      "temporal": 65.23542785644531,
+      "tmaf": 7.658024787902832,
+      "temporal_error": 56.23542785644531,
+      "tmaf_error": -1.341975212097168,
+      "absolute_error_change": -54.893452644348145
+    },
+    {
+      "unit": 39,
+      "target": 8.0,
+      "temporal": 68.05180358886719,
+      "tmaf": 13.685440063476562,
+      "temporal_error": 60.05180358886719,
+      "tmaf_error": 5.6854400634765625,
+      "absolute_error_change": -54.366363525390625
+    },
+    {
+      "unit": 94,
+      "target": 10.0,
+      "temporal": 65.63670349121094,
+      "tmaf": 11.637258529663086,
+      "temporal_error": 55.63670349121094,
+      "tmaf_error": 1.637258529663086,
+      "absolute_error_change": -53.99944496154785
+    },
+    {
+      "unit": 50,
+      "target": 11.0,
+      "temporal": 75.03468322753906,
+      "tmaf": 22.591344833374023,
+      "temporal_error": 64.03468322753906,
+      "tmaf_error": 11.591344833374023,
+      "absolute_error_change": -52.44333839416504
+    },
+    {
+      "unit": 78,
+      "target": 20.0,
+      "temporal": 74.58219909667969,
+      "tmaf": 26.529823303222656,
+      "temporal_error": 54.58219909667969,
+      "tmaf_error": 6.529823303222656,
+      "absolute_error_change": -48.05237579345703
+    },
+    {
+      "unit": 82,
+      "target": 6.0,
+      "temporal": 69.61872100830078,
+      "tmaf": 23.10621452331543,
+      "temporal_error": 63.61872100830078,
+      "tmaf_error": 17.10621452331543,
+      "absolute_error_change": -46.51250648498535
+    },
+    {
+      "unit": 86,
+      "target": 25.0,
+      "temporal": 76.49501037597656,
+      "tmaf": 19.89754867553711,
+      "temporal_error": 51.49501037597656,
+      "tmaf_error": -5.102451324462891,
+      "absolute_error_change": -46.39255905151367
+    },
+    {
+      "unit": 92,
+      "target": 14.0,
+      "temporal": 70.85148620605469,
+      "tmaf": 24.69108009338379,
+      "temporal_error": 56.85148620605469,
+      "tmaf_error": 10.691080093383789,
+      "absolute_error_change": -46.1604061126709
+    },
+    {
+      "unit": 98,
+      "target": 17.0,
+      "temporal": 74.20384979248047,
+      "tmaf": 5.179859638214111,
+      "temporal_error": 57.20384979248047,
+      "tmaf_error": -11.820140361785889,
+      "absolute_error_change": -45.38370943069458
+    }
+  ],
+  "engines": [
+    {
+      "unit": 1,
+      "target": 44.0,
+      "temporal": 81.6030044555664,
+      "tmaf": 71.79566192626953,
+      "temporal_error": 37.603004455566406,
+      "tmaf_error": 27.79566192626953,
+      "absolute_error_change": -9.807342529296875
+    },
+    {
+      "unit": 2,
+      "target": 51.0,
+      "temporal": 84.46902465820312,
+      "tmaf": 84.13123321533203,
+      "temporal_error": 33.469024658203125,
+      "tmaf_error": 33.13123321533203,
+      "absolute_error_change": -0.33779144287109375
+    },
+    {
+      "unit": 3,
+      "target": 27.0,
+      "temporal": 73.86595916748047,
+      "tmaf": 39.63988876342773,
+      "temporal_error": 46.86595916748047,
+      "tmaf_error": 12.639888763427727,
+      "absolute_error_change": -34.22607040405274
+    },
+    {
+      "unit": 4,
+      "target": 120.0,
+      "temporal": 87.76990509033203,
+      "tmaf": 114.74161529541016,
+      "temporal_error": -32.23009490966797,
+      "tmaf_error": -5.258384704589844,
+      "absolute_error_change": -26.971710205078125
+    },
+    {
+      "unit": 5,
+      "target": 101.0,
+      "temporal": 107.15084075927734,
+      "tmaf": 125.0,
+      "temporal_error": 6.150840759277344,
+      "tmaf_error": 24.0,
+      "absolute_error_change": 17.849159240722656
+    },
+    {
+      "unit": 6,
+      "target": 99.0,
+      "temporal": 89.88822174072266,
+      "tmaf": 116.65949249267578,
+      "temporal_error": -9.111778259277344,
+      "tmaf_error": 17.65949249267578,
+      "absolute_error_change": 8.547714233398438
+    },
+    {
+      "unit": 7,
+      "target": 71.0,
+      "temporal": 82.81692504882812,
+      "tmaf": 87.52640533447266,
+      "temporal_error": 11.816925048828125,
+      "tmaf_error": 16.526405334472656,
+      "absolute_error_change": 4.709480285644531
+    },
+    {
+      "unit": 8,
+      "target": 55.0,
+      "temporal": 81.76280212402344,
+      "tmaf": 79.80858612060547,
+      "temporal_error": 26.762802124023438,
+      "tmaf_error": 24.80858612060547,
+      "absolute_error_change": -1.9542160034179688
+    },
+    {
+      "unit": 9,
+      "target": 55.0,
+      "temporal": 86.13008117675781,
+      "tmaf": 79.59143829345703,
+      "temporal_error": 31.130081176757812,
+      "tmaf_error": 24.59143829345703,
+      "absolute_error_change": -6.538642883300781
+    },
+    {
+      "unit": 10,
+      "target": 66.0,
+      "temporal": 89.95721435546875,
+      "tmaf": 78.72673034667969,
+      "temporal_error": 23.95721435546875,
+      "tmaf_error": 12.726730346679688,
+      "absolute_error_change": -11.230484008789062
+    },
+    {
+      "unit": 11,
+      "target": 77.0,
+      "temporal": 83.92320251464844,
+      "tmaf": 101.09314727783205,
+      "temporal_error": 6.9232025146484375,
+      "tmaf_error": 24.093147277832045,
+      "absolute_error_change": 17.169944763183608
+    },
+    {
+      "unit": 12,
+      "target": 115.0,
+      "temporal": 87.1055679321289,
+      "tmaf": 111.2352294921875,
+      "temporal_error": -27.894432067871094,
+      "tmaf_error": -3.7647705078125,
+      "absolute_error_change": -24.129661560058594
+    },
+    {
+      "unit": 13,
+      "target": 115.0,
+      "temporal": 89.4899673461914,
+      "tmaf": 78.88929748535156,
+      "temporal_error": -25.510032653808594,
+      "tmaf_error": -36.11070251464844,
+      "absolute_error_change": 10.600669860839844
+    },
+    {
+      "unit": 14,
+      "target": 31.0,
+      "temporal": 77.55947875976562,
+      "tmaf": 43.217472076416016,
+      "temporal_error": 46.559478759765625,
+      "tmaf_error": 12.217472076416016,
+      "absolute_error_change": -34.34200668334961
+    },
+    {
+      "unit": 15,
+      "target": 108.0,
+      "temporal": 97.99293518066406,
+      "tmaf": 125.0,
+      "temporal_error": -10.007064819335938,
+      "tmaf_error": 17.0,
+      "absolute_error_change": 6.9929351806640625
+    },
+    {
+      "unit": 16,
+      "target": 56.0,
+      "temporal": 110.39675903320312,
+      "tmaf": 125.0,
+      "temporal_error": 54.396759033203125,
+      "tmaf_error": 69.0,
+      "absolute_error_change": 14.603240966796875
+    },
+    {
+      "unit": 17,
+      "target": 125.0,
+      "temporal": 93.79680633544922,
+      "tmaf": 109.37272644042967,
+      "temporal_error": -31.20319366455078,
+      "tmaf_error": -15.627273559570327,
+      "absolute_error_change": -15.575920104980455
+    },
+    {
+      "unit": 18,
+      "target": 125.0,
+      "temporal": 99.99256896972656,
+      "tmaf": 119.55208587646484,
+      "temporal_error": -25.007431030273438,
+      "tmaf_error": -5.447914123535156,
+      "absolute_error_change": -19.55951690673828
+    },
+    {
+      "unit": 19,
+      "target": 85.0,
+      "temporal": 94.72081756591795,
+      "tmaf": 113.40176391601562,
+      "temporal_error": 9.720817565917955,
+      "tmaf_error": 28.401763916015625,
+      "absolute_error_change": 18.68094635009767
+    },
+    {
+      "unit": 20,
+      "target": 56.0,
+      "temporal": 84.58748626708984,
+      "tmaf": 94.847412109375,
+      "temporal_error": 28.587486267089844,
+      "tmaf_error": 38.847412109375,
+      "absolute_error_change": 10.259925842285156
+    },
+    {
+      "unit": 21,
+      "target": 18.0,
+      "temporal": 75.31253051757812,
+      "tmaf": 31.18436050415039,
+      "temporal_error": 57.312530517578125,
+      "tmaf_error": 13.18436050415039,
+      "absolute_error_change": -44.128170013427734
+    },
+    {
+      "unit": 22,
+      "target": 119.0,
+      "temporal": 97.69042205810548,
+      "tmaf": 125.0,
+      "temporal_error": -21.309577941894517,
+      "tmaf_error": 6.0,
+      "absolute_error_change": -15.309577941894517
+    },
+    {
+      "unit": 23,
+      "target": 78.0,
+      "temporal": 83.73128509521484,
+      "tmaf": 74.6933822631836,
+      "temporal_error": 5.731285095214844,
+      "tmaf_error": -3.3066177368164062,
+      "absolute_error_change": -2.4246673583984375
+    },
+    {
+      "unit": 24,
+      "target": 9.0,
+      "temporal": 65.23542785644531,
+      "tmaf": 7.658024787902832,
+      "temporal_error": 56.23542785644531,
+      "tmaf_error": -1.341975212097168,
+      "absolute_error_change": -54.893452644348145
+    },
+    {
+      "unit": 25,
+      "target": 58.0,
+      "temporal": 81.41876983642578,
+      "tmaf": 58.34287643432617,
+      "temporal_error": 23.41876983642578,
+      "tmaf_error": 0.3428764343261719,
+      "absolute_error_change": -23.07589340209961
+    },
+    {
+      "unit": 26,
+      "target": 11.0,
+      "temporal": 80.24937438964844,
+      "tmaf": 43.44427108764648,
+      "temporal_error": 69.24937438964844,
+      "tmaf_error": 32.44427108764648,
+      "absolute_error_change": -36.80510330200196
+    },
+    {
+      "unit": 27,
+      "target": 88.0,
+      "temporal": 89.53799438476562,
+      "tmaf": 113.8619613647461,
+      "temporal_error": 1.537994384765625,
+      "tmaf_error": 25.861961364746094,
+      "absolute_error_change": 24.32396697998047
+    },
+    {
+      "unit": 28,
+      "target": 125.0,
+      "temporal": 98.9646453857422,
+      "tmaf": 112.18445587158205,
+      "temporal_error": -26.0353546142578,
+      "tmaf_error": -12.815544128417955,
+      "absolute_error_change": -13.219810485839844
+    },
+    {
+      "unit": 29,
+      "target": 124.0,
+      "temporal": 91.6034164428711,
+      "tmaf": 117.32275390625,
+      "temporal_error": -32.396583557128906,
+      "tmaf_error": -6.67724609375,
+      "absolute_error_change": -25.719337463378906
+    },
+    {
+      "unit": 30,
+      "target": 89.0,
+      "temporal": 88.79508209228516,
+      "tmaf": 103.44452667236328,
+      "temporal_error": -0.20491790771484375,
+      "tmaf_error": 14.444526672363281,
+      "absolute_error_change": 14.239608764648438
+    },
+    {
+      "unit": 31,
+      "target": 79.0,
+      "temporal": 90.0357666015625,
+      "tmaf": 90.37632751464844,
+      "temporal_error": 11.0357666015625,
+      "tmaf_error": 11.376327514648438,
+      "absolute_error_change": 0.3405609130859375
+    },
+    {
+      "unit": 32,
+      "target": 55.0,
+      "temporal": 81.12195587158203,
+      "tmaf": 66.17682647705078,
+      "temporal_error": 26.12195587158203,
+      "tmaf_error": 11.176826477050781,
+      "absolute_error_change": -14.94512939453125
+    },
+    {
+      "unit": 33,
+      "target": 71.0,
+      "temporal": 89.52012634277344,
+      "tmaf": 118.66667938232422,
+      "temporal_error": 18.520126342773438,
+      "tmaf_error": 47.66667938232422,
+      "absolute_error_change": 29.14655303955078
+    },
+    {
+      "unit": 34,
+      "target": 65.0,
+      "temporal": 83.67191314697266,
+      "tmaf": 98.69221496582033,
+      "temporal_error": 18.671913146972656,
+      "tmaf_error": 33.69221496582033,
+      "absolute_error_change": 15.02030181884767
+    },
+    {
+      "unit": 35,
+      "target": 87.0,
+      "temporal": 92.80059051513672,
+      "tmaf": 114.37165069580078,
+      "temporal_error": 5.800590515136719,
+      "tmaf_error": 27.37165069580078,
+      "absolute_error_change": 21.571060180664062
+    },
+    {
+      "unit": 36,
+      "target": 125.0,
+      "temporal": 103.0489273071289,
+      "tmaf": 125.0,
+      "temporal_error": -21.951072692871094,
+      "tmaf_error": 0.0,
+      "absolute_error_change": -21.951072692871094
+    },
+    {
+      "unit": 37,
+      "target": 125.0,
+      "temporal": 93.56901550292967,
+      "tmaf": 119.99088287353516,
+      "temporal_error": -31.430984497070327,
+      "tmaf_error": -5.009117126464844,
+      "absolute_error_change": -26.421867370605483
+    },
+    {
+      "unit": 38,
+      "target": 22.0,
+      "temporal": 81.7010269165039,
+      "tmaf": 54.84447479248047,
+      "temporal_error": 59.701026916503906,
+      "tmaf_error": 32.84447479248047,
+      "absolute_error_change": -26.856552124023438
+    },
+    {
+      "unit": 39,
+      "target": 8.0,
+      "temporal": 68.05180358886719,
+      "tmaf": 13.685440063476562,
+      "temporal_error": 60.05180358886719,
+      "tmaf_error": 5.6854400634765625,
+      "absolute_error_change": -54.366363525390625
+    },
+    {
+      "unit": 40,
+      "target": 41.0,
+      "temporal": 79.24739074707031,
+      "tmaf": 46.21150207519531,
+      "temporal_error": 38.24739074707031,
+      "tmaf_error": 5.2115020751953125,
+      "absolute_error_change": -33.035888671875
+    },
+    {
+      "unit": 41,
+      "target": 125.0,
+      "temporal": 100.57237243652344,
+      "tmaf": 125.0,
+      "temporal_error": -24.427627563476562,
+      "tmaf_error": 0.0,
+      "absolute_error_change": -24.427627563476562
+    },
+    {
+      "unit": 42,
+      "target": 115.0,
+      "temporal": 83.6768798828125,
+      "tmaf": 103.3073272705078,
+      "temporal_error": -31.3231201171875,
+      "tmaf_error": -11.692672729492202,
+      "absolute_error_change": -19.6304473876953
+    },
+    {
+      "unit": 43,
+      "target": 125.0,
+      "temporal": 101.08170318603516,
+      "tmaf": 125.0,
+      "temporal_error": -23.918296813964844,
+      "tmaf_error": 0.0,
+      "absolute_error_change": -23.918296813964844
+    },
+    {
+      "unit": 44,
+      "target": 69.0,
+      "temporal": 83.06996154785156,
+      "tmaf": 74.1814193725586,
+      "temporal_error": 14.069961547851562,
+      "tmaf_error": 5.181419372558594,
+      "absolute_error_change": -8.888542175292969
+    },
+    {
+      "unit": 45,
+      "target": 111.0,
+      "temporal": 97.84876251220705,
+      "tmaf": 125.0,
+      "temporal_error": -13.151237487792955,
+      "tmaf_error": 14.0,
+      "absolute_error_change": 0.8487625122070455
+    },
+    {
+      "unit": 46,
+      "target": 7.0,
+      "temporal": 73.68294525146484,
+      "tmaf": 30.241973876953125,
+      "temporal_error": 66.68294525146484,
+      "tmaf_error": 23.241973876953125,
+      "absolute_error_change": -43.44097137451172
+    },
+    {
+      "unit": 47,
+      "target": 125.0,
+      "temporal": 92.77069091796876,
+      "tmaf": 118.7953643798828,
+      "temporal_error": -32.229309082031236,
+      "tmaf_error": -6.204635620117202,
+      "absolute_error_change": -26.024673461914034
+    },
+    {
+      "unit": 48,
+      "target": 55.0,
+      "temporal": 80.2510986328125,
+      "tmaf": 60.86684799194336,
+      "temporal_error": 25.2510986328125,
+      "tmaf_error": 5.866847991943359,
+      "absolute_error_change": -19.38425064086914
+    },
+    {
+      "unit": 49,
+      "target": 125.0,
+      "temporal": 105.7265396118164,
+      "tmaf": 125.0,
+      "temporal_error": -19.273460388183594,
+      "tmaf_error": 0.0,
+      "absolute_error_change": -19.273460388183594
+    },
+    {
+      "unit": 50,
+      "target": 11.0,
+      "temporal": 75.03468322753906,
+      "tmaf": 22.591344833374023,
+      "temporal_error": 64.03468322753906,
+      "tmaf_error": 11.591344833374023,
+      "absolute_error_change": -52.44333839416504
+    },
+    {
+      "unit": 51,
+      "target": 78.0,
+      "temporal": 89.33186340332031,
+      "tmaf": 113.26399230957033,
+      "temporal_error": 11.331863403320312,
+      "tmaf_error": 35.26399230957033,
+      "absolute_error_change": 23.932128906250014
+    },
+    {
+      "unit": 52,
+      "target": 120.0,
+      "temporal": 96.13074493408205,
+      "tmaf": 125.0,
+      "temporal_error": -23.869255065917955,
+      "tmaf_error": 5.0,
+      "absolute_error_change": -18.869255065917955
+    },
+    {
+      "unit": 53,
+      "target": 87.0,
+      "temporal": 89.65422821044922,
+      "tmaf": 112.06729888916016,
+      "temporal_error": 2.6542282104492188,
+      "tmaf_error": 25.067298889160156,
+      "absolute_error_change": 22.413070678710938
+    },
+    {
+      "unit": 54,
+      "target": 87.0,
+      "temporal": 92.31849670410156,
+      "tmaf": 122.9238739013672,
+      "temporal_error": 5.3184967041015625,
+      "tmaf_error": 35.9238739013672,
+      "absolute_error_change": 30.60537719726564
+    },
+    {
+      "unit": 55,
+      "target": 55.0,
+      "temporal": 81.56587982177734,
+      "tmaf": 63.07462692260742,
+      "temporal_error": 26.565879821777344,
+      "tmaf_error": 8.074626922607422,
+      "absolute_error_change": -18.491252899169922
+    },
+    {
+      "unit": 56,
+      "target": 93.0,
+      "temporal": 85.77986145019531,
+      "tmaf": 79.68438720703125,
+      "temporal_error": -7.2201385498046875,
+      "tmaf_error": -13.31561279296875,
+      "absolute_error_change": 6.0954742431640625
+    },
+    {
+      "unit": 57,
+      "target": 88.0,
+      "temporal": 86.48320770263672,
+      "tmaf": 113.00108337402344,
+      "temporal_error": -1.5167922973632812,
+      "tmaf_error": 25.001083374023438,
+      "absolute_error_change": 23.484291076660156
+    },
+    {
+      "unit": 58,
+      "target": 40.0,
+      "temporal": 86.19249725341797,
+      "tmaf": 86.27050018310547,
+      "temporal_error": 46.19249725341797,
+      "tmaf_error": 46.27050018310547,
+      "absolute_error_change": 0.0780029296875
+    },
+    {
+      "unit": 59,
+      "target": 49.0,
+      "temporal": 81.19983673095703,
+      "tmaf": 48.10879898071289,
+      "temporal_error": 32.19983673095703,
+      "tmaf_error": -0.8912010192871094,
+      "absolute_error_change": -31.308635711669922
+    },
+    {
+      "unit": 60,
+      "target": 125.0,
+      "temporal": 88.0326156616211,
+      "tmaf": 102.68814086914062,
+      "temporal_error": -36.967384338378906,
+      "tmaf_error": -22.311859130859375,
+      "absolute_error_change": -14.655525207519531
+    },
+    {
+      "unit": 61,
+      "target": 125.0,
+      "temporal": 103.92774200439452,
+      "tmaf": 125.0,
+      "temporal_error": -21.072257995605483,
+      "tmaf_error": 0.0,
+      "absolute_error_change": -21.072257995605483
+    },
+    {
+      "unit": 62,
+      "target": 58.0,
+      "temporal": 90.6948699951172,
+      "tmaf": 113.90804290771484,
+      "temporal_error": 32.6948699951172,
+      "tmaf_error": 55.908042907714844,
+      "absolute_error_change": 23.213172912597642
+    },
+    {
+      "unit": 63,
+      "target": 117.0,
+      "temporal": 92.55194091796876,
+      "tmaf": 124.7752685546875,
+      "temporal_error": -24.448059082031236,
+      "tmaf_error": 7.7752685546875,
+      "absolute_error_change": -16.672790527343736
+    },
+    {
+      "unit": 64,
+      "target": 28.0,
+      "temporal": 77.82411193847656,
+      "tmaf": 38.68210983276367,
+      "temporal_error": 49.82411193847656,
+      "tmaf_error": 10.682109832763672,
+      "absolute_error_change": -39.14200210571289
+    },
+    {
+      "unit": 65,
+      "target": 115.0,
+      "temporal": 98.29456329345705,
+      "tmaf": 125.0,
+      "temporal_error": -16.705436706542955,
+      "tmaf_error": 10.0,
+      "absolute_error_change": -6.7054367065429545
+    },
+    {
+      "unit": 66,
+      "target": 87.0,
+      "temporal": 84.12544250488281,
+      "tmaf": 97.7107391357422,
+      "temporal_error": -2.8745574951171875,
+      "tmaf_error": 10.710739135742202,
+      "absolute_error_change": 7.836181640625014
+    },
+    {
+      "unit": 67,
+      "target": 92.0,
+      "temporal": 88.5256118774414,
+      "tmaf": 120.26895904541016,
+      "temporal_error": -3.4743881225585938,
+      "tmaf_error": 28.268959045410156,
+      "absolute_error_change": 24.794570922851562
+    },
+    {
+      "unit": 68,
+      "target": 103.0,
+      "temporal": 102.91624450683594,
+      "tmaf": 125.0,
+      "temporal_error": -0.0837554931640625,
+      "tmaf_error": 22.0,
+      "absolute_error_change": 21.916244506835938
+    },
+    {
+      "unit": 69,
+      "target": 100.0,
+      "temporal": 96.09235382080078,
+      "tmaf": 125.0,
+      "temporal_error": -3.9076461791992188,
+      "tmaf_error": 25.0,
+      "absolute_error_change": 21.09235382080078
+    },
+    {
+      "unit": 70,
+      "target": 63.0,
+      "temporal": 86.01286315917969,
+      "tmaf": 95.41154479980467,
+      "temporal_error": 23.012863159179688,
+      "tmaf_error": 32.41154479980467,
+      "absolute_error_change": 9.398681640624986
+    },
+    {
+      "unit": 71,
+      "target": 35.0,
+      "temporal": 73.73841094970703,
+      "tmaf": 35.15208435058594,
+      "temporal_error": 38.73841094970703,
+      "tmaf_error": 0.1520843505859375,
+      "absolute_error_change": -38.586326599121094
+    },
+    {
+      "unit": 72,
+      "target": 45.0,
+      "temporal": 84.82157135009766,
+      "tmaf": 70.4726333618164,
+      "temporal_error": 39.821571350097656,
+      "tmaf_error": 25.472633361816406,
+      "absolute_error_change": -14.34893798828125
+    },
+    {
+      "unit": 73,
+      "target": 99.0,
+      "temporal": 94.65961456298828,
+      "tmaf": 122.66613006591795,
+      "temporal_error": -4.340385437011719,
+      "tmaf_error": 23.666130065917955,
+      "absolute_error_change": 19.325744628906236
+    },
+    {
+      "unit": 74,
+      "target": 117.0,
+      "temporal": 99.69290161132812,
+      "tmaf": 125.0,
+      "temporal_error": -17.307098388671875,
+      "tmaf_error": 8.0,
+      "absolute_error_change": -9.307098388671875
+    },
+    {
+      "unit": 75,
+      "target": 45.0,
+      "temporal": 87.33135223388672,
+      "tmaf": 78.61383056640625,
+      "temporal_error": 42.33135223388672,
+      "tmaf_error": 33.61383056640625,
+      "absolute_error_change": -8.717521667480469
+    },
+    {
+      "unit": 76,
+      "target": 27.0,
+      "temporal": 81.45673370361328,
+      "tmaf": 56.850860595703125,
+      "temporal_error": 54.45673370361328,
+      "tmaf_error": 29.850860595703125,
+      "absolute_error_change": -24.605873107910156
+    },
+    {
+      "unit": 77,
+      "target": 86.0,
+      "temporal": 84.67411041259766,
+      "tmaf": 91.07583618164062,
+      "temporal_error": -1.3258895874023438,
+      "tmaf_error": 5.075836181640625,
+      "absolute_error_change": 3.7499465942382812
+    },
+    {
+      "unit": 78,
+      "target": 20.0,
+      "temporal": 74.58219909667969,
+      "tmaf": 26.529823303222656,
+      "temporal_error": 54.58219909667969,
+      "tmaf_error": 6.529823303222656,
+      "absolute_error_change": -48.05237579345703
+    },
+    {
+      "unit": 79,
+      "target": 18.0,
+      "temporal": 77.82048797607422,
+      "tmaf": 51.98772811889648,
+      "temporal_error": 59.82048797607422,
+      "tmaf_error": 33.98772811889648,
+      "absolute_error_change": -25.83275985717774
+    },
+    {
+      "unit": 80,
+      "target": 125.0,
+      "temporal": 112.52633666992188,
+      "tmaf": 125.0,
+      "temporal_error": -12.473663330078125,
+      "tmaf_error": 0.0,
+      "absolute_error_change": -12.473663330078125
+    },
+    {
+      "unit": 81,
+      "target": 15.0,
+      "temporal": 77.82645416259766,
+      "tmaf": 48.95590591430664,
+      "temporal_error": 62.826454162597656,
+      "tmaf_error": 33.95590591430664,
+      "absolute_error_change": -28.870548248291016
+    },
+    {
+      "unit": 82,
+      "target": 6.0,
+      "temporal": 69.61872100830078,
+      "tmaf": 23.10621452331543,
+      "temporal_error": 63.61872100830078,
+      "tmaf_error": 17.10621452331543,
+      "absolute_error_change": -46.51250648498535
+    },
+    {
+      "unit": 83,
+      "target": 125.0,
+      "temporal": 87.1456069946289,
+      "tmaf": 104.6368179321289,
+      "temporal_error": -37.854393005371094,
+      "tmaf_error": -20.363182067871094,
+      "absolute_error_change": -17.4912109375
+    },
+    {
+      "unit": 84,
+      "target": 104.0,
+      "temporal": 92.94183349609376,
+      "tmaf": 89.191650390625,
+      "temporal_error": -11.058166503906236,
+      "tmaf_error": -14.808349609375,
+      "absolute_error_change": 3.750183105468764
+    },
+    {
+      "unit": 85,
+      "target": 56.0,
+      "temporal": 91.83689880371094,
+      "tmaf": 108.15345764160156,
+      "temporal_error": 35.83689880371094,
+      "tmaf_error": 52.15345764160156,
+      "absolute_error_change": 16.316558837890625
+    },
+    {
+      "unit": 86,
+      "target": 25.0,
+      "temporal": 76.49501037597656,
+      "tmaf": 19.89754867553711,
+      "temporal_error": 51.49501037597656,
+      "tmaf_error": -5.102451324462891,
+      "absolute_error_change": -46.39255905151367
+    },
+    {
+      "unit": 87,
+      "target": 68.0,
+      "temporal": 88.11527252197266,
+      "tmaf": 87.40926361083984,
+      "temporal_error": 20.115272521972656,
+      "tmaf_error": 19.409263610839844,
+      "absolute_error_change": -0.7060089111328125
+    },
+    {
+      "unit": 88,
+      "target": 125.0,
+      "temporal": 99.96131134033205,
+      "tmaf": 125.0,
+      "temporal_error": -25.038688659667955,
+      "tmaf_error": 0.0,
+      "absolute_error_change": -25.038688659667955
+    },
+    {
+      "unit": 89,
+      "target": 41.0,
+      "temporal": 92.60552215576172,
+      "tmaf": 103.74331665039062,
+      "temporal_error": 51.60552215576172,
+      "tmaf_error": 62.743316650390625,
+      "absolute_error_change": 11.137794494628906
+    },
+    {
+      "unit": 90,
+      "target": 51.0,
+      "temporal": 84.10191345214844,
+      "tmaf": 67.66275787353516,
+      "temporal_error": 33.10191345214844,
+      "tmaf_error": 16.662757873535156,
+      "absolute_error_change": -16.43915557861328
+    },
+    {
+      "unit": 91,
+      "target": 81.0,
+      "temporal": 88.47266387939453,
+      "tmaf": 111.58837127685548,
+      "temporal_error": 7.472663879394531,
+      "tmaf_error": 30.588371276855483,
+      "absolute_error_change": 23.11570739746095
+    },
+    {
+      "unit": 92,
+      "target": 14.0,
+      "temporal": 70.85148620605469,
+      "tmaf": 24.69108009338379,
+      "temporal_error": 56.85148620605469,
+      "tmaf_error": 10.691080093383789,
+      "absolute_error_change": -46.1604061126709
+    },
+    {
+      "unit": 93,
+      "target": 67.0,
+      "temporal": 93.56842041015624,
+      "tmaf": 114.12967681884766,
+      "temporal_error": 26.568420410156236,
+      "tmaf_error": 47.129676818847656,
+      "absolute_error_change": 20.56125640869142
+    },
+    {
+      "unit": 94,
+      "target": 10.0,
+      "temporal": 65.63670349121094,
+      "tmaf": 11.637258529663086,
+      "temporal_error": 55.63670349121094,
+      "tmaf_error": 1.637258529663086,
+      "absolute_error_change": -53.99944496154785
+    },
+    {
+      "unit": 95,
+      "target": 125.0,
+      "temporal": 92.88196563720705,
+      "tmaf": 113.59278106689452,
+      "temporal_error": -32.118034362792955,
+      "tmaf_error": -11.407218933105483,
+      "absolute_error_change": -20.71081542968747
+    },
+    {
+      "unit": 96,
+      "target": 113.0,
+      "temporal": 81.14082336425781,
+      "tmaf": 90.19287872314452,
+      "temporal_error": -31.859176635742188,
+      "tmaf_error": -22.807121276855483,
+      "absolute_error_change": -9.052055358886705
+    },
+    {
+      "unit": 97,
+      "target": 123.0,
+      "temporal": 98.1124496459961,
+      "tmaf": 125.0,
+      "temporal_error": -24.887550354003906,
+      "tmaf_error": 2.0,
+      "absolute_error_change": -22.887550354003906
+    },
+    {
+      "unit": 98,
+      "target": 17.0,
+      "temporal": 74.20384979248047,
+      "tmaf": 5.179859638214111,
+      "temporal_error": 57.20384979248047,
+      "tmaf_error": -11.820140361785889,
+      "absolute_error_change": -45.38370943069458
+    },
+    {
+      "unit": 99,
+      "target": 8.0,
+      "temporal": 68.64099884033203,
+      "tmaf": 8.921184539794922,
+      "temporal_error": 60.64099884033203,
+      "tmaf_error": 0.9211845397949219,
+      "absolute_error_change": -59.71981430053711
+    },
+    {
+      "unit": 100,
+      "target": 28.0,
+      "temporal": 79.17887115478516,
+      "tmaf": 47.26802444458008,
+      "temporal_error": 51.178871154785156,
+      "tmaf_error": 19.268024444580078,
+      "absolute_error_change": -31.910846710205078
+    }
+  ]
+}
