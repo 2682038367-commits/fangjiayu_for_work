@@ -348,6 +348,9 @@ def run(args: Any) -> dict[str, Any]:
         elif getattr(args, "prompt_profile", "legacy") == "condition_operating_sequence_v1":
             from .condition_knowledge_prompt import ConditionKnowledgeWindowDataset
             datasets = {name: ConditionKnowledgeWindowDataset(args.rebuilt_data_dir, name, args.data_dir) for name in datasets}
+        elif getattr(args, "prompt_profile", "legacy") == "figure12_v1":
+            from .figure12_prompt import Figure12WindowDataset
+            datasets = {name: Figure12WindowDataset(args.rebuilt_data_dir, name) for name in datasets}
     else:
         data = prepare_cmapss_data(
             args.data_dir, args.dataset, seed=args.split_seed,
@@ -401,8 +404,10 @@ def run(args: Any) -> dict[str, Any]:
         if getattr(args, "prompt_profile", "legacy") != "legacy":
             from .knowledge_prompt import KNOWLEDGE_SHA256, PROMPT_TEMPLATE_SHA256
             from .condition_knowledge_prompt import CONDITION_PROFILE, CONDITION_TEMPLATE_SHA256
-            template_hash = CONDITION_TEMPLATE_SHA256 if args.prompt_profile == CONDITION_PROFILE else PROMPT_TEMPLATE_SHA256
-            if state.get("knowledge_sha256") != KNOWLEDGE_SHA256 or state.get("prompt_template_sha256") != template_hash:
+            from .figure12_prompt import PROFILE as FIGURE12_PROFILE, KNOWLEDGE_SHA256 as FIGURE12_KNOWLEDGE_SHA256, PROMPT_TEMPLATE_SHA256 as FIGURE12_TEMPLATE_SHA256
+            template_hash = FIGURE12_TEMPLATE_SHA256 if args.prompt_profile == FIGURE12_PROFILE else CONDITION_TEMPLATE_SHA256 if args.prompt_profile == CONDITION_PROFILE else PROMPT_TEMPLATE_SHA256
+            knowledge_hash = FIGURE12_KNOWLEDGE_SHA256 if args.prompt_profile == FIGURE12_PROFILE else KNOWLEDGE_SHA256
+            if state.get("knowledge_sha256") != knowledge_hash or state.get("prompt_template_sha256") != template_hash:
                 raise ValueError("knowledge changed; retrain alignment")
         if state["text_dim"] != 96 or state["projector_architecture"] != "linear":
             raise ValueError("alignment checkpoint does not match DKE96/linear projector")

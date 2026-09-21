@@ -13,7 +13,7 @@ def parse_args() -> argparse.Namespace:
         description="Train MAE-to-Qwen projector and cache frozen Qwen multimodal tokens."
     )
     parser.add_argument("--dataset", default="FD001", choices=["FD001", "FD002", "FD003", "FD004"])
-    parser.add_argument("--prompt-profile", choices=["legacy", "operating_sequence_v2", "condition_operating_sequence_v1"], default="legacy")
+    parser.add_argument("--prompt-profile", choices=["legacy", "operating_sequence_v2", "condition_operating_sequence_v1", "figure12_v1"], default="legacy")
     parser.add_argument("--data-dir", type=Path, default=project_root.parent / "data" / "CMAPSSData")
     parser.add_argument(
         "--spectrum-cache-dir", type=Path,

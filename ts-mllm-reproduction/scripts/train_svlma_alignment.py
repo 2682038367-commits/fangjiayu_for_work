@@ -17,6 +17,7 @@ from ts_mllm.rebuilt_data import RebuiltWindowDataset, file_sha256
 from ts_mllm.vision import SpectrumTransform
 from ts_mllm.knowledge_prompt import KnowledgeWindowDataset, PROFILE, KNOWLEDGE_SHA256, PROMPT_TEMPLATE_SHA256, SOURCE
 from ts_mllm.condition_knowledge_prompt import ConditionKnowledgeWindowDataset, CONDITION_PROFILE, CONDITION_TEMPLATE_SHA256
+from ts_mllm.figure12_prompt import Figure12WindowDataset, PROFILE as FIGURE12_PROFILE, KNOWLEDGE_SHA256 as FIGURE12_KNOWLEDGE_SHA256, PROMPT_TEMPLATE_SHA256 as FIGURE12_TEMPLATE_SHA256, SOURCE as FIGURE12_SOURCE
 
 
 def main() -> None:
@@ -27,7 +28,7 @@ def main() -> None:
     parser.add_argument("--split-seed", type=int, default=42)
     parser.add_argument("--vision-checkpoint", type=Path)
     parser.add_argument("--rebuilt-data-dir", type=Path)
-    parser.add_argument("--prompt-profile", choices=["legacy", PROFILE, CONDITION_PROFILE], default="legacy")
+    parser.add_argument("--prompt-profile", choices=["legacy", PROFILE, CONDITION_PROFILE, FIGURE12_PROFILE], default="legacy")
     parser.add_argument("--output-dir", type=Path)
     args = parser.parse_args()
     args.output_dir = args.output_dir or root / f"artifacts/svlma_alignment/{args.dataset}/stride50_seed{args.seed}"
@@ -56,6 +57,8 @@ def main() -> None:
         dataset = KnowledgeWindowDataset(data_dir, split, root.parent / "data/CMAPSSData") if args.prompt_profile == PROFILE else RebuiltWindowDataset(data_dir, split)
         if args.prompt_profile == CONDITION_PROFILE:
             dataset = ConditionKnowledgeWindowDataset(data_dir, split, root.parent / "data/CMAPSSData")
+        if args.prompt_profile == FIGURE12_PROFILE:
+            dataset = Figure12WindowDataset(data_dir, split)
         prompts = [dataset[i].get("prompt", build_dynamic_prompt(dataset[i]["x"])) for i in range(len(dataset))]
         if args.prompt_profile != "legacy" and max(len(tokenizer(p)["input_ids"]) for p in prompts) > 512:
             raise ValueError("knowledge prompt exceeds512; refusing silent truncation")
@@ -94,9 +97,10 @@ def main() -> None:
         "no_rul_labels_used_for_alignment": True, "full_token_cache_written": False,
     })
     checkpoint = torch.load(args.output_dir / "best.pt", map_location="cpu", weights_only=False)
-    result.update({"prompt_profile": args.prompt_profile, "knowledge_sha256": KNOWLEDGE_SHA256 if args.prompt_profile != "legacy" else None})
-    result.update({"prompt_template_sha256": CONDITION_TEMPLATE_SHA256 if args.prompt_profile == CONDITION_PROFILE else PROMPT_TEMPLATE_SHA256 if args.prompt_profile == PROFILE else None,
-                   "knowledge_sources": [SOURCE] if args.prompt_profile != "legacy" else []})
+    result["additional_assumptions"] = ["Fig. 12 example-based prompt; aggregation/trend wording assumed" if item == "existing statistics prompt template" and args.prompt_profile == FIGURE12_PROFILE else item for item in result["additional_assumptions"]]
+    result.update({"prompt_profile": args.prompt_profile, "knowledge_sha256": FIGURE12_KNOWLEDGE_SHA256 if args.prompt_profile == FIGURE12_PROFILE else KNOWLEDGE_SHA256 if args.prompt_profile != "legacy" else None})
+    result.update({"prompt_template_sha256": FIGURE12_TEMPLATE_SHA256 if args.prompt_profile == FIGURE12_PROFILE else CONDITION_TEMPLATE_SHA256 if args.prompt_profile == CONDITION_PROFILE else PROMPT_TEMPLATE_SHA256 if args.prompt_profile == PROFILE else None,
+                   "knowledge_sources": [FIGURE12_SOURCE] if args.prompt_profile == FIGURE12_PROFILE else [SOURCE] if args.prompt_profile != "legacy" else []})
     checkpoint.update({"prompt_profile": args.prompt_profile, "knowledge_sha256": result["knowledge_sha256"]})
     checkpoint.update({"prompt_template_sha256": result["prompt_template_sha256"]})
     checkpoint.update({"dataset": args.dataset, "data_manifest_sha256": result["data_manifest_sha256"], "vision_checkpoint": str(vision_path), "vision_checkpoint_sha256": result["vision_checkpoint_sha256"], "seed": args.seed, "split_seed": args.split_seed, "train_sample_stride": 50, "validation_sample_stride": 50})

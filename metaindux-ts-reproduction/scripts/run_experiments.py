@@ -133,7 +133,13 @@ def main() -> int:
                 loss_path = PROJECT_ROOT / "logs" / f"{stem}_training_loss.csv"
                 metrics_path = PROJECT_ROOT / "results" / "runs" / f"{stem}_metrics.json"
                 metadata_path = PROJECT_ROOT / "results" / "runs" / f"{stem}_metadata.json"
-                artifacts = [model_path, synth_path, loss_path, metrics_path]
+                artifacts = [model_path, synth_path, loss_path]
+                if runtime["state"] == "train":
+                    # Upstream's train state also samples, but does not run the
+                    # built-in post-hoc evaluators or write their metrics JSON.
+                    artifacts.append(metrics_path.with_suffix(".generation.json"))
+                else:
+                    artifacts.append(metrics_path)
                 if cli.skip_completed and run_is_complete(metadata_path, artifacts):
                     print(f"skip completed: {stem}", flush=True)
                     continue

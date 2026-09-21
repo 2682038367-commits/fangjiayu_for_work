@@ -1,0 +1,14 @@
+{
+  "device": "NVIDIA GeForce RTX 4060 Ti",
+  "num_keys": 38,
+  "max_attention_minus_uniform": 0.0,
+  "max_fused_minus_direct_additive": 5.364418029785156e-07,
+  "max_prediction_minus_direct_additive": 1.1920928955078125e-07,
+  "projection_weight_gradient_norm": {
+    "query_projection": 1.9971591882494977e-06,
+    "key_projection": 2.173525444959523e-06,
+    "value_projection": 19.785207748413086,
+    "fusion_projection": 14.057652473449707
+  },
+  "mathematical_identity": "For N identical K,V: softmax(QK^T/sqrt(d))=1/N; attention output is V for every temporal query. Thus d(output)/d(Q,K)=0, and mean-pooled fused sequence is a function of mean temporal embedding plus one global value vector."
+}

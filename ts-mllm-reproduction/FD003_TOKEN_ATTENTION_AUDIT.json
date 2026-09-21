@@ -1,0 +1,53 @@
+{
+  "device": "NVIDIA GeForce RTX 4060 Ti",
+  "validation_samples": 8,
+  "modes": {
+    "global_broadcast": {
+      "attention_shape": [
+        8,
+        38,
+        38
+      ],
+      "max_deviation_from_uniform": 0.0,
+      "mean_l1_distance_between_first_and_last_temporal_query": 0.0,
+      "max_masked_attention": null,
+      "query_weight_grad_l2": 5.084286271994642e-07,
+      "key_weight_grad_l2": 5.332405521585315e-07,
+      "value_weight_grad_l2": 5.65714168548584
+    },
+    "tokens": {
+      "attention_shape": [
+        8,
+        38,
+        513
+      ],
+      "max_deviation_from_uniform": 0.9939758777618408,
+      "mean_l1_distance_between_first_and_last_temporal_query": 3.4036133911286015e-08,
+      "max_masked_attention": 0.0,
+      "query_weight_grad_l2": 4.1577106202339564e-08,
+      "key_weight_grad_l2": 8.959862896062987e-08,
+      "value_weight_grad_l2": 5.097033500671387,
+      "visual_prefix_attention_mean": 8.45679970495894e-09,
+      "visual_prefix_attention_min": 9.343096339526073e-16,
+      "visual_prefix_attention_max": 8.606900081531421e-08,
+      "top_token_visual_fraction": 0.0,
+      "attention_entropy_mean": 1.0915139228018234e-06,
+      "valid_token_count_first_sample": 165
+    }
+  },
+  "protocol_match": "passed: same initialization, cache, data, temporal source, and training settings; context_mode alone differs",
+  "full_validation_attention": {
+    "samples": 92,
+    "patch_queries": 3496,
+    "top_token_indices_and_counts": [
+      [
+        3,
+        3496
+      ]
+    ],
+    "mean_max_token_weight": 0.9999991946212214,
+    "fraction_max_token_weight_above_0_99": 1.0,
+    "mean_first_last_query_l1": 3.393978143134146e-07,
+    "mean_visual_prefix_weight": 2.0358047064347157e-07
+  }
+}

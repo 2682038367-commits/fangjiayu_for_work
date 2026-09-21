@@ -34,6 +34,10 @@ class TemporalMultimodalAttentionFusion(nn.Module):
     This implements equations (14)--(19) in the paper: temporal Query,
     LLM-derived Key/Value, scaled dot-product attention, then an unconstrained
     linear projection over the concatenated temporal and retrieved features.
+    In global_broadcast mode all projected keys/values are identical: softmax
+    is necessarily uniform, so Q/K cannot select context by temporal patch.
+    This is a limitation of the paper's literal broadcast formulation, not a
+    working patch-selective attention mechanism.
     """
 
     def __init__(self, config: TMAFConfig | None = None) -> None:
@@ -86,6 +90,7 @@ class TemporalMultimodalAttentionFusion(nn.Module):
         if self.config.context_mode == "global_broadcast":
             # Literal reading of III-D. The global aggregation itself is not
             # specified: masked mean is an explicit reproduction assumption.
+            # Repeating this single vector makes the attention below uniform.
             weights = torch.ones_like(semantic[..., :1]) if llm_mask is None else llm_mask.unsqueeze(-1).float()
             if self.config.global_pooling == "mean":
                 global_context = (semantic * weights).sum(1, keepdim=True) / weights.sum(1, keepdim=True)
