@@ -18,6 +18,7 @@
     "repeat_reporting": "The paper states that all experiments were repeated five times and average values were used for final results."
   },
   "values": {
+    "FD001": 13.949,
     "FD002": 24.565,
     "FD003": 16.206,
     "FD004": 26.577

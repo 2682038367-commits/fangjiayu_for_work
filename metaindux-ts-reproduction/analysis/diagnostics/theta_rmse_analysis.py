@@ -35,6 +35,8 @@ class Source:
 
 # Every source below is a generation-seed × five-evaluator formal summary.
 SOURCES = (
+    Source("FD001", PROJECT / "results"
+           / "fd001_w48_public_code_evaluation_summary.csv"),
     Source("FD002", PROJECT / "results" / "frequency_threshold_validation"
            / "fd002_public_arm_seven_seeds_evaluation_summary.csv"),
     Source("FD003", PROJECT / "results"
@@ -177,7 +179,7 @@ def make_report(rows):
             f"{r2:+.3f} | {p2:.3f} | {rm:+.3f} | {pm:.3f} |")
     lines.extend([
         "",
-        "FD001 is excluded because its completed table is not the same formal "
+        "FD001 is now included because its completed table uses the same formal "
         "five-evaluator protocol. Fixed, soft, and STE arms are excluded by "
         "design rather than treated as cross-dataset correlation observations.",
     ])

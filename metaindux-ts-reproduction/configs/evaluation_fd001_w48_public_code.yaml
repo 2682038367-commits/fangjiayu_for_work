@@ -1,0 +1,22 @@
+experiment:
+  dataset: FD001
+  window_size: 48
+  generation_seeds: [3, 13, 23, 33, 43]
+  evaluator_seeds: [3, 13, 23, 33, 43]
+  fixed_split_seed: 20260915
+  synthetic_pattern: outputs/FD001_w48_seed{generation_seed}.npz
+
+evaluation:
+  evaluator_epochs: 35
+  device: cuda
+  deterministic_torch: true
+  resume: true
+  predictive_train_rate: 0.7
+  discriminator_train_rate: 0.8
+
+outputs:
+  raw_csv: results/fd001_w48_public_code_evaluation_raw.csv
+  summary_csv: results/fd001_w48_public_code_evaluation_summary.csv
+  split_indices: results/fd001_w48_public_code_split.npz
+  manifest: results/fd001_w48_public_code_manifest.json
+  evaluator_checkpoints: checkpoints/evaluators/fd001_w48_public_code

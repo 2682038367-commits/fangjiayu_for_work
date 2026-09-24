@@ -99,7 +99,7 @@ if paper_manifest_path.exists():
     paper_manifest = json.loads(paper_manifest_path.read_text(encoding="utf-8"))
     PAPER = {str(ds).upper(): float(value) for ds, value in paper_manifest["values"].items()}
     paper_source = paper_manifest["source_document"]
-    ck(set(PAPER) == {"FD002", "FD003", "FD004"}, "A5b 论文指标数据集", str(sorted(PAPER)))
+    ck(set(PAPER) == {"FD001", "FD002", "FD003", "FD004"}, "A5b 论文指标数据集", str(sorted(PAPER)))
     ck(paper_manifest["metric"].get("sequence_length") == 48,
        "A5b 论文指标窗口长度", "48")
     ck(paper_source.get("table") == "Table I" and paper_source.get("printed_page") == "18068",
@@ -109,7 +109,7 @@ else:
     PAPER = {}
     ck(False, "A5b 论文指标溯源文件", f"缺 {paper_manifest_path}")
 if rb_rows:
-    for ds in ("FD002", "FD003", "FD004"):
+    for ds in ("FD001", "FD002", "FD003", "FD004"):
         rows = [r for r in rb_rows if str(r["dataset"]).strip().upper() == ds]
         seeds = sorted(int(float(r["evaluator_seed"])) for r in rows)
         ck(len(rows) == 5 and seeds == EVAL_EXPECT, f"A5 {ds} 真实对照种子",
@@ -152,6 +152,7 @@ for p, h in odd.items():
     info("A7 异类（禁混用）", f"{p.relative_to(ROOT)}  {h[:12]}…")
 
 SUMMARY_FILES = {
+    "FD001 公开臂": (ROOT / "results" / "fd001_w48_public_code_evaluation_summary.csv", EVAL_EXPECT),
     "FD002 固定臂": (FWD / "fd002_fixed_025_seven_seeds_evaluation_summary.csv", GEN_EXPECT),
     "FD002 公开臂": (FWD / "fd002_public_arm_seven_seeds_evaluation_summary.csv", GEN_EXPECT),
     "FD003 公开臂": (ROOT / "results" / "fd003_w48_public_code_evaluation_summary.csv", EVAL_EXPECT),
@@ -259,7 +260,7 @@ else:
 
 real = {}
 if rb_rows:
-    for ds in ("FD002", "FD003", "FD004"):
+    for ds in ("FD001", "FD002", "FD003", "FD004"):
         v = np.array([fnum(r["rmse"]) for r in rb_rows
                       if str(r["dataset"]).strip().upper() == ds and fnum(r.get("rmse")) is not None])
         if len(v): real[ds] = v
@@ -272,20 +273,22 @@ if frozen:
         ck(close(v.std(ddof=1), expected["sd"], 5e-4), f"B4 {ds} 真实对照 SD",
            f"{v.std(ddof=1):.3f} (冻结 {expected['sd']:.3f})")
 
-SYN = {"FD002": None, "FD003": None, "FD004": None}
+SYN = {"FD001": None, "FD002": None, "FD003": None, "FD004": None}
+if "FD001 公开臂" in summary_rmse:
+    SYN["FD001"] = float(summary_rmse["FD001 公开臂"].mean())
 if "FD002 公开臂" in summary_rmse:
     SYN["FD002"] = float(summary_rmse["FD002 公开臂"].mean())
 if "FD003 公开臂" in summary_rmse:
     SYN["FD003"] = float(summary_rmse["FD003 公开臂"].mean())
 if "FD004 公开臂" in summary_rmse:
     SYN["FD004"] = float(summary_rmse["FD004 公开臂"].mean())
-FROZEN_REPRODUCTION_GAP = {"FD002": +3.730, "FD003": +4.511, "FD004": +6.700}
+FROZEN_REPRODUCTION_GAP = {"FD001": +1.409, "FD002": +3.730, "FD003": +4.511, "FD004": +6.700}
 for ds, exp in FROZEN_REPRODUCTION_GAP.items():
     if SYN[ds] is not None:
         g = SYN[ds] - PAPER[ds]
         ck(close(g, exp, 5e-3), f"B5 {ds} 正式复现差距", f"{g:+.3f} (冻结 {exp:+.3f})")
 
-FROZEN_GEN = {"FD002": +4.911, "FD003": +5.027, "FD004": +5.370}
+FROZEN_GEN = {"FD001": +1.597, "FD002": +4.911, "FD003": +5.027, "FD004": +5.370}
 for ds, exp in FROZEN_GEN.items():
     if ds in real and SYN[ds] is not None:
         g = SYN[ds] - real[ds].mean()
@@ -343,7 +346,7 @@ if all(v is not None for v in fix_rmse + pub_rmse + fix_ds + pub_ds):
     ck(close(stats.ttest_1samp(dD2, 0).pvalue, 0.305, 5e-2), "C3b 剔 seed53 DS p",
        f"{stats.ttest_1samp(dD2, 0).pvalue:.4f} (冻结 0.305)")
 
-if len(real) == 3:
+if len(real) == 4:
     info("C4 跨论文协议层", "不可识别：论文未报告真实数据训练基线；不计算 Q/I² 或跨论文 p 值")
 
 # ---------------------------------------------------------------- 汇总

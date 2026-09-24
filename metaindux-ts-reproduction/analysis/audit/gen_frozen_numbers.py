@@ -47,6 +47,7 @@ SYNTHETIC_SUMMARIES = {
     / "fd002_fixed_025_seven_seeds_evaluation_summary.csv",
     "FD002_public": PROJECT / "results" / "frequency_threshold_validation"
     / "fd002_public_arm_seven_seeds_evaluation_summary.csv",
+    "FD001_public": PROJECT / "results" / "fd001_w48_public_code_evaluation_summary.csv",
     "FD003_public": PROJECT / "results" / "fd003_w48_public_code_evaluation_summary.csv",
     "FD004_public": PROJECT / "results" / "fd004_w48_public_code_evaluation_summary.csv",
 }
@@ -140,7 +141,7 @@ def read_real_baseline(path: Path) -> tuple[dict[str, np.ndarray], dict]:
     """Read the canonical local TRTR baseline, enforcing one row per evaluator seed."""
     if not path.exists():
         raise FileNotFoundError(f"缺少真实数据基线：{path}")
-    datasets = ("FD002", "FD003", "FD004")
+    datasets = ("FD001", "FD002", "FD003", "FD004")
     values: dict[str, dict[int, float]] = {ds: {} for ds in datasets}
     with path.open(newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
@@ -168,7 +169,7 @@ def read_paper_predictive_scores(path: Path) -> tuple[dict[str, float], dict]:
         raise FileNotFoundError(f"缺少论文指标溯源文件：{path}")
     manifest = json.loads(path.read_text(encoding="utf-8"))
     values = {str(ds).upper(): float(value) for ds, value in manifest["values"].items()}
-    required = {"FD002", "FD003", "FD004"}
+    required = {"FD001", "FD002", "FD003", "FD004"}
     if set(values) != required:
         raise ValueError(f"{path.name} values datasets {sorted(values)} != {sorted(required)}")
     source = dict(manifest["source_document"])
@@ -225,6 +226,7 @@ def build() -> dict:
     out: dict = {}
     fx_values, fx_source = read_metric_summary(SYNTHETIC_SUMMARIES["FD002_fixed_theta025"], GEN_SEEDS, "rmse")
     pb_values, pb_source = read_metric_summary(SYNTHETIC_SUMMARIES["FD002_public"], GEN_SEEDS, "rmse")
+    fd001_values, fd001_source = read_metric_summary(SYNTHETIC_SUMMARIES["FD001_public"], EVAL_SEEDS, "rmse")
     fd003_values, fd003_source = read_metric_summary(SYNTHETIC_SUMMARIES["FD003_public"], EVAL_SEEDS, "rmse")
     fd004_values, fd004_source = read_metric_summary(SYNTHETIC_SUMMARIES["FD004_public"], EVAL_SEEDS, "rmse")
     fx_ds, fx_ds_source = read_metric_summary(SYNTHETIC_SUMMARIES["FD002_fixed_theta025"], GEN_SEEDS,
@@ -319,12 +321,12 @@ def build() -> dict:
     }
 
     # ---- 3. 可观测比较：论文最终生成结果、本地生成结果、本地真实基线 ----
-    synth_pub = {"FD002": pb_values, "FD003": fd003_values, "FD004": fd004_values}
-    synth_sources = {"FD002": pb_source, "FD003": fd003_source, "FD004": fd004_source}
-    cond = {"FD002": "6工况/2故障", "FD003": "1工况/1故障", "FD004": "6工况/2故障"}
+    synth_pub = {"FD001": fd001_values, "FD002": pb_values, "FD003": fd003_values, "FD004": fd004_values}
+    synth_sources = {"FD001": fd001_source, "FD002": pb_source, "FD003": fd003_source, "FD004": fd004_source}
+    cond = {"FD001": "1工况/1故障", "FD002": "6工况/2故障", "FD003": "1工况/1故障", "FD004": "6工况/2故障"}
 
     comparisons = {}
-    for ds in ("FD002", "FD003", "FD004"):
+    for ds in ("FD001", "FD002", "FD003", "FD004"):
         v = real[ds]
         n = len(v)
         mean = float(v.mean())
@@ -452,12 +454,14 @@ def self_check(out: dict) -> list[str]:
 
     d = out["observable_comparisons"]
     near(d["FD002"]["real_baseline"]["mean"], 23.384, 1e-3, "FD002 真实对照均值")
+    near(d["FD001"]["reproduction_gap_vs_published_generated_point_estimate"], 1.409, 1e-3, "FD001 正式复现差距")
     near(d["FD002"]["reproduction_gap_vs_published_generated_point_estimate"], 3.729, 1e-3, "FD002 正式复现差距")
     near(d["FD003"]["reproduction_gap_vs_published_generated_point_estimate"], 4.511, 1e-3, "FD003 正式复现差距")
     near(d["FD004"]["reproduction_gap_vs_published_generated_point_estimate"], 6.700, 1e-3, "FD004 正式复现差距")
     near(d["FD002"]["local_synthetic_data_penalty_vs_local_real_baseline"], 4.911, 1e-3, "FD002 本地生成数据惩罚")
     near(d["FD003"]["local_synthetic_data_penalty_vs_local_real_baseline"], 5.027, 2e-3, "FD003 本地生成数据惩罚")
     near(d["FD004"]["local_synthetic_data_penalty_vs_local_real_baseline"], 5.370, 2e-3, "FD004 本地生成数据惩罚")
+    near(d["FD001"]["local_synthetic_data_penalty_vs_local_real_baseline"], 1.597, 2e-3, "FD001 本地生成数据惩罚")
 
     cv = out["cross_validation"]
     if not cv["match"]:

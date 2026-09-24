@@ -21,6 +21,7 @@ import numpy as np
 PROJECT = Path(__file__).resolve().parents[2]
 PAPER_METRICS_MANIFEST = PROJECT / "docs" / "provenance" / "paper_predictive_scores_w48.json"
 SYNTHETIC_SUMMARY = {
+    "FD001": PROJECT / "results" / "fd001_w48_public_code_evaluation_summary.csv",
     "FD002": PROJECT / "results" / "frequency_threshold_validation"
     / "fd002_public_arm_seven_seeds_evaluation_summary.csv",
     "FD003": PROJECT / "results" / "fd003_w48_public_code_evaluation_summary.csv",
@@ -33,7 +34,7 @@ def read_paper_generated_rmse(path: Path):
     with path.open(encoding="utf-8") as handle:
         values = json.load(handle)["values"]
     result = {str(dataset).upper(): float(value) for dataset, value in values.items()}
-    if set(result) != {"FD002", "FD003", "FD004"}:
+    if set(result) != {"FD001", "FD002", "FD003", "FD004"}:
         raise ValueError(f"unexpected paper metric datasets: {sorted(result)}")
     return result
 
@@ -62,13 +63,14 @@ def read_real_baselines(path: Path, datasets):
 
 def main():
     paper_generated_rmse = read_paper_generated_rmse(PAPER_METRICS_MANIFEST)
-    real = read_real_baselines(REAL_BASELINE, paper_generated_rmse)
+    datasets = ("FD001", "FD002", "FD003", "FD004")
+    real = read_real_baselines(REAL_BASELINE, datasets)
     print("可识别比较：论文生成结果、本地生成结果与本地真实数据基线")
     print("=" * 112)
     print(f"{'数据集':<8}{'论文生成点估计':>15}{'本地生成均值':>14}{'本地真实均值':>14}"
           f"{'正式复现差距':>14}{'本地生成数据惩罚':>18}")
     print("-" * 112)
-    for dataset in ("FD002", "FD003", "FD004"):
+    for dataset in datasets:
         synthetic = read_synthetic_means(SYNTHETIC_SUMMARY[dataset])
         local_synthetic = float(synthetic.mean())
         local_real = float(real[dataset].mean())

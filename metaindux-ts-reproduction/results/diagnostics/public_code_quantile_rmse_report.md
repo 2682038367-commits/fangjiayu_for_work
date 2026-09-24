@@ -6,11 +6,12 @@ Scope: `hard_random_quantile` public-code checkpoints only. Every RMSE is the me
 
 | Dataset | n | rho(theta1, RMSE) | p | rho(theta2, RMSE) | p | rho(mean theta, RMSE) | p |
 |---|---:|---:|---:|---:|---:|---:|---:|
+| FD001 | 5 | -0.600 | 0.350 | +0.100 | 0.950 | -0.600 | 0.350 |
 | FD002 | 7 | +0.143 | 0.783 | -0.643 | 0.139 | -0.464 | 0.302 |
 | FD003 | 5 | -0.600 | 0.350 | +0.100 | 0.950 | -0.600 | 0.350 |
 | FD004 | 5 | -0.200 | 0.783 | +0.300 | 0.683 | -0.200 | 0.783 |
 
-FD001 is excluded because its completed table is not the same formal five-evaluator protocol. Fixed, soft, and STE arms are excluded by design rather than treated as cross-dataset correlation observations.
+FD001 is now included because its completed table uses the same formal five-evaluator protocol. Fixed, soft, and STE arms are excluded by design rather than treated as cross-dataset correlation observations.
 
 ## FD002 fixed theta=0.25 paired ablation
 

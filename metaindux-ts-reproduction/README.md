@@ -73,9 +73,10 @@ Run five seeds:
 The default configuration is `configs/paper_fd001.yaml`. The full four-dataset,
 three-window matrix is in `configs/paper_full.yaml`.
 
-The completed FD001 results are summarized in
-`results/fd001_paper_report.md`, with machine-readable values in
-`results/fd001_paper_metrics.csv`.
+FD001's public-code window-48 protocol is complete and included in the audited
+five-generation-seed result set. Its configuration is
+`configs/paper_fd001_w48_public_code.yaml`; raw and summary results are in
+`results/fd001_w48_public_code_evaluation_{raw,summary}.csv`.
 
 The completed FD002 window-48 results are summarized in
 `results/fd002_paper_report.md`, with machine-readable values in

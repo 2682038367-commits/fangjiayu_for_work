@@ -215,9 +215,9 @@
     }
   },
   "observable_comparisons": {
-    "FD002": {
-      "condition": "6工况/2故障",
-      "published_generated_data_rmse_point_estimate": 24.565,
+    "FD001": {
+      "condition": "1工况/1故障",
+      "published_generated_data_rmse_point_estimate": 13.949,
       "published_generated_data_source": {
         "title": "MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series",
         "venue": "IEEE Transactions on Neural Networks and Learning Systems, vol. 36, no. 10, October 2025",
@@ -228,7 +228,7 @@
         "table": "Table I",
         "table_title": "Comparison results ... in terms of discrimination scores and prediction scores on the CMAPSS dataset",
         "manifest_path": "docs/provenance/paper_predictive_scores_w48.json",
-        "manifest_sha256": "928304f581e8bceeff80e7eb06075e3791995e55bc3bfa239c3ad5ec8da394f3",
+        "manifest_sha256": "9f9d210ba8a8953e6ac8eed757c5955049e327d9da6a3d34ee7946225480af77",
         "metric": {
           "name": "Predictive Score",
           "unit": "RMSE",
@@ -242,7 +242,7 @@
       "real_baseline": {
         "source": {
           "path": "results/real_data_baseline_w48.csv",
-          "sha256": "d305473949b223a238cda4f72ecef7f32f7df549d26c6e8c5b3c35bf7eb00040",
+          "sha256": "971f80334fba6610bd1245454f4dd91bbb55bc9ca49492ee551758dc4d1ce827",
           "evaluator_seeds": [
             3,
             13,
@@ -251,6 +251,93 @@
             43
           ],
           "datasets": [
+            "FD001",
+            "FD002",
+            "FD003",
+            "FD004"
+          ]
+        },
+        "per_seed": [
+          13.901539928991344,
+          13.104860174266026,
+          13.912745557766971,
+          14.110103139172091,
+          13.773161365983004
+        ],
+        "seeds": [
+          3,
+          13,
+          23,
+          33,
+          43
+        ],
+        "n": 5,
+        "mean": 13.76,
+        "sd": 0.386,
+        "sem": 0.173
+      },
+      "local_generated_data": {
+        "definition": "本地公开臂生成数据训练的预测器表现",
+        "source": {
+          "path": "results/fd001_w48_public_code_evaluation_summary.csv",
+          "sha256": "33c20f62efc444af225e4e8ab8e87875a98f6b2d63f4b407fbec4653de27ef08",
+          "generation_seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "aggregate_rmse": 15.357961432807922
+        },
+        "synth_mean_public": 15.358,
+        "synth_sd_public": 1.366
+      },
+      "reproduction_gap_vs_published_generated_point_estimate": 1.409,
+      "local_synthetic_data_penalty_vs_local_real_baseline": 1.597,
+      "unobserved_paper_quantities": {
+        "paper_real_data_baseline": "unknown: paper does not report it",
+        "paper_synthetic_data_penalty_vs_paper_real_baseline": "unknown",
+        "protocol_difference_paper_real_minus_local_real": "unknown"
+      }
+    },
+    "FD002": {
+      "condition": "6工况/2故障",
+      "published_generated_data_rmse_point_estimate": 24.565,
+      "published_generated_data_source": {
+        "title": "MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series",
+        "venue": "IEEE Transactions on Neural Networks and Learning Systems, vol. 36, no. 10, October 2025",
+        "local_pdf_path_at_audit": "/home/cw_boe/桌面/论文复现/MetaIndux-TS_Frequency-Aware_AIGC_Foundation_Model_for_Industrial_Time_Series.pdf",
+        "pdf_sha256": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+        "pdf_page": 7,
+        "printed_page": "18068",
+        "table": "Table I",
+        "table_title": "Comparison results ... in terms of discrimination scores and prediction scores on the CMAPSS dataset",
+        "manifest_path": "docs/provenance/paper_predictive_scores_w48.json",
+        "manifest_sha256": "9f9d210ba8a8953e6ac8eed757c5955049e327d9da6a3d34ee7946225480af77",
+        "metric": {
+          "name": "Predictive Score",
+          "unit": "RMSE",
+          "model": "MetaIndux-TS",
+          "sequence_length": 48,
+          "interpretation": "The paper states that predictive score is the RMSE between predicted and true values.",
+          "repeat_reporting": "The paper states that all experiments were repeated five times and average values were used for final results."
+        },
+        "audit_note": "These are published generated-data predictive-score point estimates, not paper real-data-training baselines."
+      },
+      "real_baseline": {
+        "source": {
+          "path": "results/real_data_baseline_w48.csv",
+          "sha256": "971f80334fba6610bd1245454f4dd91bbb55bc9ca49492ee551758dc4d1ce827",
+          "evaluator_seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "datasets": [
+            "FD001",
             "FD002",
             "FD003",
             "FD004"
@@ -320,7 +407,7 @@
         "table": "Table I",
         "table_title": "Comparison results ... in terms of discrimination scores and prediction scores on the CMAPSS dataset",
         "manifest_path": "docs/provenance/paper_predictive_scores_w48.json",
-        "manifest_sha256": "928304f581e8bceeff80e7eb06075e3791995e55bc3bfa239c3ad5ec8da394f3",
+        "manifest_sha256": "9f9d210ba8a8953e6ac8eed757c5955049e327d9da6a3d34ee7946225480af77",
         "metric": {
           "name": "Predictive Score",
           "unit": "RMSE",
@@ -334,7 +421,7 @@
       "real_baseline": {
         "source": {
           "path": "results/real_data_baseline_w48.csv",
-          "sha256": "d305473949b223a238cda4f72ecef7f32f7df549d26c6e8c5b3c35bf7eb00040",
+          "sha256": "971f80334fba6610bd1245454f4dd91bbb55bc9ca49492ee551758dc4d1ce827",
           "evaluator_seeds": [
             3,
             13,
@@ -343,6 +430,7 @@
             43
           ],
           "datasets": [
+            "FD001",
             "FD002",
             "FD003",
             "FD004"
@@ -405,7 +493,7 @@
         "table": "Table I",
         "table_title": "Comparison results ... in terms of discrimination scores and prediction scores on the CMAPSS dataset",
         "manifest_path": "docs/provenance/paper_predictive_scores_w48.json",
-        "manifest_sha256": "928304f581e8bceeff80e7eb06075e3791995e55bc3bfa239c3ad5ec8da394f3",
+        "manifest_sha256": "9f9d210ba8a8953e6ac8eed757c5955049e327d9da6a3d34ee7946225480af77",
         "metric": {
           "name": "Predictive Score",
           "unit": "RMSE",
@@ -419,7 +507,7 @@
       "real_baseline": {
         "source": {
           "path": "results/real_data_baseline_w48.csv",
-          "sha256": "d305473949b223a238cda4f72ecef7f32f7df549d26c6e8c5b3c35bf7eb00040",
+          "sha256": "971f80334fba6610bd1245454f4dd91bbb55bc9ca49492ee551758dc4d1ce827",
           "evaluator_seeds": [
             3,
             13,
@@ -428,6 +516,7 @@
             43
           ],
           "datasets": [
+            "FD001",
             "FD002",
             "FD003",
             "FD004"

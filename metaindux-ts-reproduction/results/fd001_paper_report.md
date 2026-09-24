@@ -1,5 +1,11 @@
 # MetaIndux-TS FD001 paper-aligned reproduction
 
+> **Historical built-in-evaluator report.** The finalized FD001 result uses the
+> fixed-split, five-evaluator protocol in
+> `fd001_w48_public_code_evaluation_summary.csv` and is frozen in
+> `results/frozen_numbers.json`. Do not use the single built-in evaluation
+> numbers below for the cross-dataset main table.
+
 ## Protocol
 
 - Dataset: C-MAPSS FD001

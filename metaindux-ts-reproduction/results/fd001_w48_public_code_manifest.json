@@ -1,0 +1,51 @@
+{
+  "status": "complete",
+  "config": {
+    "experiment": {
+      "dataset": "FD001",
+      "window_size": 48,
+      "generation_seeds": [
+        3,
+        13,
+        23,
+        33,
+        43
+      ],
+      "evaluator_seeds": [
+        3,
+        13,
+        23,
+        33,
+        43
+      ],
+      "fixed_split_seed": 20260915,
+      "synthetic_pattern": "outputs/FD001_w48_seed{generation_seed}.npz"
+    },
+    "evaluation": {
+      "evaluator_epochs": 35,
+      "device": "cuda",
+      "deterministic_torch": true,
+      "resume": true,
+      "predictive_train_rate": 0.7,
+      "discriminator_train_rate": 0.8
+    },
+    "outputs": {
+      "raw_csv": "results/fd001_w48_public_code_evaluation_raw.csv",
+      "summary_csv": "results/fd001_w48_public_code_evaluation_summary.csv",
+      "split_indices": "results/fd001_w48_public_code_split.npz",
+      "manifest": "results/fd001_w48_public_code_manifest.json",
+      "evaluator_checkpoints": "checkpoints/evaluators/fd001_w48_public_code"
+    }
+  },
+  "sample_count": 15931,
+  "predictive_train_count": 11151,
+  "predictive_dev_count": 4780,
+  "discriminator_train_count_per_class": 12744,
+  "discriminator_test_count_per_class": 3187,
+  "split_sha256": "cefc8ff423d354cd0f9efd562fad1c97fa92d59d2820bc467c878c93969e1a2f",
+  "torch": "2.1.2+cu121",
+  "torch_cuda": "12.1",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "evaluation_count": 25
+}
