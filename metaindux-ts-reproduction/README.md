@@ -1,5 +1,24 @@
 # MetaIndux-TS reproduction
 
+> Status: the window-48 reproduction and its local generated-vs-real baseline diagnostic are frozen.
+> Do not mix historical diagnostic outputs with the finalized public-code
+> comparison. The authoritative numerical record is
+> `results/frozen_numbers.json`; the supporting reports are in
+> `docs/conclusions/final/`.
+
+## Project map
+
+- `upstream/`: pinned author source snapshot with documented minimal
+  reproduction patches.
+- `scripts/`: core data, generation, and evaluation entry points.
+- `configs/`: executable configurations; kept flat because provenance records
+  reference their exact paths.
+- `analysis/`: project-owned audit, diagnostic, and historical helper code.
+- `results/`: finalized tables and small machine-readable results. The one
+  incompatible legacy FD002 split is isolated under
+  `results/_deprecated_incompatible_split/`.
+- `docs/`: conclusions, figures, and handoff provenance.
+
 This directory contains a paper-aligned reproduction environment for
 MetaIndux-TS. The source snapshot is in `upstream/`, with minimal patches so
 command-line seeds, batch size, optimizer, beta schedule, and output paths are
@@ -105,8 +124,22 @@ TF_ENABLE_ONEDNN_OPTS=0 TF_DETERMINISTIC_OPS=1 \
 ```
 
 Evaluation has resume enabled and writes one row after every evaluator run.
-The generation runner records each best checkpoint's raw and effective learned
-thresholds in its metrics JSON.
+The generation runner records each best checkpoint's raw parameter and
+normalized-energy threshold in its metrics JSON. These values are not a
+frequency-drop percentage.
+
+New sampling runs also record `frequency_mask_statistics` for every spectral
+module. The cross-mode field is `mask_drop_ratio`: the zero fraction for a
+binary mask and `mean(1-mask)` (mean attenuation) for a soft mask. Analyse it
+with:
+
+```bash
+.venv/bin/python analysis/diagnostics/theta_rmse_analysis.py
+```
+
+Legacy checkpoints do not contain the intermediate DDPM masks, so their exact
+historical drop ratios require sampling to be repeated; they are never inferred
+from the threshold parameter alone.
 
 ## Binary-forward STE run
 

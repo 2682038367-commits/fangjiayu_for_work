@@ -1,0 +1,12 @@
+# FD002 真实数据对照专用配置
+# split_indices 刻意指向七种子评估用的同一划分，保证归因恒等式成立
+evaluation:
+  evaluator_epochs: 35
+  device: cuda
+  deterministic_torch: true
+  resume: false
+  predictive_train_rate: 0.7
+  discriminator_train_rate: 0.8
+
+outputs:
+  split_indices: results/frequency_threshold_validation/fd002_fixed_025_seven_seeds_split.npz

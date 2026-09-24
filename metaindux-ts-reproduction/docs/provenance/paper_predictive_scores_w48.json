@@ -1,0 +1,26 @@
+{
+  "source_document": {
+    "title": "MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series",
+    "venue": "IEEE Transactions on Neural Networks and Learning Systems, vol. 36, no. 10, October 2025",
+    "local_pdf_path_at_audit": "/home/cw_boe/桌面/论文复现/MetaIndux-TS_Frequency-Aware_AIGC_Foundation_Model_for_Industrial_Time_Series.pdf",
+    "pdf_sha256": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+    "pdf_page": 7,
+    "printed_page": "18068",
+    "table": "Table I",
+    "table_title": "Comparison results ... in terms of discrimination scores and prediction scores on the CMAPSS dataset"
+  },
+  "metric": {
+    "name": "Predictive Score",
+    "unit": "RMSE",
+    "model": "MetaIndux-TS",
+    "sequence_length": 48,
+    "interpretation": "The paper states that predictive score is the RMSE between predicted and true values.",
+    "repeat_reporting": "The paper states that all experiments were repeated five times and average values were used for final results."
+  },
+  "values": {
+    "FD002": 24.565,
+    "FD003": 16.206,
+    "FD004": 26.577
+  },
+  "audit_note": "These are published generated-data predictive-score point estimates, not paper real-data-training baselines."
+}

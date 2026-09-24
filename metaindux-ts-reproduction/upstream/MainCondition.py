@@ -3,7 +3,10 @@ import os
 import json
 from pathlib import Path
 #os.environ["CUDA_VISIBLE_DEVICES"] = "3"
-from TrainCondition import train, sample, collect_frequency_thresholds, UNet1D_fre
+from TrainCondition import (
+    train, sample, collect_frequency_thresholds,
+    merge_frequency_threshold_observations, UNet1D_fre,
+)
 import sys
 from data.CMAPSSDataset import CMAPSSDataset
 import wandb
@@ -70,9 +73,11 @@ if __name__ == '__main__':
             'frequency_thresholds': getattr(args, 'frequency_thresholds', []),
         }, indent=2), encoding='utf-8')
     if args.state == 'eval':
+        stored_frequency_thresholds = []
         if generation_path and generation_path.is_file():
             for key, value in json.loads(generation_path.read_text(encoding='utf-8')).items():
                 setattr(args, key, value)
+            stored_frequency_thresholds = getattr(args, 'frequency_thresholds', [])
         elif args.loss_history_path and Path(args.loss_history_path).is_file():
             # Legacy failed runs have no stage record. Recover loss/epoch only;
             # do not invent training or sampling timings.
@@ -89,7 +94,8 @@ if __name__ == '__main__':
                 frequency_mask_temperature=args.frequency_mask_temperature,
             )
             model.load_state_dict(torch.load(args.model_path, map_location='cpu', weights_only=True))
-            args.frequency_thresholds = collect_frequency_thresholds(model)
+            args.frequency_thresholds = merge_frequency_threshold_observations(
+                collect_frequency_thresholds(model), stored_frequency_thresholds)
             del model
     if args.state == "eval" or args.state == "all" or args.state == "sample":
         syn_dataset = np.load(args.syndata_path)
@@ -137,6 +143,7 @@ if __name__ == '__main__':
                 'frequency_threshold_init': float(args.frequency_threshold_init),
                 'frequency_mask_temperature': float(args.frequency_mask_temperature),
                 'learned_frequency_thresholds': getattr(args, 'frequency_thresholds', []),
+                'frequency_mask_statistics': getattr(args, 'frequency_thresholds', []),
             }
             metrics_path.write_text(json.dumps(metrics, indent=2), encoding='utf-8')
         wandb.finish()

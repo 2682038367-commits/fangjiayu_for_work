@@ -18,3 +18,7 @@ upstream/data/train_*.txt
 upstream/data/test_*.txt
 upstream/data/RUL_*.txt
 data/raw/
+
+# Local-only cleanup and provenance holding areas.
+archive/
+**/__pycache__/

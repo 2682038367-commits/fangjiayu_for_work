@@ -1,0 +1,520 @@
+{
+  "_meta": {
+    "project": "MetaIndux-TS reproduction (TNNLS 2025), C-MAPSS FD001-FD004, window=48",
+    "purpose": "冻结数字的唯一权威源。引用数字请从此文件取，不要在 md 之间互抄。",
+    "generated_by": "analysis/audit/gen_frozen_numbers.py",
+    "statistical_unit": "generation_seed (n=7)；5 个 evaluator seed 先按 gen 取均值",
+    "alpha": 0.05,
+    "two_sided": true,
+    "rule": "禁止挑种子；seed 53 的离群必须如实报告，不得剔除"
+  },
+  "fd002_seven_seed_paired": {
+    "dataset": "FD002",
+    "generation_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43,
+      53,
+      63
+    ],
+    "evaluator_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "n_cells": 35,
+    "arm_fixed_theta0.25": {
+      "synth_rmse_per_gen": [
+        27.350266569971204,
+        24.022608653969804,
+        24.255545769997894,
+        25.322801822435128,
+        30.45776318013541,
+        24.2002676118263,
+        26.226433148819968
+      ],
+      "source": {
+        "path": "results/frequency_threshold_validation/fd002_fixed_025_seven_seeds_evaluation_summary.csv",
+        "sha256": "e7fe8f9b346e3546c27dba70740730169d0f77262be694340d37cbbe5ee459e1",
+        "generation_seeds": [
+          3,
+          13,
+          23,
+          33,
+          43,
+          53,
+          63
+        ],
+        "aggregate_rmse": 25.976526679593672
+      },
+      "mean": 25.977,
+      "sd_across_gen": 2.324,
+      "cv_pct": 8.94,
+      "worst": 30.458,
+      "best": 24.023
+    },
+    "arm_public_random_theta": {
+      "synth_rmse_per_gen": [
+        26.990459387288883,
+        23.54035931673415,
+        26.849480240864455,
+        25.212566476800994,
+        31.36615502966314,
+        35.30436647425945,
+        28.799060911401376
+      ],
+      "source": {
+        "path": "results/frequency_threshold_validation/fd002_public_arm_seven_seeds_evaluation_summary.csv",
+        "sha256": "8871d7705a5992435532b3a81feccb6b9fd127b6c16411076d56f3607645dadc",
+        "generation_seeds": [
+          3,
+          13,
+          23,
+          33,
+          43,
+          53,
+          63
+        ],
+        "aggregate_rmse": 28.294635405287494
+      },
+      "mean": 28.295,
+      "sd_across_gen": 3.973,
+      "cv_pct": 14.04,
+      "worst": 35.304,
+      "best": 23.54
+    },
+    "rmse": {
+      "n": 7,
+      "per_seed": [
+        0.3598,
+        0.4822,
+        -2.5939,
+        0.1102,
+        -0.9084,
+        -11.1041,
+        -2.5726
+      ],
+      "mean": -2.3181,
+      "median": -0.9084,
+      "sd": 4.0872,
+      "sem": 1.5448,
+      "t": -1.501,
+      "df": 6,
+      "p_t": 0.1841,
+      "p_wilcoxon": 0.2188,
+      "ci95": [
+        -6.0982,
+        1.4619
+      ],
+      "cohen_dz": -0.567,
+      "n_positive": 3,
+      "n_negative": 4,
+      "significant_at_05": false
+    },
+    "discriminative_score": {
+      "n": 7,
+      "per_seed": [
+        0.0769,
+        0.0176,
+        -0.376,
+        0.0127,
+        -0.1523,
+        -0.3835,
+        -0.0421
+      ],
+      "mean": -0.121,
+      "median": -0.0421,
+      "sd": 0.1903,
+      "sem": 0.0719,
+      "t": -1.682,
+      "df": 6,
+      "p_t": 0.1436,
+      "p_wilcoxon": 0.2969,
+      "ci95": [
+        -0.297,
+        0.0551
+      ],
+      "cohen_dz": -0.636,
+      "n_positive": 3,
+      "n_negative": 4,
+      "significant_at_05": false,
+      "sources": {
+        "fixed_theta025": {
+          "path": "results/frequency_threshold_validation/fd002_fixed_025_seven_seeds_evaluation_summary.csv",
+          "sha256": "e7fe8f9b346e3546c27dba70740730169d0f77262be694340d37cbbe5ee459e1",
+          "generation_seeds": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63
+          ],
+          "aggregate_discriminative_score": 0.14110667858862372
+        },
+        "public_random_theta": {
+          "path": "results/frequency_threshold_validation/fd002_public_arm_seven_seeds_evaluation_summary.csv",
+          "sha256": "8871d7705a5992435532b3a81feccb6b9fd127b6c16411076d56f3607645dadc",
+          "generation_seeds": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63
+          ],
+          "aggregate_discriminative_score": 0.26207785955017543
+        }
+      }
+    },
+    "verdict": "两臂无可检出差异（两项主指标均不显著，方向与符号分布均接近随机）"
+  },
+  "robustness": {
+    "leave_one_cell_out": {
+      "source": {
+        "path": "results/frequency_threshold_validation/fd002_seven_seeds_paired.csv",
+        "sha256": "c0d8174b5f69e5a6e6317e4e669ee33bc4e4d90f46093afcf328ec59b33e316c",
+        "n_cells": 35
+      },
+      "method": "逐格剔除 35 个 (generation_seed, evaluator_seed) 配对单元；每次按 generation seed 重新聚合后做配对 t 检验",
+      "rmse_p_range": [
+        0.1725,
+        0.1926
+      ],
+      "ds_p_range": [
+        0.1246,
+        0.1588
+      ],
+      "baseline_p": {
+        "rmse": 0.1841,
+        "ds": 0.1436
+      },
+      "any_cross_0.05": false
+    },
+    "drop_seed53": {
+      "rmse_p": 0.2025,
+      "ds_p": 0.3049,
+      "note": "剔除离群 seed 53 后更不显著 → 不显著不是由该点制造的"
+    },
+    "ds_single_cell_drift": {
+      "status": "historical observation; excluded from formal frozen conclusions",
+      "note": "旧版三种子文件不是当前 7×5 正式评估的同一输入，不能作为主结论的可复算证据。"
+    },
+    "dispersion_exploratory": {
+      "variance_ratio_public_over_fixed": 2.92,
+      "levene_brown_forsythe_p": 0.3641,
+      "levene_p_without_seed53": 0.8492,
+      "worst_case_gap_public_minus_fixed": 4.847,
+      "status": "探索性，未达显著，且完全由 seed 53 单点驱动，不得写成结论"
+    }
+  },
+  "observable_comparisons": {
+    "FD002": {
+      "condition": "6工况/2故障",
+      "published_generated_data_rmse_point_estimate": 24.565,
+      "published_generated_data_source": {
+        "title": "MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series",
+        "venue": "IEEE Transactions on Neural Networks and Learning Systems, vol. 36, no. 10, October 2025",
+        "local_pdf_path_at_audit": "/home/cw_boe/桌面/论文复现/MetaIndux-TS_Frequency-Aware_AIGC_Foundation_Model_for_Industrial_Time_Series.pdf",
+        "pdf_sha256": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+        "pdf_page": 7,
+        "printed_page": "18068",
+        "table": "Table I",
+        "table_title": "Comparison results ... in terms of discrimination scores and prediction scores on the CMAPSS dataset",
+        "manifest_path": "docs/provenance/paper_predictive_scores_w48.json",
+        "manifest_sha256": "928304f581e8bceeff80e7eb06075e3791995e55bc3bfa239c3ad5ec8da394f3",
+        "metric": {
+          "name": "Predictive Score",
+          "unit": "RMSE",
+          "model": "MetaIndux-TS",
+          "sequence_length": 48,
+          "interpretation": "The paper states that predictive score is the RMSE between predicted and true values.",
+          "repeat_reporting": "The paper states that all experiments were repeated five times and average values were used for final results."
+        },
+        "audit_note": "These are published generated-data predictive-score point estimates, not paper real-data-training baselines."
+      },
+      "real_baseline": {
+        "source": {
+          "path": "results/real_data_baseline_w48.csv",
+          "sha256": "d305473949b223a238cda4f72ecef7f32f7df549d26c6e8c5b3c35bf7eb00040",
+          "evaluator_seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "datasets": [
+            "FD002",
+            "FD003",
+            "FD004"
+          ]
+        },
+        "per_seed": [
+          24.566519523051262,
+          23.470597618197008,
+          23.359533396034312,
+          22.592104386414814,
+          22.928853091674327
+        ],
+        "seeds": [
+          3,
+          13,
+          23,
+          33,
+          43
+        ],
+        "n": 5,
+        "mean": 23.384,
+        "sd": 0.748,
+        "sem": 0.335
+      },
+      "local_generated_data": {
+        "definition": "本地公开臂生成数据训练的预测器表现",
+        "source": {
+          "path": "results/frequency_threshold_validation/fd002_public_arm_seven_seeds_evaluation_summary.csv",
+          "sha256": "8871d7705a5992435532b3a81feccb6b9fd127b6c16411076d56f3607645dadc",
+          "generation_seeds": [
+            3,
+            13,
+            23,
+            33,
+            43,
+            53,
+            63
+          ],
+          "aggregate_rmse": 28.294635405287494
+        },
+        "synth_mean_public": 28.295,
+        "synth_sd_public": 3.973
+      },
+      "reproduction_gap_vs_published_generated_point_estimate": 3.73,
+      "local_synthetic_data_penalty_vs_local_real_baseline": 4.911,
+      "unobserved_paper_quantities": {
+        "paper_real_data_baseline": "unknown: paper does not report it",
+        "paper_synthetic_data_penalty_vs_paper_real_baseline": "unknown",
+        "protocol_difference_paper_real_minus_local_real": "unknown"
+      },
+      "fixed_theta_025_local_ablation": {
+        "local_generated_data_rmse_mean": 25.977,
+        "reproduction_gap_vs_published_generated_point_estimate": 1.412,
+        "local_synthetic_data_penalty_vs_local_real_baseline": 2.593
+      }
+    },
+    "FD003": {
+      "condition": "1工况/1故障",
+      "published_generated_data_rmse_point_estimate": 16.206,
+      "published_generated_data_source": {
+        "title": "MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series",
+        "venue": "IEEE Transactions on Neural Networks and Learning Systems, vol. 36, no. 10, October 2025",
+        "local_pdf_path_at_audit": "/home/cw_boe/桌面/论文复现/MetaIndux-TS_Frequency-Aware_AIGC_Foundation_Model_for_Industrial_Time_Series.pdf",
+        "pdf_sha256": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+        "pdf_page": 7,
+        "printed_page": "18068",
+        "table": "Table I",
+        "table_title": "Comparison results ... in terms of discrimination scores and prediction scores on the CMAPSS dataset",
+        "manifest_path": "docs/provenance/paper_predictive_scores_w48.json",
+        "manifest_sha256": "928304f581e8bceeff80e7eb06075e3791995e55bc3bfa239c3ad5ec8da394f3",
+        "metric": {
+          "name": "Predictive Score",
+          "unit": "RMSE",
+          "model": "MetaIndux-TS",
+          "sequence_length": 48,
+          "interpretation": "The paper states that predictive score is the RMSE between predicted and true values.",
+          "repeat_reporting": "The paper states that all experiments were repeated five times and average values were used for final results."
+        },
+        "audit_note": "These are published generated-data predictive-score point estimates, not paper real-data-training baselines."
+      },
+      "real_baseline": {
+        "source": {
+          "path": "results/real_data_baseline_w48.csv",
+          "sha256": "d305473949b223a238cda4f72ecef7f32f7df549d26c6e8c5b3c35bf7eb00040",
+          "evaluator_seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "datasets": [
+            "FD002",
+            "FD003",
+            "FD004"
+          ]
+        },
+        "per_seed": [
+          15.85299138826806,
+          15.210722371044078,
+          15.632462644792835,
+          14.409961636816087,
+          17.346881836324307
+        ],
+        "seeds": [
+          3,
+          13,
+          23,
+          33,
+          43
+        ],
+        "n": 5,
+        "mean": 15.691,
+        "sd": 1.077,
+        "sem": 0.482
+      },
+      "local_generated_data": {
+        "definition": "本地公开臂生成数据训练的预测器表现",
+        "source": {
+          "path": "results/fd003_w48_public_code_evaluation_summary.csv",
+          "sha256": "7aef9ed422e7b3762fac4dfa3cb0d8cef15d74d78c528e5b315ea6c6e17178ca",
+          "generation_seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "aggregate_rmse": 20.717264949466202
+        },
+        "synth_mean_public": 20.717,
+        "synth_sd_public": 1.223
+      },
+      "reproduction_gap_vs_published_generated_point_estimate": 4.511,
+      "local_synthetic_data_penalty_vs_local_real_baseline": 5.027,
+      "unobserved_paper_quantities": {
+        "paper_real_data_baseline": "unknown: paper does not report it",
+        "paper_synthetic_data_penalty_vs_paper_real_baseline": "unknown",
+        "protocol_difference_paper_real_minus_local_real": "unknown"
+      }
+    },
+    "FD004": {
+      "condition": "6工况/2故障",
+      "published_generated_data_rmse_point_estimate": 26.577,
+      "published_generated_data_source": {
+        "title": "MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series",
+        "venue": "IEEE Transactions on Neural Networks and Learning Systems, vol. 36, no. 10, October 2025",
+        "local_pdf_path_at_audit": "/home/cw_boe/桌面/论文复现/MetaIndux-TS_Frequency-Aware_AIGC_Foundation_Model_for_Industrial_Time_Series.pdf",
+        "pdf_sha256": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+        "pdf_page": 7,
+        "printed_page": "18068",
+        "table": "Table I",
+        "table_title": "Comparison results ... in terms of discrimination scores and prediction scores on the CMAPSS dataset",
+        "manifest_path": "docs/provenance/paper_predictive_scores_w48.json",
+        "manifest_sha256": "928304f581e8bceeff80e7eb06075e3791995e55bc3bfa239c3ad5ec8da394f3",
+        "metric": {
+          "name": "Predictive Score",
+          "unit": "RMSE",
+          "model": "MetaIndux-TS",
+          "sequence_length": 48,
+          "interpretation": "The paper states that predictive score is the RMSE between predicted and true values.",
+          "repeat_reporting": "The paper states that all experiments were repeated five times and average values were used for final results."
+        },
+        "audit_note": "These are published generated-data predictive-score point estimates, not paper real-data-training baselines."
+      },
+      "real_baseline": {
+        "source": {
+          "path": "results/real_data_baseline_w48.csv",
+          "sha256": "d305473949b223a238cda4f72ecef7f32f7df549d26c6e8c5b3c35bf7eb00040",
+          "evaluator_seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "datasets": [
+            "FD002",
+            "FD003",
+            "FD004"
+          ]
+        },
+        "per_seed": [
+          28.60498701175861,
+          27.76453907457584,
+          28.14093703480557,
+          27.430369739115584,
+          27.59105254027057
+        ],
+        "seeds": [
+          3,
+          13,
+          23,
+          33,
+          43
+        ],
+        "n": 5,
+        "mean": 27.906,
+        "sd": 0.471,
+        "sem": 0.211
+      },
+      "local_generated_data": {
+        "definition": "本地公开臂生成数据训练的预测器表现",
+        "source": {
+          "path": "results/fd004_w48_public_code_evaluation_summary.csv",
+          "sha256": "a3cf591323d0271c0f5011a68a7aa9378e6e5bfbb63f1a73a349479e1070e4dd",
+          "generation_seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "aggregate_rmse": 33.276693576075914
+        },
+        "synth_mean_public": 33.277,
+        "synth_sd_public": 2.823
+      },
+      "reproduction_gap_vs_published_generated_point_estimate": 6.7,
+      "local_synthetic_data_penalty_vs_local_real_baseline": 5.37,
+      "unobserved_paper_quantities": {
+        "paper_real_data_baseline": "unknown: paper does not report it",
+        "paper_synthetic_data_penalty_vs_paper_real_baseline": "unknown",
+        "protocol_difference_paper_real_minus_local_real": "unknown"
+      }
+    }
+  },
+  "comparison_scope": {
+    "formal_reproduction_gap": "本地生成数据训练 RMSE − 论文生成数据训练 RMSE",
+    "local_synthetic_data_penalty": "本地生成数据训练 RMSE − 本地真实数据训练 RMSE",
+    "unidentifiable_protocol_difference": "论文真实数据训练 RMSE − 本地真实数据训练 RMSE；论文未报告真实数据基线",
+    "split_sha256_file_level": "0b4fd49c52054af9791723baa33f38af220de513813030a3f599374ca55ae8e9",
+    "split_sha256_manifest_level": "8c390ebfebf4cc3b18ff4b9e0cfa93c7b883e8d6a213364fc45d8bed80e82c76",
+    "sample_count": 41539,
+    "forbidden_split_sha256": "843652a3c5323a316944da5c6338be70353ec90009769d8f206167e17aca48df",
+    "forbidden_note": "results/fd002_evaluation_fixed_split.npz 是 11 个 FD002 划分里唯一的异类，凡由它产出的数字禁止与本报告的相减或合并"
+  },
+  "power_analysis": {
+    "rmse": {
+      "sd_all7": 4.087,
+      "mde_n7": 5.201,
+      "sd_without_seed53": 1.426,
+      "mde_n6_without_seed53": 2.046,
+      "observed_abs_delta": 2.318,
+      "seeds_needed_for_significance": 27
+    },
+    "ds": {
+      "sd_all7": 0.19,
+      "mde_n7": 0.242,
+      "observed_abs_delta": 0.121,
+      "seeds_needed_for_significance": 22
+    },
+    "note": "不显著 ≠ 无效应。n=7 的检出下限远高于实测效应量；按预注册不再补种子翻盘。"
+  },
+  "cross_validation": {
+    "arm_total_gap_difference": 2.318,
+    "paired_delta_mean_abs": 2.3181,
+    "match": true,
+    "note": "两条完全独立的计算路径（双臂总 gap 之差 vs 七种子配对 Δ 均值）撞出同一个数。audit_checklist.sh 的 B7 项即此检查；对不上说明链路某处被换过。"
+  },
+  "mandatory_limitations": [
+    "不得表述为『两臂等价』——只做了差异性检验，未做 TOST 等价性检验；以 ±1.0 RMSE 为等价界时 CI 远超边界。正确说法是『未能检出差异』。",
+    "seed 53 的 Δ=−11.104 必须如实报告，不得剔除。已验证剔除后结论不变（RMSE p 0.184→0.203），留着没有代价，藏着才是问题。",
+    "『未检出差异』不等于『机制无效』——n=7 的检出下限（RMSE 5.201）远高于实测效应量（2.318）。",
+    "论文未报告真实数据训练基线，因此协议层差异与论文生成数据相对论文真实数据的惩罚均不可识别；不得把本地真实基线与论文生成结果之差命名为协议层。"
+  ]
+}

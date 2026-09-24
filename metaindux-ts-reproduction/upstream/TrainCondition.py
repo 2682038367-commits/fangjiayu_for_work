@@ -41,7 +41,12 @@ def apply_fixed_frequency_threshold(model, threshold):
 
 
 def collect_frequency_thresholds(model):
-    """Return raw and effective threshold values from a loaded checkpoint."""
+    """Return threshold metadata and any observed forward-mask drop ratios.
+
+    A quantile fraction and a normalized-energy cutoff are not interchangeable.
+    The only cross-mode quantity is ``mask_drop_ratio``, measured from actual
+    forward masks while sampling.
+    """
     values = []
     for name, module in model.named_modules():
         parameter = getattr(module, 'threshold_param', None)
@@ -53,12 +58,61 @@ def collect_frequency_thresholds(model):
             float(effective().detach().cpu().item())
             if callable(effective) else raw_value
         )
-        values.append({
+        mode = getattr(module, 'mask_mode', 'unknown')
+        is_quantile = mode == 'hard_random_quantile'
+        item = {
             'module': name,
+            'mask_mode': mode,
             'raw': raw_value,
+            # Retained for compatibility with completed run JSON files.  Its
+            # semantics are now stated explicitly below.
             'effective': effective_value,
-        })
+            'threshold_parameter_semantics': (
+                'quantile_fraction' if is_quantile else 'unconstrained_raw_parameter'),
+            'threshold_value': None if is_quantile else effective_value,
+            'threshold_value_semantics': (
+                'dynamic_normalized_energy_quantile' if is_quantile
+                else 'normalized_energy_cutoff'),
+            'mask_drop_ratio': None,
+            'mask_drop_ratio_semantics': (
+                'fraction_of_forward_mask_elements_equal_to_zero'
+                if mode != 'soft_learnable_energy'
+                else 'mean_forward_attenuation_one_minus_soft_mask'),
+            'hard_drop_ratio': None,
+            'observation_scope': None,
+        }
+        statistics = getattr(module, 'mask_statistics', None)
+        observed = statistics() if callable(statistics) else None
+        if observed:
+            item.update(observed)
+            item['observation_scope'] = 'all_ddpm_sampling_forwards'
+        values.append(item)
     return values
+
+
+def enable_frequency_mask_statistics(model):
+    """Start per-module mask aggregation without changing forward values."""
+    for module in model.modules():
+        enable = getattr(module, 'enable_mask_statistics', None)
+        if callable(enable):
+            enable(True)
+
+
+def merge_frequency_threshold_observations(current, stored):
+    """Restore sampling observations when eval reloads an existing artifact."""
+    stored_by_module = {item.get('module'): item for item in (stored or [])}
+    observation_keys = {
+        'mask_drop_ratio', 'mask_drop_ratio_semantics', 'hard_drop_ratio',
+        'observed_mask_elements', 'observed_forward_calls',
+        'observed_threshold_mean', 'observed_threshold_min',
+        'observed_threshold_max', 'observation_scope',
+    }
+    for item in current:
+        previous = stored_by_module.get(item.get('module'), {})
+        if previous.get('mask_drop_ratio') is not None:
+            item.update({key: previous[key] for key in observation_keys
+                         if key in previous})
+    return current
 
 def train(args, train_data, train_label):
     device = args.device
@@ -209,6 +263,7 @@ def sample(args, train_label = None):
         print('loaded frequency thresholds:', args.frequency_thresholds)
         print("model load weight done.")
         net_model.eval()
+        enable_frequency_mask_statistics(net_model)
         diffusion = GaussianDiffusion1D_cls_free(
             net_model,
             seq_length=args.window_size,
@@ -230,6 +285,8 @@ def sample(args, train_label = None):
         elapsed_time = end_time - start_time
         print(f"经过的时间: {elapsed_time} 秒")
         args.sampling_seconds = elapsed_time
+        args.frequency_thresholds = collect_frequency_thresholds(net_model)
+        print('observed frequency mask statistics:', args.frequency_thresholds)
         wandb.run.summary['sampling_seconds'] = elapsed_time
         
         sampledata = sampledata.numpy()

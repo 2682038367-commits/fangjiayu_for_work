@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>θ 散点图：拿到数据后怎么读</title>
+<style>
+  :root{ --fg:#1a1a1a; --mut:#6b6b6b; --line:#e2e2e2; --warn:#b45309; --a:#4a7fb5; --b:#d97757; --c:#3d8b7d; }
+  *{box-sizing:border-box}
+  body{margin:0;padding:28px 24px 40px;
+       font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+       color:var(--fg);line-height:1.65;max-width:760px}
+  h1{font-size:19px;margin:0 0 6px}
+  .sub{font-size:12.5px;color:var(--mut);margin:0 0 18px}
+  .banner{background:#fff7ed;border-left:3px solid var(--warn);padding:10px 14px;
+          font-size:12.5px;margin:0 0 22px;border-radius:0 4px 4px 0}
+  .banner b{color:var(--warn)}
+  h2{font-size:14.5px;margin:26px 0 8px;padding-top:14px;border-top:1px solid var(--line)}
+  table{border-collapse:collapse;width:100%;font-size:12.5px;margin-top:8px}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+  th{background:#fafafa;font-weight:600}
+  td.n{text-align:right;font-variant-numeric:tabular-nums}
+  input{width:100%;border:none;background:transparent;font:inherit;color:var(--fg);padding:0}
+  input::placeholder{color:#c8c8c8}
+  code{background:#f4f4f4;padding:1.5px 5px;border-radius:3px;font-size:12px}
+  ul{margin:6px 0 0 0;padding-left:20px;font-size:13px}
+  li{margin:3px 0}
+  .note{font-size:12px;color:var(--mut);margin-top:8px}
+</style>
+</head>
+<body>
+
+<h1>θ 散点图：拿到数据后怎么读</h1>
+<p class="sub">MetaIndux-TS 复现 · 频率阈值与生成质量的关系</p>
+
+<div class="banner">
+  <b>本页是模板，不是结果。</b> 下面三个面板里的点是我编的示意数据，只用来说明
+  「拿到真实 θ 之后，散点会长成什么样、各自意味着什么」。真实的 θ 目前还没取出来——
+  项目里 7 个种子的 metadata 与 metrics 都没有记录它，需要从 checkpoint 权重里读。
+</div>
+
+<svg viewBox="0 0 660 276" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+  <style>
+    .tt{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+    .pt{font-size:12px;font-weight:600}
+    .pc{font-size:10.5px;font-weight:600}
+    .ax{font-size:9.5px;fill:#6b6b6b}
+    .cb{font-size:10px}
+    .an{font-size:9.5px;fill:#6b6b6b}
+  </style>
+
+  <!-- 面板1：无关 -->
+  <g>
+    <text class="tt pt" x="20" y="18" fill="#4a7fb5">结局 A：点云平铺，看不出关系</text>
+    <line x1="55" y1="160" x2="210" y2="160" stroke="#333" stroke-opacity=".45"/>
+    <line x1="55" y1="40" x2="55" y2="160" stroke="#333" stroke-opacity=".45"/>
+    <text class="tt ax" x="55" y="174">0</text><text class="tt ax" x="203" y="174">0.5</text>
+    <text class="tt ax" x="132" y="188" text-anchor="middle">θ（淘汰比例，越大滤得越狠）</text>
+    <text class="tt ax" x="48" y="44" text-anchor="end">0.5</text>
+    <text class="tt ax" x="48" y="160" text-anchor="end">0</text>
+    <g fill="#4a7fb5" fill-opacity=".8">
+      <circle cx="79.8" cy="49.6" r="4"/><circle cx="104.6" cy="133.6" r="4"/>
+      <circle cx="129.4" cy="64.0" r="4"/><circle cx="154.2" cy="124.0" r="4"/>
+      <circle cx="185.0" cy="90.4" r="4"/>
+    </g>
+    <text class="tt cb" x="20" y="208" fill="#1a1a1a">结论：θ 不是主因</text>
+    <text class="tt an" x="20" y="224">抽到什么值都差不多 → 跨种子不稳得去别处找</text>
+    <text class="tt an" x="20" y="238">（训练机制、checkpoint 选择规则优先）</text>
+  </g>
+
+  <!-- 面板2：单调 -->
+  <g>
+    <text class="tt pt" x="240" y="18" fill="#d97757">结局 B：单调上升</text>
+    <line x1="275" y1="160" x2="430" y2="160" stroke="#333" stroke-opacity=".45"/>
+    <line x1="275" y1="40" x2="275" y2="160" stroke="#333" stroke-opacity=".45"/>
+    <text class="tt ax" x="275" y="174">0</text><text class="tt ax" x="423" y="174">0.5</text>
+    <text class="tt ax" x="352" y="188" text-anchor="middle">θ</text>
+    <text class="tt ax" x="268" y="44" text-anchor="end">0.5</text>
+    <text class="tt ax" x="268" y="160" text-anchor="end">0</text>
+    <g fill="#d97757" fill-opacity=".85">
+      <circle cx="299.8" cy="136.0" r="4"/><circle cx="324.6" cy="119.2" r="4"/>
+      <circle cx="349.4" cy="100.0" r="4"/><circle cx="374.2" cy="80.8" r="4"/>
+      <circle cx="405.0" cy="52.0" r="4"/>
+    </g>
+    <line x1="292" y1="145" x2="415" y2="42" stroke="#d97757" stroke-opacity=".35" stroke-dasharray="4 3"/>
+    <text class="tt cb" x="240" y="208" fill="#1a1a1a">结论：θ 是主因，且方向明确</text>
+    <text class="tt an" x="240" y="224">滤得越狠越差 → 固定到较小值即可，</text>
+    <text class="tt an" x="240" y="238">「随机冻结」这条因果链可以写死了</text>
+  </g>
+
+  <!-- 面板3：U型 -->
+  <g>
+    <text class="tt pt" x="460" y="18" fill="#3d8b7d">结局 C：中间最优，两边都差</text>
+    <line x1="495" y1="160" x2="650" y2="160" stroke="#333" stroke-opacity=".45"/>
+    <line x1="495" y1="40" x2="495" y2="160" stroke="#333" stroke-opacity=".45"/>
+    <text class="tt ax" x="495" y="174">0</text><text class="tt ax" x="643" y="174">0.5</text>
+    <text class="tt ax" x="572" y="188" text-anchor="middle">θ</text>
+    <text class="tt ax" x="488" y="44" text-anchor="end">0.5</text>
+    <text class="tt ax" x="488" y="160" text-anchor="end">0</text>
+    <g fill="#3d8b7d" fill-opacity=".85">
+      <circle cx="519.8" cy="59.2" r="4"/><circle cx="544.6" cy="112.0" r="4"/>
+      <circle cx="572.5" cy="133.6" r="4"/><circle cx="600.4" cy="114.4" r="4"/>
+      <circle cx="625.0" cy="64.0" r="4"/>
+    </g>
+    <path d="M 512 50 Q 572 140 632 58" fill="none" stroke="#3d8b7d" stroke-opacity=".35" stroke-dasharray="4 3"/>
+    <text class="tt cb" x="460" y="208" fill="#1a1a1a">结论：存在最优区间</text>
+    <text class="tt an" x="460" y="224">固定成均值能削方差，但不保证逐种子改善</text>
+    <text class="tt an" x="460" y="238">（种子 13 固定后反而变差，正符合这一类）</text>
+  </g>
+
+  <text class="tt an" x="20" y="264">纵轴＝判别分数（越低越好）。示意点为虚构数据，仅用于演示三种形态的读法。</text>
+</svg>
+
+<h2>一个必须先定的口径：两个 θ 怎么办</h2>
+<p style="font-size:13px;margin:4px 0 0">
+  网络里有两个频率模块，各自一个 θ，所以每次实验抽到的是<b>一对数</b>。建议：
+</p>
+<ul>
+  <li><b>主图横轴用两个 θ 的均值</b>，点的标签里写出原始一对（如 <code>0.30/0.05</code>）</li>
+  <li>若均值看不出结构，再补一张「θ₁ 单独」「θ₂ 单独」的分面图——很可能只有某一个模块在起作用</li>
+  <li>不要只挑一个模块画：那是挑变量，会让结论失真</li>
+</ul>
+
+<h2>待填表（把这几列给我，我立刻出真图）</h2>
+<p style="font-size:12.5px;color:#6b6b6b;margin:4px 0 0">
+  FD002 判别分数跨度 0.099–0.499，样本最大，是最优先的数据集；FD004 五项齐全，其次。
+</p>
+
+<table>
+  <tr><th style="width:60px">数据集</th><th style="width:52px">种子</th>
+      <th>θ₁</th><th>θ₂</th><th>RMSE</th><th>判别分数</th><th>best epoch</th></tr>
+  <tr><td>FD002</td><td>3</td><td><input placeholder="?"></td><td><input placeholder="?"></td>
+      <td>26.990</td><td>0.1306</td><td><input placeholder="?"></td></tr>
+  <tr><td>FD002</td><td>13</td><td><input placeholder="?"></td><td><input placeholder="?"></td>
+      <td>23.540</td><td>0.1067</td><td><input placeholder="?"></td></tr>
+  <tr><td>FD002</td><td>23</td><td><input placeholder="?"></td><td><input placeholder="?"></td>
+      <td>26.849</td><td>0.4563</td><td><input placeholder="?"></td></tr>
+  <tr><td>FD002</td><td>33</td><td><input placeholder="?"></td><td><input placeholder="?"></td>
+      <td>25.213</td><td>0.0988</td><td><input placeholder="?"></td></tr>
+  <tr><td>FD002</td><td>43</td><td><input placeholder="?"></td><td><input placeholder="?"></td>
+      <td>31.366</td><td>0.4211</td><td><input placeholder="?"></td></tr>
+  <tr><td>FD002</td><td>53</td><td><input placeholder="?"></td><td><input placeholder="?"></td>
+      <td>35.304</td><td>0.4988</td><td><input placeholder="?"></td></tr>
+  <tr><td>FD002</td><td>63</td><td><input placeholder="?"></td><td><input placeholder="?"></td>
+      <td>28.799</td><td>0.1221</td><td><input placeholder="?"></td></tr>
+  <tr><td>FD004</td><td>3</td><td><input placeholder="?"></td><td><input placeholder="?"></td>
+      <td>35.733</td><td>0.289</td><td>25</td></tr>
+  <tr><td>FD004</td><td>13</td><td><input placeholder="?"></td><td><input placeholder="?"></td>
+      <td>30.177</td><td>0.465</td><td>24</td></tr>
+  <tr><td>FD004</td><td>23</td><td><input placeholder="?"></td><td><input placeholder="?"></td>
+      <td>36.207</td><td>0.241</td><td>68</td></tr>
+  <tr><td>FD004</td><td>33</td><td><input placeholder="?"></td><td><input placeholder="?"></td>
+      <td>33.720</td><td>0.458</td><td>27</td></tr>
+  <tr><td>FD004</td><td>43</td><td><input placeholder="?"></td><td><input placeholder="?"></td>
+      <td>30.547</td><td>0.473</td><td>21</td></tr>
+</table>
+<p class="note">绿底外的格子是已知的，问号格是要从 checkpoint 读的。</p>
+
+<h2>怎么取数</h2>
+<p style="font-size:13px;margin:4px 0 0">在项目 .venv 里跑，几秒钟，不动任何已有文件：</p>
+<p style="font-size:12.5px;margin:8px 0 0">
+<code>python3 read_theta_from_ckpt.py --scan results/runs --csv theta_values.csv</code>
+</p>
+<ul>
+  <li>命中会打印每个 checkpoint 里名字含 <code>threshold</code> 的参数和数值</li>
+  <li>全部未命中说明 key 名不含这些关键字，加 <code>--all-params</code> 看真实参数名</li>
+  <li>只读不写，safe</li>
+</ul>
+
+<h2>提醒：n 太小，别把相关当因果</h2>
+<p style="font-size:13px;margin:4px 0 0">
+  FD002 七个点、FD004 五个点。这种样本量下就算算出 |ρ| 很高，置换检验的 p 值也大概率在
+  0.05 以上。所以这张图的定位是<b>提示性证据</b>——它能把「θ 有关」从猜测抬成
+  「值得写进报告的观察」，但抬不成「已证实的主因」。报告措辞要留这个余地。
+</p>
+
+</body>
+</html>

@@ -37,3 +37,6 @@ Local paper-alignment patches are limited to:
 - explicitly passing evaluator seeds in the built-in evaluation entry point,
   persisting generation-stage records before evaluation, and providing validated
   evaluation-only recovery of already generated artifacts.
+- recording per-module frequency masks during DDPM sampling without changing
+  their forward values. Cross-mode analysis uses observed `mask_drop_ratio`;
+  quantile fractions and normalized-energy cutoffs remain explicitly distinct.

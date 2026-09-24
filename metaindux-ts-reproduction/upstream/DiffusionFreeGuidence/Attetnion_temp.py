@@ -112,6 +112,13 @@ class Adaptive_Spectral_Block_t(nn.Module):
             threshold_ratio = torch.tensor(threshold_init / 0.5).clamp(1e-6, 1 - 1e-6)
             threshold_parameter = torch.full_like(random_threshold, torch.logit(threshold_ratio))
         self.threshold_param = nn.Parameter(threshold_parameter)
+
+        # Optional, read-only instrumentation used by the reproduction
+        # harness.  These are deliberately plain attributes (not buffers), so
+        # old checkpoints keep loading with strict=True and model numerics are
+        # unchanged when statistics are disabled.
+        self._mask_statistics_enabled = False
+        self.reset_mask_statistics()
         
         dim_model = dim
         num_head = 1
@@ -144,14 +151,22 @@ class Adaptive_Spectral_Block_t(nn.Module):
             soft_mask = torch.sigmoid(
                 (normalized_energy - threshold) / self.mask_temperature
             )
+            hard_mask = (normalized_energy > threshold).to(soft_mask.dtype)
             if self.mask_mode == 'binary_ste_energy':
-                hard_mask = (normalized_energy > threshold).to(soft_mask.dtype)
                 # Exactly binary forward, sigmoid surrogate gradient backward.
-                soft_mask = hard_mask + (soft_mask - soft_mask.detach())
-            return soft_mask.unsqueeze(-1).to(dtype=x_fft.dtype)
+                forward_mask = hard_mask + (soft_mask - soft_mask.detach())
+            else:
+                forward_mask = soft_mask
+            self._record_mask_statistics(forward_mask, hard_mask, threshold)
+            return forward_mask.unsqueeze(-1).to(dtype=x_fft.dtype)
 
         threshold = torch.quantile(normalized_energy, self.threshold_param)
         dominant_frequencies = normalized_energy > threshold
+        self._record_mask_statistics(
+            dominant_frequencies.to(normalized_energy.dtype),
+            dominant_frequencies.to(normalized_energy.dtype),
+            threshold,
+        )
 
         # Initialize adaptive mask
         adaptive_mask = torch.zeros_like(x_fft, device=x_fft.device)
@@ -165,6 +180,71 @@ class Adaptive_Spectral_Block_t(nn.Module):
         if self.mask_mode == 'soft_learnable_energy':
             return 0.5 * torch.sigmoid(self.threshold_param)
         return self.threshold_param
+
+    def reset_mask_statistics(self):
+        """Clear accumulated mask observations without touching model state."""
+        self._mask_forward_sum = None
+        self._mask_hard_sum = None
+        self._mask_element_count = 0
+        self._mask_call_count = 0
+        self._observed_threshold_sum = None
+        self._observed_threshold_min = None
+        self._observed_threshold_max = None
+
+    def enable_mask_statistics(self, enabled=True):
+        """Enable lightweight aggregation of masks produced by real forwards."""
+        self._mask_statistics_enabled = bool(enabled)
+        if enabled:
+            self.reset_mask_statistics()
+
+    def _record_mask_statistics(self, forward_mask, hard_mask, threshold):
+        if not self._mask_statistics_enabled:
+            return
+        with torch.no_grad():
+            # float32 avoids slow FP64 reductions on consumer GPUs. Counts are
+            # reported as ratios, for which its precision is ample here.
+            forward_sum = forward_mask.detach().to(torch.float32).sum()
+            hard_sum = hard_mask.detach().to(torch.float32).sum()
+            observed_threshold = threshold.detach().to(torch.float32).mean()
+            if self._mask_forward_sum is None:
+                self._mask_forward_sum = forward_sum
+                self._mask_hard_sum = hard_sum
+                self._observed_threshold_sum = observed_threshold
+                self._observed_threshold_min = observed_threshold
+                self._observed_threshold_max = observed_threshold
+            else:
+                self._mask_forward_sum += forward_sum
+                self._mask_hard_sum += hard_sum
+                self._observed_threshold_sum += observed_threshold
+                self._observed_threshold_min = torch.minimum(
+                    self._observed_threshold_min, observed_threshold)
+                self._observed_threshold_max = torch.maximum(
+                    self._observed_threshold_max, observed_threshold)
+            self._mask_element_count += forward_mask.numel()
+            self._mask_call_count += 1
+
+    def mask_statistics(self):
+        """Return unified forward-mask statistics, or None if unobserved.
+
+        ``mask_drop_ratio`` is always derived from the mask actually used in
+        the forward pass.  For a soft mask it is mean(1 - mask), i.e. mean
+        attenuation rather than a count of exact zeros.  ``hard_drop_ratio``
+        applies the same energy cutoff as a binary mask and is supplied as a
+        secondary diagnostic.
+        """
+        if not self._mask_element_count:
+            return None
+        count = float(self._mask_element_count)
+        return {
+            'mask_drop_ratio': 1.0 - float(self._mask_forward_sum.cpu()) / count,
+            'hard_drop_ratio': 1.0 - float(self._mask_hard_sum.cpu()) / count,
+            'observed_mask_elements': self._mask_element_count,
+            'observed_forward_calls': self._mask_call_count,
+            'observed_threshold_mean': float(
+                (self._observed_threshold_sum / self._mask_call_count).cpu()),
+            'observed_threshold_min': float(self._observed_threshold_min.cpu()),
+            'observed_threshold_max': float(self._observed_threshold_max.cpu()),
+        }
 
     def forward(self, x_in):
         x_in = x_in.transpose(1,2)
