@@ -1,0 +1,25 @@
+{
+  "source_document": {
+    "title": "MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series",
+    "venue": "IEEE Transactions on Neural Networks and Learning Systems, vol. 36, no. 10, October 2025",
+    "local_pdf_path_at_audit": "/home/cw_boe/桌面/论文复现/MetaIndux-TS_Frequency-Aware_AIGC_Foundation_Model_for_Industrial_Time_Series.pdf",
+    "pdf_sha256": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+    "pdf_page": 7,
+    "printed_page": "18068",
+    "table": "Table I"
+  },
+  "model": "MetaIndux-TS",
+  "sequence_length": 24,
+  "repeat_reporting": "The paper states that all experiments were repeated five times and average values were used for final results.",
+  "metrics": {
+    "predictive_rmse": {
+      "definition": "Predictive Score; RMSE after training an LSTM on generated data. Lower is better.",
+      "values": {"FD001": 14.697, "FD002": 25.822, "FD003": 21.420, "FD004": 27.333}
+    },
+    "discriminative_score": {
+      "definition": "Absolute difference between RNN discriminator accuracy and 0.5. Lower is better.",
+      "values": {"FD001": 0.137, "FD002": 0.280, "FD003": 0.112, "FD004": 0.085}
+    }
+  },
+  "audit_note": "Both metrics are published generated-data point estimates; the paper does not publish per-seed values or standard deviations."
+}

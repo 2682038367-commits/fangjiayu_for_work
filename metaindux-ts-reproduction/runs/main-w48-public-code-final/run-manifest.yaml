@@ -1,0 +1,43 @@
+run_id: main-w48-public-code-final
+status: complete_reconstructed_snapshot
+reconstructed_at: "2026-09-30"
+role: main
+claim: "Table I public-code mainline at sequence length 48"
+audit_note: "This aggregate manifest was reconstructed from immutable per-run metadata and complete formal evaluator manifests. It was not created before the earliest underlying runs."
+source:
+  repository: https://github.com/Dolphin-wang/MetaIndux-TS
+  repository_vcs: "upstream snapshot has no .git metadata; commit unknown"
+  identity: "per-run commands/configs and source hashes stored in results/runs/*_metadata.json and the project audit bundle"
+resolved_protocol:
+  datasets: [FD001, FD002, FD003, FD004]
+  window_size: 48
+  input_sensors: 14
+  common_generation_seeds: [3, 13, 23, 33, 43]
+  fd002_extended_generation_seeds: [3, 13, 23, 33, 43, 53, 63]
+  evaluator_seeds: [3, 13, 23, 33, 43]
+  fixed_evaluation_split_seed: 20260915
+  frequency_mask_mode: hard_random_quantile
+  diffusion: {timesteps: 1000, beta_schedule: linear, sampling: ddpm}
+  training: {epochs: 70, optimizer: adam, learning_rate: 0.002, lr_schedule: warmup_cosine, batch_size: 256, grad_clip: 1.0}
+evaluation_manifests:
+  FD001: results/fd001_w48_public_code_manifest.json
+  FD002: results/frequency_threshold_validation/fd002_public_arm_seven_seeds_manifest.json
+  FD003: results/fd003_w48_public_code_manifest.json
+  FD004: results/fd004_w48_public_code_manifest.json
+formal_summaries:
+  FD001: results/fd001_w48_public_code_evaluation_summary.csv
+  FD002: results/frequency_threshold_validation/fd002_public_arm_seven_seeds_evaluation_summary.csv
+  FD003: results/fd003_w48_public_code_evaluation_summary.csv
+  FD004: results/fd004_w48_public_code_evaluation_summary.csv
+paired_common_five_fd002: results/fd002_evaluation_stability_paper70_summary.csv
+per_run_metadata:
+  pattern: results/runs/FD00*_w48_seed*_metadata.json
+environment:
+  python: "3.10.12"
+  torch: 2.1.2+cu121
+  gpu: NVIDIA GeForce RTX 4060 Ti
+  gpu_memory_mib: 8188
+  nvidia_driver: "595.84"
+limitations:
+  - "The aggregate snapshot is reconstructed; individual metadata and evaluator manifests are the primary execution evidence."
+  - "FD002 headline uses seven generation seeds; paired window comparisons use the original common five subset."

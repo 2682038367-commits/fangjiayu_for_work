@@ -136,7 +136,11 @@ npub = len([p for p in sorted((ROOT / "outputs").glob("FD002_w48_seed*.npz"))
 ck(nfix == 7, "A6a 固定臂合成 npz 7 个", f"实际 {nfix}")
 ck(npub >= 7, "A6b 公开臂合成 npz ≥7 个", f"实际 {npub}（含其它消融变体属正常）")
 
-splits = sorted(ROOT.glob("results/**/*fd002*split*.npz"))
+splits_all = sorted(ROOT.glob("results/**/*fd002*split*.npz"))
+# This legacy audit section compares only window-48 split identities. Window-24
+# has a different sample universe and is validated by gen_complete_reproduction_report.py.
+splits = [p for p in splits_all if "results/w24/" not in p.as_posix()]
+
 hashes = {}
 for p in splits:
     hashes[p] = hashlib.sha256(p.read_bytes()).hexdigest()

@@ -1,8 +1,8 @@
 import numpy as np
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 from TrainCondition import train, sample
 import sys
+from pathlib import Path
 from data.CMAPSSDataset import CMAPSSDataset
 import wandb
 from utils import wandb_record,torch_seed
@@ -38,9 +38,13 @@ if __name__ == '__main__':
     else:
         wandb.init(project="DiffFre", tags=['Fre-w/o_syn'], config=args )
     train_loop = 5
-    torch_seed(5)
-    args.model_path =  'weights/' + args.model_name + '_' + args.dataset + '_' + str(args.window_size) + args.task + '.pth'
-    args.syndata_path =  './weights/syn_data/syn_'+ args.dataset+'_'+args.model_name + '_' + str(args.window_size) + args.sample_type + args.task +'.npz'
+    torch_seed(args.seed)
+    if args.model_path == './weights/temp.pth':
+        args.model_path = 'weights/' + args.model_name + '_' + args.dataset + '_' + str(args.window_size) + args.task + '.pth'
+    if args.syndata_path == './weights/syn_data/temp.npy':
+        args.syndata_path = './weights/syn_data/syn_' + args.dataset + '_' + args.model_name + '_' + str(args.window_size) + args.sample_type + args.task + '.npz'
+    Path(args.model_path).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.syndata_path).parent.mkdir(parents=True, exist_ok=True)
 
     datasets = CMAPSSDataset(fd_number=args.dataset, sequence_length=args.window_size, deleted_engine=[1000])
     train_data = datasets.get_train_data()
@@ -51,30 +55,45 @@ if __name__ == '__main__':
 
     train_data,train_label = train_data[0:len(train_data)], train_label[0:len(train_label)]
     if args.task == 'zeroshot':
-        mask1 = train_label.squeeze(-1) > 30  
+        mask1 = train_label.squeeze(-1) > args.fatigue_threshold
         filtered_train_data = train_data[mask1]
         filtered_train_label = train_label[mask1]
     elif args.task == 'fewshot':
-        # 找到大于30的索引
-        mask_greater = train_label.squeeze(-1) > 30
+        # The public code assigns the RUL=30 boundary to fatigue.
+        mask_greater = train_label.squeeze(-1) > args.fatigue_threshold
         filtered_train_data = train_data[mask_greater]
         filtered_train_label = train_label[mask_greater]
-        # 找到小于等于30的索引
-        mask_smaller = train_label.squeeze(-1) <= 30
+        mask_smaller = train_label.squeeze(-1) <= args.fatigue_threshold
         small_data = train_data[mask_smaller]
         small_label = train_label[mask_smaller]
-        # 计算 5% 的采样数量
-        sample_size = int(0.1 * small_data.shape[0])
-        # 随机采样 5% 的小于等于30的数据
+        sample_size = int(args.fewshot_fraction * small_data.shape[0])
         if sample_size > 0:
-            sampled_indices = torch.randperm(small_data.shape[0])[:sample_size]
+            split_generator = torch.Generator().manual_seed(args.seed)
+            sampled_indices = torch.randperm(
+                small_data.shape[0], generator=split_generator
+            )[:sample_size]
             sampled_train_data = small_data[sampled_indices]
             sampled_train_label = small_label[sampled_indices]
             # 合并数据
             filtered_train_data = torch.cat([filtered_train_data, sampled_train_data], dim=0)
             filtered_train_label = torch.cat([filtered_train_label, sampled_train_label], dim=0)
+        if args.fewshot_indices_path:
+            indices_path = Path(args.fewshot_indices_path)
+            indices_path.parent.mkdir(parents=True, exist_ok=True)
+            normal_indices = torch.nonzero(mask_greater, as_tuple=False).squeeze(-1)
+            fatigue_indices = torch.nonzero(mask_smaller, as_tuple=False).squeeze(-1)
+            selected_fatigue_indices = fatigue_indices[sampled_indices]
+            np.savez_compressed(
+                indices_path,
+                normal_indices=normal_indices.cpu().numpy(),
+                fatigue_indices=fatigue_indices.cpu().numpy(),
+                selected_fatigue_indices=selected_fatigue_indices.cpu().numpy(),
+                seed=np.asarray([args.seed], dtype=np.int64),
+                fraction=np.asarray([args.fewshot_fraction], dtype=np.float64),
+                fatigue_threshold=np.asarray([args.fatigue_threshold], dtype=np.float64),
+            )
 
-    mask2 = test_label.squeeze(-1) <= 30  
+    mask2 = test_label.squeeze(-1) <= args.fatigue_threshold
     filtered_test_data = test_data[mask2]
     filtered_test_label = test_label[mask2]
     if args.task != 'all':

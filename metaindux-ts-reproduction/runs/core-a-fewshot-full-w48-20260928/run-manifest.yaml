@@ -1,0 +1,68 @@
+run_id: core-a-fewshot-full-w48-20260928
+status: running
+queued_at: "2026-09-28T17:03:04+08:00"
+service_started_at: "2026-09-28T17:04:13+08:00"
+role: core:A-full
+claim: "Table VI few-shot fatigue-condition generation across FD001-FD004"
+source:
+  repository: https://github.com/Dolphin-wang/MetaIndux-TS
+  repository_vcs: "upstream snapshot has no .git metadata; commit unknown"
+  local_modifications: "compatibility/audit patch; hashes below bind exact files"
+configuration:
+  generation: configs/paper_fewshot_full.yaml
+  generation_sha256: 07a93e19bdc2228bd3201986d00cbdf06a6c958dc4e01109bc542bdf8988aa05
+  evaluations:
+    FD001: [configs/evaluation_fd001_fewshot.yaml, 1378dd0c9837250bdf3642b58bb9e7af798fdb455ed49a9f167265ee8b9ac87d]
+    FD002: [configs/evaluation_fd002_fewshot.yaml, aa5677ffaa7b6057ca8bec77c1f05c4d79d2fcef1390b4d77be9e6c8353a1d2f]
+    FD003: [configs/evaluation_fd003_fewshot.yaml, fba85e5a597a0d1ddfd71e4dfb47798351cebad43de7ededff947da8e4659a90]
+    FD004: [configs/evaluation_fd004_fewshot.yaml, 7490dca41d69ca79a7367ddbf71cd2dcee0e2bc81bd86c04fe1c127c8ae2bd7a]
+resolved_protocol:
+  datasets: [FD001, FD002, FD003, FD004]
+  window_size: 48
+  normal: "RUL > 30"
+  fatigue: "RUL <= 30 (public-code resolution of paper's unspecified equality boundary)"
+  fewshot_fraction: 0.1
+  counts:
+    FD001: {normal: 12831, fatigue: 3100, selected_fatigue: 310, train_total: 13141, test_fatigue: 25}
+    FD002: {normal: 33479, fatigue: 8060, selected_fatigue: 806, train_total: 34285, test_fatigue: 61}
+    FD003: {normal: 16920, fatigue: 3100, selected_fatigue: 310, train_total: 17230, test_fatigue: 20}
+    FD004: {normal: 41827, fatigue: 7719, selected_fatigue: 771, train_total: 42598, test_fatigue: 53}
+  generation_seeds: [3, 13, 23, 33, 43]
+  evaluator_seeds: [3, 13, 23, 33, 43]
+  fixed_evaluation_split_seed: 20260915
+  diffusion: {timesteps: 1000, beta_schedule: linear, sampling: ddpm}
+  training: {epochs: 70, optimizer: adam, learning_rate: 0.002, batch_size: 64}
+  predictive_split: "70% synthetic train / 30% synthetic validation"
+  predictor_layers: 2
+commands:
+  pipeline: scripts/run_paper_fewshot_full.sh
+  queue_rule: "wait for metaindux-fewshot-fd001.service, then use --skip-completed and resume evaluation CSVs"
+  systemd_unit: metaindux-fewshot-full.service
+code_sha256:
+  scripts/run_paper_fewshot_full.sh: 226693c4cbd3b057175f32942914e6c95092ad2e6e8426047a762233806f0627
+  upstream/main_fewshot.py: 386cee38fc0939f8f0e3d814bb253d58fd347ed5354a513e0cf769804e5546ce
+  upstream/args.py: e578a3d0a94235227e172e4e87fc86b3a1c79625602e9049e79955b38f519b4f
+  upstream/TrainCondition.py: f600aea3d3c64abac79f1b853b89d8971671b0dbb58b2ecb0f0edb408db32608
+  upstream/data/CMAPSSDataset.py: 7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03
+  scripts/run_experiments.py: 43d62261904c8d88ceaaa388b12c5fedf4d4ab78af59e7e3cf2c7022c9e7f256
+  scripts/evaluate_fd002_stability.py: 4b6b8a0ab38d7389fb324b7266d71d93ee50b8d2baad6e6e960d8baa0ed9aacf
+data_sha256:
+  FD001: [963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8, 3cda7109ce17bafb5443f2ac926cfcf88154b941b8c4cf95eb55d1ddd6f52851, a19c8ec94931949d0485bdc35118206e9c81c4547b422efb9cf86f4ceddbceca]
+  FD002: [dac6c4dbc4e7c1bdeb5747da3d313d05c395bb99801b44a002b26a2ba13d788f, de7b5bf7e998a985c378488480528b7c02cff1406a46740def362dda8d9b4e02, c851dd96a6ea6998d3c4a8f834d3c8013aa90e93a6ed950dc826ad0655b2906b]
+  FD003: [2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2, 299babd63c8d987cef079c4a425429f33b3a34797d803bbe2ad48c29dbd0d790, df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb]
+  FD004: [27ef6160b6a1dcb2613a88de9c239f763b223f02cdc41dc5cdedc5dc189b6218, 1dc675fff0624bac10786927c6715b37d1297657137400d2b1a3138d777a3ba5, 196b836b85a95ac7fdbbf29c5fdf1657382eafa445644d114ffaaf50dc2975e1]
+environment:
+  os: Linux-6.8.0-138-generic-x86_64-with-glibc2.35
+  python: "3.10.12"
+  torch: 2.1.2+cu121
+  gpu: NVIDIA GeForce RTX 4060 Ti
+  gpu_memory_mib: 8188
+  nvidia_driver: "595.84"
+artifacts:
+  checkpoints: checkpoints/FD00*_w48_seed*_fewshot10_paper.pth
+  generated: outputs/FD00*_w48_seed*_fewshot10_paper.npz
+  sampled_indices: results/fewshot/splits/FD00*_w48_seed*_fewshot10_paper_indices.npz
+  loss_histories: logs/FD00*_w48_seed*_fewshot10_paper_training_loss.csv
+  raw_metrics: results/fewshot/fd00*_table_vi_evaluation_raw.csv
+  summaries: results/fewshot/fd00*_table_vi_evaluation_summary.csv
+  console_log: logs/fewshot_full_console.log

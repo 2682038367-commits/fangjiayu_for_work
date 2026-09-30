@@ -1,0 +1,14 @@
+run_id: core-a-fewshot-full-w48-20260928
+correction_date: "2026-09-30"
+supersedes_status: running
+final_status: stopped_after_sufficient_cross_dataset_evidence
+accepted_datasets: [FD001, FD002, FD003]
+deferred_datasets: [FD004]
+completed_generation_runs: 15
+completed_evaluation_cells: 75
+stopping_reason: "FD001-FD003 independently missed Table VI beyond local multi-seed variation; FD004 had low incremental information."
+formal_summaries:
+  FD001: results/fewshot/fd001_table_vi_evaluation_summary.csv
+  FD002: results/fewshot/fd002_table_vi_evaluation_summary.csv
+  FD003: results/fewshot/fd003_table_vi_evaluation_summary.csv
+note: "FD004 has no accepted result and is not classified as failed. This correction preserves the original launch manifest without silently rewriting history."

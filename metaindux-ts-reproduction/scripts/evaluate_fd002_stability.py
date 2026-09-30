@@ -99,6 +99,10 @@ def main() -> int:
         os.chdir(previous_cwd)
 
     sample_count = len(train_data)
+    if "test_label_max" in evaluation:
+        fatigue_mask = test_label.squeeze(-1) <= float(evaluation["test_label_max"])
+        test_data = test_data[fatigue_mask]
+        test_label = test_label[fatigue_mask]
     predictive_train_rate = float(evaluation.get("predictive_train_rate", 0.8))
     discriminator_train_rate = float(evaluation.get("discriminator_train_rate", 0.8))
     predictive_split_at = int(sample_count * predictive_train_rate)
@@ -150,6 +154,7 @@ def main() -> int:
     upstream_args.eva_epoch = int(evaluation["evaluator_epochs"])
     upstream_args.device = evaluation["device"]
     upstream_args.model_name = "DiffUnet_fre"
+    upstream_args.num_layers = int(evaluation.get("predictor_layers", 1))
     checkpoint_dir = project_path(outputs["evaluator_checkpoints"])
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
     wandb.init(project="MetaIndux-TS-evaluation-stability", mode="disabled")

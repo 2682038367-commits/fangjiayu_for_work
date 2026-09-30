@@ -1,0 +1,1152 @@
+{
+  "decision": {
+    "candidate_A": "defer FD004 by stopping rule",
+    "candidate_B": "deferred",
+    "candidate_C": "deferred",
+    "main": "freeze w24/w48"
+  },
+  "fewshot": {
+    "FD004": {
+      "paper_rmse": 24.816,
+      "status": "deferred_by_stopping_rule"
+    },
+    "completed": {
+      "FD001": {
+        "diagnostic_discriminative_score": {
+          "best_seed": 13,
+          "best_value": 0.20087856918732347,
+          "ci95": [
+            0.15795517366044862,
+            0.43489076295706
+          ],
+          "generation_sd": 0.11151792662799109,
+          "mean": 0.2964229683087543,
+          "per_seed": {
+            "13": 0.20087856918732347,
+            "23": 0.21935989959209284,
+            "3": 0.2487605898964543,
+            "33": 0.34273611546909316,
+            "43": 0.47037966739880765
+          },
+          "pooled_evaluator_sd": 0.03044433785213582,
+          "seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "sem": 0.04987233293000439,
+          "source": {
+            "path": "results/fewshot/fd001_table_vi_evaluation_summary.csv",
+            "sha256": "3379449a63d5a4d5a0de5ca393e3fe2ba2032c1b43c7c9ccb490d07693729f74"
+          },
+          "worst_seed": 43,
+          "worst_value": 0.47037966739880765
+        },
+        "gap": 22.11656524454575,
+        "manifest": {
+          "evaluation_count": 25,
+          "gpu": "NVIDIA GeForce RTX 4060 Ti",
+          "path": "results/fewshot/fd001_table_vi_evaluation_manifest.json",
+          "raw_path": "results/fewshot/fd001_table_vi_evaluation_raw.csv",
+          "raw_sha256": "0491802d17d199183c5f0c03c70341a11cd76238e7fbdd03f8c0d7146663965b",
+          "sha256": "77b850b848c2031b16fe6a0ae587d0990dff936ce0be530214cabf8eca0d52d4",
+          "split_sha256": "cefc8ff423d354cd0f9efd562fad1c97fa92d59d2820bc467c878c93969e1a2f"
+        },
+        "paper_rmse": 5.219,
+        "relative_gap_percent": 423.77017138428334,
+        "rmse": {
+          "best_seed": 43,
+          "best_value": 16.329574460620194,
+          "ci95": [
+            18.508005349610162,
+            36.16312513948134
+          ],
+          "generation_sd": 7.109459489608977,
+          "mean": 27.33556524454575,
+          "per_seed": {
+            "13": 26.85429291989634,
+            "23": 27.536910541046417,
+            "3": 30.055538485858744,
+            "33": 35.90150981530706,
+            "43": 16.329574460620194
+          },
+          "pooled_evaluator_sd": 1.335066705847143,
+          "seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "sem": 3.179446940409326,
+          "source": {
+            "path": "results/fewshot/fd001_table_vi_evaluation_summary.csv",
+            "sha256": "3379449a63d5a4d5a0de5ca393e3fe2ba2032c1b43c7c9ccb490d07693729f74"
+          },
+          "worst_seed": 33,
+          "worst_value": 35.90150981530706
+        }
+      },
+      "FD002": {
+        "diagnostic_discriminative_score": {
+          "best_seed": 3,
+          "best_value": 0.13361819932595093,
+          "ci95": [
+            0.11533205855584877,
+            0.3053468051899384
+          ],
+          "generation_sd": 0.076516169796729,
+          "mean": 0.21033943187289358,
+          "per_seed": {
+            "13": 0.20846172363986515,
+            "23": 0.15883485796822341,
+            "3": 0.13361819932595093,
+            "33": 0.33201733269138184,
+            "43": 0.2187650457390467
+          },
+          "pooled_evaluator_sd": 0.04640613897672098,
+          "seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "sem": 0.03421907140868046,
+          "source": {
+            "path": "results/fewshot/fd002_table_vi_evaluation_summary.csv",
+            "sha256": "6f0c4ebd541c8df478c6a2b70d3e185ec8789b1e02e4f63b13352b0546f672e1"
+          },
+          "worst_seed": 33,
+          "worst_value": 0.33201733269138184
+        },
+        "gap": 29.28624436023951,
+        "manifest": {
+          "evaluation_count": 25,
+          "gpu": "NVIDIA GeForce RTX 4060 Ti",
+          "path": "results/fewshot/fd002_table_vi_evaluation_manifest.json",
+          "raw_path": "results/fewshot/fd002_table_vi_evaluation_raw.csv",
+          "raw_sha256": "d1c7c6644f907769a702c153576eb1ba64bf1776a642bf6b79658e8d98370085",
+          "sha256": "e05c2a87308aca96b672ebb1064c8018bb903d0ea16fca879d4fc4983dc67c44",
+          "split_sha256": "8c390ebfebf4cc3b18ff4b9e0cfa93c7b883e8d6a213364fc45d8bed80e82c76"
+        },
+        "paper_rmse": 24.758,
+        "relative_gap_percent": 118.290024881814,
+        "rmse": {
+          "best_seed": 3,
+          "best_value": 46.16175707886638,
+          "ci95": [
+            46.55840147506664,
+            61.53008724541238
+          ],
+          "generation_sd": 6.028879709810501,
+          "mean": 54.04424436023951,
+          "per_seed": {
+            "13": 55.454051428635466,
+            "23": 62.86937632405146,
+            "3": 46.16175707886638,
+            "33": 53.4240902929785,
+            "43": 52.311946676665784
+          },
+          "pooled_evaluator_sd": 2.166528620557875,
+          "seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "sem": 2.696196971861097,
+          "source": {
+            "path": "results/fewshot/fd002_table_vi_evaluation_summary.csv",
+            "sha256": "6f0c4ebd541c8df478c6a2b70d3e185ec8789b1e02e4f63b13352b0546f672e1"
+          },
+          "worst_seed": 23,
+          "worst_value": 62.86937632405146
+        }
+      },
+      "FD003": {
+        "diagnostic_discriminative_score": {
+          "best_seed": 3,
+          "best_value": 0.2011988011988012,
+          "ci95": [
+            0.1808433450880775,
+            0.2976181933734609
+          ],
+          "generation_sd": 0.04702352989790873,
+          "mean": 0.23923076923076922,
+          "per_seed": {
+            "13": 0.22944555444555442,
+            "23": 0.31995504495504495,
+            "3": 0.2011988011988012,
+            "33": 0.23384115884115886,
+            "43": 0.21171328671328676
+          },
+          "pooled_evaluator_sd": 0.06692932290436578,
+          "seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "sem": 0.02102956187874353,
+          "source": {
+            "path": "results/fewshot/fd003_table_vi_evaluation_summary.csv",
+            "sha256": "694e2f3496f5d659599e9e6c6a8672c7564f34baa1cf4610749b84059f99a2fd"
+          },
+          "worst_seed": 23,
+          "worst_value": 0.31995504495504495
+        },
+        "gap": 15.265247349424062,
+        "manifest": {
+          "evaluation_count": 25,
+          "gpu": "NVIDIA GeForce RTX 4060 Ti",
+          "path": "results/fewshot/fd003_table_vi_evaluation_manifest.json",
+          "raw_path": "results/fewshot/fd003_table_vi_evaluation_raw.csv",
+          "raw_sha256": "9f97caac2a2f0e409ead74078560f182bdf6ec87d9747daa3b6325f09a846416",
+          "sha256": "648572961ad29253acb16adc64727a69e84d94e252543921476e8761ab20b492",
+          "split_sha256": "49d8f0745c18fb468c1ca8eeb46beb8fcf4998ebb1640047514c83a7e7bc5695"
+        },
+        "paper_rmse": 9.244,
+        "relative_gap_percent": 165.13681684794528,
+        "rmse": {
+          "best_seed": 33,
+          "best_value": 16.500195334091988,
+          "ci95": [
+            14.027021419726049,
+            34.991473279122076
+          ],
+          "generation_sd": 8.442079294287309,
+          "mean": 24.50924734942406,
+          "per_seed": {
+            "13": 19.993751881806247,
+            "23": 37.96799985027586,
+            "3": 27.12157736569957,
+            "33": 16.500195334091988,
+            "43": 20.962712315246655
+          },
+          "pooled_evaluator_sd": 2.1563892802676623,
+          "seeds": [
+            3,
+            13,
+            23,
+            33,
+            43
+          ],
+          "sem": 3.775412634693975,
+          "source": {
+            "path": "results/fewshot/fd003_table_vi_evaluation_summary.csv",
+            "sha256": "694e2f3496f5d659599e9e6c6a8672c7564f34baa1cf4610749b84059f99a2fd"
+          },
+          "worst_seed": 23,
+          "worst_value": 37.96799985027586
+        }
+      }
+    },
+    "paper_source": {
+      "document": {
+        "local_pdf_path_at_audit": "/home/cw_boe/桌面/论文复现/MetaIndux-TS_Frequency-Aware_AIGC_Foundation_Model_for_Industrial_Time_Series.pdf",
+        "pdf_page": 9,
+        "pdf_sha256": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+        "printed_page": "18070",
+        "table": "Table VI",
+        "table_title": "Performance on few-shot learning tasks of different diffusion models",
+        "title": "MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series",
+        "venue": "IEEE Transactions on Neural Networks and Learning Systems, vol. 36, no. 10, October 2025"
+      },
+      "path": "docs/provenance/paper_table_vi_fewshot_metrics.json",
+      "sha256": "6be371f90a624ff57522e5e3c0fbbe9ee1e83402f25f135fc6435e1863476047"
+    }
+  },
+  "generated_by": "analysis/audit/gen_complete_reproduction_report.py",
+  "main": {
+    "paper_sources": {
+      "24": {
+        "document": {
+          "local_pdf_path_at_audit": "/home/cw_boe/桌面/论文复现/MetaIndux-TS_Frequency-Aware_AIGC_Foundation_Model_for_Industrial_Time_Series.pdf",
+          "pdf_page": 7,
+          "pdf_sha256": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+          "printed_page": "18068",
+          "table": "Table I",
+          "title": "MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series",
+          "venue": "IEEE Transactions on Neural Networks and Learning Systems, vol. 36, no. 10, October 2025"
+        },
+        "path": "docs/provenance/paper_table_i_w24_metrics.json",
+        "sha256": "087eac9f8fa65a6b3f05c1592825b3f121428f2daa1b0df3d7c893d4b9d94ff7"
+      },
+      "48": {
+        "document": {
+          "local_pdf_path_at_audit": "/home/cw_boe/桌面/论文复现/MetaIndux-TS_Frequency-Aware_AIGC_Foundation_Model_for_Industrial_Time_Series.pdf",
+          "pdf_page": 7,
+          "pdf_sha256": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+          "printed_page": "18068",
+          "table": "Table I",
+          "table_title": "Comparison results ... in terms of discrimination scores and prediction scores on the CMAPSS dataset",
+          "title": "MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series",
+          "venue": "IEEE Transactions on Neural Networks and Learning Systems, vol. 36, no. 10, October 2025"
+        },
+        "path": "docs/provenance/paper_table_i_w48_metrics.json",
+        "sha256": "bfd27868211e0222a34e23052cfc5c65f98801ed8d2d39a4a470161f9cd178b9"
+      }
+    },
+    "paper_values": {
+      "24": {
+        "discriminative_score": {
+          "FD001": 0.137,
+          "FD002": 0.28,
+          "FD003": 0.112,
+          "FD004": 0.085
+        },
+        "rmse": {
+          "FD001": 14.697,
+          "FD002": 25.822,
+          "FD003": 21.42,
+          "FD004": 27.333
+        }
+      },
+      "48": {
+        "discriminative_score": {
+          "FD001": 0.102,
+          "FD002": 0.109,
+          "FD003": 0.114,
+          "FD004": 0.239
+        },
+        "rmse": {
+          "FD001": 13.949,
+          "FD002": 24.565,
+          "FD003": 16.206,
+          "FD004": 26.577
+        }
+      }
+    },
+    "windows": {
+      "24": {
+        "FD001": {
+          "discriminative_score": {
+            "best_seed": 3,
+            "best_value": 0.11641668939187348,
+            "ci95": [
+              0.11516373939104269,
+              0.17547165739106801
+            ],
+            "generation_sd": 0.024285119842110597,
+            "mean": 0.14531769839105535,
+            "per_seed": {
+              "13": 0.1335696754840469,
+              "23": 0.16703026997545678,
+              "3": 0.11641668939187348,
+              "33": 0.13561494409599123,
+              "43": 0.17395691300790836
+            },
+            "pooled_evaluator_sd": 0.007107680358109223,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 0.01086063576173765,
+            "source": {
+              "path": "results/w24/fd001_w24_public_code_evaluation_summary.csv",
+              "sha256": "90a3dab915e1504c7f634691e4f2fedf1ba145e039a6f56052db5eb4c88a10f3"
+            },
+            "worst_seed": 43,
+            "worst_value": 0.17395691300790836
+          },
+          "manifest": {
+            "evaluation_count": 25,
+            "gpu": "NVIDIA GeForce RTX 4060 Ti",
+            "path": "results/w24/fd001_w24_public_code_manifest.json",
+            "raw_path": "results/w24/fd001_w24_public_code_evaluation_raw.csv",
+            "raw_sha256": "22771f32c987202116e70cd8a35d836776141399d5e66da426409a00c8cc19c9",
+            "sha256": "94dccdcfe3955783b9827c2efb1273146443509875ff3ada9725e88490689df5",
+            "split_sha256": "bae308878c4b11fc4c06c1ff3aaf02d1c968bee5703c407388d157de74b4315d"
+          },
+          "rmse": {
+            "best_seed": 23,
+            "best_value": 15.516877117384894,
+            "ci95": [
+              15.586552263985409,
+              17.329520717338553
+            ],
+            "generation_sd": 0.7018679996660063,
+            "mean": 16.458036490661982,
+            "per_seed": {
+              "13": 16.946769983551086,
+              "23": 15.516877117384894,
+              "3": 15.986324750310203,
+              "33": 16.60681132900021,
+              "43": 17.23339927306353
+            },
+            "pooled_evaluator_sd": 0.7212529263415768,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 0.31388491169699795,
+            "source": {
+              "path": "results/w24/fd001_w24_public_code_evaluation_summary.csv",
+              "sha256": "90a3dab915e1504c7f634691e4f2fedf1ba145e039a6f56052db5eb4c88a10f3"
+            },
+            "worst_seed": 43,
+            "worst_value": 17.23339927306353
+          }
+        },
+        "FD002": {
+          "discriminative_score": {
+            "best_seed": 13,
+            "best_value": 0.08526580159062369,
+            "ci95": [
+              0.0723365053633955,
+              0.4573956001200703
+            ],
+            "generation_sd": 0.15505768682740034,
+            "mean": 0.2648660527417329,
+            "per_seed": {
+              "13": 0.08526580159062369,
+              "23": 0.2969547928003348,
+              "3": 0.473807032231059,
+              "33": 0.14103181247383842,
+              "43": 0.32727082461280876
+            },
+            "pooled_evaluator_sd": 0.06535019726265283,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 0.06934390563598818,
+            "source": {
+              "path": "results/w24/fd002_w24_public_code_evaluation_summary.csv",
+              "sha256": "78d020cba2beae89c213bde7139afc6d5ca7f0312f89552ad6b0011a98125f8b"
+            },
+            "worst_seed": 3,
+            "worst_value": 0.473807032231059
+          },
+          "manifest": {
+            "evaluation_count": 25,
+            "gpu": "NVIDIA GeForce RTX 4060 Ti",
+            "path": "results/w24/fd002_w24_public_code_manifest.json",
+            "raw_path": "results/w24/fd002_w24_public_code_evaluation_raw.csv",
+            "raw_sha256": "3384cd39e967b010f55e6b6c865bb76b810b31bb8f625a2229c9cd7a12bae998",
+            "sha256": "f1314193821062c5ccbfe9ed080042127b04ce3b78a0c2426c3c8a4770f7d9d6",
+            "split_sha256": "2f4aa97a3d7ebf4edae1114dd0a1aac73349aff12e306967f19df1da2a83271a"
+          },
+          "rmse": {
+            "best_seed": 33,
+            "best_value": 22.467120993528702,
+            "ci95": [
+              22.39828771587385,
+              28.75183039778593
+            ],
+            "generation_sd": 2.558479061607379,
+            "mean": 25.57505905682989,
+            "per_seed": {
+              "13": 23.172902264876512,
+              "23": 26.91036904481901,
+              "3": 27.304570876087052,
+              "33": 22.467120993528702,
+              "43": 28.020332104838168
+            },
+            "pooled_evaluator_sd": 0.4998021345104008,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 1.1441866201527944,
+            "source": {
+              "path": "results/w24/fd002_w24_public_code_evaluation_summary.csv",
+              "sha256": "78d020cba2beae89c213bde7139afc6d5ca7f0312f89552ad6b0011a98125f8b"
+            },
+            "worst_seed": 43,
+            "worst_value": 28.020332104838168
+          }
+        },
+        "FD003": {
+          "discriminative_score": {
+            "best_seed": 33,
+            "best_value": 0.12132024977698483,
+            "ci95": [
+              0.10087421210234608,
+              0.2397591509663426
+            ],
+            "generation_sd": 0.05592694121151624,
+            "mean": 0.17031668153434434,
+            "per_seed": {
+              "13": 0.12473238180196253,
+              "23": 0.2087198929527208,
+              "3": 0.2483050847457627,
+              "33": 0.12132024977698483,
+              "43": 0.14850579839429084
+            },
+            "pooled_evaluator_sd": 0.01674269920453792,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 0.025011288464516952,
+            "source": {
+              "path": "results/w24/fd003_w24_public_code_evaluation_summary.csv",
+              "sha256": "3d0aa5f9580da2b0fda76e120467adedb2f8a0f2fdf7f2f7188dd399e791673c"
+            },
+            "worst_seed": 3,
+            "worst_value": 0.2483050847457627
+          },
+          "manifest": {
+            "evaluation_count": 25,
+            "gpu": "NVIDIA GeForce RTX 4060 Ti",
+            "path": "results/w24/fd003_w24_public_code_manifest.json",
+            "raw_path": "results/w24/fd003_w24_public_code_evaluation_raw.csv",
+            "raw_sha256": "2eb32f738a6f71dbcdf3e992db4316f29d82022a8a52795cd65ec67ed0168563",
+            "sha256": "9e3f797ffceb50bd12e17e874f1fce4d46128caf1cbaaf05439fd6986021efbf",
+            "split_sha256": "d48ab4e9704c02a2fe38b951459f85f7afc6d9ddb787cb777a3e4a4d76e091cd"
+          },
+          "rmse": {
+            "best_seed": 43,
+            "best_value": 20.54921264091644,
+            "ci95": [
+              20.47813927867591,
+              21.655644161073162
+            ],
+            "generation_sd": 0.4741640589163688,
+            "mean": 21.066891719874537,
+            "per_seed": {
+              "13": 21.70152315935248,
+              "23": 20.6454686018719,
+              "3": 21.171018571101065,
+              "33": 21.2672356261308,
+              "43": 20.54921264091644
+            },
+            "pooled_evaluator_sd": 0.7070392594629273,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 0.21205261364484318,
+            "source": {
+              "path": "results/w24/fd003_w24_public_code_evaluation_summary.csv",
+              "sha256": "3d0aa5f9580da2b0fda76e120467adedb2f8a0f2fdf7f2f7188dd399e791673c"
+            },
+            "worst_seed": 13,
+            "worst_value": 21.70152315935248
+          }
+        },
+        "FD004": {
+          "discriminative_score": {
+            "best_seed": 43,
+            "best_value": 0.11785682125168843,
+            "ci95": [
+              0.08285483345319652,
+              0.4223266163441919
+            ],
+            "generation_sd": 0.13670034058412214,
+            "mean": 0.2525907248986942,
+            "per_seed": {
+              "13": 0.1485186852769023,
+              "23": 0.24462854570013506,
+              "3": 0.28864475461503825,
+              "33": 0.46330481764970727,
+              "43": 0.11785682125168843
+            },
+            "pooled_evaluator_sd": 0.038174128407407644,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 0.06113425081869408,
+            "source": {
+              "path": "results/w24/fd004_w24_public_code_evaluation_summary.csv",
+              "sha256": "da5bae5e008b02c3feb4730bd83ee27e77812c670ce5e55c4db8779f26547141"
+            },
+            "worst_seed": 33,
+            "worst_value": 0.46330481764970727
+          },
+          "manifest": {
+            "evaluation_count": 25,
+            "gpu": "NVIDIA GeForce RTX 4060 Ti",
+            "path": "results/w24/fd004_w24_public_code_manifest.json",
+            "raw_path": "results/w24/fd004_w24_public_code_evaluation_raw.csv",
+            "raw_sha256": "86a08c69a9ea7a1dbb9c9daa8c4b6fc6e20f8654d31d9a0889e2818bc6fc0ea1",
+            "sha256": "a73f7047efe3776cd5fee489bbf24a3483215e66d6a4243a4e13fa701d016520",
+            "split_sha256": "edf7c9396548f1ea73fa8b7773daf07f3f2b31da9736fb4452952af7e065575d"
+          },
+          "rmse": {
+            "best_seed": 13,
+            "best_value": 27.57685038220213,
+            "ci95": [
+              26.675928564077,
+              36.29074441260745
+            ],
+            "generation_sd": 3.8717462463434447,
+            "mean": 31.48333648834223,
+            "per_seed": {
+              "13": 27.57685038220213,
+              "23": 36.10831529644918,
+              "3": 34.99300820004097,
+              "33": 30.382696591905493,
+              "43": 28.355811971113372
+            },
+            "pooled_evaluator_sd": 0.6548377768174173,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 1.7314975596907176,
+            "source": {
+              "path": "results/w24/fd004_w24_public_code_evaluation_summary.csv",
+              "sha256": "da5bae5e008b02c3feb4730bd83ee27e77812c670ce5e55c4db8779f26547141"
+            },
+            "worst_seed": 23,
+            "worst_value": 36.10831529644918
+          }
+        }
+      },
+      "48": {
+        "FD001": {
+          "discriminative_score": {
+            "best_seed": 13,
+            "best_value": 0.2127078757452149,
+            "ci95": [
+              0.21174571355791666,
+              0.41474942293408196
+            ],
+            "generation_sd": 0.0817466358329779,
+            "mean": 0.3132475682459993,
+            "per_seed": {
+              "13": 0.2127078757452149,
+              "23": 0.4227486664574835,
+              "3": 0.3590524003765296,
+              "33": 0.2631314716033887,
+              "43": 0.30859742704738
+            },
+            "pooled_evaluator_sd": 0.008293837811021726,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 0.03655820693089175,
+            "source": {
+              "path": "results/fd001_w48_public_code_evaluation_summary.csv",
+              "sha256": "33c20f62efc444af225e4e8ab8e87875a98f6b2d63f4b407fbec4653de27ef08"
+            },
+            "worst_seed": 23,
+            "worst_value": 0.4227486664574835
+          },
+          "manifest": {
+            "evaluation_count": 25,
+            "gpu": "NVIDIA GeForce RTX 4060 Ti",
+            "path": "results/fd001_w48_public_code_manifest.json",
+            "raw_path": "results/fd001_w48_public_code_evaluation_raw.csv",
+            "raw_sha256": "2841d8fb28c101a37e9ac88c3fa3ced71d283ca5cc214cf438ebd7fbcccc92b7",
+            "sha256": "1a112733a25dd0ef57c690ebe232a9782c1b98f5f091d01ba844f17f188fcc62",
+            "split_sha256": "cefc8ff423d354cd0f9efd562fad1c97fa92d59d2820bc467c878c93969e1a2f"
+          },
+          "rmse": {
+            "best_seed": 13,
+            "best_value": 13.986405649605413,
+            "ci95": [
+              13.661384129949893,
+              17.05453873566595
+            ],
+            "generation_sd": 1.3663739186385013,
+            "mean": 15.357961432807922,
+            "per_seed": {
+              "13": 13.986405649605413,
+              "23": 17.63330293249744,
+              "3": 14.755284393105962,
+              "33": 15.184893723999105,
+              "43": 15.229920464831697
+            },
+            "pooled_evaluator_sd": 0.4697056791842697,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 0.6110609929516911,
+            "source": {
+              "path": "results/fd001_w48_public_code_evaluation_summary.csv",
+              "sha256": "33c20f62efc444af225e4e8ab8e87875a98f6b2d63f4b407fbec4653de27ef08"
+            },
+            "worst_seed": 23,
+            "worst_value": 17.63330293249744
+          }
+        },
+        "FD002": {
+          "discriminative_score": {
+            "best_seed": 33,
+            "best_value": 0.09878430428502649,
+            "ci95": [
+              0.09039557149055391,
+              0.433760147609797
+            ],
+            "generation_sd": 0.18563342954416923,
+            "mean": 0.26207785955017543,
+            "per_seed": {
+              "13": 0.10669234472797302,
+              "23": 0.4562831006259028,
+              "3": 0.1306451612903226,
+              "33": 0.09878430428502649,
+              "43": 0.4211001444390948,
+              "53": 0.4989046701974001,
+              "63": 0.12213529128550796
+            },
+            "pooled_evaluator_sd": 0.020720811647524633,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43,
+              53,
+              63
+            ],
+            "sem": 0.07016284137055744,
+            "source": {
+              "path": "results/frequency_threshold_validation/fd002_public_arm_seven_seeds_evaluation_summary.csv",
+              "sha256": "8871d7705a5992435532b3a81feccb6b9fd127b6c16411076d56f3607645dadc"
+            },
+            "worst_seed": 53,
+            "worst_value": 0.4989046701974001
+          },
+          "manifest": {
+            "evaluation_count": 35,
+            "gpu": "NVIDIA GeForce RTX 4060 Ti",
+            "path": "results/frequency_threshold_validation/fd002_public_arm_seven_seeds_manifest.json",
+            "raw_path": "results/frequency_threshold_validation/fd002_public_arm_seven_seeds_evaluation_raw.csv",
+            "raw_sha256": "93440fa0e96bf6580de32ab7dfb80e4fa4d06a821a1881aa9c277316e7357319",
+            "sha256": "9c8546d8a0777871cfc3b9feb93a41b993974b322782f1e1c5822f25e8148945",
+            "split_sha256": "8c390ebfebf4cc3b18ff4b9e0cfa93c7b883e8d6a213364fc45d8bed80e82c76"
+          },
+          "rmse": {
+            "best_seed": 13,
+            "best_value": 23.54035931673415,
+            "ci95": [
+              24.6200627839967,
+              31.969208026578286
+            ],
+            "generation_sd": 3.9731735026878914,
+            "mean": 28.294635405287494,
+            "per_seed": {
+              "13": 23.54035931673415,
+              "23": 26.849480240864455,
+              "3": 26.990459387288883,
+              "33": 25.212566476800994,
+              "43": 31.36615502966314,
+              "53": 35.30436647425945,
+              "63": 28.799060911401376
+            },
+            "pooled_evaluator_sd": 0.8299027492371601,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43,
+              53,
+              63
+            ],
+            "sem": 1.5017184291176542,
+            "source": {
+              "path": "results/frequency_threshold_validation/fd002_public_arm_seven_seeds_evaluation_summary.csv",
+              "sha256": "8871d7705a5992435532b3a81feccb6b9fd127b6c16411076d56f3607645dadc"
+            },
+            "worst_seed": 53,
+            "worst_value": 35.30436647425945
+          }
+        },
+        "FD003": {
+          "discriminative_score": {
+            "best_seed": 13,
+            "best_value": 0.12347652347652346,
+            "ci95": [
+              0.10825973504578323,
+              0.27494705816100995
+            ],
+            "generation_sd": 0.06712255624563582,
+            "mean": 0.1916033966033966,
+            "per_seed": {
+              "13": 0.12347652347652346,
+              "23": 0.16845654345654346,
+              "3": 0.23454045954045952,
+              "33": 0.14565434565434568,
+              "43": 0.28588911088911084
+            },
+            "pooled_evaluator_sd": 0.0143261214831072,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 0.03001811971775895,
+            "source": {
+              "path": "results/fd003_w48_public_code_evaluation_summary.csv",
+              "sha256": "7aef9ed422e7b3762fac4dfa3cb0d8cef15d74d78c528e5b315ea6c6e17178ca"
+            },
+            "worst_seed": 43,
+            "worst_value": 0.28588911088911084
+          },
+          "manifest": {
+            "evaluation_count": 25,
+            "gpu": "NVIDIA GeForce RTX 4060 Ti",
+            "path": "results/fd003_w48_public_code_manifest.json",
+            "raw_path": "results/fd003_w48_public_code_evaluation_raw.csv",
+            "raw_sha256": "6c028db08e1611c6a17524e9261557789f862f6da20a394e4c8837998bbb25eb",
+            "sha256": "3db5103ac8ea02c03d5881c8f84954265a5db28d236d589875d9e0f815136429",
+            "split_sha256": "49d8f0745c18fb468c1ca8eeb46beb8fcf4998ebb1640047514c83a7e7bc5695"
+          },
+          "rmse": {
+            "best_seed": 13,
+            "best_value": 18.83345277977101,
+            "ci95": [
+              19.19913795418696,
+              22.235391944745444
+            ],
+            "generation_sd": 1.2226552412532024,
+            "mean": 20.717264949466202,
+            "per_seed": {
+              "13": 18.83345277977101,
+              "23": 21.965241755313162,
+              "3": 20.409536777019913,
+              "33": 20.780698670230713,
+              "43": 21.597394764996196
+            },
+            "pooled_evaluator_sd": 1.578411420468686,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 0.5467880464977131,
+            "source": {
+              "path": "results/fd003_w48_public_code_evaluation_summary.csv",
+              "sha256": "7aef9ed422e7b3762fac4dfa3cb0d8cef15d74d78c528e5b315ea6c6e17178ca"
+            },
+            "worst_seed": 23,
+            "worst_value": 21.965241755313162
+          }
+        },
+        "FD004": {
+          "discriminative_score": {
+            "best_seed": 23,
+            "best_value": 0.24090817356205854,
+            "ci95": [
+              0.24722110346139858,
+              0.5230634575880465
+            ],
+            "generation_sd": 0.11107769675439204,
+            "mean": 0.38514228052472255,
+            "per_seed": {
+              "13": 0.4645206861755803,
+              "23": 0.24090817356205854,
+              "3": 0.2891725529767911,
+              "33": 0.4582744702320888,
+              "43": 0.47283551967709386
+            },
+            "pooled_evaluator_sd": 0.023558725296159242,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 0.04967545614538567,
+            "source": {
+              "path": "results/fd004_w48_public_code_evaluation_summary.csv",
+              "sha256": "a3cf591323d0271c0f5011a68a7aa9378e6e5bfbb63f1a73a349479e1070e4dd"
+            },
+            "worst_seed": 43,
+            "worst_value": 0.47283551967709386
+          },
+          "manifest": {
+            "evaluation_count": 25,
+            "gpu": "NVIDIA GeForce RTX 4060 Ti",
+            "path": "results/fd004_w48_public_code_manifest.json",
+            "raw_path": "results/fd004_w48_public_code_evaluation_raw.csv",
+            "raw_sha256": "5bbafb22db678b09b8ae33348cc278358661048848f05b9c41bf966acc47c1f6",
+            "sha256": "3cc27c79ee4754ca8b8d6ef4cc40a080d80dd1a718b7bfa0b0b977c99d15684c",
+            "split_sha256": "cdd95882871744c86071595c482779376c2d60214f3f89b0c375558a5b3e5882"
+          },
+          "rmse": {
+            "best_seed": 13,
+            "best_value": 30.176715175557877,
+            "ci95": [
+              29.771703964212495,
+              36.781683187939336
+            ],
+            "generation_sd": 2.8228164921700687,
+            "mean": 33.276693576075914,
+            "per_seed": {
+              "13": 30.176715175557877,
+              "23": 36.20669078938688,
+              "3": 35.732541907721796,
+              "33": 33.720365927065,
+              "43": 30.547154080648
+            },
+            "pooled_evaluator_sd": 0.6223445924284463,
+            "seeds": [
+              3,
+              13,
+              23,
+              33,
+              43
+            ],
+            "sem": 1.2624019128999553,
+            "source": {
+              "path": "results/fd004_w48_public_code_evaluation_summary.csv",
+              "sha256": "a3cf591323d0271c0f5011a68a7aa9378e6e5bfbb63f1a73a349479e1070e4dd"
+            },
+            "worst_seed": 23,
+            "worst_value": 36.20669078938688
+          }
+        }
+      }
+    }
+  },
+  "schema_version": 1,
+  "statistical_unit": "generation seed; evaluator seeds averaged within generation seed",
+  "window_pairs": {
+    "FD001": {
+      "discriminative_score": {
+        "difference_sd": 0.07731941564996983,
+        "direction_matches_paper": false,
+        "mean_difference_w24_minus_w48": -0.167929869854944,
+        "mean_w24": 0.14531769839105535,
+        "mean_w48_common_five": 0.3132475682459993,
+        "paired_p": 0.008300210281655339,
+        "paired_t": -4.856511153010687,
+        "paper_difference_w24_minus_w48": 0.03500000000000002,
+        "per_seed_w24_minus_w48": [
+          -0.24263571098465608,
+          -0.079138200261168,
+          -0.2557183964820267,
+          -0.12751652750739745,
+          -0.13464051403947166
+        ],
+        "seeds": [
+          3,
+          13,
+          23,
+          33,
+          43
+        ],
+        "w24_better_seed_count": 5
+      },
+      "rmse": {
+        "difference_sd": 1.9198585187144002,
+        "direction_matches_paper": true,
+        "mean_difference_w24_minus_w48": 1.100075057854061,
+        "mean_w24": 16.458036490661982,
+        "mean_w48_common_five": 15.357961432807922,
+        "paired_p": 0.26933719631180014,
+        "paired_t": 1.281262439776492,
+        "paper_difference_w24_minus_w48": 0.7479999999999993,
+        "per_seed_w24_minus_w48": [
+          1.2310403572042414,
+          2.960364333945673,
+          -2.116425815112546,
+          1.421917605001104,
+          2.003478808231833
+        ],
+        "seeds": [
+          3,
+          13,
+          23,
+          33,
+          43
+        ],
+        "w24_better_seed_count": 1
+      }
+    },
+    "FD002": {
+      "discriminative_score": {
+        "difference_sd": 0.19476718405535706,
+        "direction_matches_paper": true,
+        "mean_difference_w24_minus_w48": 0.022165041668068992,
+        "mean_w24": 0.2648660527417329,
+        "mean_w48_common_five": 0.24270101107366396,
+        "paired_p": 0.8116787016126741,
+        "paired_t": 0.2544706909138803,
+        "paper_difference_w24_minus_w48": 0.17100000000000004,
+        "per_seed_w24_minus_w48": [
+          0.3431618709407364,
+          -0.021426543137349333,
+          -0.159328307825568,
+          0.04224750818881193,
+          -0.09382931982628606
+        ],
+        "seeds": [
+          3,
+          13,
+          23,
+          33,
+          43
+        ],
+        "w24_better_seed_count": 3
+      },
+      "rmse": {
+        "difference_sd": 1.7005188710138333,
+        "direction_matches_paper": false,
+        "mean_difference_w24_minus_w48": -1.2167450334404357,
+        "mean_w24": 25.57505905682989,
+        "mean_w48_common_five": 26.791804090270325,
+        "paired_p": 0.1848626659713297,
+        "paired_t": -1.5999379086196195,
+        "paper_difference_w24_minus_w48": 1.256999999999998,
+        "per_seed_w24_minus_w48": [
+          0.31411148879816864,
+          -0.3674570518576381,
+          0.06088880395455476,
+          -2.7454454832722917,
+          -3.3458229248249722
+        ],
+        "seeds": [
+          3,
+          13,
+          23,
+          33,
+          43
+        ],
+        "w24_better_seed_count": 3
+      }
+    },
+    "FD003": {
+      "discriminative_score": {
+        "difference_sd": 0.06894360191832569,
+        "direction_matches_paper": true,
+        "mean_difference_w24_minus_w48": -0.021286715069052248,
+        "mean_w24": 0.17031668153434434,
+        "mean_w48_common_five": 0.1916033966033966,
+        "paired_p": 0.5279147654620906,
+        "paired_t": -0.6903982470840117,
+        "paper_difference_w24_minus_w48": -0.0020000000000000018,
+        "per_seed_w24_minus_w48": [
+          0.013764625205303194,
+          0.0012558583254390632,
+          0.04026334949617735,
+          -0.02433409587736085,
+          -0.13738331249482
+        ],
+        "seeds": [
+          3,
+          13,
+          23,
+          33,
+          43
+        ],
+        "w24_better_seed_count": 2
+      },
+      "rmse": {
+        "difference_sd": 1.6786671039294816,
+        "direction_matches_paper": true,
+        "mean_difference_w24_minus_w48": 0.34962677040833867,
+        "mean_w24": 21.066891719874537,
+        "mean_w48_common_five": 20.717264949466202,
+        "paired_p": 0.6656437664097273,
+        "paired_t": 0.4657202274094238,
+        "paper_difference_w24_minus_w48": 5.214000000000002,
+        "per_seed_w24_minus_w48": [
+          0.7614817940811527,
+          2.868070379581468,
+          -1.3197731534412611,
+          0.48653695590008894,
+          -1.048182124079755
+        ],
+        "seeds": [
+          3,
+          13,
+          23,
+          33,
+          43
+        ],
+        "w24_better_seed_count": 2
+      }
+    },
+    "FD004": {
+      "discriminative_score": {
+        "difference_sd": 0.18578010560099076,
+        "direction_matches_paper": true,
+        "mean_difference_w24_minus_w48": -0.13255155562602824,
+        "mean_w24": 0.2525907248986942,
+        "mean_w48_common_five": 0.38514228052472255,
+        "paired_p": 0.18585275936309822,
+        "paired_t": -1.5954038132571886,
+        "paper_difference_w24_minus_w48": -0.15399999999999997,
+        "per_seed_w24_minus_w48": [
+          -0.0005277983617528736,
+          -0.316002000898678,
+          0.003720372138076522,
+          0.005030347417618486,
+          -0.3549786984254054
+        ],
+        "seeds": [
+          3,
+          13,
+          23,
+          33,
+          43
+        ],
+        "w24_better_seed_count": 3
+      },
+      "rmse": {
+        "difference_sd": 1.3395198204392302,
+        "direction_matches_paper": false,
+        "mean_difference_w24_minus_w48": -1.793357087733682,
+        "mean_w24": 31.48333648834223,
+        "mean_w48_common_five": 33.276693576075914,
+        "paired_p": 0.04019255452096642,
+        "paired_t": -2.9936610828114962,
+        "paper_difference_w24_minus_w48": 0.7559999999999967,
+        "per_seed_w24_minus_w48": [
+          -0.7395337076808275,
+          -2.5998647933557457,
+          -0.09837549293770564,
+          -3.3376693351595037,
+          -2.1913421095346273
+        ],
+        "seeds": [
+          3,
+          13,
+          23,
+          33,
+          43
+        ],
+        "w24_better_seed_count": 5
+      }
+    }
+  }
+}

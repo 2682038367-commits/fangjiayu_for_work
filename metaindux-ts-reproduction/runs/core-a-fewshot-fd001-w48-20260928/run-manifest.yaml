@@ -1,0 +1,64 @@
+run_id: core-a-fewshot-fd001-w48-20260928
+status: complete
+finished_at: "2026-09-28T21:27:32+08:00"
+started_at: "2026-09-28T16:57:15+08:00"
+role: core:A-minimum-viable
+claim: "Table VI few-shot fatigue-condition generation"
+source:
+  repository: https://github.com/Dolphin-wang/MetaIndux-TS
+  repository_vcs: "upstream snapshot has no .git metadata; commit unknown"
+  local_modifications: "compatibility/audit patch; hashes below bind exact files"
+configuration:
+  generation: configs/paper_fewshot_fd001.yaml
+  generation_sha256: e979b1db762966aecdbaf855afc05f8c7b43e76073a40615cc11a96d8b16f57a
+  evaluation: configs/evaluation_fd001_fewshot.yaml
+  evaluation_sha256: 1378dd0c9837250bdf3642b58bb9e7af798fdb455ed49a9f167265ee8b9ac87d
+resolved_protocol:
+  dataset: FD001
+  window_size: 48
+  normal: "RUL > 30"
+  fatigue: "RUL <= 30 (public-code resolution of paper's unspecified equality boundary)"
+  generator_training: "all 12831 normal windows + seeded 310/3100 fatigue windows"
+  generator_sampling_conditions: "all 15931 original training RUL labels"
+  predictive_test: "25 real test engines with final-window RUL <= 30"
+  generation_seeds: [3, 13, 23, 33, 43]
+  evaluator_seeds: [3, 13, 23, 33, 43]
+  fixed_evaluation_split_seed: 20260915
+  predictive_split: "70% synthetic train / 30% synthetic validation"
+  predictor_layers: 2
+commands:
+  generation: ".venv/bin/python scripts/run_experiments.py --config configs/paper_fewshot_fd001.yaml --skip-completed"
+  evaluation: ".venv/bin/python scripts/evaluate_fd002_stability.py --config configs/evaluation_fd001_fewshot.yaml"
+code_sha256:
+  upstream/main_fewshot.py: 386cee38fc0939f8f0e3d814bb253d58fd347ed5354a513e0cf769804e5546ce
+  upstream/args.py: e578a3d0a94235227e172e4e87fc86b3a1c79625602e9049e79955b38f519b4f
+  upstream/TrainCondition.py: f600aea3d3c64abac79f1b853b89d8971671b0dbb58b2ecb0f0edb408db32608
+  upstream/data/CMAPSSDataset.py: 7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03
+  scripts/run_experiments.py: 43d62261904c8d88ceaaa388b12c5fedf4d4ab78af59e7e3cf2c7022c9e7f256
+  scripts/evaluate_fd002_stability.py: 4b6b8a0ab38d7389fb324b7266d71d93ee50b8d2baad6e6e960d8baa0ed9aacf
+data_sha256:
+  train_FD001.txt: 963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8
+  test_FD001.txt: 3cda7109ce17bafb5443f2ac926cfcf88154b941b8c4cf95eb55d1ddd6f52851
+  RUL_FD001.txt: a19c8ec94931949d0485bdc35118206e9c81c4547b422efb9cf86f4ceddbceca
+environment:
+  os: Linux-6.8.0-138-generic-x86_64-with-glibc2.35
+  python: "3.10.12"
+  torch: 2.1.2+cu121
+  torch_cuda: "12.1"
+  gpu: NVIDIA GeForce RTX 4060 Ti
+  gpu_memory_mib: 8188
+  nvidia_driver: "595.84"
+artifacts:
+  checkpoints: checkpoints/FD001_w48_seed*_fewshot10_paper.pth
+  generated: outputs/FD001_w48_seed*_fewshot10_paper.npz
+  sampled_indices: results/fewshot/splits/FD001_w48_seed*_fewshot10_paper_indices.npz
+  loss_histories: logs/FD001_w48_seed*_fewshot10_paper_training_loss.csv
+  raw_metrics: results/fewshot/fd001_table_vi_evaluation_raw.csv
+  summary: results/fewshot/fd001_table_vi_evaluation_summary.csv
+  console_log: "systemd journal unit metaindux-fewshot-fd001.service"
+result:
+  predictive_rmse_mean: 27.33556524454575
+  predictive_rmse_generation_seed_sd: 7.109459489608977
+  predictive_rmse_95pct_t_interval: [18.508005349610162, 36.16312513948134]
+  paper_rmse: 5.219
+  absolute_gap: 22.11656524454575
