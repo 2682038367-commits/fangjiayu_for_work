@@ -1,0 +1,28 @@
+{
+  "seed": 43,
+  "first_epoch_only": true,
+  "updates_per_trajectory": 163,
+  "maximum_trajectories": 4,
+  "maximum_updates": 652,
+  "initial_public_arguments_keep_epoch70": true,
+  "primary_pair": [
+    "native_public",
+    "native_worker"
+  ],
+  "conditional_pair": [
+    "strict_public",
+    "strict_worker"
+  ],
+  "conditional_trigger": "All actual initial states and163 complete random questions match, but any output/loss/gradient/Adam/weight differs",
+  "environment": {
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "1",
+    "TF_DETERMINISTIC_OPS": "1",
+    "TF_ENABLE_ONEDNN_OPTS": "0",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "WANDB_MODE": "offline"
+  },
+  "stop": "Before second epoch, sampling/evaluation forbidden; stop unsupported strict deterministic op; no retries",
+  "source_limitation": "Both entries use current available source; historical Sep14 exact code/RNG/algorithm state unavailable",
+  "metric": "Exact per-batch producer and numerical-state equality; no paper metric target"
+}

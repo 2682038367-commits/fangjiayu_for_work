@@ -1,0 +1,192 @@
+{
+  "run_id": "diagnostic-fd003-prototype-condition-adherence-20261105",
+  "status": "complete",
+  "started_at": "2026-11-05T09:33:28.786252+08:00",
+  "scope": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261105-fd003-prototype-condition-adherence-v1",
+  "authorization": "Explicit user read-only saved FD003 requested/output prototype adherence closeout",
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "metaindux-ts-reproduction/analysis/diagnostics/diagnose_fd003_prototype_condition_adherence.py"
+  ],
+  "config": {
+    "run_id": "diagnostic-fd003-prototype-condition-adherence-20261105",
+    "parent_run": "ext-prototype-fd003-w48-20261103",
+    "real_diagnostic": "diagnostic-fd003-prototype-probe-20261103",
+    "scope_contract": "scope-20261105-fd003-prototype-condition-adherence-v1",
+    "generator_seeds": [
+      23,
+      13
+    ],
+    "checkpoints": [
+      64,
+      70
+    ],
+    "ranges": [
+      [
+        "all",
+        0,
+        125
+      ],
+      [
+        "0-30",
+        0,
+        30
+      ],
+      [
+        "31-60",
+        31,
+        60
+      ],
+      [
+        "31-40",
+        31,
+        40
+      ],
+      [
+        "41-50",
+        41,
+        50
+      ],
+      [
+        "51-60",
+        51,
+        60
+      ],
+      [
+        "61-90",
+        61,
+        90
+      ],
+      [
+        "91-124",
+        91,
+        124
+      ],
+      [
+        "125",
+        125,
+        125
+      ]
+    ],
+    "primary_range": "31-60",
+    "frozen_assignment": "saved42sensorfeatures and training standardizer, nearest frozen4centers; no generated-data fitting",
+    "metrics": [
+      "raw_accuracy",
+      "exactRUL_conditional_chance_accuracy",
+      "conditional_kappa",
+      "equal_RUL_macro_requested_class_recall",
+      "conditional_mutual_information_nats"
+    ],
+    "permutations": 1000,
+    "permutation_seed": 20261105,
+    "permutation_rule": "permute requested IDs within EXACT target RUL only; preserve requested and output marginals at eachRUL; tests only all/31-60; all candidates reported",
+    "negative_control": "A has no prototype input; use B saved requested IDs as PSEUDO labels on paired existing A sample indices; never call them real A conditions",
+    "sync_comparisons": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "sync_feature": "sensor_peak_synchrony from prior frozen diagnostic",
+    "sync_RUL_support": "prior aligned train-validation real-matched RUL sets per pair, restricted to generated requested groups with>=3samples eachRUL; report exact sets; equalRULmean",
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20261105,
+    "bootstrap_rule": "generated windows within exactRUL and requested class; paired A/B row indices; no invented generated engineID; conditional-on-saved-batch uncertainty only",
+    "no_training": true,
+    "no_sampling": true,
+    "no_reclustering": true,
+    "no_official_test_access": true,
+    "interpretation": "CMI tests any response, accuracy tests intended label correspondence, synchrony tests retained real contrast. Partial response is not proof of useful downstream generation; lack of significance is not proof of zero effect; checkpoints/seeds share sampling noise and are not independent replications."
+  },
+  "git_head": "df7e83b2e14317db34a23049db973ec83aa52065",
+  "environment": {
+    "python": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]",
+    "numpy": "1.23.5",
+    "pandas": "2.2.3",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "device": "CPU"
+  },
+  "input_hashes": {
+    "analysis/diagnostics/diagnose_fd003_prototype_condition_adherence.py": "bac7fc1fa571dcc6091080413b0932ab822fae5060af20d05d368e6e8adfb2ae",
+    "configs/diagnostics/fd003_prototype_condition_adherence.json": "c1e213ee1177f1417eebc725b27eb569bc28c0a52f1dcae4534ca8b5e170a0e7",
+    "docs/operations/FD003_PROTOTYPE_CONDITION_ADHERENCE.md": "b3e647137b6a04c265ec8ab6ebb01d25d6e809e1d7c640d9df18f77e71193c37",
+    "upstream/prototype_guidance.py": "73de79aa2a86cff69a598c81ea6fbeb4be517362b215e4c25ccce5ca8d83309b",
+    "scripts/run_prototype_guidance_fd003.py": "83e5448310dd0c654d20a291a93b69388f65be5fa4f50e2f0c30aa77725354ef",
+    "analysis/diagnostics/diagnose_fd003_prototypes.py": "dfee1423eb4ea6cf78d7cf48f732d306078ffbc92b111f220bbaafed394cda5a",
+    "runs/ext-prototype-fd003-w48-20261103/manifest.json": "710e1cd8ab49fa4d8f9de5d341deae7b943ad698bf06bf03da2d424d94b74b8a",
+    "runs/ext-prototype-fd003-w48-20261103/config.json": "7c53f0949f62348fcf4e3cba0602d1cd9e562ccbd3dbe95c4498e8190f1580a9",
+    "runs/ext-prototype-fd003-w48-20261103/prototypes.npz": "4f5366901317db9ad6ca7f7ef63c11d1594e40a71d26ded25356296b95454e8a",
+    "runs/ext-prototype-fd003-w48-20261103/plan.npz": "b50cab630936de65957324ec543cc141152c4a292c4406686464b176e24f2cf8",
+    "runs/ext-prototype-fd003-w48-20261103/train.npz": "8be20fc7ff6ad4231183990aed4329f64158ac60cb0df14b7cd6b15f9759e905",
+    "runs/ext-prototype-fd003-w48-20261103/validation.npz": "e20d33f827860d8b93ee78e1b2888b27ac037e247a0748011ff321436c85b50f",
+    "runs/diagnostic-fd003-prototype-probe-20261103/manifest.json": "3afd3bc0e9d9bee143be86252a9b043625a56798a1707d977934d7c222211734",
+    "results/diagnostics/fd003_prototype_probe_20261103/aligned_matched_windows.csv": "3b7529547159ee2efdfc1804f44d371e9852988ffae130fe5ff32158ff51fada",
+    "results/diagnostics/fd003_prototype_probe_20261103/aligned_curve_contrasts.csv": "f33df30435343fe531240940bcc5e8796c44948e09e44d656235a209cb599e26",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed23/A/samples64.npz": "2559b1cae2b46995c9067565860027c6964f7cca8185f6764f606f9e6b2a0cdc",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed23/B/samples64.npz": "e841fcfadf5c88352f7a2d30083047850c4b3ccd91a104b2efa473e2944043be",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed23/A/samples70.npz": "65f66d37cdd317b2740d1af1dbc9dca7092db432019713afe607a3ce318cc589",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed23/B/samples70.npz": "bfb1c0e4781032b09e0550c5bad78ca51234ff75a8bd47783fed5ca2d65eee97",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed13/A/samples64.npz": "98e1a1b6e7c5ea8b3dab6c9a964809d4be0316ff61175cc1b2998e07eb0058b9",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed13/B/samples64.npz": "82079359473d7b0e0d7c33373b5d5773bdbca824f55d5e1cc6ab9da3722cef50",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed13/A/samples70.npz": "6e61c80fecdaaedc8434478a0e25007eaf351bcf6e1e4c3e3554b99bd6e23507",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed13/B/samples70.npz": "0db5930a847295dc0872f3818f3c9323547085a8e6cf23d045a6fb76242dd236",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed23/A/sampling64.json": "f85944cea1b9d57f913e6b2404d408ecc327af01395be18e2104bde587891254",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed23/B/sampling64.json": "f85944cea1b9d57f913e6b2404d408ecc327af01395be18e2104bde587891254",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed23/A/sampling70.json": "f85944cea1b9d57f913e6b2404d408ecc327af01395be18e2104bde587891254",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed23/B/sampling70.json": "f85944cea1b9d57f913e6b2404d408ecc327af01395be18e2104bde587891254",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed13/A/sampling64.json": "f85944cea1b9d57f913e6b2404d408ecc327af01395be18e2104bde587891254",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed13/B/sampling64.json": "f85944cea1b9d57f913e6b2404d408ecc327af01395be18e2104bde587891254",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed13/A/sampling70.json": "f85944cea1b9d57f913e6b2404d408ecc327af01395be18e2104bde587891254",
+    "results/extensions/ext-prototype-fd003-w48-20261103/seed13/B/sampling70.json": "f85944cea1b9d57f913e6b2404d408ecc327af01395be18e2104bde587891254"
+  },
+  "model_fits": 0,
+  "new_generated_windows": 0,
+  "finished_at": "2026-11-05T09:33:34.799503+08:00",
+  "report": "docs/conclusions/final/fd003_prototype_condition_adherence_20261105_report.md",
+  "output_hashes": {
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/synchrony_condition_response.png": "d9ef7966b5dad5308da6061c96664e251121f6cea551245ff71b27c4a5f91786",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/seed13_A_epoch70_readout.npz": "2c1d24c78148ec96f4d27ec1c22ad75dcfdd439bcbf43b691bd4f5ec660ac166",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/synchrony_summary.csv": "5b45cdc64f656926d1456a89b6472ee42091dc081534ee07424f16dc04305c1d",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/confusion_by_RUL_range.csv": "e7e40bf5a8b95a8d00e1472e986bf16b9a9cc1030e672c1a7f4dc303eb1c70a4",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/seed23_A_epoch64_readout.npz": "011629dd7a925beb3fa8189b991f6a806ab728782eee44fb31e9006a9cb31fed",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/synchrony_RUL_support.csv": "2eaeeca922a4a9a0373bcd0240670407ace7f81be28027cd981b191986f3c985",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/class_recalls.csv": "958699f47c2f5b46fb7409188b3f2fd0e5c9b89e3a2fbf0c94fb5e6312afbfac",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/real_cluster_distances.json": "d2b0bdf4e6fc811948278b8e87856fb8bcc181b4cdf981b01152bfd164667cd1",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/cluster_distance_diagnostics.csv": "31a0bee85bdb7d48d890507d19196247e90102686ab39dc1629e4ddacba9543b",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/seed23_B_epoch64_readout.npz": "a974f7bcb395383b17c04933479454215f29e35d8707bd3e9eaa29a1d6f2feeb",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/seed13_A_epoch64_readout.npz": "283528702dd928c3276faa53a470a38f6e856011251643cc8a47bc42cc7ae7b9",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/classification_summary.csv": "d8f31ee0218e1de7745f940ed1053cb5bb599c8449acbcab96d3fd68aef526ac",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/confusion_exact_RUL.csv": "c85a99426aecb37fcdf1bab39b773d65919508b3b975bf1a7233ea4677487461",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/closeout_decision.json": "21c6c090b72b95128085fad5b85a87f9a706ad03bfb6d0eee04671a589623ea8",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/seed23_B_epoch70_readout.npz": "25d871e83bf3c01df95d1373678ed2f97b3eee4902ffc1561cc057cc4d2bc111",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/seed23_A_epoch70_readout.npz": "8a93acd1d5f3f0fd39175d09aa0e296ce7e923c63e884a07e1c7601237a899d4",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/seed13_B_epoch64_readout.npz": "e88bb3d256dbf6eadc5418423006767fb3f24f8ae10d46b28a465be43c0c48f2",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/real_synchrony_references.csv": "a302b5bad057d0bcba8f56494db48ede2826220fb891e3137f28da8320b727a4",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/seed13_B_epoch70_readout.npz": "a255e964e0852add2581375b04dcf6247d0a49c03bdbb23f3ebcc6125745d344",
+    "results/diagnostics/fd003_prototype_condition_adherence_20261105/confusion31_60.png": "4c3218338b7c9e4945beb41755555c24078febf5ee0450da7eefd9c85406a443",
+    "docs/conclusions/final/fd003_prototype_condition_adherence_20261105_report.md": "0552f4c21bb70aaa85427ca45fe18a29e56d03204e470ed4972d5a756864b8c7",
+    "runs/diagnostic-fd003-prototype-condition-adherence-20261105/verification.json": "d34544e5e47b5665d841b5bd1240055142803f02fe1ef64f6abea5e38ffbc000",
+    "runs/diagnostic-fd003-prototype-condition-adherence-20261105/sanity_checks.json": "818b83f5e1b6f05e224f150da1cc4e846e8b8668df9f4c2106f416161236e895"
+  },
+  "revisions": [
+    {
+      "type": "outcome-specific conclusion render only",
+      "at": "2026-11-05T09:35:01.466919+08:00",
+      "prior_source_and_manifest": "before_conclusion_render/",
+      "all_csv_npz_byte_unchanged": true,
+      "additional_statistics_or_fits": false
+    },
+    {
+      "type": "plot spacing only",
+      "at": "2026-11-05T09:36:35.838056+08:00",
+      "prior_source_and_manifest": "before_plot_layout_fix/",
+      "all_csv_npz_byte_unchanged": true
+    }
+  ]
+}

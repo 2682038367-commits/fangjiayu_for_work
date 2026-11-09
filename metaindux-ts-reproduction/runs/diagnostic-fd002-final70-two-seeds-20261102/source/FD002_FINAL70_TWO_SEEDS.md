@@ -1,0 +1,22 @@
+# FD002 same-training best-loss versus final70
+
+Run: `diagnostic-fd002-final70-two-seeds-20261102`; diagnostic/supporting.
+Scope revision: `scope-20261102-fd002-final70-two-seeds`.
+User explicitly authorizes this FD002 comparison and reruns if late weights absent.
+FD001125 nearest-neighbor/sensor-offset work paused; FD003/4 excluded.
+
+[Observed] Preselect among original five-seed FD002 paper70 records: worst mean downstream RMSE seed43, best seed13. Original saved best epochs67 and69. Original five-seed record fixes this choice before new outcomes; extra53/63 are not searched. Inventory all archived weights and reject rerun preparation if candidate epoch/final FD002 weights exist. Other model/window/threshold variants cannot substitute for missing same-run weights.
+
+[Code] Reconstruct original global MinMax/14-channel/48-window training tensor and capped125 labels from train_FD002 only. Independently compare against public train-only normalization and slicing. Training continues unchanged70 epochs,163 batches/epoch,11410 actual Adam updates. Original training condition dropout.2/numeric batch-zero.1, LR/schedule/initialization/data order retained. Observe original best-loss saves; additionally save original67/69-stage and final70 without consuming RNG. Original training is not claimed bit-deterministic.
+
+[Code] Fixed DDPM1000/CFG3/sampling103/count41539/batch256. Conditional branch retains the specified RUL; explicit unconditional CFG branch retained. Consume all legacy random condition draws so they cannot shift subsequent diffusion noise. Independently clone CUDA generator and require actual equality of every initial/step noise tensor and conditional draw; require identical cross-arm schedule fingerprints. Original saved weights and same-epoch rerun use exactly this same sampling behavior; their old historical DS values used different dropout behavior and remain context only.
+
+[Code] Before primary downstream for each seed, compare original saved best and rerun at its original epoch with the same five discriminator seeds3/13/23/33/43 and original fixed FD002 discriminator split. Pass gate if tensors are exactly equal, or absolute difference of five-seed mean DS<=.03 AND same failure category DS>.3. Otherwise stop primary comparison for that generator seed, preserve failed gate and do not silently replace seeds or retune. Other preauthorized seed may continue. Do not interpret rerun changes as explanation of original model if gate fails.
+
+[Code] Same rerun original-rule best versus final70 is the sole primary factor. Original synthetic split29077/12462, original LSTM(hidden64), Adam.002 and LR schedule; retain best synthetic-dev selection (zero-based epoch>5). Disable public early stopping in BOTH arms, and require35 full epochs/3990 updates for each predictor, to satisfy equal-budget requirement. Five predictor seeds3/13/23/33/43; compare actual initialization hashes, all35 epoch permutations and update counts exactly. No selection using real validation outcomes.
+
+[Code] Freeze78/260 real training engines using20261102 before any predictor fitting; use all their windows in both arms. Primary metric is sqrt(mean across five predictors of engine-equal MSE); also save per-predictor/window-weighted and segment metrics. Generator and global MinMax saw all validation engines; exploratory downstream comparison only, not independent end-to-end unseen-engine evaluation. No official test access in this run. Prior test results informed choice of poor/good seeds and must be disclosed.
+
+Budget:2 generator trainings, up to8 full generated datasets and40 DS fits including reproduction gates,20 primary predictor fits. Exact tensor-equal arms alias and reuse results, not independent repeats. Stop on technical failure, gate failure per seed, or fixed budget completion. No automatic retries, epoch/seed sweeps, model changes or default selection-rule replacement. Report per-seed paired changes and all five predictor outcomes even when contradictory. No numerical paper target for this diagnostic; strict reproduction status unchanged.
+
+Artifacts: frozen sources/config/data/splits/environment/inputs hashes in run snapshot; generated weights/samples; training update/order/RNG audits; actual-noise audit; reproduction gates; full per-model real/synthetic predictions and segment/engine errors; automatic final summary and report. Entry point `scripts/run_fd002_final70_two_seeds.py prepare`, then `run` under authorized CUDA/systemd service.

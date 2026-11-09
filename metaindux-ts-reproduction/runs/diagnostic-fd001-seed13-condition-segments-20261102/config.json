@@ -1,0 +1,66 @@
+{
+  "generator_seed": 13,
+  "epochs": [
+    64,
+    70
+  ],
+  "source_rules": [
+    "best",
+    "final70"
+  ],
+  "sampling_seed": 103,
+  "n_generated_full": 15931,
+  "n_evaluated": 3000,
+  "bins": [
+    [
+      "0-30",
+      0,
+      30
+    ],
+    [
+      "31-60",
+      31,
+      60
+    ],
+    [
+      "61-90",
+      61,
+      90
+    ],
+    [
+      "91-124",
+      91,
+      124
+    ],
+    [
+      "125",
+      125,
+      125
+    ]
+  ],
+  "bin_counts": {
+    "0-30": 600,
+    "31-60": 600,
+    "61-90": 600,
+    "91-124": 600,
+    "125": 600
+  },
+  "predictor_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "fixed_index_provenance": "previous common dev_matched list, reference generation_seed23 position",
+  "aggregate_rmse": "sqrt(mean over5 predictors and600 windows squared error), not prediction ensemble",
+  "signed_error": "mean readout-condition; raw unclipped outputs and capped125 conditions",
+  "execution": "reuse hash-bound historical readouts; no new inference or independent repeat",
+  "budget": {
+    "per_predictor_bin_rows": 50,
+    "aggregate_pairs": 5,
+    "new_models": 0,
+    "new_samples": 0
+  },
+  "stop": "one audit/aggregation, any identity failure, no follow-up sensor/coverage intervention automatically"
+}

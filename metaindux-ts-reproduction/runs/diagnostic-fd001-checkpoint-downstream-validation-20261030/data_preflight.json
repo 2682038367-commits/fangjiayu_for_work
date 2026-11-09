@@ -1,0 +1,38 @@
+{
+  "raw_reconstruction_bit_identical": true,
+  "shape": [
+    15931,
+    48,
+    14
+  ],
+  "validation_windows": 4875,
+  "bins": {
+    "all": 4875,
+    "0-30": 930,
+    "31-60": 900,
+    "61-90": 889,
+    "91-125": 2156,
+    "91-124": 894,
+    "125": 1262
+  },
+  "prior_noise_matches": [
+    {
+      "status": "passed",
+      "epoch": 15,
+      "actual_noises_matched_to_legacy_reference": 63000,
+      "anchor_fingerprint": "b54f8e66b4890836f1b6bb78cdeff76483c1c826d70740dae2ecda1fc3a1adae"
+    },
+    {
+      "status": "passed",
+      "epoch": 70,
+      "actual_noises_matched_to_legacy_reference": 63000,
+      "anchor_fingerprint": "b54f8e66b4890836f1b6bb78cdeff76483c1c826d70740dae2ecda1fc3a1adae"
+    },
+    {
+      "status": "passed",
+      "epoch": 64,
+      "actual_noises_matched_to_legacy_reference": 63000,
+      "anchor_fingerprint": "b54f8e66b4890836f1b6bb78cdeff76483c1c826d70740dae2ecda1fc3a1adae"
+    }
+  ]
+}

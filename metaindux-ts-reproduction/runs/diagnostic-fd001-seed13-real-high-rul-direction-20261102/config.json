@@ -1,0 +1,94 @@
+{
+  "generator_seed": 13,
+  "generator_epochs": [
+    64,
+    70
+  ],
+  "predictor_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "bins": [
+    [
+      "all",
+      0,
+      125
+    ],
+    [
+      "91-125",
+      91,
+      125
+    ],
+    [
+      "0-30",
+      0,
+      30
+    ],
+    [
+      "31-60",
+      31,
+      60
+    ],
+    [
+      "61-90",
+      61,
+      90
+    ],
+    [
+      "91-124",
+      91,
+      124
+    ],
+    [
+      "125",
+      125,
+      125
+    ]
+  ],
+  "leaf_bins": [
+    [
+      "0-30",
+      0,
+      30
+    ],
+    [
+      "31-60",
+      31,
+      60
+    ],
+    [
+      "61-90",
+      61,
+      90
+    ],
+    [
+      "91-124",
+      91,
+      124
+    ],
+    [
+      "125",
+      125,
+      125
+    ]
+  ],
+  "validation_n": 4875,
+  "total_engines": 30,
+  "signed_error": "mean over engines of within-engine mean(pred-truth), then mean5 predictors",
+  "mse": "mean over5 predictors and eligible engines of within-engine MSE; RMSE=sqrt(MSE)",
+  "contributions": "parent per-window weight1/(eligible parent engines * engine parent window count)",
+  "parents": [
+    "91-125",
+    "all"
+  ],
+  "primary_bins": [
+    "91-124",
+    "125"
+  ],
+  "budget": "one cached10-prediction audit, no new inference/training/generation",
+  "no_automatic_followup": true,
+  "validation_generator_exposure": true
+}

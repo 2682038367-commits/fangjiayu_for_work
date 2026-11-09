@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "majority_collapse_accuracy": 0.8,
+  "majority_collapse_chance": 0.8,
+  "majority_collapse_kappa": 0,
+  "majority_collapse_cmi": 0,
+  "perfect_mapping_accuracy": 1
+}

@@ -1,0 +1,74 @@
+{
+  "dataset": "FD001",
+  "checkpoint_training_seeds": [
+    13,
+    23
+  ],
+  "sampling_seeds": [
+    103,
+    113,
+    123
+  ],
+  "discriminator_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "sample_count": 15931,
+  "window": 48,
+  "sensors": 14,
+  "model_name": "DiffUnet_fre",
+  "model_dim": 32,
+  "dim_mults": [
+    1,
+    2
+  ],
+  "cond_drop_prob": 0.2,
+  "sampling_algorithm": "ddpm",
+  "diffusion_steps": 1000,
+  "beta_schedule": "linear",
+  "objective": "pred_noise",
+  "cond_scale": 3.0,
+  "sampling_batch_size": 256,
+  "frequency_mask_mode": "hard_random_quantile",
+  "frequency_threshold": -1.0,
+  "frequency_threshold_init": 0.25,
+  "frequency_mask_temperature": 0.1,
+  "discriminator_hidden": 7,
+  "discriminator_updates": 3000,
+  "discriminator_batch_size": 128,
+  "discriminator_optimizer": "TensorFlow Adam defaults",
+  "discriminator_train_rate": 0.8,
+  "split": "existing FD001 full-data w48 discriminator split; shared across all cells",
+  "failure": "mean(five evaluator discriminative scores) > 0.3, strict and unrounded",
+  "run_order": [
+    [
+      13,
+      103
+    ],
+    [
+      23,
+      103
+    ],
+    [
+      13,
+      113
+    ],
+    [
+      23,
+      113
+    ],
+    [
+      13,
+      123
+    ],
+    [
+      23,
+      123
+    ]
+  ],
+  "stop": "6 sampling runs + 30 discriminator evaluations; no tuning or extra seeds",
+  "checkpoint_selection": "historical minimum and maximum mean DS; exploratory extremes"
+}

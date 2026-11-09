@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-30T13:34:22.875109+08:00",
+  "service": "metaindux-fd001-seed23-checkpoint-age-20261030.service",
+  "main_pid": 1286903,
+  "training_complete": true,
+  "actual_updates": 4410,
+  "actual_epochs": 70,
+  "actual_training_seconds": 219.0796480178833,
+  "rerun_best_epoch_one_based": 15,
+  "epoch15_functional_reproduction": "pending",
+  "saved_snapshot_epochs": [
+    15,
+    64,
+    70
+  ],
+  "all_current_frozen_input_hashes_passed": true
+}

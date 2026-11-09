@@ -1,0 +1,93 @@
+{
+  "pair": [
+    "native_public",
+    "native_worker"
+  ],
+  "initial_states_equal": true,
+  "first_question_differences": {
+    "indices_sha256": null,
+    "data_sha256": null,
+    "labels_sha256": null,
+    "numpy_draw": null,
+    "timestep_sha256": null,
+    "noise_sha256": null,
+    "condition_mask_sha256": null,
+    "actual_condition_sha256": null
+  },
+  "all163_questions_equal": true,
+  "first_numerical_differences": {
+    "noisy_input_sha256": null,
+    "model_output_sha256": 1,
+    "loss": 1,
+    "grad_preclip_sha256": 1,
+    "grad_norm_preclip": 1,
+    "grad_postclip_sha256": 1,
+    "adam_state_sha256": 1,
+    "weights_after_sha256": 1
+  },
+  "all163_numerics_equal": false,
+  "first_epoch_losses": [
+    0.25820916251170856,
+    0.25966806636631856
+  ],
+  "first_divergence": 1,
+  "first_difference_magnitude": {
+    "model_after": {
+      "max_absolute_difference": 0.0038157328963279724,
+      "relative_l2": 0.00020983473963889134,
+      "different_tensor_count": 159,
+      "first_differing_names": [
+        "null_classes_emb",
+        "init_conv.weight",
+        "init_conv.bias",
+        "time_mlp.1.weight",
+        "time_mlp.1.bias",
+        "time_mlp.3.weight",
+        "time_mlp.3.bias",
+        "classes_emb.bias",
+        "classes_mlp.0.weight",
+        "classes_mlp.0.bias",
+        "classes_mlp.2.weight",
+        "classes_mlp.2.bias"
+      ]
+    },
+    "grad_preclip": {
+      "max_absolute_difference": 2.574920654296875e-05,
+      "relative_l2": 0.00010022398406552787,
+      "different_tensor_count": 170,
+      "first_differing_names": [
+        "null_classes_emb",
+        "init_conv.weight",
+        "init_conv.bias",
+        "time_mlp.1.weight",
+        "time_mlp.1.bias",
+        "time_mlp.3.weight",
+        "time_mlp.3.bias",
+        "classes_emb.weight",
+        "classes_emb.bias",
+        "classes_mlp.0.weight",
+        "classes_mlp.0.bias",
+        "classes_mlp.2.weight"
+      ]
+    },
+    "grad_postclip": {
+      "max_absolute_difference": 6.5676867961883545e-06,
+      "relative_l2": 9.955293054256485e-05,
+      "different_tensor_count": 170,
+      "first_differing_names": [
+        "null_classes_emb",
+        "init_conv.weight",
+        "init_conv.bias",
+        "time_mlp.1.weight",
+        "time_mlp.1.bias",
+        "time_mlp.3.weight",
+        "time_mlp.3.bias",
+        "classes_emb.weight",
+        "classes_emb.bias",
+        "classes_mlp.0.weight",
+        "classes_mlp.0.bias",
+        "classes_mlp.2.weight"
+      ]
+    }
+  }
+}

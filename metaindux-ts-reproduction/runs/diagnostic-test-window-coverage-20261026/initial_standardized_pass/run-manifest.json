@@ -1,0 +1,58 @@
+{
+  "run_id": "diagnostic-test-window-coverage-20261026",
+  "status": "complete",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261026-test-window-coverage",
+  "started_at": "2026-10-26T13:50:29.405469+08:00",
+  "no_training": true,
+  "command": "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python analysis/diagnostics/test_window_coverage.py",
+  "source_snapshot": "SOURCE_SNAPSHOT.md",
+  "seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "k": 5,
+  "rul_caliper": 5,
+  "features": {
+    "level": "14 means +14 terminal levels",
+    "dynamics": "14 temporalSD+14 differenceRMS+14 total linear slopes",
+    "coupling": "91 within-window demeaned channel correlations"
+  },
+  "scale": "per-descriptor coordinate standard deviation fitted on ALL real training windows only",
+  "inputs_sha256": {
+    "analysis/diagnostics/test_window_coverage.py": "bb97eaec742652a63951d97cd0af17b445503913a6cae5c517fec38139fa8718",
+    "upstream/data/CMAPSSDataset.py": "7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03",
+    "results/diagnostics/rul_segment_errors_w48/predictions.csv": "c4d8b20d097dd36c47a6125ab1eec669bc0c247a8cfbcb47d6e69294ecabf1fa",
+    "upstream/data/train_FD003.txt": "2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2",
+    "upstream/data/test_FD003.txt": "299babd63c8d987cef079c4a425429f33b3a34797d803bbe2ad48c29dbd0d790",
+    "upstream/data/RUL_FD003.txt": "df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb",
+    "outputs/FD003_w48_seed3.npz": "3a81741bd58826f435ece99178ad00ff06367c0c94f51f6c95c23332b2315cdc",
+    "outputs/FD003_w48_seed13.npz": "7191b70f90631f87e8265777df76bbe8ec06e495118a8bdbc49331efa34f68a5",
+    "outputs/FD003_w48_seed23.npz": "ab4cb2111fdd613ebfd05bbb27492dcb92c1214d3c88fffab0f272642a21d5df",
+    "outputs/FD003_w48_seed33.npz": "61c07cbb44b5ba739e846fcc9bf7dc37c710884a72b22ab34816737e53150f14",
+    "outputs/FD003_w48_seed43.npz": "121c2b1926e4ab7a479a93a66c1f3d3835a7321d5fad92461054fee6169b7b7a",
+    "upstream/data/train_FD004.txt": "27ef6160b6a1dcb2613a88de9c239f763b223f02cdc41dc5cdedc5dc189b6218",
+    "upstream/data/test_FD004.txt": "1dc675fff0624bac10786927c6715b37d1297657137400d2b1a3138d777a3ba5",
+    "upstream/data/RUL_FD004.txt": "196b836b85a95ac7fdbbf29c5fdf1657382eafa445644d114ffaaf50dc2975e1",
+    "outputs/FD004_w48_seed3.npz": "825b96aa724cb85c8b4bed383b83f9f54d2fc5431ff0057dcd05bcc58eb13963",
+    "outputs/FD004_w48_seed13.npz": "a34db9c99e06ae76d0c2ed6cf20659f52af70c7615efe7eebf30edd013d85185",
+    "outputs/FD004_w48_seed23.npz": "016166976d1e45748c0df6ad636eaf903fee1ed250771122a8c20330c47ed0f8",
+    "outputs/FD004_w48_seed33.npz": "cd82fe2d97dcfa4d13f5e90e890da52e163bc4a8e8e4332dc5ace286fee52a52",
+    "outputs/FD004_w48_seed43.npz": "ff006524538d11df9a4e11f61998c94e651ddd88474050e3464fbeedb59c641f"
+  },
+  "caveat": "Distances locate mismatches, cannot causally separate missing support from displaced support.",
+  "n_engine_seed_representation_rows": 2070,
+  "distinct_test_engines": 138,
+  "outputs_sha256": {
+    "operating_profiles.csv": "eb9063ee2184bbdbbe9f46ce35a2ba20df6515795de4a8a2b6e8b48608454f33",
+    "stage_correlations.csv": "9b13a9efcb36bf44360bb568f80548b8bffa5690bfa0e0c32b3e905a37d84e13",
+    "engine_summary.csv": "b48593b1b89d5278590c7e7f1aa21ef8973e1ee22fe8d6c3160fbdc68e40933c",
+    "level_residuals.csv": "3cf06bf1355189d056e5cbb7532c50671ffbd1908d9cae864e0e47b0892d628f",
+    "distances_by_engine_seed.csv": "3f0a80e91f8e1a6638fb0cc23d48db7e670ff9fc6ff984928252a9e084547ade"
+  },
+  "finished_at": "2026-10-26T13:50:51.275013+08:00"
+}

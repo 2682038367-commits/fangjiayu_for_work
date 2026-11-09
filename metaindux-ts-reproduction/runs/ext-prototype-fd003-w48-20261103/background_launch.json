@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/home/cw_boe/projects/rul/.venv/bin/python",
+    "-u",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/runs/ext-prototype-fd003-w48-20261103/launch_and_monitor.py"
+  ],
+  "worker_command": [
+    "/home/cw_boe/projects/rul/.venv/bin/python",
+    "-u",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/scripts/run_prototype_guidance_fd003.py",
+    "run"
+  ],
+  "log": "/home/cw_boe/projects/rul/metaindux-ts-reproduction/logs/prototype_fd003_full.log",
+  "launched_at": "2026-11-03T14:17:57.129761+08:00",
+  "execution": "outside sandbox; CUDA compute verified",
+  "scope": "scope-20261103-prototype-fd003-v1",
+  "pid": 1841749,
+  "worker_pid": 1841750
+}

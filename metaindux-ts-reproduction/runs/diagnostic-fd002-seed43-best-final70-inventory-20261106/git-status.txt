@@ -1,0 +1,22 @@
+ M experiment-ledger.md
+ M reproduction-state.md
+?? analysis/diagnostics/check_fd002_seed43_best_final70_inventory.py
+?? analysis/diagnostics/diagnose_fd003_prototype_condition_adherence.py
+?? configs/diagnostics/fd003_prototype_condition_adherence.json
+?? docs/conclusions/final/fd002_fixed_conv_full70_20261105_report.md
+?? docs/conclusions/final/fd002_seed43_variation_stages_20261105_report.md
+?? docs/conclusions/final/fd003_prototype_condition_adherence_20261105_report.md
+?? docs/operations/FD002_FIXED_CONV_FULL70.md
+?? docs/operations/FD002_SEED43_BEST_FINAL70_INVENTORY.md
+?? docs/operations/FD002_SEED43_VARIATION_STAGES.md
+?? docs/operations/FD003_PROTOTYPE_CONDITION_ADHERENCE.md
+?? results/diagnostics/fd002_fixed_conv_full70_20261105/
+?? results/diagnostics/fd002_seed43_variation_stages_20261105/
+?? results/diagnostics/fd003_prototype_condition_adherence_20261105/
+?? runs/diagnostic-fd002-fixed-conv-full70-20261105-prepare-attempt1/
+?? runs/diagnostic-fd002-fixed-conv-full70-20261105/
+?? runs/diagnostic-fd002-seed43-best-final70-inventory-20261106/
+?? runs/diagnostic-fd002-seed43-variation-stages-20261105/
+?? runs/diagnostic-fd003-prototype-condition-adherence-20261105/
+?? scripts/verify_fd002_fixed_conv_full70.py
+?? scripts/verify_fd002_seed43_variation_stages.py

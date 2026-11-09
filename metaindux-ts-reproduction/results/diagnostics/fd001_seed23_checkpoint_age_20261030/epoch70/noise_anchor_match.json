@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "epoch": 70,
+  "actual_noises_matched_to_legacy_reference": 63000,
+  "anchor_fingerprint": "b54f8e66b4890836f1b6bb78cdeff76483c1c826d70740dae2ecda1fc3a1adae"
+}

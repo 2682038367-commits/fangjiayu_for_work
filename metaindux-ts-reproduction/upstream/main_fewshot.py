@@ -54,10 +54,26 @@ if __name__ == '__main__':
     test_data,test_label = datasets.get_last_data_slice(test_data)
 
     train_data,train_label = train_data[0:len(train_data)], train_label[0:len(train_label)]
+    if args.task not in ('all', 'fewshot', 'zeroshot'):
+        raise ValueError(f'unsupported task: {args.task}')
     if args.task == 'zeroshot':
         mask1 = train_label.squeeze(-1) > args.fatigue_threshold
         filtered_train_data = train_data[mask1]
         filtered_train_label = train_label[mask1]
+        if not len(filtered_train_data):
+            raise ValueError('zero-shot split contains no normal training samples')
+        if args.fewshot_indices_path:
+            indices_path = Path(args.fewshot_indices_path)
+            indices_path.parent.mkdir(parents=True, exist_ok=True)
+            np.savez_compressed(
+                indices_path,
+                normal_indices=torch.nonzero(mask1, as_tuple=False).squeeze(-1).cpu().numpy(),
+                fatigue_indices=torch.nonzero(~mask1, as_tuple=False).squeeze(-1).cpu().numpy(),
+                selected_fatigue_indices=np.empty(0, dtype=np.int64),
+                seed=np.asarray([args.seed], dtype=np.int64),
+                fraction=np.asarray([0.0], dtype=np.float64),
+                fatigue_threshold=np.asarray([args.fatigue_threshold], dtype=np.float64),
+            )
     elif args.task == 'fewshot':
         # The public code assigns the RUL=30 boundary to fatigue.
         mask_greater = train_label.squeeze(-1) > args.fatigue_threshold
@@ -67,6 +83,7 @@ if __name__ == '__main__':
         small_data = train_data[mask_smaller]
         small_label = train_label[mask_smaller]
         sample_size = int(args.fewshot_fraction * small_data.shape[0])
+        sampled_indices = torch.empty(0, dtype=torch.long)
         if sample_size > 0:
             split_generator = torch.Generator().manual_seed(args.seed)
             sampled_indices = torch.randperm(

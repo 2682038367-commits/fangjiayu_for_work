@@ -1,0 +1,85 @@
+{
+  "status": "complete_with_deterministic_control_blocked",
+  "native_completed_trajectories": 2,
+  "native_updates_per_trajectory": 163,
+  "total_optimizer_updates": 326,
+  "strict_control_attempts": 1,
+  "strict_actual_updates": 0,
+  "strict_other_entry_not_attempted": true,
+  "second_epoch_started": false,
+  "all_initial_parameters_equal": true,
+  "all163_actual_questions_and_noisy_inputs_equal": true,
+  "first_numerical_divergence_batch": 1,
+  "first_batch_losses": [
+    1.337316632270813,
+    1.337317705154419
+  ],
+  "first_batch_loss_absolute_difference": 1.0728836059570312e-06,
+  "first_epoch_mean_losses": [
+    0.25820916251170856,
+    0.25966806636631856
+  ],
+  "first_batch_maximum_weight_divergences": [
+    {
+      "parameter": "downs.0.1.block2.proj.weight",
+      "flat_index": 2925,
+      "max_absolute_weight_difference": 0.0038157328963279724,
+      "initial_value": -0.07331947237253189,
+      "values": [
+        -0.0713866800069809,
+        -0.07520241290330887
+      ],
+      "gradient_before_clip": [
+        -1.0873191058635712e-06,
+        6.081536412239075e-07
+      ],
+      "gradient_after_clip": [
+        -2.875910070088139e-07,
+        1.608520250329093e-07
+      ]
+    },
+    {
+      "parameter": "downs.0.0.block1.proj.weight",
+      "flat_index": 374,
+      "max_absolute_weight_difference": 0.003668984631076455,
+      "initial_value": -0.0053039719350636005,
+      "values": [
+        -0.0033901797141879797,
+        -0.007059164345264435
+      ],
+      "gradient_before_clip": [
+        -8.393253665417433e-07,
+        2.710730768740177e-07
+      ],
+      "gradient_after_clip": [
+        -2.2199778015874472e-07,
+        7.169677473939373e-08
+      ]
+    },
+    {
+      "parameter": "downs.1.1.mlp.1.weight",
+      "flat_index": 8092,
+      "max_absolute_weight_difference": 0.0028117839246988297,
+      "initial_value": -0.008804351091384888,
+      "values": [
+        -0.007337595336139202,
+        -0.010149379260838032
+      ],
+      "gradient_before_clip": [
+        -1.039952621795237e-07,
+        7.764174370095134e-08
+      ],
+      "gradient_after_clip": [
+        -2.7506278144073804e-08,
+        2.053565317794437e-08
+      ]
+    }
+  ],
+  "strict_blocking_operator": "CUDA median(dim=1,keepdim=True) with indices",
+  "blocking_source": "upstream/DiffusionFreeGuidence/Attetnion_temp.py:142",
+  "causal_limits": [
+    "Same questions establish numeric execution as locus of current difference; no complete deterministic comparison was possible.",
+    "Unsupported median operator is not proof it caused observed divergence. Other CUDA kernels/algorithm choices remain possible.",
+    "Current reconstructed entry points and synchronization from tracing differ from unavailable historical source and timings; cannot uniquely attribute historical DS gap."
+  ]
+}

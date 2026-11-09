@@ -1,0 +1,54 @@
+{
+  "errors": [],
+  "status": "complete",
+  "arms": {
+    "control": {
+      "n_windows": 15931,
+      "n_rul0": 100,
+      "overall_rmse": 10.15101191769803,
+      "rul0_rmse": 79.41217605027192,
+      "nonzero_rmse": 7.991172830403067,
+      "rul0_mean_prediction": 66.85452753293514,
+      "rul0_prediction_by_evaluator": [
+        66.69267939031124,
+        66.55611177921296,
+        67.09999487400054,
+        66.86006852388383,
+        67.06378309726715
+      ],
+      "rul0_mse_contribution": 39.58504616809605,
+      "artifact_sha256": {
+        "outputs/FD001_w48_seed3_zero_label_control.npz": "2a8b5a0be3346612ef43a199022cee1084f19539e134780a3c83f6e389d802ee",
+        "checkpoints/FD001_w48_seed3_zero_label_control.pth": "7fd7efee1f817781c28a6452eade182dd7640b9fd9ad87102e055bb194fe3f19",
+        "logs/FD001_w48_seed3_zero_label_control_training_loss.csv": "de04734aae3dcc863f3978936027b5fcbe119fcea96a18547873923a7687b63b",
+        "results/runs/FD001_w48_seed3_zero_label_control_metadata.json": "d64fb6a574d160643b45040eaa4fcbd2e2bfd8341b350c85bf07673c30b5ddd2"
+      }
+    },
+    "no_batch_zero": {
+      "n_windows": 15931,
+      "n_rul0": 100,
+      "overall_rmse": 7.925551965587009,
+      "rul0_rmse": 2.623358478556197,
+      "nonzero_rmse": 7.947809953893417,
+      "rul0_mean_prediction": 1.4272363297976554,
+      "rul0_prediction_by_evaluator": [
+        -0.6322445250675082,
+        1.2873611045256257,
+        0.7012187002599239,
+        1.2658823277987539,
+        4.513964041471481
+      ],
+      "rul0_mse_contribution": 0.04319885573418294,
+      "artifact_sha256": {
+        "outputs/FD001_w48_seed3_zero_label_no_batch_zero.npz": "86b10d89caf74cb89b9d5487fd658169573a1ae31a99bb848f01efe1a4d9b2e0",
+        "checkpoints/FD001_w48_seed3_zero_label_no_batch_zero.pth": "aee97d009bb9199df255773b212dc84c9d4758ea092e782e44c778b44e453ff9",
+        "logs/FD001_w48_seed3_zero_label_no_batch_zero_training_loss.csv": "2df0c5ae8977de6c2d595ac28693599d3b49b30586ead3f9627cfd2a59f0955f",
+        "results/runs/FD001_w48_seed3_zero_label_no_batch_zero_metadata.json": "d184e5d09545cf8e87df0dc00352b34cd2487d378b22517dac169ad44b95cf9f"
+      }
+    }
+  },
+  "rul0_rmse_reduction_percent": 96.69652865714764,
+  "rul0_mean_reduction_percent": 97.8651612950304,
+  "overall_rmse_reduction_percent": 21.92352811871877,
+  "fraction_of_total_mse_reduction_from_rul0": 0.9829270592629491
+}

@@ -1,0 +1,18 @@
+{
+  "seed": 43,
+  "first_batch_only": true,
+  "backward_calls": 0,
+  "optimizer_updates": 0,
+  "initial_trace_forwards": 2,
+  "raw_tensor_prefix_ops": 256,
+  "environment": {
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "1",
+    "TF_DETERMINISTIC_OPS": "1",
+    "TF_ENABLE_ONEDNN_OPTS": "0",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "WANDB_MODE": "offline",
+    "TF_CPP_MIN_LOG_LEVEL": "2"
+  },
+  "stop": "after first forward before backward; locate first unequal output with identical full inputs; limited standalone operator confirmation only"
+}

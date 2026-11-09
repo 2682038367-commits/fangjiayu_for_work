@@ -1,0 +1,801 @@
+18062                                          IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS, VOL. 36, NO. 10, OCTOBER 2025
+
+
+
+
+MetaIndux-TS: Frequency-Aware AIGC Foundation
+        Model for Industrial Time Series
+                  Haiteng Wang , Graduate Student Member, IEEE, Lei Ren , Senior Member, IEEE,
+                   Yikang Li , Member, IEEE, and Yuqing Wang , Graduate Student Member, IEEE
+
+   Abstract—Implementing advanced AI techniques in industrial                such as image enhancement training [8], art design [9], and
+manufacturing requires large volumes of annotated sensor data.               the creation of generative world models [10].
+Unfortunately, collecting such data is often impractical due to                 In industrial manufacturing, the implementation of advanced
+extreme environments and the manual burden of expert anno-
+tation. Recent advancements in artificial intelligence generated             AI techniques [11] requires substantial volumes of annotated
+content (AIGC) have inspired the exploration of industrial time-             sensor data, but this is often impractical due to challenges,
+series generation to mitigate data shortages. However, existing              such as extreme environments, sensor noise, high-frequency
+AIGC models encounter difficulties in generating industrial time             data processing, and the manual burden of expert annotation.
+series due to their complex temporal dynamics, multichannel                  The significant achievements of AIGC foundation models
+intercolumn correlations, and diverse frequency characteris-
+tics. To address these challenges, we propose MetaIndux-TS, a                inspire further exploration of their potential in industrial
+frequency-informed AIGC foundation model based on diffusion                  manufacturing. Time-series AIGC foundation models have
+model frameworks. This model is designed to generate industrial              the potential to generate time-series data, addressing data
+time-series data under a variety of working conditions, across               shortages and enriching the diversity of industrial signals [12].
+different types of equipment, and with variable lengths. Specif-             This, in turn, enhances the training of industrial deep learning
+ically, MetaIndux-TS integrates dual-frequency cross-attention
+networks, transforming time series into the frequency domain                 models.
+to model multivariate dependencies and capture intricate tem-                   Despite the significance of foundational generative models,
+poral details. In addition, the contrastive synthesis layer is               industrial time series exhibit complex temporal dynamics and
+constructed to generate high-fidelity time series by comparing               diverse frequency variables that current generative models
+periodic and long-term trends with initial noisy sequences. Com-             struggle to synthesize with high fidelity. Time-series gener-
+prehensive experiments show that MetaIndux-TS outperforms
+state-of-the-art models (SSSD, Dit, and TabDDPM), achieving a                ative models can be categorized into variational autoencoders
+57.5% improvement in fidelity and 20.4% in predictive score.                 (VAEs) [13], [14], generative adversarial networks (GANs)
+MetaIndux-TS exhibits zero-shot generation capabilities for                  [15], [16], and diffusion models [17], [18]. VAEs utilize an
+samples under unseen conditions, offering the potential to address           encoder-decoder architecture to encode the data distribution
+data collection challenges in extreme environments. Codes are                into a latent space representation and reconstruct the orig-
+available at: https://github.com/Dolphin-wang/MetaIndux
+                                                                             inal data via the decoder. However, VAEs often struggle
+   Index Terms—Artificial intelligence generated content (AIGC),             to capture the intricate structure of high-dimensional data
+diffusion model, foundation model, generative model, industrial              and exhibit limitations in generating data with rich diversity.
+time series.
+                                                                             GANs employ adversarial training between a generator and
+                     I. I NTRODUCTION                                        a discriminator, enabling the generator to produce sequences
+                                                                             increasingly akin to real data distribution. Despite this, GANs
+I   N RECENT years, artificial intelligence generated content
+    (AIGC) technologies have made remarkable progress in
+various domains [1], [2], including computer vision (CV)
+                                                                             suffer from training instability and are prone to mode collapse.
+                                                                             Recently, diffusion models have achieved significant success
+[3], natural language processing (NLP) [4], [5], and audio                   in image and speech generation by progressively adding
+[6], [7]. These models leverage generative AI techniques to                  and removing noise to generate high-quality data samples.
+simulate the distribution of original data, achieving high-                  Although diffusion models have been initially applied in time
+quality generation results. They have been widely applied,                   series [6], [19], they are constrained to a single frequency
+                                                                             and simple industrial signals, resulting in a limited ability
+   Received 14 December 2024; revised 27 March 2025 and 5 May 2025;          to capture temporal dynamic patterns. The construction of
+accepted 2 June 2025. Date of publication 23 June 2025; date of current
+version 9 October 2025. This work was supported by the National Natural      the industrial time-series AIGC foundation model faces the
+Science Foundation of China (NSFC) under Project 62225302, Project           following challenges.
+623B2014, and Project 62173023. (Corresponding author: Lei Ren.)
+   Haiteng Wang, Yikang Li, and Yuqing Wang are with the School of
+Automation Science and Electrical Engineering, Beihang University, Beijing     1) Multichannel Intercolumn Correlations: Unlike con-
+100191, China (e-mail: wanghaiteng@buaa.edu.cn; liyikang@buaa.edu.cn).            tinuous pixel values in images, the dimensions in
+   Lei Ren is with the School of Automation Science and Electrical
+Engineering, Beihang University, Beijing 100191, China, also with Hangzhou        industrial time-series data represent different variables,
+International Innovation Institute, Beihang University, Hangzhou, Zhejiang        each with unique meanings. The data involve multiple
+311115, China, and also with the State Key Laboratory of Intelli-                 variables with complex interdependencies, making it
+gent Manufacturing System Technology, Beijing 100854, China (e-mail:
+renlei@buaa.edu.cn).                                                              difficult to learn the joint probabilities across these
+   Digital Object Identifier 10.1109/TNNLS.2025.3577203                           variables.
+
+                             © 2025 The Authors. This work is licensed under a Creative Commons Attribution 4.0 License.
+                                        For more information, see https://creativecommons.org/licenses/by/4.0/
+WANG et al.: MetaIndux-TS: FREQUENCY-AWARE AIGC FOUNDATION MODEL FOR INDUSTRIAL TIME SERIES                                    18063
+
+
+
+   2) Complex Temporal Dynamics Patterns: Industrial time-         stable diffusion [20] and Sora [21]. Diffusion probabilistic
+       series data are collected from physical devices and         models have been widely applied across various domains,
+       reflect the dynamic details of equipment influenced by      achieving remarkable success. Initially, these models gained
+       real-world environments and performance over time.          prominence in image synthesis, where methods like denoising
+       These data include long-term degradation processes and      diffusion probabilistic models (DDPMs) [22] progressively
+       short-term dynamic changes, such as temperature and         added Gaussian noise and then learned to reverse this pro-
+       pressure fluctuations. The temporal dynamics make it        cess for high-fidelity sample generation. Building on this,
+       challenging for diffusion models designed for static        advanced models such as DDIM [23] and latent diffusion mod-
+       images to synthesize industrial time-series effectively.    els (LDMs) [20] improved efficiency by accelerating reverse
+   3) Diverse Frequency Variables: Fundamental industrial          sampling and reducing computational overhead through latent
+       time-series information is embedded in the frequency        space diffusion. These advancements extended to video gener-
+       domain, such as the frequencies of vibration sig-           ation [24], introducing both text-to-video and image-to-video
+       nals. Although recent diffusion models can generate         models, which have significantly advanced video synthesis
+       time series, they primarily focus on temporal domains,      technology in academia and industry. Furthermore, diffusion
+       neglecting the rich information in the frequency domain.    models have contributed to the design of protein structure
+   To address these challenges, we have constructed a              [25] and NLP [26] by generating coherent and contextually
+frequency-informed AIGC foundation model named                     accurate content.
+MetaIndux-TS. This model is specifically designed for                 Unlike diffusion models primarily designed for images or
+generating industrial time-series data across diverse operating    videos with continuous pixel values, MetaIndux-TS focuses on
+conditions, with various types of equipment, and at variable       time-series data characterized by complex frequency compo-
+lengths. The core idea is to integrate frequency domain            nents and intervariable relationships. MetaIndux-TS introduces
+information to enhance the time-series generation process,         a frequency-enhanced framework specifically tailored for time-
+thereby facilitating the learning of complex and diverse           series generation, enhancing the granularity and detail of
+patterns. Specially, MetaIndux-TS integrates dual frequency        generated sequences.
+cross-attention learners into the diffusion framework, which       B. Generative Models for Industrial Time Series
+transforms time series into the frequency domain enabling             In the realm of industrial time-series generation, several
+the modeling of multivariate dependencies and the capture of       deep generative models have been explored. VAEs [13], [14]
+intricate temporal details. Then, considering the periodicity      use an encoder-decoder structure to encode data distributions
+and long-term trends of time series and comparing them             into a latent space and reconstruct the original data. However,
+with initial noisy sequences, a contrastive synthesis layer        VAEs often struggle with capturing the intricate structures of
+is proposed to generate high-fidelity time-series data. Our        high-dimensional data and generating diverse samples. GANs
+contribution can be summarized as follows.                         [15], [16] leverage adversarial training between a generator
+   1) A novel AIGC foundation model for industrial time            and a discriminator to produce sequences that closely resemble
+       series is proposed, which integrates dual-frequency         the real data distribution. Despite their capabilities, GANs face
+       domain information to enhance the generation process.       issues with training instability and mode collapse. Diffusion
+       Through comprehensive experiments, MetaIndux-TS             models, with their success in other domains, also show poten-
+       achieves state-of-the-art performance in generating high-   tial in industrial applications. A diffusion model combined
+       fidelity time series. Furthermore, it demonstrates strong   with a U-Net is proposed for extracting features to enhance
+       few-shot and zero-shot generation capabilities, capable     fault diagnosis [17]. A novel adaptive dynamic neighbor
+       of synthesizing unseen data.                                mask (ADNM) mechanism, the Transformer and denoising
+   2) Dual-frequency cross learners are proposed to lever-         diffusion model are combined to effectively identify anomalies
+       age the strengths of both frequency domain analysis         by mitigating reconstruction challenges, achieving state-of-
+       and attention mechanisms. Specifically, the frequency       the-art performance [18]. However, they are constrained to
+       cross-channel learner models multivariate relationships     single frequency and simple industrial signals, resulting in
+       between channels, while the frequency cross-temporal        limited frequency perception and temporal dynamics patterns
+       learner captures dynamic patterns of time series.           capturing capabilities.
+   3) The contrastive synthesis layer employs a deep decom-           Our method considers the temporal dynamics, multivari-
+       position model architecture, allowing the generated time    ate dependencies, and frequency characteristics inherent in
+       series to synthesize both long-term degradation infor-      industrial time series to address these limitations. We pro-
+       mation and short-term detail information, promoting the     pose a channel-frequency attention mechanism to enhance
+       precise reproduction of the intrinsic temporal details of   feature representation for frequency-rich data and a temporal-
+       the data during the generation process.                     frequency attention mechanism to capture both long-term
+                                                                   degradation patterns and short-term variations.
+                    II. R ELATED W ORKS                                                 III. M ETHODOLOGY
+A. Generative Foundation Models                                    A. Problem Description and Model Advantages
+   The generative foundation models relevant to our work             This section briefly revisits the challenges introduced in
+are mainly based on diffusion probabilistic models, such as        Section I and presents the advantages of MetaIndux-TS in
+18064                                            IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS, VOL. 36, NO. 10, OCTOBER 2025
+
+
+
+
+Fig. 1. MetaIndux-TS framework for industrial time-series generation. The model utilizes both a frequency temporal learner and a frequency channel learner
+to model the signals in the frequency domain. The right side describes potential industrial applications of the model, such as predictive maintenance (limited
+sample augmentation of complex equipment), or industrial metaverse and digital twin systems.
+
+
+addressing these challenges. Currently, industrial time-series
+generation faces the following three major challenges.
+  1) Multichannel Intercolumn Correlations: Industrial time-
+      series data exhibit complex intervariable correlations,
+      making it challenging to model their joint distributions.
+  2) Complex Temporal Dynamics Patterns: The data contain
+      intricate temporal dynamics, including both long-term
+      degradation and short-term fluctuations, which compli-
+      cate effective sequence generation.
+  3) Diverse Frequency Variables: Essential information
+      reside in the frequency domain, but existing diffusion
+      models mainly focus on the temporal domain and over-
+      look frequency features.
+  To address these challenges, we propose MetaIndux-TS,
+which offers the following key advantages.
+  1) Modeling Multichannel Dependencies: For time-series
+                                                                                Fig. 2. Workflow of the MetaIndux-TS.
+      generation, it is essential to account for multichannel
+      dependencies, as they enable the model to capture
+      interactions and correlations between different vari-                             dependencies, the contrastive synthesis layer recon-
+      ables. MetaIndux-TS addresses this requirement through                            structs the generated time series by explicitly modeling
+      its frequency cross-channel learner, which performs                               trend and seasonality components in the frequency
+      cross-channel attention after transforming data into the                          domain. This results in improved fidelity and a more
+      frequency domain at each timestamp, thereby modeling                              accurate representation of the industrial time series.
+      the multichannel intercolumn correlations in industrial
+      time-series data.                                                         B. Framework of MetaIndux-TS
+  2) Capturing Temporal Dynamic Details: Industrial time-                          MetaIndux-TS is an AIGC foundation model based on
+      series data are inherently rich in the frequency-domain                   the diffusion probabilistic architecture, as shown in Fig. 1,
+      information. The frequency cross-temporal learner in                      specifically designed for industrial time-series generation.
+      MetaIndux-TS is designed to capture both dynamic                             1) Workflow: The workflow is depicted in Fig. 2,
+      details and long-term temporal patterns. In addition, the                 MetaIndux-TS generates realistic synthetic time series by iter-
+      model adaptively attenuates high frequencies to reduce                    atively denoising random Gaussian noise, effectively capturing
+      noise and enhance signal clarity, thus enhancing the high                 the temporal dependencies of the original data. The workflow
+      fidelity of the generated data.                                           steps involved in each phase are detailed below.
+  3) Synthetic Layer for Trend and Seasonality: After                              In the training phase, real-world aircraft engine sensor data
+      learning the temporal patterns and cross-channel                          are first collected and preprocessed through normalization,
+WANG et al.: MetaIndux-TS: FREQUENCY-AWARE AIGC FOUNDATION MODEL FOR INDUSTRIAL TIME SERIES                                      18065
+
+
+
+cleaning, and handling of missing values to ensure consis-           trend and seasonal information, denoising against the initial
+tency. The preprocessed data then undergo a forward diffusion        input, and ultimately generating high-fidelity time-series data.
+process, where Gaussian noise is progressively added over
+multiple steps, gradually transforming the data into a standard      C. Frequency Cross-Channel Learner
+Gaussian distribution, with the noise intensity controlled by αt .
+                                                                        Considering channel dependencies for time-series genera-
+Finally, MetaIndux-TS model is trained to reverse the noise
+                                                                     tion is crucial as it allows the model to capture interactions
+effects by learning to predict and remove the added noise,
+                                                                     and correlations between different variables. The frequency
+thereby recovering the original time-series data.
+                                                                     cross-channel learner is proposed to facilitate communication
+   In the sampling phase, the process begins with a random
+                                                                     between different channels by employing frequency cross-
+Gaussian noise sample, which serves as the starting point for
+                                                                     channel attention at each timestamp, thus enabling the learning
+generating synthetic data. Using the pretrained MetaIndux-TS
+                                                                     of multichannel intercolumn correlation. This approach aims
+model, the reverse diffusion process is performed iteratively to
+                                                                     to leverage the strengths of both frequency-domain analysis
+gradually remove noise and reconstruct synthetic time-series
+                                                                     and attention mechanisms.
+data that closely resembles the original sensor data. At each
+                                                                        Let Xien ∈ RT ×C be the input of the ith encoder layer, where
+reverse step t, the denoised data sample xt−1 is computed based
+                                                                     T is the number of timesteps for each time series and C is the
+on the distribution
+                                                                     channel numbers. The channel dependencies learner takes Xien
+           pθ (xt−1 |xt ) = N (xt−1 ; µθ (xt , t) , Σθ (xt , t))     as input and consists of three stages.
+                                                                        1) Frequency Conversion: This stage converts the input
+where µθ and Σθ denote the mean and variance estimates
+                                                                           time series Xien along the timestep dimension to the fre-
+predicted by the MetaIndux-TS model for step t, respectivley.
+                                                                           quency domain to capture global frequency information.
+   2) Overall Network Architecture: Following the work [22],
+                                                                           This converts the input from the time domain to the
+our proposed model also employs a U-Net-like structure to
+                                                                           frequency domain
+generate time-series data. We modify the convolutional block
+                                                                                               XFFT = FFT Xien
+                                                                                                                 
+to fit for time-series signals instead of images. The key                                                                         (1)
+innovation lies in proposing the frequency temporal learner,
+frequency channel learner, and synthetic block to capture char-           where XFFT ∈ CC×(T /2+1) . The FFT allows the model to
+acteristics of industrial time series. The overall architecture is        analyze periodic patterns and frequency components.
+described below, as shown in Fig. 1.                                   2) Frequency Cross-Channel Attention: XFFT serves as the
+     a) Input/Step/Condition Embedding: The embedding                     initial query Q, while K = FFT(W K Xien ) and V =
+module processes the latent variable, condition, and timestep             FFT(W V Xien ), where W K and W V are learnable weight
+t to preserve temporal relationships and condition informa-               matrices. The direct conversion of Q to frequency is
+tion. The latent variable is encoded using 1-D convolution,               for obtaining the original frequency features, while the
+while the timestep information are represented through sinu-              linear transformation of K, V is for more flexible fea-
+soidal positional embeddings, which provide a structured way              ture representations. After converting to the frequency
+to encode temporal dependencies. By leveraging sinusoidal                 domain, the Q, K, and V matrices are transposed to focus
+functions, this embedding method captures relative positional             on the channel dimension. Then, frequency channel
+information across different timesteps, making it particularly            attention mechanisms are employed to capture depen-
+suitable for modeling periodic patterns in time series. The               dencies across different channels. This process can be
+embedded timestep representations are then processed through              formulated as follows:
+fully connected (FC) layers to enhance their expressiveness                                         Qc = QT ,    Kc = KT
+before being integrated into the model. The condition informa-
+                                                                                                      Vc = VT
+tion is encoded using an FC network with masking to ensure
+                                                                                                                        Qc K Tc
+                                                                                                                               
+selective conditioning.                                                     FreqAttenchan Qc , K c , V c = Softmaxchan √
+                                                                                                        
+                                                                                                                                  Vc
+     b) U-Net-Based Architecture: The primary architecture                                                                 dk
+consists of encoders, decoders, and a contrastive synthesis                                                                        (2)
+layer, aimed at capturing and reconstructing time-series data.            where dk is the dimensionality of the K c vectors.
+Specifically, each encoder includes two convolutional layers              Softmaxchan (·) means applying the softmax function
+and a 1/2 downsampling block, integrating a frequency channel             along the channel dimension to normalize the atten-
+learner to encode the entire time series and model multivariate           tion weights, allowing the network to emphasize the
+correlations. For the convolutional layers, embedded time steps           influence of different channels and learn multichannel
+and condition vectors are inputted into each layer to retain              correlations in the frequency feature domain.
+diffusion steps and condition information. The middle Conv             3) Frequency Inversion: The frequency attention vector Xiatt
+block serves as a bridge, refining abstract features between the          obtained from the attention mechanism is mapped back
+encoder and decoder stages. Each decoder corresponds to an                to the original time-series domain for further downsam-
+encoder, containing convolutional blocks, frequency learners,             ple processing. This process can be expressed as follows:
+and a 2× upsampling block to enhance details and restore
+                                                                                        Xichan = IFFT Xiatt
+                                                                                                            
+signals to their original dimensions. Finally, the contrastive
+                                                                                           en = DownSample X chan .
+                                                                                        Xi+1                    i
+                                                                                                                    
+synthesis layer reconstructs the time series by synthesizing                                                                    (3)
+18066                                          IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS, VOL. 36, NO. 10, OCTOBER 2025
+
+
+
+D. Frequency Cross-Temporal Learner
+   The frequency temporal learner utilizes the Fourier domain
+and cross-temporal attention mechanisms to capture long-
+range dependencies and intricate patterns that are challenging
+to identify in the time domain. In addition, high-frequency
+components often represent rapid fluctuations that deviate
+from the underlying trend, making them appear more random.
+Therefore, we propose an adaptive high frequency mask that
+allows the model to dynamically adjust the level of filtering
+and remove these high-frequency noisy components.
+   1) Frequency Conversion and Frequency Cross-Temporal
+Attention: To adaptively select important information across
+the temporal dimension, we propose the frequency cross-                 Fig. 3. Illustration of contrastive synthesis layer.
+temporal attention mechanism. This approach, similar to
+frequency cross-channel attention, employs FFT and linear                 3) Frequency Inversion: The enhanced frequency compo-
+transformations for query, key, and value matrices. The dif-            nents Xenhanced along with the frequency attention vector Xiatt
+ference is that the frequency cross-temporal attention focuses          obtained from the frequency cross-temporal attention mech-
+on the temporal dimension without transposing the attention             anism, are then transformed back to the time domain using
+matrix. The process is described as follows:                            IFFT
+                              Qt = FFT Xide
+                                            
+                                                                                          Xitime = IFFT Xiatt
+                                                                                                              
+
+                              K t = FFT W K Xide
+                                                 
+                                                                                            de = UpSample X time .
+                                                                                           Xi+1                 i
+                                                                                                                  
+                                                                                                                                  (7)
+                              V t = FFT W V Xide
+                                                 
+
+                                                   Q KT
+                                                       
+                                                                        E. Contrastive Synthesis Layer
+    FreqAttentime Qt , K t , V t = Softmaxtime √t t V t
+                                
+                                                           (4)
+                                                     dk                    After learning from the previous frequency learners, the
+                                                                        temporal dynamic details and cross-channel dependencies of
+where Xide ∈ RT ×C denotes the input of the ith decoder
+                                                                        the time series have been well modeled. To generate diverse
+layer. Qt , K t , and V t represent the attention matrices in
+                                                                        industrial time series, we proposed a contrastive synthesis
+the frequency domain across the temporal dimension. Unlike
+                                                                        layer, consisting of three components: the trend synthesis
+frequency cross-channel attention emphasizing dependencies
+                                                                        block, the seasonality synthesis block, and the contrast pre-
+across channels, the frequency cross-temporal attention mech-
+                                                                        diction block, as shown in Fig. 3. The trend block utilized
+anism applies softmax along the temporal dimension using
+                                                                        polynomial curve fitting to synthesize slow-changing long-
+Softmaxtime (·). This attention mechanism operates over dif-
+                                                                        term trend information, such as performance degradation over
+ferent timesteps, enabling the model to capture long-range
+                                                                        the device’s life cycle. The seasonality block uses Fourier
+dependencies and dynamic patterns across various time steps.
+                                                                        series expansion to synthesize short-term seasonal trends, such
+   2) Adaptive High-Frequency Mask: To further enhance the
+                                                                        as changes in environmental factors such as pressure, temper-
+model’s ability to focus on significant frequency components
+                                                                        ature, and altitude. Finally, we develop a contrast prediction
+while reducing noise, we propose an adaptive filtering mech-
+                                                                        block, which connects with the residuals of the original noise
+anism inspired by the work [27]. First, we compute the power
+                                                                        signal. By modeling the differences between the synthesized
+spectrum of XFFT , representing the strength of each time-series
+                                                                        and original sequences, this block generates a more diverse
+frequency
+                                                                        time series.
+                         XSP = |XFFT |2 .                    (5)           1) Trend Synthesis Block: In industrial time-series model-
+    The spectrum is then normalized and compared to a learn-            ing, the trend synthesis is essential for capturing long-term,
+able threshold θ, which is automatically optimized during               smooth variations that occur due to gradual changes in system
+training by backpropagation (∂Loss/∂θ). This comparison                 behavior, such as equipment aging or evolving operational
+generates a binary mask, where each element is either 0 or              conditions. If these trends are not effectively modeled, the
+1. Frequencies with a spectrum below the threshold θ are                generated time series may lack structural coherence, leading
+filtered out to reduce noise interference. The filtered frequency       to unrealistic fluctuations or inaccurate long-term predictions.
+components are then enhanced using an adaptive learnable                To address this, we adopt a polynomial regression-based
+weight. This process is formulated as follows:                          approach, which provides a structured yet flexible represen-
+                                                                        tation of long-term trends. Unlike linear models that assume
+                Xfiltered = XFFT      Mask (XSP < θ)                    a constant rate of change, polynomial regression can capture
+              Xenhanced = Xfiltered    W ada                      (6)   nonlinear but smooth variations without overfitting to short-
+                                                                        term fluctuations. This makes it particularly effective for trend
+where denotes elementwise multiplication. W ada denotes an              modeling, where the objective is to extract gradual and persis-
+adaptive learnable weight enhancing the significant frequency           tent patterns rather than transient variations. Mathematically,
+components selectively.                                                 the trend synthesis block follows a polynomial regression
+WANG et al.: MetaIndux-TS: FREQUENCY-AWARE AIGC FOUNDATION MODEL FOR INDUSTRIAL TIME SERIES                                      18067
+
+
+
+framework, where the input feature x is expanded into a             structure of the data. The feature matrix S output from the
+polynomial basis matrix P, and a learned feature representation     convolutional layer is multiplied with the Fourier basis matrix
+Z is used instead of fixed regression coefficients to weight the    F as the weighting coefficients of different sine and cosine
+polynomial bases                                                    basis functionsPto obtain the periodic function Vseas which
+                                                                                      ∞
+                         y=Z·P+                             (8)    is similar to     n=1 (an cos(2πnt/T ) + bn sin(2πnt/T )). This
+                                                                    achieves the following modeling of the seasonal component
+where                                                               in the time-series data. The model calculates the loss and
+                                              
+                    1      2               H                        propagates it backward by comparing the predicted seasonal
+             Pi =      i,      i, . . . ,     i              (9)
+                  H+1 H+1                 H+1                       component with the true seasonal component, and the feature
+             Z = GELU (Conv1d (X)) .                        (10)    matrix S gradually refines the periodicity of the input data by
+                                                                    continuously adjusting the convolutional kernel weights and
+Here, the convolutional operation extracts localized features       bias terms, optimizing the modeling of seasonal components.
+from the input sequence, while the polynomial basis matrix             3) Contrast Prediction Block: In the original diffusion
+ensures that the learned representation maintains a smooth          model, the primary task is to reconstruct the original time
+and structured temporal progression. The normalization of           series by predicting the added noise. However, the trend syn-
+time steps prevents numerical instability and ensures consistent    thesis block and seasonality synthesis block do not explicitly
+trend modeling across different scales. By explicitly modeling      capture the noise characteristics inherent in the original signal.
+trends in this manner, the trend synthesis block enhances           To address this limitation, we introduce a contrast prediction
+the overall time-series generation process. It ensures that         block to enhance the model’s ability to predict noise more
+long-term variations are effectively separated from short-term      effectively. Our approach begins by aggregating the trend
+fluctuations, allowing the model to better capture seasonal         block features Z and the seasonality synthesis block features
+patterns and noise components in subsequent layers. Moreover,       Vseas . These synthesized features are then concatenated with
+by incorporating a learned feature representation Z, the model      the original input signal r, forming a composite feature rep-
+dynamically adjusts to different trend structures, improving        resentation that allows the model to directly compare the
+its ability to generalize across diverse industrial time-series     synthesized time series with the original series
+datasets.
+   2) Seasonality Synthesis Block: In time-series analysis,                            xcat = concat (Z + Vseas , r)             (16)
+seasonality refers to recurring periodic patterns in the data.      where concat(·) represents the concatenation of tensors along
+To model these seasonal patterns, we use a Fourier series           a specific dimension. This spliced feature representation is
+modeling approach to decompose a complex time series into           subsequently processed through a residual block that consists
+a series of simple sine and cosine functions. The seasonality       of multilayer convolutional operations and nonlinear activation
+synthesis block models in time-series data through Fourier          functions, facilitating deep feature extraction and transforma-
+series. Its basic structure consists of a convolutional layer and   tion. Specifically, the noise component is extracted as follows:
+a Fourier transform layer.
+   The convolutional layer extracts the feature matrix S from                           noise = ReLU (W · xcat )                (17)
+the input time-series data by performing a 1-D convolutional
+                                                                    where W represents the learnable parameters of the convolu-
+operation on the input data X. In order to transform the output
+                                                                    tional layers and rectified linear unit (ReLU) is the activation
+S of the convolutional layer as weighting coefficients into the
+                                                                    function that introduces nonlinearity into the transformation.
+Fourier space, we define the Fourier basis functions as follows:
+                                                                    By zeroing out negative values, ReLU prevents the model from
+              S = Conv1d(X)                                 (11)    interpreting weak or canceling-out fluctuations as significant
+                      
+                           2πp
+                                  ˇ                               noise, allowing it to focus on dominant positive deviations
+            Fcos = cos
+                                    ˇ
+                                 t ˇˇ p ∈ [1, P1 ]          (12)    that contribute to overall noise patterns. This ensures that only
+                         out dim
+                               ˇ                                the most relevant noise features are retained while filtering
+                           2πp
+            Fsin = sin
+                                   ˇ
+                                t ˇˇ p ∈ [1, P2 ]           (13)    out minor perturbations. The convolutional processing ensures
+                        out dim                                     that the extracted features are effectively transformed into
+              F = [Fcos , Fsin ]                            (14)    accurate noise predictions while maintaining the dimensional
+           V seas = S · F                                   (15)    consistency between the input and output data. This contrast-
+                                                                    based mechanism enables the model to discern fine-grained
+where P1 and P2 denote the number of sine and cosine basis          differences between the synthesized and original time series,
+functions. The Fourier basis matrix F is obtained by combin-        thereby improving its noise estimation capability and overall
+ing the sine basis function Fsin and cosine basis function Fcos .   reconstruction performance.
+Here, Fcos and Fsin serve as the fundamental components for
+constructing periodic functions in Fourier space. They provide                            IV. E XPERIMENTS
+a complete basis for representing periodic variations in the
+time series, allowing the model to capture both symmetric and       A. Experimental Setup
+asymmetric seasonal patterns. By projecting the feature matrix         1) Dataset: In order to generate industrial time series for
+S onto these basis functions, the model learns how differ-          different operating conditions and components, we collected
+ent frequency components contribute to the overall seasonal         a large dataset of over ten million sampling points, including
+18068                                     IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS, VOL. 36, NO. 10, OCTOBER 2025
+
+
+
+                                                               TABLE I
+C OMPARISON R ESULTS OF THE P ROPOSED M ETHOD W ITH OTHER M ETHODS IN T ERMS OF D ISCRIMINATION S CORES AND P REDICTION S CORES ON THE
+    CMAPSS DATASET. T HE B EST R ESULTS A RE I NDICATED IN B OLD , W HILE THE S ECOND B EST O UTCOMES A RE D ENOTED BY U NDERLINING
+
+
+
+
+turbofan engines and bearings in different degradation states.       for the final results. All the models were trained for a total of
+The turbofan engine dataset (CMAPSS) [28] is widely used for         70 epochs.
+aeroengine remaining useful life (RUL) prediction and health            Following the original DDPM [22], we designed the encoder
+management studies. The dataset consists of four subsets:            and decoder architecture similar to the 1-D U-Net model. This
+FD001–FD004, each of which covers different failure modes            multiscale convolutional network architecture captures various
+and operating conditions. The dataset records operational            frequency components in time-series data and leverages condi-
+settings, sensor readings, and unit settings, where operational      tional information to enhance the generated quality. Both the
+settings relate to flight altitude and speed. Sensor readings        encoder and decoder consist of two submodules for feature
+provide time-series data from 21 sensors, reflecting engine          extraction, a residual connection module, and a sampling
+performance and health. In addition, the FEMTO dataset               operation module. Each submodule contains a convolutional
+[29] uses multiple sensors to collect bearing wear data with         layer with the SiLU activation function. The downsampling
+different sampling frequencies. The sampling frequency is            operation in the encoder utilizes a 4 × 4 convolutional kernel
+25.6 kHz. The dataset reflects the actual condition of the bear-     with a stride of 2 to extract high-level feature information,
+ings that degrade at an accelerated rate under three different       while the upsampling operation in the decoder employs trans-
+conditions.                                                          posed convolution to restore the input data shape.
+   2) Implementation Details: In this study, we set the number          3) Evaluation Metrics:
+of time steps for sampling during training to 1000. The                1) Discriminative Score (Fidelity): This score is based on
+noise schedule follows a linear design. Specifically, the noise           the accuracy of an RNN classifier distinguishing real
+intensity increases linearly from a minimum value of 0.0001               from generated data. The classifier’s accuracy reflects
+to a maximum value of 0.02. This is achieved by scaling the               its ability to differentiate the two, with an accuracy near
+base range (0.0001 and 0.02) according to the ratio of the                0.5 suggesting poor distinction. The discriminative score
+actual number of time steps to the default 1000 steps. During             is the absolute difference between the accuracy and 0.5.
+sampling, the model employs a reverse sampling strategy                   The lower the discriminative score, the more similar the
+based on DDPM, and the number of sampling steps matches                   generated data is to the real data, with a score closer to
+that used during training.                                                0 indicating higher similarity.
+   We implemented the proposed model using the PyTorch                 2) Predictive Score: To evaluate the usability of the gener-
+deep learning framework and trained it with the Adam opti-                ated data, we train an LSTM model using 70% of the
+mizer, setting the initial learning rate to 2e−3 . All experiments        synthetic data for training and 30% for validation, with
+were repeated five times, with the average values computed                real data as the test set. The performance is assessed
+WANG et al.: MetaIndux-TS: FREQUENCY-AWARE AIGC FOUNDATION MODEL FOR INDUSTRIAL TIME SERIES                                      18069
+
+
+
+                           TABLE II                                                            TABLE III
+         E VALUATION OF M ETA I NDUX -TS AGAINST OTHER                     A BLATION S TUDY OF C ONTRASTIVE S YNTHESIS L AYER
+                M ETHODS ON FEMTO DATASETS
+
+
+
+
+      using the root mean square error (RMSE) between
+      predicted and true values. A lower RMSE indicates
+      better data quality and usability for downstream tasks.
+
+B. Comparison With the State-of-the-Art Methods
+   To demonstrate the significant advantages of our pro-
+                                                                   predictive score decreases from 30.106 to 23.776, a decrease
+posed method, we conduct experiments on industrial datasets
+                                                                   of 21.0%. This indicates that MetaIndux-TS is not only able
+and compare it with several state-of-the-art models. These
+                                                                   to generate samples that are more similar to real data, but
+compared models include several GAN-based methods (GAN-
+                                                                   also provides more reliable and practical synthetic data in the
+LSTM [15], TTS-GAN [30], and TimeGAN [31]) as well as
+                                                                   prediction task.
+several diffusion model-based methods (Dit [33], SSSD [19],
+                                                                      In addition, we conduct experiments on the FEMTO dataset
+DiffWave [6], and Tabddpm [32]). During the experiments,
+                                                                   in Table II. This dataset is divided into different lengths to test
+we evaluate the performance of each model under different
+                                                                   the quality of data generated by different generative models.
+generation conditions by adjusting the length of the input data
+                                                                   From the experimental results, it is concluded that the quality
+and the corresponding length of the generated samples. We set
+                                                                   of data generated by MetaIndux-TS under any length of the
+three length combinations of 24, 48, and 96. From the results,
+                                                                   dataset is better than other models. This further proves the
+it can be seen that the MetaIndux-TS model outperforms
+                                                                   superiority of MetaIndux-TS in data generation.
+several current state-of-the-art models in most of the evaluated
+                                                                      In summary, MetaIndux-TS demonstrates more desirable
+metrics in datasets of specific lengths.
+                                                                   results in both classification scores and prediction scores, prov-
+   As shown in Table I, MetaIndux-TS’s discriminative scores
+                                                                   ing its higher similarity and utility in generating time series
+outperform other diffusion and GAN models on most datasets.
+                                                                   that can better meet the needs of industrial data generation
+In FD001, MetaIndux-TS’s discriminative score is 0.102,
+                                                                   and analysis.
+which is a 71.5% improvement over the best discriminative
+score of 0.358 of the remaining models. In FD003, the dis-
+criminative score of MetaIndux-TS is 0.094, which is 69.2%         C. Ablation Study
+higher than the optimal result of 0.305 in the rest of the            1) Ablation Study of the Contrastive Synthesis Layer: The
+models. These results indicate that MetaIndux-TS is able to        key module of the MetaIndux-TS model is the contrastive
+more accurately model the real data distribution and generate      synthesis layer for predictive noise. In order to verify its
+samples that are more similar. It is worth noting that most of     validity and contribution to the overall model, we modify the
+the discriminative scores of the GAN-based generative models       MetaIndux-TS model by using MetaIndux-TS (w/o contrastive
+in the experiments of generating time-series data are higher       synthesis layer) to denote the model with the contrastive
+than 0.4. This is due to the fact that GAN models are subject      synthesis layer removed to perform ablation experiments and
+to pattern crashes and training instability, which lead to large   derive the discriminative and predictive scores. From the
+differences between the generated samples and the real data. In    histograms of discriminative scores in Fig. 4, the quality of
+contrast, the MetaIndux-TS model stably captures the complex       the data generated by the original model is significantly higher
+dynamic features of the time series through a step-by-step         than that of the model with the contrastive synthesis layer
+denoising process. It overcomes the shortcomings of the GAN        removed for any length of any dataset. In addition, predictive
+model and generates time series that are more accurate and         scores are listed in Table III.
+more consistent with the real data.                                   For the same dataset and sequence length, the discrimina-
+   From the perspective of the predictive score, MetaIndux-        tive score of the MetaIndux-TS model improves by 66.1%
+TS also shows significant advantages in Table I. Compared          (0.301 → 0.102) relative to the MetaIndux-TS without con-
+with the optimal results of the rest of the models under           trastive synthesis layer. The predictive score improves 52.4%
+the same conditions, MetaIndux-TS’s predictive score in the        (29.333 → 13.949) relative to MetaIndux-TS without con-
+FD001 dataset decreases from 17.364 to 15.191, a decrease of       trastive synthesis layer. This indicates that the contrastive
+12.5%; in FD002, the predictive score decreases from 27.194        synthesis layer contributes significantly to the MetaIndux-TS
+to 22.860, a decrease of 15.9%; in FD003, it decreases from        model. The data generated with the inclusion of the contrastive
+22.946 to 16.138, a decrease of 29.0%; and in FD004, the           synthesis layer are more similar and usable.
+18070                                           IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS, VOL. 36, NO. 10, OCTOBER 2025
+
+
+
+
+Fig. 4. Impact of the contrastive synthesis layer on turbofan engine datasets from FD001 to FD004.
+
+                                                                      TABLE IV
+                    A BLATION S TUDY OF F REQUENCY C ROSS -C HANNEL L EARNER AND F REQUENCY C ROSS -T EMPORAL L EARNER
+
+
+
+
+                                TABLE V
+          P ERFORMANCE ON Z ERO -S HOT L EARNING TASKS OF
+                  D IFFERENT D IFFUSION M ODELS
+
+
+
+
+                               TABLE VI
+          P ERFORMANCE ON F EW-S HOT L EARNING TASKS OF
+                  D IFFERENT D IFFUSION M ODELS
+
+
+
+
+                                                                             Fig. 5. t-SNE visualization of zero-shot generation results of MetaIndux-TS.
+                                                                             The red points represent the original full lifecycle samples, while the blue
+                                                                             and green points correspond to the generated normal and fatigue-condition
+                                                                             samples, respectively.
+   2) Ablation Study of the Dual Frequency Learners:
+Another feature of the MetaIndux-TS model is the intro-
+duction of the cross-channel attention mechanism and the                     mechanisms improves the quality of synthetic data generated
+cross-temporal attention mechanism, for which we conduct                     by the models. In datasets with complex temporal logic such
+a second type of ablation experiments, respectively, for the                 as FD004, the discriminative scores of MetaIndux-TStime and
+model MetaIndux-TS (w/o contrastive synthesis layer) without                 MetaIndux-TSchan are improved by 20.9% (0.348 → 0.275)
+all frequency learners, the model MetaIndux-TSchan with only                 and 0.3% (0.348 → 0.347), respectively, in comparison with
+the frequency cross-temporal attention mechanism removed,                    MetaIndux-TS without all frequency learners. The predictive
+the model MetaIndux-TStime with only the frequency cross-                    scores improved by 35.9% (43.686 → 28.005) and 12.1%
+channel attention mechanism removed, and the proposed                        (43.686 → 38.389). The improvement in the discriminative
+model MetaIndux-TS are evaluated on the generated data                       and predictive scores is due to the fact that the frequency cross-
+of the four models. The discriminative scores and predictive                 channel attention mechanism is able to effectively identify
+scores of the four models are reported. From Table IV,                       and capture the correlation between high-frequency and low-
+it is seen that the introduction of both types of attention                  frequency components. Also, the frequency cross-temporal
+WANG et al.: MetaIndux-TS: FREQUENCY-AWARE AIGC FOUNDATION MODEL FOR INDUSTRIAL TIME SERIES                                                              18071
+
+
+
+
+Fig. 6. MetaIndux-TS generates some turbofan engine signals under different conditions and states. The left column represents the engine signals in a healthy
+state (blue), while the right column represents the engine signals in a fatigued state (green).
+
+
+
+
+Fig. 7. Visualizations of the generated samples are presented using PCA (first row) and t-SNE (second row) techniques. Each column displays the comparative
+visualizations for the four methods. Original samples are denoted in blue, while synthetic samples are indicated in brown. The degree of overlap between
+the two types of points is indicative of their similarity, with greater overlap signifying a higher degree of resemblance. (a) Diff-MTS. (b) DiffWave. (c) DiT.
+(d) TimeGAN.
+
+attention mechanism can capture the dynamic changes of                              The results are shown in Tables V and VI, which show
+frequency components at different time points. Both of them                      that MetaIndux-TS consistently outperforms other models in
+can make the generated data closer to the frequency charac-                      both zero-shot and few-shot settings. When using MetaIndux-
+teristics of the real data.                                                      TS-generated data under the zero-shot setting, the predicted
+                                                                                 RMSE is reduced by an average of 31.9% (27.652 → 18.820)
+D. Zero-Shot and Few-Shot Generation
+                                                                                 compared to the best-performing alternative models across the
+   To assess the adaptability of MetaIndux-TS with unseen
+                                                                                 FD001–FD004 datasets. In the few-shot setting, the reduction
+samples, we conduct zero-shot and few-shot experiments. In
+                                                                                 reaches 39.6% (26.501 → 16.009). In Fig. 5, we present the
+the C-MAPSS dataset, samples with an RUL greater than
+                                                                                 t-SNE visualization of the zero-shot data generation results.
+30 are categorized as normal conditions, while those less
+                                                                                 Notably, although the model is never exposed to fatigue
+than 30 fall under fatigue conditions. Generative models are
+                                                                                 condition samples during training, MetaIndux-TS successfully
+trained in two settings: zero-shot, using only normal condition
+                                                                                 generates realistic fatigue condition data that aligns with the
+data, and few-shot, incorporating 10% fatigue condition data
+                                                                                 overall data distribution. This demonstrates MetaIndux-TS’s
+alongside normal data. For evaluation, the generated datasets
+                                                                                 ability to generalize the underlying distribution of unseen data,
+from these models are used to train a two-layer LSTM model,
+                                                                                 making it a promising solution for enhancing predictive accu-
+which is then tested exclusively on real fatigue condition
+                                                                                 racy in real-world industrial scenarios where data collection
+data.
+18072                                             IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS, VOL. 36, NO. 10, OCTOBER 2025
+
+
+
+
+Fig. 8. Multiple visualizations of prediction results. The original time-series data are depicted by black curves. The synthetic time series are illustrated by
+distinct colors: gold for Diff-MTS, blue for DiffWave, and green for TimeGAN. (a) Original data. (b) MetaIndux-TS. (c) DiffWave. (d) TimeGAN.
+
+
+under extreme conditions (high pressure, low temperature, or                     the real data, while the brown dots represent the synthetic
+elevated heat) is challenging.                                                   data. By looking at the distribution of the dots in the two
+                                                                                 colors, we can intuitively determine the degree of similarity
+                                                                                 between the synthetic data and the real data. As shown in
+E. Visualization Analysis                                                        Fig. 7, the data generated by DiT and TimeGAN models
+   MetaIndux-TS is capable of generating a variety of indus-                     have less overlap with the real data distribution. The similarity
+trial time series for different operating conditions and health                  between the generated data and the real data is not high. The
+states of industrial equipment. Fig. 6 shows the synthesized                     generated data of the DiffWave model are slightly different
+data for various operating conditions and different health                       from the real data on the right side of the PCA plot and the
+states. In Fig. 6, the blue plots represent signals from turbofan                lower side of the t-SNE plot, where the distribution of the real
+engines in a healthy state, while the green plots depict signals                 data does not account for a high proportion. In contrast, the
+from fatigued engines. Each row corresponds to a different                       distribution of the generated data of the MetaIndux-TS model
+condition (FD001–FD004), capturing diverse operational sce-                      has a higher overlap with the real data in both the PCA plot
+narios. Furthermore, this figure demonstrates the capability of                  and the t-SNE plot, indicating that the generated data are more
+the MetaIndux-TS model to generate realistic industrial time                     similar. In addition, in order to observe the generated data
+series.                                                                          and the original real data more intuitively, we select all the
+   To further qualitatively analyze the degree of similarity                     data in one of the time steps. The generated data and original
+between the generated data and the original data, we plot PCA                    data are plotted for each dimension. From Fig. 8, it is seen
+and t-SNE plots of the generated data and the original data                      that in the signal of sensor s13, the data generated by the
+under different models. The blue dots on each plot represent                     TimeGAN model does not generate the data in the lower part
+WANG et al.: MetaIndux-TS: FREQUENCY-AWARE AIGC FOUNDATION MODEL FOR INDUSTRIAL TIME SERIES                                                 18073
+
+
+
+                            TABLE VII                                 However, MetaIndux-TS has limitations in generating time
+     S AMPLING T IME C OMPARISON ACROSS D IFFERENT M ETHODS        series that strictly adhere to the physical laws governing
+                                                                   industrial equipment. In the future, we plan to explore methods
+                                                                   for integrating physical constraints into generative models.
+                                                                   This approach aims to ensure that the generated time series
+                                                                   align with the physical laws of industrial equipment, making
+                                                                   them more applicable to real-world physical scenarios.
+
+                                                                                                 R EFERENCES
+                                                                   [1]  L. Ren et al., “Industrial foundation model,” IEEE Trans. Cybern.,
+of the image. In the signal of sensor s14, the data generated           vol. 55, no. 6, pp. 1234–1245, Jun. 2025.
+                                                                   [2] L. Ren, H. Wang, Y. Wang, K. Huang, L. Wang, and B. Li, “Foundation
+by the DiffWave model oscillates much less than the real data.          models for the process industry: Challenges and opportunities,” Engi-
+Also, the generated data of the MetaIndux-TS model all well             neering, vol. 11, pp. 423–432, Mar. 2025.
+reproduces the timing pattern of the real data with much higher    [3] S. Khanna et al., “DiffusionSat: A generative foundation model for
+                                                                        satellite imagery,” in Proc. Int. Conf. Learn. Represent., Jan. 2023.
+similarity.                                                        [4] Z. Qiu, Y. Tao, S. Pan, and A. W.-C. Liew, “Knowledge graphs
+                                                                        and pretrained language models enhanced representation learning for
+                                                                        conversational recommender systems,” IEEE Trans. Neural Netw. Learn.
+F. Efficiency Analysis                                                  Syst., vol. 36, no. 4, pp. 6107–6121, Apr. 2025.
+   To evaluate the sampling efficiency of different archi-         [5] Y. Ling, F. Cai, J. Liu, H. Chen, and M. de Rijke, “Keep and
+                                                                        select: Improving hierarchical context modeling for multi-turn response
+tectures, we conducted comprehensive experiments under                  generation,” IEEE Trans. Neural Netw. Learn. Syst., vol. 34, no. 7,
+multiple settings. Specifically, we compared three structures           pp. 3636–3649, Jul. 2023.
+as shown in Table VII: 1) “Original U-Net + attention,”            [6] Z. Kong, W. Ping, J. Huang, K. Zhao, and B. Catanzaro, “DiffWave: A
+                                                                        versatile diffusion model for audio synthesis,” in Proc. Int. Conf. Learn.
+which represents a baseline diffusion model using DDPM                  Represent., Jan. 2020.
+sampling; 2) “MetaIndux-TS,” which also employs DDPM               [7] C. Li et al., “Multimodal foundation models: From specialists to
+sampling but with the proposed frequency architecture for               general-purpose assistants,” Found. Trends Comput. Graph. Vis., vol. 16,
+                                                                        nos. 1–2, pp. 1–214, 2024.
+time series; and 3) “MetaIndux-TS (proposed),” which utilizes      [8] Y. Pi, Y. Wu, Y. Huang, Y. Shi, and S. Wang, “Inhomogeneous
+DDIM sampling [23] with t = 100 steps for acceleration.                 diffusion-induced network for multiview semi-supervised classification,”
+Here, DDPM and DDIM refer to different diffusion sampling               IEEE Trans. Neural Netw. Learn. Syst., vol. 36, no. 5, pp. 8606–8618,
+                                                                        May 2025.
+strategies, where DDIM typically enables faster generation         [9] Z. Zhang, H. Weng, T. Zhang, and C. Chen, “A broad generative network
+with fewer steps. The experiments are performed across four             for two-stage image outpainting,” IEEE Trans. Neural Netw. Learn.
+different datasets to validate the generality of the proposed           Syst., vol. 35, no. 9, pp. 12731–12745, Sep. 2024.
+                                                                   [10] J. Bruce et al., “Genie: Generative interactive environments,” in Proc.
+improvements.                                                           41st Int. Conf. Mach. Learn., Feb. 2024, pp. 4603–4623.
+   As shown in Table VII, the proposed MetaIndux-TS with           [11] L. Ren, H. Wang, and G. Huang, “DLformer: A dynamic length
+DDIM achieves significant acceleration compared to both the             transformer-based network for efficient feature representation in remain-
+                                                                        ing useful life prediction,” IEEE Trans. Neural Netw. Learn. Syst.,
+Original U-Net + attention and the MetaIndux-TS with DDPM               vol. 35, no. 5, pp. 5942–5952, May 2024.
+sampling. Specifically, on the FD001 dataset, our method           [12] L. Ren, H. Wang, J. Li, Y. Tang, and C. Yang, “AIGC for industrial
+reduces the sampling time from 330.372 to 20.119 s, achieving           time series: From deep generative models to large generative models,”
+                                                                        2024, arXiv:2407.11480.
+a 16.42× speedup. Similar improvements are observed across         [13] Z. Pan, Y. Wang, Y. Cao, and W. Gui, “VAE-based interpretable latent
+other datasets, with speedups of 22.22×, 22.16×, and 24.71×             variable model for process monitoring,” IEEE Trans. Neural Netw.
+on FD002–FD004, respectively. Moreover, even under the                  Learn. Syst., vol. 35, no. 5, pp. 6075–6088, May 2024.
+                                                                   [14] S. Lin, R. Clark, R. Birke, S. Schönborn, N. Trigoni, and S. Roberts,
+same DDPM sampling strategy, MetaIndux-TS outperforms                   “Anomaly detection for time series using VAE-LSTM hybrid model,”
+the Original U-Net due to its compression of redundant                  in Proc. IEEE Int. Conf. Acoust., Speech Signal Process. (ICASSP),
+high- and low-frequency components, effectively concentrating           May 2020, pp. 4322–4326.
+                                                                   [15] B.-L. Lu, Z.-H. Liu, H.-L. Wei, L. Chen, H. Zhang, and X.-H. Li, “A
+useful information and reducing redundancy in time-series               deep adversarial learning prognostics model for remaining useful life
+features. These results demonstrate that our method substan-            prediction of rolling bearing,” IEEE Trans. Artif. Intell., vol. 2, no. 4,
+tially improves sampling efficiency while maintaining strong            pp. 329–340, Aug. 2021.
+                                                                   [16] X. Zhang, Y. Qin, C. Yuen, L. Jayasinghe, and X. Liu, “Time-series
+generative performance.                                                 regeneration with convolutional recurrent generative adversarial network
+                                                                        for remaining useful life estimation,” IEEE Trans. Ind. Informat.,
+                                                                        vol. 17, no. 10, pp. 6820–6831, Oct. 2021.
+                         V. C ONCLUSION                            [17] L. Yan, Z. Pu, Z. Yang, and C. Li, “Bearing fault diagnosis based
+   This article introduces MetaIndux-TS, a frequency-informed           on diffusion model and one-class support vector machine,” in Proc.
+                                                                        Prognostics Health Manage. Conf. (PHM), May 2023, pp. 307–311.
+AIGC foundation model specifically designed for industrial         [18] C. Yang, T. Wang, and X. Yan, “DDMT: Denoising diffusion mask
+time-series generation. Addressing the challenges posed by              transformer models for multivariate time series anomaly detection,”
+complex temporal dynamics, multichannel intercolumn cor-                2023, arXiv:2310.08800.
+                                                                   [19] J. M. L. Alcaraz and N. Strodthoff, “Diffusion-based time series impu-
+relations, and diverse frequency variables in industrial time           tation and forecasting with structured state space models,” Trans. Mach.
+series, MetaIndux-TS effectively incorporates a frequency               Learn. Res., vol. 4, pp. 1–33, Jan. 2022.
+cross-channel learner to model multichannel dependencies and       [20] R. Rombach, A. Blattmann, D. Lorenz, P. Esser, and B. Ommer,
+                                                                        “High-resolution image synthesis with latent diffusion models,” in
+a frequency cross-temporal learner to capture detailed temporal         Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit., Jun. 2022,
+dynamics.                                                               pp. 10684–10695.
+18074                                              IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS, VOL. 36, NO. 10, OCTOBER 2025
+
+
+
+[21] Y. Liu et al., “Sora: A review on background, technology, limitations,                               Lei Ren (Senior Member, IEEE) received the Ph.D.
+     and opportunities of large vision models,” 2024, arXiv:2402.17177.                                   degree in computer science from the Institute of
+[22] J. Ho, A. Jain, and P. Abbeel, “Denoising diffusion probabilistic models,”                           Software, Chinese Academy of Sciences, Beijing,
+     in Proc. NIPS, 2020, pp. 6840–6851.                                                                  China, in 2009.
+[23] J. Song, C. Meng, and S. Ermon, “Denoising diffusion implicit models,”                                  He is currently a Professor with the School
+     2020, arXiv:2010.02502.                                                                              of Automation Science and Electrical Engineering,
+[24] H. Chen et al., “VideoCrafter1: Open diffusion models for high-quality                               Beihang University, Beijing, also with Hangzhou
+     video generation,” 2023, arXiv:2310.19512.                                                           International Innovation Institute, Beihang Univer-
+[25] K. E. Wu et al., “Protein structure generation via folding diffusion,”                               sity, Hangzhou, China, and also with the State
+     Nature Commun., vol. 15, no. 1, p. 1059, Feb. 2024.                                                  Key Laboratory of Intelligent Manufacturing System
+[26] J. Lovelace, V. Kishore, C. Wan, E. Shekhtman, and K. Q. Weinberger,                                 Technology, Beijing. His research interests include
+     “Latent diffusion for language generation,” in Proc. Adv. Neural Inf.        neural networks and deep learning, time-series analysis, and industrial AI
+     Process. Syst., Jan. 2022, pp. 1–10.                                         applications.
+[27] E. Eldele, M. Ragab, Z. Chen, M. Wu, and X. Li, “TSLANet: Rethinking           Dr. Ren serves as an Associate Editor for IEEE T RANSACTIONS ON N EU -
+     transformers for time series representation learning,” in Proc. Int. Conf.   RAL N ETWORKS AND L EARNING S YSTEMS , IEEE/ASME T RANSACTIONS
+     Mach. Learn., Apr. 2024, pp. 1234–1245.                                      ON M ECHATRONICS , and other international journals.
+[28] A. Saxena, K. Goebel, D. Simon, and N. Eklund, “Damage propagation
+     modeling for aircraft engine run-to-failure simulation,” in Proc. Int.
+     Conf. Prognostics Health Manage., Oct. 2008, pp. 1–9.
+[29] L. Ren, H. Wang, and Y. Laili, “Diff-MTS: Temporal-augmented condi-
+     tional diffusion-based AIGC for industrial time series towards the large
+     model era,” 2024, arXiv:2407.11501.
+[30] X. Li et al., “TTS-GAN: A transformer-based time-series generative
+     adversarial network,” in Proc. Int. Conf. Artif. Intell. Med. Cham,                                  Yikang Li (Member, IEEE) received the B.Eng.
+     Switzerland: Springer, 2022, pp. 133–143.                                                            degree in automation engineering from Beihang
+[31] J. Yoon, D. Jarrett, and M. V. D. Schaar, “Time-series generative                                    University, Beijing, China, in 2024, where he is
+     adversarial networks,” in Proc. Adv. Neural Inf. Process. Syst., vol. 32,                            currently pursuing the M.S. degree with the School
+     Sep. 2019, pp. 5508–5518.                                                                            of Automation Science and Electrical Engineering.
+[32] A. Kotelnikov, D. Baranchuk, I. Rubachev, and A. Babenko,                                              His current research interests include time-series
+     “TabDDPM: Modelling tabular data with diffusion models,” in Proc.                                    analysis and generative models.
+     Int. Conf. Mach. Learn., Jan. 2022, pp. 17564–17579.
+[33] W. Peebles and S. Xie, “Scalable diffusion models with transformers,”
+     in Proc. IEEE/CVF Int. Conf. Comput. Vis. (ICCV), Oct. 2023,
+     pp. 4195–4205.
+
+
+
+
+                         Haiteng Wang (Graduate Student Member, IEEE)                                     Yuqing Wang (Graduate Student Member, IEEE)
+                         received the B.Eng. degree in automation engineer-                               received the B.S. degree from the School of Mechan-
+                         ing from Beihang University, Beijing, China, in                                  ical Engineering and Automation, Beihang Univer-
+                         2021, where he is currently pursuing the Ph.D.                                   sity, Beijing, China, in 2022, where is currently
+                         degree with the School of Automation Science and                                 pursuing the Ph.D. degree in pattern recognition and
+                         Electrical Engineering.                                                          intelligent systems with the School of Automation
+                            His current research interests include time-series                            Science and Electrical Engineering.
+                         prediction, generative AI, and industrial AI applica-                               His main research interests are industrial big data,
+                         tions.                                                                           robotic vision, and computer graphics.
+

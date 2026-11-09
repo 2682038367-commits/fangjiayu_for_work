@@ -1,0 +1,107 @@
+{
+  "run_id": "diagnostic-fd002-formal-seed-stage-errors-20261106",
+  "status": "complete",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261106-fd002-formal-seed-stage-errors",
+  "started_at": "2026-11-06T15:03:46.565832+08:00",
+  "config": {
+    "dataset": "FD002",
+    "window": 48,
+    "generation_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "evaluator_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "bins": [
+      [
+        "0-30",
+        0,
+        30
+      ],
+      [
+        "31-60",
+        31,
+        60
+      ],
+      [
+        "61-90",
+        61,
+        90
+      ],
+      [
+        "91-124",
+        91,
+        124
+      ],
+      [
+        "125",
+        125,
+        125
+      ]
+    ],
+    "test_engines": 259,
+    "test_sample": "Same one terminal window per official test engine; capped125 labels, unclipped output",
+    "RMSE": "For each predictor sqrt(mean squared error in bin), then arithmetic mean5predictor RMSEs; same hierarchy as26.7918",
+    "signed_error": "Mean(prediction minus capped trueRUL), averaged over5predictors and same bin engines",
+    "auxiliary_MSE": "Mean per-predictor MSE, used for additive contributions; pooledRMSE kept separate from main meanRMSE",
+    "common_seed_group": [
+      3,
+      23,
+      33
+    ],
+    "seed43_reference": "Mean per-engine/per-bin MSE of user-named3/23/33, not best-seed selection",
+    "seed43_contribution": "n_bin/259*(MSE43_bin - mean(MSE3_bin,MSE23_bin,MSE33_bin)); sums to overall excessMSE, not additive RMSE difference",
+    "controls": "Existing5real-trained predictor records auxiliary; existing RUL-matched training/dev signal/readout artifacts only, no new inference",
+    "stop": "Descriptive tables, engine-direction overlaps, MSE arithmetic, prior signal evidence cross-reference; no training/sampling/inference, no sensor/neighbor search or test-driven fitting"
+  },
+  "user_authorization": "Compare existing5x5per-engine formal-test errors by trueRUL, common3/23/33directions and seed43stage localization; reuse prior train/dev checks where shared pattern present",
+  "inputs_sha256": {
+    "analysis/diagnostics/fd002_formal_seed_stage_errors.py": "a3ca95c85a1dfa46cf25e46aa86e737535a6a968be0006b95f358973b87962a5",
+    "docs/operations/FD002_FORMAL_SEED_STAGE_ERRORS.md": "299e3f7f49655888f6e67024c87beb5c873a4047dfb8d8e68833e701a23f5576",
+    "results/diagnostics/rul_segment_errors_w48/predictions.csv": "c4d8b20d097dd36c47a6125ab1eec669bc0c247a8cfbcb47d6e69294ecabf1fa",
+    "results/fd002_evaluation_stability_paper70_raw.csv": "85d29acd7e7b7c7571e534091e9dc8d4041d63325c1594dfc0e8864594a7871e",
+    "results/diagnostics/conditional_signal_w48/metrics_by_seed_bin.csv": "b6990a6b60c5e1484f6477c6e1cd013328a4a5e535a9a47fb1e211028a7ece73",
+    "results/diagnostics/real_predictor_condition_w48/generation_seed_summary.csv": "6075d3d19cd62152b1b0a736894f08f74271d7996b6554f331912e0950dfc1b8",
+    "upstream/data/RUL_FD002.txt": "c851dd96a6ea6998d3c4a8f834d3c8013aa90e93a6ed950dc826ad0655b2906b",
+    "docs/conclusions/final/conditional_signal_diagnostic_w48.md": "3c64ac7d33b4513e5b9e902133803b8d1e5469bade0bfa27c5c47e03fab45e8b",
+    "docs/conclusions/final/real_predictor_condition_audit_w48.md": "385ef716b5e49cd3e050eab79348b3213e1e88be8903e34fe4554932683043ce",
+    "results/diagnostics/fd002_formal_generator_seeds_20261106/summary.json": "d982cbf43ec9be9ae31df58c7e0fa7117ba0a992210a3a4b2ebb891521686f8d",
+    "runs/diagnostic-fd002-formal-seed-stage-errors-20261106/source/fd002_formal_seed_stage_errors.py": "a3ca95c85a1dfa46cf25e46aa86e737535a6a968be0006b95f358973b87962a5",
+    "runs/diagnostic-fd002-formal-seed-stage-errors-20261106/source/FD002_FORMAL_SEED_STAGE_ERRORS.md": "299e3f7f49655888f6e67024c87beb5c873a4047dfb8d8e68833e701a23f5576",
+    "runs/diagnostic-fd002-formal-seed-stage-errors-20261106/source/prediction-parent-manifest.json": "e4e463d080ea47788707d4a301d4189bc11f2f8fdeafd7fb16b8a4484fe638d3",
+    "runs/diagnostic-fd002-formal-seed-stage-errors-20261106/config.json": "e046823f829aaaf2f6b916f4b2ffecab7971a28b64dfa4b08ac1896f661dc74c"
+  },
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/analysis/diagnostics/fd002_formal_seed_stage_errors.py"
+  ],
+  "git_head": "df7e83b2e14317db34a23049db973ec83aa52065",
+  "completed_at": "2026-11-06T15:03:47.257928+08:00",
+  "outputs_sha256": {
+    "results/diagnostics/fd002_formal_seed_stage_errors_20261106/per_generator_by_stage.csv": "a20712294c80bf4bb5b1df843b59b0194a45cb993f6932435565d410f73078f6",
+    "results/diagnostics/fd002_formal_seed_stage_errors_20261106/reused_signal_diagnostics.csv": "18afa32aefe3381760ddccfa405f33790f2bd72b8e64795a6167f61f126d0f7f",
+    "results/diagnostics/fd002_formal_seed_stage_errors_20261106/per_predictor_by_stage.csv": "9635707de99a9786a6972c5b03f549d3f8c205d5c3c09fbb0452f008bc35f7c7",
+    "results/diagnostics/fd002_formal_seed_stage_errors_20261106/common3_direction_agreement.csv": "9e77e58d1dc9e70d776eda5500c8fd10dc43bc016a9569120fb981477605dc87",
+    "results/diagnostics/fd002_formal_seed_stage_errors_20261106/stage_errors.pdf": "3238a5c8319c0c8d3b91f51502090a6f32dc196ca6fb5beec06d4caed4f75630",
+    "results/diagnostics/fd002_formal_seed_stage_errors_20261106/formal_replay.csv": "42167dfecfa2390de40b29861aea1f7267f2f4ec81a1ee0494d5c20e7eb1d87a",
+    "results/diagnostics/fd002_formal_seed_stage_errors_20261106/stage_errors.png": "4aabfb0c704a827b1bf8e60aa29779222862c3912c93404e60e109b19469aca2",
+    "results/diagnostics/fd002_formal_seed_stage_errors_20261106/per_engine_by_generator.csv": "ca7fc24d12b6a5d4bd404ee55dd55e6bf3260d8cff4e731c755ceb4ab3429793",
+    "results/diagnostics/fd002_formal_seed_stage_errors_20261106/reused_condition_readout.csv": "d3de3522e928dd0910edab15bd5fc317179a741c216b1ef757c31bf8c5392460",
+    "results/diagnostics/fd002_formal_seed_stage_errors_20261106/summary.json": "fef16ba2c6a7af1b2742b84dc6567d4e96257a47dbedf6d4c2389e0f04e58a44",
+    "results/diagnostics/fd002_formal_seed_stage_errors_20261106/seed43_MSE_contributions.csv": "3cdfb3a6d2adde9f17a2efca18b4aab16b4a6711bbed1018562a7fa1ec193f96",
+    "docs/conclusions/final/fd002_formal_seed_stage_errors_20261106_report.md": "7b7e577a1c02c8da688d06fef0e883c314b2a66fe54a343a55278f942848f390"
+  },
+  "new_training": 0,
+  "new_sampling": 0,
+  "new_inference": 0
+}

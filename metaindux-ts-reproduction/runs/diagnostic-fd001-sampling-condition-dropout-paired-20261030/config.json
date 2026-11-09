@@ -1,0 +1,47 @@
+{
+  "checkpoints": [
+    13,
+    23
+  ],
+  "screening_sampling_seed": 103,
+  "confirmation_sampling_seeds": [
+    113,
+    123
+  ],
+  "evaluator_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "controls": "fresh traced legacy control paired with fresh intervention",
+  "factor": "sampling conditional CFG branch effective drop probability0.2 to0; consume original RNG draw",
+  "unconditional_drop_probability": 1.0,
+  "cfg_scale": 3.0,
+  "diffusion": "original DDPM1000 linear pred_noise",
+  "sample_count": 15931,
+  "shape": [
+    15931,
+    48,
+    14
+  ],
+  "batch_size": 256,
+  "noise_control": "exact actual noise/mask tensors and CUDA states checked against independent legacy-schedule generator",
+  "previous_failure": "cached-control prefix maxabs0.000109851 exceeded frozen1e-6; do not reuse old controls or relax check",
+  "paired_control_link": "fresh actual noise traces and start/end state fingerprints must match within each pair",
+  "clear_change": {
+    "ds_absolute_mean_change": 0.03,
+    "paired_same_direction_at_least": 4,
+    "inverse_reference": "dev_matched",
+    "inverse_absolute_rmse_change": 1.0,
+    "inverse_relative_rmse_change": 0.1,
+    "combination": "DS gate OR inverse gate, either direction, either checkpoint"
+  },
+  "stop": "103 screen; if triggered BOTH checkpoints113/123, max12 full samples/60 discriminator fits (both arms)",
+  "caveats": [
+    "Historical extreme checkpoints; exploratory conditional confirmation selection",
+    "Real-trained predictor readout is a proxy, not physical truth or downstream utility",
+    "Old cached-control replay failed; old data/metrics are context only, fresh controls generated"
+  ]
+}

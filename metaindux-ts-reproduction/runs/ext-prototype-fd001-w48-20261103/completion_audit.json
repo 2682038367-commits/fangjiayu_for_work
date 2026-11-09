@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "source_and_input_hashes_verified": true,
+  "train_validation_disjoint": true,
+  "train_only_prototype_engine_ids": true,
+  "generators": 4,
+  "sample_sets": 8,
+  "predictors": 40,
+  "generator_updates_per_model": 3080,
+  "predictor_updates_per_model": 1085,
+  "shared_initialization_order_rng_equal": true,
+  "sampling_rng_and_labels_equal": true,
+  "predictor_order_equal": true,
+  "real_rmse_recomputed": true,
+  "finished_at": "2026-11-03T12:09:19.678676+08:00",
+  "elapsed_seconds": 6488.354462
+}

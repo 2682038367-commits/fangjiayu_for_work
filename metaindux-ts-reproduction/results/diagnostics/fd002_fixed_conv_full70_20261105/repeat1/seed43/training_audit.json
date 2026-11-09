@@ -1,0 +1,167 @@
+{
+  "status": "complete",
+  "generator_seed": 43,
+  "started_at": "2026-11-05T11:07:43.211480+08:00",
+  "completed_at": "2026-11-05T11:12:09.410837+08:00",
+  "elapsed_seconds": 266.1994426250458,
+  "actual_optimizer_updates": 11410,
+  "completed_epochs": 70,
+  "lr_sequence_matches_original": true,
+  "rules": {
+    "best": {
+      "epoch_one_based": 30,
+      "actual_update": 4890,
+      "weight_path": "checkpoints/diagnostics/fd002_fixed_conv_full70_20261105/repeat1/seed43/best.pth",
+      "weight_sha256": "9452d4a1e235b80a0f5670cb4f6802e72ccd45ac1bd8559ca0794c53a8850ffb",
+      "tensors_sha256": "8061b81f88eb9e5ba16fea2fa481e9e3e5463ff30d318b6c0521c020ebf4eedd"
+    },
+    "final70": {
+      "epoch_one_based": 70,
+      "actual_update": 11410,
+      "weight_path": "checkpoints/diagnostics/fd002_fixed_conv_full70_20261105/repeat1/seed43/final70.pth",
+      "weight_sha256": "19ec993e10963336e419047831d7593671008d7cc6bdcd154c2d71082fabb12e",
+      "tensors_sha256": "f3439c55d21dea8b47fb07aa8f5bb2a3ea45b077eed552c897323fd0b517e95e"
+    },
+    "phase": {
+      "epoch_one_based": 67,
+      "actual_update": 10921,
+      "weight_path": "checkpoints/diagnostics/fd002_fixed_conv_full70_20261105/repeat1/seed43/phase.pth",
+      "weight_sha256": "9c2f1e73be2ed7ec2e1a5149f397fadc42eef77218a14f4456ffe3396c90a2db",
+      "tensors_sha256": "f01386f2471317f41c67f5fdcca53b4c017c45349ad7042d0caecc8c38a408f2"
+    }
+  },
+  "best_and_final_tensors_equal": false,
+  "original_best_epoch_one_based": 67,
+  "rerun_best_epoch_one_based": 30,
+  "best_loss": 0.028082059136380448,
+  "initial_frequency": {
+    "ups.0.2.fn.fn.threshold_param": 0.28632768988609314,
+    "ups.1.2.fn.fn.threshold_param": 0.4584011435508728
+  },
+  "initial_tensor_sha256": "1e34cff28be8a616e7b467e02af66db2ecc60aa64513a4dcf50237fa4277f4df",
+  "best_save_events": [
+    {
+      "epoch_one_based": 7,
+      "actual_update": 1141,
+      "tensors_sha256": "da2a0ec15b228240f0d00a8b62892ee255b0c9a107cfe5be9e95f48a5be90855",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 8,
+      "actual_update": 1304,
+      "tensors_sha256": "6a461bc9bb4da3d3e69ada5a602de3185662762bef11932e87d749c639a3f976",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 10,
+      "actual_update": 1630,
+      "tensors_sha256": "a09163b304f8692e7ff4df5a6f8ab24a7508b522a166d3357acdee844494f8ec",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 11,
+      "actual_update": 1793,
+      "tensors_sha256": "c89132eee83156c3588e6626e6f2d94e83d4a8a94aba40c86104dc15b6e27a47",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 12,
+      "actual_update": 1956,
+      "tensors_sha256": "42359fb06f842e61439abb46620e3697bb3807eba1a9a3e3a5b7cec5aec628b3",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 13,
+      "actual_update": 2119,
+      "tensors_sha256": "1b4305b78e9d9de76d8fde5270306fee22e8026aabd71ad7914ff2eb5db04d36",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 14,
+      "actual_update": 2282,
+      "tensors_sha256": "6650acc2647dddda112a1e7ba370e3fcf5e540ebb6dc8e8828f35784bd5a6e04",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 15,
+      "actual_update": 2445,
+      "tensors_sha256": "cdbb091716e48b8f4f4995b64a546ddf0ae0728044ed928f4f25fb3c0b1ea618",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 16,
+      "actual_update": 2608,
+      "tensors_sha256": "8d59f1a18aab4bb05fd98073dacde90c91287f139ca716583861e4f6b888319d",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 18,
+      "actual_update": 2934,
+      "tensors_sha256": "aa0f98467208c28f4c5078620d928a47702f6f8cd97e8185d44693b934f5d40c",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 19,
+      "actual_update": 3097,
+      "tensors_sha256": "655f03a13c5a798d30cc9bf6a9acbdf45e2e6e51354c3bd9c39e5b4fd86b1d6a",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 21,
+      "actual_update": 3423,
+      "tensors_sha256": "6328f3267b71d5a269d8cd71dbe1f8bbb3041364df30833910cacd34ae13c8ec",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 22,
+      "actual_update": 3586,
+      "tensors_sha256": "e5540ba1ea7e6e2a1778467ff5c5aa5628e12f98e92702fbf9d61a621be0423d",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 23,
+      "actual_update": 3749,
+      "tensors_sha256": "782e3c874eac76a86446c185bcd33d4a715683f848732b7f974eb3c73f84a3a0",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 25,
+      "actual_update": 4075,
+      "tensors_sha256": "415f98837b9c31257645b17099a37a11b24c25d0f49e31ae5e92634397a43f6e",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 26,
+      "actual_update": 4238,
+      "tensors_sha256": "1e0d0fcebc1a473257b7dc20d172bb8ababe9c1a07802a1617fa9d7e714964ff",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 27,
+      "actual_update": 4401,
+      "tensors_sha256": "1c88c93be32be69c66ef37f40041ea52f58b54564d6225ecff4a2817854b1506",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 29,
+      "actual_update": 4727,
+      "tensors_sha256": "7534c865582e76c36febd99689d2f14b0db17325d0c2a21b1c5ab836622bd6be",
+      "serialization_rng_unchanged": true
+    },
+    {
+      "epoch_one_based": 30,
+      "actual_update": 4890,
+      "tensors_sha256": "8061b81f88eb9e5ba16fea2fa481e9e3e5463ff30d318b6c0521c020ebf4eedd",
+      "serialization_rng_unchanged": true
+    }
+  ],
+  "final_serialization_rng_unchanged": true,
+  "caveat": "Fixed convolution selection; global strict mode remains disabled. Full-repeat claim depends on independent repeat comparison.",
+  "training_convolution_flags": {
+    "benchmark": false,
+    "deterministic": true,
+    "global_strict": false,
+    "cudnn_tf32": true,
+    "matmul_tf32": false
+  }
+}

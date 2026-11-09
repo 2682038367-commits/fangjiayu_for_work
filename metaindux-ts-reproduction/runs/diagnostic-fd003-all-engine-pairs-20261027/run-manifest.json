@@ -1,0 +1,132 @@
+{
+  "run_id": "diagnostic-fd003-all-engine-pairs-20261027",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "status": "complete",
+  "scope_contract": "scope-20261027-fd003-all-engine-pairs",
+  "started_at": "2026-10-27T14:54:01.109034+08:00",
+  "no_training": true,
+  "no_new_inference": true,
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "analysis/diagnostics/fd003_all_engine_pairs.py"
+  ],
+  "user_authorization": "User requests all100engine paired mean-squared-error differences before model changes",
+  "source_snapshot": "SOURCE_SNAPSHOT.md",
+  "inputs_sha256": {
+    "analysis/diagnostics/fd003_all_engine_pairs.py": "394140891f84e9e2044a0fada14f3d6c4017bfbebe07d512884936cb16b43e86",
+    "docs/operations/FD003_ALL_ENGINE_PAIRED_MSE.md": "4f1dc4fcca226270d10afc12ba71d74ca41e0e11036a912f457f4c63d8cbb970",
+    "results/diagnostics/rul_segment_errors_w48/predictions.csv": "c4d8b20d097dd36c47a6125ab1eec669bc0c247a8cfbcb47d6e69294ecabf1fa",
+    "runs/diagnostic-fd003-predictor-fit-20261026/run-manifest.json": "2c3be1aea93936135a60c1e9c35424d30614fd4017b13c57952889e135460958",
+    "results/diagnostics/rul_segment_errors_w48/summary.csv": "e797c3b0c53c61e18d4004fc2299af806116335ccdd7d7a36f90adbeb66893e1",
+    "results/fd003_w48_public_code_evaluation_raw.csv": "6c028db08e1611c6a17524e9261557789f862f6da20a394e4c8837998bbb25eb",
+    "results/real_data_baseline_w48.csv": "971f80334fba6610bd1245454f4dd91bbb55bc9ca49492ee551758dc4d1ce827",
+    "upstream/data/test_FD003.txt": "299babd63c8d987cef079c4a425429f33b3a34797d803bbe2ad48c29dbd0d790",
+    "upstream/data/RUL_FD003.txt": "df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb"
+  },
+  "seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "bootstrap": {
+    "seed": 20261027,
+    "n_resamples": 20000,
+    "unit": "paired testengine",
+    "conditional_on": "fixed fitted model families"
+  },
+  "environment": {
+    "python": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]",
+    "numpy": "1.23.5",
+    "pandas": "2.2.3",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35"
+  },
+  "definition": "delta_i=mean25syntheticmodelSE_i-mean5realmodelSE_i; identical realtest lastwindow/label",
+  "n_engines": 100,
+  "n_source_predictions": 3000,
+  "n_paired_rows": 2500,
+  "n_generationseed_rows": 500,
+  "n_evaluatorseed_rows": 500,
+  "summary": {
+    "n_engines": 100,
+    "n_synthetic_worse": 72,
+    "n_synthetic_better": 28,
+    "n_equal": 0,
+    "mean_delta": 185.2702997578578,
+    "median_delta": 24.83657375613773,
+    "q25_delta": -5.862683124410687,
+    "q75_delta": 162.81340592575546,
+    "real_mse": 247.1237389242835,
+    "synthetic_mse": 432.39403868214123,
+    "real_pooled_rmse": 15.720169812196161,
+    "synthetic_pooled_rmse": 20.794086627744466,
+    "mean_delta_engine_bootstrap_ci95": [
+      106.55599218909217,
+      275.35123341601576
+    ],
+    "median_delta_engine_bootstrap_ci95": [
+      11.13026265818625,
+      71.42160529665881
+    ],
+    "n_worse_all5generationseeds": 27,
+    "n_better_all5generationseeds": 8,
+    "n_generationseed_mixed": 65,
+    "n_padded_windows": 3,
+    "without75": {
+      "n_engines": 99,
+      "n_synthetic_worse": 71,
+      "n_synthetic_better": 28,
+      "n_equal": 0,
+      "mean_delta": 174.21439697589378,
+      "median_delta": 22.36319949223529,
+      "q25_delta": -6.195313063666689,
+      "q75_delta": 151.8826402324927,
+      "real_mse": 248.2827269083124,
+      "synthetic_mse": 422.49712388420625,
+      "real_pooled_rmse": 15.756989779406231,
+      "synthetic_pooled_rmse": 20.554734828846765
+    },
+    "engine75_delta": 1279.8046751722943,
+    "engine75_share_net_total": 0.0690777030557492
+  },
+  "report": "docs/conclusions/final/fd003_all_engine_pairs_20261027_report.md",
+  "report_sha256": "93124cb3ffaa4556ec364f028def4c99941af13583d7da03ac16f30e4f787a34",
+  "max_original_model_rmse_difference": 4.898958490429095e-06,
+  "outputs_sha256": {
+    "results/diagnostics/fd003_all_engine_pairs_20261027/all_100_engine_pairs.csv": "91bf098c37e4b1914c7076f7257eb007bf149ce810e97386519096b425c53491",
+    "results/diagnostics/fd003_all_engine_pairs_20261027/closeout_audit.json": "9fe0fba60719e1d2412b4253367b2c7d88d935dcb6af35f929ef3525f9547298",
+    "results/diagnostics/fd003_all_engine_pairs_20261027/rul_segment_summary.csv": "db18c28c216dcadce40ad9820d5f3ca01591a2b6cc8c8166f97fca0b36259770",
+    "results/diagnostics/fd003_all_engine_pairs_20261027/concentration.csv": "0de48475c0994fe60d7913254e67a50d41b57b06783c988e588f13fa3196200a",
+    "results/diagnostics/fd003_all_engine_pairs_20261027/source_metric_checks.csv": "0dde93b3e9d703dc621f39134095ebe96f6732d23da1827c1aec74b107ff0cee",
+    "results/diagnostics/fd003_all_engine_pairs_20261027/per_engine_generation_seed.csv": "405d00424db1078e7cdcd9570263adea618aecdea41986e26cc35dff18940bfe",
+    "results/diagnostics/fd003_all_engine_pairs_20261027/all_engine_paired_mse.pdf": "ca81d8f315ff516d0872b0283b0a26a98e20deb00f159d1f4c34a55dcfe477ea",
+    "results/diagnostics/fd003_all_engine_pairs_20261027/summary.json": "4fb2e78d79fac4b07c0e7f71d562c0536382c408323ff16932fb8bf344c3ce3b",
+    "results/diagnostics/fd003_all_engine_pairs_20261027/all_engine_paired_mse.png": "0900b2c196c5599b2ce14961e0b2cff49ab686583f5f5b9166a9a7e338dd7dde",
+    "results/diagnostics/fd003_all_engine_pairs_20261027/per_engine_evaluator_seed.csv": "ad4977ec48160496e08e7064176ee010b377cbeb9336fd535e9b4670f057ce56",
+    "results/diagnostics/fd003_all_engine_pairs_20261027/paired_model_errors.csv": "0fba6a663b2d70dd7fdf9d8d95e077fb3afe18171c030065567100d3d05f9fe6",
+    "results/diagnostics/fd003_all_engine_pairs_20261027/generation_seed_summary.csv": "e240f11d599cd925b5fa12c42fb70d7e039e67791e02a6b4a1d1c39f0f289965"
+  },
+  "finished_at": "2026-10-27T14:54:01.918299+08:00",
+  "audit": {
+    "status": "passed",
+    "n_engine_rows": 100,
+    "n_full_report_engine_rows": 100,
+    "n_original_predictions": 3000,
+    "n_model_paired_rows": 2500,
+    "n_generationseed_rows": 500,
+    "n_evaluatorseed_rows": 500,
+    "all_input_output_hashes_verified": true,
+    "same_windows_labels_model_seed_sets_checked": true,
+    "independent_direct_prediction_mse_delta_recalculation": true,
+    "max_delta_difference": 6.821210263296962e-13,
+    "segment_contribution_identity_checked": true,
+    "mean_generationseed_delta_identity_checked": true,
+    "plot_visually_checked": true,
+    "no_new_inference": true,
+    "no_training": true,
+    "audit_note": "Initial report-table count also matched3concentration rows; scoped parser to100engine appendix, no result changes."
+  },
+  "stopping_status": "All100paired audit complete;no inference/training or model modifications;independentvalidation needed before intervention"
+}

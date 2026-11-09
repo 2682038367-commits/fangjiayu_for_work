@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "no_parameter_updates": true,
+  "no_training_or_sampling": true,
+  "checkpoint_count": 7,
+  "question_packs": 3,
+  "domains": 2,
+  "completed_evaluations": 42,
+  "formal_batch_forwards": 672,
+  "fixed_inputs_verified": true,
+  "original_loss_parity_passed": true,
+  "all_model_states_unchanged": true,
+  "experiment2_executed": false
+}

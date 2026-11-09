@@ -1,0 +1,60 @@
+{
+  "status": "complete",
+  "repeatability": {
+    "passed": true,
+    "checks": {
+      "epoch_state_hashes.json": true,
+      "update_losses.csv": true,
+      "training_batch_zero_draws.csv": true,
+      "training_loss.csv": true,
+      "all70_training_orders": true,
+      "initial_parameters": true,
+      "best_selection": true,
+      "best_all_named_tensors": true,
+      "phase_all_named_tensors": true,
+      "final70_all_named_tensors": true
+    },
+    "first_different_epoch": null,
+    "observed_epochs": 70,
+    "observed_updates_each": 11410,
+    "limitation": "Two current processes on this environment only; not a cross-device/global determinism guarantee or proof of unique historical attribution."
+  },
+  "discriminative_comparison": [
+    {
+      "checkpoint": "historic_epoch67",
+      "mean_DS": 0.4341237361579201,
+      "scores": [
+        0.4654549831487723,
+        0.4288035628310063,
+        0.4209797785267212,
+        0.4211603273952816,
+        0.4342200288878189
+      ],
+      "source": "results/diagnostics/fd002_final70_two_seeds_20261102/seed43/original/evaluation_checkpoint43_sample103.csv"
+    },
+    {
+      "checkpoint": "native_rerun_epoch67",
+      "mean_DS": 0.17800914780934035,
+      "scores": [
+        0.1654429465575349,
+        0.162253249879634,
+        0.250601829561868,
+        0.1686928261916225,
+        0.1430548868560424
+      ],
+      "source": "results/diagnostics/fd002_final70_two_seeds_20261102/seed43/phase/evaluation_checkpoint43_sample103.csv"
+    },
+    {
+      "checkpoint": "fixed_repeat1_epoch67",
+      "mean_DS": 0.2417067886374579,
+      "scores": [
+        0.2712445835339432,
+        0.1690539239287434,
+        0.1930067404910929,
+        0.3435844968704863,
+        0.2316441983630236
+      ],
+      "source": "results/diagnostics/fd002_fixed_conv_full70_20261105/repeat1/seed43/phase/evaluation_checkpoint43_sample103.csv"
+    }
+  ]
+}

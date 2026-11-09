@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "checkpoint_seed": 23,
+  "sampling_seed": 103,
+  "normal_tensors_matched_per_arm": 63000,
+  "checked_at": "2026-10-30T11:29:14.507038+08:00",
+  "legacy_schedule_fingerprint": "b54f8e66b4890836f1b6bb78cdeff76483c1c826d70740dae2ecda1fc3a1adae"
+}

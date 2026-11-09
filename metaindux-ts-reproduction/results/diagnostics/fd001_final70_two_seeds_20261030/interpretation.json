@@ -1,0 +1,40 @@
+{
+  "primary": [
+    {
+      "generator_seed": 13,
+      "bin": "all",
+      "measure": "engine",
+      "best_rmse": 14.531324479164926,
+      "final70_rmse": 15.70404166453242,
+      "change": 1.1727171853674943,
+      "relative_change": 0.08070270449530881,
+      "paired_mean_change": 1.1750429111106118,
+      "paired_change_sd": 0.3075483919945099,
+      "paired_improving": 0,
+      "n_windows": 4875,
+      "n_engines": 30
+    },
+    {
+      "generator_seed": 3,
+      "bin": "all",
+      "measure": "engine",
+      "best_rmse": 17.57618945983219,
+      "final70_rmse": 14.76421703641087,
+      "change": -2.81197242342132,
+      "relative_change": -0.15998760310633153,
+      "paired_mean_change": -2.7995241455555764,
+      "paired_change_sd": 0.5949385350181956,
+      "paired_improving": 5,
+      "n_windows": 4875,
+      "n_engines": 30
+    }
+  ],
+  "flags": {
+    "seed13_no_material_overall_degradation": false,
+    "seed3_clear_downstream_improvement": true,
+    "not_a_significance_test": true,
+    "no_default_rule_automatically_adopted": true
+  },
+  "training_seeds_chosen_by_historic_quality": true,
+  "generator_saw_validation_engines": true
+}

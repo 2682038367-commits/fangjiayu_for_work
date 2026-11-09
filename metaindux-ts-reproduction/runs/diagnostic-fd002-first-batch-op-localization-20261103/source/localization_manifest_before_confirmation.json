@@ -1,0 +1,396 @@
+{
+  "run_id": "diagnostic-fd002-first-batch-op-localization-20261103",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261103-fd002-first-batch-op-localization",
+  "status": "localized_pending_confirmation",
+  "prepared_at": "2026-11-03T09:24:12.430540+08:00",
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "-u",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/scripts/localize_fd002_first_batch_ops.py",
+    "run"
+  ],
+  "user_authorization": "定位首批中第一个输出不同的算子",
+  "config": {
+    "seed": 43,
+    "first_batch_only": true,
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "initial_trace_forwards": 2,
+    "raw_tensor_prefix_ops": 256,
+    "environment": {
+      "OMP_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "1",
+      "TF_DETERMINISTIC_OPS": "1",
+      "TF_ENABLE_ONEDNN_OPTS": "0",
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+      "WANDB_MODE": "offline",
+      "TF_CPP_MIN_LOG_LEVEL": "2"
+    },
+    "stop": "after first forward before backward; locate first unequal output with identical full inputs; limited standalone operator confirmation only"
+  },
+  "git_head": "be3faf93adfdaf6c2bcde50d116dfb1aa007e74f",
+  "inputs_sha256": {
+    "scripts/localize_fd002_first_batch_ops.py": "4fae2a47093581d520e587c6f01706e48f5e89fb298c614bedb8896c968cf9df",
+    "docs/operations/FD002_FIRST_BATCH_OP_LOCALIZATION.md": "eeffd0a1cabf061cd4bce32953876c4a6aae2d8da50ed9007c0b433e82ae7f20",
+    "runs/diagnostic-fd002-seed43-first-epoch-trace-20261103/run-manifest.json": "cca265a54901519f7a8b37c1252e392bc64a48d8e8c4d5baf4a4873b553571a2",
+    "runs/diagnostic-fd002-seed43-first-epoch-trace-20261103/postreview-manifest.json": "7b4c0bdba83d0555780ecc3e3901f2c09a8bf9e2f3aff0b4e39769d5b172a30f",
+    "results/diagnostics/fd002_seed43_first_epoch_trace_20261103/native_public/initial_state.pth": "67d1dda6d21cb900833e224e7cec1b54719bcca72544f0b4d643e1a27b3fc598",
+    "results/diagnostics/fd002_seed43_first_epoch_trace_20261103/native_worker/initial_state.pth": "67d1dda6d21cb900833e224e7cec1b54719bcca72544f0b4d643e1a27b3fc598",
+    "results/diagnostics/fd002_seed43_first_epoch_trace_20261103/native_public/tapes/0001.pth": "55f05b814acdd9d0bcb36c02fcf06d1cabccb1aac6f33d7a7cae386b0ea72e56",
+    "results/diagnostics/fd002_seed43_first_epoch_trace_20261103/native_worker/tapes/0001.pth": "55f05b814acdd9d0bcb36c02fcf06d1cabccb1aac6f33d7a7cae386b0ea72e56",
+    "results/diagnostics/fd002_seed43_first_epoch_trace_20261103/native_public/trace.json": "b73386204be973c44a20f4f85913eb40d29907f1515c027b63c33e874dec7730",
+    "results/diagnostics/fd002_seed43_first_epoch_trace_20261103/native_worker/trace.json": "1917761f1ef6eacb4794e4ff1dbdf739a6a47ff96f0a125acef352fa69719718",
+    "scripts/run_fd002_first_epoch_trace.py": "17b1aef6a0d2c5b1071dda476b4307726990299abe195e07c198d04b7c4794cc",
+    "scripts/run_fd002_final70_two_seeds.py": "81bcad7e468be040cc5b0f6ced5f83517141d6d9755edbf3c7568d96c2379c03",
+    "runs/diagnostic-fd002-final70-two-seeds-20261102/frozen_inputs.npz": "72dc6875c1249576794858f12f89f3e967506b630bec95ef1ce8e6b6ff1b384b",
+    "upstream/main_fewshot.py": "ea2843ff406630058b2537b2f0592df33e9203486726511f255d8c7e75cef0f0",
+    "upstream/eva_regressor.py": "4c7d02b77312e88d0338ad3b80189f325a81b0b47f2c7eed1a063f7427c85168",
+    "upstream/TrainCondition.py": "ebd251f1a8224cc79005784aeb7057201b396a668086e789b3391576e868da3a",
+    "upstream/MainCondition.py": "1e496df84c6c2324136a6c7b4a641faa664764a14a86a7b572c3b3019c54ba64",
+    "upstream/visualizationMetrics.py": "7df4cb8594f52eee444c4ab19c6fb38a5819047955732767c0a3b639eeff93c6",
+    "upstream/args.py": "a2d7193b5b0b066da2db37ddf19960868636ee2c311b764b5175a0a9b7cf4c6a",
+    "upstream/data_process.py": "00b17e9eaf6f5184b7561f4fed618c0891a6e273bd9b212e807482f2c6178628",
+    "upstream/utils.py": "34f9086f626a58958878a6dfe23b69fb96ad4c38cb95de80b406969b96b9a772",
+    "upstream/GaussianDiffusion.py": "8a6351232cc853ad1e06f2fe94745f17f3460eca8a24ce5fc89a509d28a74aba",
+    "upstream/DiffusionFreeGuidence/csdi.py": "c5bfbd2e1091d60cbab1f062bcfc98cf935c7a3796858726f5e181f0bcdbd83a",
+    "upstream/DiffusionFreeGuidence/Attetnion.py": "6ef40c870e265be09796a7733503bf8f7bf06dd15ec2a3a72c84e4a3436c8761",
+    "upstream/DiffusionFreeGuidence/diffwaveimputer.py": "3513ea2bd3a5f3c7d88f896a8aa30885aee00768c858cdd7d1fec45bacf66a6e",
+    "upstream/DiffusionFreeGuidence/Unet.py": "dcc37fcb7cd7e4262812872f61b06863d2fc3c4c0dcda5a7d7240081a928a454",
+    "upstream/DiffusionFreeGuidence/SSSD.py": "a8c6c679269348276d36c48f3059bdbc5030a4671680b3adbe6de444cfd7ee47",
+    "upstream/DiffusionFreeGuidence/Unet1D.py": "ab66fe31797ee3bd8e4882f55e1a8753f7376026ce1f84e1d2bedee829257c57",
+    "upstream/DiffusionFreeGuidence/__init__.py": "e2fc1d5bb972cce2cf21f404b357320f51b8fa85c351d6a2fe7b56ef85a1aa52",
+    "upstream/DiffusionFreeGuidence/Unet1D_fre.py": "9f2e4b7dab0bcd43cbd434b27912127051f718e1ed96fd82fa4fe6cd7c5772f2",
+    "upstream/DiffusionFreeGuidence/S4Model.py": "145a4c5910270be77f715e6d885b5d2acdd4382fc49f0a5ef199960010b8d502",
+    "upstream/DiffusionFreeGuidence/Dit.py": "d18461322aca383e5304362b7397dcaada79c582dc5aa764d4b76abe36dde528",
+    "upstream/DiffusionFreeGuidence/Diffwave.py": "f17f6536495099326bc055fe4f49ab9f9f1f7517f635cb44b36b0d73471b0b46",
+    "upstream/DiffusionFreeGuidence/Attetnion_temp.py": "edf3390f69e3204cf88ee43e3d4601c1e828d737cf27811f9b0e50aac97d2dcd",
+    "upstream/DiffusionFreeGuidence/tabddpm.py": "7c1fdacc42f79e05ab913dfc21972b4d8cedc66bf3ae9e6edd1336fd44d5e913",
+    "upstream/data/CMAPSSDataset.py": "7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03",
+    "upstream/data/train_FD002.txt": "dac6c4dbc4e7c1bdeb5747da3d313d05c395bb99801b44a002b26a2ba13d788f",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/config.json": "47212118409c26313b3a2fa571da8a7b1a45d6cbe1693006c0d260dd76c35a0d",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/source/localize_fd002_first_batch_ops.py": "4fae2a47093581d520e587c6f01706e48f5e89fb298c614bedb8896c968cf9df",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/source/FD002_FIRST_BATCH_OP_LOCALIZATION.md": "eeffd0a1cabf061cd4bce32953876c4a6aae2d8da50ed9007c0b433e82ae7f20",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/environment-freeze.txt": "6cf9cf5532a3788655f3b1bde3a3be9d252715af3555b3746987b43d940dfc00",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/git-status.txt": "b9a351c2a5a2b30593d0a9b73945a71b891a704f3dc45e0225796d2de31ed6bd",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/workspace.diff": "84d6d9e8b15c06c4f68fb751c1a14aaf04b1fc9848c53a887589483e503fb44a"
+  },
+  "completed_arms": [
+    "native_public",
+    "native_worker"
+  ],
+  "started_at": "2026-11-03T09:25:00.771947+08:00",
+  "current_arm": "native_worker",
+  "first_difference": {
+    "index": 721,
+    "operator": "aten.convolution.default",
+    "module": "minusTrend.fn.seasonal.season",
+    "same_inputs": true,
+    "same_input_layout": true,
+    "same_outputs": false,
+    "source": {
+      "path": "upstream/DiffusionFreeGuidence/Attetnion.py",
+      "line": 197,
+      "function": "forward"
+    },
+    "public": {
+      "index": 721,
+      "operator": "aten.convolution.default",
+      "module": "minusTrend.fn.seasonal.season",
+      "source": {
+        "path": "upstream/DiffusionFreeGuidence/Attetnion.py",
+        "line": 197,
+        "function": "forward"
+      },
+      "inputs": {
+        "kind": "dict",
+        "items": {
+          "args": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "tensor",
+                "sha256": "0bde089dae9593ad9592cd7909577444c43b151d9fd2e064853042beb998c33e",
+                "artifact": null,
+                "shape": [
+                  256,
+                  32,
+                  48
+                ],
+                "stride": [
+                  1536,
+                  48,
+                  1
+                ],
+                "storage_offset": 0,
+                "data_alignment": 0,
+                "dtype": "torch.float32",
+                "device": "cuda:0",
+                "contiguous": true,
+                "requires_grad": true
+              },
+              {
+                "kind": "tensor",
+                "sha256": "75706109e56d12ffaba78e9cd15e18c0914932ae398270a2a61d3305c6c68d62",
+                "artifact": null,
+                "shape": [
+                  16,
+                  32,
+                  1
+                ],
+                "stride": [
+                  32,
+                  1,
+                  1
+                ],
+                "storage_offset": 0,
+                "data_alignment": 0,
+                "dtype": "torch.float32",
+                "device": "cuda:0",
+                "contiguous": true,
+                "requires_grad": true
+              },
+              {
+                "kind": "tensor",
+                "sha256": "f13a5a482cda7e328ddc855e87c1f310a1d4f562746a24ec75fbade281e8a2e7",
+                "artifact": null,
+                "shape": [
+                  16
+                ],
+                "stride": [
+                  1
+                ],
+                "storage_offset": 0,
+                "data_alignment": 0,
+                "dtype": "torch.float32",
+                "device": "cuda:0",
+                "contiguous": true,
+                "requires_grad": true
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "kind": "scalar",
+                "value": false
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "kind": "scalar",
+                "value": 1
+              }
+            ]
+          },
+          "kwargs": {
+            "kind": "dict",
+            "items": {}
+          }
+        }
+      },
+      "output": {
+        "kind": "tensor",
+        "sha256": "18e3455715dc88c669c95b61c7332172c49da536f6477070904e78075ccea789",
+        "artifact": null,
+        "shape": [
+          256,
+          16,
+          48
+        ],
+        "stride": [
+          768,
+          48,
+          1
+        ],
+        "storage_offset": 0,
+        "data_alignment": 0,
+        "dtype": "torch.float32",
+        "device": "cuda:0",
+        "contiguous": true,
+        "requires_grad": false
+      }
+    },
+    "worker": {
+      "index": 721,
+      "operator": "aten.convolution.default",
+      "module": "minusTrend.fn.seasonal.season",
+      "source": {
+        "path": "upstream/DiffusionFreeGuidence/Attetnion.py",
+        "line": 197,
+        "function": "forward"
+      },
+      "inputs": {
+        "kind": "dict",
+        "items": {
+          "args": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "tensor",
+                "sha256": "0bde089dae9593ad9592cd7909577444c43b151d9fd2e064853042beb998c33e",
+                "artifact": null,
+                "shape": [
+                  256,
+                  32,
+                  48
+                ],
+                "stride": [
+                  1536,
+                  48,
+                  1
+                ],
+                "storage_offset": 0,
+                "data_alignment": 0,
+                "dtype": "torch.float32",
+                "device": "cuda:0",
+                "contiguous": true,
+                "requires_grad": true
+              },
+              {
+                "kind": "tensor",
+                "sha256": "75706109e56d12ffaba78e9cd15e18c0914932ae398270a2a61d3305c6c68d62",
+                "artifact": null,
+                "shape": [
+                  16,
+                  32,
+                  1
+                ],
+                "stride": [
+                  32,
+                  1,
+                  1
+                ],
+                "storage_offset": 0,
+                "data_alignment": 0,
+                "dtype": "torch.float32",
+                "device": "cuda:0",
+                "contiguous": true,
+                "requires_grad": true
+              },
+              {
+                "kind": "tensor",
+                "sha256": "f13a5a482cda7e328ddc855e87c1f310a1d4f562746a24ec75fbade281e8a2e7",
+                "artifact": null,
+                "shape": [
+                  16
+                ],
+                "stride": [
+                  1
+                ],
+                "storage_offset": 0,
+                "data_alignment": 0,
+                "dtype": "torch.float32",
+                "device": "cuda:0",
+                "contiguous": true,
+                "requires_grad": true
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "kind": "scalar",
+                "value": false
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "kind": "scalar",
+                "value": 1
+              }
+            ]
+          },
+          "kwargs": {
+            "kind": "dict",
+            "items": {}
+          }
+        }
+      },
+      "output": {
+        "kind": "tensor",
+        "sha256": "6d344e350493199b70ea872887a44f1c4104b3027e6d0dbe75421b3ea812cae0",
+        "artifact": null,
+        "shape": [
+          256,
+          16,
+          48
+        ],
+        "stride": [
+          768,
+          48,
+          1
+        ],
+        "storage_offset": 0,
+        "data_alignment": 0,
+        "dtype": "torch.float32",
+        "device": "cuda:0",
+        "contiguous": true,
+        "requires_grad": false
+      }
+    },
+    "output_differences": []
+  },
+  "completed_at": "2026-11-03T09:25:23.641050+08:00"
+}

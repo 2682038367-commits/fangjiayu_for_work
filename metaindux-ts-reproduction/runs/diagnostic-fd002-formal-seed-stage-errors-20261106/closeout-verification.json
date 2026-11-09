@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "hash_groups_verified": true,
+  "primary_mean_per_model_RMSE_directly_recomputed": true,
+  "bin_count_and_weighted_MSE_identity": true,
+  "contribution_shares_sum_to1": true,
+  "figure_inspected": true
+}

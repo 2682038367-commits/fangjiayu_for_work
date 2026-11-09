@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "predictor_fits_checked": 10,
+  "validation_engines": 78,
+  "validation_windows": 12196,
+  "actual_sample_noise_anchor_matched": true,
+  "labels_matched": true,
+  "initialization_orders_updates_matched": true,
+  "primary_MSE_recomputed_from_saved_predictions": true,
+  "generator_trainings": 0
+}

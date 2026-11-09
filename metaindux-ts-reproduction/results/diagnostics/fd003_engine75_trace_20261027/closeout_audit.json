@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "source_input_hashes_verified": true,
+  "selections_unchanged": true,
+  "n_selected_generated_rows": 450,
+  "n_unique_generated_samples": 352,
+  "n_real_prediction_rows": 330,
+  "n_generated_prediction_rows": 4500,
+  "exact_same_labels_in_family_comparisons": true,
+  "real_generated_candidate_counts_matched": true,
+  "train_dev_membership_checked": true,
+  "per_batch_rmse_independently_recomputed": true,
+  "fixed_same_count_chain_generation_seed": 3,
+  "no_training": true,
+  "max_real_predictor_replay_difference": 2.6702880859375e-05
+}

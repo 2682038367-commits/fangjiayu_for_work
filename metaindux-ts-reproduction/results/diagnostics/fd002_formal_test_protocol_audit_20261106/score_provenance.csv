@@ -1,0 +1,5 @@
+reference,RMSE,gap,aggregation
+Paper_TableI_FD002_w48,24.565,0.0,Five repetitions averaged; stage details unavailable
+Historical_5_runs,26.35851872172872,1.79351872172872,"5 generated datasets,1predictor each; original split not frozen"
+Controlled_common5x5,26.791804090270325,2.226804090270324,"5generators x5predictors, explicit70/30"
+Existing_7x5_headline,28.294635405287494,3.7296354052874925,"7generators x5predictors, retain separately"

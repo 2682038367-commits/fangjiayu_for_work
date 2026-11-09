@@ -1,0 +1,23 @@
+{
+  "primary": {
+    "bin": "all",
+    "measure": "engine",
+    "contrast": "70-15",
+    "baseline_pooled_rmse": 20.298765818036145,
+    "later_pooled_rmse": 14.50665452208575,
+    "pooled_change": -5.792111295950395,
+    "relative_change": -0.2853430276437746,
+    "paired_mean_rmse_change": -5.790671694983105,
+    "paired_change_sd": 0.5706166451061846,
+    "n_improving": 5,
+    "n_windows": 4875,
+    "n_engines": 30
+  },
+  "clear_downstream_gain": true,
+  "threshold": "at least5% pooled engine-balanced RMSE decrease and4/5 paired improvements",
+  "not_statistical_significance": true,
+  "generator_seed_count": 1,
+  "sampling_seed_count": 1,
+  "no_default_checkpoint_rule_selected": true,
+  "generator_saw_validation_engines": true
+}

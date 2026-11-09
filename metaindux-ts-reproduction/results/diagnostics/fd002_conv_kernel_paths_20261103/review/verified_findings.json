@@ -1,0 +1,43 @@
+{
+  "status": "verified",
+  "native_first_difference": {
+    "index": 21,
+    "module": "init_conv",
+    "operator": "aten.convolution.default",
+    "all_input_values_and_layout_equal": true,
+    "maximum_output_absolute_difference": 4.76837158203125e-07,
+    "different_elements": 217433,
+    "elements": 393216,
+    "actual_public_kernels": [
+      "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+      "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+      "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_tf32f32_tf32f32_f32_nhwckrsc_nhwc_tilesize128x32x16_stage1_warpsize4x1x1_g1_tensor16x8x8_aligna4_alignc8_execute_kernel_cudnn_infer",
+      "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+      "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})"
+    ],
+    "actual_worker_kernels": [
+      "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+      "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+      "sm86_xmma_fprop_implicit_gemm_tf32f32_tf32f32_f32_nhwckrsc_nchw_tilesize128x128x16_stage3_warpsize2x2x1_g1_tensor16x8x8_execute_kernel_cudnn_infer",
+      "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})"
+    ]
+  },
+  "raw_cuda_markers_independently_correlated": 140,
+  "fixed_actual_convolution_sequences_equal": 35,
+  "fixed_all_aten_outputs_and_inputs_equal": 779,
+  "fixed_raw_convolution_payloads_verified": 280,
+  "all_four_warmup_measured_outputs_exact": true,
+  "full_first_batch_forwards": 8,
+  "preflight_single_convolution": 1,
+  "backward_calls": 0,
+  "optimizer_updates": 0,
+  "cudnn_debug_logs_not_generated": [
+    "native/native_public",
+    "native/native_worker",
+    "fixed/native_public",
+    "fixed/native_worker"
+  ],
+  "kernel_evidence": "Actual Kineto/CUPTI GPU kernel activity; authoritative raw Chrome runtime correlation independently verified",
+  "tree_association_discrepancies": 24,
+  "limited_conclusion": "Current first-batch path-selection contribution established; whole training reproducibility, historical DS gap and downstream improvement not evaluated"
+}

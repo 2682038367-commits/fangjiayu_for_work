@@ -1,0 +1,47 @@
+{
+  "status": "complete",
+  "arm": "native_worker",
+  "completed_epoch": 1,
+  "actual_updates": 163,
+  "started_from_seed": 43,
+  "elapsed_seconds": 12.730472326278687,
+  "mean_first_epoch_loss": 0.25966806636631856,
+  "next_lr": 0.002375,
+  "initial_state_sha256": "1e34cff28be8a616e7b467e02af66db2ecc60aa64513a4dcf50237fa4277f4df",
+  "pre_constructor_rng": {
+    "cpu": "5d898ff0719d3cff95ebfa4424bcc53134ef38bca55e960f0e4a730f5120a3bf",
+    "cuda": "b2ad6e3947eead9909ead612f61168086867b5dc71b2efc087ee3abed8aa194a",
+    "numpy": "c7e119ca8b0e7ce01825e8623fa77adcc972f1d415a168b32a638da277980a25"
+  },
+  "post_constructor_rng": {
+    "cpu": "854aaba113145c4ac9da72bdc063783c94b9cfb090daff0c15ff9f2c076de4c3",
+    "cuda": "b2ad6e3947eead9909ead612f61168086867b5dc71b2efc087ee3abed8aa194a",
+    "numpy": "c7e119ca8b0e7ce01825e8623fa77adcc972f1d415a168b32a638da277980a25"
+  },
+  "seed_rng": {
+    "cpu": "5d898ff0719d3cff95ebfa4424bcc53134ef38bca55e960f0e4a730f5120a3bf",
+    "cuda": "b2ad6e3947eead9909ead612f61168086867b5dc71b2efc087ee3abed8aa194a",
+    "numpy": "c7e119ca8b0e7ce01825e8623fa77adcc972f1d415a168b32a638da277980a25"
+  },
+  "backend_flags": {
+    "cudnn_benchmark": true,
+    "cudnn_deterministic": false,
+    "deterministic_algorithms": false,
+    "cudnn_allow_tf32": true,
+    "matmul_allow_tf32": false
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "1",
+    "TF_DETERMINISTIC_OPS": "1",
+    "TF_ENABLE_ONEDNN_OPTS": "0",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "WANDB_MODE": "offline"
+  },
+  "torch": "2.1.2+cu121",
+  "cuda": "12.1",
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "initial_state_not_historical": true,
+  "sample_or_evaluator_calls": 0,
+  "serializations_preserve_rng": true
+}

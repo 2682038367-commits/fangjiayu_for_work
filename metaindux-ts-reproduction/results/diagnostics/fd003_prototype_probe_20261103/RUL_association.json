@@ -1,0 +1,16 @@
+[
+  {
+    "split": "train",
+    "NMI_stage_prototype": 0.36126365105593217,
+    "prototype_entropy_nats": 1.0393081102725545,
+    "prototype_entropy_given_exact_RUL_nats": 0.5592187917162192,
+    "fraction_prototype_entropy_explained_by_exact_RUL": 0.4619316580050874
+  },
+  {
+    "split": "validation",
+    "NMI_stage_prototype": 0.3889897743506162,
+    "prototype_entropy_nats": 1.0442705875669986,
+    "prototype_entropy_given_exact_RUL_nats": 0.5007132300825885,
+    "fraction_prototype_entropy_explained_by_exact_RUL": 0.5205139012397363
+  }
+]

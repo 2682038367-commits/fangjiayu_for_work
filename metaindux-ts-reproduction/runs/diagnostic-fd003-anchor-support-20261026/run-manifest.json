@@ -1,0 +1,77 @@
+{
+  "run_id": "diagnostic-fd003-anchor-support-20261026",
+  "status": "complete",
+  "scope_class": "diagnostic",
+  "role": "supporting followup ofEXT-001",
+  "started_at": "2026-10-26T16:41:49.034332+08:00",
+  "no_training": true,
+  "inputs_sha256": {
+    "analysis/diagnostics/check_fd003_anchor_support.py": "5ec63cb0093cee62a64a74c0ae00a9f954b12280d7282e216f1c9514bc3d512a",
+    "analysis/diagnostics/test_window_coverage.py": "2ad83a35eebd43fa0c5ebc0e7b730e28ed3460128f511aa8b75926eb2863feda",
+    "upstream/data/CMAPSSDataset.py": "7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03",
+    "results/diagnostics/fd003_local_anchor_20261026/replacement_indices.npz": "21ecc1f2f96dcde39aba61dc72c0c54bffe4b71f759e6feecf4ab02d461b0d5d",
+    "results/diagnostics/fd003_local_anchor_20261026/predictions.csv": "9c89ab9a45aca3009051db035adf3bbcab5b6c5aaf9d295a9cae446c3f08a141",
+    "outputs/FD003_w48_seed3.npz": "3a81741bd58826f435ece99178ad00ff06367c0c94f51f6c95c23332b2315cdc",
+    "results/diagnostics/test_window_coverage_w48/engine_summary.csv": "dd2dbe01ea6a9ccc41184560603c25178254a764b3b81988e8668ac6fd5cb384",
+    "upstream/data/train_FD003.txt": "2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2",
+    "upstream/data/test_FD003.txt": "299babd63c8d987cef079c4a425429f33b3a34797d803bbe2ad48c29dbd0d790",
+    "upstream/data/RUL_FD003.txt": "df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb"
+  },
+  "k": 5,
+  "rul_caliper": 5,
+  "primary": "actual predictor training pool only; before/after209 replacements; same real-fitted descriptor scales",
+  "caveat": "Descriptive test-engine diagnosis, not an additional intervention or independent causal test.",
+  "summary": [
+    {
+      "representation": "coupling_raw",
+      "n_engines": 21,
+      "n_distance_improved": 6,
+      "n_distance_worsened": 10,
+      "n_anchors_in_top5": 7,
+      "median_percent_distance_reduction": 0.0,
+      "mean_anchors_in_top5": 0.7619047619047619,
+      "rho_distance_reduction_vs_mse_reduction": 0.3804002820356416,
+      "rho_distance_reduction_vs_rmse_reduction": 0.34249097557848146
+    },
+    {
+      "representation": "dynamics",
+      "n_engines": 21,
+      "n_distance_improved": 8,
+      "n_distance_worsened": 3,
+      "n_anchors_in_top5": 10,
+      "median_percent_distance_reduction": 0.0,
+      "mean_anchors_in_top5": 0.7142857142857143,
+      "rho_distance_reduction_vs_mse_reduction": 0.03504761476994653,
+      "rho_distance_reduction_vs_rmse_reduction": 0.0721568539381252
+    },
+    {
+      "representation": "level",
+      "n_engines": 21,
+      "n_distance_improved": 7,
+      "n_distance_worsened": 9,
+      "n_anchors_in_top5": 10,
+      "median_percent_distance_reduction": 0.0,
+      "mean_anchors_in_top5": 1.0,
+      "rho_distance_reduction_vs_mse_reduction": 0.4444539377736018,
+      "rho_distance_reduction_vs_rmse_reduction": 0.3738641947154416
+    }
+  ],
+  "previous_high_gap_engines": [
+    16,
+    58,
+    62,
+    75,
+    89
+  ],
+  "outputs_sha256": {
+    "distance_change_vs_error_change.png": "9c5e898de533ec4ce19d46e539167d9e82c42d79a7277e20eb5e9f1eeb248b2b",
+    "summary.csv": "0ab64aeeac067dd8012f8005cbad65894bdc52d4a2827669fc02dca508309775",
+    "previous_high_gap_cases.csv": "da2f3addc46a391fd4caf1905a9d61554118904bc7fa1ada199bcafcd6bc42f5",
+    "distance_change_vs_error_change.pdf": "9551d6187090be6178159797abf7d81ba9fdbbad48df15d22d4c33c9acfc742e",
+    "per_engine_support.csv": "0e1e71e9564579fb18ec9220eb67c68dcde51e948312190cc569aa0775b54ecd"
+  },
+  "finished_at": "2026-10-26T16:41:50.388379+08:00",
+  "analysis_report": "docs/conclusions/final/fd003_anchor_support_20261026_report.md",
+  "analysis_report_sha256": "b91292ca9ef9fe60fe7c967ed78d2242923714d7264a64d1618ce740d8202bd0",
+  "validation": "63finite engine/representation rows;21 engines;input and output checksums verified"
+}

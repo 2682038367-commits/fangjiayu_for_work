@@ -1,0 +1,11 @@
+generator_seed,evaluator_seed,same_initial_tensors,same_consumed_order_prefix,compared_epochs,best_updates,final_updates,alias
+13,3,True,True,35,1540,1540,False
+13,13,True,True,35,1540,1540,False
+13,23,True,True,35,1540,1540,False
+13,33,True,True,35,1540,1540,False
+13,43,True,True,35,1540,1540,False
+3,3,True,True,35,1540,1540,False
+3,13,True,True,35,1540,1540,False
+3,23,True,True,35,1540,1540,False
+3,33,True,True,35,1540,1540,False
+3,43,True,True,35,1540,1540,False

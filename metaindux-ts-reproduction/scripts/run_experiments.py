@@ -116,7 +116,11 @@ def main() -> int:
     training = config["training"]
     runtime = config["runtime"]
     task = config["experiment"].get("task", "all")
-    is_fewshot = task == "fewshot"
+    if task not in ("all", "fewshot", "zeroshot"):
+        raise ValueError(f"unsupported experiment task: {task}")
+    is_limited_shot = task in ("fewshot", "zeroshot")
+    if is_limited_shot and not config["experiment"].get("artifact_tag"):
+        raise ValueError("fewshot/zeroshot runs require an artifact_tag to isolate outputs")
     env = os.environ.copy()
     env["WANDB_MODE"] = runtime.get("wandb_mode", "offline")
     cache_root = PROJECT_ROOT / ".cache"
@@ -134,7 +138,7 @@ def main() -> int:
                 synth_path = PROJECT_ROOT / "outputs" / f"{stem}.npz"
                 loss_path = PROJECT_ROOT / "logs" / f"{stem}_training_loss.csv"
                 fewshot_indices_path = (
-                    PROJECT_ROOT / "results" / "fewshot" / "splits" / f"{stem}_indices.npz"
+                    PROJECT_ROOT / "results" / task / "splits" / f"{stem}_indices.npz"
                 )
                 metrics_path = PROJECT_ROOT / "results" / "runs" / f"{stem}_metrics.json"
                 metadata_path = PROJECT_ROOT / "results" / "runs" / f"{stem}_metadata.json"
@@ -142,7 +146,7 @@ def main() -> int:
                 if runtime["state"] == "train":
                     # Upstream's train state also samples, but does not run the
                     # built-in post-hoc evaluators or write their metrics JSON.
-                    if is_fewshot:
+                    if is_limited_shot:
                         artifacts.append(fewshot_indices_path)
                     else:
                         artifacts.append(metrics_path.with_suffix(".generation.json"))
@@ -153,7 +157,7 @@ def main() -> int:
                     continue
                 command = [
                     sys.executable,
-                    "main_fewshot.py" if is_fewshot else "MainCondition.py",
+                    "main_fewshot.py" if is_limited_shot else "MainCondition.py",
                     "--dataset", dataset,
                     "--model_name", model["name"],
                     "--frequency_threshold", str(model.get("frequency_threshold", -1.0)),
@@ -179,12 +183,19 @@ def main() -> int:
                     "--loss_history_path", str(loss_path),
                     "--metrics_path", str(metrics_path),
                 ]
-                if is_fewshot:
+                if is_limited_shot:
+                    command.extend(["--task", task])
+                    if task == "fewshot":
+                        command.extend([
+                            "--fewshot_fraction", str(config["experiment"]["fewshot_fraction"]),
+                        ])
                     command.extend([
-                        "--task", "fewshot",
-                        "--fewshot_fraction", str(config["experiment"]["fewshot_fraction"]),
                         "--fatigue_threshold", str(config["experiment"]["fatigue_threshold"]),
                         "--fewshot_indices_path", str(fewshot_indices_path),
+                    ])
+                if "batch_label_zero_prob" in training:
+                    command.extend([
+                        "--batch_label_zero_prob", str(training["batch_label_zero_prob"]),
                     ])
                 recovery_source = None
                 if cli.reuse_generated and runtime["state"] == "all" and all(

@@ -1,0 +1,6 @@
+{
+  "diagnostic_only": true,
+  "random_input": true,
+  "not_an_AB_result": true,
+  "expected_updates": 35
+}

@@ -1,0 +1,9 @@
+{
+  "original_epochs": {
+    "43": 67,
+    "13": 69
+  },
+  "final70_candidates": [],
+  "attributable_final70_found": false,
+  "excluded": "Other seeds/window lengths/pretrained and changed-training variants are not same original run"
+}

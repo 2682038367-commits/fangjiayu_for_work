@@ -1,0 +1,35 @@
+# FD001 final70 candidate: two additional training seeds
+
+Scope `scope-20261030-fd001-final70-two-seeds`, diagnostic/supporting. User explicitly authorizes seed13 (historically good) plus one other historically poor FD001 generator, comparing the SAME training's original best-training-loss checkpoint with its final70 checkpoint. No new network, hyperparameter, per-seed epoch search, or additional sampling seeds.
+
+## Frozen seed choice and budget
+
+[Observed] Original five-evaluator mean DS, full-data w48: seed3=.3590524004, seed13=.2127078757, seed23=.4227486665, seed33=.2631314716, seed43=.3085974270. Seed13 is user-specified; choose seed3 as the highest DS remaining after excluding previously investigated seed23. Fix this choice before rerun outcomes; do not replace a rerun that no longer looks historically good/bad.
+
+Search existing attributable final70 weights first and preserve the inventory. Original full-data seed13/seed3 saved best64/best43, with no attributable final70 snapshot found at preparation. Rerun each exactly once for70 original epochs/4410 updates. Save the original rule's best weight and the last70 weight from each SAME rerun. Do not compare a historic best weight with a new final weight as the primary contrast. No historical functional-reproduction gate is imposed: actual rerun best epochs and quality differences from history must be reported, with the main estimand always the within-rerun rule contrast.
+
+Maximum2 generator trainings,4 full samples (15931 windows each),20 discriminator fits,20 downstream predictor fits, plus inference by five existing real-trained predictors. If best and final are exactly the same tensors, explicitly alias the second rule's artifacts/results, skip duplicate computation, and report reduced actual budget. Do not manufacture independent repeated evidence for identical rules.
+
+## Fixed controls
+
+[Code] Original training entry point, each original seed's recorded CLI/defaults, same frozen15931×48×14 real tensor and capped125 labels/order, Adam.002/warmup-cosine/multiplier2.5/batch256/gradclip1/70epochs. Original training condition-dropout.2 and numeric whole-batch label-zeroing.1 retained; paused zero-label repair is NOT resumed. Keep original training cuDNN benchmark/nondeterministic settings. Passive observers record actual updates,70 data permutations, batch-zero draws, original-best save events and final weight; verify serialization leaves TorchCPU/CUDA/NumPy RNG states unchanged. Compare70 LR values to each original history. Original checkpoints/files/defaults untouched.
+
+[Code] Sampling103, DDPM1000 linear/pred_noise, CFG3/batch256, all15931 labels/order, conditional branch always retains its specified condition, explicit null CFG branch unchanged. Consume legacy conditional-mask uniform draws to preserve later noises. Reuse the audited LegacyNoiseTrace from the completed condition-dropout run. Every actual initial/step noise tensor and legacy conditional draw must match its independent legacy reference. All4 samples must match the same original sampling103 full noise fingerprint, start/end CUDA state and scalar count. Strict state-dict load and eval mode remain original.
+
+[Code] Same fixed original discriminator split, TF GRU7/3000 updates/batch128, evaluator seeds3/13/23/33/43. Same5 real-trained predictors and same frozen seed23-indexed lifespan-matched3000 generated windows as the preceding age comparison; full generated-window readout also saved. This common indexing holds conditions and selected generated indices fixed across new seeds. Condition readout is an auxiliary proxy, not physical truth or downstream utility. No real official test-window evaluation in this run.
+
+## Downstream evaluation
+
+Copy, do not resample, the previous `diagnostic-fd001-checkpoint-downstream-validation-20261030` frozen_plan.npz/real_validation.npz/config predictor arguments. SAME30 real training engines,4875 real windows, same labels capped125, engine/end-cycle identities and original synthetic11151/4780 train/dev split. Reuse the verified original predictor fit function without editing it: original LSTM, Adam.002/MSE/batch256/maximum35epochs/decay, original synthetic-dev checkpoint selection/10-epoch patience, deterministic predictor settings, paired seeds3/13/23/33/43. Real validation is reporting-only, never selects predictor checkpoints. Compare identical initial tensors and consumed training-order common prefixes; actual epochs can differ under the same existing stopping rule and must be recorded.
+
+[Observed] The fixed generator and MinMax learned from all100 real training engines including these30. This is exploratory DOWNSTREAM validation, not an independent whole-pipeline engine holdout. The seeds were chosen using prior generation quality, and the current validation set was already examined in seed23/64; results cannot establish an unbiased universal selection rule. Do not inspect official real test files/results to choose epochs or seeds.
+
+Primary per-generator rule contrast: final70 minus best-loss on engine-balanced pooled real-validation RMSE (mean squared error within engine, average engines and five predictors, then root); also report conventional window-weighted RMSE, individual paired-seed values, per-engine MSE changes and all RUL segments0–30/31–60/61–90/91–125, with separate91–124/125. No output clipping or primary prediction ensemble. Record all tradeoffs.
+
+Practical predeclared flags: seed13 overall non-degradation if final/best RMSE<=1.05; seed3 clear improvement if final/best<=.95 and at least4/5 paired predictor RMSEs improve. Report both flags and all segments, but do NOT automatically adopt final70 even if both pass. No formal significance or generator-population confidence claim from two historically chosen seeds. Existing seed23 results may be shown as prior context, never counted as new runs.
+
+## Stop and report
+
+Before execution snapshot full config/source/data/checkpoint hashes, original selection DS input, inventory, Git state/diff and environment. Each trained output is hash-bound before sampling. Replay metrics from saved arrays, check original-source hashes, saved optimizer counters, exact initialization/order prefixes, sample labels/noise fingerprints, DS arithmetic, condition errors and downstream aggregations. Aliased results explicitly linked to original computation and counted once.
+
+Stop after fixed budget, any worker/audit failure; no automatic retraining/retries/seed replacement/other epochs/113-or123 sampling/official test evaluation or default changes. Do not stop early just because one scientific result is unfavorable; evaluate both authorized seeds unless technical validity fails. Preserve partial failures and report them. Write automatic report/plots/machine-readable artifacts/current state/chronological ledger. No matching published target: current diagnostic→paper metric unavailable→paper gap not applicable→five predictor seeds conditional on each generator/sample→strict reproduction status unchanged. Main/A/B unchanged, C deferred, EXT-002 closed atweight1, numeric-zeroing repair remains paused.

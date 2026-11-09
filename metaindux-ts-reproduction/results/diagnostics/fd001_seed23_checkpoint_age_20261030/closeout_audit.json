@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "training_runs": 1,
+  "training_updates": 4410,
+  "evaluated_epochs": [
+    15,
+    64,
+    70
+  ],
+  "noise_anchor_matches": true,
+  "raw_scores_and_proxy_errors_recomputed": true,
+  "gate_recomputed": true,
+  "completed_at": "2026-10-30T14:31:35.111971+08:00"
+}

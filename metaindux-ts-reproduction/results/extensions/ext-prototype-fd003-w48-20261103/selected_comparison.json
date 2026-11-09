@@ -1,0 +1,28 @@
+[
+  {
+    "generator_seed": 23,
+    "A_epoch": 70,
+    "B_epoch": 64,
+    "overall_A": 21.337245299315114,
+    "overall_B": 22.561945663926636,
+    "overall_delta": 1.2247003646115218,
+    "target31_60_A": 28.937334358230107,
+    "target31_60_B": 30.63189254070739,
+    "target31_60_delta": 1.6945581824772837,
+    "both_improve": false,
+    "stage_tradeoff": false
+  },
+  {
+    "generator_seed": 13,
+    "A_epoch": 70,
+    "B_epoch": 70,
+    "overall_A": 19.447185112615173,
+    "overall_B": 21.199036149915635,
+    "overall_delta": 1.7518510373004617,
+    "target31_60_A": 24.898547496139738,
+    "target31_60_B": 28.599356500973972,
+    "target31_60_delta": 3.700809004834234,
+    "both_improve": false,
+    "stage_tradeoff": false
+  }
+]

@@ -1,0 +1,327 @@
+{
+  "run_id": "diagnostic-fd001-seed13-real-high-rul-direction-20261102",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261102-fd001-seed13-real-high-rul-direction",
+  "status": "complete",
+  "prepared_at": "2026-11-02T14:35:54.086795+08:00",
+  "config": {
+    "generator_seed": 13,
+    "generator_epochs": [
+      64,
+      70
+    ],
+    "predictor_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "bins": [
+      [
+        "all",
+        0,
+        125
+      ],
+      [
+        "91-125",
+        91,
+        125
+      ],
+      [
+        "0-30",
+        0,
+        30
+      ],
+      [
+        "31-60",
+        31,
+        60
+      ],
+      [
+        "61-90",
+        61,
+        90
+      ],
+      [
+        "91-124",
+        91,
+        124
+      ],
+      [
+        "125",
+        125,
+        125
+      ]
+    ],
+    "leaf_bins": [
+      [
+        "0-30",
+        0,
+        30
+      ],
+      [
+        "31-60",
+        31,
+        60
+      ],
+      [
+        "61-90",
+        61,
+        90
+      ],
+      [
+        "91-124",
+        91,
+        124
+      ],
+      [
+        "125",
+        125,
+        125
+      ]
+    ],
+    "validation_n": 4875,
+    "total_engines": 30,
+    "signed_error": "mean over engines of within-engine mean(pred-truth), then mean5 predictors",
+    "mse": "mean over5 predictors and eligible engines of within-engine MSE; RMSE=sqrt(MSE)",
+    "contributions": "parent per-window weight1/(eligible parent engines * engine parent window count)",
+    "parents": [
+      "91-125",
+      "all"
+    ],
+    "primary_bins": [
+      "91-124",
+      "125"
+    ],
+    "budget": "one cached10-prediction audit, no new inference/training/generation",
+    "no_automatic_followup": true,
+    "validation_generator_exposure": true
+  },
+  "user_authorization": "Explicit single cached real91-125 split91-124/125 with engine-equal signed errors and MSE change",
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/analysis/diagnostics/audit_fd001_seed13_real_high_rul_direction.py",
+    "run"
+  ],
+  "inputs_sha256": {
+    "analysis/diagnostics/audit_fd001_seed13_real_high_rul_direction.py": "e018744f0542125ec5c0643a6c85b2866d59e93d073b4bd49dc665f7fad9eefb",
+    "docs/operations/FD001_SEED13_REAL_HIGH_RUL_DIRECTION.md": "3c294f2e95c1c4743c7770ff7221288d9a0872c01553004ec0a1ce26f3e92626",
+    "runs/diagnostic-fd001-final70-two-seeds-20261030/run-manifest.json": "0cec0154decc13ef11e2fe91b538b4f3676be89e47d296de40af45fc4f2d9f0f",
+    "runs/diagnostic-fd001-final70-two-seeds-20261030/real_validation.npz": "9ab6442b63489f09a6a28bc3d398478e0ba4f9535eda5ba9539ac12a92e59389",
+    "runs/diagnostic-fd001-final70-two-seeds-20261030/frozen_plan.npz": "01a30751de1b7febf9d140ead448b0e0ef4c4fdd9d5b0c055bca8b25d8049489",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/comparison.csv": "df825ad237d5fd5782ec4ce5604d3b369c7432a193528ad23e9ff108d970cdfc",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/training_audit.json": "f871c704fed15a04030e1d007758299520422168d50686379dad3e219fb7474e",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/per_model_segments.csv": "619a789a931fd545ffaaf5065cd7582e83eaa68be6510abdd55b3f0590e8c6ca",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/per_engine.csv": "3dbde3227a8fade4ce25dfc0ceda07795d04a42cbfc0e03c7831c90c1aef7935",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/predictions/epoch64_eval3.npz": "d34daa1e551469c199c7562e513357e76eaac2f806f213dc1055355ed5226b62",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/audits/epoch64_eval3.json": "75de939f2044a002206f056bafb044b16f33b2dce5b661500b9e76eec2ac63cb",
+    "checkpoints/evaluators/fd001_final70_two_seeds_20261030/seed13/best/epoch64_eval3.pth": "105ddf0986a5652e864077e6c191b1fcbcb904849ead1aa0e28021dd0480d9c8",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/predictions/epoch64_eval13.npz": "4d721fc627572c40fb457e5bdbd2f93c702ab0ada5e8abd3128e8c5fee3d89a6",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/audits/epoch64_eval13.json": "76aff2705d2dac9b48468e8ba6f861a3a49ce66d1403b40b3fcf03271680106a",
+    "checkpoints/evaluators/fd001_final70_two_seeds_20261030/seed13/best/epoch64_eval13.pth": "7bc5ba122bd5cd8bf21a3f632edd04047addaefb26061bf0190da4c918bb3253",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/predictions/epoch64_eval23.npz": "bdece5fef6c58c3af6bdeb99501bc9590a01fea04cadd7cc4aea39850159063e",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/audits/epoch64_eval23.json": "941f63045a12dd697fc9cc31f1fff61043e24c026d0549adc914104c76ab863f",
+    "checkpoints/evaluators/fd001_final70_two_seeds_20261030/seed13/best/epoch64_eval23.pth": "8c7723152e60ff83082c33bac7a946f9464a719ca7ce4084e6ea52336558c194",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/predictions/epoch64_eval33.npz": "0a1616ea89201a3b8ace7faf8a2b4886caba152d88ec6be73423a8a6b12ba1ae",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/audits/epoch64_eval33.json": "0a170d395611e638ca04dbc0ab8849ee007b1d8c2e6f975da4200f369759258d",
+    "checkpoints/evaluators/fd001_final70_two_seeds_20261030/seed13/best/epoch64_eval33.pth": "eb8f0b4784e074c1c869eaa90176dde88252dfb4890b9d74501ba7c19bfb9cd7",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/predictions/epoch64_eval43.npz": "eb756774e791932602a6e176d38505d1edee2a0665685b10599dc44eea39ce79",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/audits/epoch64_eval43.json": "f31ea4f2e9467373109800b79833bb70dd69a275e1ed9c17feff63f0833f5420",
+    "checkpoints/evaluators/fd001_final70_two_seeds_20261030/seed13/best/epoch64_eval43.pth": "14a98c9f7bee125d111e953cc3439b0903996ffdb8437ae36d7f971c3ec23811",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/per_model_segments.csv": "faefcf23063a361ca16149d4ce8b7c7ca4b134587dd101a7938c38f7745c3bbb",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/per_engine.csv": "b7ee86550d6bb3eb50d123c215f2828ebf95b8663b0cf71e07b044b700cfd03e",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/predictions/epoch70_eval3.npz": "b07db6094c66a06d3c86e848a678092df24b557f9d114a0b29210d1dc1a73086",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/audits/epoch70_eval3.json": "057524506afe2316a7fb2d22d7b62971be48965f24edd0902ca8b2e1ddd5a5c5",
+    "checkpoints/evaluators/fd001_final70_two_seeds_20261030/seed13/final70/epoch70_eval3.pth": "0ac4047de491fc398bd2482ec36c27b079edafee11768a3bb02dcbb1a259082c",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/predictions/epoch70_eval13.npz": "3ea4a7edc02a141b4b70ed2ea4ca3d15fd3bc7332b6465da01c646dc564f02a6",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/audits/epoch70_eval13.json": "39e9aa6b7175fbf5eabf35e07b263112e39772940779b97d87479f4072f3a961",
+    "checkpoints/evaluators/fd001_final70_two_seeds_20261030/seed13/final70/epoch70_eval13.pth": "d8b86951e31b01ea152d74b5dbd62c96c605b24ea8080721e394fc31d8575d33",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/predictions/epoch70_eval23.npz": "5b188507218736a4f40e79f8d5235d850fd3bab302d438510f790874ab3c3712",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/audits/epoch70_eval23.json": "47f323fabb84d9e0005ac21928e9d77f4e182cfce74f1f3ddb7ac2b9bda486bf",
+    "checkpoints/evaluators/fd001_final70_two_seeds_20261030/seed13/final70/epoch70_eval23.pth": "c82c58a8b60b40c57ed161ce9955fe23a6203e5f55cc8c0c4ebca890ff9de780",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/predictions/epoch70_eval33.npz": "415c97d550ee64eefc6dd5c253c79ef873a5201229af758c309bc840bdea4754",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/audits/epoch70_eval33.json": "e84f9e9293c2144deb9609e15803a2b891eff839262ae790ff8f2d9db2a0b9b9",
+    "checkpoints/evaluators/fd001_final70_two_seeds_20261030/seed13/final70/epoch70_eval33.pth": "0c6bfaebca8fa092f21a8b69dbffee400167439167b747b1d1f6af012aa2a1a0",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/predictions/epoch70_eval43.npz": "3707b0e7e174397d4e92b4c799e1fc9af67663cd4a5772a2d3862476ea3052ca",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/audits/epoch70_eval43.json": "daeefd42fc66df39299f72a441e749567060027b6ba6e41e4c5f9584a1b17fc8",
+    "checkpoints/evaluators/fd001_final70_two_seeds_20261030/seed13/final70/epoch70_eval43.pth": "c4a19c7ecf9ab3427937798aac4df5be41cd2a7d5a9826b872e643b5b7760d35",
+    "runs/diagnostic-fd001-seed13-real-high-rul-direction-20261102/config.json": "20318d4f9c9064a2435968bb1ac57700f099d4b0b74c00e55d27168c9b014257",
+    "runs/diagnostic-fd001-seed13-real-high-rul-direction-20261102/source/audit_fd001_seed13_real_high_rul_direction.py": "e018744f0542125ec5c0643a6c85b2866d59e93d073b4bd49dc665f7fad9eefb",
+    "runs/diagnostic-fd001-seed13-real-high-rul-direction-20261102/source/FD001_SEED13_REAL_HIGH_RUL_DIRECTION.md": "3c294f2e95c1c4743c7770ff7221288d9a0872c01553004ec0a1ce26f3e92626",
+    "runs/diagnostic-fd001-seed13-real-high-rul-direction-20261102/workspace.diff": "b6ed45b3c2fbcf5861ecfbfe47f8b01ac1a1549bce56cb05c3791c6ff43434fc",
+    "runs/diagnostic-fd001-seed13-real-high-rul-direction-20261102/git-status.txt": "df77b69cd31069c96bb235ce71ddc14622c5fbe134d984a0fba8da783b0aa4ca",
+    "runs/diagnostic-fd001-seed13-real-high-rul-direction-20261102/environment-freeze.txt": "6cf9cf5532a3788655f3b1bde3a3be9d252715af3555b3746987b43d940dfc00"
+  },
+  "started_at": "2026-11-02T14:36:03.941532+08:00",
+  "completed_at": "2026-11-02T14:36:04.047054+08:00",
+  "paired_metrics": [
+    {
+      "bin": "all",
+      "n_windows": 4875,
+      "n_engines": 30,
+      "rmse64": 14.531324479164926,
+      "rmse70": 15.704041664532419,
+      "signed64": 1.2073877313662982,
+      "signed70": -4.65734143660155,
+      "signed_shift": -5.864729167967848,
+      "mse64": 211.15939111877782,
+      "mse70": 246.61692460137016,
+      "mse_change": 35.45753348259234,
+      "n_predictors_mse_higher": 5,
+      "n_predictors_signed_more_negative": 5
+    },
+    {
+      "bin": "91-125",
+      "n_windows": 2156,
+      "n_engines": 28,
+      "rmse64": 14.703481303117352,
+      "rmse70": 19.669114900516696,
+      "signed64": -4.655607056759121,
+      "signed70": -13.47405486290261,
+      "signed_shift": -8.818447806143489,
+      "mse64": 216.19236243112155,
+      "mse70": 386.8740809697279,
+      "mse_change": 170.68171853860636,
+      "n_predictors_mse_higher": 5,
+      "n_predictors_signed_more_negative": 5
+    },
+    {
+      "bin": "0-30",
+      "n_windows": 930,
+      "n_engines": 30,
+      "rmse64": 5.6732389458230115,
+      "rmse70": 5.847182166306468,
+      "signed64": 1.763569947280871,
+      "signed70": 1.5620014017980586,
+      "signed_shift": -0.20156854548281244,
+      "mse64": 32.185640136402995,
+      "mse70": 34.1895392859724,
+      "mse_change": 2.0038991495694063,
+      "n_predictors_mse_higher": 3,
+      "n_predictors_signed_more_negative": 3
+    },
+    {
+      "bin": "31-60",
+      "n_windows": 900,
+      "n_engines": 30,
+      "rmse64": 12.68371720552134,
+      "rmse70": 10.550762472439002,
+      "signed64": 4.142176277160644,
+      "signed70": 0.7300060812632243,
+      "signed_shift": -3.4121701958974198,
+      "mse64": 160.87668214963807,
+      "mse70": 111.31858874982717,
+      "mse_change": -49.5580933998109,
+      "n_predictors_mse_higher": 0,
+      "n_predictors_signed_more_negative": 5
+    },
+    {
+      "bin": "61-90",
+      "n_windows": 889,
+      "n_engines": 30,
+      "rmse64": 17.950946470344952,
+      "rmse70": 14.130307213001663,
+      "signed64": 7.217225869072808,
+      "signed70": -0.4886412484764596,
+      "signed_shift": -7.705867117549268,
+      "mse64": 322.23647918118996,
+      "mse70": 199.66558193380683,
+      "mse_change": -122.57089724738313,
+      "n_predictors_mse_higher": 0,
+      "n_predictors_signed_more_negative": 5
+    },
+    {
+      "bin": "91-124",
+      "n_windows": 894,
+      "n_engines": 28,
+      "rmse64": 16.657779577872628,
+      "rmse70": 21.065174173661173,
+      "signed64": -5.0761455786287,
+      "signed70": -14.27600096559308,
+      "signed_shift": -9.19985538696438,
+      "mse64": 277.4816204649904,
+      "mse70": 443.7415629666817,
+      "mse_change": 166.25994250169134,
+      "n_predictors_mse_higher": 5,
+      "n_predictors_signed_more_negative": 5
+    },
+    {
+      "bin": "125",
+      "n_windows": 1262,
+      "n_engines": 22,
+      "rmse64": 14.752351060189325,
+      "rmse70": 21.850878858349287,
+      "signed64": -9.345886835430813,
+      "signed70": -17.61934696172738,
+      "signed_shift": -8.273460126296568,
+      "mse64": 217.6318618030691,
+      "mse70": 477.46090688225587,
+      "mse_change": 259.82904507918676,
+      "n_predictors_mse_higher": 5,
+      "n_predictors_signed_more_negative": 5
+    }
+  ],
+  "contributions": [
+    {
+      "parent": "91-125",
+      "child_bin": "91-124",
+      "mse_change_contribution": 53.13511599479724,
+      "parent_mse_change": 170.68171853860636,
+      "share_of_parent_net_change": 0.31131111433459496
+    },
+    {
+      "parent": "91-125",
+      "child_bin": "125",
+      "mse_change_contribution": 117.5466025438091,
+      "parent_mse_change": 170.68171853860636,
+      "share_of_parent_net_change": 0.688688885665405
+    },
+    {
+      "parent": "all",
+      "child_bin": "0-30",
+      "mse_change_contribution": 0.32321422938088135,
+      "parent_mse_change": 35.45753348259234,
+      "share_of_parent_net_change": 0.00911553054133225
+    },
+    {
+      "parent": "all",
+      "child_bin": "31-60",
+      "mse_change_contribution": -14.423567041133282,
+      "parent_mse_change": 35.45753348259234,
+      "share_of_parent_net_change": -0.4067842747216031
+    },
+    {
+      "parent": "all",
+      "child_bin": "61-90",
+      "mse_change_contribution": -32.364272837569196,
+      "parent_mse_change": 35.45753348259234,
+      "share_of_parent_net_change": -0.9127615391933068
+    },
+    {
+      "parent": "all",
+      "child_bin": "91-124",
+      "mse_change_contribution": 26.54502892440384,
+      "parent_mse_change": 35.45753348259234,
+      "share_of_parent_net_change": 0.7486428501135298
+    },
+    {
+      "parent": "all",
+      "child_bin": "125",
+      "mse_change_contribution": 55.37713020751013,
+      "parent_mse_change": 35.45753348259234,
+      "share_of_parent_net_change": 1.5617874332600488
+    }
+  ],
+  "outputs_sha256": {
+    "results/diagnostics/fd001_seed13_real_high_rul_direction_20261102/mse_contributions.csv": "f0a1faaea881ea066edbc4464b089db707116594696275eb8899e9f271b38f5a",
+    "results/diagnostics/fd001_seed13_real_high_rul_direction_20261102/fixed_predictions_and_weights.npz": "4839d8654c0ae9327a6d9e5bfdf97b4f888ce1b03677ef8ff2bf379566a56e44",
+    "results/diagnostics/fd001_seed13_real_high_rul_direction_20261102/per_engine_metrics.csv": "a3ed48c0aea097c1367ca953c782423f43e5b83d38c2ff8c529d2451b00e008e",
+    "results/diagnostics/fd001_seed13_real_high_rul_direction_20261102/per_predictor_metrics.csv": "1f60454d138fbbcc5e7f864efb5c4e9d146684dc9d3c791013e6f8795791556a",
+    "results/diagnostics/fd001_seed13_real_high_rul_direction_20261102/aggregate_metrics.csv": "c54b6452ad9500c46ee49d5df98252073670c7910de7df9edbad413bbe9ea6f6",
+    "results/diagnostics/fd001_seed13_real_high_rul_direction_20261102/audit.json": "8e01c70d56932aae7cc11aa96c348ff07e11ffd1f0d031c5b2538ec3adb67e08",
+    "results/diagnostics/fd001_seed13_real_high_rul_direction_20261102/paired_metrics.csv": "dacf8b542331d895ebb04df4e2b96992df1466b53e3c9b5388aa69afc4fb25cc",
+    "docs/conclusions/final/fd001_seed13_real_high_rul_direction_20261102_report.md": "09f308c2a81b7175e36cca5fa0292f7096ed7b8c35cce9ae456361819a90b201"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "status": "localized_with_limited_local_confirmation",
+  "primary_pair": {
+    "index_zero_based": 721,
+    "tracked_operation_one_based": 722,
+    "prior_equal_output_count": 721,
+    "operator": "aten.convolution.default",
+    "module": "minusTrend.fn.seasonal.season",
+    "source": {
+      "path": "upstream/DiffusionFreeGuidence/Attetnion.py",
+      "line": 197,
+      "function": "forward"
+    },
+    "same_input_values": true,
+    "same_input_layout": true,
+    "tensor_shapes": [
+      [
+        256,
+        32,
+        48
+      ],
+      [
+        16,
+        32,
+        1
+      ],
+      [
+        16
+      ]
+    ],
+    "output_hashes": [
+      "18e3455715dc88c669c95b61c7332172c49da536f6477070904e78075ccea789",
+      "6d344e350493199b70ea872887a44f1c4104b3027e6d0dbe75421b3ea812cae0"
+    ]
+  },
+  "supplementary_capture_vs_public": {
+    "index_zero_based": 310,
+    "tracked_operation_one_based": 311,
+    "prior_equal_output_count": 310,
+    "operator": "aten.convolution.default",
+    "module": "mid_block1.block1.proj",
+    "source": {
+      "path": "upstream/DiffusionFreeGuidence/Unet1D_fre.py",
+      "line": 136,
+      "function": "forward"
+    },
+    "same_input_values": true,
+    "same_input_layout": true,
+    "tensor_shapes": [
+      [
+        256,
+        64,
+        24
+      ],
+      [
+        64,
+        64,
+        3
+      ],
+      [
+        64
+      ]
+    ],
+    "output_hashes": [
+      "7da8c609778fbb65334e65a0df534351633c40bcfd0b1f25c77573628e96ee91",
+      "ffc32cc73ece41a88588c81dd8b11af778162a10d81308f64952ea5471c97fd7"
+    ]
+  },
+  "supplementary_capture_vs_worker": {
+    "index_zero_based": 310,
+    "tracked_operation_one_based": 311,
+    "prior_equal_output_count": 310,
+    "operator": "aten.convolution.default",
+    "module": "mid_block1.block1.proj",
+    "source": {
+      "path": "upstream/DiffusionFreeGuidence/Unet1D_fre.py",
+      "line": 136,
+      "function": "forward"
+    },
+    "same_input_values": true,
+    "same_input_layout": true,
+    "tensor_shapes": [
+      [
+        256,
+        64,
+        24
+      ],
+      [
+        64,
+        64,
+        3
+      ],
+      [
+        64
+      ]
+    ],
+    "output_hashes": [
+      "7da8c609778fbb65334e65a0df534351633c40bcfd0b1f25c77573628e96ee91",
+      "ffc32cc73ece41a88588c81dd8b11af778162a10d81308f64952ea5471c97fd7"
+    ]
+  },
+  "raw_tensors_verified": 279,
+  "full_first_batch_forwards": 3,
+  "standalone_convolution_calls": 4,
+  "backward_calls": 0,
+  "optimizer_updates": 0,
+  "capture_parity_failure_retained": true,
+  "local_probe_input_matches_original_primary_activations": false,
+  "local_probe_stats": {
+    "native": {
+      "cross_process_exact_equal": true,
+      "output_sha256": "39e757f9354908748d15494eea56305851ac00f2854b46711874df4567165e50"
+    },
+    "local_deterministic": {
+      "cross_process_exact_equal": true,
+      "output_sha256": "c4265c5b3232e1e9c38f8ec06f5b36b148211b81422e7300c334fbea819eddf0"
+    },
+    "between_modes": {
+      "max_abs": 4.76837158203125e-07,
+      "different_elements": 123844,
+      "elements": 196608,
+      "relative_l2": 1.0334425130268976e-07,
+      "interpretation": "Each mode repeated exactly in this limited local probe. Mode difference is not proof that switching modes cures whole-network divergence."
+    }
+  },
+  "evidence_limits": [
+    "Earliest differing layer varies across the current process replays; identify convolution execution, not one universal faulty layer.",
+    "No kernel-name or exact algorithm selection measured, so cuDNN auto-benchmark explanation remains an inference.",
+    "Prefix tracing synchronizes GPU and can alter kernel tuning/timings.",
+    "Supplementary local probe uses explicitly frozen third-capture activation, not the original paired op721 input.",
+    "Full-network strict mode remained blocked in prior median diagnostic; no whole-training fix or historical DS causal attribution established."
+  ]
+}

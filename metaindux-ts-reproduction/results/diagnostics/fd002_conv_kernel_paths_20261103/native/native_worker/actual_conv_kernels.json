@@ -1,0 +1,1010 @@
+[
+  {
+    "index": 21,
+    "module": "init_conv",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "sm86_xmma_fprop_implicit_gemm_tf32f32_tf32f32_f32_nhwckrsc_nchw_tilesize128x128x16_stage3_warpsize2x2x1_g1_tensor16x8x8_execute_kernel_cudnn_infer",
+        "device": 0,
+        "duration_us": 23,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 54,
+    "module": "downs.0.0.block1.proj",
+    "kernels": [
+      {
+        "name": "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, int, int)",
+        "device": 0,
+        "duration_us": 18,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 71,
+    "module": "downs.0.0.block2.proj",
+    "kernels": [
+      {
+        "name": "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, int, int)",
+        "device": 0,
+        "duration_us": 18,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 92,
+    "module": "downs.0.1.block1.proj",
+    "kernels": [
+      {
+        "name": "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, int, int)",
+        "device": 0,
+        "duration_us": 18,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 109,
+    "module": "downs.0.1.block2.proj",
+    "kernels": [
+      {
+        "name": "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, int, int)",
+        "device": 0,
+        "duration_us": 18,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 166,
+    "module": "downs.0.3",
+    "kernels": [
+      {
+        "name": "void cask_cudnn_infer::computeOffsetsKernel<false, false>(cask_cudnn_infer::ComputeOffsetsParams)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "cudnn_infer_ampere_scudnn_128x64_relu_small_nn_v1",
+        "device": 0,
+        "duration_us": 17,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 182,
+    "module": "downs.1.0.block1.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 5,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_tf32f32_tf32f32_f32_nhwckrsc_nhwc_tilesize128x16x32_stage1_warpsize4x1x1_g1_tensor16x8x8_alignc4_execute_kernel_cudnn_infer",
+        "device": 0,
+        "duration_us": 6,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "aten::add_"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "cudaLaunchKernel"
+      }
+    ]
+  },
+  {
+    "index": 199,
+    "module": "downs.1.0.block2.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_tf32f32_tf32f32_f32_nhwckrsc_nhwc_tilesize128x16x32_stage1_warpsize4x1x1_g1_tensor16x8x8_alignc4_execute_kernel_cudnn_infer",
+        "device": 0,
+        "duration_us": 7,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 220,
+    "module": "downs.1.1.block1.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_tf32f32_tf32f32_f32_nhwckrsc_nhwc_tilesize128x16x32_stage1_warpsize4x1x1_g1_tensor16x8x8_alignc4_execute_kernel_cudnn_infer",
+        "device": 0,
+        "duration_us": 6,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 237,
+    "module": "downs.1.1.block2.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_tf32f32_tf32f32_f32_nhwckrsc_nhwc_tilesize128x16x32_stage1_warpsize4x1x1_g1_tensor16x8x8_alignc4_execute_kernel_cudnn_infer",
+        "device": 0,
+        "duration_us": 6,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "aten::add_"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "cudaLaunchKernel"
+      }
+    ]
+  },
+  {
+    "index": 294,
+    "module": "downs.1.3",
+    "kernels": [
+      {
+        "name": "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, int, int)",
+        "device": 0,
+        "duration_us": 19,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 310,
+    "module": "mid_block1.block1.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 5,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cutlass_cudnn_infer::Kernel<cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4>(cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4::Params)",
+        "device": 0,
+        "duration_us": 14,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 327,
+    "module": "mid_block1.block2.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cutlass_cudnn_infer::Kernel<cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4>(cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4::Params)",
+        "device": 0,
+        "duration_us": 14,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 348,
+    "module": "mid_block2.block1.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cutlass_cudnn_infer::Kernel<cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4>(cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4::Params)",
+        "device": 0,
+        "duration_us": 14,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 365,
+    "module": "mid_block2.block2.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 5,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cutlass_cudnn_infer::Kernel<cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4>(cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4::Params)",
+        "device": 0,
+        "duration_us": 14,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void vector_fft_c2r<24u, EPT<24u>, 32u, 4u, (padding_t)0, (twiddle_t)0, (loadstore_modifier_t)3, (layout_t)0, unsigned int, float>(kernel_arguments_t<unsigned int>)",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "cudaLaunchKernel"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 387,
+    "module": "ups.0.0.block1.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 5,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cutlass_cudnn_infer::Kernel<cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4>(cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4::Params)",
+        "device": 0,
+        "duration_us": 18,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 404,
+    "module": "ups.0.0.block2.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 5,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cutlass_cudnn_infer::Kernel<cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4>(cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4::Params)",
+        "device": 0,
+        "duration_us": 14,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 409,
+    "module": "ups.0.0.res_conv",
+    "kernels": [
+      {
+        "name": "void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4::Params)",
+        "device": 0,
+        "duration_us": 16,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "cudaDeviceGetStreamPriorityRange"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "cudaDeviceGetStreamPriorityRange"
+      },
+      {
+        "name": "void cutlass_cudnn_infer::Kernel<cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4>(cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4::Params)",
+        "device": 0,
+        "duration_us": 14,
+        "owner": "cudaDeviceGetStreamPriorityRange"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "cudaDeviceGetStreamPriorityRange"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 427,
+    "module": "ups.0.1.block1.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 7,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cutlass_cudnn_infer::Kernel<cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4>(cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4::Params)",
+        "device": 0,
+        "duration_us": 17,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 444,
+    "module": "ups.0.1.block2.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cutlass_cudnn_infer::Kernel<cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4>(cutlass_tensorop_s1688fprop_optimized_tf32_64x64_32x5_nhwc_align4::Params)",
+        "device": 0,
+        "duration_us": 14,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 449,
+    "module": "ups.0.1.res_conv",
+    "kernels": [
+      {
+        "name": "void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4::Params)",
+        "device": 0,
+        "duration_us": 15,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 535,
+    "module": "ups.0.3.1",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 13,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_tf32f32_tf32f32_f32_nhwckrsc_nhwc_tilesize128x32x64_stage1_warpsize4x1x1_g1_tensor16x8x8_alignc4_execute_kernel_cudnn_infer",
+        "device": 0,
+        "duration_us": 14,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 552,
+    "module": "ups.1.0.block1.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 11,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_tf32f32_tf32f32_f32_nhwckrsc_nhwc_tilesize128x32x64_stage1_warpsize4x1x1_g1_tensor16x8x8_alignc4_execute_kernel_cudnn_infer",
+        "device": 0,
+        "duration_us": 13,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctorOnSelf_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctorOnSelf_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctorOnSelf_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctorOnSelf_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "cudaLaunchKernelExC"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 569,
+    "module": "ups.1.0.block2.proj",
+    "kernels": [
+      {
+        "name": "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, int, int)",
+        "device": 0,
+        "duration_us": 18,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 574,
+    "module": "ups.1.0.res_conv",
+    "kernels": [
+      {
+        "name": "void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4::Params)",
+        "device": 0,
+        "duration_us": 15,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 592,
+    "module": "ups.1.1.block1.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 6,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_tf32f32_tf32f32_f32_nhwckrsc_nhwc_tilesize128x32x64_stage1_warpsize4x1x1_g1_tensor16x8x8_alignc4_execute_kernel_cudnn_infer",
+        "device": 0,
+        "duration_us": 14,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 609,
+    "module": "ups.1.1.block2.proj",
+    "kernels": [
+      {
+        "name": "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, int, int)",
+        "device": 0,
+        "duration_us": 18,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 614,
+    "module": "ups.1.1.res_conv",
+    "kernels": [
+      {
+        "name": "void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4::Params)",
+        "device": 0,
+        "duration_us": 13,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 699,
+    "module": "ups.1.3",
+    "kernels": [
+      {
+        "name": "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, int, int)",
+        "device": 0,
+        "duration_us": 18,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 708,
+    "module": "minusTrend.fn.trend.trend.0",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_tf32f32_tf32f32_f32_nhwckrsc_nhwc_tilesize128x16x64_stage1_warpsize4x1x1_g1_tensor16x8x8_alignc4_execute_kernel_cudnn_infer",
+        "device": 0,
+        "duration_us": 6,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "cudaStreamGetPriority"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 721,
+    "module": "minusTrend.fn.seasonal.season",
+    "kernels": [
+      {
+        "name": "void gemmSN_NN_kernel<float, 128, 2, 4, 8, 4, 4, false, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float> >(cublasGemmSmallNParams<cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>)",
+        "device": 0,
+        "duration_us": 9,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 748,
+    "module": "final_res_block.block1.proj",
+    "kernels": [
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 9,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)2>(cudnn::ops::nchw2nhwc_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 1,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_tf32f32_tf32f32_f32_nhwckrsc_nhwc_tilesize128x32x64_stage1_warpsize4x1x1_g1_tensor16x8x8_alignc4_execute_kernel_cudnn_infer",
+        "device": 0,
+        "duration_us": 14,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void cudnn::ops::nhwcToNchwKernel<float, float, float, true, false, (cudnnKernelDataType_t)0>(cudnn::ops::nhwc2nchw_params_t<float>, float const*, float*)",
+        "device": 0,
+        "duration_us": 3,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 765,
+    "module": "final_res_block.block2.proj",
+    "kernels": [
+      {
+        "name": "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, int, int)",
+        "device": 0,
+        "duration_us": 18,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 770,
+    "module": "final_res_block.res_conv",
+    "kernels": [
+      {
+        "name": "void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4::Params)",
+        "device": 0,
+        "duration_us": 13,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 4,
+        "owner": "aten::add_"
+      }
+    ]
+  },
+  {
+    "index": 772,
+    "module": "final_conv",
+    "kernels": [
+      {
+        "name": "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, int, int)",
+        "device": 0,
+        "duration_us": 7,
+        "owner": "aten::cudnn_convolution"
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+        "device": 0,
+        "duration_us": 2,
+        "owner": "aten::add_"
+      }
+    ]
+  }
+]

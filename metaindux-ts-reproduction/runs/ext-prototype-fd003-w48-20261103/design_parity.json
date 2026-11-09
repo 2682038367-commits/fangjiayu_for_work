@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "parent": "ext-prototype-fd001-w48-20261103",
+  "unchanged_prototype_source": true,
+  "unchanged_training_sampling_evaluation_functions": true,
+  "changed_factors": [
+    "dataset",
+    "existing_dataset_specific_engine_split"
+  ],
+  "no_design_search": true
+}

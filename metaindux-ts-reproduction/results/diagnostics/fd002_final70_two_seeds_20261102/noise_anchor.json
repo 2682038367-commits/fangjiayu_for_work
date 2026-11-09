@@ -1,0 +1,20 @@
+{
+  "pre_model_construction_rng_sha256": {
+    "torch_cpu": "df69e66af9e252976a2e22fd1689b1956d658b65bc3a771a45e38a028a0f1679",
+    "torch_cuda": "0a352300ce526d9540c7b6265eff0fd74c646bbccdcf51dd7e1127188d782939",
+    "numpy_state": "692a6262be111ff2961962002ff595cf2f9fe043c59ab1340d351b6b35577712"
+  },
+  "noise_audit": {
+    "status": "passed",
+    "normal_tensors_exactly_matched": 163000,
+    "conditional_uniform_draws_exactly_matched": 163000,
+    "unconditional_calls_retained": 163000,
+    "normal_scalar_count": 27914208000,
+    "conditional_dropped_windows": 0,
+    "retain_condition": true,
+    "start_cuda_rng_sha256": "0a352300ce526d9540c7b6265eff0fd74c646bbccdcf51dd7e1127188d782939",
+    "final_cuda_rng_sha256": "3e52fa5190c6e102e179ce2061082f43a3c229f47391e35433d60ca43cf0bf9d",
+    "legacy_schedule_fingerprint": "d20788548a33edfdebbe0cfdb77ffaf977ef0d389102180ec11a19d124a10d2c",
+    "fresh_pair_noise_trace": true
+  }
+}

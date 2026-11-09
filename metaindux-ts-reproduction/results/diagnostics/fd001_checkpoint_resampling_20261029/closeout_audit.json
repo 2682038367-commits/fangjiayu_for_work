@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "generated_batches": 6,
+  "discriminator_evaluations": 30,
+  "matched_rng_states": true,
+  "labels_identical": true,
+  "checkpoints_unchanged": true,
+  "source_input_hashes_unchanged": true,
+  "finite_data": true,
+  "distinct_samples": true,
+  "raw_score_identity": true,
+  "completed_at": "2026-10-29T19:13:51.754729+08:00"
+}

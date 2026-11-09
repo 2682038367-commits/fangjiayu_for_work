@@ -1,0 +1,27 @@
+{
+  "inputs_sha256": {
+    "count": 64,
+    "failed": []
+  },
+  "outputs_sha256": {
+    "count": 43,
+    "failed": []
+  },
+  "checkpoint_sha256": {
+    "count": 6,
+    "failed": []
+  },
+  "passed": true,
+  "complete_training_runs": 2,
+  "updates_each": 11410,
+  "epoch_states_each": 70,
+  "full_parameter_comparison": [
+    "best",
+    "phase",
+    "final70"
+  ],
+  "sample_count": 41539,
+  "discriminator_fits": 5,
+  "noise_anchor_matched": true,
+  "summary_recomputed": true
+}

@@ -1,0 +1,3 @@
+weight,overall_improves,target_improves,target_improved_generation_seeds,majority_target_pass,other_bins_guard_pass,max_other_bin_rmse_change_percent,overall_mse_engine,eligible,selected
+2,False,False,2,False,False,7.31474864430306,380.84923868358953,False,False
+4,True,True,4,True,False,10.729942111850832,362.2239078810811,False,False

@@ -1,0 +1,107 @@
+{
+  "run_id": "diagnostic-conditional-signal-w48-20261022",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261022-conditional-signal-diagnostic",
+  "status": "complete",
+  "started_at": "2026-10-22T09:35:51.394033+08:00",
+  "inputs_sha256": {
+    "analysis/diagnostics/conditional_signal_audit.py": "2f06f4ca2e28f31777426e55d54304bfad5d3fd14d337060c8aeb662e814f3da",
+    "upstream/data/CMAPSSDataset.py": "7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03",
+    "SOURCE_SNAPSHOT.md": "0768ca7431f52f05bc7115b0fa45d1a22e72238ef8e2a2dc510985f5f9882bc2",
+    "upstream/data/train_FD001.txt": "963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8",
+    "upstream/data/test_FD001.txt": "3cda7109ce17bafb5443f2ac926cfcf88154b941b8c4cf95eb55d1ddd6f52851",
+    "upstream/data/RUL_FD001.txt": "a19c8ec94931949d0485bdc35118206e9c81c4547b422efb9cf86f4ceddbceca",
+    "outputs/FD001_w48_seed3.npz": "71a1c46fe6d5dcdac9ee9f8376bbdf3efc422df1855a0d321846a7b0d5599bbb",
+    "outputs/FD001_w48_seed13.npz": "efd3de90e0876255c5fd9093ff0842e97cb1ec8d9e3f6b3fd4509f3a883ea4b2",
+    "outputs/FD001_w48_seed23.npz": "f17a1304362e950606ec5b10306ebcf627c23309f54bbeced0a748e03b24099a",
+    "outputs/FD001_w48_seed33.npz": "fa01fb41e4862cb3666c97c438079cf8e80a1baf189c698504d73bf5317d60c6",
+    "outputs/FD001_w48_seed43.npz": "2b768522903b00bcb8c7019520cccf01b6437c03f2cfb05f25a8363b20e8ec81",
+    "upstream/data/train_FD002.txt": "dac6c4dbc4e7c1bdeb5747da3d313d05c395bb99801b44a002b26a2ba13d788f",
+    "upstream/data/test_FD002.txt": "de7b5bf7e998a985c378488480528b7c02cff1406a46740def362dda8d9b4e02",
+    "upstream/data/RUL_FD002.txt": "c851dd96a6ea6998d3c4a8f834d3c8013aa90e93a6ed950dc826ad0655b2906b",
+    "outputs/FD002_w48_seed3.npz": "005757e7f342b5a184b777928af6cdf86f10c462f9e9bed0ad6dbc4431cb868a",
+    "outputs/FD002_w48_seed13.npz": "b2e42b0373b66c275447d16f6c6e28f39d7a1edc5b5dc3e40d559109c406d7d2",
+    "outputs/FD002_w48_seed23.npz": "c1d0910832ae9d3086479c6082ce92ff0b1402c22ec28548c1fb423295d0d0cc",
+    "outputs/FD002_w48_seed33.npz": "e5525bae1bf6ca71d412805068c540db6c615faca488014b956229f06303a72d",
+    "outputs/FD002_w48_seed43.npz": "a45ff41bea024064cfc0ac6cc7e09998c71b7e49ed2cbbb04240893777e66fa8",
+    "upstream/data/train_FD003.txt": "2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2",
+    "upstream/data/test_FD003.txt": "299babd63c8d987cef079c4a425429f33b3a34797d803bbe2ad48c29dbd0d790",
+    "upstream/data/RUL_FD003.txt": "df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb",
+    "outputs/FD003_w48_seed3.npz": "3a81741bd58826f435ece99178ad00ff06367c0c94f51f6c95c23332b2315cdc",
+    "outputs/FD003_w48_seed13.npz": "7191b70f90631f87e8265777df76bbe8ec06e495118a8bdbc49331efa34f68a5",
+    "outputs/FD003_w48_seed23.npz": "ab4cb2111fdd613ebfd05bbb27492dcb92c1214d3c88fffab0f272642a21d5df",
+    "outputs/FD003_w48_seed33.npz": "61c07cbb44b5ba739e846fcc9bf7dc37c710884a72b22ab34816737e53150f14",
+    "outputs/FD003_w48_seed43.npz": "121c2b1926e4ab7a479a93a66c1f3d3835a7321d5fad92461054fee6169b7b7a",
+    "upstream/data/train_FD004.txt": "27ef6160b6a1dcb2613a88de9c239f763b223f02cdc41dc5cdedc5dc189b6218",
+    "upstream/data/test_FD004.txt": "1dc675fff0624bac10786927c6715b37d1297657137400d2b1a3138d777a3ba5",
+    "upstream/data/RUL_FD004.txt": "196b836b85a95ac7fdbbf29c5fdf1657382eafa445644d114ffaaf50dc2975e1",
+    "outputs/FD004_w48_seed3.npz": "825b96aa724cb85c8b4bed383b83f9f54d2fc5431ff0057dcd05bcc58eb13963",
+    "outputs/FD004_w48_seed13.npz": "a34db9c99e06ae76d0c2ed6cf20659f52af70c7615efe7eebf30edd013d85185",
+    "outputs/FD004_w48_seed23.npz": "016166976d1e45748c0df6ad636eaf903fee1ed250771122a8c20330c47ed0f8",
+    "outputs/FD004_w48_seed33.npz": "cd82fe2d97dcfa4d13f5e90e890da52e163bc4a8e8e4332dc5ace286fee52a52",
+    "outputs/FD004_w48_seed43.npz": "ff006524538d11df9a4e11f61998c94e651ddd88474050e3464fbeedb59c641f"
+  },
+  "seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "cap_windows_per_bin": 600,
+  "bins": [
+    [
+      "0-30",
+      0,
+      30
+    ],
+    [
+      "31-60",
+      31,
+      60
+    ],
+    [
+      "61-90",
+      61,
+      90
+    ],
+    [
+      "91-124",
+      91,
+      124
+    ],
+    [
+      "125",
+      125,
+      125
+    ]
+  ],
+  "device": "cpu",
+  "no_training": true,
+  "command": "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python analysis/diagnostics/conditional_signal_audit.py",
+  "numpy": "1.23.5",
+  "source_snapshot": "SOURCE_SNAPSHOT.md",
+  "sampling": "disjoint real engine halves, exact-RUL matched A/B/generated; window bootstrap not used",
+  "elapsed_seconds": 15.580467462539673,
+  "output_hashes": {
+    "conditional_sensor_means.pdf": "b597dcf74b0c02760fa0d7f98aaa12d6b3072c7fa96ece0017bbfbd74398a7c2",
+    "correlation_matrices.npz": "56a3ac680f6b5596cbb09040003beee4f781cf88af860aa1c56e1408afe01bb5",
+    "signal_diagnostics.pdf": "c265c20f4b6b056502f28171d46f4c5613e4454cd174325fbb10a27ead2eaff7",
+    "selected_indices.npz": "bf32d18d0dda00ee0dcab5269d3ac4b1665d1f851da1539fede3c15517508af4",
+    "sensor_metrics.csv": "c1cca4de8d9af4bfe80250340a86d002e28e0001a5c55a7c0ba1ccb604c39c2d",
+    "overview.json": "c254f908d9ec1dd77ebe6e913445a0c5ccd4971686f7f1f50c4179bb06280de8",
+    "seed_means_equal_bin_weight.csv": "8e1755124582272333a8154dcbfde11e14782d0cffe661a5d2094b90842f0a33",
+    "plotted_sensors.json": "497f5ae575b98b1ff8d95b76e07c4ebc3b6a60fb4699808a57c8813ce7c3e08a",
+    "conditional_sensor_means.png": "5cd42547355138a8b3676ac7ea85eb2449e20dc1a2ecf4fbd6fc4d7b6b1b1b0a",
+    "channel_pairs.csv": "6ab9258f8c80ae6e31e6b68cbaef01f13ae513f9a0d977f750662ab9e7b03e28",
+    "conditional_separation.csv": "364f61a41709ea16cc3cb44a0d4b44b7a90a56e48700e8cbbf73e0adc0bde4d2",
+    "signal_diagnostics.png": "2271fbcb4abeb9f3ccc77b9f56400ef7bfee9f34f91bcae3c4a37c37dccd83da",
+    "metrics_by_seed_bin.csv": "b6990a6b60c5e1484f6477c6e1cd013328a4a5e535a9a47fb1e211028a7ece73",
+    "summary_by_bin.csv": "47ee6ddb86dabffc4fd95e4eed0dedb090d713c43d6eee5d735062d585a24bf8"
+  },
+  "finished_at": "2026-10-22T09:36:06.977099+08:00",
+  "report_script_sha256": "e2c6c01d99ec5e458510fb592b4f67b136701234bfcafc57c106d8e62803e467",
+  "report": "docs/conclusions/final/conditional_signal_diagnostic_w48.md",
+  "report_sha256": "3c64ac7d33b4513e5b9e902133803b8d1e5469bade0bfa27c5c47e03fab45e8b"
+}

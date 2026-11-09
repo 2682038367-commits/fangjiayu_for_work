@@ -1,0 +1,16 @@
+{
+  "service": "metaindux-fd001-sampling-dropout-paired-20261030.service",
+  "main_pid": 1263020,
+  "status": "active/running",
+  "started_at": "2026-10-30T10:03:53.631000+08:00",
+  "checked_at": "2026-10-30T10:08:24.482765+08:00",
+  "sample_progress": {
+    "checkpoint_seed": 13,
+    "sampling_seed": 103,
+    "completed_batches": 15,
+    "total_batches": 63,
+    "elapsed_seconds": 258.6137294769287,
+    "matched_noise_tensors": 15000,
+    "updated_at": "2026-10-30T10:08:15.377401+08:00"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "source_hashes_verified": true,
+  "same_real_windows_labels": true,
+  "source_engine_equal_mse_reproduced": true,
+  "bias_engine_equal_not_window_equal": true,
+  "mse_parent_contribution_closure": true,
+  "cached_predictors": 10,
+  "new_training_sampling_inference": 0
+}

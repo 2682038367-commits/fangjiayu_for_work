@@ -1,0 +1,20 @@
+{
+  "fits": 2,
+  "alpha": 1.0,
+  "solver": "svd",
+  "A_shape": [
+    14886,
+    42
+  ],
+  "B_shape": [
+    14886,
+    46
+  ],
+  "features_only": true,
+  "labels_only_as_training_targets": true,
+  "no_RUL_stage_or_engine_ID_features": true,
+  "prototype_assigned_without_RUL": true,
+  "standardization": "frozen train cluster mean/scale",
+  "onehot_scaling": "none",
+  "prediction_clipping": false
+}

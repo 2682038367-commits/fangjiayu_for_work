@@ -1,0 +1,15 @@
+{
+  "status": "failed_audit_compatibility",
+  "failed_at": "2026-11-03T09:04:33.951991+08:00",
+  "reason": "Raw dataset is ignored by git; git show cannot retrieve it. No model computation/metrics failed; correct provenance check to explicit dated manifest hash, retain historical uncertainty.",
+  "files_sha256": {
+    "runs/diagnostic-fd002-seed43-rerun-audit-20261103/attempt1/available_git_source_diff.patch": "87d57725838275409bd4496b7e59a82c93e0d7b234b0a7b2e60951c247638e96",
+    "runs/diagnostic-fd002-seed43-rerun-audit-20261103/attempt1/console.log": "16faa28e4f54e4e141eae71fcfab396c04cedc99c727a0d817d9c41db8164557",
+    "runs/diagnostic-fd002-seed43-rerun-audit-20261103/attempt1/first_epoch_rounded_log_comparison.json": "82e79a9aa79bdd5f78723769b5cab8c0fb42f09e1ee6603110de7e3ee168dff2",
+    "runs/diagnostic-fd002-seed43-rerun-audit-20261103/attempt1/rng_reconstruction.json": "f12868da003ee7658161980b33ecc22b362060104bad552607f9200e13370162",
+    "runs/diagnostic-fd002-seed43-rerun-audit-20261103/attempt1/audit_fd002_seed43_rerun.py": "c033d38227df8eafba7096084bf37974152d6de384b61ab2d61e657c7c3682da",
+    "runs/diagnostic-fd002-seed43-rerun-audit-20261103/attempt1/epoch_loss_comparison.csv": "80b376d2c8f79c14b0e3b4f7cafea4f4d7b2a1b9c8fc233401c706522e36ae5b",
+    "runs/diagnostic-fd002-seed43-rerun-audit-20261103/attempt1/original_resolved_config.json": "0a0b61df7961603059a1200e73c72e504bfca102d5dd5ef4b2407c690407af6a",
+    "runs/diagnostic-fd002-seed43-rerun-audit-20261103/attempt1/rerun_resolved_config.json": "fea5e3aa0762a7a1018255648168d6734eefa6f269ce33fd9175ab68c5f8d348"
+  }
+}

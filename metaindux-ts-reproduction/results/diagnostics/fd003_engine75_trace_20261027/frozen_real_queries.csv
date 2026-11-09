@@ -1,0 +1,12 @@
+query_id,role,window,engine_id,rul
+test75,real_test,-1,75,45
+train2_w368,real_train_neighbor,368,2,49
+train60_w12592,real_train_neighbor,12592,60,40
+train33_w7213,real_train_neighbor,7213,33,43
+train38_w8520,real_train_neighbor,8520,38,40
+train45_w9855,real_train_neighbor,9855,45,46
+dev33_w7208,real_dev_neighbor,7208,33,48
+dev60_w12586,real_dev_neighbor,12586,60,46
+dev38_w8510,real_dev_neighbor,8510,38,50
+dev2_w372,real_dev_neighbor,372,2,45
+dev97_w19510,real_dev_neighbor,19510,97,46

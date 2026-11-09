@@ -1,0 +1,61 @@
+{
+  "status": "complete",
+  "identity": "20261102 original-convolution seed43 rerun epoch67, recently re-sampled with fixed paths; not latest20261105native repeats and not fixed-training30/70",
+  "checkpoint_epoch": 67,
+  "reused_DS": 0.17716658642272504,
+  "primary": {
+    "segment": "all",
+    "rmse_engine": 29.588074446973682,
+    "mean_predictor_rmse_engine": 29.587624391253712,
+    "sd_predictor_rmse_engine": 0.18245671317317147,
+    "rmse_window": 29.512445784191176
+  },
+  "per_predictor": [
+    {
+      "evaluator_seed": 3,
+      "rmse_engine": 29.314794796350316,
+      "rmse_window": 29.28900174634834
+    },
+    {
+      "evaluator_seed": 13,
+      "rmse_engine": 29.79922807086076,
+      "rmse_window": 29.753546510304304
+    },
+    {
+      "evaluator_seed": 23,
+      "rmse_engine": 29.6208583047873,
+      "rmse_window": 29.591094958576715
+    },
+    {
+      "evaluator_seed": 33,
+      "rmse_engine": 29.522710840877536,
+      "rmse_window": 29.39291816291748
+    },
+    {
+      "evaluator_seed": 43,
+      "rmse_engine": 29.680529943392635,
+      "rmse_window": 29.533482500480897
+    }
+  ],
+  "reference_overall": [
+    {
+      "reference": "fixed_training_epoch30",
+      "segment": "all",
+      "reference_RMSE": 27.63635805705346,
+      "ds017_RMSE": 29.588074446973682,
+      "delta_RMSE": 1.9517163899202217,
+      "relative_change": 0.0706213309977759,
+      "improving_predictor_seeds": 0
+    },
+    {
+      "reference": "fixed_training_epoch70",
+      "segment": "all",
+      "reference_RMSE": 31.39626673404208,
+      "ds017_RMSE": 29.588074446973682,
+      "delta_RMSE": -1.8081922870683975,
+      "relative_change": -0.057592589029313634,
+      "improving_predictor_seeds": 5
+    }
+  ],
+  "caveat": "Internal exploratory validation seen by generator/MinMax; one DS-selected generated batch. Cross-training references do not isolate checkpoint selection or cuDNN effects."
+}

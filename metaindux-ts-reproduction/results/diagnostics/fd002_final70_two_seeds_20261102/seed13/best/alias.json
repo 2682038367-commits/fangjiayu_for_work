@@ -1,0 +1,6 @@
+{
+  "generator_seed": 13,
+  "rule": "best",
+  "canonical_rule": "phase",
+  "reason": "Exact named tensor equality, no independent sampling/evaluation"
+}

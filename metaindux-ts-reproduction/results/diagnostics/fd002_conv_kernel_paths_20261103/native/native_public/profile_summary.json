@@ -1,0 +1,15 @@
+{
+  "mode": "native",
+  "warmup_loss": 1.3373186588287354,
+  "measured_loss": 1.3373186588287354,
+  "warmup_output_sha256": "d9489e18a464c5c72bbc431f24b8c7f59a3f927230c728a7bb741b0a048245c5",
+  "measured_output_sha256": "d9489e18a464c5c72bbc431f24b8c7f59a3f927230c728a7bb741b0a048245c5",
+  "warmup_measured_exact_output_equal": true,
+  "full_first_batch_forwards": 2,
+  "convolutions_measured": 35,
+  "backward_calls": 0,
+  "optimizer_updates": 0,
+  "benchmark": true,
+  "deterministic": false,
+  "global_deterministic_algorithms": false
+}

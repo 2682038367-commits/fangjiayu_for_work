@@ -1,0 +1,25 @@
+{
+  "scope": "Read-only historical threshold diagnostic summary",
+  "dataset": "FD002",
+  "window": 48,
+  "seeds": [
+    3,
+    13,
+    23,
+    33,
+    43,
+    53,
+    63
+  ],
+  "evaluators": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "statistics_unit": "7 generator trainings per full arm, not35 independent generator runs",
+  "old_three_seed_subset": "13/23/43: targeted diagnostic, superseded by complete7seed effect inference",
+  "source_priority": "Raw formalCSV > frozen numbers and current audited quantile report > legacy exploratory narratives",
+  "stop": "Summarize existing results and corrections only; no training, sampling, gradient probe, new sweep or default adoption"
+}

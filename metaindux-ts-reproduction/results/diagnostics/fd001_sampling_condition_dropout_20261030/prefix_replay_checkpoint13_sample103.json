@@ -1,0 +1,8 @@
+{
+  "checkpoint_seed": 13,
+  "sampling_seed": 103,
+  "max_absolute_difference": 0.00010985136032104492,
+  "bit_identical": false,
+  "tolerance": 1e-06,
+  "passed": false
+}

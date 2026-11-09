@@ -1,0 +1,7 @@
+{
+  "decision": "两项检查都有正向证据（限于预设形态指标和固定岭回归探针）",
+  "repeated_shape_contrasts": 3,
+  "probe_improves_both": true,
+  "few_engine_driven": false,
+  "limits": "exploratory3features/6pairs,no multiplicity correction; same frozen split; no claim of causal degradation or diffusion benefit"
+}

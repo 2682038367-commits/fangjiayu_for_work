@@ -1,0 +1,104 @@
+{
+  "run_id": "diagnostic-fd002-real-reference-engine-pairs-20261106",
+  "status": "complete",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261106-fd002-real-reference-engine-pairs",
+  "started_at": "2026-11-06T15:28:21.033269+08:00",
+  "config": {
+    "dataset": "FD002",
+    "window": 48,
+    "primary_generators": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "predictor_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "input": "Existing formal original5x5 generated-trained predictions and existing5real-trained predictions, same259terminal48windows",
+    "bins": [
+      [
+        "0-30",
+        0,
+        30
+      ],
+      [
+        "31-60",
+        31,
+        60
+      ]
+    ],
+    "per_engine_quantities": {
+      "extra_prediction": "mean_e(pred_generated[g,e,i] - pred_real[e,i])",
+      "extra_squared_error": "mean_e((pred_generated[g,e,i]-y_i)^2) - mean_e((pred_real[e,i]-y_i)^2)"
+    },
+    "pairing": "Same engineID and evaluator seed; verify labels and terminal-window parent source before selecting102lowRUL engines",
+    "signs": "Extra prediction>0 only means higher than real-trained reference, not necessarily greater than truth. ExtraSE>0 means worse meanSE.",
+    "concentration": "Count positive extraSE and joint positive metrics; largest5positive extraSE contributions / sum positive extraSE. Report improvements separately, never divide by net change.",
+    "common_groups": {
+      "user_named_common3": [
+        3,
+        23,
+        33
+      ],
+      "all5": [
+        3,
+        13,
+        23,
+        33,
+        43
+      ],
+      "extra_pair_23_43": [
+        23,
+        43
+      ]
+    },
+    "decision": "Describe low-stage common error additions versus localized43tail; no new mechanism/label-cause claims",
+    "stop": "Only this paired lowRUL analysis; no training, sampling, model inference, raw sensor/neighbor investigation or test-driven fitting"
+  },
+  "user_authorization": "Explicit one per-engine pairing against real-trained predictors on FD0020-30/31-60 using existing259engine predictions; no new training",
+  "inputs_sha256": {
+    "analysis/diagnostics/fd002_real_reference_engine_pairs.py": "6d23fb23a640c3da411fd75a65f44222ce9d950218925ce93207707fa766352e",
+    "docs/operations/FD002_REAL_REFERENCE_ENGINE_PAIRS.md": "040899d4a438d88d8b56bf19056c97ae23c42c617560ec7e2b713722b924faf9",
+    "results/diagnostics/rul_segment_errors_w48/predictions.csv": "c4d8b20d097dd36c47a6125ab1eec669bc0c247a8cfbcb47d6e69294ecabf1fa",
+    "analysis/diagnostics/rul_segment_errors.py": "5587e5e0837c6e675473a4ca1b341e417b64549a0737810cd5fae1ade292f12d",
+    "upstream/data/RUL_FD002.txt": "c851dd96a6ea6998d3c4a8f834d3c8013aa90e93a6ed950dc826ad0655b2906b",
+    "results/fd002_evaluation_stability_paper70_raw.csv": "85d29acd7e7b7c7571e534091e9dc8d4041d63325c1594dfc0e8864594a7871e",
+    "results/real_data_baseline_w48.csv": "971f80334fba6610bd1245454f4dd91bbb55bc9ca49492ee551758dc4d1ce827",
+    "results/diagnostics/fd002_formal_test_protocol_audit_20261106/test_engine_endpoints.csv": "863e5540b076703dc6287297eac32d36ebb9457c52e5299176a2a462a874d9a0",
+    "runs/diagnostic-fd002-real-reference-engine-pairs-20261106/source/fd002_real_reference_engine_pairs.py": "6d23fb23a640c3da411fd75a65f44222ce9d950218925ce93207707fa766352e",
+    "runs/diagnostic-fd002-real-reference-engine-pairs-20261106/source/rul_segment_errors.py": "5587e5e0837c6e675473a4ca1b341e417b64549a0737810cd5fae1ade292f12d",
+    "runs/diagnostic-fd002-real-reference-engine-pairs-20261106/source/FD002_REAL_REFERENCE_ENGINE_PAIRS.md": "040899d4a438d88d8b56bf19056c97ae23c42c617560ec7e2b713722b924faf9",
+    "runs/diagnostic-fd002-real-reference-engine-pairs-20261106/source/prediction-parent-manifest.json": "e4e463d080ea47788707d4a301d4189bc11f2f8fdeafd7fb16b8a4484fe638d3",
+    "runs/diagnostic-fd002-real-reference-engine-pairs-20261106/config.json": "e6dd3976a79bbd89beabb451dc169a206e74cce492789d1462c327f27eadf3ba"
+  },
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/analysis/diagnostics/fd002_real_reference_engine_pairs.py"
+  ],
+  "git_head": "df7e83b2e14317db34a23049db973ec83aa52065",
+  "completed_at": "2026-11-06T15:28:21.528798+08:00",
+  "outputs_sha256": {
+    "results/diagnostics/fd002_real_reference_engine_pairs_20261106/positive_error_concentration.png": "f55e9d790c1fe240eb614c26279813994d37fa24633ccbf0d16a68f1bc8e5cdb",
+    "results/diagnostics/fd002_real_reference_engine_pairs_20261106/per_predictor_engine_pairs.csv": "446b2758e1878cb08e6dba12945e79ee82aaefd745955338736b57600b63c2dc",
+    "results/diagnostics/fd002_real_reference_engine_pairs_20261106/stage_summary.csv": "aeec6fc5513697ca736e5a302749e45c0b62a2698d4d7ed54a85be5d964becc4",
+    "results/diagnostics/fd002_real_reference_engine_pairs_20261106/largest5_positive_extraSE.csv": "d5f23d7e4a853270f4e944420d3e9444deaad244461db5211db405ed0250ca8b",
+    "results/diagnostics/fd002_real_reference_engine_pairs_20261106/positive_error_concentration.pdf": "eb3968fa0ddf996bd02d13ed1d89d77c0413d80f7c44ca2f0c22cc937ce58803",
+    "results/diagnostics/fd002_real_reference_engine_pairs_20261106/overlap.json": "7cb56578ffff81bb892645f96cc33c92f152d15ec51494c08d45576b6b30ddb2",
+    "results/diagnostics/fd002_real_reference_engine_pairs_20261106/summary.json": "cb557b872501c0f0b77090c2a20ffa6dea1e9dec5efba00cc3e3c0b0d71e9151",
+    "results/diagnostics/fd002_real_reference_engine_pairs_20261106/per_engine_pairs.csv": "dcbef203726b4aa3120ca12a370b6d311aedaa3c7d3a44842292e3a443404a0c",
+    "results/diagnostics/fd002_real_reference_engine_pairs_20261106/engine_overlap_membership.csv": "8e4f8da3c40b13e92a6338e54f6960a09bcbb56ffeb1621b794d2e46a92ca6fc",
+    "results/diagnostics/fd002_real_reference_engine_pairs_20261106/source_prediction_replay.csv": "5b7ec25ffb62f8205b855ceba0e6e6af9915f0aaf5ac2f8bf7820cfaa49ba772",
+    "docs/conclusions/final/fd002_real_reference_engine_pairs_20261106_report.md": "ecc2ee3be7e1f21ce6c155fc6ec58733b55deabd2f8af7a9d2bdd599aff50fa7"
+  },
+  "new_training": 0,
+  "new_sampling": 0,
+  "new_inference": 0
+}

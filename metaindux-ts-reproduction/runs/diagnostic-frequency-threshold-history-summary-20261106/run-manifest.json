@@ -1,0 +1,79 @@
+{
+  "run_id": "diagnostic-frequency-threshold-history-summary-20261106",
+  "status": "complete",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261106-frequency-threshold-history-summary",
+  "started_at": "2026-11-06T14:47:47.356635+08:00",
+  "config": {
+    "scope": "Read-only historical threshold diagnostic summary",
+    "dataset": "FD002",
+    "window": 48,
+    "seeds": [
+      3,
+      13,
+      23,
+      33,
+      43,
+      53,
+      63
+    ],
+    "evaluators": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "statistics_unit": "7 generator trainings per full arm, not35 independent generator runs",
+    "old_three_seed_subset": "13/23/43: targeted diagnostic, superseded by complete7seed effect inference",
+    "source_priority": "Raw formalCSV > frozen numbers and current audited quantile report > legacy exploratory narratives",
+    "stop": "Summarize existing results and corrections only; no training, sampling, gradient probe, new sweep or default adoption"
+  },
+  "user_authorization": "Summarize previously completed frequency-threshold validations",
+  "inputs_sha256": {
+    "analysis/diagnostics/summarize_frequency_threshold_experiments.py": "c53d4d210be71ee19517cceda24796c9d7efeeacf537470fc0047ba3cd013ebe",
+    "results/frequency_threshold_validation/fd002_public_arm_seven_seeds_evaluation_raw.csv": "93440fa0e96bf6580de32ab7dfb80e4fa4d06a821a1881aa9c277316e7357319",
+    "results/frequency_threshold_validation/fd002_fixed_025_seven_seeds_evaluation_raw.csv": "2fefa8b0153afdc00bcf094428cfa641f6c952cc626f958259d58f94c498cefe",
+    "results/soft_learnable_threshold/fd002_seed43_evaluation_raw.csv": "9ea02d679bd43363c17b347ef1a1d210a28833cbc1ff1aedc046afcfc6f3098c",
+    "results/soft_learnable_threshold/fd002_remaining_seeds_evaluation_raw.csv": "bb37e4f37ad3ae964b3adb5ca39609f0a2a42b844c5b90918d9a8edfeca97e58",
+    "results/binary_ste/fd002_evaluation_raw.csv": "be74fb53dc352f5ac7acd663709d31e89a9affd8f1596f357c216c2bdea237e1",
+    "results/frequency_threshold_validation/fd002_fixed_025_evaluation_raw.csv": "dc382618c848e958083187dc75408509b19ae8d8d4c5622449d05259308b9b03",
+    "results/frequency_threshold_validation/fd002_frequency_threshold_validation_report.md": "01f1e42201a4fee36b9e0cad70067ad399594071efe7173d687636ff7725bb93",
+    "results/soft_learnable_threshold/fd002_seed43_report.md": "8e35fb2a3b6c603a8d3447e3306541952757c267d2bd1af2a5d5b057fc30f4f7",
+    "notes/binary_ste_fd002_protocol.md": "0bff263a3dc3678b977c0d41411cebffa67abf3583568a4ea4930a7b8744dfdf",
+    "results/diagnostics/public_code_quantile_rmse_report.md": "0a24481961576808fe1cbb72eede9f9ede974015cae68a721d5c2bfcbf29f034",
+    "results/diagnostics/public_code_quantile_rmse.csv": "9b4f7a91abb1d8d9cd36df97354dfbfde2f9e648089bb054999aa44d578fffdd",
+    "docs/conclusions/final/theta_rmse_report.md": "5332047338e1e358a9b32d9f537c5d41b9445b6117c6e4b1ab9caf18a4c27e10",
+    "docs/conclusions/final/theta_analysis_report.md": "335084844b151b17a96bb73a8197af746da4fe9bfaf97d93bf1fd9989e39ece4",
+    "docs/conclusions/final/fd002_seven_seed_conclusion.md": "f5293c1f37a2b893a29a9c8ce80b8dc2a2a9b29f16b1c3f3ee98482ba4b53755",
+    "results/frozen_numbers.json": "7f52b6d0fe17f04993f64ad35f290d6c1769df9cb4822cf39410cc065d98926e",
+    "upstream/DiffusionFreeGuidence/Attetnion_temp.py": "edf3390f69e3204cf88ee43e3d4601c1e828d737cf27811f9b0e50aac97d2dcd",
+    "analysis/diagnostics/threshold_ste_probe.py": "6fa0ad9588f0e4e1126386e2d59bada3baff50d4b32ec2819e60f90bd6c7bd46",
+    "analysis/diagnostics/theta_rmse_analysis.py": "a4977524e8a2d4d721bf2003df19469dc47be060b882d04215a2c8837d6f7630",
+    "docs/conclusions/final/fd002_seed43_variation_stages_20261105_report.md": "5214066aed087741f6b479c887cae604ea33659c815a645b945bfad24f634d24",
+    "results/frequency_threshold_validation/fd002_public_arm_seven_seeds_manifest.json": "9c8546d8a0777871cfc3b9feb93a41b993974b322782f1e1c5822f25e8148945",
+    "results/frequency_threshold_validation/fd002_fixed_025_seven_seeds_manifest.json": "57e01b144bbc9959e1a5c8444c771a1aabfe025ffc9df6807a9667d6b42b80e4",
+    "results/soft_learnable_threshold/fd002_seed43_manifest.json": "b40c220232c2226cbb568b5005001edf567fef02881c463e292e63636ff45a9d",
+    "results/soft_learnable_threshold/fd002_remaining_seeds_manifest.json": "b631d50889673a24a001363af34a8e79c315866a06c728586bb504aa46d5c0c2",
+    "results/binary_ste/fd002_manifest.json": "c2ddc4b342947a8e00d88c45f0a7567b2769e92143dc0f4407c3cb45a5f0ce4a",
+    "runs/diagnostic-frequency-threshold-history-summary-20261106/source/summarize_frequency_threshold_experiments.py": "c53d4d210be71ee19517cceda24796c9d7efeeacf537470fc0047ba3cd013ebe",
+    "runs/diagnostic-frequency-threshold-history-summary-20261106/source/binary_ste_fd002_protocol.md": "0bff263a3dc3678b977c0d41411cebffa67abf3583568a4ea4930a7b8744dfdf",
+    "runs/diagnostic-frequency-threshold-history-summary-20261106/config.json": "d9838216495bff280d97e35310c8ac31fb637546b57ca953621a349dc4e8f015"
+  },
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/analysis/diagnostics/summarize_frequency_threshold_experiments.py"
+  ],
+  "git_head": "df7e83b2e14317db34a23049db973ec83aa52065",
+  "completed_at": "2026-11-06T14:47:47.385062+08:00",
+  "outputs_sha256": {
+    "results/diagnostics/frequency_threshold_history_summary_20261106/arm_summary.csv": "ff0700f75bd541e895081d46074096eceba891d16fdeb1d8db0c9c3e636be250",
+    "results/diagnostics/frequency_threshold_history_summary_20261106/per_generator.csv": "3d59b6eaf54d20bfd4e67837914bf28e855b0a588512f486688ff06b9a529932",
+    "results/diagnostics/frequency_threshold_history_summary_20261106/summary.json": "e8204335057814e34c8090a3e07f20cef5050b55ca2cb86d0ac3481dce812dc5",
+    "docs/conclusions/final/frequency_threshold_experiments_summary_20261106.md": "d8ff3eb761304596d43188f9476663bd381fc3fe5b915124db5cad02c85af632"
+  },
+  "new_training": 0,
+  "new_sampling": 0,
+  "new_probe": 0
+}

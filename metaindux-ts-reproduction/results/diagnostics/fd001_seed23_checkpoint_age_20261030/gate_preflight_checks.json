@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-30T13:31:48.398564+08:00",
+  "cases": [
+    "near_scores_and_proxy_pass",
+    "large_ds_difference_fails",
+    "failure_category_change_fails",
+    "large_proxy_difference_fails",
+    "large_proxy_improvement_still_different"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "failed_profiler_association_verification",
+  "failed_at": "2026-11-03T09:49:52.677448+08:00",
+  "reason": "Profiler FunctionEvent tree attaches same bias kernel twice (including unrelated CPU owner). Raw Chrome runtime-correlation sequence has one physical launch. Preserve raw data; derive authoritative sequences by unique CUDA launch correlation rather than tree multiplicity.",
+  "files_sha256": {
+    "runs/diagnostic-fd002-conv-kernel-paths-20261103/review-attempt1/console.log": "4fa646e4036e78c640f733d9c25f611d8866428b692f48c1df07454e8d99f336",
+    "runs/diagnostic-fd002-conv-kernel-paths-20261103/review-attempt1/review_fd002_conv_kernel_paths.py": "df1daebcfe4cab4fbd2644b86fb681e525e522b048b5ec3c12f6f4628784873f"
+  }
+}

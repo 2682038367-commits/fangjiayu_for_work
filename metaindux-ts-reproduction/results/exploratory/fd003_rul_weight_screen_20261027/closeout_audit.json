@@ -1,0 +1,22 @@
+{
+  "status": "passed_cuda_replay_with_cpu_numerical_note",
+  "n_models": 15,
+  "n_epochs_each": 35,
+  "n_updates_each": 1925,
+  "sample_visits_each": 490490,
+  "same_initial_parameter_hash": true,
+  "same_consumed_sample_order_hash": true,
+  "source_data_weights_hashes_verified": true,
+  "real_validation_engines": 30,
+  "validation_windows": 5134,
+  "n_per_engine_rows_recomputed": 2550,
+  "cpu_replay_all15_models": true,
+  "cpu_absolute_1e3_gate_pass": false,
+  "max_cpu_gpu_prediction_difference": 0.0095977783203125,
+  "cuda_replay_all15_models": true,
+  "max_cuda_replay_difference": 0.0,
+  "cpu_gpu_selection_identical": true,
+  "inclusive31_60_loss_boundary_checked": true,
+  "no_official_test_access": true,
+  "generator_exposure_disclosed": true
+}

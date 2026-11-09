@@ -1,0 +1,38 @@
+run_id: core-b-zeroshot-preparation-20261014
+status: prepared_not_executed
+date: '2026-10-14'
+scope_contract: scope-20261014-zeroshot
+scope_class: diagnostic
+experiment_role: supporting preparation for core:B strict-reproduction
+user_authorization: Add zero-shot reproduction to existing few-shot project
+source_snapshot: SOURCE_SNAPSHOT.md
+git_status: 'unavailable: workspace .git is not a valid git repository'
+config_sha256:
+  scripts/run_experiments.py: 88eadf98aad411b57fcb49cb27d34568177e304efc653326268eb0a3abf3e95e
+  upstream/main_fewshot.py: ea2843ff406630058b2537b2f0592df33e9203486726511f255d8c7e75cef0f0
+  scripts/run_paper_zeroshot_full.sh: ba7d62c6f2b5a84ec72d962e72b68238f800825e8ce373e9cc10d87d989750bf
+  analysis/audit/summarize_zeroshot.py: 90cd6b55c2cac64398fcbbb9ebe2156cd8c29e26138102c1a32d8b8761742405
+  configs/paper_zeroshot_full.yaml: 7ed2da40e1996d9146ea50285639255fd75c720aeb07d44f6ecb5b0efbb969c8
+  configs/paper_zeroshot_fd001.yaml: 165db470a86aabf289734d5e980ce04758e1b564f3996631a51f88953f878b7d
+  configs/evaluation_fd001_zeroshot.yaml: 54f91193887da43917b0c101bdc314eb498af60dcd50033070c97607318ab244
+  configs/evaluation_fd002_zeroshot.yaml: 54ff151e0d92efa38c82a458712129f16ea000a623bf26f91f90dc0c8e5e0857
+  configs/evaluation_fd003_zeroshot.yaml: a59e2ea447558d2aa9771306d27bf1c04623e679b8ed7e4ea7e52b9cc7d05ff7
+  configs/evaluation_fd004_zeroshot.yaml: 128ba4098786b0b1b426660bc963672ec87595760d57a486ca66d76118e3eb17
+validation:
+  syntax: pass
+  shell_syntax: pass
+  generation_commands: 20
+  zero_fatigue_training_samples: pass all four datasets
+  normal_training_counts:
+    FD001: 12831
+    FD002: 33479
+    FD003: 16920
+    FD004: 41827
+  fatigue_test_counts:
+    FD001: 25
+    FD002: 61
+    FD003: 20
+    FD004: 53
+  cuda_available: false
+metric_gap: not measured
+planned_command: bash scripts/run_paper_zeroshot_full.sh

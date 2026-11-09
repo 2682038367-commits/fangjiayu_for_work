@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "minmax_refit_train_only": true,
+  "prototype_assignment_and_frequency_recomputed": true,
+  "reporting_matches_completed_parent_metrics": true,
+  "selected_stage_uses_overall_selected_epochs": true,
+  "validation_windows": 5134,
+  "target_windows": 900
+}

@@ -1,0 +1,3 @@
+checkpoint_seed,sampling_seed,fresh_pair_trace_fingerprints_identical,control_condition_dropped_windows,intervention_condition_dropped_windows,matched_noise_tensors_per_arm,noise_audit,proxy_mse_recomputed
+13,103,True,3184897,0,63000,passed,True
+23,103,True,3184897,0,63000,passed,True

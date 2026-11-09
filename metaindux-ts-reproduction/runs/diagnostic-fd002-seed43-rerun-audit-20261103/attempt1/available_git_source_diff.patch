@@ -1,0 +1,37 @@
+diff --git a/upstream/TrainCondition.py b/upstream/TrainCondition.py
+index 81e0e79..5b87b70 100644
+--- a/upstream/TrainCondition.py
++++ b/upstream/TrainCondition.py
+@@ -116,6 +116,9 @@ def merge_frequency_threshold_observations(current, stored):
+ 
+ def train(args, train_data, train_label):
+     device = args.device
++    batch_label_zero_prob = getattr(args, 'batch_label_zero_prob', 0.1)
++    if not 0.0 <= batch_label_zero_prob <= 1.0:
++        raise ValueError('batch_label_zero_prob must be in [0, 1]')
+     best_loss = 9999
+     best_epoch = -1
+     loss_history = []
+@@ -186,7 +189,8 @@ def train(args, train_data, train_label):
+                 optimizer.zero_grad()
+                 x_0 = images.to(device)
+                 labels = labels.to(device)
+-                if np.random.rand() < 0.1:
++                # Draw even when disabled to preserve the NumPy RNG sequence.
++                if np.random.rand() < batch_label_zero_prob:
+                     labels = torch.zeros_like(labels).to(device)
+                 loss = trainer(x_0, classes = labels).sum()
+                 loss_list.append(loss.item())
+diff --git a/upstream/args.py b/upstream/args.py
+index 6650d3d..c1faf74 100644
+--- a/upstream/args.py
++++ b/upstream/args.py
+@@ -52,6 +52,8 @@ optim_group.add_argument('--fewshot_indices_path', default='', type=str)
+ optim_group.add_argument('--loss_type',default='mse',choices=['mse', 'mse+mmd'],type=str)
+ optim_group.add_argument('--sample_type',default='ddim',choices=['ddim', 'ddpm'],type=str)
+ optim_group.add_argument('--seed', default=3, type=int)
++optim_group.add_argument('--batch_label_zero_prob', default=0.1, type=float,
++                         help='Legacy whole-batch RUL zeroing probability; 0 disables only this branch.')
+ optim_group.add_argument('--loss_history_path', default='', type=str)
+ optim_group.add_argument('--metrics_path', default='', type=str)
+ 

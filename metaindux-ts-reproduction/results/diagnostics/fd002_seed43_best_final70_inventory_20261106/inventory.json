@@ -1,0 +1,108 @@
+{
+  "status": "complete_no_contrast",
+  "primary_scope": "latest_native",
+  "cells": [
+    {
+      "category": "latest_native",
+      "repeat": "repeat1",
+      "audit_path": "results/diagnostics/fd002_seed43_variation_stages_20261105/training_native/repeat1/seed43/training_audit.json",
+      "best_epoch": 70,
+      "global_minimum_epoch": 70,
+      "best_training_loss": 0.02446995362456591,
+      "final70_training_loss": 0.02446995362456591,
+      "final70_epoch": 70,
+      "best_weight": "checkpoints/diagnostics/fd002_seed43_variation_stages_20261105/repeat1/seed43/best.pth",
+      "final70_weight": "checkpoints/diagnostics/fd002_seed43_variation_stages_20261105/repeat1/seed43/final70.pth",
+      "named_tensors": 194,
+      "different_named_tensors": 0,
+      "tensors_identical": true,
+      "serialized_files_identical": false,
+      "forms_comparison": false,
+      "training_flags": {
+        "benchmark": true,
+        "deterministic": false,
+        "global_strict": false,
+        "cudnn_tf32": true,
+        "matmul_tf32": false
+      }
+    },
+    {
+      "category": "latest_native",
+      "repeat": "repeat2",
+      "audit_path": "results/diagnostics/fd002_seed43_variation_stages_20261105/training_native/repeat2/seed43/training_audit.json",
+      "best_epoch": 70,
+      "global_minimum_epoch": 70,
+      "best_training_loss": 0.029548320005093616,
+      "final70_training_loss": 0.029548320005093616,
+      "final70_epoch": 70,
+      "best_weight": "checkpoints/diagnostics/fd002_seed43_variation_stages_20261105/repeat2/seed43/best.pth",
+      "final70_weight": "checkpoints/diagnostics/fd002_seed43_variation_stages_20261105/repeat2/seed43/final70.pth",
+      "named_tensors": 194,
+      "different_named_tensors": 0,
+      "tensors_identical": true,
+      "serialized_files_identical": false,
+      "forms_comparison": false,
+      "training_flags": {
+        "benchmark": true,
+        "deterministic": false,
+        "global_strict": false,
+        "cudnn_tf32": true,
+        "matmul_tf32": false
+      }
+    },
+    {
+      "category": "earlier_fixed",
+      "repeat": "repeat1",
+      "audit_path": "results/diagnostics/fd002_fixed_conv_full70_20261105/repeat1/seed43/training_audit.json",
+      "best_epoch": 30,
+      "global_minimum_epoch": 30,
+      "best_training_loss": 0.028082059136380448,
+      "final70_training_loss": 0.030047345609387006,
+      "final70_epoch": 70,
+      "best_weight": "checkpoints/diagnostics/fd002_fixed_conv_full70_20261105/repeat1/seed43/best.pth",
+      "final70_weight": "checkpoints/diagnostics/fd002_fixed_conv_full70_20261105/repeat1/seed43/final70.pth",
+      "named_tensors": 194,
+      "different_named_tensors": 170,
+      "tensors_identical": false,
+      "serialized_files_identical": false,
+      "forms_comparison": true,
+      "training_flags": {
+        "benchmark": false,
+        "deterministic": true,
+        "global_strict": false,
+        "cudnn_tf32": true,
+        "matmul_tf32": false
+      }
+    },
+    {
+      "category": "earlier_fixed",
+      "repeat": "repeat2",
+      "audit_path": "results/diagnostics/fd002_fixed_conv_full70_20261105/repeat2/seed43/training_audit.json",
+      "best_epoch": 30,
+      "global_minimum_epoch": 30,
+      "best_training_loss": 0.028082059136380448,
+      "final70_training_loss": 0.030047345609387006,
+      "final70_epoch": 70,
+      "best_weight": "checkpoints/diagnostics/fd002_fixed_conv_full70_20261105/repeat2/seed43/best.pth",
+      "final70_weight": "checkpoints/diagnostics/fd002_fixed_conv_full70_20261105/repeat2/seed43/final70.pth",
+      "named_tensors": 194,
+      "different_named_tensors": 170,
+      "tensors_identical": false,
+      "serialized_files_identical": false,
+      "forms_comparison": true,
+      "training_flags": {
+        "benchmark": false,
+        "deterministic": true,
+        "global_strict": false,
+        "cudnn_tf32": true,
+        "matmul_tf32": false
+      }
+    }
+  ],
+  "primary_has_comparison": false,
+  "decision": "Both latest trainings selected epoch70; no paired downstream comparison exists. Stop with zero fits.",
+  "generator_trainings": 0,
+  "generated_batches": 0,
+  "predictor_fits": 0,
+  "older_fixed_pair_substituted": false
+}

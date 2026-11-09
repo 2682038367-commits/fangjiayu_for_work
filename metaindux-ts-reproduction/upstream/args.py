@@ -52,6 +52,8 @@ optim_group.add_argument('--fewshot_indices_path', default='', type=str)
 optim_group.add_argument('--loss_type',default='mse',choices=['mse', 'mse+mmd'],type=str)
 optim_group.add_argument('--sample_type',default='ddim',choices=['ddim', 'ddpm'],type=str)
 optim_group.add_argument('--seed', default=3, type=int)
+optim_group.add_argument('--batch_label_zero_prob', default=0.1, type=float,
+                         help='Legacy whole-batch RUL zeroing probability; 0 disables only this branch.')
 optim_group.add_argument('--loss_history_path', default='', type=str)
 optim_group.add_argument('--metrics_path', default='', type=str)
 

@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-02T14:37:28.448701+08:00",
+  "bound_hashes_verified": 55,
+  "prediction_arrays": 10,
+  "identical_real_window_set": true,
+  "independent_engine_first_aggregation": true,
+  "engine_equal_bias_verified": true,
+  "all_parent_contributions_independently_recomputed": true,
+  "contribution_closure": true,
+  "checks": [
+    {
+      "bin": "all",
+      "n_windows": 4875,
+      "n_engines": 30,
+      "all_predictor_mse_increases": 5,
+      "all_predictor_bias_more_negative": 5
+    },
+    {
+      "bin": "91-125",
+      "n_windows": 2156,
+      "n_engines": 28,
+      "all_predictor_mse_increases": 5,
+      "all_predictor_bias_more_negative": 5
+    },
+    {
+      "bin": "0-30",
+      "n_windows": 930,
+      "n_engines": 30,
+      "all_predictor_mse_increases": 3,
+      "all_predictor_bias_more_negative": 3
+    },
+    {
+      "bin": "31-60",
+      "n_windows": 900,
+      "n_engines": 30,
+      "all_predictor_mse_increases": 0,
+      "all_predictor_bias_more_negative": 5
+    },
+    {
+      "bin": "61-90",
+      "n_windows": 889,
+      "n_engines": 30,
+      "all_predictor_mse_increases": 0,
+      "all_predictor_bias_more_negative": 5
+    },
+    {
+      "bin": "91-124",
+      "n_windows": 894,
+      "n_engines": 28,
+      "all_predictor_mse_increases": 5,
+      "all_predictor_bias_more_negative": 5
+    },
+    {
+      "bin": "125",
+      "n_windows": 1262,
+      "n_engines": 22,
+      "all_predictor_mse_increases": 5,
+      "all_predictor_bias_more_negative": 5
+    }
+  ],
+  "no_new_models_samples_or_inference": true
+}

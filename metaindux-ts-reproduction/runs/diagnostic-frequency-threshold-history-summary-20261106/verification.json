@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "full_arms": 4,
+  "generator_runs_per_arm": 7,
+  "evaluators_per_generator": 5,
+  "shared_splits_confirmed": true,
+  "paired_fixed_effect_matches_frozen_numbers": true,
+  "retired_claims_excluded": true,
+  "new_training": 0,
+  "new_sampling": 0,
+  "new_probe": 0
+}

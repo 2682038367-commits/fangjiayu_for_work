@@ -1,0 +1,148 @@
+{
+  "index": 721,
+  "operator": "aten.convolution.default",
+  "module": "minusTrend.fn.seasonal.season",
+  "source": {
+    "path": "upstream/DiffusionFreeGuidence/Attetnion.py",
+    "line": 197,
+    "function": "forward"
+  },
+  "inputs": {
+    "kind": "dict",
+    "items": {
+      "args": {
+        "kind": "tuple",
+        "items": [
+          {
+            "kind": "tensor",
+            "sha256": "6c85107be11be5cb4a0b90a6087e37e591ec7f7d14ac18db94d87e24e043be61",
+            "artifact": "5a504b464b8b60432f1a2808a707aceb7a92da7677f6ddfeea23edb9707b14f2",
+            "shape": [
+              256,
+              32,
+              48
+            ],
+            "stride": [
+              1536,
+              48,
+              1
+            ],
+            "storage_offset": 0,
+            "data_alignment": 0,
+            "dtype": "torch.float32",
+            "device": "cuda:0",
+            "contiguous": true,
+            "requires_grad": true
+          },
+          {
+            "kind": "tensor",
+            "sha256": "75706109e56d12ffaba78e9cd15e18c0914932ae398270a2a61d3305c6c68d62",
+            "artifact": "0c9dfb850d8d5123f39a26fce652dc57ca819614ddb3ad07f84838471c044bfe",
+            "shape": [
+              16,
+              32,
+              1
+            ],
+            "stride": [
+              32,
+              1,
+              1
+            ],
+            "storage_offset": 0,
+            "data_alignment": 0,
+            "dtype": "torch.float32",
+            "device": "cuda:0",
+            "contiguous": true,
+            "requires_grad": true
+          },
+          {
+            "kind": "tensor",
+            "sha256": "f13a5a482cda7e328ddc855e87c1f310a1d4f562746a24ec75fbade281e8a2e7",
+            "artifact": "5b674295e523952c3fcb8ca48b58c4e39aef6d4eb261f5190dc2fff8865fe104",
+            "shape": [
+              16
+            ],
+            "stride": [
+              1
+            ],
+            "storage_offset": 0,
+            "data_alignment": 0,
+            "dtype": "torch.float32",
+            "device": "cuda:0",
+            "contiguous": true,
+            "requires_grad": true
+          },
+          {
+            "kind": "list",
+            "items": [
+              {
+                "kind": "scalar",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "items": [
+              {
+                "kind": "scalar",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "list",
+            "items": [
+              {
+                "kind": "scalar",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "kind": "scalar",
+            "value": false
+          },
+          {
+            "kind": "list",
+            "items": [
+              {
+                "kind": "scalar",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "scalar",
+            "value": 1
+          }
+        ]
+      },
+      "kwargs": {
+        "kind": "dict",
+        "items": {}
+      }
+    }
+  },
+  "output": {
+    "kind": "tensor",
+    "sha256": "39e757f9354908748d15494eea56305851ac00f2854b46711874df4567165e50",
+    "artifact": "ff41890def3831430027b677806864bb5eeb85bb506984481583462209512841",
+    "shape": [
+      256,
+      16,
+      48
+    ],
+    "stride": [
+      768,
+      48,
+      1
+    ],
+    "storage_offset": 0,
+    "data_alignment": 0,
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "contiguous": true,
+    "requires_grad": false
+  }
+}

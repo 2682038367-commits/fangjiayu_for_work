@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "source_records_hash_verified": true,
+  "official_test_engines": 259,
+  "verified_models": 30,
+  "lowRUL_engines": 102,
+  "paired_predictor_rows": 2550,
+  "per_engine_generator_rows": 510,
+  "labels_equal": true,
+  "merge_no_missing": true,
+  "mean_squared_errors_taken_before_subtraction": true,
+  "stage_mean_D_matches_separate_MSE_difference": true,
+  "positive_and_negative_increments_preserved": true,
+  "no_new_training": true,
+  "no_new_sampling": true,
+  "no_new_inference": true
+}

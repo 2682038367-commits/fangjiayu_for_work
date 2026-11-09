@@ -1,0 +1,35 @@
+{
+  "status": "complete",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "started_at": "2026-11-03T09:30:22.944395+08:00",
+  "purpose": "Same identified convolution/module with a NEW explicitly frozen local input from third capture; not an exact replay of original paired activations",
+  "budget": {
+    "full_forwards": 0,
+    "operator_calls": 4,
+    "optimizer_updates": 0
+  },
+  "inputs_sha256": {
+    "analysis/diagnostics/probe_fd002_local_convolution.py": "c638e1a09daadc7a01ba1d58c6146290332dea52881abbb52acf8940cfce5d28",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/native_public/operators.json": "fae1f2999e19c2d0b521c051462aa407be3a8c08f133210894f72bd375710c64",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/frozen_operator.json": "1ac58fabdc15e70a3b077060d4455c08635d60d378a564de451e111172aa36b6",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/tensors/5a504b464b8b60432f1a2808a707aceb7a92da7677f6ddfeea23edb9707b14f2.pth": "a397a32faa8f6d315c9b57bb9b4e46329211ed81120faf6e4a34b36359b0d0f2",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/tensors/0c9dfb850d8d5123f39a26fce652dc57ca819614ddb3ad07f84838471c044bfe.pth": "bdaeb99682c2c87589c53d01345179d4bf7ff80f88e380745d759eb8befaa53c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/tensors/5b674295e523952c3fcb8ca48b58c4e39aef6d4eb261f5190dc2fff8865fe104.pth": "87bc4f27920167cd42ea398272e7cf08b203f197487a1506f70d60281b51e230",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/source/localization_manifest_before_confirmation.json": "8073ec76c29e3a0a41573f81b7064b11b91eb031c8b9388d5e6f98f9b0d572fb",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/source/confirmation_manifest_used_for_local_probe.json": "0c481f076b65cfd3adfb935255bd4911ce2d094c0008457dabd8b1b797b61d9e"
+  },
+  "completed_at": "2026-11-03T09:30:25.450331+08:00",
+  "outputs_sha256": {
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process2_local_deterministic.pth": "3e7b695ffd35bf889d3798d4d64422043cbecb7bbea5cf3a3e0af9d2f30f3f43",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process2.json": "e9c9168145c9872689ecf17da7adba762f65128af576357b687ae634c8ca5784",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process1_native.pth": "348278c657fbd48bf57ca674cb9051da8612529e4ed2039c52f9b4ee9e1fab76",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process2_console.log": "aedf120a1b659a2cd54af0acf024e3a65c339f655fdbae33ae27c18c92e7c8e5",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process1_local_deterministic.pth": "63f9236276cc424a9eaf2526ddbd44b0c309c739fee4149e6bea468cc11000a0",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/frozen_operator.json": "1ac58fabdc15e70a3b077060d4455c08635d60d378a564de451e111172aa36b6",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process1_console.log": "aedf120a1b659a2cd54af0acf024e3a65c339f655fdbae33ae27c18c92e7c8e5",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process1.json": "73cf2754d6b197d756f922908dff134430d31b2a781f006d9628e9a2cd15a4e9",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process2_native.pth": "71fb23511fca07716edc09cc2baaea2feb4013c13e2f59fff37a1458e4468b62"
+  },
+  "parent_version_note": "Immutable exact parent versions preserved before final report sealing; execution parameters/source unchanged."
+}

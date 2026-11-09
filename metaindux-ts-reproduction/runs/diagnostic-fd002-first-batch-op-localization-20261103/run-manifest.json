@@ -1,0 +1,719 @@
+{
+  "run_id": "diagnostic-fd002-first-batch-op-localization-20261103",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261103-fd002-first-batch-op-localization",
+  "status": "complete",
+  "prepared_at": "2026-11-03T09:24:12.430540+08:00",
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "-u",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/scripts/localize_fd002_first_batch_ops.py",
+    "run"
+  ],
+  "user_authorization": "定位首批中第一个输出不同的算子",
+  "config": {
+    "seed": 43,
+    "first_batch_only": true,
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "initial_trace_forwards": 2,
+    "raw_tensor_prefix_ops": 256,
+    "environment": {
+      "OMP_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "1",
+      "TF_DETERMINISTIC_OPS": "1",
+      "TF_ENABLE_ONEDNN_OPTS": "0",
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+      "WANDB_MODE": "offline",
+      "TF_CPP_MIN_LOG_LEVEL": "2"
+    },
+    "stop": "after first forward before backward; locate first unequal output with identical full inputs; limited standalone operator confirmation only"
+  },
+  "git_head": "be3faf93adfdaf6c2bcde50d116dfb1aa007e74f",
+  "inputs_sha256": {
+    "scripts/localize_fd002_first_batch_ops.py": "4fae2a47093581d520e587c6f01706e48f5e89fb298c614bedb8896c968cf9df",
+    "docs/operations/FD002_FIRST_BATCH_OP_LOCALIZATION.md": "eeffd0a1cabf061cd4bce32953876c4a6aae2d8da50ed9007c0b433e82ae7f20",
+    "runs/diagnostic-fd002-seed43-first-epoch-trace-20261103/run-manifest.json": "cca265a54901519f7a8b37c1252e392bc64a48d8e8c4d5baf4a4873b553571a2",
+    "runs/diagnostic-fd002-seed43-first-epoch-trace-20261103/postreview-manifest.json": "7b4c0bdba83d0555780ecc3e3901f2c09a8bf9e2f3aff0b4e39769d5b172a30f",
+    "results/diagnostics/fd002_seed43_first_epoch_trace_20261103/native_public/initial_state.pth": "67d1dda6d21cb900833e224e7cec1b54719bcca72544f0b4d643e1a27b3fc598",
+    "results/diagnostics/fd002_seed43_first_epoch_trace_20261103/native_worker/initial_state.pth": "67d1dda6d21cb900833e224e7cec1b54719bcca72544f0b4d643e1a27b3fc598",
+    "results/diagnostics/fd002_seed43_first_epoch_trace_20261103/native_public/tapes/0001.pth": "55f05b814acdd9d0bcb36c02fcf06d1cabccb1aac6f33d7a7cae386b0ea72e56",
+    "results/diagnostics/fd002_seed43_first_epoch_trace_20261103/native_worker/tapes/0001.pth": "55f05b814acdd9d0bcb36c02fcf06d1cabccb1aac6f33d7a7cae386b0ea72e56",
+    "results/diagnostics/fd002_seed43_first_epoch_trace_20261103/native_public/trace.json": "b73386204be973c44a20f4f85913eb40d29907f1515c027b63c33e874dec7730",
+    "results/diagnostics/fd002_seed43_first_epoch_trace_20261103/native_worker/trace.json": "1917761f1ef6eacb4794e4ff1dbdf739a6a47ff96f0a125acef352fa69719718",
+    "scripts/run_fd002_first_epoch_trace.py": "17b1aef6a0d2c5b1071dda476b4307726990299abe195e07c198d04b7c4794cc",
+    "scripts/run_fd002_final70_two_seeds.py": "81bcad7e468be040cc5b0f6ced5f83517141d6d9755edbf3c7568d96c2379c03",
+    "runs/diagnostic-fd002-final70-two-seeds-20261102/frozen_inputs.npz": "72dc6875c1249576794858f12f89f3e967506b630bec95ef1ce8e6b6ff1b384b",
+    "upstream/main_fewshot.py": "ea2843ff406630058b2537b2f0592df33e9203486726511f255d8c7e75cef0f0",
+    "upstream/eva_regressor.py": "4c7d02b77312e88d0338ad3b80189f325a81b0b47f2c7eed1a063f7427c85168",
+    "upstream/TrainCondition.py": "ebd251f1a8224cc79005784aeb7057201b396a668086e789b3391576e868da3a",
+    "upstream/MainCondition.py": "1e496df84c6c2324136a6c7b4a641faa664764a14a86a7b572c3b3019c54ba64",
+    "upstream/visualizationMetrics.py": "7df4cb8594f52eee444c4ab19c6fb38a5819047955732767c0a3b639eeff93c6",
+    "upstream/args.py": "a2d7193b5b0b066da2db37ddf19960868636ee2c311b764b5175a0a9b7cf4c6a",
+    "upstream/data_process.py": "00b17e9eaf6f5184b7561f4fed618c0891a6e273bd9b212e807482f2c6178628",
+    "upstream/utils.py": "34f9086f626a58958878a6dfe23b69fb96ad4c38cb95de80b406969b96b9a772",
+    "upstream/GaussianDiffusion.py": "8a6351232cc853ad1e06f2fe94745f17f3460eca8a24ce5fc89a509d28a74aba",
+    "upstream/DiffusionFreeGuidence/csdi.py": "c5bfbd2e1091d60cbab1f062bcfc98cf935c7a3796858726f5e181f0bcdbd83a",
+    "upstream/DiffusionFreeGuidence/Attetnion.py": "6ef40c870e265be09796a7733503bf8f7bf06dd15ec2a3a72c84e4a3436c8761",
+    "upstream/DiffusionFreeGuidence/diffwaveimputer.py": "3513ea2bd3a5f3c7d88f896a8aa30885aee00768c858cdd7d1fec45bacf66a6e",
+    "upstream/DiffusionFreeGuidence/Unet.py": "dcc37fcb7cd7e4262812872f61b06863d2fc3c4c0dcda5a7d7240081a928a454",
+    "upstream/DiffusionFreeGuidence/SSSD.py": "a8c6c679269348276d36c48f3059bdbc5030a4671680b3adbe6de444cfd7ee47",
+    "upstream/DiffusionFreeGuidence/Unet1D.py": "ab66fe31797ee3bd8e4882f55e1a8753f7376026ce1f84e1d2bedee829257c57",
+    "upstream/DiffusionFreeGuidence/__init__.py": "e2fc1d5bb972cce2cf21f404b357320f51b8fa85c351d6a2fe7b56ef85a1aa52",
+    "upstream/DiffusionFreeGuidence/Unet1D_fre.py": "9f2e4b7dab0bcd43cbd434b27912127051f718e1ed96fd82fa4fe6cd7c5772f2",
+    "upstream/DiffusionFreeGuidence/S4Model.py": "145a4c5910270be77f715e6d885b5d2acdd4382fc49f0a5ef199960010b8d502",
+    "upstream/DiffusionFreeGuidence/Dit.py": "d18461322aca383e5304362b7397dcaada79c582dc5aa764d4b76abe36dde528",
+    "upstream/DiffusionFreeGuidence/Diffwave.py": "f17f6536495099326bc055fe4f49ab9f9f1f7517f635cb44b36b0d73471b0b46",
+    "upstream/DiffusionFreeGuidence/Attetnion_temp.py": "edf3390f69e3204cf88ee43e3d4601c1e828d737cf27811f9b0e50aac97d2dcd",
+    "upstream/DiffusionFreeGuidence/tabddpm.py": "7c1fdacc42f79e05ab913dfc21972b4d8cedc66bf3ae9e6edd1336fd44d5e913",
+    "upstream/data/CMAPSSDataset.py": "7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03",
+    "upstream/data/train_FD002.txt": "dac6c4dbc4e7c1bdeb5747da3d313d05c395bb99801b44a002b26a2ba13d788f",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/config.json": "47212118409c26313b3a2fa571da8a7b1a45d6cbe1693006c0d260dd76c35a0d",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/source/localize_fd002_first_batch_ops.py": "4fae2a47093581d520e587c6f01706e48f5e89fb298c614bedb8896c968cf9df",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/source/FD002_FIRST_BATCH_OP_LOCALIZATION.md": "eeffd0a1cabf061cd4bce32953876c4a6aae2d8da50ed9007c0b433e82ae7f20",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/environment-freeze.txt": "6cf9cf5532a3788655f3b1bde3a3be9d252715af3555b3746987b43d940dfc00",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/git-status.txt": "b9a351c2a5a2b30593d0a9b73945a71b891a704f3dc45e0225796d2de31ed6bd",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/workspace.diff": "84d6d9e8b15c06c4f68fb751c1a14aaf04b1fc9848c53a887589483e503fb44a"
+  },
+  "completed_arms": [
+    "native_public",
+    "native_worker"
+  ],
+  "started_at": "2026-11-03T09:25:00.771947+08:00",
+  "current_arm": "native_worker",
+  "first_difference": {
+    "index": 721,
+    "operator": "aten.convolution.default",
+    "module": "minusTrend.fn.seasonal.season",
+    "same_inputs": true,
+    "same_input_layout": true,
+    "same_outputs": false,
+    "source": {
+      "path": "upstream/DiffusionFreeGuidence/Attetnion.py",
+      "line": 197,
+      "function": "forward"
+    },
+    "public": {
+      "index": 721,
+      "operator": "aten.convolution.default",
+      "module": "minusTrend.fn.seasonal.season",
+      "source": {
+        "path": "upstream/DiffusionFreeGuidence/Attetnion.py",
+        "line": 197,
+        "function": "forward"
+      },
+      "inputs": {
+        "kind": "dict",
+        "items": {
+          "args": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "tensor",
+                "sha256": "0bde089dae9593ad9592cd7909577444c43b151d9fd2e064853042beb998c33e",
+                "artifact": null,
+                "shape": [
+                  256,
+                  32,
+                  48
+                ],
+                "stride": [
+                  1536,
+                  48,
+                  1
+                ],
+                "storage_offset": 0,
+                "data_alignment": 0,
+                "dtype": "torch.float32",
+                "device": "cuda:0",
+                "contiguous": true,
+                "requires_grad": true
+              },
+              {
+                "kind": "tensor",
+                "sha256": "75706109e56d12ffaba78e9cd15e18c0914932ae398270a2a61d3305c6c68d62",
+                "artifact": null,
+                "shape": [
+                  16,
+                  32,
+                  1
+                ],
+                "stride": [
+                  32,
+                  1,
+                  1
+                ],
+                "storage_offset": 0,
+                "data_alignment": 0,
+                "dtype": "torch.float32",
+                "device": "cuda:0",
+                "contiguous": true,
+                "requires_grad": true
+              },
+              {
+                "kind": "tensor",
+                "sha256": "f13a5a482cda7e328ddc855e87c1f310a1d4f562746a24ec75fbade281e8a2e7",
+                "artifact": null,
+                "shape": [
+                  16
+                ],
+                "stride": [
+                  1
+                ],
+                "storage_offset": 0,
+                "data_alignment": 0,
+                "dtype": "torch.float32",
+                "device": "cuda:0",
+                "contiguous": true,
+                "requires_grad": true
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "kind": "scalar",
+                "value": false
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "kind": "scalar",
+                "value": 1
+              }
+            ]
+          },
+          "kwargs": {
+            "kind": "dict",
+            "items": {}
+          }
+        }
+      },
+      "output": {
+        "kind": "tensor",
+        "sha256": "18e3455715dc88c669c95b61c7332172c49da536f6477070904e78075ccea789",
+        "artifact": null,
+        "shape": [
+          256,
+          16,
+          48
+        ],
+        "stride": [
+          768,
+          48,
+          1
+        ],
+        "storage_offset": 0,
+        "data_alignment": 0,
+        "dtype": "torch.float32",
+        "device": "cuda:0",
+        "contiguous": true,
+        "requires_grad": false
+      }
+    },
+    "worker": {
+      "index": 721,
+      "operator": "aten.convolution.default",
+      "module": "minusTrend.fn.seasonal.season",
+      "source": {
+        "path": "upstream/DiffusionFreeGuidence/Attetnion.py",
+        "line": 197,
+        "function": "forward"
+      },
+      "inputs": {
+        "kind": "dict",
+        "items": {
+          "args": {
+            "kind": "tuple",
+            "items": [
+              {
+                "kind": "tensor",
+                "sha256": "0bde089dae9593ad9592cd7909577444c43b151d9fd2e064853042beb998c33e",
+                "artifact": null,
+                "shape": [
+                  256,
+                  32,
+                  48
+                ],
+                "stride": [
+                  1536,
+                  48,
+                  1
+                ],
+                "storage_offset": 0,
+                "data_alignment": 0,
+                "dtype": "torch.float32",
+                "device": "cuda:0",
+                "contiguous": true,
+                "requires_grad": true
+              },
+              {
+                "kind": "tensor",
+                "sha256": "75706109e56d12ffaba78e9cd15e18c0914932ae398270a2a61d3305c6c68d62",
+                "artifact": null,
+                "shape": [
+                  16,
+                  32,
+                  1
+                ],
+                "stride": [
+                  32,
+                  1,
+                  1
+                ],
+                "storage_offset": 0,
+                "data_alignment": 0,
+                "dtype": "torch.float32",
+                "device": "cuda:0",
+                "contiguous": true,
+                "requires_grad": true
+              },
+              {
+                "kind": "tensor",
+                "sha256": "f13a5a482cda7e328ddc855e87c1f310a1d4f562746a24ec75fbade281e8a2e7",
+                "artifact": null,
+                "shape": [
+                  16
+                ],
+                "stride": [
+                  1
+                ],
+                "storage_offset": 0,
+                "data_alignment": 0,
+                "dtype": "torch.float32",
+                "device": "cuda:0",
+                "contiguous": true,
+                "requires_grad": true
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "kind": "scalar",
+                "value": false
+              },
+              {
+                "kind": "list",
+                "items": [
+                  {
+                    "kind": "scalar",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "kind": "scalar",
+                "value": 1
+              }
+            ]
+          },
+          "kwargs": {
+            "kind": "dict",
+            "items": {}
+          }
+        }
+      },
+      "output": {
+        "kind": "tensor",
+        "sha256": "6d344e350493199b70ea872887a44f1c4104b3027e6d0dbe75421b3ea812cae0",
+        "artifact": null,
+        "shape": [
+          256,
+          16,
+          48
+        ],
+        "stride": [
+          768,
+          48,
+          1
+        ],
+        "storage_offset": 0,
+        "data_alignment": 0,
+        "dtype": "torch.float32",
+        "device": "cuda:0",
+        "contiguous": true,
+        "requires_grad": false
+      }
+    },
+    "output_differences": []
+  },
+  "completed_at": "2026-11-03T09:33:02.238813+08:00",
+  "outcome": "localized_with_limited_local_confirmation",
+  "report": "docs/conclusions/final/fd002_first_batch_op_localization_20261103_report.md",
+  "actual_budget": {
+    "full_first_batch_forwards": 3,
+    "standalone_operator_calls": 4,
+    "backward_calls": 0,
+    "optimizer_updates": 0
+  },
+  "output_sha256": {
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/verified_findings.json": "ea7184c4b176a86901f9898a0a6a08d666ad465be24d0bee5fec04e084250226",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/operator_comparison.json": "e5ef3de8d253e7c0a4c26844064b22b4ea6e4fe79ddd5ca267e9f6ee9703c040",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process2_local_deterministic.pth": "3e7b695ffd35bf889d3798d4d64422043cbecb7bbea5cf3a3e0af9d2f30f3f43",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process2.json": "e9c9168145c9872689ecf17da7adba762f65128af576357b687ae634c8ca5784",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process1_native.pth": "348278c657fbd48bf57ca674cb9051da8612529e4ed2039c52f9b4ee9e1fab76",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process2_console.log": "aedf120a1b659a2cd54af0acf024e3a65c339f655fdbae33ae27c18c92e7c8e5",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process1_local_deterministic.pth": "63f9236276cc424a9eaf2526ddbd44b0c309c739fee4149e6bea468cc11000a0",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/frozen_operator.json": "1ac58fabdc15e70a3b077060d4455c08635d60d378a564de451e111172aa36b6",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process1_console.log": "aedf120a1b659a2cd54af0acf024e3a65c339f655fdbae33ae27c18c92e7c8e5",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process1.json": "73cf2754d6b197d756f922908dff134430d31b2a781f006d9628e9a2cd15a4e9",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/local_probe/process2_native.pth": "71fb23511fca07716edc09cc2baaea2feb4013c13e2f59fff37a1458e4468b62",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/57606e9b91da46c6f9ec01e20f839b78113b3620a7d32fcd35d07ea4f1ce8152.pth": "1fea48014de103d665e06ad962750904dbc9b9dd63df9eb23de2f4e30480662d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/7a60b56fc80c6762e44ffa57bb26f5894f3815248366be8853d7f77bdbd98d57.pth": "567c79ec89114e2388f9ecb5e6394512b658e73b781edf244d4a9af26dd74ba3",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/0b4846b36bfcaaf55542132070911f0072323b913ee790c639ede316104458f0.pth": "78e1d1a805a363f82b01824fb37dc16238c6ceb5bf9927c9874c2b46fdfd203c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/7a19fa152a68a0f3092d00ea421dbd8822e878d962f14edfffc77d18535fbfea.pth": "04b6ef4cc96f47e6831e945e1c4f7476872e61f402856c6456747cd49e6edee4",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/dacc6975c8d63f3bf778106bc9235d60c29b09b5c0b413cd760f77021719f7f7.pth": "fd833354eece43bc495f5a7376cf16abee3188a874adfdd25f16cf4d07b6698c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/536c8938aaf9d06b226199c3afd7d3378e5af2b3e2f4e06c78929fc31d31980b.pth": "80a71fae94d1abddeccfd7f8e2329ce366f9ed1262ac517da77cdf3632901558",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/d0975f83d76c092071f3497a8075d20c7e70ad44d8dbc340f044378795390ce6.pth": "c77966d641b2945e89d486e382a9993cc3870495da2e11baf05f9b244bd1e22f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/a56c6ef35d9908f9fd05657994e80afe2bf8456d18943ce1caaf8f02dba50120.pth": "9777d71619382e578c4d445a5132f5b147366003d56980fba7b64310ad7353e1",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/5d66c7e87acf809761e2e0f99da3fef50df938d0543705d05f99c5edbf53a2fe.pth": "790314cdedbf26fd0167ddc5a2b10a096722ef3c055891ee814793056116bc2d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/4322523e59b05f58afb035ef02b5e4f11371a5e1629848a3dd1ab3e9568f7297.pth": "86c28ae06d089aa05d3a2a02dcbeffbc866d31b02b095620583a851c82d6a966",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/292708ae788e5e057d8b6e05401f0534b09207ba31511d5eabd81d9ec50f28d2.pth": "4cdff4908907d4117053fb2fb9ba95c0b0484456a1224d9d9877dc62652d2814",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/baed30030e21e01e87e88b8eef783ae2238cead9f90bcab641dde1574cc1f579.pth": "fcf84d955d935a8ad828027ae88d5c253b31a14ba9f056135f2229b7a9e966e6",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3b0e76554ff769049bf5f7ab5b1208ea5bcd4f1337f24510f67d68a6a806b1be.pth": "a7df492b3b839da989b710455a7093d6ec6deb3f93c199b339eb4c637653c682",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/33e8a68def276c54070d000e608de09746a3706fd948fdbb0a9dba349b51a5b6.pth": "89b1c13c53862a7999184cbc8e35cff9faa5e68c4713da8035cf9aec2c99263f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/eb3b872d015100e71d99bc00b7cd36536d85a6760d10cb0a63ca2a6bf229f1eb.pth": "f583029f4fa5417bdb84675a6d4eba9e2330755f61e143976d4a98f78d6264fd",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/21ced1c1e50ec094a081c46d005a934c5bc28af821b0b8ad11efffd4547fb213.pth": "4796c14af0b145d2252006a310d48b525843154c16ff1c1c2760d7f84a846a89",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/92ca985b19c5bae15858b6ea9ae359433979f40493d8e1038f3fc67b6f9d9496.pth": "d9d71fb94dd8413dab2387a0e4133801e65e22c590f03ba20fd21051c4c1b40a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/57d92b24f8fa745023d7e79e43bd5c948eb448017638970207cad2fc97123d39.pth": "8c6c72899c4e0ea713ecbfc1e406464b13cf17f31a08a8b18f212aa9665352f9",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/79de72c3004177bc6044c059cf493c1057a8f5377204d64c1fb7c0b34b2afacc.pth": "8a01f3487fe3457afa79ac7be6a803d647c5b7028962b13fa1f8969c3b69d603",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/ee48ba03b781e0b0f8479751a90117adb89b38cd1e178124e737874359407229.pth": "58183b4752c41fc43a95f438e62a39b29517407bfef2c939ab96c1fc65bdfe03",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/62b614123ae03ae5098394b9586a365812a7abed5fa1936c554dbc993d7ad51a.pth": "159911a435f1c1857e920ad94944adf83813d93e6d8155f1b77a6a3a24623571",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/4c3787fcd69e69dc8c57777ed64f1932588364bffb20a38764ef406c1afb3ca0.pth": "c2b0867723b839108d2632c90ce19dde52410afa387c07c0613069988b549feb",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/ffed7450a25749c19d9d479394f04ed6cb658b1f8425e7204124e02a51a25000.pth": "756bd252a9131978da9011864153eb819db2a56e515bf72770e0f0dde924aa28",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/35ce3f37da414d4141e83b515df49f2317786ca7207f44a6205576fc108874c7.pth": "178f291348642e8cf97dfab34669408c06a84b3127d699779294e28728a2a434",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/b846a40ca35877862f36187a9d495dd532662d6d5fe88c3f8e7c447b824de106.pth": "5abfd77518136a67b0e4030461b8c2a822793fef18178934f8bb8a7709a24f4d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/8442787140ce03f1c8f41b91c743756ab2cd45977669b6f6578e27472891f17a.pth": "c55fa201c3ee92cc1af19be68b123d21be968b2c3fcf6de924f2027dcbc0c01f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3ef116e4af2b838a36f04906e40f756b6838fe582efc622c4a1f830c5cf31cca.pth": "ba89bfe9ab840e057757cb856d4bdf19e339958e81148309a218ef468104b614",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e97dee4be158a286bb7e29d0ae56da7f0832d5a9e879b358d2d980293c14e404.pth": "44042a682c222f09ec0ee600eb4c62d9fedf50cff9d860c59ece5940a77d0930",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/7dc36d85868f23783685d3570619a4a169b3e6a1b89ac3577abf44dd637b695e.pth": "cf5a14272e092360b58650603bbfc6270a114a259234365a773ada02037ba48a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/65ed519ca3ee91ea7e31e10ebf618d520af707eb3fc1bc0f0fc4380d5c4b43cd.pth": "cec4a03a21b67d34aadd11734c3699503047e4a85efd5d69f67e2199a7224325",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e019d730e5ac14d5792abfd1d02808c198f30d52d3a49c54aab909f6a35c6538.pth": "18364ffbded2196e9d0bab1a2a2a114dde808bd28c522bbc6fc8ea9a944b0c8a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/28587fdc33c9943c159b7849840909232f7ab7ea8cf1e629d89d041532ebffc1.pth": "e9adcf5110b208cb7dfe037e4ebc761f96887eb90cf12e6d0a50e282fec6584f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/cd1af89f581bf183328fae4d800d800138fa5abe4e761eef025b50e45dc2ea0f.pth": "aa9e458cb40c257326184f178ff4f8ec657ca62388b98bacef5bca1f38d2cfc6",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/8573d0dc3f1d5e56267ace7282972cac0324dd925faeaa25873fc460d775d7c5.pth": "bd55e16373ce00fc4b730fc7f68b03df466f99acc53af8c9b88d83246a9762c7",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/b1cb477bfcc27d29a5298e4ee513c6d669c51035b999298bcb1c5547ab1d8bac.pth": "be95164dad47fd2d836948781bbcde1806ceaeb18a7662b0a02c792f8d8c6221",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/6f9cb59129e53ea32d55fe1eaa0f0eb1e721e41c36e0e6cd6803422220ec9948.pth": "837bd7bd42e16f798b18e9a0af4dfaffa6a6b4a8a19bf5ca35037c1468372bed",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/77d186186132fc3e1ebdd15a8dd31efa7914255877a00aee30bbb362cc2f8076.pth": "0180276353fe122f680e28df00f0603bf6b5f136b67aaed94905663b56557ce5",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/27e71bdb1bbace22fa4c65cbb175f92dfeffbc05aaf9e89e563b36bc08478d71.pth": "17976d275a17e0fb42040c843afd10bacd233ddaa385995b5aaa4eecf32adc8b",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/632bce11250659e841bf3d02ba43cf2b364d6ff4b386b187f4852c6ed15d1321.pth": "3834df19df873257a6b81fc3f3ac5374e9ecb2621481fc3b83352e0a5325ee10",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e1487c9be7b00feb7c2ec7e36a618561930c2c02e9d9ece1950af9a102182b40.pth": "a00e28d46f1782961a81d808efe416bf885865aa81bea9ac96b9c4ae4010f156",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/afd725f9ff261a8b5966e1fc8ddd96f3e49a01d776d9af8e644f5b047a8b2738.pth": "d1eadb9a1c41a4ace5cff3b1612e6d8f31411d9deeb3c241df425706e9f1c822",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f12299db0e5c9d27d766fc921d51698396812e089ae015ff92cec0aecb0a2bb1.pth": "b67d910ea1bd8116503516e956d8d4900ad3ae6a3346c283b85fafc8ac0cdf9e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e8de25c8932c6ad1eb0f814154f7c00fdc628bf0bc418d2bea34b8a3ae439e07.pth": "b9e537e1d4efa7e3ffcfa4ccef1288bd0f8a2560f8badbcb0beafe067c7b85a0",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/5f420876c640d26367fb3e16822e4d994c7618aacfb62090913231b7d190569a.pth": "67d6d4b0cfe15e77b6515e56a1cc076858c4bbd952579ba9aefb2c47c79f3a44",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/ea2354a728bc51df946e6b63d640de2af15444398b455eaccf57698f536c0496.pth": "53f853818ac0d7982bbf7c7fbea5bf644e079ea31cfd435ff083d785ec056244",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/b39c8f34216fab88745a7cad818f6b5580f029f547415f6b1ba8e7237907a467.pth": "b6eb39305ca5704a6de262bb62d8ee3dc299fda5fb25ea57b69fd43c4f5431ca",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f78ee4524a378775f420af6ca7628dbe8214a74a4a92d52c4b6fe3a346f5d1cd.pth": "ce203e58bad1cf5b5c8859d57261663e6feb18d7abeb40748e4c65d59bd5ff7c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/bd4ce344022a333c3338b6e17451c5dbad7d83ee7e0b787fabf265842428f061.pth": "e40ac068b75d5473df29f0afdaff0c50407021345b3a8ea9db1388819af4d008",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/bf1aeb666ba90bc0328080d5ed780cf44e171c36c78f9ab7473fc939ea40d852.pth": "1e7d80111f14b3e0b988747bf2c497b75370b73474c2ca8a0238045376716f3a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/b20f449e5c178a8fc338a6b6be963382afc0bd2621bb690f43b75bf56e5a2021.pth": "d1e7a0106f898f192043f8018429dfb1965d9fd7dbc47790547b5934bf88ae5e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/38b1216adbf03019b1ac8dcfe07b66809b7e32ad48f48cd4c4214e923c1ad0cb.pth": "2788292855700f7322e1b7f30d2bf2de9e8f586ca2d338d0d2e537ef8702723e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/70aa7272491675a0d9f85797796a867ce27a867fdc2a2b86f1c3c4ea96ac9201.pth": "30ffcc0f539d6429be20ec5931348b5b756920074f92f22b226999aec736f695",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/d124053d5247ad1b78c1a81bb904872309761c7e44c0d86677bdda316a6a08d2.pth": "6d46b6212b3570006f5b18e638da988c137accdca312bf8520630204042524af",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/a563200479725dd12a130f72a82c622c87b7410689ee233ae34f930789de0042.pth": "d8912dbff71563bcc29fea567892315f8b75ef0a5aadc587b1b3d3f76a4cc101",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/d174cadf38290e755e5b10755c35795f5d3266a4653c8eb5650f46d62b0fc5b4.pth": "decd5dcc2be60b425afcea321d00d330c127a2714cdc79c0847b1646a28b1b48",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/1bf124400d460510c8c9c635f3ca7c1031b4b9c33b9b1c43da0f126abb06899c.pth": "0c3eeb34d980656e7a73801f1db0d331bf22f2b364f2442304ad534a1a664aa9",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/654450d3f0abc62b3e4fa094371a5291a382520d0a7822d22c9aad3f523f997d.pth": "1d43390badd0ee00cd4a5a8fd8ee10ba386e2d215a37711fac243f2e93b6b11f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/bd270c1c8c18f85f72871171a19a39c5231f76708e1da97e5e70dc32ee86df8c.pth": "df4884b18f6771ca0dd05a1b46f444c45b086986da2a1646b17be599b6c2686d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/d8d414ad6c87227f44859a2483e8791bbf1e8e16544fdedf01ca569c75c0cdec.pth": "28040ce8cb3fc12f3a37b0270b478b5a6f2c273168cc65a72f80166819707b10",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/68bbea697229e56f52bc7ce61d6662277e4e806a3d906d089b45630967fa1081.pth": "5ca5255f686c85dcaa810ac69b981ef447a5ef6ece802c6965115c585d5b5329",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/56887247f80606f9e4395e19c793852789f82ae3ee89f8e799422b51b6a6930f.pth": "4abf4d9c0a0c444f61bdbd84869bde198e5901d48d67baff5e668aff29a1fc82",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/b0eba7558e55401a4c68c3fcb8e0ad6378c65689ee925ff6829ae5cbd4666508.pth": "22cfd7ed2f07cf3fffc4bf640592a3facef430eac3ea1fd36f476392b5fbcccd",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/1c802c67b40c32d218bfafe4364ecc7c1826a14e2024fd4f7cb77da37760eee6.pth": "8284ee62dcf89063d5ad43331294ba18a6799e3f70082a708922c75bef8c304e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e12154da87d7602bb0586902ac79ceaec4127d22e0a4fb405ae21c50f1a23991.pth": "400d9486b68cd443f806aaefce8cca0b7f01c346a01b87194b5c77c24c1e3763",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/21b8b8785761c1ec7f21823900e641a266a89cebea154c6cbb7a681878ad2153.pth": "cc4f463e76cc15e1ab19e307c28eee7b42a3c2545aada0bb1096dbc253eeb498",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e3e7e0f87ac391f007392bba356c5433f07387f5223e9876f709bd0c4abe8eb8.pth": "641b5b0174eb5aedb4a5ad5e2eee48266a1aa751960431b2beeda41630b35d55",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/c2a7d5229996d74dbf4b1b0503a30dbab21ab85b44165e4c1d56046b2e01981b.pth": "808c1750fe5cd4d731be1ce6977f6768fdaa668a68239303e9c36f606d0d7925",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/0a7cffcc57f7dcc7963915fa580fc2954c7d476c723e6c58ad2f441e69635844.pth": "0ab319286b6629ee81da0ee8cf17c65522b7d680a2477ce3647f30b8dcca487d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f482840228193af21a9a82c14441c16e2fec195794bc3ae111c2ec14e2368fe3.pth": "ccb72ce632ba90f7fd83dadf910e5ea8575e80ac701061314fad00659391d25f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/45edf952d16b05d376231dbe3e1141e07e83d4a927cb5790dc698c96129f8ec0.pth": "76e3874f2c55dec22cc89e2c3a39b213006f4d5487ccd7d9c93faa0c070da4a5",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/2ea4126ac2a66bea941b946aa8b49b5b7206999db5485daa5744da689028ef71.pth": "79db929d6007837dde3c7cd8d5ab50e121c973d5033ea164a8ac606ac86db579",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/39b2b3aec25dbda159ec18c53f1cc06ec66fc4417ac07932c8e63095414ccfd4.pth": "070f765875aa56d6274e7a9e94a7eb435d39397db723cdcb62a799619d2a6316",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/14bdf4ed63ca3a061a6007defb5aeacc4cf653940de7373d8ac46b5084df4481.pth": "7cb4dcfe761e8777a7b5998ec48548b5bc04ade566e0031aaffa325e9b071815",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/6473d58225ad1246eb345be55ac4ab2ddb34c1e0b305baace48367a31cd8420f.pth": "bd1ea0f79a256d091e100d51a6de879650ab2228bd81b78572bc7549c4199244",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e38343dbd26c55624aa29f3ed3ec9e34231b8cf3e13355ca9bab5e5fbad4d2dd.pth": "e8bf8c1bcb2ab1ef0d716dacfdaf455591f22abaf468fc297c2e3d2bbae0f979",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/ea21602163f75900365edd6d7ab324968bb0116affb26c3acc28160b1a1635b1.pth": "199cee5977d37844ba01d5060e4cd599456fb362d58e0f9c2d1d041e707bfdeb",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3a528c81416953d2d99ebed3bd25cb1cec288cd5d257aa21d61814615c21327b.pth": "be7ce19682a03edced9a9da5b2f6cd2e2e8a550d77b8727490253bb4696d1100",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/642059cad6c8dc149459b54f9263193f34d25e8564c5fd5f8c29b997f5ded7fd.pth": "53f07061baff420507e15fe93538647ba2cad1ad55194fd96d495ce16b2e024e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f4ccf2ae06efe3cc90c429f85cd8e62b6f79b2e0a488bc7ed4d226bfea3a4da4.pth": "a202bd53ce1b538d54f65614fc5a4a7d7d429005cefff8d612b6acd47ef5d94c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/41dbf56499d6980fa4a1694523e0da79a9a1f18e25d6805c3a1f7d88970940a8.pth": "27aa8675974afac68fc0885ce89245a69caa4136350ad61f3cd3a579ef191509",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/0df24a376e9b9d5ae1e95c90d5c4f2b391b9851e2bc4817b4405c581b2e584fe.pth": "0d93455e91113f19c1df5696cbb8111e69e3f3dbdee7d1169b91571f52adc0fe",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3393eb43eba3d0e09189c70ca8696f65727fc3629dc63ed7e9d4aa0178f7805f.pth": "6e41375613a29cf4113f9432217a46a292a6bd4c39a76ff78a6b06cdd0d48553",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/9fac4a0ca77194846fb61155e2b4ddb92436bb2cc640260a0e1474ba4e1eabf5.pth": "d2b17a07e1f9071baa4cdfc11a805c36e51e721e07d02ce681c7989ec5e48746",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f52d3b3d931705076da9482d369d685f353074fa443e0f7aed4d8f335be88cee.pth": "066378c512df607a1fe306cb1c2082915cbcbcc7cf35a9458deaca6e94bedc0d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/56e98778f7aa2794df5e9dd1791ce000056b4e95f74bf4629c8ea9be466e6c34.pth": "a2f956f91d44d8093fbbf71c6912d24bfc2373b31f566c4caabfc94c783008c6",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/afc22e31e85afa9a013b18c0f29c9ff80f199dc53a74ecfcbc5fa70b2b145499.pth": "aa58d81a74fb4852231f8eda01a26ddcfc99b6e8d511940d8bfa27ba07923d43",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/cec7b9af44f620c64a1ed087699fe3f37fc6484ccbc696ba67811d97b7bb3494.pth": "e9777872b5c5533f8c11a574411966e38da36ce0c0a4a6562925c9dc531a60d3",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/a25164d753580203580d895f71508bf7b517809e9bbcedeaa273cb8e86d15e05.pth": "039b9aff3f582822fbb0162ce53430ed6965fa99be7d25035f08237b653267fe",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/051de282a54bd6ec88f0d792ab322e5c917b2162be54d324b98623a3f5a42a96.pth": "ebb019df1b29b18517a8f6f04f5b49ca05a70aa5edf472f0fb8c141aae5e0d30",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e16ab658676e892c3b1fdf21cd92cccf7e67e165d94d2650811719c1ba63787d.pth": "2e923dfb2ed4f0358ae80b023e1a95d73d4c507d3ee1b30e6ae2970380116fbd",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/9bb91f980e40f3b350a62a49d5289f1ca2540241cbb1714bc749ad8d22777893.pth": "c70766bc5652e8be73e7623fc10b11f4c7ef897b1de9628153666f8a29c44849",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f71b1ddfb43e00c3d821bea27f88531dc846286407f2f76128e5fa9b09458e77.pth": "8aeacadf931b02e95cb845b6ae31308156ff0cb8093235566e3dfa3ecb76e3dd",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/02d3035f16286437667e2d4ee9beadfe393ebde377ff2db773a2dfc91c3e9167.pth": "3562aa65113cac0e5328069f059a400dc382d3eca2ba1523beebca1541ba665d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e73632337005a999d1afe0373b6900db1a24c82b5b04c8fe1499f0e6d462563f.pth": "38b0608c58b2429927a5835a0345dd3ff6b06b72684c969d12949f7b36bbd678",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/05f4a80be2b4efc0f8d1026529c66f45c1e20a7a2ec6475eb8f0d1293f52e30d.pth": "d701ac7d34376162d3c3d3ac2e1c05f31be29e36352b1f124b6ba1a884f6ad7a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/2ed108b8e014bd8f101d40d222373e1f85a9274ef20fc20a90f6c827437c3750.pth": "6f4713dd55ece7e4a69a512ceb022d7f3e1f3c9b2b5ab85de5e4cad5f5a3a65c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/6f25e344a9610bd188abd26bea687b15d0775d6d099501bea847d262c473129b.pth": "dfdbed318d6e150c438d64d5b044dcf0a5d8a6ba6e6f1fbd466fec25889b3c99",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/04bc0607c63ef6917280558abd1652f1112f1ff30f3fd0aa902672405cddc444.pth": "d39ea30186e030116da871f976823d6ab8270992c9bbcccb9b4c6181249fd0b3",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/ee2f89b4929f18c5e870dd7cbdcb477e37462bf1b06bb41701e2962eb6d9c0da.pth": "74d5296912624461c15a473de69957e9a29c10cf26683931261b18b43bb63106",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/ae374e8c2285b33faa695e7d0313de457e51c1151949f4b4d1dce7a127c10fea.pth": "87bde3bb503e7f84f9989ca166d9d833c33f73252cc5665054d5d76a3e485e3b",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/1adef117f6fef950bb4ce311f696fee931018a189b6e74d113f721dbebe84899.pth": "64ce194932f7a55f1d8ccfcf90c540c0244449c323a84f2ad7625f00ed0131d5",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/29ea44c0b79d99cf8c3a0b3465dd9f3e5b8b2876fceb6be6c9bc08886abe530a.pth": "45dc8d17ab88b7e871c91cb5f5ac275d69169b45d9c8d072cbf072a81fdc62a3",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e78bc86a29885b0db8d0083ce6a6590a12234ed035e4abaa54207dc749ee9cea.pth": "b64d618f6c1b1812a8b66d6c3864b4ec901b3efe0e1292e80846301dc1d8481f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/dbaf35d275155b81dc3024510f1baf9028ef5dc7918379dd99274dd0bd399d6c.pth": "a574bc174dc6cbdc45e64c11f1cb35287a185fedd8c90a0becbee296045d8f9d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/631ac13bdf581e906944e50079dcc487b307ed2fd6eb9acbf996765c7c763dd5.pth": "42684e5ca0b4043f61379fa844b606070f7487e241eb672542fda7c45273d80e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/ea16ac942555d0fb9cfa0de759e9321a41b10580335c99f114c74a907d26aaa9.pth": "b2bdc5033c1b2e7e3a998006d75308e8c5a89647b72b77ca0b48ee2021fef8ec",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/8005435571419a076b222e605dba9b5acb3bc3787f6436b31a5dae541dc2167b.pth": "70c602f86e33a0b00ffdf4cb69b745c3e353fba8d0567e201340aa42c9378f7f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/ef8ea58a07ec20397a2b1a93b89525245a83a090feec55d1eaa421821c954562.pth": "a70505e845813b1ca5fd1db86a293df13becc5083af431fcad2d9db241948e2c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/94f6f3a61d3db22bfa8e5851edfde436968ac1371e2b5e28b33dc98f0a5cb153.pth": "de5c87741dc8d840741b9eafca74d28c728fad4d7225c6d046c44222d1a42700",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/4119d97a20bd96ff9a7bb4210e84cdc3783ec9c62b558f229bd9acd46cda106e.pth": "f7a3f2cfdab071d568fe244f8451909917b1ec933fbc934e1d6769f21f758ab0",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/1f75b87a100989bf09b2cda37c0a6cc4aa070d6eec66b9392b351f33281bdd52.pth": "62220f5fc708e2eec7cdb4a3bdcf7cf689d01dc53ca6a7993527ac864e466b8c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/4bb68484d5785953e074db1cae84e74f5ced839019223e0f901d94849917a70f.pth": "737b2e8569b34c8ff083f5b565f1c3c134147b621288c900192c6fc03e02cf5c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/705e03d1281b14fc5c7561970debc4d266c47b105b53e4feeb26db23c7a6401f.pth": "a151bf5bf67af2d302ea07c01090e53789a49da292863a457f88388a9fdb469c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/90bf7957486ba5a78bd77a5a3f0d014301e318a383b9ebcc3581ffc515873e1b.pth": "80d4556db388fb7854df52b87a5da4b64b7a46455560e95e8f353ca100fd2912",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/82ef7de40121b72579ae7eb075b4059a7c312fb1708b782a89ac1ee4fdc443ba.pth": "93d655d725e15964dd5a4afa7f6ff9921f6e78ba570aa285351a769ec4a8310f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/d76826506ebed95c3a61601d277c3629d92945fd53b8ea76557ca718b54ee45f.pth": "301ff2622135c23ca97bb9180bc9ad5c3728afd026d9a909f58a63b88e2e0add",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/0dda1dec42d688366db5590fdd102982ebff5c0dac1859fc315e5b6e0dcadcd8.pth": "8163d0c21b725b188a8e1fca852c829d1077e0aaa8fb331464f4329cdd5efbdd",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/51ccde533661c230ad80fea7916c44448c0586c53a5fcd124b509c178399081d.pth": "eca6d3973ba821f5fb8e9b560e8ebd50abecd9d30774323a3a838d0f6477ad71",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e0ed4e0913a27e6c957e805d940f40e3e7cede5fdd0e9a2fdf53879a4adccd7d.pth": "a2b2e6142e7d03c44820470d674f9deef4fd080d78d6874dddca610c4f83c54a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f56cb17cc3d98c410f17136eecb0b473d6a3aee5f5c7770fbdd87d269dda9010.pth": "26ad421ce2001541f45796672f7c040fb04c52eecdddd09a79425e4458d0751d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/55a682489c8e374d67b22bca5256508e40587ee4d2fe28a91b7fa37d2a25e532.pth": "02fcbbb63d0d3998461106a8ad1889f422b54f9f401fee51bb3991ec61b97bce",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/84f84f9f16752dd3fd7e53ab5ee6a646b6a9d2b99b923fbfe3c373b999be34f3.pth": "fc6fc0c67cb2a8b1eda3911658dfd445de763065550e18924ec298c64f546428",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/063613374ee7bac5c4a6386f8d090d327e46da629697df30a85c4447f19460a6.pth": "b11a19837704fc86440e1818932f665850f3753a621030c67b68e9c44c696fc3",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/039e1b7a66439eb7d3ace90662125f1d4a8907ca299bf8f89175a5c5ab20b0b1.pth": "f4396fd163bdecf07ac822ce8dfc4040baf9c6cb559d20cb4fa77e8ab4c29e1a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/6082c1a65bc87c6d53c01530011f45fbe44e844b8eb23ea98bfbf54a49b0cd63.pth": "0659b38ebc65ff0dab364f7be95599600ce9a72f88246e03b92ef0a0d83d3ad1",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/bee32426dd610c07da76c11995aaa3ecbb25e82261eea200091f508866c1fc1d.pth": "9b14392ce875580f27dcf7affd227bc41ced10598ac5979e74131c80486f757f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f13277fae88f6585b87694f69e62713dbaadc8f3b7a022a7dc21693c7c79942a.pth": "deb7eef7cfb78b6577fdd1908bf7f009da33d679ddc3ac6039a7f1717c3e5be8",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/4f832590fea9b9b49f81c28e10cf6c6268002c85868f1773b6159266a89b978f.pth": "476619a7ae6e764f4bf1ddba7b731b1cd77caffb77bd1412f2666d0a8f04b4ed",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/5b8b0dad52d1dcb38d3845913e2dd608ce3fd236d99d7e2894ab67a3921052ba.pth": "49fe5f7cd904e025f618344fc5f362cf059142c640c77109e4476704a719c274",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/014af96dc623bbfe6b81aaf7a13ec609f03717057ad6e82d58abc719d3be18d6.pth": "3b8e683ae58a0456797aecb50b23ab3d22631a2b2e5cab0f37b811e872bd4dd4",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/08facf109699e517db35b370d15ac216233f8a37614eb6127b5f472d2337da00.pth": "36403cabe3bd4ca302b1cd8cf4fbb39c55e51475632e385b0c73e52200d0ddf4",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/4e2e52f32f69f526110db3f216d802d5f6e63433c065c51564217cd57fd64237.pth": "c0da7fbd71a713c21612660c87b9b3de441090ece2b322c9b4f25380c0bb7f66",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/7bc71ace3a0508b19972c03e759f43fecf24d0df5b2d3c6798e624cd7798e95c.pth": "660d6b5a51deafec00b0755cdf1bcf24a5c11275ac8629de4db16b0a1a01f1b4",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/a0a20d9abc5c1caf342e229df6b16aca5e94eeefdd89d4a19a06e40f103d76c4.pth": "2065426bbf3f2281086b1a53c0fab2cd623fe1beffeb1a44691d4db42023f740",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/5628e4fc18a7ceb6af206c2d586f14805e90c460f1523ee8b3523cb757360ea5.pth": "221ab54db34d95f15bc9534898e8f980064568ce08bc25a00b64c2db2a5db92c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/626877c96ec4dbf0148c30ffb61c33682d651a8106854a0231cf96ebfd6ea83a.pth": "a3c6e0e8f8267c23b395197983ae1991fc6c94c8c9b8675509a42909f6a22b35",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/eadb692c03d0c78f2cb3b33efbbc6a611033887cfbac8a15b33e8d3f56d910d4.pth": "3a700ff761d96055403c63a67b252cfd55e5b5397520583a9068331c99f30c99",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3fb694183e127c73548978c7ed0fa0a421755752bfc9b8a54359d0a902d5d3f5.pth": "750c601b3fb723ad8a3514421d1447d5db520a1e910cc94e653b3be17ee09e99",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/b6419f1824d2f7c84482b482095e69c65483795a8b59f7dd9ac4bcc7386f1dec.pth": "6181f3d96b07837b24496d7cebeaade706dbfa0b7e6f256093c12c34a3b39511",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/41280099db59f7a1836d5d43b8b3638a22db3bd285d9d2d8f1685ad018e2b934.pth": "0656bc39d5254c2f1f4eeb3213a118d143c31863f443d055807f1f32ae8ffd3c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/2afc8fe862ac060a84907429116efe97c8f41b7e3d2d17e7545bd8e1985b3eb4.pth": "a8e4730279afde8459728c43f9ee035573ba27a26f8023eb8832e2963660df52",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/7cb494c15b6f86acd95993619d3c9128c219b5f9fae25f8bed07232f2869ccf2.pth": "dc91c78743e44a01a90eaabb66e0c415470aaf31d2bfadd0959449051d5c1e85",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/0940fc179b89e1552f673f21a07055cd19a33dd772eaf21aa4027a411cd400e2.pth": "11447a0cefe1ffd119f89ca22c330461bb3df219b567de3f046eb7dea10d94f5",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/9941d9c56220c297b430b0329ed4b82d27c0ac91acb20b74d016109006057ccf.pth": "d86b2ac1f914776ba0a30ed133a694a0d3d6190d9df722b44dd2ff4fcb9438a0",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3d49260724a29d12db484c8e7282b0c4f01b10a3fd20d1caba31cbfd05ed7a45.pth": "d8f5511c3ea1d676a77bd34950238083eb07c190819b28836b444a1d73968ba4",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/beeb399261b3d638cd5e1dc3a0480841c52e2830db9180f56e8217b223432f30.pth": "562d75d5a4c7f4a895929c8e70a11570767ffa70e9f8961d2bbab30e34798feb",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e390ba4f721029fbf36b15857064f7e21df37d7b1d00e8fc63d5ee85b442781c.pth": "a780ad5d3d7f4525d647806d19abbae2cbb5ba5fc05c5ad123833b385ad31d13",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/2954abe1191c3508a7ad0386822106f0c530acee74ab5f07c74b909da3d7de8f.pth": "edba9dc282e05d5734842d28323883a8103d8e246479521f9cdb91e49f0f3f74",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/57973dfe0157fc8adf1cc7a13cd6801e19c9292fdd190160f7f035286af705dd.pth": "5ca57e7c25c83c7a4b5d78c3fa88f038a2d4d11f837cf6e624f7739cfa33a617",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/1216aa79cea39aad341dddbc779c0e172bfda609c4d6b0e014c78a360df4795e.pth": "50f18f5710dfd662f01db92a2125f9abaabfc9d40687a678c5fc6e48dbe9341c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e51f7fde3b747a06222d15907536024666141867c9d475f2f51e52ef2f24be43.pth": "562b1071632648d0b0a6daa2eb1a37783e8a36075280d97b6ddcd98c08d895fe",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/207bae1d8d271fb6a6f07c9dc6fdb36af56c81a26505a3cbf134d2aa0cd252fa.pth": "6c0d8f8799a39bac321e00ff99128e06560f6df470bb4f380a26178002708ef1",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f83f2a007029a7a5b789496179fc7c2c486dcec1f22ad8972062f05f2b3393f4.pth": "5ae4d1fe5e8f972c670f80530e278b75683edca8cd667bd47c6d05c6782b69d1",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f0adf97f4f343e5d8f229eb95cb13f4a23c80e2f52c556db91673a3e3bd16f34.pth": "c336cfed0fcee938256f1261ef20005bd6f48b279018fa458b4430b739946f6d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/282e3c656ff62c2fade30d3ecd7a49e7d6ff352fb7cc75ae0a0e076cf0f42c72.pth": "8a470225ba7a2e81819a7084e7ff2da31f14caa64494f5bc47a7eb99e32580c6",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/05a99f015fffa2f03c283dd622326da4e209efcb62dde88257ec39cc5cc618e1.pth": "3afd7a9ea85d2a2c7f2f37eca1a3f910138677ac96fc06154bac76b0e32c1e8d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/4b086decdcb95aa54d26b8dc414915104fe488a1e93cd629765faca6f5a8b055.pth": "0ce2a997f70fb25b6de5f695f77831992b536030c38c7638655c5deedf63c8fa",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/58fc5cddfa17e6df8fb54fdfcc4756039494eacc79d85c92cf6fa74406a5aa64.pth": "87ddf6bd81fe88b0056f2fc11d6f2db5de6655bf18a630bd3343ce3d10e90c0b",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/fedaecc423fe49b892d4fefff88b7e2b8642338fed1176c5bf2955aa81d904d8.pth": "d0c3303bfb45adbc45c99773bd295e226796e5f6dcc3e1a612fec6fcf82f5e48",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/16984b31214fadeb253fe12a04f8111a4b0159900f52594ae480045e2d28ca59.pth": "8d03308f0ce0b36e6eb5ebf8925e107f8733b336722a536d37f46609d4d0e0e2",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/750b7c87b2d3dcf41d97af83079ae3d1853e5714923d4f61367aafe3cc19af20.pth": "5486e4a68425fb95938dbb5ccffcac81806e15eb20f01a0e0a868da6d3335d0b",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/65728f45356b8c5ef99e49040de141d93a6057d04f3d66af098d86a765fa066b.pth": "7513458e7a06acd8b9ee1ab30ad0a30cfcc156e382aa71985bba7b31c67bf0cd",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/bb53e9a6daddd7f63691cc53ab6551bb30ae9d03c7b34b84e65ff73a124b8faf.pth": "b38b634a4a37a3b2b281895b7e90cfe96caf7b26e6b5c5a4425c62e43314bb3a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/a749702f61b438af09831d8af745ae74ce7979090fe8eed3758b023ff3cad570.pth": "0d3b9282dc1cb9cabe70bed104f5bb96d8847be6627a2267296de42cb5d86a61",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e7d8d2b64df4195ee7f52ba7345b7930c59035b189d841c22f7a60fc674e9188.pth": "9e4102a950e59339e470e2cc30609d2854a90deb6c55da96035e18fb0a08d1a9",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e04d931f20beb5e78314b004da321c5c7e9e915989325c3508dd3ca6d079ae81.pth": "b249eb3a0aa1dbda87a24353969627ddc20d037c0a26e09bf28b3bdd730fa029",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/5a10da1fb643a9f67486a44f4833a86050ca38b173857e5cbd37c850e5c5a7bc.pth": "3c099480f381f54a91a6e3b37f8c3d25be6530ec82a6c587a04e0a2766a199d6",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/4ff61b366adf71fa44a2846d9a75111225a6089f9ce8de74b02803c99377b781.pth": "d0b5b409ffe291cbb3e62184c488abc00dbc000391ceee0e1e512efd77533069",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/542fce998f24ae6c4fca5f029516ee716465076c0abc9992a6c4c92a5219ac84.pth": "64a0a1df5c47e83bebb9f3e1e2cf77c83982ef319e2659677f5e060c0ddd3752",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/d66b0cdec6a9b94f6e621a3b6eb8253a8c423fcdfd4cf4c99abc216e03c5e551.pth": "0d681aab72c9e78fd39d83b20bf3c997d1c221390c7465860aa558f3a8313ada",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/01062c1f5eff1cd637487fd963a0ee03d3e5ee6e9925311c902fb9a96d17b575.pth": "2a0067f4845d095d9e13b707e8760653b2e294416d25f362d8d19397979aa16a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/7cac2e3186a0b78c20d2cd78dd461ff6af4f088d5a152e873fba0694267a22c3.pth": "51910dd84f925199dde590cc135c0b020d70c5deb75a370303a57365e884e720",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/0a77a4327a99f9f3b821f68efa83b62899e3720721105050df9abd69624a1777.pth": "43d23646c7c2d835077c2dbcd2b445365d7cb9947a3e2af023fa65a011a43ef0",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e467e1096559b83378faeb0959ad39fa1258e3e12b05bc2dadd1440a952c2174.pth": "7cba68822dbbb472a7a0f34eed093316a56f46ddb1b03ffe46a325f95fe7c5cf",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e99fb16dcd165a0ef0549b572aae2799f1c4eb41b3b773841dba144c81f1450f.pth": "539bdd7d135797d17d4c6104b041801261ff065ad8290efa8a4f2eadef24835f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/d8056ddfe6fdcae25b0abacb70d87bc2f64408a571baacca003cb775e18ab713.pth": "23f72f9a8c91a69f87b20e2d8023656f461a2d8d99c883d63ea5a087c6cb438f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/0996fac737f56597b106e7f1fe60c6e2352cebf2258528053cd524c375530032.pth": "b9b6e10e53c698768df9880a7ebe9a9670fbdcaebff5a73c3a27042b79acb74d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/83a28b0d5e0fc010678fb421a76d0ac89ebf73c88d1df47567e10a0aedb0b3e6.pth": "55fc9411398e32c5425f64ff5b93582be97d7e9feb3437df011307fa44946c49",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/75ea457e982cbfc39b139f9f72095f3eaa50fac80f49240dd29becb1a849176b.pth": "c917a27133a942c0c465a08b9fffd6bcdd0cc313ed5a67e87a09438a501657ed",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/bd33f95d6e1bef00d60c651a3981791ad1790ffe3d32f36df726e80b06fb9db3.pth": "be6d0139ae8137d57b4dfba4d354d527b0e3e3bb25065c9790e270097f37b2e8",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/4c9d1007e1707e790d8e47c51f3a40d32a244f1b38cf7ccc8d9a7f56577dc188.pth": "f39fbe60ab44e90ad67fa8eeab0543bb7e221701f6a599e5e526d16db4e0e95c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/7ebcb2fff77ad66632e8961c19d26e1a34fc3763d3b88274485323dc3457dae8.pth": "72f2f48f67278d4ac4299d6f724640896c7101fb1a89e7b9ad063c2d759ee9b0",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/84534c34104f92397cbff16cb67b995a20425987a4c97277c6b9747d55122fd2.pth": "0f301cffe3e0d5f2c59ac12b8572253bde8cc6aa9851e448f322d37904501711",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/bdb22577bc797a189dd5bef1b698df1e443f9583cb565673671eb1674178d2cc.pth": "9fe4b36314725b1bc99b057ab7a11884a84262dd647f6fcc64c891d8a5fac8f6",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/fccdd004acc23b8cdd33c3073ee43473afbb49b678680d5cb267a7975011ae2b.pth": "2b3915ba21ff2644e7c4abc698532c759f598d70889ec11f8f9ed075eb9db6a7",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/7db06e50f4c8ab3e03e89ee51ca9b9861b05b2e80538024b6cb6fb075e83ff84.pth": "849c94f178e15625eb45fb6cefc4f845777ab4c0c501b352eb1e91cd8d383155",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3a3f7e06ae2b4c88688c00e6afc27fe3ca29e8470525a92434261774e751c7b6.pth": "c16f4dfa953d11ac1d483ab184336b9b76f0eabee9fbfaaadb6e9a32543aa7a4",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/9176b49b7f4c4d952edfc020006512421d3a6d88b7f8317df63b8c2dfdc15d1d.pth": "3c42e33d468819aec3fbb1502dcf9f43de57f862e58893aa4540e8da8464b174",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3d551306a722288ab8834abb919a314c6b5277e22efbedb1093c93a6d82bc37d.pth": "99b6db707dd8639cd048c47eede52b0f791d96c10af8e39623403985cdb0a906",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/c3e1aabc60bcc8fe6cd3108b489eb0474c5149faf9ee013d717f4519b4740ba8.pth": "1af951a9857413e1bcad40b51afd4aedee7e3bbe5b865deff53d53aaad5041c5",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/98beeee8e29e8ab8440e58fb181fe6d747bf6fdc560fd56dcecd72f6222a6023.pth": "c35fb04115f24829cd042d916a810d74eba142e01d0f285cb4d0915433aa293c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f877419bfb3556439b763a8e1ddfa53d0b2ab5652cae6ec2f716820770f06c81.pth": "a1c4e77b56c89393decbc098dc1f2f483646c06c93e29620332f7ec2d2a88248",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/984dce5698dd3f1e6d6edce9156f9263219ef9792a7481d7a92d3f3276e1048f.pth": "a047de4778dc8f96c31aff74eea23de9c139698bd4034e2517b27c162a2a0b91",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/ec66610c8b6fe7a4d3d396975821c56e68475c90e054f37b30020c3cb0fe7aee.pth": "b3c24426cbff5fbbfea17ab6b7dab7591a1b9996336fdd73ff5708a00908b02b",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f4ac0065b235d1dbff284be94d02cfec4169bb33873b25667dcdafd9da1db98a.pth": "ece56dfb4ccaee08f6825cd5b6e58da91c81062b61060de7cdf35d2cce38719f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/24c4da65cc4d4c71de4280a9855430307e9d34963a8633af702bbd81256b0221.pth": "e62c6d8d8e38900334712b42b1e05adb59f733e035a66eb007aff0d0736839fc",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/a25827339c80d0239087d3a1a11d7357c7c62beeb0b5332fd42787a9ce841bde.pth": "18b8bdf2a6f02791a66723afb81a6f89a1d3dcbb13cd783fe55ec9b455551267",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/9dad78096b1c29df958c113eb9a031e4dff5fe7d581a7bcf71295ffb456e31c8.pth": "43f5245017f96c6f7a83420c56aa7379bb65d27844209ad1e42204583591112c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3f036ca941b49f02ae74967ce556c5b892189effb92ddc1b951860ed0c0fcc5c.pth": "015a6a09c3c90bc29fb285cefe7acf5c11001c6084e03da7d0d492fe8495dd39",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/70eb929d23455697a869b3e51fe79afe60cb6cb60cd428391802e49830a5c410.pth": "5608f905f2a83ccf0f42dbf90126eb8891b30d443efab44d375ca6fdf07fdc5e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/8f9aacd8162605ebeebdfea13a5ad7d4b1a57e4771de616c29f432896861949e.pth": "cfbb885a1f81c8f60857bb5d2b4a89adf80dfffaf72cd00259a9d9c8728e2a34",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/8ebf49c7dca4d40fece1b81c0b9c95829ad040ceef9275d4d90167f1741e0a4c.pth": "881afd966d0875174a3cb1591a75d905d991ca5c6f78763c8d10e323af5e998b",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3fba1d9573b568e8e6e5ba7f6c4f017ad5e16eba7a60e620ae7d6aa89be6705b.pth": "aed3cbeef342879b1ef04e0335e6edf24ce8e84dd34d8ee901bafe27337469b6",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/de3b9a98ea2a72b5eaf3e5549f053806ca67b79f4f362fd71fc9737ceb0913d7.pth": "00b6535a60a1c3769b8e881439ad62d7d150f685d27ae3ed1f33589309d1221a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/c40f5593c5293015de2b1841b5ae5f2cd292e8318a59a7f032279d467b86cf5c.pth": "902c527c91556d75d6b2ac95c13873f0430fadf811ee54e8ef8011d57104a5da",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/38678b47bf94f20e26135371a2d90ead19750ff06c3009322c4d477a409f6a0d.pth": "c8bebb129cb15070e11f73aa55fb6513ae214b10319d54010d1bad8df12354d2",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/01fd05d846000d15024ee774507aa6fb3cb0e8dc3f66dde9656ec877e54b838d.pth": "9d139f260f2444bd272d5fa06c93a4aebdd8dd30f5e629a0c1161766393195e9",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3a3fe77873ae6779b7852e78c691ad6811792c145c0ce8e2f15780e91cf84f72.pth": "220cc368b413aad98f17854ef42a5b272bccaa197bc3f661aa8f010c0a6a783d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/be90b728343212b1a0a24c5faedf1c45d85c839fd0412f46bf593cac5dfd5e89.pth": "2ec9465d2c48460fa277bd6210a8b87a2787953881bd723df889cc7eef36ae54",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/5fe835221ce943cb4e0d5a08af8401906e4e518ca5861592654b2b1f07f9c468.pth": "c1e89b9b51f1544654a4315bf32d0397998f67485427058b677defe04c3a3de9",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/b65f205c2645749ca706b528a2d842113b0bf4f7fa40cfb8d6ef6aeabfbc719d.pth": "d4b727cc4c30842c8e09a6836bf9c2426b0269c5dbf5cbefaec9d28afe8210ef",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/b60537985c278e7c771c71cb9dabe7e15f1a2da1ff8d5e5a04b5c9e4babfa6d4.pth": "7acdf19f809d6f99814250dba9896791b4eb1ab9e80375a9d8f7d44ab0b81fdf",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e03e4fb16be18fb33c4c6f2078c1e9ffb37fa8c759d98e459bde72df4882ea70.pth": "eb5cc8bf9aec7711ee2a3aa7def307ba6b5c3015f0a888491ef58ad7da168b29",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/5fbe3d2b53140f3bda6651947c7ef08204fde5634abb219a42b1bdb9f0567d9f.pth": "b13c01b6fee7736cdecfc40641fcfcbeb05249e9df937b2fccefa301caaa465c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/1a7f787d8dc22d5f9621b0f52d6a8207a92c0c56ef6b60c9a2e67d3a630c760d.pth": "51edabf9ad7bf4fb507ca52b18124bf47c7481d8528cabe6fce09d3951046982",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/d48e287ed9df6b71d4a6ab011ffd0afcb08b8981cd674bf5c72d59814a70068d.pth": "e236c56933bd6d5eb070772e9ec11df7f38619716a5f935c54e5e64c1877aace",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/21f8e4a958982639b1b7f3a73276be643794dc84ad26bc9c40ea599b5334463f.pth": "2e9c85b24d64cf0da3d52cef5e4984d6100ddd94639722865dc52aa9051a5d6b",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/ef8c8fb13a20d8cdb0e5eef4f3cdfa93758e65d03a2e740c18731ecca3affdf5.pth": "1335c2ab5c1e20a08c6b85a4ff2057d5cac2e07b24c32aa385c820907c34ce81",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/5a1fa1b2fa9feedd3e8da098a464b41fd5967ba08a32728badd800cf589276d0.pth": "e5c6688b2d549a654f6b48f6b60108aa91942f0e7474d0ac6f03f86802556cfb",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/7410bc6be2475b571e817a95b4909e0b87e842f7863a6b5232f300f707ceecb7.pth": "50a218a6698a1f5ef2cdaf7d8968c8ee053eddbaa7536d0da05d97b87e533098",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/e16de16d5bf4e9c35ab952bf4d6de171603fcf8fdcde94eda48e33bcdc4a1ec3.pth": "437510e0457a319c2b000b9486aeb65688e77fcafeea8eb5fe6e6ea36cd5481d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/a646bd563452071191c0c79211ed9842f8afe8862a9cf7321f3c98d3dcb99239.pth": "04db532753551e456fa711671e4aaed86b52ca05ea16db4f49f806d657482410",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/07f051a4224dca13d890d37c81d472d25687263f86be5891f5ca55c916b82666.pth": "d544befe8d34c0afe23e14eea0228127e80332845714821146c3854a13b91f1f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/5c2004ea723c34558ca69d4e118d6c13f25ec67a8af8d854d6d1e3bc73acbe70.pth": "508e84ec05d09664c46883067bc33dcd72f4c726d58146a87e7d347fd77bb759",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/d97c0571b15d31b19a1282adc7a6da1ce176460deb15a149b136c60c8cbb583e.pth": "b4c6bda7074a85c3e71cba939d751b191a963c82d24832785e9626d9a6e7ab05",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3050ffa1488b60aa803779c980e24ad15ca1538700647db7cd1756363f63f953.pth": "fe9e55b02ec515b2fcdb68fbbc0baf038209abe64e18ee9259885e1b257b831a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/7fcda962e52319174deda239b443d4a929f49a9bec841401f07d37ec2e43956b.pth": "74153cf9056ef2d43de979d8dc6f9db5f489b6cbf35d6c7a652adc0351570307",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/86517227c4e1b52dab25928b9398862e3e405371c18d455e58986cff5dac6fea.pth": "265f3cd404d5f0c7d801506c006c3dc9a19c86e944795dbf75aedd0611f0a515",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/0a1815fd7d4373e4d4550b6f79a7f31db5544d32aab82161eff940e761a3a3ac.pth": "b98c812df197cdddea7e46c8efc0cd425eb9877d1f7fe5ffd8c5fe699425b4b8",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/ccbdb64aeb44933fdc1623168b40a4874bdad60d9d2d8dd416590430f740775a.pth": "35077cd977f3e1f9ac232a272dbb042bf851da372a5507719236771adb20eaa4",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/c90b325f7e1ac710cf9ff853c4a6cd9fc2b0ae4ed7079118921e7265b8ea11b3.pth": "ffc90eb524de0d362a915f671963e1c288e3397ffb857417336802db1dd3cfb3",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/fa07b266319b6fd19b74330d3a0bd8e8dab2bf08a0d3cc46c4b5fda5226e5898.pth": "420e81e292c51dc24a02ea6832731b1e392986d0822cf47845fc97b96e087afc",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/66dee9e07edca16cd56dc39ff684155e62735c097009283cdb9dbe1a5b38b086.pth": "aeed4f5bc00c688c51f1408e5df80afe1af0d32640495c08b7c0c00033388d50",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/bf6f6f64e2a105469d4e9490124df4cbf0d20a3bb93fe1b073ba7e582f32c23f.pth": "fc87421714d6219ca1c840836969bf161c15018d86966ac27de7be5b6c85319a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/9ee494b8943c1b3790398c1f29a2f657386106220d9ac842930d84b7988f4092.pth": "da52d91e7a4bdaea24484a6f326f469480004cb7b0db65b801115301c605d345",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/0e04ebb1806431e5e3b0b038b0be5ba7eb4a47a0ea558cb8981b8670acf46aeb.pth": "1633177983b0525e7e6a71e336d83f997b7a303bfa0c0abec6473d87f445527f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/22b93b289d814dbd61a4a47d1ed4093aed1e0a48260f41e84f0746596d616d53.pth": "6c92eeb0748a302552a8dc3b36c22863f7ec70f7929ad4a19c75d0501b81b4f8",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/8b3573956d144094bfdcb9065ec0c3dd5d81c1f99a743e744c1aff67353f1cce.pth": "62acf31cfe7555c35bf223544c0ba25958358d1d00685c5d21d4506fd85ad8b4",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/952d02390faeae2f4615d1e50364b1080611e4f7d8323a8b430de88094471277.pth": "8e0b06db19e84d1de2dcbb9c9ba28c7795cb5cf61f979b6c70471feb8ea00aa2",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/64890a0ccd2e6ef3da49767ccbae9281ad74bcee2364f64e75e35a7abe29f732.pth": "dcc5364c0c5294ca9279451ca9b21705224b004bfddbdacb0d29ed7f3732052c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/5800d88a4a7018dffc70e4f8271727c723f09e4878d8311202197cd6ae56614b.pth": "a22d0614fd6f4bd2b6217f09d0a1a6f1786a5adaec6636dc1dada00b8934f8eb",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/ed851fcc749bb09f3190c30dc3f0a5579644ed4c33ac61017372eccd42547d7d.pth": "4f798b458c3abf7192abdb39ae726adb00b0801354c8f2331252973257af6f3f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/b99378526fd661ec6edea80f892fb3ae269aff3d9bfa6dfca2fd6d84b70a1c85.pth": "be3d82f2b5ef0539ecdd69b47965f2c553de6c2f38b47dc21d71aa5aefd9d685",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/1b3c43fb5fc43677f24e8597b29fedde16a2c55380319d4db60405736fe67a35.pth": "e08a21e4277b76552d1c7c2923c4e3ac5e8d2283d57fe844709b6be08b8b44f3",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/a1e5e8fb4e6625babdb4328a2f0baa9c70b462c9ad080b71f6bd57d397505e1d.pth": "c6610e33bf97acd2ba2cce8a46c6df936416662535b1ebe1b33ddb6756437af0",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f6659f3e8d470f6c700a55644cb478137a820f3f0209cc58c7db1ef046e8ec95.pth": "b130a745ef338772b483ddedec02ead41fe614977431e70e64d08198f7bf5036",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/65484ceb9a041d0091fa46018b98d44bdb97c0bdb34263293d4dbd4deebabcf9.pth": "dde29fb8db7916e367d4dfadbe82e812690065e8deaec498f0129fcbe7289b0b",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/66e6ca9cd626040a25c8a3e73310d77b6e3622476133037d3be13cad0770ddf1.pth": "5e790be06ce96d2f8bfab6fa0e174084cae684291d3ed996c7865ad8669ecebe",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/047066c63dbd0d54de36a3d7d1758a3b9237471f71b569c53cb7b4d64cd78fef.pth": "f8b829e7411c06333925d27373d75fcdd63ddafc8a14cdb8bdfb2ee16981e12f",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/eeea333f25a60a65189247be66b46f9bb8e18452c7715e790a8173dfb9166a09.pth": "31ba8cfd76a80059b0fd713f251941f9ed89bf9ec16fe7753bf0b7419374db1a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/7a8d8c96d723064ba070ab8ae8c9face4c47f7a87c063ce43b4104455a3e264c.pth": "e55f4ddf8a56665d0f1b0a34c2a74d0b8e5897bd7547820c567c576167edd030",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/a9e0d9cd81be9dc2a4c59a8a0b474f37ff9d8a791ed6c9a13dc4decb6a43c083.pth": "4b81c7e198e84f4d718dcdc179182edd386778e5d5cc51abcdb6f266c453cab9",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/1a6c643ab833bd1e429d944c4a8068f6dccfdde9aba7c299a8effdc721f1d3cf.pth": "cf14294aa000b4a3c21b59626f442f3c472e3460890fe577885968e9961a30aa",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/59a9107af6d9fb9e21f569859a193e15770096c1916bf6b86cfd5184069a6003.pth": "ea67cf00a0b6cc758590a8f02bf90115652529bb51917e32aca7f3d94ffa52f9",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/0cc9dbc50a3aefaf7b82b36350db434ab58fc3269074e33fa0ae26de26bac8f1.pth": "0565b91ab374daaf5638f9a2f98fe22040d7a1a9e15f3d791c238f466a099b7c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/8f4e631999731bc79ddf664afbd148597ea9375b6b80fa6d107a2f46fbbe68c2.pth": "6385c64fa7aac86772cda9598e43d48744a73c8ba264e40a6ea2f39d8a4e7778",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/29a1426377791ae287511ce840b249a87e372836498174bde6511499664d0d8f.pth": "80fbe1c5ab36432227c62a01850001dc57e5b5aa410ed9d7d359559f72dd3d08",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/1a00f8031cd6bb643d4b1e6771909f3d98087e07f739bdec3a23fad4311ca0fd.pth": "5d8279aaa7d27c09694f270861d2461bd1165e47368be557342a9a2782eb6fea",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/3f37bc7dcda3ca6638d9d1fd312033417b7522dc5bc3f479cccc7fb948ef98bb.pth": "b328294098692a3118b2313af2727d138ceae74361f48276bd44cbaa977c248d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/598449f8d2aad3f05689635daff9d2efaf4866d089daf53883f4cd7420c393ff.pth": "f44b472239a8d6d71818ac6496fba63d070583dc90ef3e754c2f552ade4411a0",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/bad70eb719400f5f66a0663c7296da7b7a20e066d46877b9834e8c14586a4062.pth": "b4f811141c8645d690ad4d6e54d760a0fa1ca063396127850c7c77ff7119e059",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/dc0f05e3f7e1404db0d9ad350f69b85bbf846cb768b32f9c0438b76104adef31.pth": "ad44eb2b29e4892bff6bee5a9b17a6d98bb589112fb851dee8bac29b37c9140d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/1a41176a0f3b47f44cccedd148f6622be0d6771c84e70926e4798bae9e1ee444.pth": "e8849e83d71580e921e15648336314a098299304fb37ea0871fab856a3ad88c2",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/d444284f655ab7b99c03fccbec66999f3b7afce7a9d0a7dc9febf5a100ecbd31.pth": "49dcdaca29a409ee8a38139733fed3d1409003b764942422a72eca6f29451c98",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/a2c2405fadf05ff2b1bdf18732a32bb07330faed89f031fd9fd5f30c71726031.pth": "aaba24bd94cc7d43ac93c0acd9a34cd14b093c76903e3aebebfae916076f3708",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/bf4eb34de69a7f0ad147148a31289d57c5844ae52d18012662d08ab0a7d72d23.pth": "aab05f380253cc1120df15a59f2951218843f5b3ee626cca3babafe0f9ba2ba1",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/4a5554be3f48d47327ae9cbd76e1d2023939034ed084015fa0c7c24ba1f93680.pth": "d0fe272ff40098506e5a7125db3c06fe23def21399b9a5513e3343d6e9acf84a",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/1b3a333928cb4bf7747c00b181e4ee93060ad1f661e2b96e40be618d93582bce.pth": "d5f9a00ca2d2f5e3f5ea27919f46f214ba356ace1584fc6ef92044051ec166a3",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f6959d988463100116cea6e6e191f41d3f95a7f356ab54ffec39c9b1d2f502d7.pth": "5a8659efe77adeac0e3da5196be914dd4f43eaf5253950b3d2855560a23a3dd5",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/92fba45ce2a4b787a6730a00d5eb4df763bc5ef47552e648d7df87983a0a913f.pth": "a155a243eef10640dd3709009fff29d141c20eee9e205edff56442932da76038",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/023868911cc9c9877baa4388673a5aab0ce75558703e3c056457685987707aa1.pth": "82491cd36ea07bdc564cfd0c3c10f48816fb0ff4b839da86bb0bd2ce1852cc0d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/f4cc32cbe9944d504f285160ee1ea9a592272151fca3c8dc7090a4f3b507e721.pth": "2008ad996ccb31ad5a1c77721bdd88587d418c4203040dcef501e30204c3014e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/d1c415b82be5bcc4879275e27c5daa1cf1082f21d3d419deeab5ab8090adf8aa.pth": "2877f955e9df77e5dd5e9f216009f61493bb686454e5be4b0848a758f7d18314",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/8116b9b6970c57472b0f50c571cdfd7b7382d19751d17fc0cef27df149d739fb.pth": "f980e30b3934c775352eee348f63a03e41a9234656fbfc8d5c581731b11986f2",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/tensors/11c7b71a59a2a3a3005f717c587fe98068027928a901e1ff9afb06d194a36811.pth": "1e26ab3af96c1e3e1f48ac90823b103c5938ad4a48048bd60a24e11c9334d7c2",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/console.log": "a869b06517cf378328dd5cbda9290716d319e47e9cbb0ba3112668a72ba83123",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/initial_state.pth": "67d1dda6d21cb900833e224e7cec1b54719bcca72544f0b4d643e1a27b3fc598",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/operators.json": "2db3a88e38e90e0116dcbebf6859552b8c3e96bd399937b797b17920c2cefb0c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/summary.json": "2f67beff58525521113e308950e61f76dd70bd8e22e9ad8054f8aaa631350feb",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/worker/seed43/wandb/debug-internal.log": "9b5cfe4e1967f87f75746e60120ce4d72c31dda78d45379b411138c425c676a3",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/worker/seed43/wandb/debug.log": "90aa1c8c47db01797c401f6d9d70f8dfb3e66f4822954a870319c814485deb6e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/worker/seed43/wandb/offline-run-20261103_092516-orwk9lrm/run-orwk9lrm.wandb": "056664bc709083c3c3f403c35e2eedb6253c491769ed56eb5ef86f5685e80b07",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/worker/seed43/wandb/offline-run-20261103_092516-orwk9lrm/files/wandb-metadata.json": "76663ba69a5bf748561edeec453094c8894d2590fb44a5e6270db584bac822ee",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/worker/seed43/wandb/offline-run-20261103_092516-orwk9lrm/files/wandb-summary.json": "5b2c3bd5f2a03f4bf343f271917b776689ff7826aebdd85814d82a6150bf8d2d",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/worker/seed43/wandb/offline-run-20261103_092516-orwk9lrm/files/requirements.txt": "6e09ee370024a9629bb7b685a2f5d386bb2fc7f0d13519086acbed35b9edbca0",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/worker/seed43/wandb/offline-run-20261103_092516-orwk9lrm/logs/debug-internal.log": "9b5cfe4e1967f87f75746e60120ce4d72c31dda78d45379b411138c425c676a3",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/worker/seed43/wandb/offline-run-20261103_092516-orwk9lrm/logs/debug.log": "90aa1c8c47db01797c401f6d9d70f8dfb3e66f4822954a870319c814485deb6e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/capture_console.log": "e8dcada707a5be452deee388e683b24a17ea389ba136e45c82c56665ee53bdac",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/tensors/5b674295e523952c3fcb8ca48b58c4e39aef6d4eb261f5190dc2fff8865fe104.pth": "87bc4f27920167cd42ea398272e7cf08b203f197487a1506f70d60281b51e230",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/tensors/5a504b464b8b60432f1a2808a707aceb7a92da7677f6ddfeea23edb9707b14f2.pth": "a397a32faa8f6d315c9b57bb9b4e46329211ed81120faf6e4a34b36359b0d0f2",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/tensors/ff41890def3831430027b677806864bb5eeb85bb506984481583462209512841.pth": "8a0f82942572c4cd9d61deca4e9ddafaad0e3e3a2c69c2c316093a38d60d23ec",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/tensors/0c9dfb850d8d5123f39a26fce652dc57ca819614ddb3ad07f84838471c044bfe.pth": "bdaeb99682c2c87589c53d01345179d4bf7ff80f88e380745d759eb8befaa53c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/native_public/initial_state.pth": "67d1dda6d21cb900833e224e7cec1b54719bcca72544f0b4d643e1a27b3fc598",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/native_public/operators.json": "fae1f2999e19c2d0b521c051462aa407be3a8c08f133210894f72bd375710c64",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/native_public/summary.json": "639d4d86e56845e222159646f61c68b0fa5eef5352d36e387383f40fef096c71",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_public/console.log": "4c1b5d2fddf18fcaf4143a89fde134bc5ea006e1d29aa984d4e0a2728a8bce26",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_public/initial_state.pth": "67d1dda6d21cb900833e224e7cec1b54719bcca72544f0b4d643e1a27b3fc598",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_public/operators.json": "efe4c9e4fd82a7df6a80237daa6e8287fcdd6c5073211adb4dd4b49d2c651d0e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_public/summary.json": "c76143d9014be54ae579ae624f7f52c9a10615dfa22f846e1479cd153d56a14e",
+    "docs/conclusions/final/fd002_first_batch_op_localization_20261103_report.md": "0d8dd9d12d02213a33a57abbb476dafac71cc2846289d0173860bac7e41f0931",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/confirmation-manifest.json": "f2b1dd6566182038817863c3e03a6c71c2bbb7690234ab8511c86f6be420a331",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/local-probe-manifest.json": "78c6a1f4caf1c18858e10be701536833cf6dc4dd9838f4559dcb604e428a595e"
+  }
+}

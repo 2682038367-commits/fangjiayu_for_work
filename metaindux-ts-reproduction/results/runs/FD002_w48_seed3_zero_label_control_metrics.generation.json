@@ -1,0 +1,44 @@
+{
+  "best_diffusion_loss": 0.024238624604293175,
+  "best_epoch": 64,
+  "training_seconds": 216.74926900863647,
+  "sampling_seconds": 2610.4239196777344,
+  "frequency_thresholds": [
+    {
+      "module": "ups.0.2.fn.fn",
+      "mask_mode": "hard_random_quantile",
+      "raw": 0.3644869327545166,
+      "effective": 0.3644869327545166,
+      "threshold_parameter_semantics": "quantile_fraction",
+      "threshold_value": null,
+      "threshold_value_semantics": "dynamic_normalized_energy_quantile",
+      "mask_drop_ratio": 0.3652314581107282,
+      "mask_drop_ratio_semantics": "fraction_of_forward_mask_elements_equal_to_zero",
+      "hard_drop_ratio": 0.3652314581107282,
+      "observation_scope": "all_ddpm_sampling_forwards",
+      "observed_mask_elements": 1080014000,
+      "observed_forward_calls": 326000,
+      "observed_threshold_mean": 0.9047870635986328,
+      "observed_threshold_min": 0.8088993430137634,
+      "observed_threshold_max": 1.865235686302185
+    },
+    {
+      "module": "ups.1.2.fn.fn",
+      "mask_mode": "hard_random_quantile",
+      "raw": 0.4880968928337097,
+      "effective": 0.4880968928337097,
+      "threshold_parameter_semantics": "quantile_fraction",
+      "threshold_value": null,
+      "threshold_value_semantics": "dynamic_normalized_energy_quantile",
+      "mask_drop_ratio": 0.49295073641637976,
+      "mask_drop_ratio_semantics": "fraction_of_forward_mask_elements_equal_to_zero",
+      "hard_drop_ratio": 0.49295073641637976,
+      "observation_scope": "all_ddpm_sampling_forwards",
+      "observed_mask_elements": 2076950000,
+      "observed_forward_calls": 326000,
+      "observed_threshold_mean": 0.9999998807907104,
+      "observed_threshold_min": 0.9999964237213135,
+      "observed_threshold_max": 1.9999958276748657
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "source_and_frozen_hashes_verified": 75,
+  "training_source_compiles": true,
+  "checkpoints_same_epoch": 67,
+  "training_runs": 2,
+  "maximum_sample_sets": 3,
+  "maximum_discriminator_fits": 15,
+  "no_downstream_fits": true
+}

@@ -1,0 +1,126 @@
+{
+  "weight_file_count": 754,
+  "relevant_generator_candidates": [
+    {
+      "path": "upstream/weights/DiffUnet_fre_FD001_48.pth",
+      "bytes": 2179458,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed33.pth",
+      "bytes": 2178468,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed13_fewshot10_paper.pth",
+      "bytes": 2181700,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed3.pth",
+      "bytes": 2178206,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed43_fewshot10_paper.pth",
+      "bytes": 2181700,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w24_seed3.pth",
+      "bytes": 2178206,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w24_seed43.pth",
+      "bytes": 2178468,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed13.pth",
+      "bytes": 2178468,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w24_seed13.pth",
+      "bytes": 2178468,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w24_seed33.pth",
+      "bytes": 2178468,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed3_zeroshot_paper.pth",
+      "bytes": 2181304,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed3_zero_label_control.pth",
+      "bytes": 2182096,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed33_zeroshot_paper.pth",
+      "bytes": 2181502,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed33_fewshot10_paper.pth",
+      "bytes": 2181700,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed23_fewshot10_paper.pth",
+      "bytes": 2181700,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w24_seed23.pth",
+      "bytes": 2178468,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed23_zeroshot_paper.pth",
+      "bytes": 2181502,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed3_fewshot10_paper.pth",
+      "bytes": 2181502,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed43.pth",
+      "bytes": 2178468,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed43_zeroshot_paper.pth",
+      "bytes": 2181502,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed3_zero_label_no_batch_zero.pth",
+      "bytes": 2183284,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed13_zeroshot_paper.pth",
+      "bytes": 2181502,
+      "category": "generator_or_other"
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed23.pth",
+      "bytes": 2178468,
+      "category": "generator_or_other"
+    }
+  ],
+  "attributable_original_seed23_weights": [
+    "checkpoints/FD001_w48_seed23.pth"
+  ],
+  "attributable_epoch64_or70_found": false,
+  "exclusions": "Other tasks/windows/seeds and supplied pretrained weight lack matching seed23 late provenance",
+  "search_scope": "workspace, including hidden directories; skip .venv and .git"
+}

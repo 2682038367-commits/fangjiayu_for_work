@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "frozen_input_hashes": 72,
+  "selected_epoch30": 30,
+  "selected_epoch70": 70,
+  "predictor_worker_compiles": true,
+  "isolated_predictor_checkpoint_paths": true,
+  "frozen_helper_roots_rebound": true,
+  "predictor_epochs": 35,
+  "predictor_updates": 3990
+}

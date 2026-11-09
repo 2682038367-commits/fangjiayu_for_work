@@ -1,0 +1,11 @@
+ M experiment-ledger.md
+ M reproduction-state.md
+?? analysis/diagnostics/audit_fd001_seed13_condition_segments.py
+?? docs/conclusions/final/fd001_fixed_denoising_exam_20261102_report.md
+?? docs/conclusions/final/fd001_fixed_denoising_exam_20261102_review.md
+?? docs/operations/FD001_FIXED_DENOISING_EXAM.md
+?? docs/operations/FD001_SEED13_CONDITION_SEGMENTS.md
+?? results/diagnostics/fd001_fixed_denoising_exam_20261102/
+?? runs/diagnostic-fd001-fixed-denoising-exam-20261102/
+?? runs/diagnostic-fd001-seed13-condition-segments-20261102/
+?? scripts/run_fd001_fixed_denoising_exam.py

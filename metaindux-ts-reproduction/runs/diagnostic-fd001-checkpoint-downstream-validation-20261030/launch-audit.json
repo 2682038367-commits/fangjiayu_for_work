@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-30T14:52:04.785352+08:00",
+  "service": "metaindux-fd001-checkpoint-downstream-validation-20261030.service",
+  "main_pid": 1296787,
+  "service_active": true,
+  "started_at": "2026-10-30T14:51:27.233543+08:00",
+  "completed_models": 2,
+  "status": "running",
+  "frozen_input_preflight_passed": true
+}

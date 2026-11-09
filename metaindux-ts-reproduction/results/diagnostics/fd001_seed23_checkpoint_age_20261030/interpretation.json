@@ -1,0 +1,15 @@
+{
+  "functional_epoch15_reproduction": true,
+  "historical_late_weights_observed": false,
+  "rerun_best_epoch_one_based": 15,
+  "original_best_epoch_one_based": 15,
+  "rerun_selection_also_chose_epoch15": true,
+  "original_late_model_quality": "unobserved; original snapshots missing",
+  "late_epochs_with_clear_ds_gain": [
+    64,
+    70
+  ],
+  "ds_monotonically_improved": true,
+  "final_still_above_ds_point3": false,
+  "rerun_rule_directly_discarded_evaluated_better_model": true
+}

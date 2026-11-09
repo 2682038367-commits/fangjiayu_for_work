@@ -1,0 +1,7 @@
+{
+  "tensorflow": "2.12.0",
+  "tensorflow_gpu_devices": [],
+  "tf_deterministic_ops": "1",
+  "tf_enable_onednn_opts": "0",
+  "source_sha256": "8377a0fb86a8328c1289fc99bf7e050907219c61b164a6a1020c661f94f12ff8"
+}

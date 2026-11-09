@@ -1,0 +1,322 @@
+run_id: core-b-zeroshot-full-w48-20261014
+status: complete
+scope_class: strict-reproduction
+experiment_role: core:B
+scope_contract: scope-20261014-zeroshot
+user_authorization: 2026-10-14 user explicitly asked assistant to execute
+source_snapshot: SOURCE_SNAPSHOT.md
+repository: https://github.com/Dolphin-wang/MetaIndux-TS
+commit: unknown; author archive pinned by SOURCE_SNAPSHOT.md
+git_status: workspace is not a valid git repository
+prepared_at: '2026-10-14T15:31:43.436429+08:00'
+config_sha256:
+  configs/paper_zeroshot_full.yaml: 7ed2da40e1996d9146ea50285639255fd75c720aeb07d44f6ecb5b0efbb969c8
+  configs/evaluation_fd001_zeroshot.yaml: 54f91193887da43917b0c101bdc314eb498af60dcd50033070c97607318ab244
+  configs/evaluation_fd002_zeroshot.yaml: 54ff151e0d92efa38c82a458712129f16ea000a623bf26f91f90dc0c8e5e0857
+  configs/evaluation_fd003_zeroshot.yaml: a59e2ea447558d2aa9771306d27bf1c04623e679b8ed7e4ea7e52b9cc7d05ff7
+  configs/evaluation_fd004_zeroshot.yaml: 128ba4098786b0b1b426660bc963672ec87595760d57a486ca66d76118e3eb17
+resolved_configs:
+  configs/paper_zeroshot_full.yaml:
+    experiment:
+      name: metaindux_ts_table_v_full_zeroshot
+      datasets:
+      - FD001
+      - FD002
+      - FD003
+      - FD004
+      window_sizes:
+      - 48
+      generation_seeds:
+      - 3
+      - 13
+      - 23
+      - 33
+      - 43
+      seeds:
+      - 3
+      - 13
+      - 23
+      - 33
+      - 43
+      task: zeroshot
+      fatigue_threshold: 30
+      artifact_tag: zeroshot_paper
+    model:
+      name: DiffUnet_fre
+      input_size: 14
+      frequency_mask_mode: hard_random_quantile
+    diffusion:
+      timesteps: 1000
+      beta_schedule: linear
+      sample_type: ddpm
+    training:
+      epochs: 70
+      optimizer: adam
+      learning_rate: 0.002
+      lr_schedule: warmup_cosine
+      batch_size: 64
+      grad_clip: 1.0
+    runtime:
+      state: train
+      device: cuda
+      wandb_mode: offline
+  configs/evaluation_fd001_zeroshot.yaml:
+    experiment:
+      dataset: FD001
+      window_size: 48
+      generation_seeds:
+      - 3
+      - 13
+      - 23
+      - 33
+      - 43
+      evaluator_seeds:
+      - 3
+      - 13
+      - 23
+      - 33
+      - 43
+      fixed_split_seed: 20260915
+      synthetic_pattern: outputs/FD001_w48_seed{generation_seed}_zeroshot_paper.npz
+    evaluation:
+      evaluator_epochs: 35
+      predictor_layers: 2
+      test_label_max: 30
+      device: cuda
+      deterministic_torch: true
+      resume: true
+      predictive_train_rate: 0.7
+      discriminator_train_rate: 0.8
+    outputs:
+      raw_csv: results/zeroshot/fd001_table_v_evaluation_raw.csv
+      summary_csv: results/zeroshot/fd001_table_v_evaluation_summary.csv
+      split_indices: results/zeroshot/fd001_table_v_eval_split.npz
+      manifest: results/zeroshot/fd001_table_v_evaluation_manifest.json
+      evaluator_checkpoints: checkpoints/evaluators/fd001_table_v_zeroshot
+  configs/evaluation_fd002_zeroshot.yaml:
+    experiment:
+      dataset: FD002
+      window_size: 48
+      generation_seeds:
+      - 3
+      - 13
+      - 23
+      - 33
+      - 43
+      evaluator_seeds:
+      - 3
+      - 13
+      - 23
+      - 33
+      - 43
+      fixed_split_seed: 20260915
+      synthetic_pattern: outputs/FD002_w48_seed{generation_seed}_zeroshot_paper.npz
+    evaluation:
+      evaluator_epochs: 35
+      predictor_layers: 2
+      test_label_max: 30
+      device: cuda
+      deterministic_torch: true
+      resume: true
+      predictive_train_rate: 0.7
+      discriminator_train_rate: 0.8
+    outputs:
+      raw_csv: results/zeroshot/fd002_table_v_evaluation_raw.csv
+      summary_csv: results/zeroshot/fd002_table_v_evaluation_summary.csv
+      split_indices: results/zeroshot/fd002_table_v_eval_split.npz
+      manifest: results/zeroshot/fd002_table_v_evaluation_manifest.json
+      evaluator_checkpoints: checkpoints/evaluators/fd002_table_v_zeroshot
+  configs/evaluation_fd003_zeroshot.yaml:
+    experiment:
+      dataset: FD003
+      window_size: 48
+      generation_seeds:
+      - 3
+      - 13
+      - 23
+      - 33
+      - 43
+      evaluator_seeds:
+      - 3
+      - 13
+      - 23
+      - 33
+      - 43
+      fixed_split_seed: 20260915
+      synthetic_pattern: outputs/FD003_w48_seed{generation_seed}_zeroshot_paper.npz
+    evaluation:
+      evaluator_epochs: 35
+      predictor_layers: 2
+      test_label_max: 30
+      device: cuda
+      deterministic_torch: true
+      resume: true
+      predictive_train_rate: 0.7
+      discriminator_train_rate: 0.8
+    outputs:
+      raw_csv: results/zeroshot/fd003_table_v_evaluation_raw.csv
+      summary_csv: results/zeroshot/fd003_table_v_evaluation_summary.csv
+      split_indices: results/zeroshot/fd003_table_v_eval_split.npz
+      manifest: results/zeroshot/fd003_table_v_evaluation_manifest.json
+      evaluator_checkpoints: checkpoints/evaluators/fd003_table_v_zeroshot
+  configs/evaluation_fd004_zeroshot.yaml:
+    experiment:
+      dataset: FD004
+      window_size: 48
+      generation_seeds:
+      - 3
+      - 13
+      - 23
+      - 33
+      - 43
+      evaluator_seeds:
+      - 3
+      - 13
+      - 23
+      - 33
+      - 43
+      fixed_split_seed: 20260915
+      synthetic_pattern: outputs/FD004_w48_seed{generation_seed}_zeroshot_paper.npz
+    evaluation:
+      evaluator_epochs: 35
+      predictor_layers: 2
+      test_label_max: 30
+      device: cuda
+      deterministic_torch: true
+      resume: true
+      predictive_train_rate: 0.7
+      discriminator_train_rate: 0.8
+    outputs:
+      raw_csv: results/zeroshot/fd004_table_v_evaluation_raw.csv
+      summary_csv: results/zeroshot/fd004_table_v_evaluation_summary.csv
+      split_indices: results/zeroshot/fd004_table_v_eval_split.npz
+      manifest: results/zeroshot/fd004_table_v_evaluation_manifest.json
+      evaluator_checkpoints: checkpoints/evaluators/fd004_table_v_zeroshot
+code_sha256:
+  upstream/main_fewshot.py: ea2843ff406630058b2537b2f0592df33e9203486726511f255d8c7e75cef0f0
+  upstream/eva_regressor.py: 4c7d02b77312e88d0338ad3b80189f325a81b0b47f2c7eed1a063f7427c85168
+  upstream/TrainCondition.py: f600aea3d3c64abac79f1b853b89d8971671b0dbb58b2ecb0f0edb408db32608
+  upstream/MainCondition.py: 1e496df84c6c2324136a6c7b4a641faa664764a14a86a7b572c3b3019c54ba64
+  upstream/visualizationMetrics.py: 7df4cb8594f52eee444c4ab19c6fb38a5819047955732767c0a3b639eeff93c6
+  upstream/args.py: e578a3d0a94235227e172e4e87fc86b3a1c79625602e9049e79955b38f519b4f
+  upstream/data_process.py: 00b17e9eaf6f5184b7561f4fed618c0891a6e273bd9b212e807482f2c6178628
+  upstream/utils.py: 34f9086f626a58958878a6dfe23b69fb96ad4c38cb95de80b406969b96b9a772
+  upstream/GaussianDiffusion.py: 8a6351232cc853ad1e06f2fe94745f17f3460eca8a24ce5fc89a509d28a74aba
+  upstream/DiffusionFreeGuidence/csdi.py: c5bfbd2e1091d60cbab1f062bcfc98cf935c7a3796858726f5e181f0bcdbd83a
+  upstream/DiffusionFreeGuidence/Attetnion.py: 6ef40c870e265be09796a7733503bf8f7bf06dd15ec2a3a72c84e4a3436c8761
+  upstream/DiffusionFreeGuidence/diffwaveimputer.py: 3513ea2bd3a5f3c7d88f896a8aa30885aee00768c858cdd7d1fec45bacf66a6e
+  upstream/DiffusionFreeGuidence/Unet.py: dcc37fcb7cd7e4262812872f61b06863d2fc3c4c0dcda5a7d7240081a928a454
+  upstream/DiffusionFreeGuidence/SSSD.py: a8c6c679269348276d36c48f3059bdbc5030a4671680b3adbe6de444cfd7ee47
+  upstream/DiffusionFreeGuidence/Unet1D.py: ab66fe31797ee3bd8e4882f55e1a8753f7376026ce1f84e1d2bedee829257c57
+  upstream/DiffusionFreeGuidence/__init__.py: e2fc1d5bb972cce2cf21f404b357320f51b8fa85c351d6a2fe7b56ef85a1aa52
+  upstream/DiffusionFreeGuidence/Unet1D_fre.py: 9f2e4b7dab0bcd43cbd434b27912127051f718e1ed96fd82fa4fe6cd7c5772f2
+  upstream/DiffusionFreeGuidence/S4Model.py: 145a4c5910270be77f715e6d885b5d2acdd4382fc49f0a5ef199960010b8d502
+  upstream/DiffusionFreeGuidence/Dit.py: d18461322aca383e5304362b7397dcaada79c582dc5aa764d4b76abe36dde528
+  upstream/DiffusionFreeGuidence/Diffwave.py: f17f6536495099326bc055fe4f49ab9f9f1f7517f635cb44b36b0d73471b0b46
+  upstream/DiffusionFreeGuidence/Attetnion_temp.py: edf3390f69e3204cf88ee43e3d4601c1e828d737cf27811f9b0e50aac97d2dcd
+  upstream/DiffusionFreeGuidence/tabddpm.py: 7c1fdacc42f79e05ab913dfc21972b4d8cedc66bf3ae9e6edd1336fd44d5e913
+  upstream/measure_score/engine/solver.py: ee90295f98dcd2126da9d9ec2219117e55a2bf390ae5b5b4097dd8fc40b85fb3
+  upstream/measure_score/engine/lr_sch.py: ff5b62f3d5740d74f522a65a939d1adc263ab87bc89ff0a37446061ae7c3d378
+  upstream/measure_score/engine/logger.py: 35ad5e7a3ced80ce07a33416d24472f75a33644e5c21261854df9a395d6c8c51
+  upstream/measure_score/Models/interpretable_diffusion/model_utils.py: 016e34292b47ef670c6ea38a2e068cc5f68420b9d0aceb3412c3c6a760d50c7f
+  upstream/measure_score/Models/interpretable_diffusion/gaussian_diffusion.py: 4d746240dba43dbcce5f5d374fbe4bbbcdb7eea7fe5c07397e9942e70f8f7b05
+  upstream/measure_score/Models/interpretable_diffusion/transformer.py: d4b797a846c4fcd344ede3e85e53c92c6d3fea509d6b2a2692819e23acd722f4
+  upstream/measure_score/Models/ts2vec/utils.py: 85ca67e8e84cad09933d2f3ba60de3bc18bafda78706bd5c4c4a509f577dea90
+  upstream/measure_score/Models/ts2vec/ts2vec.py: c1e0bdb20850528d4c07d03f7bf1561f33129b066a6ba55856cb59dac7309bf9
+  upstream/measure_score/Models/ts2vec/models/dilated_conv.py: 9c98e7313e78748670083c400a4ee4d1357a88f1a0457c7f44e780ac4165cdbb
+  upstream/measure_score/Models/ts2vec/models/losses.py: aeb2c6da34652258edcf7129e1392c7f6618e07744e46b57e81531216ba6d32e
+  upstream/measure_score/Models/ts2vec/models/encoder.py: 41ceb3902466686dfb0aa119175761ebceb78dd882de7403b45890b965c2fe94
+  upstream/measure_score/Utils/masking_utils.py: 755d2f5aaa8f5614986c28f4f9bb7198c55fc53ec249e87d27f5c10baf7c0d53
+  upstream/measure_score/Utils/io_utils.py: bb25dea768039bbb797aad5e70f458bf5bbf109544d3de762b99973d9c02fb19
+  upstream/measure_score/Utils/metric_utils.py: c8385fda3d57de0de6c2ab31d0ce02727cc5cf42cec5bb3bb08ea45e73dc9a96
+  upstream/measure_score/Utils/discriminative_metric.py: 8377a0fb86a8328c1289fc99bf7e050907219c61b164a6a1020c661f94f12ff8
+  upstream/measure_score/Utils/imputation_utils.py: 625ad85c5548fc16b01da1ca078d3995ebf143dc1607b2f328654eb98467f518
+  upstream/measure_score/Utils/predictive_metric_RUL.py: 4d0454fab6fcd708ea3a1df0e7ebf3a334d136cb81ec8894095c374c4084e86f
+  upstream/measure_score/Utils/context_fid.py: 5960f7ec92ece5e00be073efcbb7a529d3e23f6ef998653b172ee10c29b14531
+  upstream/measure_score/Utils/predictive_metric_lstm.py: 99ed6d9664304d9697aeef7508cdf0330aeb261191e8435cf60a838b93211045
+  upstream/measure_score/Utils/cross_correlation.py: ae65937d5ce65c73791b909ec306655ce242bfd6fef856167f3e866156ad7f62
+  upstream/measure_score/Utils/predictive_metric.py: 94ba132c72ce783f0240f7a9ca2d90d5ad6557a70cea792f61cf2aca64c077ea
+  upstream/measure_score/Utils/Data_utils/real_datasets.py: 41ad1f492b35351de7e0ddeab9a0361409807c45791e3029e278600778340b54
+  upstream/measure_score/Utils/Data_utils/mujoco_dataset.py: 0d971537043b433a4a1afae031245b3a1621ac9ba4157901b8d625cafd80efa2
+  upstream/measure_score/Utils/Data_utils/sine_dataset.py: 3fd4cbd2c16152292337657b50994a58b13b825fc0a9c1a215164a0cb8213e13
+  upstream/data/CMAPSSDataset.py: 7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03
+  upstream/data/data_process.py: 4dec297d55a3c1066babf2857953a2ac55809e6ad53d1f3542d4e3ec33dc2e3f
+  upstream/models/mctan.py: 009ec699b2527e17e83a1b13cd1dcc30dc76a934244847c2fe5fdadacdb121cd
+  upstream/models/mctan_utils.py: 51ba38b9e8006b8b2cbb3d369a7bbff4d269a92c155140e1f7b0612741966dfd
+  upstream/models/LSTM.py: 7f30c8bb1bb184e628fac1d486a39cf429ecb954ad873a7b8da6ae289480e996
+  upstream/models/DNN.py: b36c779edb821ba394b9b6fc0cf8299808ffe559f3e4f8c466854d17a9e98a15
+  upstream/models/Transformer_CNN.py: 63e86b77a883e5f31002de33c6711dfedd7b380c0d3d6be1678a048deaf4b215
+  upstream/models/Transformer.py: 28c39be820173300783d9cea4ad89149b49372af15ab33c9f3d879665b9b4a9b
+  upstream/models/TLSTM.py: 0518d6696bbfefb6bc35013433890ac8bdb39632d31d5679ec2350cc307828c5
+  upstream/models/TextCNN.py: e36cdcb69d17b5f654f62786b84e81808b90c088db78c5bdeee620b2c10b4d60
+  upstream/models/DCGAN.py: 0054e2c38646a06e561c70c7a8480b542741f9763211e8efe2b33ccc0c0bbef5
+  upstream/models/ttsGAN.py: 5b45d12d7ee10e51837d45126227032405093ef3c39a5ed198d61b2315d3a2df
+  upstream/models/MTSGAN.py: 418d1eb5d3da8925f433280cc056d8462177a1163a3a3e12583ef2f5f861ce79
+  scripts/run_experiments.py: 88eadf98aad411b57fcb49cb27d34568177e304efc653326268eb0a3abf3e95e
+  scripts/evaluate_fd002_stability.py: 4b6b8a0ab38d7389fb324b7266d71d93ee50b8d2baad6e6e960d8baa0ed9aacf
+  scripts/run_paper_zeroshot_full.sh: ba7d62c6f2b5a84ec72d962e72b68238f800825e8ce373e9cc10d87d989750bf
+  analysis/audit/summarize_zeroshot.py: 90cd6b55c2cac64398fcbbb9ebe2156cd8c29e26138102c1a32d8b8761742405
+data_sha256:
+  upstream/data/train_FD001.txt: 963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8
+  upstream/data/test_FD001.txt: 3cda7109ce17bafb5443f2ac926cfcf88154b941b8c4cf95eb55d1ddd6f52851
+  upstream/data/RUL_FD001.txt: a19c8ec94931949d0485bdc35118206e9c81c4547b422efb9cf86f4ceddbceca
+  upstream/data/train_FD002.txt: dac6c4dbc4e7c1bdeb5747da3d313d05c395bb99801b44a002b26a2ba13d788f
+  upstream/data/test_FD002.txt: de7b5bf7e998a985c378488480528b7c02cff1406a46740def362dda8d9b4e02
+  upstream/data/RUL_FD002.txt: c851dd96a6ea6998d3c4a8f834d3c8013aa90e93a6ed950dc826ad0655b2906b
+  upstream/data/train_FD003.txt: 2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2
+  upstream/data/test_FD003.txt: 299babd63c8d987cef079c4a425429f33b3a34797d803bbe2ad48c29dbd0d790
+  upstream/data/RUL_FD003.txt: df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb
+  upstream/data/train_FD004.txt: 27ef6160b6a1dcb2613a88de9c239f763b223f02cdc41dc5cdedc5dc189b6218
+  upstream/data/test_FD004.txt: 1dc675fff0624bac10786927c6715b37d1297657137400d2b1a3138d777a3ba5
+  upstream/data/RUL_FD004.txt: 196b836b85a95ac7fdbbf29c5fdf1657382eafa445644d114ffaaf50dc2975e1
+command:
+- bash
+- scripts/run_paper_zeroshot_full.sh
+service: metaindux-zeroshot-full-20261014.service
+console_log: logs/zeroshot_full_20261014_console.log
+interruptions:
+- reason: host reboot (boot 2026-10-14 16:58:12 +08) killed the transient user service
+    mid-run; console log froze 2026-10-14 16:51:30 +08 during FD001 seed 13 sampling
+    (~107/249 loops, no npz produced). FD001 seed 3 had completed (53.4 min) and is
+    reusable via --skip-completed.
+  recorded_at: '2026-10-14T17:15:00+08:00'
+  resolution: pipeline restarted by user instruction as persistent user unit metaindux-zeroshot-full-20261014.service;
+    seed 13 re-runs deterministically.
+known_deviations: See docs/operations/ZEROSHOT_REPRODUCTION.md; RUL=30 fatigue, full-train
+  scaler and conditioning labels, public hard frequency mask, locally selected seed
+  IDs.
+started_at: '2026-10-14T17:15:11.777309+08:00'
+python: 3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]
+platform: Linux-6.8.0-138-generic-x86_64-with-glibc2.35
+torch: 2.1.2+cu121
+torch_cuda: '12.1'
+cuda_available: true
+gpu: NVIDIA GeForce RTX 4060 Ti
+nvidia_smi: "Wed Oct 14 17:15:11 2026       \n+-----------------------------------------------------------------------------------------+\n\
+  | NVIDIA-SMI 595.84                 Driver Version: 595.84         CUDA Version:\
+  \ 13.2     |\n+-----------------------------------------+------------------------+----------------------+\n\
+  | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr.\
+  \ ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util\
+  \  Compute M. |\n|                                         |                   \
+  \     |               MIG M. |\n|=========================================+========================+======================|\n\
+  |   0  NVIDIA GeForce RTX 4060 Ti     Off |   00000000:01:00.0  On |           \
+  \       N/A |\n|  0%   45C    P8              9W /  165W |     993MiB /   8188MiB\
+  \ |     16%      Default |\n|                                         |        \
+  \                |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\
+  \n+-----------------------------------------------------------------------------------------+\n\
+  | Processes:                                                                   \
+  \           |\n|  GPU   GI   CI              PID   Type   Process name         \
+  \               GPU Memory |\n|        ID   ID                                 \
+  \                              Usage      |\n|=========================================================================================|\n\
+  |    0   N/A  N/A            1897      G   /usr/lib/xorg/Xorg                  \
+  \    345MiB |\n|    0   N/A  N/A            2108      G   /usr/bin/gnome-shell \
+  \                    53MiB |\n|    0   N/A  N/A            2335      G   .../sunloginclient\
+  \ --cmd=autorun          9MiB |\n|    0   N/A  N/A            2867      G   ...me/58.0.3029.81\
+  \ Safari/537.36          2MiB |\n|    0   N/A  N/A            2902      G   ...7B612E15A4520852A2E62A3C31A92\
+  \          2MiB |\n|    0   N/A  N/A            5737      G   ...rack-uuid=3190708988185955192\
+  \         56MiB |\n|    0   N/A  N/A            6698      G   ...rack-uuid=3190708988185955192\
+  \         32MiB |\n|    0   N/A  N/A            7004      G   .../8969/usr/lib/firefox/firefox\
+  \        311MiB |\n+-----------------------------------------------------------------------------------------+\n"
+exit_code: 0
+finished_at: '2026-10-16T05:21:19.569148+08:00'
+total_seconds: 129967.6635966301

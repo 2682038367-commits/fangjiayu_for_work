@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "cells": 25,
+  "generation_units": 5,
+  "predictor_repetitions_per_unit": 5,
+  "matches_existing_summary": true,
+  "all25_seed_pairs_unique": true,
+  "gap_contributions_sum_exact": true,
+  "input_hashes_unchanged": true
+}

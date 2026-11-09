@@ -1,0 +1,40 @@
+diffusion:
+  beta_schedule: linear
+  sample_type: ddpm
+  timesteps: 1000
+experiment:
+  artifact_tag: zeroshot_paper
+  datasets:
+  - FD001
+  fatigue_threshold: 30
+  generation_seeds:
+  - 3
+  - 13
+  - 23
+  - 33
+  - 43
+  name: metaindux_ts_table_v_fd001_zeroshot
+  seeds:
+  - 3
+  - 13
+  - 23
+  - 33
+  - 43
+  task: zeroshot
+  window_sizes:
+  - 48
+model:
+  frequency_mask_mode: hard_random_quantile
+  input_size: 14
+  name: DiffUnet_fre
+runtime:
+  device: cuda
+  state: train
+  wandb_mode: offline
+training:
+  batch_size: 64
+  epochs: 70
+  grad_clip: 1.0
+  learning_rate: 0.002
+  lr_schedule: warmup_cosine
+  optimizer: adam

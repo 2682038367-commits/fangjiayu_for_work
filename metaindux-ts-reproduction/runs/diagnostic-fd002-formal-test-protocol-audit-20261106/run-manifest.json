@@ -1,0 +1,123 @@
+{
+  "run_id": "diagnostic-fd002-formal-test-protocol-audit-20261106",
+  "status": "complete_partial_protocol_match",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261106-fd002-formal-test-protocol-audit",
+  "started_at": "2026-11-06T14:09:16.417278+08:00",
+  "config": {
+    "scope": "Read-only paper and existing formal-test results audit; no new inference/training/sampling",
+    "dataset": "FD002",
+    "window": 48,
+    "paper_target": "TableI FD002-48 predictive score",
+    "questions": [
+      "Each test engine terminal window?",
+      "RUL cap same?",
+      "Five-repeat versus local seed aggregation?"
+    ],
+    "historical_seed_scope": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "controlled_seed_scope": {
+      "generation": [
+        3,
+        13,
+        23,
+        33,
+        43
+      ],
+      "evaluator": [
+        3,
+        13,
+        23,
+        33,
+        43
+      ]
+    },
+    "stop": "Document known/unknown protocol fields and recompute existing metrics only; stop seed43 internal-validation epoch selection, no new jobs"
+  },
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/analysis/diagnostics/audit_fd002_formal_test_protocol.py"
+  ],
+  "user_authorization": "Audit existing formal test endpoint/cap/seed aggregation before explaining24.57vs26.36; no new runs",
+  "inputs_sha256": {
+    "/home/cw_boe/桌面/论文复现/MetaIndux-TS_Frequency-Aware_AIGC_Foundation_Model_for_Industrial_Time_Series.pdf": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+    "analysis/diagnostics/audit_fd002_formal_test_protocol.py": "6d6e46195f1a97c67523dd677ec8ca0bb9583c86d8b4e0e786a2c8d8f89fb0f5",
+    "docs/operations/FD002_FORMAL_TEST_PROTOCOL_AUDIT.md": "382edee51de7cccc7eaa6557b552a349475b70437cc2ddc191560e82d9205d39",
+    "docs/provenance/paper_table_i_w48_metrics.json": "bfd27868211e0222a34e23052cfc5c65f98801ed8d2d39a4a470161f9cd178b9",
+    "docs/provenance/paper_predictive_scores_w48.json": "9f9d210ba8a8953e6ac8eed757c5955049e327d9da6a3d34ee7946225480af77",
+    "SOURCE_SNAPSHOT.md": "a8f3dc2968bd6076ac9d9cf54c5395b8dd5a2a1d537486c9ec13c2879ac12879",
+    "upstream/data/CMAPSSDataset.py": "7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03",
+    "upstream/MainCondition.py": "1e496df84c6c2324136a6c7b4a641faa664764a14a86a7b572c3b3019c54ba64",
+    "upstream/eva_regressor.py": "4c7d02b77312e88d0338ad3b80189f325a81b0b47f2c7eed1a063f7427c85168",
+    "upstream/utils.py": "34f9086f626a58958878a6dfe23b69fb96ad4c38cb95de80b406969b96b9a772",
+    "scripts/evaluate_fd002_stability.py": "4b6b8a0ab38d7389fb324b7266d71d93ee50b8d2baad6e6e960d8baa0ed9aacf",
+    "configs/evaluation_fd002_stability_paper.yaml": "b4767bf8a150a85ecf83b2958013e81a4e288d5f4541e7ecb2a63cb10054bf0a",
+    "results/fd002_paper_metrics.csv": "9f7a552f503227b56f2490c2d582876b628b28e42498f138d4130cd2ab91f333",
+    "results/fd002_paper_report.md": "6faaaba5201c78749660589c161194166161ace862b704a14e64f27ffbea0ba6",
+    "logs/fd002_paper.log": "687c56046a2927d4dc8737f2b89b0cb78781fcf71bb2adf41362ed49546c61af",
+    "results/fd002_evaluation_stability_paper70_raw.csv": "85d29acd7e7b7c7571e534091e9dc8d4041d63325c1594dfc0e8864594a7871e",
+    "results/fd002_evaluation_stability_paper70_summary.csv": "3c26f4eec82d26864710a11be6377b888db213e73d6c4bd774819d98c91983e4",
+    "results/fd002_evaluation_stability_paper70_manifest.json": "b634b05faa5952c1ef3b25569e1ba6d1db356694f5057d44a98878ae33a65af1",
+    "results/fd002_evaluation_fixed_split_paper70.npz": "0b4fd49c52054af9791723baa33f38af220de513813030a3f599374ca55ae8e9",
+    "results/frequency_threshold_validation/fd002_public_arm_seven_seeds_evaluation_raw.csv": "93440fa0e96bf6580de32ab7dfb80e4fa4d06a821a1881aa9c277316e7357319",
+    "results/final_evaluation_summary.csv": "39b0f8825d4385f21a35f01660b58942992d3d8a879e6c6169a46ac5fd456910",
+    "results/frozen_numbers.json": "7f52b6d0fe17f04993f64ad35f290d6c1769df9cb4822cf39410cc065d98926e",
+    "results/diagnostics/rul_segment_errors_w48/predictions.csv": "c4d8b20d097dd36c47a6125ab1eec669bc0c247a8cfbcb47d6e69294ecabf1fa",
+    "results/diagnostics/rul_segment_errors_w48/checkpoint_replay_checks.csv": "8b442c4bf796a469f14468cd7f63fa6a8392909f36321197044eff2477dd2b28",
+    "results/frequency_threshold_validation/fd002_public_arm_seven_seeds_manifest.json": "9c8546d8a0777871cfc3b9feb93a41b993974b322782f1e1c5822f25e8148945",
+    "upstream/data/train_FD002.txt": "dac6c4dbc4e7c1bdeb5747da3d313d05c395bb99801b44a002b26a2ba13d788f",
+    "upstream/data/test_FD002.txt": "de7b5bf7e998a985c378488480528b7c02cff1406a46740def362dda8d9b4e02",
+    "upstream/data/RUL_FD002.txt": "c851dd96a6ea6998d3c4a8f834d3c8013aa90e93a6ed950dc826ad0655b2906b",
+    "results/runs/FD002_w48_seed3_metrics.json": "6dfd619b29ae8ad91844eff2e2c52479f1f547cd9722e7aba94f8e5fa69810a0",
+    "results/runs/FD002_w48_seed3_metadata.json": "03c161eae82daa66ec1963518449da95149129205dd72242c2e60210b8a5c6ff",
+    "results/runs/FD002_w48_seed13_metrics.json": "3539fa90c0fb0270dd9728d1c02cd752b30aee128a0fec09016ff56a5d0b9807",
+    "results/runs/FD002_w48_seed13_metadata.json": "d21aff69a01176122cc4a0939797acdb2a349e0450a37ac3ea9967e3045ddd92",
+    "results/runs/FD002_w48_seed23_metrics.json": "6cd8c00d5eb28d3a523d0fa9b37764c822722fec25411dd4b0f1a7c341e42212",
+    "results/runs/FD002_w48_seed23_metadata.json": "cf887b09e1e5af15f33a6a34c752fa742184da5ada65349170ef4fd08b092009",
+    "results/runs/FD002_w48_seed33_metrics.json": "b1a8106ffa0e8cfab6eb12bbdd0f874b89fd527c2f1fe80ef6af959b457cc871",
+    "results/runs/FD002_w48_seed33_metadata.json": "cd100951f3a9909091318feac4b3425c9125b566d464e320db202d58f1c8c867",
+    "results/runs/FD002_w48_seed43_metrics.json": "b45d0b315940995ba217a9bad66960f12b23ef33a876c8020097ed5a34813e08",
+    "results/runs/FD002_w48_seed43_metadata.json": "c467dc4bd2ae2d760aa41f98031f90dcd68d1711a9a2720b43258f9673c56ee8",
+    "runs/diagnostic-fd002-formal-test-protocol-audit-20261106/source/CMAPSSDataset.py": "7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03",
+    "runs/diagnostic-fd002-formal-test-protocol-audit-20261106/source/MainCondition.py": "1e496df84c6c2324136a6c7b4a641faa664764a14a86a7b572c3b3019c54ba64",
+    "runs/diagnostic-fd002-formal-test-protocol-audit-20261106/source/eva_regressor.py": "4c7d02b77312e88d0338ad3b80189f325a81b0b47f2c7eed1a063f7427c85168",
+    "runs/diagnostic-fd002-formal-test-protocol-audit-20261106/source/evaluate_fd002_stability.py": "4b6b8a0ab38d7389fb324b7266d71d93ee50b8d2baad6e6e960d8baa0ed9aacf",
+    "runs/diagnostic-fd002-formal-test-protocol-audit-20261106/config.json": "90de46c120ed421482e681bf0a8e6daddc9980fb506a2174b6898da9ac550140",
+    "runs/diagnostic-fd002-formal-test-protocol-audit-20261106/source/FD002_FORMAL_TEST_PROTOCOL_AUDIT.md": "382edee51de7cccc7eaa6557b552a349475b70437cc2ddc191560e82d9205d39",
+    "runs/diagnostic-fd002-formal-test-protocol-audit-20261106/source/audit_fd002_formal_test_protocol.py": "6d6e46195f1a97c67523dd677ec8ca0bb9583c86d8b4e0e786a2c8d8f89fb0f5"
+  },
+  "git_head": "df7e83b2e14317db34a23049db973ec83aa52065",
+  "numpy": "1.23.5",
+  "pandas": "2.2.3",
+  "python": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]",
+  "completed_at": "2026-11-06T14:09:18.384725+08:00",
+  "outputs_sha256": {
+    "results/diagnostics/fd002_formal_test_protocol_audit_20261106/original_five_runs.csv": "3ef5f817ef08a559e763ec71ee140bb33bdf5b0a381a9b19d504459c1e41b3ff",
+    "results/diagnostics/fd002_formal_test_protocol_audit_20261106/test_engine_endpoints.csv": "863e5540b076703dc6287297eac32d36ebb9457c52e5299176a2a462a874d9a0",
+    "results/diagnostics/fd002_formal_test_protocol_audit_20261106/score_provenance.csv": "2aaa26ee03822f1bd78ea3a184ccd7ee3bdff0ccea6bb0a8305708e59ab5f347",
+    "results/diagnostics/fd002_formal_test_protocol_audit_20261106/paper_evidence.json": "a7bba03d54b2972824b718750564abb1015a19b1f69f05efaecaca4502e39275",
+    "results/diagnostics/fd002_formal_test_protocol_audit_20261106/saved_prediction_recomputation.csv": "5936346700928830a16ad69146058ebfacf9ef8d0b1af552e756190069f25eab",
+    "results/diagnostics/fd002_formal_test_protocol_audit_20261106/controlled_five_generation_means.csv": "58c91b01f722a5e13a1fcc47af7c26a53920fb318913933187be43e0a22d5d2c",
+    "results/diagnostics/fd002_formal_test_protocol_audit_20261106/audit.json": "25b577a39e52f1adab184d3823922c9f0429383d3ee0e474127626171880469a",
+    "runs/diagnostic-fd002-formal-test-protocol-audit-20261106/source/paper-text.txt": "0f9c0cc9282abc9ea50af8df88e34b04534d7385b8854256348f4314170b760b",
+    "runs/diagnostic-fd002-formal-test-protocol-audit-20261106/source/table_i_page7.png": "2e37717aea76bbc75eeb0620e9e08bc3fc826273aa709a3309e3b974508a09b1",
+    "docs/conclusions/final/fd002_formal_test_protocol_audit_20261106_report.md": "d5242e81c8a2350a53d66342702439165ad9157be08ab6816efefb9b6ccacc38"
+  },
+  "checks": {
+    "paper_hash_matches": true,
+    "terminal_engine_count": 259,
+    "original_metric_mean_recomputed": true,
+    "controlled25mean_recomputed": true,
+    "existing35_saved_prediction_groups_verified": true,
+    "unchanged_inputs": true
+  },
+  "new_training": 0,
+  "new_sampling": 0,
+  "new_model_inference": 0
+}

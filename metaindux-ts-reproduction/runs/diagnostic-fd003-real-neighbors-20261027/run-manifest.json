@@ -1,0 +1,129 @@
+{
+  "run_id": "diagnostic-fd003-real-neighbors-20261027",
+  "status": "complete",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261027-fd003-real-neighbors",
+  "no_training": true,
+  "started_at": "2026-10-27T09:06:46.755219+08:00",
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "analysis/diagnostics/check_fd003_real_neighbors.py"
+  ],
+  "user_authorization": "User asks whether high-error FD003 windows have similar real training samples",
+  "source_snapshot": "SOURCE_SNAPSHOT.md",
+  "inputs_sha256": {
+    "analysis/diagnostics/check_fd003_real_neighbors.py": "0ef5a5eec367e46f43a149f89f92564eeac75363e46888d39119ad3e0b940e69",
+    "docs/operations/FD003_REAL_NEIGHBOR_AUDIT.md": "d66597b50856c9b0f4a40a4f4fc81b3905f7a246d7a2876dd21303ed1378c258",
+    "analysis/diagnostics/test_window_coverage.py": "2ad83a35eebd43fa0c5ebc0e7b730e28ed3460128f511aa8b75926eb2863feda",
+    "upstream/data/CMAPSSDataset.py": "7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03",
+    "results/fd003_w48_public_code_split.npz": "cb02c22938ee0be631c8099e15b2c621f7c4b74c5759ef04ebc310db974e0675",
+    "results/diagnostics/rul_segment_errors_w48/predictions.csv": "c4d8b20d097dd36c47a6125ab1eec669bc0c247a8cfbcb47d6e69294ecabf1fa",
+    "upstream/data/train_FD003.txt": "2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2",
+    "upstream/data/test_FD003.txt": "299babd63c8d987cef079c4a425429f33b3a34797d803bbe2ad48c29dbd0d790",
+    "upstream/data/RUL_FD003.txt": "df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb"
+  },
+  "k": 5,
+  "rul_caliper": 5,
+  "stage": [
+    31,
+    60
+  ],
+  "tail_percentile": 95,
+  "calibration": "Same exactRUL real training queries, own engine excluded from actualpredictortrain reference",
+  "distinction": "Test and train engine IDs are different namespaces",
+  "caveat": "Descriptive feature support, not physical equivalence or unique causal attribution",
+  "focus_top5_error_engines": [
+    16,
+    89,
+    85,
+    58,
+    62
+  ],
+  "focus_with_prior75": [
+    16,
+    58,
+    62,
+    75,
+    85,
+    89
+  ],
+  "n_test_windows": 21,
+  "n_calibration_windows": 3000,
+  "n_calibration_rows": 12000,
+  "summary": [
+    {
+      "representation": "coupling_raw",
+      "n_queries": 21,
+      "n_above95": 1,
+      "n_distinct_above95": 1,
+      "median_percentile": 51.0
+    },
+    {
+      "representation": "dynamics",
+      "n_queries": 21,
+      "n_above95": 4,
+      "n_distinct_above95": 4,
+      "median_percentile": 47.0
+    },
+    {
+      "representation": "joint",
+      "n_queries": 21,
+      "n_above95": 3,
+      "n_distinct_above95": 1,
+      "median_percentile": 51.0
+    },
+    {
+      "representation": "level",
+      "n_queries": 21,
+      "n_above95": 1,
+      "n_distinct_above95": 1,
+      "median_percentile": 56.99999999999999
+    }
+  ],
+  "outputs_sha256": {
+    "results/diagnostics/fd003_real_neighbors_20261027/real_leave_engine_out_reference.csv": "75fa12e93e727a8b312e0d1fc14479b9dc540c83eea199d283dba9e04380157a",
+    "results/diagnostics/fd003_real_neighbors_20261027/closeout_audit.json": "86b7ae1579ca9837529e4f9d2d304e62e94b33918fa0cadc85abe1c44b41a5f2",
+    "results/diagnostics/fd003_real_neighbors_20261027/engine75_real_neighbors.png": "89d6945815c936a83ecdb2e0366e96505bbc0f65c84cd5c00004f97c583faea5",
+    "results/diagnostics/fd003_real_neighbors_20261027/engine58_real_neighbors.png": "c7bb9b0b9ae5b35af075f6ca4ff97b2eb2bc4801e46269ca63abfb87db59681d",
+    "results/diagnostics/fd003_real_neighbors_20261027/unrestricted_rul_neighbors.csv": "537069178c2b73842718d22ea0937af2d2680bfa53fb7c17ee57d19b09f33032",
+    "results/diagnostics/fd003_real_neighbors_20261027/engine89_real_neighbors.png": "b73a06cc4fb5f563af6174f3012eb8be751b15b84bcb84f13dc627e0d7968685",
+    "results/diagnostics/fd003_real_neighbors_20261027/focus_cases.csv": "76f7b722c6c0b8558e004974621b95f9f037485f22660c467c5c95c68cb9a822",
+    "results/diagnostics/fd003_real_neighbors_20261027/nearest_real_windows.csv": "c27a0467aa3af6d2808b6e492a4fc2a39cfdb35dfb85465c8cfedd17d31ca737",
+    "results/diagnostics/fd003_real_neighbors_20261027/test_support.csv": "aad9af80e9e4021477d0196b98bbf838a4c11d148825c175f3e9dadde7725a9f",
+    "results/diagnostics/fd003_real_neighbors_20261027/summary.csv": "1c472afab002fc95816f562cdf1dc5bbb4db61492d1a7af980148cdc3a0ebc9e",
+    "results/diagnostics/fd003_real_neighbors_20261027/engine62_real_neighbors.png": "099e289e6029162157667386505d22043ad850ce977d764b58e3749e20ce025a",
+    "results/diagnostics/fd003_real_neighbors_20261027/engine16_real_neighbors.png": "5b957676c66d50fac571c96b133c629518f343ce8719402ceeed6fb6ef2ede70",
+    "results/diagnostics/fd003_real_neighbors_20261027/engine85_real_neighbors.png": "9ee6ac7c8fd64386c10f2d7ad7df438681e0872f23678d2c9e242da134bcbcec"
+  },
+  "finished_at": "2026-10-27T09:06:53.725627+08:00",
+  "report": "docs/conclusions/final/fd003_real_neighbors_20261027_report.md",
+  "report_sha256": "7244e34ddd9abc5fd55e367010b7a2054f6bd019ba566bf1ae8feb211bfa49f4",
+  "audit": {
+    "status": "passed",
+    "input_output_hashes_match": true,
+    "n_support_rows": 168,
+    "n_nearest_rows": 840,
+    "n_calibration_rows": 12000,
+    "actual_train_only": true,
+    "exact_cycle_lengths": true,
+    "distinct_five_engines_checked": true,
+    "joint_distance_identity_checked": true,
+    "same_rul_100_training_engine_calibration_checked": true,
+    "no_training": true,
+    "no_new_model_inference": true,
+    "plots_inspected": [
+      "engine16_real_neighbors.png",
+      "engine89_real_neighbors.png"
+    ]
+  },
+  "environment_at_closeout": {
+    "python": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]",
+    "numpy": "1.23.5",
+    "pandas": "2.2.3",
+    "scipy": "1.14.1",
+    "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "compute": "CPU descriptor calculations only"
+  },
+  "source_commit": "989f6a50296bea084d21463cc216dc781e36250d"
+}

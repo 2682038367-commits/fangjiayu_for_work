@@ -1,0 +1,128 @@
+[
+  {
+    "bin": "all",
+    "improved_engines": 21,
+    "positive_gain_MSE_sum": 799.7900573752167,
+    "top1_positive_gain_share": 0.1434742470668933,
+    "top3_positive_gain_share": 0.3929783543173051,
+    "top3_engine_ids": [
+      100,
+      74,
+      13
+    ],
+    "delta_RMSE_excluding_best3": -0.25820415395708807,
+    "few_engine_driven": false
+  },
+  {
+    "bin": "0-30",
+    "improved_engines": 26,
+    "positive_gain_MSE_sum": 1743.7641684920802,
+    "top1_positive_gain_share": 0.08794421945523209,
+    "top3_positive_gain_share": 0.2538153787779249,
+    "top3_engine_ids": [
+      42,
+      90,
+      91
+    ],
+    "delta_RMSE_excluding_best3": -1.7387739702523515,
+    "few_engine_driven": false
+  },
+  {
+    "bin": "31-60",
+    "improved_engines": 25,
+    "positive_gain_MSE_sum": 3211.3616139508335,
+    "top1_positive_gain_share": 0.10250586273719248,
+    "top3_positive_gain_share": 0.27059254153323775,
+    "top3_engine_ids": [
+      100,
+      95,
+      12
+    ],
+    "delta_RMSE_excluding_best3": -2.1729880039405742,
+    "few_engine_driven": false
+  },
+  {
+    "bin": "31-40",
+    "improved_engines": 28,
+    "positive_gain_MSE_sum": 4163.939940997355,
+    "top1_positive_gain_share": 0.12730528173800826,
+    "top3_positive_gain_share": 0.2702580731272637,
+    "top3_engine_ids": [
+      91,
+      53,
+      79
+    ],
+    "delta_RMSE_excluding_best3": -3.7792203837805065,
+    "few_engine_driven": false
+  },
+  {
+    "bin": "41-50",
+    "improved_engines": 26,
+    "positive_gain_MSE_sum": 4909.836563022469,
+    "top1_positive_gain_share": 0.08944468057040535,
+    "top3_positive_gain_share": 0.2434230978355967,
+    "top3_engine_ids": [
+      12,
+      100,
+      90
+    ],
+    "delta_RMSE_excluding_best3": -3.225075040203196,
+    "few_engine_driven": false
+  },
+  {
+    "bin": "51-60",
+    "improved_engines": 16,
+    "positive_gain_MSE_sum": 2912.784433135118,
+    "top1_positive_gain_share": 0.145533617301099,
+    "top3_positive_gain_share": 0.3688156076094506,
+    "top3_engine_ids": [
+      95,
+      100,
+      76
+    ],
+    "delta_RMSE_excluding_best3": 0.412286244090474,
+    "few_engine_driven": true
+  },
+  {
+    "bin": "61-90",
+    "improved_engines": 3,
+    "positive_gain_MSE_sum": 98.18341128243402,
+    "top1_positive_gain_share": 0.4940747911315409,
+    "top3_positive_gain_share": 1.0,
+    "top3_engine_ids": [
+      18,
+      60,
+      100
+    ],
+    "delta_RMSE_excluding_best3": 4.021038316420039,
+    "few_engine_driven": false
+  },
+  {
+    "bin": "91-124",
+    "improved_engines": 18,
+    "positive_gain_MSE_sum": 758.9248718076631,
+    "top1_positive_gain_share": 0.16881463255598692,
+    "top3_positive_gain_share": 0.4830273702092163,
+    "top3_engine_ids": [
+      13,
+      74,
+      48
+    ],
+    "delta_RMSE_excluding_best3": 0.13703388365817126,
+    "few_engine_driven": true
+  },
+  {
+    "bin": "125",
+    "improved_engines": 17,
+    "positive_gain_MSE_sum": 1522.8759988781808,
+    "top1_positive_gain_share": 0.21047216597043605,
+    "top3_positive_gain_share": 0.49281611551414856,
+    "top3_engine_ids": [
+      74,
+      56,
+      13
+    ],
+    "delta_RMSE_excluding_best3": -1.8368647302578562,
+    "few_engine_driven": false
+  }
+]

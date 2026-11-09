@@ -1,0 +1,4 @@
+?? analysis/diagnostics/diagnose_fd003_prototype_condition_adherence.py
+?? configs/diagnostics/fd003_prototype_condition_adherence.json
+?? docs/operations/FD003_PROTOTYPE_CONDITION_ADHERENCE.md
+?? runs/diagnostic-fd003-prototype-condition-adherence-20261105/

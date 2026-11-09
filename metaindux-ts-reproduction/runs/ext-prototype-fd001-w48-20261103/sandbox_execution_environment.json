@@ -1,0 +1,19 @@
+{
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "torch": "2.13.0+cu130",
+  "cuda": "13.0",
+  "cuda_available": false,
+  "gpu": null,
+  "nvidia_smi": "NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.\n\n",
+  "cudnn_version": 92000,
+  "cudnn_benchmark": false,
+  "cudnn_deterministic": true,
+  "global_strict": false,
+  "cublas_workspace": ":4096:8",
+  "tf32_matmul": false,
+  "tf32_cudnn": true,
+  "command": [
+    "metaindux-ts-reproduction/scripts/run_prototype_guidance.py",
+    "run"
+  ]
+}

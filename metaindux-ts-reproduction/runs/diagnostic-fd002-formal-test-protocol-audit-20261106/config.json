@@ -1,0 +1,35 @@
+{
+  "scope": "Read-only paper and existing formal-test results audit; no new inference/training/sampling",
+  "dataset": "FD002",
+  "window": 48,
+  "paper_target": "TableI FD002-48 predictive score",
+  "questions": [
+    "Each test engine terminal window?",
+    "RUL cap same?",
+    "Five-repeat versus local seed aggregation?"
+  ],
+  "historical_seed_scope": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "controlled_seed_scope": {
+    "generation": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "evaluator": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ]
+  },
+  "stop": "Document known/unknown protocol fields and recompute existing metrics only; stop seed43 internal-validation epoch selection, no new jobs"
+}

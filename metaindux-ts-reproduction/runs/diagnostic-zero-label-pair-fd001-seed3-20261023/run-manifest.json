@@ -1,0 +1,339 @@
+{
+  "run_id": "diagnostic-zero-label-pair-fd001-seed3-20261023",
+  "status": "complete",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261023-zero-label-pair",
+  "user_authorization": "User requested prioritizing verification of zero-label collision",
+  "prepared_at": "2026-10-23T09:47:30.696897+08:00",
+  "source_snapshot": "SOURCE_SNAPSHOT.md",
+  "commit": "unknown; author archive hash pinned by source snapshot",
+  "single_changed_factor": "whole-batch RUL label-zero probability 0.1 to 0.0",
+  "held_constant": "FD001 full data,w48,seed3,model,internal null dropout,optimizer,schedule,70epochs,batch256,T1000,linearDDPM,sampling labels,checkpoint rule,real-trained evaluators",
+  "max_generator_runs": 2,
+  "arms": [
+    "control",
+    "no_batch_zero"
+  ],
+  "primary_success_criteria": {
+    "control_mean_rul0_prediction_gt": 30,
+    "fix_mean_rul0_prediction_at_most_fraction_of_control": 0.5,
+    "fix_rul0_rmse_at_most_fraction_of_control": 0.5
+  },
+  "secondary": "Report RUL1,2-5,6-30,31-60,61-90,91-124,125 and overall consistency without tuning",
+  "stop_rule": "End after this seed3 pair, do not expand seeds or tune automatically; failed setup aborts.",
+  "configs": {
+    "configs/diagnostic_zero_label_fd001_control.yaml": {
+      "experiment": {
+        "name": "diagnostic_zero_label_fd001_control",
+        "datasets": [
+          "FD001"
+        ],
+        "window_sizes": [
+          48
+        ],
+        "generation_seeds": [
+          3
+        ],
+        "seeds": [
+          3
+        ],
+        "artifact_tag": "zero_label_control"
+      },
+      "model": {
+        "name": "DiffUnet_fre",
+        "input_size": 14,
+        "frequency_mask_mode": "hard_random_quantile"
+      },
+      "diffusion": {
+        "timesteps": 1000,
+        "beta_schedule": "linear",
+        "sample_type": "ddpm"
+      },
+      "training": {
+        "epochs": 70,
+        "optimizer": "adam",
+        "learning_rate": 0.002,
+        "lr_schedule": "warmup_cosine",
+        "batch_size": 256,
+        "grad_clip": 1.0,
+        "batch_label_zero_prob": 0.1
+      },
+      "runtime": {
+        "state": "train",
+        "device": "cuda",
+        "wandb_mode": "offline"
+      }
+    },
+    "configs/diagnostic_zero_label_fd001_no_batch_zero.yaml": {
+      "experiment": {
+        "name": "diagnostic_zero_label_fd001_no_batch_zero",
+        "datasets": [
+          "FD001"
+        ],
+        "window_sizes": [
+          48
+        ],
+        "generation_seeds": [
+          3
+        ],
+        "seeds": [
+          3
+        ],
+        "artifact_tag": "zero_label_no_batch_zero"
+      },
+      "model": {
+        "name": "DiffUnet_fre",
+        "input_size": 14,
+        "frequency_mask_mode": "hard_random_quantile"
+      },
+      "diffusion": {
+        "timesteps": 1000,
+        "beta_schedule": "linear",
+        "sample_type": "ddpm"
+      },
+      "training": {
+        "epochs": 70,
+        "optimizer": "adam",
+        "learning_rate": 0.002,
+        "lr_schedule": "warmup_cosine",
+        "batch_size": 256,
+        "grad_clip": 1.0,
+        "batch_label_zero_prob": 0.0
+      },
+      "runtime": {
+        "state": "train",
+        "device": "cuda",
+        "wandb_mode": "offline"
+      }
+    }
+  },
+  "config_sha256": {
+    "configs/diagnostic_zero_label_fd001_control.yaml": "48307b60c6155adde6d79272b1e8f114cebb379eecc57976cf8a2d138b50edec",
+    "configs/diagnostic_zero_label_fd001_no_batch_zero.yaml": "e2bad06b5c37b763b3bc7bbc90b0aac4260a0cf050d4d204598f3afa915dd3e0"
+  },
+  "source_sha256": {
+    "upstream/main_fewshot.py": "ea2843ff406630058b2537b2f0592df33e9203486726511f255d8c7e75cef0f0",
+    "upstream/eva_regressor.py": "4c7d02b77312e88d0338ad3b80189f325a81b0b47f2c7eed1a063f7427c85168",
+    "upstream/TrainCondition.py": "ebd251f1a8224cc79005784aeb7057201b396a668086e789b3391576e868da3a",
+    "upstream/MainCondition.py": "1e496df84c6c2324136a6c7b4a641faa664764a14a86a7b572c3b3019c54ba64",
+    "upstream/visualizationMetrics.py": "7df4cb8594f52eee444c4ab19c6fb38a5819047955732767c0a3b639eeff93c6",
+    "upstream/args.py": "a2d7193b5b0b066da2db37ddf19960868636ee2c311b764b5175a0a9b7cf4c6a",
+    "upstream/data_process.py": "00b17e9eaf6f5184b7561f4fed618c0891a6e273bd9b212e807482f2c6178628",
+    "upstream/utils.py": "34f9086f626a58958878a6dfe23b69fb96ad4c38cb95de80b406969b96b9a772",
+    "upstream/GaussianDiffusion.py": "8a6351232cc853ad1e06f2fe94745f17f3460eca8a24ce5fc89a509d28a74aba",
+    "upstream/DiffusionFreeGuidence/csdi.py": "c5bfbd2e1091d60cbab1f062bcfc98cf935c7a3796858726f5e181f0bcdbd83a",
+    "upstream/DiffusionFreeGuidence/Attetnion.py": "6ef40c870e265be09796a7733503bf8f7bf06dd15ec2a3a72c84e4a3436c8761",
+    "upstream/DiffusionFreeGuidence/diffwaveimputer.py": "3513ea2bd3a5f3c7d88f896a8aa30885aee00768c858cdd7d1fec45bacf66a6e",
+    "upstream/DiffusionFreeGuidence/Unet.py": "dcc37fcb7cd7e4262812872f61b06863d2fc3c4c0dcda5a7d7240081a928a454",
+    "upstream/DiffusionFreeGuidence/SSSD.py": "a8c6c679269348276d36c48f3059bdbc5030a4671680b3adbe6de444cfd7ee47",
+    "upstream/DiffusionFreeGuidence/Unet1D.py": "ab66fe31797ee3bd8e4882f55e1a8753f7376026ce1f84e1d2bedee829257c57",
+    "upstream/DiffusionFreeGuidence/__init__.py": "e2fc1d5bb972cce2cf21f404b357320f51b8fa85c351d6a2fe7b56ef85a1aa52",
+    "upstream/DiffusionFreeGuidence/Unet1D_fre.py": "9f2e4b7dab0bcd43cbd434b27912127051f718e1ed96fd82fa4fe6cd7c5772f2",
+    "upstream/DiffusionFreeGuidence/S4Model.py": "145a4c5910270be77f715e6d885b5d2acdd4382fc49f0a5ef199960010b8d502",
+    "upstream/DiffusionFreeGuidence/Dit.py": "d18461322aca383e5304362b7397dcaada79c582dc5aa764d4b76abe36dde528",
+    "upstream/DiffusionFreeGuidence/Diffwave.py": "f17f6536495099326bc055fe4f49ab9f9f1f7517f635cb44b36b0d73471b0b46",
+    "upstream/DiffusionFreeGuidence/Attetnion_temp.py": "edf3390f69e3204cf88ee43e3d4601c1e828d737cf27811f9b0e50aac97d2dcd",
+    "upstream/DiffusionFreeGuidence/tabddpm.py": "7c1fdacc42f79e05ab913dfc21972b4d8cedc66bf3ae9e6edd1336fd44d5e913",
+    "upstream/measure_score/engine/solver.py": "ee90295f98dcd2126da9d9ec2219117e55a2bf390ae5b5b4097dd8fc40b85fb3",
+    "upstream/measure_score/engine/lr_sch.py": "ff5b62f3d5740d74f522a65a939d1adc263ab87bc89ff0a37446061ae7c3d378",
+    "upstream/measure_score/engine/logger.py": "35ad5e7a3ced80ce07a33416d24472f75a33644e5c21261854df9a395d6c8c51",
+    "upstream/measure_score/Models/interpretable_diffusion/model_utils.py": "016e34292b47ef670c6ea38a2e068cc5f68420b9d0aceb3412c3c6a760d50c7f",
+    "upstream/measure_score/Models/interpretable_diffusion/gaussian_diffusion.py": "4d746240dba43dbcce5f5d374fbe4bbbcdb7eea7fe5c07397e9942e70f8f7b05",
+    "upstream/measure_score/Models/interpretable_diffusion/transformer.py": "d4b797a846c4fcd344ede3e85e53c92c6d3fea509d6b2a2692819e23acd722f4",
+    "upstream/measure_score/Models/ts2vec/utils.py": "85ca67e8e84cad09933d2f3ba60de3bc18bafda78706bd5c4c4a509f577dea90",
+    "upstream/measure_score/Models/ts2vec/ts2vec.py": "c1e0bdb20850528d4c07d03f7bf1561f33129b066a6ba55856cb59dac7309bf9",
+    "upstream/measure_score/Models/ts2vec/models/dilated_conv.py": "9c98e7313e78748670083c400a4ee4d1357a88f1a0457c7f44e780ac4165cdbb",
+    "upstream/measure_score/Models/ts2vec/models/losses.py": "aeb2c6da34652258edcf7129e1392c7f6618e07744e46b57e81531216ba6d32e",
+    "upstream/measure_score/Models/ts2vec/models/encoder.py": "41ceb3902466686dfb0aa119175761ebceb78dd882de7403b45890b965c2fe94",
+    "upstream/measure_score/Utils/masking_utils.py": "755d2f5aaa8f5614986c28f4f9bb7198c55fc53ec249e87d27f5c10baf7c0d53",
+    "upstream/measure_score/Utils/io_utils.py": "bb25dea768039bbb797aad5e70f458bf5bbf109544d3de762b99973d9c02fb19",
+    "upstream/measure_score/Utils/metric_utils.py": "c8385fda3d57de0de6c2ab31d0ce02727cc5cf42cec5bb3bb08ea45e73dc9a96",
+    "upstream/measure_score/Utils/discriminative_metric.py": "8377a0fb86a8328c1289fc99bf7e050907219c61b164a6a1020c661f94f12ff8",
+    "upstream/measure_score/Utils/imputation_utils.py": "625ad85c5548fc16b01da1ca078d3995ebf143dc1607b2f328654eb98467f518",
+    "upstream/measure_score/Utils/predictive_metric_RUL.py": "4d0454fab6fcd708ea3a1df0e7ebf3a334d136cb81ec8894095c374c4084e86f",
+    "upstream/measure_score/Utils/context_fid.py": "5960f7ec92ece5e00be073efcbb7a529d3e23f6ef998653b172ee10c29b14531",
+    "upstream/measure_score/Utils/predictive_metric_lstm.py": "99ed6d9664304d9697aeef7508cdf0330aeb261191e8435cf60a838b93211045",
+    "upstream/measure_score/Utils/cross_correlation.py": "ae65937d5ce65c73791b909ec306655ce242bfd6fef856167f3e866156ad7f62",
+    "upstream/measure_score/Utils/predictive_metric.py": "94ba132c72ce783f0240f7a9ca2d90d5ad6557a70cea792f61cf2aca64c077ea",
+    "upstream/measure_score/Utils/Data_utils/real_datasets.py": "41ad1f492b35351de7e0ddeab9a0361409807c45791e3029e278600778340b54",
+    "upstream/measure_score/Utils/Data_utils/mujoco_dataset.py": "0d971537043b433a4a1afae031245b3a1621ac9ba4157901b8d625cafd80efa2",
+    "upstream/measure_score/Utils/Data_utils/sine_dataset.py": "3fd4cbd2c16152292337657b50994a58b13b825fc0a9c1a215164a0cb8213e13",
+    "upstream/data/CMAPSSDataset.py": "7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03",
+    "upstream/data/data_process.py": "4dec297d55a3c1066babf2857953a2ac55809e6ad53d1f3542d4e3ec33dc2e3f",
+    "upstream/models/mctan.py": "009ec699b2527e17e83a1b13cd1dcc30dc76a934244847c2fe5fdadacdb121cd",
+    "upstream/models/mctan_utils.py": "51ba38b9e8006b8b2cbb3d369a7bbff4d269a92c155140e1f7b0612741966dfd",
+    "upstream/models/LSTM.py": "7f30c8bb1bb184e628fac1d486a39cf429ecb954ad873a7b8da6ae289480e996",
+    "upstream/models/DNN.py": "b36c779edb821ba394b9b6fc0cf8299808ffe559f3e4f8c466854d17a9e98a15",
+    "upstream/models/Transformer_CNN.py": "63e86b77a883e5f31002de33c6711dfedd7b380c0d3d6be1678a048deaf4b215",
+    "upstream/models/Transformer.py": "28c39be820173300783d9cea4ad89149b49372af15ab33c9f3d879665b9b4a9b",
+    "upstream/models/TLSTM.py": "0518d6696bbfefb6bc35013433890ac8bdb39632d31d5679ec2350cc307828c5",
+    "upstream/models/TextCNN.py": "e36cdcb69d17b5f654f62786b84e81808b90c088db78c5bdeee620b2c10b4d60",
+    "upstream/models/DCGAN.py": "0054e2c38646a06e561c70c7a8480b542741f9763211e8efe2b33ccc0c0bbef5",
+    "upstream/models/ttsGAN.py": "5b45d12d7ee10e51837d45126227032405093ef3c39a5ed198d61b2315d3a2df",
+    "upstream/models/MTSGAN.py": "418d1eb5d3da8925f433280cc056d8462177a1163a3a3e12583ef2f5f861ce79",
+    "scripts/run_experiments.py": "b1d1010030244e8ea01ff5c634b223a893d5c09bf2707ad2412122e2cdd36f92",
+    "analysis/diagnostics/evaluate_zero_label_pair.py": "6286e3614a576487f7a0077da3fa606a828eefc30f06dccc27dc9f96222d3fa5"
+  },
+  "input_sha256": {
+    "upstream/data/train_FD001.txt": "963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8",
+    "upstream/data/test_FD001.txt": "3cda7109ce17bafb5443f2ac926cfcf88154b941b8c4cf95eb55d1ddd6f52851",
+    "upstream/data/RUL_FD001.txt": "a19c8ec94931949d0485bdc35118206e9c81c4547b422efb9cf86f4ceddbceca",
+    "checkpoints/evaluators/real_data_baseline_w48/FD001_eval3.pth": "ff895b46065f805f8aa87d12d90c7bee3577cc6c24cc7bf116ee80c261999644",
+    "checkpoints/evaluators/real_data_baseline_w48/FD001_eval13.pth": "253b3c5dd79b5c4147869efc20214dab2d99093cd727c6db1e72262cf1867d07",
+    "checkpoints/evaluators/real_data_baseline_w48/FD001_eval23.pth": "d46e57105c0a9529b7a13c2fdb6720874d0fe5a734a44bbc42bade0831d76a9c",
+    "checkpoints/evaluators/real_data_baseline_w48/FD001_eval33.pth": "0d99995cbd40b4a13d9c090fb127dbb0b403070d7fd9d8893f0e9f3d99759c3b",
+    "checkpoints/evaluators/real_data_baseline_w48/FD001_eval43.pth": "b34f08083cfffa1ab1c25b019168407ee92a78b17383ad506db039b6deb65247"
+  },
+  "console_log": "logs/zero_label_pair_fd001_seed3_20261023_console.log",
+  "service": "metaindux-zero-label-pair-20261023.service",
+  "startup_events": [
+    {
+      "status": "failed_before_training",
+      "cause": "nvidia-smi full-output UTF-8 decoding error in supervisor",
+      "fix": "decode diagnostic metadata with errors=replace; no model/config change"
+    }
+  ],
+  "started_at": "2026-10-23T09:48:28.976997+08:00",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "python": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]",
+  "torch": "2.1.2+cu121",
+  "torch_cuda": "12.1",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "nvidia_smi": "Fri Oct 23 09:48:29 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 595.84                 Driver Version: 595.84         CUDA Version: 13.2     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 4060 Ti     Off |   00000000:01:00.0  On |                  N/A |\n|  0%   44C    P8              8W /  165W |     955MiB /   8188MiB |      2%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            2261      G   /usr/lib/xorg/Xorg                      360MiB |\n|    0   N/A  N/A            2457      G   /usr/bin/gnome-shell                     42MiB |\n|    0   N/A  N/A            2652      G   .../sunloginclient --cmd=autorun          9MiB |\n|    0   N/A  N/A            2968      G   ...me/58.0.3029.81 Safari/537.36          2MiB |\n|    0   N/A  N/A            3071      G   ...06DA2529EB5446B82CCF579F9C98F          2MiB |\n|    0   N/A  N/A            3397      G   .../8969/usr/lib/firefox/firefox        243MiB |\n|    0   N/A  N/A            4944      G   ...rack-uuid=3190708988185955192         41MiB |\n|    0   N/A  N/A          463209      G   ...rack-uuid=3190708988185955192         74MiB |\n|    0   N/A  N/A          470655      G   ...ns-seed-version --log-level=2         32MiB |\n|    0   N/A  N/A          473333      G   ...\ufffd\ufffd\u6ce8/X-Anylabeling-Linux-CPU          2MiB |\n+-----------------------------------------------------------------------------------------+\n",
+  "commands": [
+    [
+      "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+      "scripts/run_experiments.py",
+      "--config",
+      "configs/diagnostic_zero_label_fd001_control.yaml",
+      "--skip-completed"
+    ],
+    [
+      "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+      "scripts/run_experiments.py",
+      "--config",
+      "configs/diagnostic_zero_label_fd001_no_batch_zero.yaml",
+      "--skip-completed"
+    ],
+    [
+      "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+      "analysis/diagnostics/evaluate_zero_label_pair.py"
+    ]
+  ],
+  "verdict": {
+    "primary": "RUL0 consistency judged by same five real-trained predictors",
+    "baseline_anomaly_reproduced": true,
+    "mean_prediction_reduced_by_half": true,
+    "rmse_reduced_by_half": true,
+    "limitation": "One generation seed; diagnostic intervention, not strict paper result or physical RUL ground truth.",
+    "comparison": [
+      {
+        "bin": "0",
+        "control_prediction_mean": 66.85452753293515,
+        "control_bias": 66.85452753293515,
+        "control_rmse": 79.41217605027192,
+        "no_batch_zero_prediction_mean": 1.4272363297976551,
+        "no_batch_zero_bias": 1.4272363297976551,
+        "no_batch_zero_rmse": 2.623358478556197,
+        "rmse_ratio_fix_over_control": 0.033034713428523585
+      },
+      {
+        "bin": "1",
+        "control_prediction_mean": 2.382888520972803,
+        "control_bias": 1.3828885209728032,
+        "control_rmse": 2.6647569920691425,
+        "no_batch_zero_prediction_mean": 2.167120181418955,
+        "no_batch_zero_bias": 1.1671201814189553,
+        "no_batch_zero_rmse": 2.350772538602815,
+        "rmse_ratio_fix_over_control": 0.8821714496290622
+      },
+      {
+        "bin": "2-5",
+        "control_prediction_mean": 3.9375663400068874,
+        "control_bias": 0.4375663400068879,
+        "control_rmse": 2.19208766447895,
+        "no_batch_zero_prediction_mean": 4.173473360067233,
+        "no_batch_zero_bias": 0.6734733600672336,
+        "no_batch_zero_rmse": 2.2473687695470823,
+        "rmse_ratio_fix_over_control": 1.0252184736787306
+      },
+      {
+        "bin": "6-30",
+        "control_prediction_mean": 18.75184437903166,
+        "control_bias": 0.7518443790316581,
+        "control_rmse": 3.904289885705873,
+        "no_batch_zero_prediction_mean": 18.683933554196653,
+        "no_batch_zero_bias": 0.6839335541966557,
+        "no_batch_zero_rmse": 4.409035427275357,
+        "rmse_ratio_fix_over_control": 1.129279729821657
+      },
+      {
+        "bin": "31-60",
+        "control_prediction_mean": 48.34795564626059,
+        "control_bias": 2.8479556462605795,
+        "control_rmse": 7.08844204308817,
+        "no_batch_zero_prediction_mean": 48.84247114429474,
+        "no_batch_zero_bias": 3.3424711442947386,
+        "no_batch_zero_rmse": 7.813750559458491,
+        "rmse_ratio_fix_over_control": 1.1023226982687342
+      },
+      {
+        "bin": "61-90",
+        "control_prediction_mean": 79.25729504455873,
+        "control_bias": 3.814078964156721,
+        "control_rmse": 9.78213681159169,
+        "no_batch_zero_prediction_mean": 79.15649513104054,
+        "no_batch_zero_bias": 3.7132790506385276,
+        "no_batch_zero_rmse": 10.025861799866933,
+        "rmse_ratio_fix_over_control": 1.0249153117534027
+      },
+      {
+        "bin": "91-124",
+        "control_prediction_mean": 109.15233026421424,
+        "control_bias": 2.3731483553349473,
+        "control_rmse": 9.126836021410533,
+        "no_batch_zero_prediction_mean": 109.79004147741776,
+        "no_batch_zero_bias": 3.010859568538482,
+        "no_batch_zero_rmse": 9.24136192951197,
+        "rmse_ratio_fix_over_control": 1.0125482596414326
+      },
+      {
+        "bin": "125",
+        "control_prediction_mean": 119.7994537667515,
+        "control_bias": -5.200546233248481,
+        "control_rmse": 8.591245595212246,
+        "no_batch_zero_prediction_mean": 121.18913605419974,
+        "no_batch_zero_bias": -3.8108639458002727,
+        "no_batch_zero_rmse": 7.375246322940374,
+        "rmse_ratio_fix_over_control": 0.8584606552337966
+      },
+      {
+        "bin": "all",
+        "control_prediction_mean": 76.90266975398993,
+        "control_bias": 1.0029773304132519,
+        "control_rmse": 10.15101191769803,
+        "no_batch_zero_prediction_mean": 77.0153762045288,
+        "no_batch_zero_bias": 1.1156837809521303,
+        "no_batch_zero_rmse": 7.925551965587009,
+        "rmse_ratio_fix_over_control": 0.7807647188128123
+      }
+    ],
+    "supports_zero_label_collision": true
+  },
+  "finished_at": "2026-10-23T10:17:26.675373+08:00",
+  "analysis_report": "docs/conclusions/final/zero_label_pair_fd001_seed3_report.md",
+  "analysis_report_sha256": "387299fbd4ef20ee17257f8cbbe278daefc83d744303f56a9c40b5bfd1a50072",
+  "accepted_result_artifact_sha256": {
+    "results/diagnostics/zero_label_pair_fd001_seed3/comparison.csv": "dd018ae6976c832e9bcef3d24e8f4eea5c99f1f3b09de061383f6ff6ec59f557",
+    "results/diagnostics/zero_label_pair_fd001_seed3/zero_label_intervention.pdf": "66d4c583525701edc4f177915173a828fe8fbe879db37827ad8a34e74557bdca",
+    "results/diagnostics/zero_label_pair_fd001_seed3/per_model_bins.csv": "b402c29b1c5610828e07711b0c41f38270125b735ea834594dabe1b1dfc48bc3",
+    "results/diagnostics/zero_label_pair_fd001_seed3/no_batch_zero_predictions.npz": "1017abf0b38c4941ab860083dbc79bcee34b7db6364f24d68c67dbca3cc49e59",
+    "results/diagnostics/zero_label_pair_fd001_seed3/control_predictions.npz": "45b4e375a252143f03f5d3179a0a8d7ef34b7b531127f3c7d9ffe0c9f2ee02f9",
+    "results/diagnostics/zero_label_pair_fd001_seed3/audit.json": "82a0ba8509a2dd5c4ea78be8e01c6264f6d8d21ffcb82c6bf3c70c085b48f05d",
+    "results/diagnostics/zero_label_pair_fd001_seed3/verdict.json": "f3b1913ce78aee61a9c5f87513ba2b0631deaceca29a9c8c3e8804d6aeb7afac",
+    "results/diagnostics/zero_label_pair_fd001_seed3/result.md": "9c1056c1fbc8a14b749504040aaabbf6893e10d0d8dd9f16df06c9da401e63e2",
+    "results/diagnostics/zero_label_pair_fd001_seed3/zero_label_intervention.png": "59e4a00dc99e68c1d401c708ad6abc76fd2eea9598fba7422881f77eb2f8dce8"
+  }
+}

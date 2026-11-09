@@ -1,0 +1,164 @@
+{
+  "generator_seeds": [
+    13,
+    3
+  ],
+  "rules": [
+    "best",
+    "final70"
+  ],
+  "sampling_seed": 103,
+  "historical_ds_means": {
+    "3": 0.3590524003765296,
+    "13": 0.2127078757452149,
+    "23": 0.4227486664574835,
+    "33": 0.2631314716033887,
+    "43": 0.30859742704737997
+  },
+  "original_best_epochs": {
+    "13": 64,
+    "3": 43
+  },
+  "selection": "user-specified good13; highest original DS excluding13/23 is poor3; fixed before rerun results",
+  "generator_training": "original per-seed CLI/defaults,70epochs/4410updates; training dropout.2/numeric-zero.1 retained",
+  "sampling": "retain conditional branch, legacy RNG draws, original explicit null CFG; DDPM1000/CFG3/batch256",
+  "predictor_args": {
+    "model_name": "DiffUnet_fre",
+    "embedding": 48,
+    "hidden": 64,
+    "num_head": 1,
+    "num_encoder": 1,
+    "lstm_hidden": 64,
+    "num_layers": 1,
+    "frequency_threshold": -1.0,
+    "frequency_mask_mode": "hard_random_quantile",
+    "frequency_threshold_init": 0.25,
+    "frequency_mask_temperature": 0.1,
+    "epoch": 50,
+    "eva_epoch": 35,
+    "batch_size": 64,
+    "optimizer": "adam",
+    "lr": 0.002,
+    "lr_type": "multistep",
+    "lr_schedule": "warmup_cosine",
+    "grad_clip": 1.0,
+    "multiplier": 2.5,
+    "schedule_name": "linear",
+    "task": "all",
+    "fewshot_fraction": 0.1,
+    "fatigue_threshold": 30.0,
+    "fewshot_indices_path": "",
+    "loss_type": "mse",
+    "sample_type": "ddim",
+    "seed": 3,
+    "batch_label_zero_prob": 0.1,
+    "loss_history_path": "",
+    "metrics_path": "",
+    "input_size": 14,
+    "output_size": 1,
+    "window_size": 48,
+    "dropout": 0.05,
+    "arch": "att+td",
+    "dataset": "FD001",
+    "state": "train",
+    "T": 500,
+    "w": 1.8,
+    "device": "cuda",
+    "model_path": "./weights/temp.pth",
+    "save_path": "./weights/lstm_temp.pth",
+    "syndata_path": "./weights/syn_data/temp.npy"
+  },
+  "evaluator_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "primary": "within each SAME rerun: final70 versus original-rule best; no epoch search",
+  "validation_engines": [
+    5,
+    6,
+    12,
+    15,
+    16,
+    20,
+    21,
+    22,
+    26,
+    27,
+    30,
+    34,
+    36,
+    37,
+    39,
+    41,
+    43,
+    46,
+    54,
+    56,
+    57,
+    61,
+    64,
+    67,
+    71,
+    74,
+    77,
+    78,
+    81,
+    95
+  ],
+  "validation_windows": 4875,
+  "validation_exposure": "Generator/MinMax saw all training engines including these30; exploration only",
+  "bins": [
+    [
+      "all",
+      0,
+      125
+    ],
+    [
+      "0-30",
+      0,
+      30
+    ],
+    [
+      "31-60",
+      31,
+      60
+    ],
+    [
+      "61-90",
+      61,
+      90
+    ],
+    [
+      "91-125",
+      91,
+      125
+    ],
+    [
+      "91-124",
+      91,
+      124
+    ],
+    [
+      "125",
+      125,
+      125
+    ]
+  ],
+  "condition_reference_indices": "frozen previous seed23 matched3000 and all15931",
+  "flags": {
+    "good13_max_overall_regression": 0.05,
+    "poor3_min_overall_improvement": 0.05,
+    "poor3_min_paired_improvements": 4
+  },
+  "budget": {
+    "generator_trainings": 2,
+    "full_samples_max": 4,
+    "discriminator_fits_max": 20,
+    "predictor_fits_max": 20
+  },
+  "identical_weights": "explicitly alias final70 to best and skip redundant computation",
+  "stop": "fixed budget or technical failure; no retries/replacement seeds/other epochs/new sampling seeds/default adoption"
+}

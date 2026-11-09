@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "arm": "native_public",
+  "forward_calls": 1,
+  "backward_calls": 0,
+  "optimizer_updates": 0,
+  "canonical_initial_and_question_exact": true,
+  "loss": 1.3373180627822876,
+  "operators": 779,
+  "pre_forward_rng_sha256": "20737b12c97d6d8e2983273bf736ebcbe539b9464802f8d765968b1722cede9a",
+  "torch": "2.1.2+cu121",
+  "cuda": "12.1",
+  "cudnn": 8902,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "backend_flags": {
+    "benchmark": true,
+    "deterministic": false,
+    "matmul_tf32": false,
+    "cudnn_tf32": true
+  },
+  "caveat": "Synchronous ATen tracing can alter autotuning/timing; current entry replay, not original historical kernels"
+}

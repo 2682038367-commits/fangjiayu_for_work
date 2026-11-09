@@ -1,0 +1,37 @@
+{
+  "confirmation_triggered": false,
+  "gates": {
+    "ds_absolute_mean_change": 0.03,
+    "paired_same_direction_at_least": 4,
+    "inverse_reference": "dev_matched",
+    "inverse_absolute_rmse_change": 1.0,
+    "inverse_relative_rmse_change": 0.1,
+    "combination": "DS gate OR inverse gate, either direction, either checkpoint"
+  },
+  "checkpoint_decisions": [
+    {
+      "checkpoint_seed": 13,
+      "ds_change": 0.000784436774395958,
+      "ds_same_direction_count": 3,
+      "ds_gate": false,
+      "inverse_reference": "dev_matched",
+      "inverse_rmse_change": -0.5128296873592095,
+      "inverse_relative_rmse_change": -0.04701911932125908,
+      "inverse_same_direction_count": 5,
+      "inverse_gate": false
+    },
+    {
+      "checkpoint_seed": 23,
+      "ds_change": 0.00021964229683087976,
+      "ds_same_direction_count": 2,
+      "ds_gate": false,
+      "inverse_reference": "dev_matched",
+      "inverse_rmse_change": 0.014266305705993076,
+      "inverse_relative_rmse_change": 0.0009023341327012728,
+      "inverse_same_direction_count": 4,
+      "inverse_gate": false
+    }
+  ],
+  "interpretation": "Exploratory practical effect gate, either direction; not statistical significance or adoption rule",
+  "created_at": "2026-10-30T11:29:18.820720+08:00"
+}

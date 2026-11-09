@@ -1,0 +1,32 @@
+[
+  {
+    "process": 1,
+    "mode": "native",
+    "output_sha256": "39e757f9354908748d15494eea56305851ac00f2854b46711874df4567165e50",
+    "shape": [
+      256,
+      16,
+      48
+    ],
+    "benchmark": true,
+    "deterministic": false,
+    "strict_deterministic_algorithms": false,
+    "backward_calls": 0,
+    "optimizer_updates": 0
+  },
+  {
+    "process": 1,
+    "mode": "local_deterministic",
+    "output_sha256": "c4265c5b3232e1e9c38f8ec06f5b36b148211b81422e7300c334fbea819eddf0",
+    "shape": [
+      256,
+      16,
+      48
+    ],
+    "benchmark": false,
+    "deterministic": true,
+    "strict_deterministic_algorithms": true,
+    "backward_calls": 0,
+    "optimizer_updates": 0
+  }
+]

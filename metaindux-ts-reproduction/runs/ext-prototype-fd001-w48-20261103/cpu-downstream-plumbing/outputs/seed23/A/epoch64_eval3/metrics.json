@@ -1,0 +1,150 @@
+{
+  "rmse": 61.87058459624614,
+  "updates": 35,
+  "selected_epoch": 14,
+  "selected_update": 14,
+  "best_synthetic_dev": 24.097055435180664,
+  "order_hash": "834347dafd0a744476bd7d3fb17a1cdb1a80aee5881dbf6074094578e5b4bda4",
+  "history": [
+    {
+      "epoch": 1,
+      "updates": 1
+    },
+    {
+      "epoch": 2,
+      "updates": 2
+    },
+    {
+      "epoch": 3,
+      "updates": 3
+    },
+    {
+      "epoch": 4,
+      "updates": 4
+    },
+    {
+      "epoch": 5,
+      "updates": 5
+    },
+    {
+      "epoch": 6,
+      "updates": 6
+    },
+    {
+      "epoch": 7,
+      "updates": 7
+    },
+    {
+      "epoch": 8,
+      "updates": 8
+    },
+    {
+      "epoch": 9,
+      "updates": 9
+    },
+    {
+      "epoch": 10,
+      "updates": 10
+    },
+    {
+      "epoch": 11,
+      "updates": 11
+    },
+    {
+      "epoch": 12,
+      "updates": 12
+    },
+    {
+      "epoch": 13,
+      "updates": 13
+    },
+    {
+      "epoch": 14,
+      "updates": 14
+    },
+    {
+      "epoch": 15,
+      "updates": 15
+    },
+    {
+      "epoch": 16,
+      "updates": 16
+    },
+    {
+      "epoch": 17,
+      "updates": 17
+    },
+    {
+      "epoch": 18,
+      "updates": 18
+    },
+    {
+      "epoch": 19,
+      "updates": 19
+    },
+    {
+      "epoch": 20,
+      "updates": 20
+    },
+    {
+      "epoch": 21,
+      "updates": 21
+    },
+    {
+      "epoch": 22,
+      "updates": 22
+    },
+    {
+      "epoch": 23,
+      "updates": 23
+    },
+    {
+      "epoch": 24,
+      "updates": 24
+    },
+    {
+      "epoch": 25,
+      "updates": 25
+    },
+    {
+      "epoch": 26,
+      "updates": 26
+    },
+    {
+      "epoch": 27,
+      "updates": 27
+    },
+    {
+      "epoch": 28,
+      "updates": 28
+    },
+    {
+      "epoch": 29,
+      "updates": 29
+    },
+    {
+      "epoch": 30,
+      "updates": 30
+    },
+    {
+      "epoch": 31,
+      "updates": 31
+    },
+    {
+      "epoch": 32,
+      "updates": 32
+    },
+    {
+      "epoch": 33,
+      "updates": 33
+    },
+    {
+      "epoch": 34,
+      "updates": 34
+    },
+    {
+      "epoch": 35,
+      "updates": 35
+    }
+  ]
+}

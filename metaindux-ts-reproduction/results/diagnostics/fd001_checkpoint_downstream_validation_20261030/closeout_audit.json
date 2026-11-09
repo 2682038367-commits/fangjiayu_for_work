@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "completed_models": 15,
+  "inputs_unchanged": true,
+  "initialization_and_order_prefix_pairs_match": true,
+  "actual_optimizer_counters_checked": true,
+  "saved_prediction_metrics_recomputed": true,
+  "generator_saw_validation_engines": true,
+  "no_official_test_access": true
+}

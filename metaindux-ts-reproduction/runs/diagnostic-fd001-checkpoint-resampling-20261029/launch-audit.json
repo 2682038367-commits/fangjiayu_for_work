@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-29T16:15:01.523359+08:00",
+  "service": "metaindux-fd001-resampling-20261029.service",
+  "active_state": "active",
+  "sub_state": "running",
+  "main_pid": 1185976,
+  "first_sample_progress": {
+    "checkpoint_seed": 13,
+    "sampling_seed": 103,
+    "completed_batches": 5,
+    "total_batches": 63,
+    "elapsed_seconds": 84.4099669456482,
+    "updated_at": "2026-10-29T16:14:50.851697+08:00"
+  },
+  "estimate_note": "Initial observed sampling about17s/batch versus historical11s; approximately2hours total, provisional, no completed batch/evaluation result claimed."
+}

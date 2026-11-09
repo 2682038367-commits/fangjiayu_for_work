@@ -1,0 +1,9 @@
+{
+  "rng_hash": "013caeac27f3711910966dc117b838889443c23990bddb64021e794de447324f",
+  "sampling_seed": 103,
+  "prototype_seed": 7103,
+  "n": 11056,
+  "steps": 1000,
+  "cfg": 3.0,
+  "condition_dropout": 0
+}

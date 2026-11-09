@@ -1,0 +1,21 @@
+{
+  "value": 24.565,
+  "pdf_sha256": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+  "table": "I",
+  "physical_page": 7,
+  "printed_page": 18068,
+  "explicit": {
+    "window": 48,
+    "generated_train_fraction": 0.7,
+    "generated_dev_fraction": 0.3,
+    "repetitions": 5,
+    "final": "average of repeated experiment metrics"
+  },
+  "unreported": [
+    "Whether real test means terminal window per engine",
+    "RUL cap125 and output clipping",
+    "Exact five seeds and which stages are rerun",
+    "Whether each generator is evaluated by multiple predictor seeds",
+    "Raw per-repeat RMSE/SD"
+  ]
+}

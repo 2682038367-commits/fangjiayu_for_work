@@ -1,0 +1,10 @@
+{
+  "checkpoint13_all3_at_or_below_threshold": true,
+  "checkpoint23_all3_above_threshold": true,
+  "all3_paired_mean_contrasts_positive": true,
+  "mean_paired_checkpoint_difference": 0.21974688840079487,
+  "minimum_paired_sampling_mean_difference": 0.21273925321619075,
+  "maximum_paired_sampling_mean_difference": 0.22632569814872924,
+  "note": "Descriptive exploratory comparison of two historical extremes, three matched sampling seeds; no causal attribution or population variance estimate.",
+  "predeclared_checkpoint_pattern_observed": true
+}

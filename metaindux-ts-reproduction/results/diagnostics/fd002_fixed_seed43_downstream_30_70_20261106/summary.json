@@ -1,0 +1,69 @@
+{
+  "status": "complete",
+  "primary": {
+    "segment": "all",
+    "best30_RMSE": 27.63635805705346,
+    "final70_RMSE": 31.39626673404208,
+    "delta_RMSE": 3.759908676988619,
+    "relative_change": 0.13604935459392054,
+    "improving_predictor_seeds": 0
+  },
+  "paired_overall": [
+    {
+      "evaluator_seed": 3,
+      "best30_RMSE": 27.85628391539213,
+      "final70_RMSE": 30.24589260443217,
+      "delta_RMSE": 2.389608689040042
+    },
+    {
+      "evaluator_seed": 13,
+      "best30_RMSE": 27.72978230821692,
+      "final70_RMSE": 31.765044622846784,
+      "delta_RMSE": 4.035262314629865
+    },
+    {
+      "evaluator_seed": 23,
+      "best30_RMSE": 27.687214884725297,
+      "final70_RMSE": 31.169833385685017,
+      "delta_RMSE": 3.4826185009597204
+    },
+    {
+      "evaluator_seed": 33,
+      "best30_RMSE": 27.492994229406165,
+      "final70_RMSE": 30.948185588969537,
+      "delta_RMSE": 3.455191359563372
+    },
+    {
+      "evaluator_seed": 43,
+      "best30_RMSE": 27.41316204090965,
+      "final70_RMSE": 32.794009213644934,
+      "delta_RMSE": 5.380847172735283
+    }
+  ],
+  "auxiliary_DS": [
+    {
+      "rule": "best",
+      "mean_DS": 0.4549229658160808,
+      "scores": [
+        0.4790563312469909,
+        0.4738805970149253,
+        0.4812229176697159,
+        0.3657920077034183,
+        0.4746629754453538
+      ]
+    },
+    {
+      "rule": "final70",
+      "mean_DS": 0.2994222436206066,
+      "scores": [
+        0.2601709195955705,
+        0.367176215695715,
+        0.4219427058257101,
+        0.331126624939817,
+        0.1166947520462204
+      ]
+    }
+  ],
+  "verdict": "final70_worse",
+  "caveat": "One fixed generator training and one paired full generated batch; five predictor initializations are not five generator replications. Internal validation engines seen by generator/MinMax."
+}

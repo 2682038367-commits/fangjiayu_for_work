@@ -1,0 +1,16 @@
+setting,dataset,failed_seeds,evaluated_seeds,failure_ratio,failed_seed_ids
+few_w48,FD001,2,5,0.4,"33,43"
+few_w48,FD002,1,5,0.2,33
+few_w48,FD003,1,5,0.2,23
+full_w24,FD001,0,5,0.0,
+full_w24,FD002,2,5,0.4,"3,43"
+full_w24,FD003,0,5,0.0,
+full_w24,FD004,1,5,0.2,33
+full_w48,FD001,3,5,0.6,"3,23,43"
+full_w48,FD002,3,7,0.42857142857142855,"23,43,53"
+full_w48,FD003,0,5,0.0,
+full_w48,FD004,3,5,0.6,"13,33,43"
+zero_w48,FD001,1,5,0.2,3
+zero_w48,FD002,4,5,0.8,"3,13,33,43"
+zero_w48,FD003,1,5,0.2,43
+zero_w48,FD004,3,5,0.6,"13,23,33"

@@ -1,0 +1,24 @@
+{
+  "inputs_sha256": {
+    "count": 75,
+    "failures": []
+  },
+  "outputs_sha256": {
+    "count": 63,
+    "failures": []
+  },
+  "checkpoint_sha256": {
+    "count": 6,
+    "failures": []
+  },
+  "passed": true,
+  "completed_training_runs": 2,
+  "sample_sets": 3,
+  "discriminator_fits": 15,
+  "native_first_different_loss_update": 1,
+  "native_initialization_orders_epoch_rng_match": true,
+  "same_weight_samples_bit_identical": true,
+  "evaluator_scores_exact_repeat": true,
+  "old_weights_mean_DS_gap": -0.25800433317284543,
+  "all_five_evaluators_same_direction": true
+}

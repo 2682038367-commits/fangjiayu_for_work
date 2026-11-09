@@ -1,0 +1,12 @@
+{
+  "initial_cpu_absolute_1e3_gate_pass": false,
+  "cpu_absolute_gate_failed_models": 15,
+  "cuda_strict_replay_pass": true,
+  "max_cuda_prediction_difference": 0.0,
+  "max_cpu_prediction_difference": 0.0095977783203125,
+  "max_cpu_realvalidation_rmse_difference": 5.842932756294772e-05,
+  "selected_weight_original_gpu": 1,
+  "selected_weight_cpu": 1,
+  "all_candidate_eligibility_identical": true,
+  "explanation": "Device/backend numerical-path differences observed;original CUDA predictions reproduced exactly;CPU threshold failure retained,not relabeled as strictCPU pass"
+}

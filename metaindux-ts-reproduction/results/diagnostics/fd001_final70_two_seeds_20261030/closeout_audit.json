@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "audited_training_runs": 2,
+  "all_source_data_weight_hashes_unchanged": true,
+  "actual_noise_anchor_matches": true,
+  "original_best_loss_rule_verified": true,
+  "original_source_functions_unchanged": true,
+  "saved_predictions_metrics_recomputed": true,
+  "predictor_initial_order_prefix_matches": true,
+  "aliases_explicit": 0,
+  "checked_at": "2026-10-30T17:07:43.289657+08:00"
+}

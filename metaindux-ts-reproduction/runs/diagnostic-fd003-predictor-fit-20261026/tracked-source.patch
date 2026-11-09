@@ -1,0 +1,161 @@
+diff --git a/experiment-ledger.md b/experiment-ledger.md
+index bdf6a2e..a76d8d3 100644
+--- a/experiment-ledger.md
++++ b/experiment-ledger.md
+@@ -183,3 +183,81 @@ The 2026-09-30 freeze applies to historical results; Candidate B was reopened by
+ - User clarified previous request concerned final model outputs, not uncapped label histogram. Supporting descriptive audit of saved full-dataw48 test predictions; filter originalRUL>125byengineID, all evaluatedtargets125. No new model inference/training.
+ - [Observed] Synthetictrainedheadline means114.48/95.65/116.02/93.79 vsrealtrained114.71/104.51/114.71/105.90;11/57/15/67testengines. FD002headline7generators, others5; distributions acrossmodel×engine, not ensemblepredictions or independentreplicates.
+ - Artifacts `results/diagnostics/predictions_raw_rul_gt125_w48/`; sourcehashes and exact summary/rawpredictions preserved. Existingstrictresults and activeFD002intervention unchanged.
++
++## `diagnostic-test-window-coverage-20261026`
++
++- User requested coverage/error comparison inFD00331-60 andFD00491-125 using multiple representations. Scope diagnostic/supporting,contract `scope-20261026-test-window-coverage`; no generator or predictor training.
++- [Observed] 138independenttestengines(21/50/67 stages),5common-generationseeds; level28d,dynamics42d,coupling91d; train-onlyfeature scaling, sameRUL±5candidatepools(exact125),matchedcandidatecounts,5NN distances vsrealtrain. Reusedoriginalfull-datarealtestpredictions.
++- [Observed] Levelgap/excessMSE SpearmanρFD003.862,FD00491-124.245,125.416. FD0031NN.819/broadpool.760;FD00491-1241NN.022 so weaker. Dynamicsandrawcoupling not similarly associated.
++- [Observed] Addedrawcorrelation sensitivity afterscaledcouplingoverweightednearconstantcoordinates; firstpass preserved. Rawoperatingprofilesoverrideinterpretationofscaledsettingsjitter. FD003all1setting;FD004all117windowscontain6regimes,dominantlabelnotuniquecondition.
++- [Hypothesis] FD003locallevelsupportmismatch favored;FD004widerlevelpositiondifferences plusrealtestdifficulty, not singlecausalassignment ofmissingclassvsbiasvsoptimization.
++- Report `docs/conclusions/final/test_window_coverage_w48_report.md`; artifacts `results/diagnostics/test_window_coverage_w48/`; snapshot `runs/diagnostic-test-window-coverage-20261026/run-manifest.json`. Paper targets absent; no newstrictgap/variation/conclusionjudgment. Plannedmatrixcomplete,stop,noautointervention.
++
++## 2026-10-26 cause-exploration evidence synthesis / FD002 pair closeout audit
++
++- No new training. FD002pair completed2026-10-23 16:23:04+08;source/config/inputhashes and70epochhistories/predictionarrays verified,closeout_audit.json hasno mismatch.
++- [Observed] FD002RUL0proxyRMSE92.551→5.451;overall16.442→19.289,nonzero14.768→19.345. Local0collisionrepair supported but globalproxyperformance worse. No downstreamrealtestevaluation ofrepairyet. FD001overallproxyimprovesmostly0only.
++- Summary `docs/conclusions/final/rmse_cause_exploration_summary_20261026.md`. FD003locallevel-supportassociation stronger thanFD004; causalmissingcoveragevsshiftvsoptimizationunresolved.
++- Recommend next20fixedprotocol downstreampredictortrainings on4existingFD001/2control/fixdatasets, no additionalgeneratortraining; recommendation only,not executed. Existingstrictclaims/stoppingdecisionsunchanged.
++
++## `diagnostic-zero-label-downstream-20261026`
++
++- User explicitly authorized20downstreamevaluations aftertimeestimate. Diagnostic/supporting,contract `scope-20261026-zero-label-downstream`; existingFD001/2seed3control/fixsyntheticdata,5pairedevaluatorseeds. No generatortraining.
++- Frozenprotocol: originalperFD70/30splitindices,realtestengines,1layerLSTMhidden64,Adam.002,35epochmax,upstreamschedule/bestdevselection,batch256. Onlyexistinginputsyntheticdatasetdiffers. Predictionsunclipped,testlabelscapped125.
++- Snapshot `runs/diagnostic-zero-label-downstream-20261026/run-manifest.json` includesallinput/sourcehashes/configs/environment; service `metaindux-zero-label-downstream-20261026.service`; log `logs/zero_label_downstream_20261026_console.log`.
++- PrimaryrealtestoverallRMSE,secondaryrealtestRULsegments. Sameevaluatorseedpaired; intervalisconditionalonegeneratorseed,notgenerationvariation. No paperdiagnostictarget ornewstrictclaim.
++- Resultsprogressivelysavedunder `results/diagnostics/zero_label_downstream_20261026/`; fixedbudget20,stoponintegrityfailure,noautomaticsweeps. Metrics pending.
++
++### Downstream zero-label diagnostic finish
++
++- Run diagnostic-zero-label-downstream-20261026; 2026-10-26T15:40:25.550212+08:00; complete; completed 20/20 evaluations. See run manifest and results/diagnostics/zero_label_downstream_20261026/result.md.
++
++## 2026-10-26 downstream utility closeout
++
++- `diagnostic-zero-label-downstream-20261026` complete15:40:25+08;20/20predictortrainings,allcheckpoints/segmentedmetrics/individualenginepredictionsaudited,input/sourcehashesunchanged. No generatortraining.
++- [Observed] ActualrealtestmeanRMSE FD00115.710→14.524(−7.55%),pairedΔCI[-1.527,-.845];FD00224.896→27.654(+11.08%),ΔCI[2.213,3.304]. Intervalsconditionalonegeneratorseedandmeasureevaluationvariationonly.
++- [Observed] FD0010-90improvesbut12510.841→14.307;FD002mid31-90improvesbut0-30and91-125worse,12530.786→37.208. Proxy0repair doesnotguaranteedownstreamgain.
++- Report `docs/conclusions/final/zero_label_downstream_20261026_report.md`; resultsunder`results/diagnostics/zero_label_downstream_20261026/`; snapshotunchangedrunpath.
++- Stopbudget20; noautomaticextension/retraining/defaultchange. Strictmain/A/B historicalconclusionsunchanged,Cdeferred. Recommend FD002highRULcontrol-vsfixsupportdiagnosisbeforedatasetwideadoption.
++
++## 2026-10-26 user decision: defer zero-label route
++
++- User requested temporarily abandoning this route. Stop further zero-label/FD002repairfollowups; completed evidence retained. No new training/inference.
++- Recommend bounded FD00331-60 real-anchor replacement control experiment (one predeclared fraction, fixedsamplecount/labels/steps/evaluatorseeds,onlyrealtrain anchors,no realtest fitting); this tests whether correcting local training content helps,not uniquelycoveragevsbias. Proposal only,not executed or included in strictreproduction.
++
++## `ext-local-anchor-fd003-seed3-20261026`
++
++- User explicitly accepted and requested proposed10%replacement. Scope extension:EXT-001/supporting (unreportedtrainingmixture),contract `scope-20261026-fd003-local-anchor`; notstrictpaperreproduction.
++- FD003originalgenerationseed3,pairedcontrolvsanchor10,5evaluatorseeds. Deterministicallyreplacefloor10%oftrainpositionswithRUL31-60 usingmatchingintegerRULrealwindowsfromsamefixedrealtrainindices. Samplecount/labels/devunchanged. Donorsexcludedev/test. Onefixedreplacementseed20261026sharedacrossevaluators.
++- Botharmsfixed35epochs tocontrolactualupdates; isolatedcopyoforiginalevaluatoronlydisablesearlystopping,retainsbestdevcheckpointselection,model/Adam/schedule/otherprotocol. Originalsourcesuntouched.10trainingsmax,nogeneratortraining,no fraction/seed sweeps.
++- GPUservice `metaindux-fd003-local-anchor-20261026.service`; snapshot `runs/ext-local-anchor-fd003-seed3-20261026/run-manifest.json`; log `logs/fd003_local_anchor_20261026_console.log`; results `results/diagnostics/fd003_local_anchor_20261026/`.
++- Primarytrue-test31-60RMSE,secondaryoverall/othersegments. MeannegativepairedchangeandCIbelowzeroonlysupportthissingle-generator/replacementrun,notuniquecoverage-vs-biasmechanism. Papercomparisonunavailable,newstrictclaimnone. Metrics pending.
++
++### FD003 real-anchor experiment finish
++
++- ext-local-anchor-fd003-seed3-20261026; 2026-10-26T16:08:55.599831+08:00; complete; 10/10 evaluations; see snapshot/comparison.csv. No automatic additional experiments.
++
++## 2026-10-26 FD003 local-anchor closeout
++
++- `ext-local-anchor-fd003-seed3-20261026` extension:EXT-001/supporting completed10/10;allmodels35epochs/1925updates,209exactRULrealtrainreplacements,devunchanged,inputhashes/weights/predictions/segmentsaudited.
++- [Observed] Target31-60RMSE25.881→24.726(−4.46%),pairedΔCI[-3.376,1.067];overall20.410→19.794(−3.02%),CI[-2.109,.876]. Allstageintervalscross0. Meanimprovementbutnotsufficientlystable;single fixedgenerator/replacementseed.
++- No strictpaper target;papercomparisonunavailable,no newpaperreproductionclaim. Ten-runbudgetcomplete,stopwithoutfraction/seed/optimizer sweeps. Zero-labelroute remainspaused.
++- Report `docs/conclusions/final/fd003_local_anchor_20261026_report.md`; outputs `results/diagnostics/fd003_local_anchor_20261026/`; snapshotunderoriginalrunpath.
++- Nextproposalonly:verifywhether209anchorsactuallyreduceprevioushigh-gaptestcaseslocaldistancesbeforedecidingontrainingchanges. Noadditionalanalysis/traininglaunched.
++
++## `diagnostic-fd003-anchor-support-20261026`
++
++- User requested continuing actualanchor reach check. Supportingdiagnostic afterEXT-001;no newtraining/datachanges. Reused209target/donorindices,samefixedtrain-onlycandidatepools,RUL±5,unchangedreal-fitfeaturescales.
++- [Observed] Leveldistance21engines:7improved/9worsened/5unchanged,medianreduction0;anchorsintop5for10engines. Priorhighgap89distance.658→.394(−40.1%),testRMSE57.95→54.94;16distance1.132→.989,test63.69→62.94. Replacementsremoveoldneighborsandcanworsenlocaldistance.
++- [Observed] Leveldistancechange-vsMSEchangeρ.444;descriptiveonly. Randomanchorsdidnotwidelyimprovesupport,butindividualsupportgainstillnot sufficientforlargepredictiongain. Coverageproblemneitheruniquelyconfirmednorrejected.
++- Report `docs/conclusions/final/fd003_anchor_support_20261026_report.md`; artifacts `results/diagnostics/fd003_anchor_support_20261026/`; snapshot `runs/diagnostic-fd003-anchor-support-20261026/run-manifest.json`.
++- Stopreadonlycheck,noautomaticfraction/seedruns,no test-informedanchorselection. Strictmain/A/Bandzero-labelpausepreserved.
++
++## `diagnostic-fd003-anchor-selection-20261026`
++
++- User requested “继续” after recommendation to define anchor rules on training/validation engines. Diagnostic/supporting followup of EXT-001, contract `scope-20261026-fd003-anchor-selection`; no new model training, no official test-file access. Frozen protocol written before computation in `docs/operations/FD003_ANCHOR_SELECTION_DIAGNOSTIC.md`.
++- One fixed70/30 engine split of original FD003train, generationseed3,209previous target positions, exactRUL histogram and untouched syntheticdev. Compare random donors vs one greedy level-coverage rule; both donor pools restricted to original predictortrain indices and70selection engines. Exclude own-engine donor rewards. Both plans frozen/hashes saved before extracting validation descriptors. Existing generator and originalMinMax saw all100 engines, so holdout is independent only of donor selection.
++- [Observed] On30engines/900windows, level engine-mean random.281533→guided.278416 (−1.11%);15improved/15worsened. Dynamics+0.30%worse,rawcoupling−0.11%. Predeclared >=5% mean level reduction and >half engines improvement failed. Level paired-engine bootstrap delta95%CI[-.00744,-.00014] supports only a small descriptive mean-distance improvement, not predictive utility.
++- [Observed] Verified input/output SHA256,209monotonic greedy updates and objective gains, exactlabels/donoruniqueness/train-membership/engine-disjointness/dev-preservation,10800finite distance rows. No downstream RMSE measured. Current→paper→gap→variation→conclusion: distance-only diagnostic→no paper target→not applicable→one split/rule, no cross-split variation measured→no strict conclusion change.
++- [Hypothesis] This particular average-level-coverage rule does not meaningfully improve heldout support at the fixed budget. Does not falsify local coverage as a cause, establish signal bias, or establish predictor-training failure. Stop one-rule budget; no ratio/seed sweeps or automatic training. Suggested next diagnosis if requested: saved predictor's stage-wise synthetic train/dev fit vs real-data performance, to distinguish fitting limitations from transfer errors before another mixture intervention.
++- Report `docs/conclusions/final/fd003_anchor_selection_20261026_report.md`; artifacts `results/diagnostics/fd003_anchor_selection_20261026/`; snapshot `runs/diagnostic-fd003-anchor-selection-20261026/run-manifest.json`. Strictmain/A/B unchanged,Cdeferred,zero-labelroutepaused.
+diff --git a/reproduction-state.md b/reproduction-state.md
+index 09f6f61..f8a551c 100644
+--- a/reproduction-state.md
++++ b/reproduction-state.md
+@@ -1,5 +1,14 @@
+ # Persistent reproduction state
+ 
++## Latest checkpoint: 2026-10-26 anchor selection validation
++
++- User requested continuing train/validation-only selection-rule diagnosis after actual-anchor support check. Run `diagnostic-fd003-anchor-selection-20261026`, diagnostic/supporting followup of EXT-001, complete; no predictor/generator training and no official test-file access.
++- Fixed70selection/30validation real training engines, same209 replacement positions and exact per-RUL counts. Random and guided donors both restricted to original predictor-train indices of70selection engines. Guided rule greedily reduces level5NN distance, excludes own-engine query benefits, frozen before validation descriptors. Original generator/MinMax saw all100 engines: holdout independence applies to donor selection only.
++- [Observed] On900heldout windows/30engines: level distance random.281533→guided.278416 (−1.11%),15improve/15worsen; dynamics+0.30%worse,rawcoupling−0.11%. Predeclared gate at least5% and more thanhalf engines improve failed. Paired-engine descriptive level delta95%CI[-.00744,-.00014] indicates a small average effect, not the required practical gain or predictive RMSE benefit.
++- Stop this one split/rule, no ratio/seed sweeps or new training. Coverage hypothesis remains unresolved, not falsified by a limited selection rule. If continuing, first check stage-specific train/dev fit of saved synthetic-trained predictors before further data-mixture intervention; do not infer unique predictor vs signal causality.
++- Report `docs/conclusions/final/fd003_anchor_selection_20261026_report.md`; protocol `docs/operations/FD003_ANCHOR_SELECTION_DIAGNOSTIC.md`; snapshot `runs/diagnostic-fd003-anchor-selection-20261026/run-manifest.json`. All input/output hashes,209objective updates and10800finite window/arm/representation distances verified.
++- Strict main/A/B results unchanged; C deferred; zero-label route remains paused. No new downstream RMSE or paper numerical-gap result in this check. Historical checkpoints below are retained chronologically.
++
+ ## Identity and goal
+ 
+ - Paper: MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series, TNNLS 2025.
+@@ -130,3 +139,55 @@
+ - Userauthorized oneFD002generationseed. Diagnostic/supporting Run `diagnostic-zero-label-pair-fd002-seed3-20261023`,contract `scope-20261023-zero-label-pair-fd002`; freshcontrolprob.1 vsfixprob0 seed3, otherconfigurationidentical.
+ - GPUservice `metaindux-zero-label-pair-fd002-20261023.service`; snapshotunder`runs/diagnostic-zero-label-pair-fd002-seed3-20261023/`; log`logs/zero_label_pair_fd002_seed3_20261023_console.log`.
+ - Automatic5realpredictorconsistencycomparison andverdictunder`results/diagnostics/zero_label_pair_fd002_seed3/`. Samecriteria asFD001,2generatorbudget,noautofollowup. Metrics pending; no downstreamrealtestreevaluation; historicalstrictresultsunchanged.
++
++## 2026-10-26 local-support diagnosis completed
++
++- Run `diagnostic-test-window-coverage-20261026`,diagnostic/supporting,contract `scope-20261026-test-window-coverage`.138testengines,FD00331-60 andFD00491-124/125,5commonoriginalgenerationseeds. No newtraining.
++- [Observed] Level-distancegap linksFD003excessMSEρ.862 (1NN.819,broadpool.760),FD00491-124.245(1NN.022),125.416(1NN.284). Dynamics/rawcoupling notsimilarlyassociated. FD003localregionalmismatch;FD004widerlevelshiftwithweakermatchingerrorlink.
++- [Observed] Rawsettings showFD003singlemajorcondition,FD004all117selectedwindowsmix6settings; cannotlabelgeneratedmissingoneoperatingcondition. Scaledcorrelationdistance sensitive tonearconstantcoordinates; unscaled sensitivity and firstpass saved.
++- [Hypothesis] Distances cannotuniquelyseparatelackofcoveragefrompositionbias/optimization. Stopplannedinspection; future singlefactorintervention requiresnewdecision, no automaticgeneration/training. Strictmain/A/Bstatusunchanged,Cdeferred.
++- Report `docs/conclusions/final/test_window_coverage_w48_report.md`; artifactroot `results/diagnostics/test_window_coverage_w48/`; snapshotunder`runs/diagnostic-test-window-coverage-20261026/`.
++
++## 2026-10-26 evidence synthesis and FD002 completed-status correction
++
++- Supersedes priorrunningFD002note:pair finished2026-10-23 16:23:04+08 and nowaudited. [Observed] RUL0proxyRMSE92.551→5.451,butoverall16.442→19.289 andnonzero14.768→19.345. Source/config/inputhashes,histories,predictionschecked. No downstreamrealtestresultofrepairyet.
++- Summaryreport `docs/conclusions/final/rmse_cause_exploration_summary_20261026.md`; additionalFD002audit `results/diagnostics/zero_label_pair_fd002_seed3/closeout_audit.json`.
++- Recommendation:20sameprotocol downstreamtrainings onexisting4FD001/2control/fixsyntheticdatasets beforeglobaladoption;notstarted. FD003locallevelmismatchnextcandidate,FD004weaker/mixed. No newtrainingorstrictconclusionchanges.
++
++## 2026-10-26 downstream real-test intervention evaluation started
++
++- Userapproved20predictortrainings. Run `diagnostic-zero-label-downstream-20261026`,diagnostic/supporting,contract `scope-20261026-zero-label-downstream`. FD001/2existinggenerationseed3control/fixdatasets×5pairedevaluatorseeds;no generatortraining.
++- Original70/30indices,35epochmax1layerLSTM,originaloptimizationandbestdevselector,realtestsetsheldfixed. PrimaryrealtestRMSEandRULsegments; no automaticfurthertraining.
++- GPUservice `metaindux-zero-label-downstream-20261026.service`; snapshot `runs/diagnostic-zero-label-downstream-20261026/run-manifest.json`; log `logs/zero_label_downstream_20261026_console.log`; output `results/diagnostics/zero_label_downstream_20261026/`. Metrics pending;strictresultsunchanged.
++
++## 2026-10-26 downstream evaluation completed and audited
++
++- Run `diagnostic-zero-label-downstream-20261026`,diagnostic/supporting,complete20/20at15:40:25+08. Originalinput/sourcehashesand20weights/perengine/segmentreplaysverified. No generatortraining.
++- [Observed] ActualrealtestFD00115.710→14.524(−7.55%),FD00224.896→27.654(+11.08%). FD0010-90gainwith125regression;FD00231-90gainbuthighRULandlowRULregression. No universaldownstreambenefitfromzero-labelrepair. Fixedgenerationseed3,5pairedevaluatorseeds;doesnotestablishgenerationrepeatability.
++- Report `docs/conclusions/final/zero_label_downstream_20261026_report.md`; output `results/diagnostics/zero_label_downstream_20261026/`; snapshot `runs/diagnostic-zero-label-downstream-20261026/run-manifest.json`.
++- Stopafter20,noautomaticfollowup/defaultchange;preserveoriginalstrictresults. Nextrecommendationifrequested:FD002highRULcontrol/fixsupportcomparisonbeforerepeatingmatrix.
++
++## 2026-10-26 user defers zero-label repair line
++
++- User explicitly requested temporarily abandoning this direction. Zero-label repair investigation and further FD002 control/fix diagnosis deferred; retain all completed results, defaults, checkpoints and manifests. No new runs started.
++- Proposed next direction only: FD00331-60 local-support validation via one fixed-ratio real-training-anchor replacement in synthetic predictor training, identical total samplecount/RULhistogram/updatebudget, held-out syntheticdev unchanged and realtest not used for fitting. Target question is local data-content utility, not unique missingcoverage-vs-bias attribution. Additional diagnostic/extension outside strictpaperclaims; not yet authorized/executed.
++
++## 2026-10-26 FD003 local-anchor intervention started
++
++- UserauthorizedEXT-001 boundednewtrainingmixture. Run `ext-local-anchor-fd003-seed3-20261026`,contract `scope-20261026-fd003-local-anchor`,extension/supporting.
++- Controlvs10%realreplacementwithin31-60synthetictrain,exactlabels/counts/devheldfixed,donorsfromrealtrainonly;fixed35epochsforboth,5pairedevaluatorseeds,10runsbudget. Isolatedevaluatordisablesearlystoponly,nohistoricalsourcechangeorgeneratortraining.
++- Snapshot `runs/ext-local-anchor-fd003-seed3-20261026/run-manifest.json`; service `metaindux-fd003-local-anchor-20261026.service`; log `logs/fd003_local_anchor_20261026_console.log`; output `results/diagnostics/fd003_local_anchor_20261026/`. Stopafter10,noautotuning. Originalstrictresultsandzero-labelpausepreserved. Metrics pending.
++
++## 2026-10-26 FD003 local-anchor intervention completed
++
++- EXT-001 Run `ext-local-anchor-fd003-seed3-20261026` completed10/10and audited:209realtrainanchorsreplace9.96%of31-60train,1.49%alltrain,exactlabels/counts/devpreserved;35epoch/1925updatesinbotharms.
++- [Observed] Target31-60mean25.881→24.726,CIΔ[-3.376,1.067];overall20.410→19.794,CI[-2.109,.876]. Meanbenefitbutstablebenefitnotestablished;allstageCIsinclude0. No unique coverage-vs-bias attribution.
++- Report `docs/conclusions/final/fd003_local_anchor_20261026_report.md`; results `results/diagnostics/fd003_local_anchor_20261026/`; snapshot `runs/ext-local-anchor-fd003-seed3-20261026/run-manifest.json`.
++- Stopbudget10,noautomaticadditionalratio/seedruns. Zero-labelroutepaused,strictmain/A/Bunchanged,Cdeferred. Optionalnextreadonlydiagnosis:measurewhetheractualanchorsimprovedlocaldistancesofprevioushigh-gapcases.
++
++## 2026-10-26 actual-anchor support followup complete
++
++- Diagnostic `diagnostic-fd003-anchor-support-20261026`,no training. Usesactual209anchorpositions/donorsandactualpredictortrainpools,comparesbefore/aftermatchingRULfeatures.
++- [Observed] Levelsupport7/21improves,9worsens,5unchanged;medianreduction0. Engine89distance.658→.394buttestRMSE57.95→54.94stillpoor. Engine16onlysmallpredictiongain. Descriptiverho distanceimprovement-vsMSEimprovement.444.
++- [Hypothesis] Random10%replacementdidnotwidelyreachlocalgaps;closerdescriptorsnot sufficientforprediction,mechanismunresolved. Do not automaticallyincreasefraction or select anchorsfromtestcases. Anyfutureselectionrulemustbedefinedontrain/validationengines.
++- Report `docs/conclusions/final/fd003_anchor_support_20261026_report.md`; artifacts `results/diagnostics/fd003_anchor_support_20261026/`; snapshot under`runs/diagnostic-fd003-anchor-support-20261026/`. No newstrictclaims,zero-labelstillpaused.

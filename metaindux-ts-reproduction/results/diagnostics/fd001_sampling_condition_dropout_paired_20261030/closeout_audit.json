@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "new_batches": 4,
+  "new_discriminator_fits": 20,
+  "fresh_control_batches": 2,
+  "noise_alignment_passed": true,
+  "fresh_paired_trace_identity": true,
+  "proxy_metrics_independently_recomputed": true,
+  "screening_gate_recomputed": true,
+  "completed_at": "2026-10-30T11:29:23.326579+08:00"
+}

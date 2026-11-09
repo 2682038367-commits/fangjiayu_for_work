@@ -40,3 +40,9 @@ Local paper-alignment patches are limited to:
 - recording per-module frequency masks during DDPM sampling without changing
   their forward values. Cross-mode analysis uses observed `mask_drop_ratio`;
   quantile fractions and normalized-energy cutoffs remain explicitly distinct.
+
+## 2026-10-23 label-zeroing provenance clarification
+
+- The whole-batch `if np.random.rand() < 0.1: labels = torch.zeros_like(labels)` branch is present in author public `TrainCondition.py` lines62–63; independently re-fetched from current main, evidence preserved under `docs/provenance/author_label_zeroing/`. It was not introduced by local reproduction patches. This current-main fetch is distinct from the original pinned archive.
+- Local diagnostic patch only exposes `batch_label_zero_prob` (default0.1) and sets it to0 in isolated no_batch_zero configs. Network null embedding/dropout is unchanged. No blanket change to original/default experiments.
+- No explicit corresponding whole-batch numeric-zeroing instruction found in paper text. Interpreting its purpose as CFG support is an inference, not quoted author intent.

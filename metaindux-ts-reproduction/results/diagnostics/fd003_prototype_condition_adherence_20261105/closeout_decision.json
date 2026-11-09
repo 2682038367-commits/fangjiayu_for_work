@@ -1,0 +1,7 @@
+{
+  "decision": "已有输出支持原型条件被有效响应，但这种模式控制尚不足以改善下游寿命预测",
+  "all_four_show_strong_requested_readout_association": true,
+  "all_prespecified_sync_contrasts_positive_with_conditional_CI": true,
+  "no_training_restart": true,
+  "limits": "frozen nearest-center readout and two shape contrasts only; all samples existing, no paired counterfactual regeneration"
+}

@@ -1,0 +1,71 @@
+{
+  "checkpoint_seed": 23,
+  "sampling_seed": 103,
+  "arm": "retain_condition",
+  "started_at": "2026-10-30T13:51:42.177845+08:00",
+  "completed_at": "2026-10-30T14:07:54.787014+08:00",
+  "elapsed_seconds": 972.6091749668121,
+  "artifact_path": "results/diagnostics/fd001_seed23_checkpoint_age_20261030/epoch64/retain_condition/samples/checkpoint23_sample103.npz",
+  "artifact_sha256": "1a15630d09b27a0a0de0bec7948dda63910fb1f6111d136577a7e0187a6f1071",
+  "checkpoint_sha256": "4d22f27710d86f7a3a8270bf539e133315e72de41ab3dd42da002190a494ea85",
+  "pre_model_construction_rng_sha256": {
+    "torch_cpu": "df69e66af9e252976a2e22fd1689b1956d658b65bc3a771a45e38a028a0f1679",
+    "torch_cuda": "0a352300ce526d9540c7b6265eff0fd74c646bbccdcf51dd7e1127188d782939",
+    "numpy_state": "692a6262be111ff2961962002ff595cf2f9fe043c59ab1340d351b6b35577712"
+  },
+  "data_sha256": "0efad90dfafbe76492d76b0f415b8c15c7cf6030ab5c5fbedcd8df59f005bf2d",
+  "noise_audit": {
+    "status": "passed",
+    "normal_tensors_exactly_matched": 63000,
+    "conditional_uniform_draws_exactly_matched": 63000,
+    "unconditional_calls_retained": 63000,
+    "normal_scalar_count": 10705632000,
+    "conditional_dropped_windows": 0,
+    "retain_condition": true,
+    "start_cuda_rng_sha256": "0a352300ce526d9540c7b6265eff0fd74c646bbccdcf51dd7e1127188d782939",
+    "final_cuda_rng_sha256": "0ac81942de99cc9433f987d747d9626b219d8dd61b3b1e9ed549c0f5e542b57f",
+    "legacy_schedule_fingerprint": "b54f8e66b4890836f1b6bb78cdeff76483c1c826d70740dae2ecda1fc3a1adae",
+    "fresh_pair_noise_trace": true
+  },
+  "frequency_thresholds": [
+    {
+      "module": "ups.0.2.fn.fn",
+      "mask_mode": "hard_random_quantile",
+      "raw": 0.0741274356842041,
+      "effective": 0.0741274356842041,
+      "threshold_parameter_semantics": "quantile_fraction",
+      "threshold_value": null,
+      "threshold_value_semantics": "dynamic_normalized_energy_quantile",
+      "mask_drop_ratio": 0.07440884970280492,
+      "mask_drop_ratio_semantics": "fraction_of_forward_mask_elements_equal_to_zero",
+      "hard_drop_ratio": 0.07440884970280492,
+      "observation_scope": "all_ddpm_sampling_forwards",
+      "observed_mask_elements": 414206000,
+      "observed_forward_calls": 126000,
+      "observed_threshold_mean": 0.45923709869384766,
+      "observed_threshold_min": 0.38361719250679016,
+      "observed_threshold_max": 0.8655461072921753
+    },
+    {
+      "module": "ups.1.2.fn.fn",
+      "mask_mode": "hard_random_quantile",
+      "raw": 0.49625810980796814,
+      "effective": 0.49625810980796814,
+      "threshold_parameter_semantics": "quantile_fraction",
+      "threshold_value": null,
+      "threshold_value_semantics": "dynamic_normalized_energy_quantile",
+      "mask_drop_ratio": 0.5103025397024669,
+      "mask_drop_ratio_semantics": "fraction_of_forward_mask_elements_equal_to_zero",
+      "hard_drop_ratio": 0.5103025397024669,
+      "observation_scope": "all_ddpm_sampling_forwards",
+      "observed_mask_elements": 796550000,
+      "observed_forward_calls": 126000,
+      "observed_threshold_mean": 0.9999999403953552,
+      "observed_threshold_min": 0.9999986886978149,
+      "observed_threshold_max": 1.9999988079071045
+    }
+  ],
+  "torch": "2.1.2+cu121",
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "changed_factor": "conditional mask force-retain after original random draw"
+}

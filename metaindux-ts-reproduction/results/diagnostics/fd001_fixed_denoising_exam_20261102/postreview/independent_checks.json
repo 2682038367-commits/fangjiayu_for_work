@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-02T13:07:54.258525+08:00",
+  "bound_hashes_verified": 74,
+  "checkpoint_count": 7,
+  "fixed_evaluations": 42,
+  "batch_losses": 672,
+  "per_window_losses_recomputed": true,
+  "all_three_question_packs_regenerated_and_exact": true,
+  "disjoint_engine_pools": true,
+  "engine_counts": {
+    "train": 70,
+    "internal_validation": 30
+  },
+  "source_training_epoch_losses_match": true,
+  "all_paired_directions_three_of_three": true,
+  "checkpoint_states_unchanged": true,
+  "question_realizations": [
+    {
+      "question_seed": 1103,
+      "domain": "train",
+      "numeric_zero_batches": 1,
+      "embedding_dropped_windows": 823,
+      "timestep_min": 0,
+      "timestep_max": 999
+    },
+    {
+      "question_seed": 1103,
+      "domain": "internal_validation",
+      "numeric_zero_batches": 3,
+      "embedding_dropped_windows": 799,
+      "timestep_min": 0,
+      "timestep_max": 999
+    },
+    {
+      "question_seed": 1113,
+      "domain": "train",
+      "numeric_zero_batches": 1,
+      "embedding_dropped_windows": 825,
+      "timestep_min": 0,
+      "timestep_max": 999
+    },
+    {
+      "question_seed": 1113,
+      "domain": "internal_validation",
+      "numeric_zero_batches": 1,
+      "embedding_dropped_windows": 782,
+      "timestep_min": 0,
+      "timestep_max": 999
+    },
+    {
+      "question_seed": 1123,
+      "domain": "train",
+      "numeric_zero_batches": 3,
+      "embedding_dropped_windows": 822,
+      "timestep_min": 0,
+      "timestep_max": 999
+    },
+    {
+      "question_seed": 1123,
+      "domain": "internal_validation",
+      "numeric_zero_batches": 2,
+      "embedding_dropped_windows": 774,
+      "timestep_min": 0,
+      "timestep_max": 999
+    }
+  ],
+  "earlier_verifier_failure_preserved": true,
+  "formula_or_tolerance_not_relaxed": true,
+  "experiment2_executed": false
+}

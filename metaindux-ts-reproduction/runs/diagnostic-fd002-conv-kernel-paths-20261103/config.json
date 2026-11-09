@@ -1,0 +1,37 @@
+{
+  "seed": 43,
+  "cells": [
+    [
+      "native",
+      "native_public"
+    ],
+    [
+      "native",
+      "native_worker"
+    ],
+    [
+      "fixed",
+      "native_public"
+    ],
+    [
+      "fixed",
+      "native_worker"
+    ]
+  ],
+  "network_first_batch_forwards_max": 8,
+  "backward_calls": 0,
+  "optimizer_updates": 0,
+  "actual_path_control": "native benchmarkTrue/deterministicFalse vs fixed benchmarkFalse/deterministicTrue; all other flags/ops/questions unchanged",
+  "median": "No global strict deterministic switch or operator replacement; compare actual convolution kernels to verify path equality",
+  "environment": {
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "1",
+    "TF_DETERMINISTIC_OPS": "1",
+    "TF_ENABLE_ONEDNN_OPTS": "0",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "WANDB_MODE": "offline",
+    "TF_CPP_MIN_LOG_LEVEL": "2"
+  },
+  "profiler": "Kineto CPU+CUDA, measured cached forward only; marked per-convolution ancestry; export Chrome traces",
+  "stop": "Fixed4 cells, no seed/replay selection. Report null result if native divergence not observed; unsupported/empty GPU activity stops."
+}

@@ -1,0 +1,23 @@
+{
+  "inputs_sha256": {
+    "count": 72,
+    "failures": []
+  },
+  "outputs_sha256": {
+    "count": 71,
+    "failures": []
+  },
+  "predictor_checkpoint_sha256": {
+    "count": 10,
+    "failures": []
+  },
+  "passed": true,
+  "primary_recomputed_from_all10_saved_predictions": true,
+  "RMSE": {
+    "best": 27.63635805705346,
+    "final70": 31.39626673404208
+  },
+  "all5_final70_worse": true,
+  "discriminator_means_recomputed": true,
+  "report_hash_matches_manifest": true
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "seed": 23,
+    "group": "A",
+    "epoch": 64,
+    "rmse": 17.66316788317976,
+    "exploratory": true
+  },
+  {
+    "seed": 23,
+    "group": "B",
+    "epoch": 70,
+    "rmse": 19.539754305426843,
+    "exploratory": true
+  },
+  {
+    "seed": 13,
+    "group": "A",
+    "epoch": 64,
+    "rmse": 19.403923891053367,
+    "exploratory": true
+  },
+  {
+    "seed": 13,
+    "group": "B",
+    "epoch": 64,
+    "rmse": 20.309197007093033,
+    "exploratory": true
+  }
+]

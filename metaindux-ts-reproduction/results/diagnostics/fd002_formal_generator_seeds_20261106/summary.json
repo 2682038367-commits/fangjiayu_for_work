@@ -1,0 +1,128 @@
+{
+  "status": "complete",
+  "paper_reference": 24.565,
+  "overall_RMSE": 26.79180409027033,
+  "overall_gap": 2.2268040902703277,
+  "independent_generation_units": 5,
+  "predictor_results": 25,
+  "per_generator": [
+    {
+      "generation_seed": 3,
+      "predictor_count": 5,
+      "mean_RMSE": 26.990459387288876,
+      "SD_predictor_RMSE": 0.1842246642026414,
+      "min_RMSE": 26.75502289692319,
+      "max_RMSE": 27.20392671336544,
+      "range_width": 0.4489038164422503,
+      "mean_minus_paper": 2.425459387288875,
+      "individual_predictors_above_paper": 5,
+      "contribution_to_overall_gap": 0.48509187745777493,
+      "share_of_net_gap": 0.21784218898164776,
+      "per_predictor_values": [
+        27.109283905120684,
+        27.03132482758548,
+        26.75502289692319,
+        27.20392671336544,
+        26.85273859344961
+      ]
+    },
+    {
+      "generation_seed": 13,
+      "predictor_count": 5,
+      "mean_RMSE": 23.54035931673415,
+      "SD_predictor_RMSE": 0.4439838456160161,
+      "min_RMSE": 22.813606965103038,
+      "max_RMSE": 23.992395712498187,
+      "range_width": 1.1787887473951493,
+      "mean_minus_paper": -1.0246406832658508,
+      "individual_predictors_above_paper": 0,
+      "contribution_to_overall_gap": -0.20492813665317017,
+      "share_of_net_gap": -0.09202791460127616,
+      "per_predictor_values": [
+        22.813606965103038,
+        23.49355389380816,
+        23.992395712498187,
+        23.66870094654016,
+        23.733539065721224
+      ]
+    },
+    {
+      "generation_seed": 23,
+      "predictor_count": 5,
+      "mean_RMSE": 26.849480240864455,
+      "SD_predictor_RMSE": 1.1134286350707074,
+      "min_RMSE": 25.623105040987063,
+      "max_RMSE": 28.598980462114152,
+      "range_width": 2.975875421127089,
+      "mean_minus_paper": 2.284480240864454,
+      "individual_predictors_above_paper": 5,
+      "contribution_to_overall_gap": 0.4568960481728908,
+      "share_of_net_gap": 0.20518017286263604,
+      "per_predictor_values": [
+        28.598980462114152,
+        25.623105040987063,
+        26.56363970939452,
+        27.107858799417198,
+        26.353817192409345
+      ]
+    },
+    {
+      "generation_seed": 33,
+      "predictor_count": 5,
+      "mean_RMSE": 25.212566476800994,
+      "SD_predictor_RMSE": 0.3575715155683685,
+      "min_RMSE": 24.771305799532865,
+      "max_RMSE": 25.76794953845408,
+      "range_width": 0.9966437389212146,
+      "mean_minus_paper": 0.6475664768009928,
+      "individual_predictors_above_paper": 5,
+      "contribution_to_overall_gap": 0.12951329536019857,
+      "share_of_net_gap": 0.058161064067596545,
+      "per_predictor_values": [
+        25.76794953845408,
+        25.129387659989728,
+        25.217960415574627,
+        25.17622897045368,
+        24.771305799532865
+      ]
+    },
+    {
+      "generation_seed": 43,
+      "predictor_count": 5,
+      "mean_RMSE": 31.366155029663133,
+      "SD_predictor_RMSE": 0.3640298975895268,
+      "min_RMSE": 30.780654668136325,
+      "max_RMSE": 31.784005785857364,
+      "range_width": 1.0033511177210386,
+      "mean_minus_paper": 6.801155029663132,
+      "individual_predictors_above_paper": 5,
+      "contribution_to_overall_gap": 1.3602310059326264,
+      "share_of_net_gap": 0.6108444886893926,
+      "per_predictor_values": [
+        31.45256767656544,
+        31.437549069830823,
+        30.780654668136325,
+        31.37599794792572,
+        31.784005785857364
+      ]
+    }
+  ],
+  "generator_means_above_paper": 4,
+  "generators_with_all5_predictors_above_paper": 4,
+  "median_generator_mean": 26.849480240864455,
+  "between_generator_mean_SD": 2.9169059608280468,
+  "pooled_within_generator_predictor_SD": 0.5884146263560895,
+  "ratio_between_to_within_SD": 4.957228848799604,
+  "largest_mean_seed": 43,
+  "descriptive_without_largest": {
+    "excluded_seed": 43,
+    "mean_RMSE": 25.64821635542212,
+    "gap": 1.0832163554221204,
+    "headline": false
+  },
+  "interpretation": "Mixed pattern:4of5generator groups are above the paper point estimate; seed43 is especially poor and contributes61.1%of the signed net gap. Remaining4still average above paper. Predictor randomness alone does not explain group gaps.",
+  "limits": "Paper number is an averaged point estimate, not a per-seed acceptance threshold. Only5generator trainings, one sampled dataset each; cannot separate generator-training and sampling variation or infer a common implementation fault from these25cells.",
+  "new_training": 0,
+  "new_sampling": 0,
+  "new_inference": 0
+}

@@ -1,0 +1,202 @@
+{
+  "version": "main_protocol_v1",
+  "fidelity_status": "assumption_based_reproduction_with_supplementary_condition_normalization",
+  "prompt": "original_statistics_A_legacy",
+  "context_mode": "global_broadcast",
+  "global_pooling": "mean",
+  "fixed_training": {
+    "epochs": 30,
+    "batch_size": 128,
+    "learning_rate": 0.002,
+    "temporal_learning_rate": 0.002,
+    "freeze_temporal_epochs": 0,
+    "seed": 42,
+    "split_seed": 42,
+    "target_divisor": 125.0,
+    "train_stride": 50,
+    "validation_stride": 50,
+    "token_mode": "full"
+  },
+  "runs": {
+    "FD001": {
+      "normalization": "global_minmax",
+      "output_dir": "artifacts/fd001_mae_stride50_repair/seed42/tmaf",
+      "model_config": {
+        "temporal": {
+          "window_size": 40,
+          "input_channels": 14,
+          "patch_size": 4,
+          "patch_stride": 1,
+          "model_dim": 64,
+          "attention_heads": 1,
+          "encoder_layers": 2,
+          "feedforward_dim": 256,
+          "dropout": 0.1
+        },
+        "llm_dim": 1024,
+        "attention_key_dim": 64,
+        "attention_output_dim": 32,
+        "fusion_mlp_units": 512,
+        "dropout": 0.5,
+        "context_mode": "global_broadcast",
+        "global_pooling": "mean"
+      },
+      "pinned_files": {
+        "artifacts/fd001_mae_stride50_repair/seed42/tmaf/result.json": "7c15e832259068d2a03436877ba28cae754ba19a844e6ae950367c93c7676653",
+        "artifacts/fd001_mae_stride50_repair/seed42/tmaf/best.pt": "07846b32c46a66949b4ce3b2b6e81d9ad68e2bae66df38d9198774049fd258cd",
+        "artifacts/fd001_mae_stride50_repair/seed42/tmaf/output_audit.json": "7ffe751ac3711eb55af64d9162881390781f6e3fd99309a9c203b14c6f69aa4a",
+        "artifacts/data_window40_stride50/split_seed42/FD001/manifest.json": "551b66001f721ca2a16866166e12372c025795b0fdf339089762fdceb29b009d",
+        "artifacts/fd001_mae_stride50_repair/seed42/qwen/manifest.json": "69446231e1ec9c0074516df2621e2d62266b2e6f70301deae6a7bfc598dc7829",
+        "artifacts/target_scale/FD001/seed42_verified/B_div125/best.pt": "8f653be35d54ce56b6c35751ea6a9ff1dbdb6699d6f5b12387b5cc02498190cc"
+      },
+      "test": {
+        "rmse": 16.32330006498681,
+        "mae": 11.812213788032532,
+        "score": 575.4633156848885,
+        "prediction_std": 41.039425783729186
+      },
+      "test_raw": {
+        "rmse": 16.370243819510954,
+        "mae": 11.87608295917511,
+        "score": 578.8187542624045,
+        "prediction_std": 41.1160412176574
+      },
+      "test_prediction_count": 100
+    },
+    "FD002": {
+      "normalization": "condition_minmax",
+      "output_dir": "artifacts/tmaf_condition_minmax/FD002/global_broadcast_stride50_B_seed42",
+      "model_config": {
+        "temporal": {
+          "window_size": 40,
+          "input_channels": 14,
+          "patch_size": 4,
+          "patch_stride": 1,
+          "model_dim": 64,
+          "attention_heads": 1,
+          "encoder_layers": 2,
+          "feedforward_dim": 256,
+          "dropout": 0.1
+        },
+        "llm_dim": 1024,
+        "attention_key_dim": 64,
+        "attention_output_dim": 32,
+        "fusion_mlp_units": 512,
+        "dropout": 0.5,
+        "context_mode": "global_broadcast",
+        "global_pooling": "mean"
+      },
+      "pinned_files": {
+        "artifacts/tmaf_condition_minmax/FD002/global_broadcast_stride50_B_seed42/result.json": "34412f0ed1e95be3a627edbe7bdd471b34b10c8e4b62ec089f40eb7e3f896fb1",
+        "artifacts/tmaf_condition_minmax/FD002/global_broadcast_stride50_B_seed42/best.pt": "1a1cba829e24fa3f07fc6ef1159e94201f1511bf9d628a025de7e4bd7decdfa8",
+        "artifacts/tmaf_condition_minmax/FD002/global_broadcast_stride50_B_seed42/output_audit.json": "5090b783e491d9b0e9fdffe93be7803192e85a09f1f0bbd69293d0a9efac409e",
+        "artifacts/data_condition_minmax/split_seed42/FD002/manifest.json": "1128816ef4ad0bc15ac01b17cafbf525d80a5bdfabd3ff24c5730605f7fe491d",
+        "artifacts/qwen_condition_minmax/FD002/seed42/manifest.json": "9027c88f7c9199f9311d3a2d33f094d2ec754636804f03d5e98bcbed2e8c15be",
+        "artifacts/temporal_condition_minmax/FD002/stride50_B_seed42/best.pt": "d205cba63a0438b1b3c4e3d202fb85e3f84d408fd8996aee72e3a628099c0df4"
+      },
+      "test": {
+        "rmse": 17.08621746038775,
+        "mae": 12.193380156308988,
+        "score": 1551.2045485754566,
+        "prediction_std": 41.75843920470483
+      },
+      "test_raw": {
+        "rmse": 17.093799513435812,
+        "mae": 12.237537693563116,
+        "score": 1552.7001532740787,
+        "prediction_std": 41.81820215323175
+      },
+      "test_prediction_count": 259
+    },
+    "FD003": {
+      "normalization": "global_minmax",
+      "output_dir": "artifacts/tmaf_audited/FD003/global_broadcast_stride50_B_seed42",
+      "model_config": {
+        "temporal": {
+          "window_size": 40,
+          "input_channels": 14,
+          "patch_size": 4,
+          "patch_stride": 1,
+          "model_dim": 64,
+          "attention_heads": 1,
+          "encoder_layers": 2,
+          "feedforward_dim": 256,
+          "dropout": 0.1
+        },
+        "llm_dim": 1024,
+        "attention_key_dim": 64,
+        "attention_output_dim": 32,
+        "fusion_mlp_units": 512,
+        "dropout": 0.5,
+        "context_mode": "global_broadcast",
+        "global_pooling": "mean"
+      },
+      "pinned_files": {
+        "artifacts/tmaf_audited/FD003/global_broadcast_stride50_B_seed42/result.json": "0ff8fe24bf52a475cb98d3e87b1c8f005e4cffb71edaf6fe63bfd5f7f4967eb5",
+        "artifacts/tmaf_audited/FD003/global_broadcast_stride50_B_seed42/best.pt": "cb74e94d77d02ec871aae5d0df29c0b151c0998554121ce6d4f4176098e4e70d",
+        "artifacts/tmaf_audited/FD003/global_broadcast_stride50_B_seed42/output_audit.json": "763bf744885ab754f03e69f60a2b538ddb531bf959d8911a19af2eb93fb47332",
+        "artifacts/data_window40_stride50/split_seed42/FD003/manifest.json": "b0cddcfd93fd487a69c996748629be9a23632dd021effd5dcd702232dcf32fb6",
+        "artifacts/qwen_audited/FD003/seed42/manifest.json": "653adec2ace034392ce1073cd0365508b38e7294f834c59c9a17880337d8182d",
+        "artifacts/temporal_audited/FD003/stride50_B_seed42/best.pt": "4a575bf30c3d88f33572dc37e8ac1c6cd085872d255b4f5c9bba1ed54fd25afc"
+      },
+      "test": {
+        "rmse": 23.425108167713926,
+        "mae": 18.10681398868561,
+        "score": 2976.4950798299137,
+        "prediction_std": 36.0830388577778
+      },
+      "test_raw": {
+        "rmse": 24.043536876499992,
+        "mae": 19.01248613834381,
+        "score": 3857.752913992336,
+        "prediction_std": 37.10646189834561
+      },
+      "test_prediction_count": 100
+    },
+    "FD004": {
+      "normalization": "condition_minmax",
+      "output_dir": "artifacts/tmaf_condition_minmax/FD004/global_broadcast_stride50_B_seed42",
+      "model_config": {
+        "temporal": {
+          "window_size": 40,
+          "input_channels": 14,
+          "patch_size": 4,
+          "patch_stride": 1,
+          "model_dim": 64,
+          "attention_heads": 1,
+          "encoder_layers": 2,
+          "feedforward_dim": 256,
+          "dropout": 0.1
+        },
+        "llm_dim": 1024,
+        "attention_key_dim": 64,
+        "attention_output_dim": 32,
+        "fusion_mlp_units": 512,
+        "dropout": 0.5,
+        "context_mode": "global_broadcast",
+        "global_pooling": "mean"
+      },
+      "pinned_files": {
+        "artifacts/tmaf_condition_minmax/FD004/global_broadcast_stride50_B_seed42/result.json": "45ddfa77bffc7485453ff3b704973bee5bd612ee07c280070358678b65b5d959",
+        "artifacts/tmaf_condition_minmax/FD004/global_broadcast_stride50_B_seed42/best.pt": "53287e15522f85c5a71670d6afb907f5566783cda5b4e4c2aeaf7c821437573c",
+        "artifacts/tmaf_condition_minmax/FD004/global_broadcast_stride50_B_seed42/output_audit.json": "d3ddb65c252f7fe36f57cdc2b4cebdb23bdda2a8f0922aefb0fda32fdc6d3d4a",
+        "artifacts/data_condition_minmax/split_seed42/FD004/manifest.json": "8c903880b868c979159ec150ed25c7d22e8c462afb9e8f4521b4e62504824973",
+        "artifacts/qwen_condition_minmax/FD004/seed42/manifest.json": "16933a1198996dd83185e412c99e2365b39d886148e4feffa7ea85a703632d8d",
+        "artifacts/temporal_condition_minmax/FD004/stride50_B_seed42/best.pt": "6cf024c38accc8b796568f2eca47e9c4e09faa4cef65058868c85c44e8da661e"
+      },
+      "test": {
+        "rmse": 18.99580893802108,
+        "mae": 13.115561550663363,
+        "score": 2465.359494659504,
+        "prediction_std": 40.35797432009317
+      },
+      "test_raw": {
+        "rmse": 19.016144324810817,
+        "mae": 13.217072890650842,
+        "score": 2470.3083251572184,
+        "prediction_std": 40.478402072268175
+      },
+      "test_prediction_count": 248
+    }
+  }
+}

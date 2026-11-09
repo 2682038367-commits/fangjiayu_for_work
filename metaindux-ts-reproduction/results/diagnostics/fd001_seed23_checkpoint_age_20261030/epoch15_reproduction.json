@@ -1,0 +1,19 @@
+{
+  "original_mean_ds": 0.4257295262001882,
+  "rerun_mean_ds": 0.43919046124882327,
+  "mean_ds_change": 0.013460935048635048,
+  "ds_within_tolerance": true,
+  "failure_category_unchanged": true,
+  "original_dev_inverse_rmse": 15.82471300052928,
+  "rerun_dev_inverse_rmse": 16.4001060186578,
+  "inverse_relative_change": 0.03636040780703423,
+  "inverse_within_tolerance": true,
+  "rules": {
+    "max_abs_mean_ds_difference": 0.03,
+    "same_ds_failure_category": true,
+    "max_relative_dev_inverse_rmse_difference": 0.1
+  },
+  "limitation": "Practical functional reproduction only; no equivalence test or proof of missing historical late weights",
+  "passed": true,
+  "created_at": "2026-10-30T13:51:39.093724+08:00"
+}

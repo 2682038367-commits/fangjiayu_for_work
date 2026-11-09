@@ -1,0 +1,3 @@
+?? docs/operations/FD001_FIXED_DENOISING_EXAM.md
+?? runs/diagnostic-fd001-fixed-denoising-exam-20261102/
+?? scripts/run_fd001_fixed_denoising_exam.py

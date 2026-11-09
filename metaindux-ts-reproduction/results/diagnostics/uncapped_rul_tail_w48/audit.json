@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-23",
+  "scope": "supporting descriptive artifact analysis",
+  "window": 48,
+  "unit": "real training window-end RUL before cap; stride1, engine1000 excluded",
+  "inputs_sha256": {
+    "upstream/data/train_FD001.txt": "963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8",
+    "upstream/data/train_FD002.txt": "dac6c4dbc4e7c1bdeb5747da3d313d05c395bb99801b44a002b26a2ba13d788f",
+    "upstream/data/train_FD003.txt": "2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2",
+    "upstream/data/train_FD004.txt": "27ef6160b6a1dcb2613a88de9c239f763b223f02cdc41dc5cdedc5dc189b6218"
+  },
+  "no_training": true,
+  "script_sha256": "e78b08c9db1a28b6e84c0043f494954f992107b419ae8bd7727b9feb2b0aff3a",
+  "outputs_sha256": {
+    "bins.csv": "79225fbde995c3ae53d506a1617b31997aecceb0657dbe32a3553a46def4e73a",
+    "uncapped_rul_distribution.png": "212696416a724ff584c9c3749071629777163dfa5e83458ac0725700f646ea23",
+    "uncapped_rul_distribution.pdf": "6df1ede0cb44a2fef687249e6e9bed160fafddb5118eec6329832bc0c1c84d7f",
+    "summary.csv": "7f52dd4040c9a72e3fd071eaea9ef65fa52e76265e4e09052b626ebb8fdb57bc",
+    "exact_raw_rul_counts.csv": "a0efee13a7796237c45ba283bea3e3b69b7b164467efeaaeb724d9c48fdb0f23"
+  }
+}

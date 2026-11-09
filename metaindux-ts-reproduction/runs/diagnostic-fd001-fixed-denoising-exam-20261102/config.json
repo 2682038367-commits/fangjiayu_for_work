@@ -1,0 +1,128 @@
+{
+  "checkpoints": [
+    {
+      "checkpoint": "seed23_epoch15",
+      "generator_seed": 23,
+      "epoch": 15,
+      "baseline_epoch": 15,
+      "weight_path": "checkpoints/diagnostics/fd001_seed23_checkpoint_age_20261030/epoch15.pth",
+      "weight_sha256": "0b7d1da71ba15d73827fa44a2d96317bab2fa883b243203d4389e1ce05dc6cc7",
+      "source_training_history": "results/diagnostics/fd001_seed23_checkpoint_age_20261030/training_loss.csv",
+      "source_record": "results/diagnostics/fd001_seed23_checkpoint_age_20261030/training_snapshot_epoch15.json",
+      "source_manifest": "runs/diagnostic-fd001-seed23-checkpoint-age-20261030/run-manifest.json",
+      "recorded_training_loss": 0.051295046531964865,
+      "downstream_rmse": 20.29876581803615
+    },
+    {
+      "checkpoint": "seed23_epoch64",
+      "generator_seed": 23,
+      "epoch": 64,
+      "baseline_epoch": 15,
+      "weight_path": "checkpoints/diagnostics/fd001_seed23_checkpoint_age_20261030/epoch64.pth",
+      "weight_sha256": "4d22f27710d86f7a3a8270bf539e133315e72de41ab3dd42da002190a494ea85",
+      "source_training_history": "results/diagnostics/fd001_seed23_checkpoint_age_20261030/training_loss.csv",
+      "source_record": "results/diagnostics/fd001_seed23_checkpoint_age_20261030/training_snapshot_epoch64.json",
+      "source_manifest": "runs/diagnostic-fd001-seed23-checkpoint-age-20261030/run-manifest.json",
+      "recorded_training_loss": 0.05267839861058053,
+      "downstream_rmse": 14.986807283833782
+    },
+    {
+      "checkpoint": "seed23_epoch70",
+      "generator_seed": 23,
+      "epoch": 70,
+      "baseline_epoch": 15,
+      "weight_path": "checkpoints/diagnostics/fd001_seed23_checkpoint_age_20261030/epoch70.pth",
+      "weight_sha256": "5c80430b07885e408916eab299177c423823a738d2be7162931bf1a4a580ea6b",
+      "source_training_history": "results/diagnostics/fd001_seed23_checkpoint_age_20261030/training_loss.csv",
+      "source_record": "results/diagnostics/fd001_seed23_checkpoint_age_20261030/training_snapshot_epoch70.json",
+      "source_manifest": "runs/diagnostic-fd001-seed23-checkpoint-age-20261030/run-manifest.json",
+      "recorded_training_loss": 0.05289918976643729,
+      "downstream_rmse": 14.50665452208575
+    },
+    {
+      "checkpoint": "seed13_epoch64",
+      "generator_seed": 13,
+      "epoch": 64,
+      "baseline_epoch": 64,
+      "weight_path": "checkpoints/diagnostics/fd001_final70_two_seeds_20261030/seed13/best.pth",
+      "weight_sha256": "647e78e254e0b2b0c4fefd2d3eb2e17e5b9dafed7cfadcdf85a8410268389e95",
+      "source_training_history": "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/training_loss.csv",
+      "source_record": "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/training_audit.json",
+      "source_manifest": "runs/diagnostic-fd001-final70-two-seeds-20261030/run-manifest.json",
+      "recorded_training_loss": 0.05147979189715688,
+      "downstream_rmse": 14.531324479164926
+    },
+    {
+      "checkpoint": "seed13_epoch70",
+      "generator_seed": 13,
+      "epoch": 70,
+      "baseline_epoch": 64,
+      "weight_path": "checkpoints/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70.pth",
+      "weight_sha256": "7f45ca020b791c347902f2189076edb9f32e8c57d9cb52ad350f6969d6e8a6ba",
+      "source_training_history": "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/training_loss.csv",
+      "source_record": "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/training_audit.json",
+      "source_manifest": "runs/diagnostic-fd001-final70-two-seeds-20261030/run-manifest.json",
+      "recorded_training_loss": 0.05271660702096091,
+      "downstream_rmse": 15.70404166453242
+    },
+    {
+      "checkpoint": "seed3_epoch43",
+      "generator_seed": 3,
+      "epoch": 43,
+      "baseline_epoch": 43,
+      "weight_path": "checkpoints/diagnostics/fd001_final70_two_seeds_20261030/seed3/best.pth",
+      "weight_sha256": "d35e091fcb2610934f96dd36c91d17062827c3895bc61a4c40e9a49bb9360d23",
+      "source_training_history": "results/diagnostics/fd001_final70_two_seeds_20261030/seed3/training_loss.csv",
+      "source_record": "results/diagnostics/fd001_final70_two_seeds_20261030/seed3/training_audit.json",
+      "source_manifest": "runs/diagnostic-fd001-final70-two-seeds-20261030/run-manifest.json",
+      "recorded_training_loss": 0.05046459331753708,
+      "downstream_rmse": 17.57618945983219
+    },
+    {
+      "checkpoint": "seed3_epoch70",
+      "generator_seed": 3,
+      "epoch": 70,
+      "baseline_epoch": 43,
+      "weight_path": "checkpoints/diagnostics/fd001_final70_two_seeds_20261030/seed3/final70.pth",
+      "weight_sha256": "9600302f8ac64164405be57f07d9cc5238fd1566d343b94a4f8dff31e740552c",
+      "source_training_history": "results/diagnostics/fd001_final70_two_seeds_20261030/seed3/training_loss.csv",
+      "source_record": "results/diagnostics/fd001_final70_two_seeds_20261030/seed3/training_audit.json",
+      "source_manifest": "runs/diagnostic-fd001-final70-two-seeds-20261030/run-manifest.json",
+      "recorded_training_loss": 0.051729607336696175,
+      "downstream_rmse": 14.76421703641087
+    }
+  ],
+  "question_seeds": [
+    1103,
+    1113,
+    1123
+  ],
+  "window_selection_seed": 20261102,
+  "n_windows_per_domain": 4096,
+  "batch_size": 256,
+  "n_batches_per_domain": 16,
+  "domains": [
+    "train",
+    "internal_validation"
+  ],
+  "pool_counts": {
+    "train": 11056,
+    "internal_validation": 4875
+  },
+  "original_loss": "unchanged GaussianDiffusion.forward, x*2-1, pred_noise/L2, linear1000, p2gamma0; equal batch means",
+  "original_numeric_batch_zero_probability": 0.1,
+  "original_embedding_drop_probability": 0.2,
+  "aggregation": "mean original batch scalar across16 equal batches; mean/sd across3 saved question packs",
+  "downstream": "existing engine-balanced pooled MSE across30 engines/five predictors then root",
+  "budget": {
+    "checkpoints": 7,
+    "packs": 3,
+    "domains": 2,
+    "formal_evaluations": 42,
+    "formal_batch_forwards": 672
+  },
+  "no_independent_generalization": "Both real pools were seen by generator/MinMax",
+  "experiment2": "explicitly deferred by user",
+  "no_training_or_sampling": true,
+  "stop": "42 fixed evaluations or any audit failure, no retry/extra question packs/selection tuning"
+}

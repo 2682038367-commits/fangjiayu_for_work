@@ -185,6 +185,22 @@ post-hoc evaluation. For legacy failed runs, loss/epoch can be reconstructed;
 unrecorded timings remain unavailable rather than being invented. Recovery
 keeps the earlier runner metadata under `recovery_source`.
 
+## Zero-shot reproduction (Table V)
+
+The zero-shot arm uses only normal-condition windows (RUL > 30) to train the
+generator and evaluates a two-layer LSTM on real fatigue-condition samples.
+Four datasets and five generation seeds use independent `zeroshot_paper`
+artifacts. All 20 generation runs and 100 formal evaluations completed on 2026-10-16.
+Mean RMSE is 36.973 versus the paper's 18.820; see the
+[zero-shot results report](docs/conclusions/final/zeroshot_table_v_report.md).
+
+```bash
+.venv/bin/python scripts/run_experiments.py --config configs/paper_zeroshot_full.yaml --dry-run
+bash scripts/run_paper_zeroshot_full.sh
+```
+
+See [protocol, commands, and outputs](docs/operations/ZEROSHOT_REPRODUCTION.md).
+
 ## GPU device access
 
 The host GPU is an NVIDIA GeForce RTX 4060 Ti (8 GB), and its driver is

@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "completed_at": "2026-11-03T09:33:02.320584+08:00",
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/analysis/diagnostics/summarize_fd002_operator_localization.py"
+  ],
+  "action": "CPU-only independent trace comparison and stored tensor hash verification; no additional forward/updates",
+  "inputs_sha256": {
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/run-manifest.json": "d2dba95c111da74dbb32d1c6a7547db1cf8f66af602290d9aa8d76234e309f6c",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/confirmation-manifest.json": "f2b1dd6566182038817863c3e03a6c71c2bbb7690234ab8511c86f6be420a331",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/local-probe-manifest.json": "78c6a1f4caf1c18858e10be701536833cf6dc4dd9838f4559dcb604e428a595e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_public/operators.json": "efe4c9e4fd82a7df6a80237daa6e8287fcdd6c5073211adb4dd4b49d2c651d0e",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/native_worker/operators.json": "2db3a88e38e90e0116dcbebf6859552b8c3e96bd399937b797b17920c2cefb0c",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/capture/native_public/operators.json": "fae1f2999e19c2d0b521c051462aa407be3a8c08f133210894f72bd375710c64",
+    "analysis/diagnostics/summarize_fd002_operator_localization.py": "758567ccfafa63272d9342c588d67226801d5389fc3a7d0a5eb5c6cb0e85a8a7",
+    "analysis/diagnostics/confirm_fd002_first_batch_operator.py": "2ade561ba78ad7f7ec10c19fd66163b09bcefb3f4f9ffd99aa25fb2050e12254",
+    "analysis/diagnostics/probe_fd002_local_convolution.py": "c638e1a09daadc7a01ba1d58c6146290332dea52881abbb52acf8940cfce5d28"
+  },
+  "outputs_sha256": {
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/verified_findings.json": "ea7184c4b176a86901f9898a0a6a08d666ad465be24d0bee5fec04e084250226",
+    "docs/conclusions/final/fd002_first_batch_op_localization_20261103_report.md": "0d8dd9d12d02213a33a57abbb476dafac71cc2846289d0173860bac7e41f0931"
+  }
+}

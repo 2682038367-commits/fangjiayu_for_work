@@ -1,0 +1,109 @@
+{
+  "inventory_count": 773,
+  "attributable_original_best": [
+    {
+      "path": "checkpoints/FD001_w48_seed3.pth",
+      "bytes": 2178206
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed13.pth",
+      "bytes": 2178468
+    }
+  ],
+  "candidates": [
+    {
+      "path": "upstream/weights/DiffUnet_fre_FD001_48.pth",
+      "bytes": 2179458
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed33.pth",
+      "bytes": 2178468
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed13_fewshot10_paper.pth",
+      "bytes": 2181700
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed3.pth",
+      "bytes": 2178206
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed43_fewshot10_paper.pth",
+      "bytes": 2181700
+    },
+    {
+      "path": "checkpoints/FD001_w24_seed3.pth",
+      "bytes": 2178206
+    },
+    {
+      "path": "checkpoints/FD001_w24_seed43.pth",
+      "bytes": 2178468
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed13.pth",
+      "bytes": 2178468
+    },
+    {
+      "path": "checkpoints/FD001_w24_seed13.pth",
+      "bytes": 2178468
+    },
+    {
+      "path": "checkpoints/FD001_w24_seed33.pth",
+      "bytes": 2178468
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed3_zeroshot_paper.pth",
+      "bytes": 2181304
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed3_zero_label_control.pth",
+      "bytes": 2182096
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed33_zeroshot_paper.pth",
+      "bytes": 2181502
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed33_fewshot10_paper.pth",
+      "bytes": 2181700
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed23_fewshot10_paper.pth",
+      "bytes": 2181700
+    },
+    {
+      "path": "checkpoints/FD001_w24_seed23.pth",
+      "bytes": 2178468
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed23_zeroshot_paper.pth",
+      "bytes": 2181502
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed3_fewshot10_paper.pth",
+      "bytes": 2181502
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed43.pth",
+      "bytes": 2178468
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed43_zeroshot_paper.pth",
+      "bytes": 2181502
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed3_zero_label_no_batch_zero.pth",
+      "bytes": 2183284
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed13_zeroshot_paper.pth",
+      "bytes": 2181502
+    },
+    {
+      "path": "checkpoints/FD001_w48_seed23.pth",
+      "bytes": 2178468
+    }
+  ],
+  "original_attributable_final70_found": false,
+  "exclusions": "Other generator seeds/tasks/window sizes or supplied pretrained weights are not matching final snapshots"
+}

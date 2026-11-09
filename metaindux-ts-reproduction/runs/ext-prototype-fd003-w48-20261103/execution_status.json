@@ -1,0 +1,7 @@
+{
+  "status": "complete",
+  "training_completed": 4,
+  "predictor_fits": 40,
+  "completion_audit_passed": true,
+  "finished_at": "2026-11-03T16:04:43.329219+08:00"
+}

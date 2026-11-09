@@ -1,0 +1,19 @@
+generator_seed,domain,question_seed,epoch_ranking
+23,train,1103,70 < 64 < 15
+23,train,1113,70 < 64 < 15
+23,train,1123,70 < 64 < 15
+23,internal_validation,1103,70 < 64 < 15
+23,internal_validation,1113,70 < 64 < 15
+23,internal_validation,1123,70 < 64 < 15
+13,train,1103,70 < 64
+13,train,1113,70 < 64
+13,train,1123,70 < 64
+13,internal_validation,1103,70 < 64
+13,internal_validation,1113,70 < 64
+13,internal_validation,1123,70 < 64
+3,train,1103,70 < 43
+3,train,1113,70 < 43
+3,train,1123,70 < 43
+3,internal_validation,1103,70 < 43
+3,internal_validation,1113,70 < 43
+3,internal_validation,1123,70 < 43

@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "input_output_hashes_match": true,
+  "n_support_rows": 168,
+  "n_nearest_rows": 840,
+  "n_calibration_rows": 12000,
+  "actual_train_only": true,
+  "exact_cycle_lengths": true,
+  "distinct_five_engines_checked": true,
+  "joint_distance_identity_checked": true,
+  "same_rul_100_training_engine_calibration_checked": true,
+  "no_training": true,
+  "no_new_model_inference": true,
+  "plots_inspected": [
+    "engine16_real_neighbors.png",
+    "engine89_real_neighbors.png"
+  ]
+}

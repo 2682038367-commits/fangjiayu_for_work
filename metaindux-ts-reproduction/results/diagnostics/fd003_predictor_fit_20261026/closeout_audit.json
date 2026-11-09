@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "n_models": 40,
+  "n_segment_rows_recomputed": 1180,
+  "max_native_mse_difference": 2.2737367544323206e-13,
+  "all_input_output_hashes_match": true,
+  "n_real_train_engines": 100,
+  "n_real_dev_engines": 100,
+  "real_train_dev_share_engines": true,
+  "real_test_stage31_60_count": 21,
+  "stage31_60_mean_true_rul": 49.142857142857146,
+  "headline_vs_anchor_control_seed3_prediction_max_differences": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "no_training": true,
+  "checkpoint_replay_max_difference": 6.103515625e-05
+}

@@ -1,0 +1,119 @@
+{
+  "status": "identified",
+  "reason": "Original einops b...->b(...) flattens without averaging per window; flat final mean has different float32 rounding from two-stage per-window then batch mean",
+  "same_original_flat_reduction_all_exact": true,
+  "rows": [
+    {
+      "batch": 0,
+      "original": 0.059255607426166534,
+      "exact_original_flat_reduce": 0.059255607426166534,
+      "two_stage_reduce": 0.05925561115145683,
+      "two_stage_abs_difference": 3.725290298461914e-09
+    },
+    {
+      "batch": 1,
+      "original": 0.05981581658124924,
+      "exact_original_flat_reduce": 0.05981581658124924,
+      "two_stage_reduce": 0.05981581658124924,
+      "two_stage_abs_difference": 0.0
+    },
+    {
+      "batch": 2,
+      "original": 0.05306102707982063,
+      "exact_original_flat_reduce": 0.05306102707982063,
+      "two_stage_reduce": 0.05306103080511093,
+      "two_stage_abs_difference": 3.725290298461914e-09
+    },
+    {
+      "batch": 3,
+      "original": 0.05589223653078079,
+      "exact_original_flat_reduce": 0.05589223653078079,
+      "two_stage_reduce": 0.05589224025607109,
+      "two_stage_abs_difference": 3.725290298461914e-09
+    },
+    {
+      "batch": 4,
+      "original": 0.05812383443117142,
+      "exact_original_flat_reduce": 0.05812383443117142,
+      "two_stage_reduce": 0.05812383443117142,
+      "two_stage_abs_difference": 0.0
+    },
+    {
+      "batch": 5,
+      "original": 0.05834783986210823,
+      "exact_original_flat_reduce": 0.05834783986210823,
+      "two_stage_reduce": 0.05834783613681793,
+      "two_stage_abs_difference": 3.725290298461914e-09
+    },
+    {
+      "batch": 6,
+      "original": 0.04400130361318588,
+      "exact_original_flat_reduce": 0.04400130361318588,
+      "two_stage_reduce": 0.04400130361318588,
+      "two_stage_abs_difference": 0.0
+    },
+    {
+      "batch": 7,
+      "original": 0.04935658723115921,
+      "exact_original_flat_reduce": 0.04935658723115921,
+      "two_stage_reduce": 0.04935658350586891,
+      "two_stage_abs_difference": 3.725290298461914e-09
+    },
+    {
+      "batch": 8,
+      "original": 0.04010746255517006,
+      "exact_original_flat_reduce": 0.04010746255517006,
+      "two_stage_reduce": 0.04010746255517006,
+      "two_stage_abs_difference": 0.0
+    },
+    {
+      "batch": 9,
+      "original": 0.04542423039674759,
+      "exact_original_flat_reduce": 0.04542423039674759,
+      "two_stage_reduce": 0.04542423039674759,
+      "two_stage_abs_difference": 0.0
+    },
+    {
+      "batch": 10,
+      "original": 0.05411551147699356,
+      "exact_original_flat_reduce": 0.05411551147699356,
+      "two_stage_reduce": 0.05411551147699356,
+      "two_stage_abs_difference": 0.0
+    },
+    {
+      "batch": 11,
+      "original": 0.05187999829649925,
+      "exact_original_flat_reduce": 0.05187999829649925,
+      "two_stage_reduce": 0.051879994571208954,
+      "two_stage_abs_difference": 3.725290298461914e-09
+    },
+    {
+      "batch": 12,
+      "original": 0.05448087677359581,
+      "exact_original_flat_reduce": 0.05448087677359581,
+      "two_stage_reduce": 0.05448087304830551,
+      "two_stage_abs_difference": 3.725290298461914e-09
+    },
+    {
+      "batch": 13,
+      "original": 0.0499345026910305,
+      "exact_original_flat_reduce": 0.0499345026910305,
+      "two_stage_reduce": 0.049934495240449905,
+      "two_stage_abs_difference": 7.450580596923828e-09
+    },
+    {
+      "batch": 14,
+      "original": 0.04154672846198082,
+      "exact_original_flat_reduce": 0.04154672846198082,
+      "two_stage_reduce": 0.04154672473669052,
+      "two_stage_abs_difference": 3.725290298461914e-09
+    },
+    {
+      "batch": 15,
+      "original": 0.05126835033297539,
+      "exact_original_flat_reduce": 0.05126835033297539,
+      "two_stage_reduce": 0.051268354058265686,
+      "two_stage_abs_difference": 3.725290298461914e-09
+    }
+  ]
+}

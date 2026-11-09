@@ -1,0 +1,5 @@
+{
+  "exact_equal": true,
+  "max_abs_difference": 0.0,
+  "interpretation": "Exact same-data evaluator repeat only if the sample array equality gate passes."
+}

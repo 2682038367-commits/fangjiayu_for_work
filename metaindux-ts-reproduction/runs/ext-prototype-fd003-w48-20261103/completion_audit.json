@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "source_and_input_hashes_verified": true,
+  "train_validation_disjoint": true,
+  "train_only_fits": true,
+  "shared_initialization_order_rng_equal": true,
+  "sampling_rng_labels_equal": true,
+  "predictor_order_equal": true,
+  "real_rmse_all_bins_recomputed": true,
+  "generators": 4,
+  "sample_sets": 8,
+  "predictors": 40,
+  "train_windows": 14886,
+  "validation_windows": 5134,
+  "generator_updates": 4130,
+  "predictor_updates": 1435,
+  "finished_at": "2026-11-03T16:04:43.329219+08:00",
+  "elapsed_seconds": 6406.199458
+}

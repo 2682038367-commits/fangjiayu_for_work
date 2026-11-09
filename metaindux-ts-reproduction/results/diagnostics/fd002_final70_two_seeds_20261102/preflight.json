@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "at": "2026-11-02T15:43:32.074788+08:00",
+  "torch": "2.1.2+cu121",
+  "cuda": "12.1",
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "frozen_inputs_verified": true,
+  "predictor_budget_edit_ast_parity": true,
+  "arms": [
+    {
+      "seed": 43,
+      "strict_load": true,
+      "evaluation_mode": true,
+      "normal_tensors_matched": 4,
+      "condition_draws_matched": 3,
+      "explicit_null_calls": 3,
+      "noise_schedule": "6894ea88f1fc72cd89dc5f3880b7b4c3db347d529e6eacf0ac53b68c7aba175f",
+      "final_rng": "eb7f93091dd947edb44c3032dcdf43ce6c937ba477884e327c8016bda2ab41a1"
+    },
+    {
+      "seed": 13,
+      "strict_load": true,
+      "evaluation_mode": true,
+      "normal_tensors_matched": 4,
+      "condition_draws_matched": 3,
+      "explicit_null_calls": 3,
+      "noise_schedule": "6894ea88f1fc72cd89dc5f3880b7b4c3db347d529e6eacf0ac53b68c7aba175f",
+      "final_rng": "eb7f93091dd947edb44c3032dcdf43ce6c937ba477884e327c8016bda2ab41a1"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "scope": "diagnostic/supporting;existing-artifact audit",
+  "resolved_common_config_changed_only_paths": {
+    "loss_history_path": [
+      "/home/cw_boe/projects/rul/metaindux-ts-reproduction/logs/FD002_w48_seed43_training_loss.csv",
+      "/home/cw_boe/projects/rul/metaindux-ts-reproduction/results/diagnostics/fd002_final70_two_seeds_20261102/seed43/training_loss.csv"
+    ],
+    "metrics_path": [
+      "/home/cw_boe/projects/rul/metaindux-ts-reproduction/results/runs/FD002_w48_seed43_metrics.json",
+      "/home/cw_boe/projects/rul/metaindux-ts-reproduction/results/diagnostics/fd002_final70_two_seeds_20261102/seed43/unused_metrics.json"
+    ],
+    "model_path": [
+      "/home/cw_boe/projects/rul/metaindux-ts-reproduction/checkpoints/FD002_w48_seed43.pth",
+      "/home/cw_boe/projects/rul/metaindux-ts-reproduction/checkpoints/diagnostics/fd002_final70_two_seeds_20261102/seed43/best.pth"
+    ],
+    "syndata_path": [
+      "/home/cw_boe/projects/rul/metaindux-ts-reproduction/outputs/FD002_w48_seed43.npz",
+      "/home/cw_boe/projects/rul/metaindux-ts-reproduction/results/diagnostics/fd002_final70_two_seeds_20261102/seed43/unused_samples.npz"
+    ]
+  },
+  "additional_current_defaults": {
+    "batch_label_zero_prob": 0.1,
+    "fatigue_threshold": 30.0,
+    "fewshot_fraction": 0.1,
+    "fewshot_indices_path": "",
+    "frequency_mask_mode": "hard_random_quantile",
+    "frequency_mask_temperature": 0.1,
+    "frequency_threshold": -1.0,
+    "frequency_threshold_init": 0.25,
+    "lr_schedule": "warmup_cosine"
+  },
+  "package_version_differences": {},
+  "shared_dependency_packages": 133,
+  "environment_versions_match": true,
+  "learning_rates_all70_equal": true,
+  "full_training_updates": 11410,
+  "rerun_initial_state_matches_independent_cpu_seed43": true,
+  "thresholds": {
+    "ups.0.2.fn.fn.threshold_param": {
+      "original": 0.28632768988609314,
+      "phase": 0.28632768988609314,
+      "best": 0.28632768988609314,
+      "final70": 0.28632768988609314
+    },
+    "ups.1.2.fn.fn.threshold_param": {
+      "original": 0.4584011435508728,
+      "phase": 0.4584011435508728,
+      "best": 0.4584011435508728,
+      "final70": 0.4584011435508728
+    }
+  },
+  "original_checkpoint_epoch": 67,
+  "rerun_best_epoch": 30,
+  "first_visible_rounded_loss_difference_batch": 29,
+  "first_epoch_loss_original": 0.2603015146372508,
+  "first_epoch_loss_rerun": 0.2578356767907464,
+  "same67_loss_original": 0.030178371154091842,
+  "same67_loss_rerun": 0.030230814693895585,
+  "same67_loss_relative_change": 0.0017377856324969354,
+  "all_actual_sampling_noise_fingerprints_equal": true,
+  "raw_train_matches_dated_oct22_manifest": true,
+  "evidence_limitations": [
+    "No original processed-input hash, full initialization, optimizer state, RNG state or per-batch order/noise/mask archive.",
+    "Earliest available workspace git state postdates Sep14; cannot prove historical source identical solely from current git.",
+    "Original process did not persist thread/CUBLAS/cuDNN selected-algorithm state; current worker sets OMP2/OPENBLAS1/CUBLAS4096:8 and bypasses original MainCondition TensorFlow imports."
+  ],
+  "ranked_hypotheses": [
+    {
+      "hypothesis": "Floating-point/algorithm nonrepeatability, amplified during optimization",
+      "status": "leading hypothesis, unproved",
+      "basis": "Same declared configuration; early nearly matching logs then divergence; benchmark=True and deterministic not enabled."
+    },
+    {
+      "hypothesis": "Different random draw/order due hidden historical consumer or unarchived source/environment detail",
+      "status": "not excluded",
+      "basis": "Rerun pure RNG schedule matches, but historical per-batch trace absent."
+    },
+    {
+      "hypothesis": "Checkpoint selection or downstream evaluation caused same-epoch divergence",
+      "status": "not an adequate explanation",
+      "basis": "Divergence appears before first checkpoint eligibility; same67 weights evaluated with exact paired sampler and DS splits."
+    }
+  ],
+  "runtime_seed_helper": {
+    "benchmark": true,
+    "sets_deterministic": false,
+    "sets_deterministic_algorithms": false
+  }
+}

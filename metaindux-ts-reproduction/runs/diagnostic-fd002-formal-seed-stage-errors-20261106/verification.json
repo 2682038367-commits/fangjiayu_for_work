@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "source_prediction_hash_bound": true,
+  "unique_records": 6475,
+  "engines_per_model": 259,
+  "models": 25,
+  "truth_labels_match": true,
+  "replayed_formal_RMSEs": 25,
+  "max_formal_replay_abs_difference": 4.5038498406313465e-06,
+  "bin_counts_sum_to259": true,
+  "seed43_MSE_contributions_sum": true,
+  "new_training": 0,
+  "new_sampling": 0,
+  "new_inference": 0
+}

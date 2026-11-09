@@ -1,0 +1,58 @@
+{
+  "dataset": "FD002",
+  "window": 48,
+  "primary_generators": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "predictor_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "input": "Existing formal original5x5 generated-trained predictions and existing5real-trained predictions, same259terminal48windows",
+  "bins": [
+    [
+      "0-30",
+      0,
+      30
+    ],
+    [
+      "31-60",
+      31,
+      60
+    ]
+  ],
+  "per_engine_quantities": {
+    "extra_prediction": "mean_e(pred_generated[g,e,i] - pred_real[e,i])",
+    "extra_squared_error": "mean_e((pred_generated[g,e,i]-y_i)^2) - mean_e((pred_real[e,i]-y_i)^2)"
+  },
+  "pairing": "Same engineID and evaluator seed; verify labels and terminal-window parent source before selecting102lowRUL engines",
+  "signs": "Extra prediction>0 only means higher than real-trained reference, not necessarily greater than truth. ExtraSE>0 means worse meanSE.",
+  "concentration": "Count positive extraSE and joint positive metrics; largest5positive extraSE contributions / sum positive extraSE. Report improvements separately, never divide by net change.",
+  "common_groups": {
+    "user_named_common3": [
+      3,
+      23,
+      33
+    ],
+    "all5": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "extra_pair_23_43": [
+      23,
+      43
+    ]
+  },
+  "decision": "Describe low-stage common error additions versus localized43tail; no new mechanism/label-cause claims",
+  "stop": "Only this paired lowRUL analysis; no training, sampling, model inference, raw sensor/neighbor investigation or test-driven fitting"
+}

@@ -1,0 +1,11 @@
+{
+  "retrieved_date": "2026-10-23",
+  "source_url": "https://raw.githubusercontent.com/Dolphin-wang/MetaIndux-TS/main/TrainCondition.py",
+  "github_lines": "https://github.com/Dolphin-wang/MetaIndux-TS/blob/main/TrainCondition.py#L62-L63",
+  "sha256": "b60f48eb6b7ef45913bf13f986d955c078dd9d618e4fde655ae488b9f6eb8150",
+  "observed_code": "if np.random.rand() < 0.1: labels = torch.zeros_like(labels).to(device)",
+  "origin": "present in freshly fetched public author code; not introduced by this reproduction",
+  "version_limit": "Current main retrieved on this date; this fetch is not claimed to reproduce the 2026-09-14 archive checksum.",
+  "local_change": "Added batch_label_zero_prob switch with default 0.1 on 2026-10-23 for user-authorized diagnostic; diagnostic no_batch_zero arm sets it to 0.",
+  "paper_audit": "No explicit whole-batch 10-percent numeric-RUL-zeroing instruction found in inspected paper text. CFG intent remains inference, not a documented author explanation."
+}

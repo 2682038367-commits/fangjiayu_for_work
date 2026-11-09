@@ -1,0 +1,40 @@
+{
+  "status": "partial_specification_not_a_complete_reproduction_recipe",
+  "source": "local PDF: III-B, III-C, III-D, IV-A, Table II",
+  "explicit_parameters": {
+    "datasets": ["FD001", "FD002", "FD003", "FD004"],
+    "removed_sensor_indices": [1, 5, 6, 10, 16, 18, 19],
+    "input_channels": 14,
+    "normalization": "Min-Max",
+    "window_size": 40,
+    "sample_stride": 50,
+    "rul_cap": 125,
+    "patch_size": 4,
+    "patch_stride": 1,
+    "temporal_dim": 64,
+    "temporal_attention_heads": 1,
+    "image_size": 114,
+    "visual_dim": 128,
+    "text_dim": 96,
+    "max_text_tokens": 512,
+    "projector": "linear",
+    "attention_key_dim": 64,
+    "attention_output_dim_table_II": 32,
+    "fusion_mlp_units": 512,
+    "dropout": 0.5,
+    "batch_size": 128,
+    "learning_rate": 0.002,
+    "epochs": 30
+  },
+  "unresolved": [
+    "sample stride 50 conflicts with expanding-sample narrative",
+    "96-d DKE to Qwen embedding compatibility",
+    "MAE architecture and pretrained weights",
+    "Qwen main-model version/size and freeze policy",
+    "projector training objective and phase schedule",
+    "global-vector broadcast makes attention uniform; token-sequence alternative is an assumption",
+    "equations give Value width Dk=64 but Table II says attention output 32",
+    "normalization fit scope, validation protocol, short test sequences",
+    "exact regression head, pooling, optimizer and loss"
+  ]
+}

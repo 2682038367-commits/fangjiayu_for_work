@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "training_loss.csv": false,
+    "training_batch_zero_draws.csv": true,
+    "epoch_state_hashes.json": false,
+    "all70_orders_equal": true,
+    "initial_parameters_equal": true,
+    "all70_rng_states_equal": true,
+    "all70_parameter_hashes_equal": false,
+    "all70_optimizer_hashes_equal": false,
+    "all11410_losses_equal": false,
+    "best_tensor_hash_equal": false,
+    "phase_tensor_hash_equal": false,
+    "final70_tensor_hash_equal": false
+  },
+  "first_different_loss_update": 1,
+  "first_different_parameter_epoch": 1,
+  "native_pair_exact": false,
+  "paired_to_fixed": [
+    {
+      "initial_equal": true,
+      "all70_orders_equal": true,
+      "batch_zero_draws_equal": true
+    },
+    {
+      "initial_equal": true,
+      "all70_orders_equal": true,
+      "batch_zero_draws_equal": true
+    }
+  ],
+  "fixed_pair_exact": true,
+  "interpretation": "Two prospective native runs only; equal outcome does not disprove previously observed native kernel variability, and no extra attempts are allowed."
+}

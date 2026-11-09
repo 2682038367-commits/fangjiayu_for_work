@@ -1,0 +1,12 @@
+{
+  "pid": 1820317,
+  "command": [
+    "/home/cw_boe/projects/rul/.venv/bin/python",
+    "-u",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/scripts/run_prototype_guidance.py",
+    "run"
+  ],
+  "log": "/home/cw_boe/projects/rul/metaindux-ts-reproduction/logs/prototype_guidance_full.log",
+  "launched_at": "2026-11-03T10:21:11.324214+08:00",
+  "execution": "outside sandbox; GPU verified"
+}

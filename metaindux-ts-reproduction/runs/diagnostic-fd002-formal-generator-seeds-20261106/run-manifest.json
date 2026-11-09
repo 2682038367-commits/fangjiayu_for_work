@@ -1,0 +1,63 @@
+{
+  "run_id": "diagnostic-fd002-formal-generator-seeds-20261106",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261106-fd002-formal-generator-seeds",
+  "status": "complete",
+  "started_at": "2026-11-06T14:26:51.303471+08:00",
+  "user_authorization": "Explicit decompose26.7918into5generator means and5predictor ranges; no training",
+  "config": {
+    "generation_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "evaluator_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "independent_generation_units": 5,
+    "predictor_fits_per_generator": 5,
+    "existing_cells": 25,
+    "paper_reference": 24.565,
+    "metric": "Arithmetic mean of each generator five predictor RMSEs, then mean five generator means",
+    "variability": "Sample SD ddof1 and min/max over five predictor seeds per generator",
+    "gap_contribution": "(generator mean - paper reference)/5; signed arithmetic decomposition, not causal attribution",
+    "exclusions": "Leave out the largest-mean generator only as descriptive sensitivity; retain all5 in headline",
+    "stop": "Read25existing cells only; no new training, sampling, inference, seed search or significance claims against unknown paper variance"
+  },
+  "inputs_sha256": {
+    "analysis/diagnostics/decompose_fd002_formal_generator_seeds.py": "e86b605e8dae8133494980e6f7588a24bf0c33542cd5dd52e1f352c23ddc8260",
+    "docs/operations/FD002_FORMAL_GENERATOR_SEEDS.md": "fcea216bccf5591a09fc3d2f0085980baa642d07b035f63401bb42b9963a7ac0",
+    "results/fd002_evaluation_stability_paper70_raw.csv": "85d29acd7e7b7c7571e534091e9dc8d4041d63325c1594dfc0e8864594a7871e",
+    "results/fd002_evaluation_stability_paper70_summary.csv": "3c26f4eec82d26864710a11be6377b888db213e73d6c4bd774819d98c91983e4",
+    "docs/provenance/paper_table_i_w48_metrics.json": "bfd27868211e0222a34e23052cfc5c65f98801ed8d2d39a4a470161f9cd178b9",
+    "configs/evaluation_fd002_stability_paper.yaml": "b4767bf8a150a85ecf83b2958013e81a4e288d5f4541e7ecb2a63cb10054bf0a",
+    "results/diagnostics/fd002_formal_test_protocol_audit_20261106/audit.json": "25b577a39e52f1adab184d3823922c9f0429383d3ee0e474127626171880469a",
+    "runs/diagnostic-fd002-formal-generator-seeds-20261106/source/decompose_fd002_formal_generator_seeds.py": "e86b605e8dae8133494980e6f7588a24bf0c33542cd5dd52e1f352c23ddc8260",
+    "runs/diagnostic-fd002-formal-generator-seeds-20261106/source/FD002_FORMAL_GENERATOR_SEEDS.md": "fcea216bccf5591a09fc3d2f0085980baa642d07b035f63401bb42b9963a7ac0",
+    "runs/diagnostic-fd002-formal-generator-seeds-20261106/source/fd002_evaluation_stability_paper70_raw.csv": "85d29acd7e7b7c7571e534091e9dc8d4041d63325c1594dfc0e8864594a7871e",
+    "runs/diagnostic-fd002-formal-generator-seeds-20261106/source/previous-protocol-audit-manifest.json": "c75d943d9d08d70029cfd135eff3960be767bfc1911832672d837d55b7c80b89",
+    "runs/diagnostic-fd002-formal-generator-seeds-20261106/config.json": "806e4547377205c89e1cb669c16d74e1a957643bdecc0b3da71258415887bbae"
+  },
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/analysis/diagnostics/decompose_fd002_formal_generator_seeds.py"
+  ],
+  "git_head": "df7e83b2e14317db34a23049db973ec83aa52065",
+  "completed_at": "2026-11-06T14:26:51.312929+08:00",
+  "outputs_sha256": {
+    "results/diagnostics/fd002_formal_generator_seeds_20261106/rmse_matrix.csv": "3a97425f1b2653389d1bd005b165f6d1e5c83d725f883cb3e04deb788d16320e",
+    "results/diagnostics/fd002_formal_generator_seeds_20261106/per_generator.csv": "49cbac882eff3867e3252a1f1a7a7762f0c87c73d553649519d74d3cf569f62b",
+    "results/diagnostics/fd002_formal_generator_seeds_20261106/summary.json": "d982cbf43ec9be9ae31df58c7e0fa7117ba0a992210a3a4b2ebb891521686f8d",
+    "docs/conclusions/final/fd002_formal_generator_seeds_20261106_report.md": "9bc6ca6a945bcc32d48a608383e2d98a7f3e67f24589ebb5088e35eee8e83902"
+  },
+  "new_training": 0,
+  "new_sampling": 0,
+  "new_inference": 0
+}

@@ -1,0 +1,48 @@
+{
+  "status": "complete",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261103-fd002-conv-kernel-paths",
+  "started_at": "2026-11-03T09:49:53.603086+08:00",
+  "completed_at": "2026-11-03T09:49:56.273930+08:00",
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/analysis/diagnostics/review_fd002_conv_kernel_paths.py"
+  ],
+  "action": "CPU-only independent raw CUDA correlation / exact tensor verification and report correction; zero extra forwards",
+  "inputs_sha256": {
+    "runs/diagnostic-fd002-conv-kernel-paths-20261103/run-manifest.json": "e9ac65244cba8e7216304678c7eceab2bac3e0f87003cbefdfda1792e7c2a1f9",
+    "analysis/diagnostics/review_fd002_conv_kernel_paths.py": "71de16569259a731b9566438c38334043ff3bf693282e6f8a1a12c8f3847da89",
+    "runs/diagnostic-fd002-conv-kernel-paths-20261103/source/auto_report_before_review.md": "b1c56ae172c8b4bcc7c93d1b40077b27c6210c5488367c6006fe56a033264a9e",
+    "runs/diagnostic-fd002-conv-kernel-paths-20261103/source/computation_manifest_before_review.json": "081fa06c0487563c6b606242e5b58c02e1b8d50bf8152e12efc22f6045fa2f14",
+    "runs/diagnostic-fd002-conv-kernel-paths-20261103/review-attempt1/console.log": "4fa646e4036e78c640f733d9c25f611d8866428b692f48c1df07454e8d99f336",
+    "runs/diagnostic-fd002-conv-kernel-paths-20261103/review-attempt1/run-manifest.json": "7ad1d3ae64289d974a554460fa9f4225c34a0e8e51fbd3c8e69727779e19cad7",
+    "runs/diagnostic-fd002-conv-kernel-paths-20261103/review-attempt1/review_fd002_conv_kernel_paths.py": "df1daebcfe4cab4fbd2644b86fb681e525e522b048b5ec3c12f6f4628784873f",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/native/native_public/cuda_trace.json": "6e421080409aa3a25ec769f4179211af02ca46c013762bad343db8853c2617f6",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/native/native_public/actual_conv_kernels.json": "43875567fa2a46d1d6eb84a5c49c0be23b371a2860ac173cc0d9a8bb317f7b20",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/native/native_public/operators.json": "3909de19223560eb2e9ae1154633442140c8ecd47114235c8dda4c54ec310498",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/native/native_public/summary.json": "0f608d5d16bc892c850044e27fb59563f068dc1aeeaf695ae63a13464e0dc0ec",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/native/native_public/profile_summary.json": "35bc29abd9db401f6a3344dfde555720ff4eda0f5e3a9f0f9a1979c6cf4c42fc",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/native/native_worker/cuda_trace.json": "19c47b6f53bfeeceff4120d53d7165052c5e072bf23c0ad2659e789968a475aa",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/native/native_worker/actual_conv_kernels.json": "69dfb24f0dcddf021def4d5a7b620ee2b66d6cb636ae60cfcbe625f755ca2bfc",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/native/native_worker/operators.json": "d208b29e7e8e7e7e872e5bcdfebef07e4ae7a8432375479d7f20cd5c42478e74",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/native/native_worker/summary.json": "00f96858d6d25131ca2bd45a766f6c9bb8ef6b2098e50298521ae3a65092d33c",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/native/native_worker/profile_summary.json": "03ed2c142b9cdd5aa7c178bf4c3015064767ccbcde4ebe617e9ad2f59ad42166",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/fixed/native_public/cuda_trace.json": "7f3a361a0ae461ee2b04d79bed7ab6090976387b92965ebec2587df82e0a42e1",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/fixed/native_public/actual_conv_kernels.json": "145c04928f373641603001f2695eca8ac819fca8299500e80b8b2d851f691667",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/fixed/native_public/operators.json": "346b554e496f607b89b925291ef8eee3dea1eac54fc43ffb7a43afd6539cc73b",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/fixed/native_public/summary.json": "2c61f4a18d8560aa7b7de385612b991df058bed88a06df6d95cfed4206a7f65b",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/fixed/native_public/profile_summary.json": "b64183954291db1d61c5c2c6486f8d966b6b636286870550fd773ed0d54e09f9",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/fixed/native_worker/cuda_trace.json": "c6ab8dd1f832c0841362946c16f279375b2d3e1445aa3299414858b0dc8607a4",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/fixed/native_worker/actual_conv_kernels.json": "e8fabc35c9320012d8a64d5ccb557860cab6f18b0fff1263d62f36b4f33d1d5c",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/fixed/native_worker/operators.json": "f73829d1b61618ec3a915294fbaa3a288c7cf332b3107711ff12cc76685e41a4",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/fixed/native_worker/summary.json": "465c5bfbaa7318eb2c21ad427ec0e547f979279540790515357add255089054e",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/fixed/native_worker/profile_summary.json": "b64183954291db1d61c5c2c6486f8d966b6b636286870550fd773ed0d54e09f9"
+  },
+  "outputs_sha256": {
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/review/raw_trace_kernel_mapping.json": "f75fd60d4a25b12636aad93ab36708a4cd9f5689226f8c0a053eedf69a109d94",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/review/profiler_tree_association_discrepancies.json": "263a67787a5de4aeeb401edf14397a39f3784ae956f0fa0d8cb9fe4bf7350f85",
+    "results/diagnostics/fd002_conv_kernel_paths_20261103/review/verified_findings.json": "3bd24f7fe842dad66b0279099f8b1f03b38cec49bac3e3db2389507a32e38345",
+    "docs/conclusions/final/fd002_conv_kernel_paths_20261103_report.md": "2dd7c0dee5a2b3924005e528b8d9038f51deaea4883ed0c58e83f736c6af10be"
+  }
+}

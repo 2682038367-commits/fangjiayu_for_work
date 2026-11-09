@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "n_engine_rows": 100,
+  "n_full_report_engine_rows": 100,
+  "n_original_predictions": 3000,
+  "n_model_paired_rows": 2500,
+  "n_generationseed_rows": 500,
+  "n_evaluatorseed_rows": 500,
+  "all_input_output_hashes_verified": true,
+  "same_windows_labels_model_seed_sets_checked": true,
+  "independent_direct_prediction_mse_delta_recalculation": true,
+  "max_delta_difference": 6.821210263296962e-13,
+  "segment_contribution_identity_checked": true,
+  "mean_generationseed_delta_identity_checked": true,
+  "plot_visually_checked": true,
+  "no_new_inference": true,
+  "no_training": true,
+  "audit_note": "Initial report-table count also matched3concentration rows; scoped parser to100engine appendix, no result changes."
+}

@@ -1,0 +1,13 @@
+{
+  "recovered_at": "2026-10-29T17:26:44.088260+08:00",
+  "revision": 1,
+  "reason": "Local progress-display import rebound tqdm class to module; TypeError before first discriminator fit. Removed optional tqdm monkeypatch, restoring original evaluator display.",
+  "old_runner_sha256": "8e00b0ab7fde75c03f3976104130b64e16d888d850a97df050e5f4d2c903f7ee",
+  "new_runner_sha256": "633153ee2045297b976c57c0e940059553fcf11dd215d8b2c878ccbea8449fc3",
+  "retained_samples": 1,
+  "completed_evaluations_before_failure": 0,
+  "scientific_configuration_changed": false,
+  "remaining_sampling": 5,
+  "remaining_discriminator_evaluations": 30,
+  "original_failure": "Traceback (most recent call last):\n  File \"/home/cw_boe/projects/rul/metaindux-ts-reproduction/scripts/run_fd001_resampling_diagnostic.py\", line 291, in run\n    subprocess.run(command, cwd=ROOT, env=os.environ.copy(), stdout=handle,\n  File \"/usr/lib/python3.10/subprocess.py\", line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python', '/home/cw_boe/projects/rul/metaindux-ts-reproduction/scripts/run_fd001_resampling_diagnostic.py', 'evaluate', '13', '103']' returned non-zero exit status 1.\n"
+}

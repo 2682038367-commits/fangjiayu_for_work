@@ -1,0 +1,3 @@
+checkpoint_seed,sampling_seed,control_mean,intervention_mean,control_evaluator_sd,intervention_evaluator_sd,mean_change,n_paired_changes_same_direction,control_failed,intervention_failed
+13,103,0.20555381236272358,0.2063382491371195,0.018078978855374104,0.01794643223266371,0.000784436774395958,3,False,False
+23,103,0.42550988390335737,0.4257295262001882,0.007139150421439291,0.006168287281784794,0.00021964229683087976,2,True,True

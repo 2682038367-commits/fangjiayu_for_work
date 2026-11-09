@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-23",
+  "scope": "supporting descriptive audit",
+  "no_training": true,
+  "unit": "model \u00d7 independent test engine, no ensemble averaging",
+  "model_counts": "FD002 headline7 generation\u00d75 evaluators; other datasets5\u00d75; real baseline5",
+  "inputs_sha256": {
+    "results/diagnostics/rul_segment_errors_w48/predictions.csv": "c4d8b20d097dd36c47a6125ab1eec669bc0c247a8cfbcb47d6e69294ecabf1fa",
+    "upstream/data/RUL_FD001.txt": "a19c8ec94931949d0485bdc35118206e9c81c4547b422efb9cf86f4ceddbceca",
+    "upstream/data/RUL_FD002.txt": "c851dd96a6ea6998d3c4a8f834d3c8013aa90e93a6ed950dc826ad0655b2906b",
+    "upstream/data/RUL_FD003.txt": "df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb",
+    "upstream/data/RUL_FD004.txt": "196b836b85a95ac7fdbbf29c5fdf1657382eafa445644d114ffaaf50dc2975e1"
+  },
+  "script_sha256": "5576caf45ed49c1f3869b74eed97becb7ae0c01c7ae34391f6c1367d2d980f53"
+}

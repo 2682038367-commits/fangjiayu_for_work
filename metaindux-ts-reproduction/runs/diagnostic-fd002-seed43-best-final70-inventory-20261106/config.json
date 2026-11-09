@@ -1,0 +1,15 @@
+{
+  "primary": "The two latest native seed43 full70 trainings from the just-completed stage-attribution run",
+  "primary_repeats": [
+    "repeat1",
+    "repeat2"
+  ],
+  "older_fixed_training": "Inventory reference only; do not silently substitute it for either latest training",
+  "checkpoint_rule": "Original e>5, lowest recorded training diffusion loss",
+  "stop": "If best and final70 are identical tensors, record no comparison and run zero sampling or predictor fits",
+  "user_authorization": "Explicit inspect existing best/final70 and compare downstream if distinct; identical epoch70 pair is no comparison",
+  "generator_training_budget": 0,
+  "actual_sampling": 0,
+  "actual_predictor_fits": 0,
+  "no_official_test_access": true
+}

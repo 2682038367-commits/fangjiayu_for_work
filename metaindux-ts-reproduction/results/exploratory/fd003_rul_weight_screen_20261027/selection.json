@@ -1,0 +1,43 @@
+{
+  "selected_weight": 1,
+  "screen_only": true,
+  "global_default_changed": false,
+  "official_test_accessed": false,
+  "generator_seen_validation_engines": true,
+  "predictor_initialization_seeds": [
+    3
+  ],
+  "rule": {
+    "min_target_improved_generation_seeds": 3,
+    "max_other_bin_rmse_regression_fraction": 0.05,
+    "overall_must_improve": true,
+    "target_must_improve": true,
+    "objective": "pooled engine-balanced realvalidation MSE",
+    "tie": "lower weight"
+  },
+  "candidates": [
+    {
+      "weight": 2,
+      "overall_improves": false,
+      "target_improves": false,
+      "target_improved_generation_seeds": 2,
+      "majority_target_pass": false,
+      "other_bins_guard_pass": false,
+      "max_other_bin_rmse_change_percent": 7.31474864430306,
+      "overall_mse_engine": 380.84923868358953,
+      "eligible": false
+    },
+    {
+      "weight": 4,
+      "overall_improves": true,
+      "target_improves": true,
+      "target_improved_generation_seeds": 4,
+      "majority_target_pass": true,
+      "other_bins_guard_pass": false,
+      "max_other_bin_rmse_change_percent": 10.729942111850832,
+      "overall_mse_engine": 362.2239078810811,
+      "eligible": false
+    }
+  ],
+  "decision": "No elevated weight passed frozen rule;retain1without expanding search"
+}

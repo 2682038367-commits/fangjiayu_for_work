@@ -1,0 +1,43 @@
+{
+  "checkpoints": [
+    {
+      "checkpoint_seed": 13,
+      "original_mean_ds": 0.2127078757452149,
+      "checkpoint_path": "checkpoints/FD001_w48_seed13.pth",
+      "checkpoint_sha256": "6ce2d05c08931acc26c33ee044abf6ae0142592ad2fc2dfffc17a7d15c452935",
+      "tensor_sha256": "a4d72aa80633df04564ebd1dbda07128eabfd3bab588b2b31ebae4d587e0bd39",
+      "training_epochs": 70,
+      "best_epoch": 63,
+      "best_loss": 0.05147640336127508,
+      "training_started_at": "2026-09-24T03:56:09.741949+00:00",
+      "frequency_parameters": {
+        "ups.0.2.fn.fn.threshold_param": [
+          0.2985737919807434
+        ],
+        "ups.1.2.fn.fn.threshold_param": [
+          0.49599048495292664
+        ]
+      }
+    },
+    {
+      "checkpoint_seed": 23,
+      "original_mean_ds": 0.4227486664574835,
+      "checkpoint_path": "checkpoints/FD001_w48_seed23.pth",
+      "checkpoint_sha256": "f46697a81b7bfdb8442496e1066572b27efb12375dfdd1c69fbbc1420c72ee54",
+      "tensor_sha256": "79711add657a0c481ff9bc387e4b1cc31e4ef150e5ceaa1e181e619c60173300",
+      "training_epochs": 70,
+      "best_epoch": 14,
+      "best_loss": 0.05134038579842401,
+      "training_started_at": "2026-09-24T04:09:18.511053+00:00",
+      "frequency_parameters": {
+        "ups.0.2.fn.fn.threshold_param": [
+          0.0741274356842041
+        ],
+        "ups.1.2.fn.fn.threshold_param": [
+          0.49625810980796814
+        ]
+      }
+    }
+  ],
+  "different_tensor_count": 194
+}

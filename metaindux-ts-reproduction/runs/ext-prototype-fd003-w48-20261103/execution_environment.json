@@ -1,0 +1,19 @@
+{
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "torch": "2.13.0+cu130",
+  "cuda": "13.0",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "nvidia_smi": "Tue Nov  3 14:17:58 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 595.84                 Driver Version: 595.84         CUDA Version: 13.2     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 4060 Ti     Off |   00000000:01:00.0  On |                  N/A |\n|  0%   48C    P8              9W /  165W |     928MiB /   8188MiB |     15%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            2261      G   /usr/lib/xorg/Xorg                      373MiB |\n|    0   N/A  N/A            2457      G   /usr/bin/gnome-shell                    107MiB |\n|    0   N/A  N/A            2652      G   .../sunloginclient --cmd=autorun          9MiB |\n|    0   N/A  N/A            2968      G   ...me/58.0.3029.81 Safari/537.36          2MiB |\n|    0   N/A  N/A            3071      G   ...06DA2529EB5446B82CCF579F9C98F          2MiB |\n|    0   N/A  N/A            3397      G   .../8969/usr/lib/firefox/firefox        209MiB |\n|    0   N/A  N/A          473333      G   ...��注/X-Anylabeling-Linux-CPU          2MiB |\n|    0   N/A  N/A          603932      G   ...rack-uuid=3190708988185955192         68MiB |\n|    0   N/A  N/A          966785      G   ...rack-uuid=3190708988185955192         27MiB |\n+-----------------------------------------------------------------------------------------+\n",
+  "cudnn_version": 92000,
+  "cudnn_benchmark": false,
+  "cudnn_deterministic": true,
+  "global_strict": false,
+  "cublas_workspace": ":4096:8",
+  "tf32_matmul": false,
+  "tf32_cudnn": true,
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/scripts/run_prototype_guidance_fd003.py",
+    "run"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "stored_requested_IDs_verified_all4cells": true,
+  "train_assignments_reproduced": true,
+  "no_generated_feature_refit": true,
+  "A_pseudo_labels_never_input": true,
+  "sameRUL_chance_directly_verified": true,
+  "majority_collapse_sanity_passed": true,
+  "parent_artifacts_unchanged": true,
+  "model_fits": 0,
+  "new_generated_windows": 0
+}

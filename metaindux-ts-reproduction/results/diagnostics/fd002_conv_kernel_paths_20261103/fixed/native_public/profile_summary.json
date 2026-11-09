@@ -1,0 +1,15 @@
+{
+  "mode": "fixed",
+  "warmup_loss": 1.3372670412063599,
+  "measured_loss": 1.3372670412063599,
+  "warmup_output_sha256": "b1814af7f40453bb86cafa087645e72ad84235a897b6f3bd81a5d960868c3759",
+  "measured_output_sha256": "b1814af7f40453bb86cafa087645e72ad84235a897b6f3bd81a5d960868c3759",
+  "warmup_measured_exact_output_equal": true,
+  "full_first_batch_forwards": 2,
+  "convolutions_measured": 35,
+  "backward_calls": 0,
+  "optimizer_updates": 0,
+  "benchmark": false,
+  "deterministic": true,
+  "global_deterministic_algorithms": false
+}

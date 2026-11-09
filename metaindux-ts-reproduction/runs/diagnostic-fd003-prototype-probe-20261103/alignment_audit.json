@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "reason": "Initial per-domain exactRUL matching controlled RUL within each domain, but support differed across domains. Restrict BOTH domains to intersection of existing matched RUL strata per pair for more conservative replication.",
+  "additional_ridge_fits": 0,
+  "total_ridge_fits": 2,
+  "models_predictions_and_probe_metrics_byte_unchanged": true,
+  "common_RUL_support_verified": true,
+  "repeated_shape_contrasts": 3,
+  "decision": "两项检查都有正向证据（限于预设形态指标和固定岭回归探针）",
+  "source_sha256": "e5a90fc566767113fb87ebb5801ff6dca7ff1aa754c1876e209f185dbbb8ca45"
+}

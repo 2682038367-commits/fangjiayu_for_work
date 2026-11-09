@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-30T15:39:59.424593+08:00",
+  "service": "metaindux-fd001-final70-two-seeds-20261030.service",
+  "main_pid": 1302380,
+  "active": true,
+  "started_at": "2026-10-30T15:38:37.784173+08:00",
+  "stage": "train",
+  "generator_seed": 13,
+  "all_frozen_hashes_unchanged": true,
+  "preflight_passed": true,
+  "training_progress": {
+    "completed_epochs": 48,
+    "total_epochs": 70,
+    "actual_optimizer_updates": 3024,
+    "updated_at": "2026-10-30T15:39:58.407286+08:00"
+  }
+}

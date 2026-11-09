@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-30T10:08:24.482765+08:00",
+  "gate_cases_passed": [
+    "small_changes_stop",
+    "ds_improvement_confirm",
+    "ds_deterioration_confirm",
+    "inconsistent_ds_stop",
+    "proxy_improvement_confirm",
+    "proxy_requires_absolute_cycle",
+    "proxy_requires_relative_change",
+    "proxy_requires_direction_agreement"
+  ],
+  "cuda_rng_preflight": "passed initial/step tensors and pairedmask/statefingerprints at batch256 before launch",
+  "real_predictor_replay": "all5 exact zero difference"
+}

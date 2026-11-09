@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "identity_noise_labels_predictors_checked": true,
+  "aggregate_recomputed_from_saved_windows": true,
+  "original_per_predictor_metrics_match": true,
+  "all_five_predictors_reported": true,
+  "capped125_separate": true,
+  "new_inference_training_sampling": 0
+}

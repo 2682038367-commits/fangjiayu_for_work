@@ -1,0 +1,10 @@
+{
+  "service": "metaindux-fd002-fixed-conv-full70-20261105.service",
+  "log": "logs/fd002_fixed_conv_full70_20261105.log",
+  "actual_progress": {
+    "completed_epochs": 8,
+    "total_epochs": 70,
+    "actual_optimizer_updates": 1304,
+    "updated_at": "2026-11-05T11:08:16.475351+08:00"
+  }
+}

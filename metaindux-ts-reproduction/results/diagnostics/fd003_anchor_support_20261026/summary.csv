@@ -1,0 +1,4 @@
+representation,n_engines,n_distance_improved,n_distance_worsened,n_anchors_in_top5,median_percent_distance_reduction,mean_anchors_in_top5,rho_distance_reduction_vs_mse_reduction,rho_distance_reduction_vs_rmse_reduction
+coupling_raw,21,6,10,7,0.0,0.7619047619047619,0.3804002820356416,0.34249097557848146
+dynamics,21,8,3,10,0.0,0.7142857142857143,0.03504761476994653,0.0721568539381252
+level,21,7,9,10,0.0,1.0,0.4444539377736018,0.3738641947154416

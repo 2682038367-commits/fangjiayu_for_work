@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "all_input_output_hashes_verified": true,
+  "two_fits_only": true,
+  "no_additional_fit_in_alignment": true,
+  "exact_RUL_different_engine_no_replacement_matching": true,
+  "same_RUL_support_across_train_validation": true,
+  "all_probe_RMSE_and_improved_engine_counts_recomputed": true
+}

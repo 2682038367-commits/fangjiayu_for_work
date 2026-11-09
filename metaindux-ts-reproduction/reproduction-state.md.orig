@@ -1,0 +1,75 @@
+# Persistent reproduction state
+
+## Identity and goal
+
+- Paper: MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series, TNNLS 2025.
+- Workspace: `/home/cw_boe/projects/rul/metaindux-ts-reproduction`.
+- Type: author-code execution plus paper-faithful core-experiment reproduction.
+- Current target: Table VI few-shot claim, beginning with FD001 at window 48.
+- Route: paper settings take precedence where the stale few-shot shell script conflicts; public code fills unspecified details.
+
+## Main/core experiment priority
+
+### Core claim inventory
+
+| Claim ID | Claim | Priority | Evidence |
+|---|---|---|---|
+| C1 | Frequency-aware MetaIndux-TS improves industrial time-series generation fidelity and utility. | primary | [Paper] Abstract, contributions, Table I |
+| C2 | MetaIndux-TS has strong zero-shot and few-shot generation capability for unseen fatigue conditions. | co-primary | [Paper] contributions and Section IV-D |
+| C3 | Dual-frequency learners and contrastive synthesis explain the advantage. | secondary | [Paper] Section IV-C |
+
+### Core experiment candidates
+
+| Candidate | Claim | Experiment | Status |
+|---|---|---|---|
+| A | C2 | Table VI: all normal plus 10% fatigue; generated-data LSTM tested on real fatigue | selected, minimum viable FD001 first |
+| B | C2 | Table V zero-shot: normal only; test on real fatigue | deferred |
+| C | C3 | Tables III-IV ablations | deferred |
+
+- Main experiment: Table I public-code mainline, window 48; completed locally but numerical values were not reproduced.
+- Selected core: Candidate A.
+- Relationship to main: shared-base but outcome-independent. It retrains a dedicated few-shot generator and does not reuse main checkpoints.
+- Main weakness does not logically predict the few-shot result; interpreting exact numerical agreement still depends on the same preprocessing/model audit.
+- Post-main core gate: minimum viable Candidate A authorized by the user.
+
+## Current stage
+
+- Phase 3: FD001 minimum viable few-shot execution is running in `metaindux-fewshot-fd001.service`.
+- Paper split: RUL > 30 normal; 10% fatigue included in generator training.
+- Code boundary: RUL <= 30 fatigue because the paper leaves RUL=30 unstated.
+- Generation seeds: 3, 13, 23, 33, 43; evaluator seeds identical.
+- Next checkpoint: validate FD001 split counts and dry-run, then execute five generators and 25 fixed-split evaluations.
+
+## Configuration fidelity
+
+| Item | Requirement | Actual | Status/evidence |
+|---|---|---|---|
+| Few-shot split | all normal + 10% fatigue | RUL>30 + seeded 10% of RUL<=30 | paper-aligned; equality follows [Code] `main_fewshot.py` |
+| Window | author few-shot script uses 48 | 48 | exact [Code] |
+| Diffusion | T=1000, linear, DDPM | same | exact [Paper] Section IV-A.2 |
+| Training | Adam, lr 2e-3, 70 epochs | same | exact [Paper]/[Code] |
+| Batch | not stated in paper; code default 64 | 64 | exact [Code] |
+| Frequency mask | public mainline hard random quantile | same | exact [Code] |
+| Predictor | two-layer LSTM, generated train, real fatigue test | same | exact [Paper] Section IV-D |
+| Predictor split | 70/30 synthetic | fixed 70/30 | exact [Paper] Section IV-A.3; fixed seed is local control |
+| Repetitions | five, IDs undisclosed | 3/13/23/33/43 | count exact; IDs locally chosen |
+
+## Run ledger
+
+| Run ID | Snapshot | Changed factor | Metrics | Status |
+|---|---|---|---|---|
+| core-a-fewshot-fd001-w48-20260928 | `runs/core-a-fewshot-fd001-w48-20260928/run-manifest.yaml` | full-data training to paper few-shot split | not run | prepared |
+
+## Hypothesis ledger and stopping status
+
+| Hypothesis | Evidence | Status | Next check |
+|---|---|---|---|
+| [Hypothesis] MetaIndux-TS retains useful fatigue generation with only 10% fatigue examples. | Paper reports Table VI advantage; no local few-shot result yet. | active | FD001 five-generator/five-evaluator result |
+
+## Session checkpoint
+
+- Window-24 mainline was stopped at user request; completed artifacts were preserved.
+- [Paper] Candidate A is a condition-held-out few-shot test, not a generic random 10% dataset experiment.
+- [Code] Author entry implements all RUL>30 plus 10% of RUL<=30 and conditions sampling on full training labels.
+- Current -> Paper -> Gap -> Beyond variation -> conclusion impact: not run -> Table VI FD001 target pending extraction -> unknown -> unknown -> unknown.
+- Decision: execute the FD001 minimum viable Candidate A, then decide whether to expand to FD002-FD004.

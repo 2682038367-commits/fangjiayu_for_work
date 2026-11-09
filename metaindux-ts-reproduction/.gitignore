@@ -22,3 +22,29 @@ data/raw/
 # Local-only cleanup and provenance holding areas.
 archive/
 **/__pycache__/
+
+# Nested ts-mllm-reproduction copy: heavy artifacts stay local (same policy as its own repo).
+ts-mllm-reproduction/artifacts/
+ts-mllm-reproduction/checkpoints/
+ts-mllm-reproduction/outputs/
+ts-mllm-reproduction/.venv/
+ts-mllm-reproduction/.pytest_cache/
+ts-mllm-reproduction/data/CMAPSSData/
+
+# Regenerable full synthetic sample datasets (~41 MB each, rebuilt from
+# checkpoints); keep manifests, metrics and small prediction arrays only.
+results/diagnostics/**/samples/
+
+# --- 2026-11-03: keep regenerable bulk out of git (Gitee 1 GB repo cap) ---
+# Model-weight snapshots dumped by trace/probe/extension diagnostics.
+*.pth
+# CUDA kernel-path traces and raw trace dumps.
+**/cuda_trace.json
+results/diagnostics/fd002_conv_kernel_paths_20261103/**/cu
+results/diagnostics/fd002_conv_kernel_paths_20261103/**/c
+# Regenerable full synthetic sample sets and RNG order caches.
+results/extensions/**/samples*.npz
+runs/**/questions/
+**/training_epoch_orders.npz
+# wandb offline run binaries (metadata text files remain tracked).
+**/wandb/

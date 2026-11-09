@@ -1,0 +1,17 @@
+{
+  "inputs_sha256": {
+    "count": 101,
+    "failures": []
+  },
+  "outputs_sha256": {
+    "count": 32,
+    "failures": []
+  },
+  "predictor_checkpoint_sha256": {
+    "count": 5,
+    "failures": []
+  },
+  "passed": true,
+  "primary_recomputed_from_5_predictions": 29.588074446973682,
+  "report_hash_matches": true
+}

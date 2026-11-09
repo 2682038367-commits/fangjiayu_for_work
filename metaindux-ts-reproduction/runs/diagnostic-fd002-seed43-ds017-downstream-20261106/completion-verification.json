@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "predictor_fits": 5,
+  "epochs_each": 35,
+  "updates_each": 3990,
+  "saved_prediction_MSE_recomputed": true,
+  "reference_initializations_all35orders_equal": true,
+  "sample_reused_byte_identically": true,
+  "validation_engines": 78,
+  "validation_windows": 12196,
+  "generator_trainings": 0,
+  "generated_batches": 0,
+  "new_discriminator_fits": 0
+}

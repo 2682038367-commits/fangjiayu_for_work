@@ -1,0 +1,910 @@
+{
+  "epoch": 64,
+  "evaluator_seed": 3,
+  "actual_updates": 1540,
+  "completed_epochs": 35,
+  "selected_update": 1468,
+  "initialization_sha256": "1c8270bfc9ee2723a6890f76e36f7e5e4f565977c2f58468d6741d56dd194d6b",
+  "elapsed_seconds": 14.54530668258667,
+  "checkpoint": "checkpoints/evaluators/fd001_checkpoint_downstream_validation_20261030/epoch64_eval3.pth",
+  "checkpoint_sha256": "3cd92cbac7366e9d1d044bfd9bea566941a216ae022810acdabf34f3ae61c529",
+  "replay_rmse_window": 15.069915083932774,
+  "selected_epoch_one_based": 34,
+  "consumed_order_sha256": "17ae9fe69357f54165193dc1a9fa1373be2a42394f44c1ef0067148f6d51a8cd",
+  "history": [
+    {
+      "update": 8,
+      "synthetic_dev_rmse": 77.96187807044409
+    },
+    {
+      "update": 16,
+      "synthetic_dev_rmse": 49.56049818051508
+    },
+    {
+      "update": 24,
+      "synthetic_dev_rmse": 48.58265071228412
+    },
+    {
+      "update": 32,
+      "synthetic_dev_rmse": 41.72794767507758
+    },
+    {
+      "update": 40,
+      "synthetic_dev_rmse": 42.58996621581696
+    },
+    {
+      "update": 52,
+      "synthetic_dev_rmse": 40.99492232940372
+    },
+    {
+      "update": 60,
+      "synthetic_dev_rmse": 39.553763128166395
+    },
+    {
+      "update": 68,
+      "synthetic_dev_rmse": 38.44741616628933
+    },
+    {
+      "update": 76,
+      "synthetic_dev_rmse": 36.076082453966244
+    },
+    {
+      "update": 84,
+      "synthetic_dev_rmse": 31.326716986772
+    },
+    {
+      "update": 96,
+      "synthetic_dev_rmse": 23.05232732250403
+    },
+    {
+      "update": 104,
+      "synthetic_dev_rmse": 20.764458952364492
+    },
+    {
+      "update": 112,
+      "synthetic_dev_rmse": 19.163996410890924
+    },
+    {
+      "update": 120,
+      "synthetic_dev_rmse": 18.08223756269666
+    },
+    {
+      "update": 128,
+      "synthetic_dev_rmse": 17.467520649062685
+    },
+    {
+      "update": 140,
+      "synthetic_dev_rmse": 16.22308958799963
+    },
+    {
+      "update": 148,
+      "synthetic_dev_rmse": 15.482489007730955
+    },
+    {
+      "update": 156,
+      "synthetic_dev_rmse": 15.128602163534632
+    },
+    {
+      "update": 164,
+      "synthetic_dev_rmse": 14.549300281214187
+    },
+    {
+      "update": 172,
+      "synthetic_dev_rmse": 14.41694967149753
+    },
+    {
+      "update": 184,
+      "synthetic_dev_rmse": 13.769313379295221
+    },
+    {
+      "update": 192,
+      "synthetic_dev_rmse": 13.496626303865883
+    },
+    {
+      "update": 200,
+      "synthetic_dev_rmse": 13.21586588272739
+    },
+    {
+      "update": 208,
+      "synthetic_dev_rmse": 13.01335792720723
+    },
+    {
+      "update": 216,
+      "synthetic_dev_rmse": 14.048645322745685
+    },
+    {
+      "update": 228,
+      "synthetic_dev_rmse": 12.850307421691472
+    },
+    {
+      "update": 236,
+      "synthetic_dev_rmse": 12.319071168368925
+    },
+    {
+      "update": 244,
+      "synthetic_dev_rmse": 12.148532701321763
+    },
+    {
+      "update": 252,
+      "synthetic_dev_rmse": 12.117951376596814
+    },
+    {
+      "update": 260,
+      "synthetic_dev_rmse": 12.904650433535153
+    },
+    {
+      "update": 272,
+      "synthetic_dev_rmse": 11.88006035862314
+    },
+    {
+      "update": 280,
+      "synthetic_dev_rmse": 11.87651450246906
+    },
+    {
+      "update": 288,
+      "synthetic_dev_rmse": 12.032586310161218
+    },
+    {
+      "update": 296,
+      "synthetic_dev_rmse": 11.924238553415318
+    },
+    {
+      "update": 304,
+      "synthetic_dev_rmse": 11.460529094495618
+    },
+    {
+      "update": 316,
+      "synthetic_dev_rmse": 10.994649444363047
+    },
+    {
+      "update": 324,
+      "synthetic_dev_rmse": 10.786348028237803
+    },
+    {
+      "update": 332,
+      "synthetic_dev_rmse": 10.834092802373753
+    },
+    {
+      "update": 340,
+      "synthetic_dev_rmse": 10.549341845531814
+    },
+    {
+      "update": 348,
+      "synthetic_dev_rmse": 10.326589856158678
+    },
+    {
+      "update": 360,
+      "synthetic_dev_rmse": 10.505381123496992
+    },
+    {
+      "update": 368,
+      "synthetic_dev_rmse": 10.21799759585257
+    },
+    {
+      "update": 376,
+      "synthetic_dev_rmse": 10.10877294911524
+    },
+    {
+      "update": 384,
+      "synthetic_dev_rmse": 10.576820878055784
+    },
+    {
+      "update": 392,
+      "synthetic_dev_rmse": 9.651033010542353
+    },
+    {
+      "update": 404,
+      "synthetic_dev_rmse": 9.474855285809014
+    },
+    {
+      "update": 412,
+      "synthetic_dev_rmse": 9.790759248313803
+    },
+    {
+      "update": 420,
+      "synthetic_dev_rmse": 9.355232018366953
+    },
+    {
+      "update": 428,
+      "synthetic_dev_rmse": 9.33234141850669
+    },
+    {
+      "update": 436,
+      "synthetic_dev_rmse": 9.182830979765939
+    },
+    {
+      "update": 448,
+      "synthetic_dev_rmse": 9.107473067895206
+    },
+    {
+      "update": 456,
+      "synthetic_dev_rmse": 8.997667170005512
+    },
+    {
+      "update": 464,
+      "synthetic_dev_rmse": 9.044135035384427
+    },
+    {
+      "update": 472,
+      "synthetic_dev_rmse": 9.518513102949036
+    },
+    {
+      "update": 480,
+      "synthetic_dev_rmse": 9.46114615722626
+    },
+    {
+      "update": 492,
+      "synthetic_dev_rmse": 9.218427362469788
+    },
+    {
+      "update": 500,
+      "synthetic_dev_rmse": 9.324989483600984
+    },
+    {
+      "update": 508,
+      "synthetic_dev_rmse": 8.797964830331274
+    },
+    {
+      "update": 516,
+      "synthetic_dev_rmse": 8.890582691918638
+    },
+    {
+      "update": 524,
+      "synthetic_dev_rmse": 9.222551404414425
+    },
+    {
+      "update": 536,
+      "synthetic_dev_rmse": 8.432154346234068
+    },
+    {
+      "update": 544,
+      "synthetic_dev_rmse": 8.507613710295214
+    },
+    {
+      "update": 552,
+      "synthetic_dev_rmse": 8.684146900922554
+    },
+    {
+      "update": 560,
+      "synthetic_dev_rmse": 8.52493559632809
+    },
+    {
+      "update": 568,
+      "synthetic_dev_rmse": 8.33530689406154
+    },
+    {
+      "update": 580,
+      "synthetic_dev_rmse": 10.371362008959911
+    },
+    {
+      "update": 588,
+      "synthetic_dev_rmse": 9.842254204021256
+    },
+    {
+      "update": 596,
+      "synthetic_dev_rmse": 9.189045622568257
+    },
+    {
+      "update": 604,
+      "synthetic_dev_rmse": 8.23994697935961
+    },
+    {
+      "update": 612,
+      "synthetic_dev_rmse": 8.502538223084146
+    },
+    {
+      "update": 624,
+      "synthetic_dev_rmse": 8.195659670904728
+    },
+    {
+      "update": 632,
+      "synthetic_dev_rmse": 8.138463205580273
+    },
+    {
+      "update": 640,
+      "synthetic_dev_rmse": 8.105783260797063
+    },
+    {
+      "update": 648,
+      "synthetic_dev_rmse": 8.159328293305835
+    },
+    {
+      "update": 656,
+      "synthetic_dev_rmse": 9.012199933997108
+    },
+    {
+      "update": 668,
+      "synthetic_dev_rmse": 8.304066597446203
+    },
+    {
+      "update": 676,
+      "synthetic_dev_rmse": 8.169104438480364
+    },
+    {
+      "update": 684,
+      "synthetic_dev_rmse": 8.033066440142791
+    },
+    {
+      "update": 692,
+      "synthetic_dev_rmse": 8.105887562923819
+    },
+    {
+      "update": 700,
+      "synthetic_dev_rmse": 8.089044409861305
+    },
+    {
+      "update": 712,
+      "synthetic_dev_rmse": 8.015594956066959
+    },
+    {
+      "update": 720,
+      "synthetic_dev_rmse": 8.009743404660894
+    },
+    {
+      "update": 728,
+      "synthetic_dev_rmse": 8.008821753883906
+    },
+    {
+      "update": 736,
+      "synthetic_dev_rmse": 8.006916736573825
+    },
+    {
+      "update": 744,
+      "synthetic_dev_rmse": 8.030544683730342
+    },
+    {
+      "update": 756,
+      "synthetic_dev_rmse": 8.066903004339467
+    },
+    {
+      "update": 764,
+      "synthetic_dev_rmse": 8.059227003572
+    },
+    {
+      "update": 772,
+      "synthetic_dev_rmse": 8.018783143242443
+    },
+    {
+      "update": 780,
+      "synthetic_dev_rmse": 7.997002947898402
+    },
+    {
+      "update": 788,
+      "synthetic_dev_rmse": 7.987328002890117
+    },
+    {
+      "update": 800,
+      "synthetic_dev_rmse": 8.002509701333622
+    },
+    {
+      "update": 808,
+      "synthetic_dev_rmse": 8.017321726749701
+    },
+    {
+      "update": 816,
+      "synthetic_dev_rmse": 8.02840062631932
+    },
+    {
+      "update": 824,
+      "synthetic_dev_rmse": 7.996932320512149
+    },
+    {
+      "update": 832,
+      "synthetic_dev_rmse": 7.975489932769273
+    },
+    {
+      "update": 844,
+      "synthetic_dev_rmse": 7.979295711692176
+    },
+    {
+      "update": 852,
+      "synthetic_dev_rmse": 7.985025146727244
+    },
+    {
+      "update": 860,
+      "synthetic_dev_rmse": 7.990691057235832
+    },
+    {
+      "update": 868,
+      "synthetic_dev_rmse": 8.0289312721372
+    },
+    {
+      "update": 876,
+      "synthetic_dev_rmse": 7.991730863307292
+    },
+    {
+      "update": 888,
+      "synthetic_dev_rmse": 7.957879366062456
+    },
+    {
+      "update": 896,
+      "synthetic_dev_rmse": 8.03816302538251
+    },
+    {
+      "update": 904,
+      "synthetic_dev_rmse": 8.021750494672022
+    },
+    {
+      "update": 912,
+      "synthetic_dev_rmse": 7.974301831055729
+    },
+    {
+      "update": 920,
+      "synthetic_dev_rmse": 8.012754244160083
+    },
+    {
+      "update": 932,
+      "synthetic_dev_rmse": 8.014657988095765
+    },
+    {
+      "update": 940,
+      "synthetic_dev_rmse": 8.032285433398716
+    },
+    {
+      "update": 948,
+      "synthetic_dev_rmse": 7.990522107937276
+    },
+    {
+      "update": 956,
+      "synthetic_dev_rmse": 7.956958893706367
+    },
+    {
+      "update": 964,
+      "synthetic_dev_rmse": 7.952628157594969
+    },
+    {
+      "update": 976,
+      "synthetic_dev_rmse": 7.9611766207527905
+    },
+    {
+      "update": 984,
+      "synthetic_dev_rmse": 7.936666028553827
+    },
+    {
+      "update": 992,
+      "synthetic_dev_rmse": 7.962516573792952
+    },
+    {
+      "update": 1000,
+      "synthetic_dev_rmse": 7.967190488448774
+    },
+    {
+      "update": 1008,
+      "synthetic_dev_rmse": 7.9492022792740205
+    },
+    {
+      "update": 1020,
+      "synthetic_dev_rmse": 7.972717988681495
+    },
+    {
+      "update": 1028,
+      "synthetic_dev_rmse": 7.95467939357895
+    },
+    {
+      "update": 1036,
+      "synthetic_dev_rmse": 7.93711713195984
+    },
+    {
+      "update": 1044,
+      "synthetic_dev_rmse": 7.932620492056858
+    },
+    {
+      "update": 1052,
+      "synthetic_dev_rmse": 7.945797510868702
+    },
+    {
+      "update": 1064,
+      "synthetic_dev_rmse": 7.944713871754458
+    },
+    {
+      "update": 1072,
+      "synthetic_dev_rmse": 7.926830843522486
+    },
+    {
+      "update": 1080,
+      "synthetic_dev_rmse": 7.927213738709233
+    },
+    {
+      "update": 1088,
+      "synthetic_dev_rmse": 7.90988877177763
+    },
+    {
+      "update": 1096,
+      "synthetic_dev_rmse": 7.9328868968664
+    },
+    {
+      "update": 1108,
+      "synthetic_dev_rmse": 7.912952899957117
+    },
+    {
+      "update": 1116,
+      "synthetic_dev_rmse": 7.909902395301864
+    },
+    {
+      "update": 1124,
+      "synthetic_dev_rmse": 7.910944772782358
+    },
+    {
+      "update": 1132,
+      "synthetic_dev_rmse": 7.911303899623659
+    },
+    {
+      "update": 1140,
+      "synthetic_dev_rmse": 7.9154948010015955
+    },
+    {
+      "update": 1152,
+      "synthetic_dev_rmse": 7.9104196435313
+    },
+    {
+      "update": 1160,
+      "synthetic_dev_rmse": 7.913876300677906
+    },
+    {
+      "update": 1168,
+      "synthetic_dev_rmse": 7.909220167944661
+    },
+    {
+      "update": 1176,
+      "synthetic_dev_rmse": 7.919103899502363
+    },
+    {
+      "update": 1184,
+      "synthetic_dev_rmse": 7.918228837355353
+    },
+    {
+      "update": 1196,
+      "synthetic_dev_rmse": 7.910145353575082
+    },
+    {
+      "update": 1204,
+      "synthetic_dev_rmse": 7.908904363401616
+    },
+    {
+      "update": 1212,
+      "synthetic_dev_rmse": 7.908976307850743
+    },
+    {
+      "update": 1220,
+      "synthetic_dev_rmse": 7.910470222457464
+    },
+    {
+      "update": 1228,
+      "synthetic_dev_rmse": 7.910943704743412
+    },
+    {
+      "update": 1240,
+      "synthetic_dev_rmse": 7.910954224274695
+    },
+    {
+      "update": 1248,
+      "synthetic_dev_rmse": 7.907108004505478
+    },
+    {
+      "update": 1256,
+      "synthetic_dev_rmse": 7.905153492596379
+    },
+    {
+      "update": 1264,
+      "synthetic_dev_rmse": 7.909244700291837
+    },
+    {
+      "update": 1272,
+      "synthetic_dev_rmse": 7.9081205791355815
+    },
+    {
+      "update": 1284,
+      "synthetic_dev_rmse": 7.905874272462233
+    },
+    {
+      "update": 1292,
+      "synthetic_dev_rmse": 7.910258371349991
+    },
+    {
+      "update": 1300,
+      "synthetic_dev_rmse": 7.911113272447135
+    },
+    {
+      "update": 1308,
+      "synthetic_dev_rmse": 7.909544014935591
+    },
+    {
+      "update": 1316,
+      "synthetic_dev_rmse": 7.91160619652241
+    },
+    {
+      "update": 1328,
+      "synthetic_dev_rmse": 7.906206065181915
+    },
+    {
+      "update": 1336,
+      "synthetic_dev_rmse": 7.907123412877912
+    },
+    {
+      "update": 1344,
+      "synthetic_dev_rmse": 7.903740469444507
+    },
+    {
+      "update": 1352,
+      "synthetic_dev_rmse": 7.904897624281134
+    },
+    {
+      "update": 1360,
+      "synthetic_dev_rmse": 7.906287651304418
+    },
+    {
+      "update": 1372,
+      "synthetic_dev_rmse": 7.905389364220259
+    },
+    {
+      "update": 1380,
+      "synthetic_dev_rmse": 7.907327362594703
+    },
+    {
+      "update": 1388,
+      "synthetic_dev_rmse": 7.912113268121723
+    },
+    {
+      "update": 1396,
+      "synthetic_dev_rmse": 7.906655549126235
+    },
+    {
+      "update": 1404,
+      "synthetic_dev_rmse": 7.905732937470095
+    },
+    {
+      "update": 1416,
+      "synthetic_dev_rmse": 7.903690312272333
+    },
+    {
+      "update": 1424,
+      "synthetic_dev_rmse": 7.90395425932856
+    },
+    {
+      "update": 1432,
+      "synthetic_dev_rmse": 7.90348161516571
+    },
+    {
+      "update": 1440,
+      "synthetic_dev_rmse": 7.902545576821228
+    },
+    {
+      "update": 1448,
+      "synthetic_dev_rmse": 7.903783748011349
+    },
+    {
+      "update": 1460,
+      "synthetic_dev_rmse": 7.901363975835565
+    },
+    {
+      "update": 1468,
+      "synthetic_dev_rmse": 7.900668156213529
+    },
+    {
+      "update": 1476,
+      "synthetic_dev_rmse": 7.903411891783318
+    },
+    {
+      "update": 1484,
+      "synthetic_dev_rmse": 7.901044077543655
+    },
+    {
+      "update": 1492,
+      "synthetic_dev_rmse": 7.903202690719953
+    },
+    {
+      "update": 1504,
+      "synthetic_dev_rmse": 7.906498836567103
+    },
+    {
+      "update": 1512,
+      "synthetic_dev_rmse": 7.904671911826466
+    },
+    {
+      "update": 1520,
+      "synthetic_dev_rmse": 7.90735217977162
+    },
+    {
+      "update": 1528,
+      "synthetic_dev_rmse": 7.904498962665747
+    },
+    {
+      "update": 1536,
+      "synthetic_dev_rmse": 7.900931385347029
+    }
+  ],
+  "checkpoint_saves": [
+    {
+      "update": 272,
+      "synthetic_dev_rmse": 11.88006035862314
+    },
+    {
+      "update": 280,
+      "synthetic_dev_rmse": 11.87651450246906
+    },
+    {
+      "update": 304,
+      "synthetic_dev_rmse": 11.460529094495618
+    },
+    {
+      "update": 316,
+      "synthetic_dev_rmse": 10.994649444363047
+    },
+    {
+      "update": 324,
+      "synthetic_dev_rmse": 10.786348028237803
+    },
+    {
+      "update": 340,
+      "synthetic_dev_rmse": 10.549341845531814
+    },
+    {
+      "update": 348,
+      "synthetic_dev_rmse": 10.326589856158678
+    },
+    {
+      "update": 368,
+      "synthetic_dev_rmse": 10.21799759585257
+    },
+    {
+      "update": 376,
+      "synthetic_dev_rmse": 10.10877294911524
+    },
+    {
+      "update": 392,
+      "synthetic_dev_rmse": 9.651033010542353
+    },
+    {
+      "update": 404,
+      "synthetic_dev_rmse": 9.474855285809014
+    },
+    {
+      "update": 420,
+      "synthetic_dev_rmse": 9.355232018366953
+    },
+    {
+      "update": 428,
+      "synthetic_dev_rmse": 9.33234141850669
+    },
+    {
+      "update": 436,
+      "synthetic_dev_rmse": 9.182830979765939
+    },
+    {
+      "update": 448,
+      "synthetic_dev_rmse": 9.107473067895206
+    },
+    {
+      "update": 456,
+      "synthetic_dev_rmse": 8.997667170005512
+    },
+    {
+      "update": 508,
+      "synthetic_dev_rmse": 8.797964830331274
+    },
+    {
+      "update": 536,
+      "synthetic_dev_rmse": 8.432154346234068
+    },
+    {
+      "update": 568,
+      "synthetic_dev_rmse": 8.33530689406154
+    },
+    {
+      "update": 604,
+      "synthetic_dev_rmse": 8.23994697935961
+    },
+    {
+      "update": 624,
+      "synthetic_dev_rmse": 8.195659670904728
+    },
+    {
+      "update": 632,
+      "synthetic_dev_rmse": 8.138463205580273
+    },
+    {
+      "update": 640,
+      "synthetic_dev_rmse": 8.105783260797063
+    },
+    {
+      "update": 684,
+      "synthetic_dev_rmse": 8.033066440142791
+    },
+    {
+      "update": 712,
+      "synthetic_dev_rmse": 8.015594956066959
+    },
+    {
+      "update": 720,
+      "synthetic_dev_rmse": 8.009743404660894
+    },
+    {
+      "update": 728,
+      "synthetic_dev_rmse": 8.008821753883906
+    },
+    {
+      "update": 736,
+      "synthetic_dev_rmse": 8.006916736573825
+    },
+    {
+      "update": 780,
+      "synthetic_dev_rmse": 7.997002947898402
+    },
+    {
+      "update": 788,
+      "synthetic_dev_rmse": 7.987328002890117
+    },
+    {
+      "update": 832,
+      "synthetic_dev_rmse": 7.975489932769273
+    },
+    {
+      "update": 888,
+      "synthetic_dev_rmse": 7.957879366062456
+    },
+    {
+      "update": 956,
+      "synthetic_dev_rmse": 7.956958893706367
+    },
+    {
+      "update": 964,
+      "synthetic_dev_rmse": 7.952628157594969
+    },
+    {
+      "update": 984,
+      "synthetic_dev_rmse": 7.936666028553827
+    },
+    {
+      "update": 1044,
+      "synthetic_dev_rmse": 7.932620492056858
+    },
+    {
+      "update": 1072,
+      "synthetic_dev_rmse": 7.926830843522486
+    },
+    {
+      "update": 1088,
+      "synthetic_dev_rmse": 7.90988877177763
+    },
+    {
+      "update": 1168,
+      "synthetic_dev_rmse": 7.909220167944661
+    },
+    {
+      "update": 1204,
+      "synthetic_dev_rmse": 7.908904363401616
+    },
+    {
+      "update": 1248,
+      "synthetic_dev_rmse": 7.907108004505478
+    },
+    {
+      "update": 1256,
+      "synthetic_dev_rmse": 7.905153492596379
+    },
+    {
+      "update": 1344,
+      "synthetic_dev_rmse": 7.903740469444507
+    },
+    {
+      "update": 1416,
+      "synthetic_dev_rmse": 7.903690312272333
+    },
+    {
+      "update": 1432,
+      "synthetic_dev_rmse": 7.90348161516571
+    },
+    {
+      "update": 1440,
+      "synthetic_dev_rmse": 7.902545576821228
+    },
+    {
+      "update": 1460,
+      "synthetic_dev_rmse": 7.901363975835565
+    },
+    {
+      "update": 1468,
+      "synthetic_dev_rmse": 7.900668156213529
+    }
+  ]
+}

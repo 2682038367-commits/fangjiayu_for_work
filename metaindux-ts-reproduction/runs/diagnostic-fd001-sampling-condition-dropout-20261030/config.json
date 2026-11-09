@@ -1,0 +1,47 @@
+{
+  "checkpoints": [
+    13,
+    23
+  ],
+  "screening_sampling_seed": 103,
+  "confirmation_sampling_seeds": [
+    113,
+    123
+  ],
+  "evaluator_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "controls": "reuse immutable previous resampling cells",
+  "factor": "sampling conditional CFG branch effective drop probability0.2 to0; consume original RNG draw",
+  "unconditional_drop_probability": 1.0,
+  "cfg_scale": 3.0,
+  "diffusion": "original DDPM1000 linear pred_noise",
+  "sample_count": 15931,
+  "shape": [
+    15931,
+    48,
+    14
+  ],
+  "batch_size": 256,
+  "noise_control": "exact actual noise/mask tensors and CUDA states checked against independent legacy-schedule generator",
+  "cached_control_link": "frozen provenance + same preconstruction RNG state + first256 original-control replay",
+  "prefix_max_abs_tolerance": 1e-06,
+  "clear_change": {
+    "ds_absolute_mean_change": 0.03,
+    "paired_same_direction_at_least": 4,
+    "inverse_reference": "dev_matched",
+    "inverse_absolute_rmse_change": 1.0,
+    "inverse_relative_rmse_change": 0.1,
+    "combination": "DS gate OR inverse gate, either direction, either checkpoint"
+  },
+  "stop": "103 screen; if triggered BOTH checkpoints113/123, max6 new full samples/30 new discriminator fits",
+  "caveats": [
+    "Historical extreme checkpoints; exploratory conditional confirmation selection",
+    "Real-trained predictor readout is a proxy, not physical truth or downstream utility",
+    "No full noise tape from cached controls; use source audit, prefix replay and reconstructed legacy schedule"
+  ]
+}

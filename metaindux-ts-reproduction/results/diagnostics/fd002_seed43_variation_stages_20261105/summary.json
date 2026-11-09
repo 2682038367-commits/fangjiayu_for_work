@@ -1,0 +1,90 @@
+{
+  "training": {
+    "checks": {
+      "training_loss.csv": false,
+      "training_batch_zero_draws.csv": true,
+      "epoch_state_hashes.json": false,
+      "all70_orders_equal": true,
+      "initial_parameters_equal": true,
+      "all70_rng_states_equal": true,
+      "all70_parameter_hashes_equal": false,
+      "all70_optimizer_hashes_equal": false,
+      "all11410_losses_equal": false,
+      "best_tensor_hash_equal": false,
+      "phase_tensor_hash_equal": false,
+      "final70_tensor_hash_equal": false
+    },
+    "first_different_loss_update": 1,
+    "first_different_parameter_epoch": 1,
+    "native_pair_exact": false,
+    "paired_to_fixed": [
+      {
+        "initial_equal": true,
+        "all70_orders_equal": true,
+        "batch_zero_draws_equal": true
+      },
+      {
+        "initial_equal": true,
+        "all70_orders_equal": true,
+        "batch_zero_draws_equal": true
+      }
+    ],
+    "fixed_pair_exact": true,
+    "interpretation": "Two prospective native runs only; equal outcome does not disprove previously observed native kernel variability, and no extra attempts are allowed."
+  },
+  "sampling": {
+    "data_bit_identical": true,
+    "labels_bit_identical": true,
+    "different_elements": 0,
+    "max_abs": 0.0
+  },
+  "evaluation_repeat": {
+    "exact_equal": true,
+    "max_abs_difference": 0.0,
+    "interpretation": "Exact same-data evaluator repeat only if the sample array equality gate passes."
+  },
+  "discriminative_scores": [
+    {
+      "cell": "historical_a",
+      "mean_DS": 0.4351709195955705,
+      "scores": [
+        0.4670197400096293,
+        0.4327154549831488,
+        0.4186928261916225,
+        0.4214010592200289,
+        0.4360255175734232
+      ],
+      "source": "results/diagnostics/fd002_seed43_variation_stages_20261105/sampling/historical_a/seed43/phase/evaluation_checkpoint43_sample103.csv"
+    },
+    {
+      "cell": "historical_a_repeat",
+      "mean_DS": 0.4351709195955705,
+      "scores": [
+        0.4670197400096293,
+        0.4327154549831488,
+        0.4186928261916225,
+        0.4214010592200289,
+        0.4360255175734232
+      ],
+      "source": "results/diagnostics/fd002_seed43_variation_stages_20261105/sampling/historical_a_repeat/seed43/phase/evaluation_checkpoint43_sample103.csv"
+    },
+    {
+      "cell": "native_rerun_b",
+      "mean_DS": 0.17716658642272504,
+      "scores": [
+        0.1656836783822821,
+        0.1625541646605681,
+        0.2403105440539239,
+        0.1712806933076552,
+        0.1460038517091959
+      ],
+      "source": "results/diagnostics/fd002_seed43_variation_stages_20261105/sampling/native_rerun_b/seed43/phase/evaluation_checkpoint43_sample103.csv"
+    }
+  ],
+  "checkpoint_effect": {
+    "mean_B_minus_A": -0.25800433317284555,
+    "paired_direction_count": 5,
+    "descriptive_screen_passed": true,
+    "caveat": "Five paired discriminator seeds, one generated batch per checkpoint; descriptive screen, not independent generator replications or full historical causal recovery."
+  }
+}

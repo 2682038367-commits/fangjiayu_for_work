@@ -1,0 +1,211 @@
+{
+  "run_id": "diagnostic-fd001-seed13-condition-segments-20261102",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261102-fd001-seed13-condition-segments",
+  "status": "complete",
+  "prepared_at": "2026-11-02T13:46:02.089123+08:00",
+  "config": {
+    "generator_seed": 13,
+    "epochs": [
+      64,
+      70
+    ],
+    "source_rules": [
+      "best",
+      "final70"
+    ],
+    "sampling_seed": 103,
+    "n_generated_full": 15931,
+    "n_evaluated": 3000,
+    "bins": [
+      [
+        "0-30",
+        0,
+        30
+      ],
+      [
+        "31-60",
+        31,
+        60
+      ],
+      [
+        "61-90",
+        61,
+        90
+      ],
+      [
+        "91-124",
+        91,
+        124
+      ],
+      [
+        "125",
+        125,
+        125
+      ]
+    ],
+    "bin_counts": {
+      "0-30": 600,
+      "31-60": 600,
+      "61-90": 600,
+      "91-124": 600,
+      "125": 600
+    },
+    "predictor_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "fixed_index_provenance": "previous common dev_matched list, reference generation_seed23 position",
+    "aggregate_rmse": "sqrt(mean over5 predictors and600 windows squared error), not prediction ensemble",
+    "signed_error": "mean readout-condition; raw unclipped outputs and capped125 conditions",
+    "execution": "reuse hash-bound historical readouts; no new inference or independent repeat",
+    "budget": {
+      "per_predictor_bin_rows": 50,
+      "aggregate_pairs": 5,
+      "new_models": 0,
+      "new_samples": 0
+    },
+    "stop": "one audit/aggregation, any identity failure, no follow-up sensor/coverage intervention automatically"
+  },
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/analysis/diagnostics/audit_fd001_seed13_condition_segments.py",
+    "run"
+  ],
+  "git_head": "be3faf93adfdaf6c2bcde50d116dfb1aa007e74f",
+  "user_authorization": "Explicit experiment2 seed13 epochs64/70 fixed3000 conditions/noise, five real predictors,125 separate",
+  "inputs_sha256": {
+    "analysis/diagnostics/audit_fd001_seed13_condition_segments.py": "d70598a4b8a241d2e96a5718bfbfa04f5157765a6bf66fe98587cd8a51c457e6",
+    "docs/operations/FD001_SEED13_CONDITION_SEGMENTS.md": "9f8341797f88a676a0bde868d31e0905f255e0124008c2b057a798e940091f3c",
+    "runs/diagnostic-fd001-final70-two-seeds-20261030/run-manifest.json": "0cec0154decc13ef11e2fe91b538b4f3676be89e47d296de40af45fc4f2d9f0f",
+    "SOURCE_SNAPSHOT.md": "a8f3dc2968bd6076ac9d9cf54c5395b8dd5a2a1d537486c9ec13c2879ac12879",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/training_audit.json": "f871c704fed15a04030e1d007758299520422168d50686379dad3e219fb7474e",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/comparison.csv": "df825ad237d5fd5782ec4ce5604d3b369c7432a193528ad23e9ff108d970cdfc",
+    "results/diagnostics/real_predictor_condition_w48/FD001_predictions.npz": "f6736cdc76ccd0513836d920925d82f19d0b707cab9dcbcc39b1f34b23461d98",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/samples/checkpoint13_sample103.npz": "9246fd922ce88df62f0b0b1351eefd93a3edc504e068880cdc7cca9d2282cffc",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/sample_checkpoint13_seed103.json": "a95fb7d25a3dc5fc86989892ab3f3d00ac73836c5ddd308c4c2e3be51a81bc00",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/condition_predictions.npz": "6ef7b828e44ea05955cd2f9dbc0f6df1a06ebe2d51fb78010173c5dc685e9f5b",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/best/condition_metrics.csv": "e3c40c4b363125aeba43c3ecafa5da7eb7c4a451a029829dd62736b49fe374fe",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/samples/checkpoint13_sample103.npz": "69d8c1b1479948a14982b2e6a7f6515f46bd36768f88d33f8b0bfb7b666e81b8",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/sample_checkpoint13_seed103.json": "16e779d3b55892560469b1b680ee0c25a9e0b630a2f43272c53f07e5d83a1bce",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/condition_predictions.npz": "fb428771be5d89a94287fe30cf231a704292692b4c6c42b72690dfed682719ed",
+    "results/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70/condition_metrics.csv": "dd48cf6f565eaf8682da779229731c9c308429d4533f4c192d50f5fbf12f7373",
+    "checkpoints/diagnostics/fd001_final70_two_seeds_20261030/seed13/best.pth": "647e78e254e0b2b0c4fefd2d3eb2e17e5b9dafed7cfadcdf85a8410268389e95",
+    "checkpoints/diagnostics/fd001_final70_two_seeds_20261030/seed13/final70.pth": "7f45ca020b791c347902f2189076edb9f32e8c57d9cb52ad350f6969d6e8a6ba",
+    "checkpoints/evaluators/real_data_baseline_w48/FD001_eval3.pth": "ff895b46065f805f8aa87d12d90c7bee3577cc6c24cc7bf116ee80c261999644",
+    "checkpoints/evaluators/real_data_baseline_w48/FD001_eval13.pth": "253b3c5dd79b5c4147869efc20214dab2d99093cd727c6db1e72262cf1867d07",
+    "checkpoints/evaluators/real_data_baseline_w48/FD001_eval23.pth": "d46e57105c0a9529b7a13c2fdb6720874d0fe5a734a44bbc42bade0831d76a9c",
+    "checkpoints/evaluators/real_data_baseline_w48/FD001_eval33.pth": "0d99995cbd40b4a13d9c090fb127dbb0b403070d7fd9d8893f0e9f3d99759c3b",
+    "checkpoints/evaluators/real_data_baseline_w48/FD001_eval43.pth": "b34f08083cfffa1ab1c25b019168407ee92a78b17383ad506db039b6deb65247",
+    "runs/diagnostic-fd001-seed13-condition-segments-20261102/config.json": "4a7e863aaf5f8d4d90cf7585d1601666cef8e8126e8f7bff97dbe40b77ae7a93",
+    "runs/diagnostic-fd001-seed13-condition-segments-20261102/frozen_evaluation_list.npz": "ae9b7571a2637966625cf85ac8adacfc233e9bc57ca3d0356430a08a44820397",
+    "runs/diagnostic-fd001-seed13-condition-segments-20261102/source/audit_fd001_seed13_condition_segments.py": "d70598a4b8a241d2e96a5718bfbfa04f5157765a6bf66fe98587cd8a51c457e6",
+    "runs/diagnostic-fd001-seed13-condition-segments-20261102/source/FD001_SEED13_CONDITION_SEGMENTS.md": "9f8341797f88a676a0bde868d31e0905f255e0124008c2b057a798e940091f3c",
+    "runs/diagnostic-fd001-seed13-condition-segments-20261102/workspace.diff": "be7961eab32d0b7fedd1c5511e1f8b8bc3777c2f464c76cabcd5c4f830f84b66",
+    "runs/diagnostic-fd001-seed13-condition-segments-20261102/git-status.txt": "533c14c995f421e6c3d1adf9188157cc7bcdacc995318762b821af097ad4a95e",
+    "runs/diagnostic-fd001-seed13-condition-segments-20261102/environment-freeze.txt": "6cf9cf5532a3788655f3b1bde3a3be9d252715af3555b3746987b43d940dfc00"
+  },
+  "preflight": {
+    "prior_hashes_verified": true,
+    "same_conditions_and_generated_indices": true,
+    "same_predictor_weights": true,
+    "same_full_actual_noise_trace": true,
+    "counts": {
+      "0-30": 600,
+      "31-60": 600,
+      "61-90": 600,
+      "91-124": 600,
+      "125": 600
+    }
+  },
+  "no_new_training_sampling_or_inference": true,
+  "started_at": "2026-11-02T13:46:10.066366+08:00",
+  "completed_at": "2026-11-02T13:46:10.620525+08:00",
+  "paired_segments": [
+    {
+      "bin": "0-30",
+      "n_windows": 600,
+      "rmse64": 16.646126979446397,
+      "rmse70": 18.55673656291033,
+      "rmse_change": 1.910609583463934,
+      "rmse_relative_change": 0.11477802529219172,
+      "signed64": 2.7799447795661787,
+      "signed70": 3.6776173437399167,
+      "signed_shift": 0.897672564173738,
+      "n_predictors_rmse_higher": 5,
+      "n_predictors_rmse_lower": 0,
+      "n_predictors_signed_shift_positive": 5
+    },
+    {
+      "bin": "31-60",
+      "n_windows": 600,
+      "rmse64": 7.235805180386251,
+      "rmse70": 8.939233279322417,
+      "rmse_change": 1.7034280989361665,
+      "rmse_relative_change": 0.23541652331292262,
+      "signed64": 2.487489060084025,
+      "signed70": 5.035212874730428,
+      "signed_shift": 2.547723814646403,
+      "n_predictors_rmse_higher": 5,
+      "n_predictors_rmse_lower": 0,
+      "n_predictors_signed_shift_positive": 5
+    },
+    {
+      "bin": "61-90",
+      "n_windows": 600,
+      "rmse64": 8.712927173752453,
+      "rmse70": 12.82318458948523,
+      "rmse_change": 4.110257415732777,
+      "rmse_relative_change": 0.4717424275179136,
+      "signed64": 2.339273235321045,
+      "signed70": 9.471005184173585,
+      "signed_shift": 7.13173194885254,
+      "n_predictors_rmse_higher": 5,
+      "n_predictors_rmse_lower": 0,
+      "n_predictors_signed_shift_positive": 5
+    },
+    {
+      "bin": "91-124",
+      "n_windows": 600,
+      "rmse64": 8.108550175850565,
+      "rmse70": 11.16995103232959,
+      "rmse_change": 3.0614008564790254,
+      "rmse_relative_change": 0.37755218751641895,
+      "signed64": -0.9475063781738281,
+      "signed70": 8.235743494669597,
+      "signed_shift": 9.183249872843426,
+      "n_predictors_rmse_higher": 5,
+      "n_predictors_rmse_lower": 0,
+      "n_predictors_signed_shift_positive": 5
+    },
+    {
+      "bin": "125",
+      "n_windows": 600,
+      "rmse64": 8.846785713458644,
+      "rmse70": 4.791524382259683,
+      "rmse_change": -4.0552613311989605,
+      "rmse_relative_change": -0.4583881041709509,
+      "signed64": -6.517176953633626,
+      "signed70": 0.31465968322753907,
+      "signed_shift": 6.831836636861166,
+      "n_predictors_rmse_higher": 0,
+      "n_predictors_rmse_lower": 5,
+      "n_predictors_signed_shift_positive": 5
+    }
+  ],
+  "outputs_sha256": {
+    "results/diagnostics/fd001_seed13_condition_segments_20261102/matched_predictions.npz": "3cceb8ef853d84653552b00f9363faf1e4ea2ed1b5ee314eb74989566c88e3ae",
+    "results/diagnostics/fd001_seed13_condition_segments_20261102/condition_segments.png": "3b6a7c54130bc2fd8cb559bb8f5d7d94619ba6521f8fdb0d7f567f1a62153ade",
+    "results/diagnostics/fd001_seed13_condition_segments_20261102/condition_segments.pdf": "09b03cb3bd7db792a0fdc434bdfdeeea6731281e3f98e6fecc6ad648c3cc6bb7",
+    "results/diagnostics/fd001_seed13_condition_segments_20261102/paired_segments.csv": "c1a73e1e2d93543729df10f1bbdc8f7a289d1e56c142e144c15aee5dbb52ca5e",
+    "results/diagnostics/fd001_seed13_condition_segments_20261102/aggregate_segments.csv": "01cfccec73b9744be8aa224bbde8a490e88083233ee5f8cacbb426f4bcb6db3f",
+    "results/diagnostics/fd001_seed13_condition_segments_20261102/per_predictor_segments.csv": "584b97330025393d17b48586a74c603e68d77e3fd64d7d63a3003c50c55520a9",
+    "results/diagnostics/fd001_seed13_condition_segments_20261102/existing_real_downstream_context.csv": "c8129ad56a6c41244eee1f4ef549c3b3215fd0fadcd91be818a1d2d737096eb3",
+    "results/diagnostics/fd001_seed13_condition_segments_20261102/audit.json": "423ea76dd71fd281aed0047cddd8d0c56c4f43470ecb58ec10c346e752e4e689",
+    "docs/conclusions/final/fd001_seed13_condition_segments_20261102_report.md": "c0c6c3d55e5132df289844e52d1113780be993755ac2a71d2ccc3682c08bcc0b"
+  }
+}

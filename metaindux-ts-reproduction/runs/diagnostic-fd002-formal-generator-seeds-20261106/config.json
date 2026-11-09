@@ -1,0 +1,25 @@
+{
+  "generation_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "evaluator_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "independent_generation_units": 5,
+  "predictor_fits_per_generator": 5,
+  "existing_cells": 25,
+  "paper_reference": 24.565,
+  "metric": "Arithmetic mean of each generator five predictor RMSEs, then mean five generator means",
+  "variability": "Sample SD ddof1 and min/max over five predictor seeds per generator",
+  "gap_contribution": "(generator mean - paper reference)/5; signed arithmetic decomposition, not causal attribution",
+  "exclusions": "Leave out the largest-mean generator only as descriptive sensitivity; retain all5 in headline",
+  "stop": "Read25existing cells only; no new training, sampling, inference, seed search or significance claims against unknown paper variance"
+}

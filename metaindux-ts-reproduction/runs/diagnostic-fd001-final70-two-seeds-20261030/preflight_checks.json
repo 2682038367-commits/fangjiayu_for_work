@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "checked_at": "2026-10-30T15:38:05.947729+08:00",
+  "original_checkpoints": [
+    {
+      "seed": 13,
+      "strict_load": true,
+      "every_module_eval": true,
+      "initial_frequency_matches_original": true
+    },
+    {
+      "seed": 3,
+      "strict_load": true,
+      "every_module_eval": true,
+      "initial_frequency_matches_original": true
+    }
+  ],
+  "matched_actual_normal_tensors": 2,
+  "conditional_always_retained": true,
+  "unconditional_preserved": true,
+  "frozen_validation_and_split_bit_identical": true,
+  "predictor_args_identical": true,
+  "matched_condition3000_labels": true,
+  "all_frozen_hashes_verified": true
+}

@@ -1,0 +1,134 @@
+{
+  "status": "complete",
+  "arms": [
+    {
+      "arm": "public",
+      "generation_runs": 7,
+      "predictor_evaluations": 35,
+      "RMSE": 28.294635405287494,
+      "RMSE_SD_generation_means": 3.97317350268789,
+      "DS": 0.2620778595501753,
+      "DS_SD_generation_means": 0.18563342954416923,
+      "batches_mean_DS_above03": 3,
+      "RMSE_improving_vs_public": 0
+    },
+    {
+      "arm": "fixed025",
+      "generation_runs": 7,
+      "predictor_evaluations": 35,
+      "RMSE": 25.976526679593672,
+      "RMSE_SD_generation_means": 2.323543217814369,
+      "DS": 0.14110667858862366,
+      "DS_SD_generation_means": 0.07064816172977857,
+      "batches_mean_DS_above03": 0,
+      "RMSE_improving_vs_public": 4
+    },
+    {
+      "arm": "soft",
+      "generation_runs": 7,
+      "predictor_evaluations": 35,
+      "RMSE": 27.02841424287711,
+      "RMSE_SD_generation_means": 2.818911269364029,
+      "DS": 0.22387027993672187,
+      "DS_SD_generation_means": 0.1533599131184458,
+      "batches_mean_DS_above03": 2,
+      "RMSE_improving_vs_public": 5
+    },
+    {
+      "arm": "binarySTE",
+      "generation_runs": 7,
+      "predictor_evaluations": 35,
+      "RMSE": 29.3652653492245,
+      "RMSE_SD_generation_means": 3.0066313443571695,
+      "DS": 0.29433592406630443,
+      "DS_SD_generation_means": 0.14707993261545,
+      "batches_mean_DS_above03": 4,
+      "RMSE_improving_vs_public": 1
+    }
+  ],
+  "fixed_vs_public_tests": {
+    "rmse": {
+      "n_generator_pairs": 7,
+      "mean_fixed_minus_public": -2.3181087256938193,
+      "paired_t_p": 0.18413830177321328,
+      "wilcoxon_exact_p": 0.21875,
+      "CI95": [
+        -6.0981506176793,
+        1.4619331662916615
+      ],
+      "improving_generator_seeds": 4
+    },
+    "discriminative_score": {
+      "n_generator_pairs": 7,
+      "mean_fixed_minus_public": -0.1209711809615517,
+      "paired_t_p": 0.14364945726827402,
+      "wilcoxon_exact_p": 0.296875,
+      "CI95": [
+        -0.2970019240383256,
+        0.05505956211522221
+      ],
+      "improving_generator_seeds": 4
+    }
+  },
+  "initial_targeted3seed": {
+    "public": {
+      "rmse": 27.251998195753913,
+      "discriminative_score": 0.32802519659765683
+    },
+    "fixed025": {
+      "rmse": 26.245305868034368,
+      "discriminative_score": 0.15715775958915099
+    }
+  },
+  "public_quantile_correlations": [
+    {
+      "dataset": "FD001",
+      "n": 5,
+      "p_values": [
+        0.35,
+        0.95,
+        0.35
+      ]
+    },
+    {
+      "dataset": "FD002",
+      "n": 7,
+      "p_values": [
+        0.783,
+        0.139,
+        0.302
+      ]
+    },
+    {
+      "dataset": "FD003",
+      "n": 5,
+      "p_values": [
+        0.35,
+        0.95,
+        0.35
+      ]
+    },
+    {
+      "dataset": "FD004",
+      "n": 5,
+      "p_values": [
+        0.783,
+        0.683,
+        0.783
+      ]
+    }
+  ],
+  "shared_split_sha256": "8c390ebfebf4cc3b18ff4b9e0cfa93c7b883e8d6a213364fc45d8bed80e82c76",
+  "confirmed": "Public hard-quantile parameter is initialized once and disconnected from loss by boolean mask; not learned. Fixed0.25 and learnable variants have completed FD002 diagnostic data.",
+  "not_confirmed": "No stable benefit of fixed0.25 established in7seed tests; no universal learnable-threshold advantage; no monotone threshold-size explanation of public variability.",
+  "retired": [
+    "Soft/STE energy threshold interpreted as actual drop fraction",
+    "Near-zero threshold interpreted directly as branch degeneration",
+    "Initial3seed improvement generalized to overall stability",
+    "Individual old paired improvements uniquely attributed to threshold despite uncontrolled native cuDNN variability"
+  ],
+  "limits": "Fixed quantile0.25, soft constrained energy threshold and STE positive energy threshold differ in semantics. soft/STE are local implementations with unspecified paper details, not author-exact. Old training actualcuDNN paths not held equal. Not a fixed-cuDNN threshold intervention.",
+  "new_training": 0,
+  "new_sampling": 0,
+  "new_probe": 0
+}

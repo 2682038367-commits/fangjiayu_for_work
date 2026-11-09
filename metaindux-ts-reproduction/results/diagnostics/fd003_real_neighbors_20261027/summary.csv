@@ -1,0 +1,5 @@
+representation,n_queries,n_above95,n_distinct_above95,median_percentile
+coupling_raw,21,1,1,51.0
+dynamics,21,4,4,47.0
+joint,21,3,1,51.0
+level,21,1,1,56.99999999999999

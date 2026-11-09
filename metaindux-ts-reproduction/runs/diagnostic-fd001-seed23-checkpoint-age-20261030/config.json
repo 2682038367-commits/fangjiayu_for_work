@@ -1,0 +1,48 @@
+{
+  "training_seed": 23,
+  "training_epochs": 70,
+  "batch_size": 256,
+  "batches_per_epoch": 63,
+  "updates": 4410,
+  "observed_epochs_one_based": [
+    15,
+    64,
+    70
+  ],
+  "observed_update_counts": {
+    "15": 945,
+    "64": 4032,
+    "70": 4410
+  },
+  "optimizer": "Adam",
+  "learning_rate": 0.002,
+  "lr_schedule": "warmup_cosine",
+  "warmup_multiplier": 2.5,
+  "grad_clip": 1.0,
+  "training_condition_dropout": 0.2,
+  "training_numeric_batch_zero_probability": 0.1,
+  "model": "original UNet1D_fre dim32/(1,2)/14, hard_random_quantile; no threshold override",
+  "sampling_seed": 103,
+  "sampling_variant": "always retain condition; consume original RNG mask; null CFG branch unchanged",
+  "sampling": "original DDPM1000 linear pred_noise CFG3 batch256",
+  "sample_count": 15931,
+  "evaluator_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "original_epoch15_anchor": "results/diagnostics/fd001_sampling_condition_dropout_paired_20261030/retain_condition",
+  "reproduction": {
+    "max_abs_mean_ds_difference": 0.03,
+    "same_ds_failure_category": true,
+    "max_relative_dev_inverse_rmse_difference": 0.1
+  },
+  "clear_later_gain": {
+    "min_mean_ds_reduction": 0.03,
+    "min_paired_ds_decreases": 4
+  },
+  "stop": "one70epoch rerun, epoch15 reproduction gate before later sampling;max3fullsamples/15newDSfits, no extra seeds/training",
+  "limitation": "Original late weights missing; conclusions concern a same-setting rerun, not direct historical proof"
+}

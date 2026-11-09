@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "repeated_original_forward_identical": true,
+  "original_loss_matches_actual_noise_mse": true,
+  "saved_draws_consumed_exactly": true,
+  "numeric_and_embedding_masks_separate": true,
+  "no_rng_draws_during_forward": true,
+  "loss": 0.059255607426166534
+}

@@ -1,0 +1,17 @@
+{
+  "service": "metaindux-fd002-seed43-variation-stages-20261105.service",
+  "console_log": "logs/fd002_seed43_variation_stages_20261105.log",
+  "verified_progress": {
+    "completed_epochs": 6,
+    "total_epochs": 70,
+    "actual_optimizer_updates": 978,
+    "updated_at": "2026-11-05T13:30:28.685697+08:00"
+  },
+  "actual_flags": {
+    "benchmark": true,
+    "deterministic": false,
+    "global_strict": false,
+    "cudnn_tf32": true,
+    "matmul_tf32": false
+  }
+}

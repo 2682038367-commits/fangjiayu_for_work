@@ -1,0 +1,21 @@
+{
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "status": "failed_input_parity_guard",
+  "started_at": "2026-11-03T09:27:03.719422+08:00",
+  "reason": "Supplementary capture differs upstream at op310; op721 input differs, so exact original-pair replay guard correctly stopped. No standalone calls ran. No further full forwards.",
+  "source_transformation": "raw-storage predicate only; no model/arithmetic changes; frozen source unchanged",
+  "budget": {
+    "additional_full_first_batch_forward": 1,
+    "standalone_op_calls": 4,
+    "backward_calls": 0,
+    "optimizer_updates": 0
+  },
+  "inputs_sha256": {
+    "analysis/diagnostics/confirm_fd002_first_batch_operator.py": "2ade561ba78ad7f7ec10c19fd66163b09bcefb3f4f9ffd99aa25fb2050e12254",
+    "runs/diagnostic-fd002-first-batch-op-localization-20261103/run-manifest.json": "8073ec76c29e3a0a41573f81b7064b11b91eb031c8b9388d5e6f98f9b0d572fb",
+    "results/diagnostics/fd002_first_batch_op_localization_20261103/operator_comparison.json": "e5ef3de8d253e7c0a4c26844064b22b4ea6e4fe79ddd5ca267e9f6ee9703c040",
+    "scripts/localize_fd002_first_batch_ops.py": "4fae2a47093581d520e587c6f01706e48f5e89fb298c614bedb8896c968cf9df"
+  },
+  "failed_at": "2026-11-03T09:30:22.937335+08:00"
+}

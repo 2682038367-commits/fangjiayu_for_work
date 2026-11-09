@@ -1,0 +1,7 @@
+{
+  "reason": "Initial per-domain exactRUL matching controlled RUL within each domain, but support differed across domains. Restrict BOTH domains to intersection of existing matched RUL strata per pair for more conservative replication.",
+  "selection_uses_curve_features": false,
+  "selection_uses_probe_outcomes": false,
+  "ridge_refits": 0,
+  "same_features_and_thresholds": true
+}

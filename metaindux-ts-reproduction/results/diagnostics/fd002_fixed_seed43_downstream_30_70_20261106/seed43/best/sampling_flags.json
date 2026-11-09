@@ -1,0 +1,5 @@
+{
+  "benchmark": false,
+  "deterministic": true,
+  "global_strict": false
+}

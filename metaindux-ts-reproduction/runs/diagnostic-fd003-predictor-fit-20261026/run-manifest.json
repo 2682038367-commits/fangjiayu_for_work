@@ -1,0 +1,453 @@
+{
+  "run_id": "diagnostic-fd003-predictor-fit-20261026",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261026-fd003-predictor-fit",
+  "status": "complete",
+  "started_at": "2026-10-26T17:26:33.756227+08:00",
+  "user_authorization": "User explicitly continued annotated saved-predictor train/dev/real-test check",
+  "no_training": true,
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "analysis/diagnostics/check_fd003_predictor_fit.py"
+  ],
+  "source_snapshot": "SOURCE_SNAPSHOT.md",
+  "source_commit": "989f6a50296bea084d21463cc216dc781e36250d",
+  "tracked_patch_sha256": "9968ff3ffa8dbeb3e7fc272d2da241e645bb27700e22be4be40e6e505717f2bf",
+  "inputs_sha256": {
+    "analysis/diagnostics/check_fd003_predictor_fit.py": "036090d9a65ae72342641d4e339b785c3b391f0afe063f2999db1937c806fa72",
+    "docs/operations/FD003_PREDICTOR_FIT_DIAGNOSTIC.md": "9b437e2679882270d1184c9afac300ba7514f9849acb16c65e884a59167ef629",
+    "upstream/data/CMAPSSDataset.py": "7e1cbc33a32ff898aeb09830a2d4617e101ed4bb555560d3d2c2918f53653b03",
+    "upstream/models/LSTM.py": "7f30c8bb1bb184e628fac1d486a39cf429ecb954ad873a7b8da6ae289480e996",
+    "scripts/evaluate_real_data_baseline.py": "d0eaee9dacc82aca69dbfa186565447d2258d2f170e30272be2b00d07947cba4",
+    "results/fd003_w48_public_code_manifest.json": "3db5103ac8ea02c03d5881c8f84954265a5db28d236d589875d9e0f815136429",
+    "results/fd003_w48_public_code_split.npz": "cb02c22938ee0be631c8099e15b2c621f7c4b74c5759ef04ebc310db974e0675",
+    "results/diagnostics/rul_segment_errors_w48/predictions.csv": "c4d8b20d097dd36c47a6125ab1eec669bc0c247a8cfbcb47d6e69294ecabf1fa",
+    "results/diagnostics/fd003_local_anchor_20261026/raw.csv": "7fbbd09b4d160a838a83b30c2363976a783049bfa458773ec9d80fab2832cdc0",
+    "results/diagnostics/fd003_local_anchor_20261026/predictions.csv": "9c89ab9a45aca3009051db035adf3bbcab5b6c5aaf9d295a9cae446c3f08a141",
+    "results/diagnostics/fd003_local_anchor_20261026/replacement_indices.npz": "21ecc1f2f96dcde39aba61dc72c0c54bffe4b71f759e6feecf4ab02d461b0d5d",
+    "runs/ext-local-anchor-fd003-seed3-20261026/run-manifest.json": "a084840ff1ba9cd819902ac209df0694349130c66b7fd7bdacc7765c72ce6c8b",
+    "outputs/FD003_w48_seed3.npz": "3a81741bd58826f435ece99178ad00ff06367c0c94f51f6c95c23332b2315cdc",
+    "outputs/FD003_w48_seed13.npz": "7191b70f90631f87e8265777df76bbe8ec06e495118a8bdbc49331efa34f68a5",
+    "outputs/FD003_w48_seed23.npz": "ab4cb2111fdd613ebfd05bbb27492dcb92c1214d3c88fffab0f272642a21d5df",
+    "outputs/FD003_w48_seed33.npz": "61c07cbb44b5ba739e846fcc9bf7dc37c710884a72b22ab34816737e53150f14",
+    "outputs/FD003_w48_seed43.npz": "121c2b1926e4ab7a479a93a66c1f3d3835a7321d5fad92461054fee6169b7b7a",
+    "upstream/data/train_FD003.txt": "2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2",
+    "upstream/data/test_FD003.txt": "299babd63c8d987cef079c4a425429f33b3a34797d803bbe2ad48c29dbd0d790",
+    "upstream/data/RUL_FD003.txt": "df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb",
+    "checkpoints/evaluators/fd003_w48_public_code/gen3_eval3.pth": "5324c80342091250baaa71f5c92a7aa858ee6a139619a960ecb9e7c0005e124f",
+    "checkpoints/evaluators/fd003_w48_public_code/gen3_eval13.pth": "7293bcefa077b637d09b85502cd337fbeafb931ed746c954cccfbbbdffa45af2",
+    "checkpoints/evaluators/fd003_w48_public_code/gen3_eval23.pth": "1f51dab3bd1b8fa9e48fcbf49ebb20fc01fa8081b9cda18fa675d3618bb5093f",
+    "checkpoints/evaluators/fd003_w48_public_code/gen3_eval33.pth": "7a35b72b346bd032cfef23b6328282fe9289e78d3ed95c7bf700dedd846c8fc9",
+    "checkpoints/evaluators/fd003_w48_public_code/gen3_eval43.pth": "8f2ba1298bbd680b5eb23e0aa59fd634f5f997eb2fa39fd75592c3073d5ce8c3",
+    "checkpoints/evaluators/fd003_w48_public_code/gen13_eval3.pth": "09eebbe7780b1e1d923a2fe0908e27ffb608020b726864ec93911fc5cb0dbe66",
+    "checkpoints/evaluators/fd003_w48_public_code/gen13_eval13.pth": "378d9290391336583b43b3649e22d1afb7cf93f96a9f9fc21f14039293d8e233",
+    "checkpoints/evaluators/fd003_w48_public_code/gen13_eval23.pth": "b89300c00d27c8751a95f068e50777b1bf16b59ab2ffaae5484606bd4d068653",
+    "checkpoints/evaluators/fd003_w48_public_code/gen13_eval33.pth": "d941075f181f386bb091af09528b6256aa281ead3651b93cf5b2df3f73a33565",
+    "checkpoints/evaluators/fd003_w48_public_code/gen13_eval43.pth": "4c16137ded4ff96f2b00ef0870a3855dadfe35df119f63cae59f4e1b44f6ca9a",
+    "checkpoints/evaluators/fd003_w48_public_code/gen23_eval3.pth": "76dd507beac6477a20f8c7e2f98f4baa589f2e3165320e135339feff6a02abb2",
+    "checkpoints/evaluators/fd003_w48_public_code/gen23_eval13.pth": "f3609b1d38163203db338fca6a69fbd574a78c8d2dc2b088dd88479ec3104773",
+    "checkpoints/evaluators/fd003_w48_public_code/gen23_eval23.pth": "5b3233c7a74146654272ccd725238a1104b6d60f3d90436dac8b37eda63b1e53",
+    "checkpoints/evaluators/fd003_w48_public_code/gen23_eval33.pth": "524eddac74738d14a55b5a242318e1dc8cc0c3a355b42dd5758b3fc8692ad821",
+    "checkpoints/evaluators/fd003_w48_public_code/gen23_eval43.pth": "f7aae132d7c548fd3b1ba9c85c086a95faf3d95601d1cea23ae1d7c2a17d425c",
+    "checkpoints/evaluators/fd003_w48_public_code/gen33_eval3.pth": "64082e945867143e0c3273f2569a74e1d4668517c12f2814d6b48becd01bc446",
+    "checkpoints/evaluators/fd003_w48_public_code/gen33_eval13.pth": "5afcbb1212980c0db7b829bb002fc2cb9136fe529b1ecc51fadcf7daa7de7eca",
+    "checkpoints/evaluators/fd003_w48_public_code/gen33_eval23.pth": "0323d4b82c3ca79d9cc1684fb073b323086cac8cc5eb7457422986f1c034aa92",
+    "checkpoints/evaluators/fd003_w48_public_code/gen33_eval33.pth": "9925083c17b6c48531164bd254f5c1a379d7af3aa440ba4597d0472f1eb06381",
+    "checkpoints/evaluators/fd003_w48_public_code/gen33_eval43.pth": "3681f9834271a4efe9b2a9d37cb0b5d058e996296936ad1cd693ca438ffbd9fd",
+    "checkpoints/evaluators/fd003_w48_public_code/gen43_eval3.pth": "4cfe31474726b7150eb4b0d25665b4beb056e3f6abf53b86f4bbb85f0703c1db",
+    "checkpoints/evaluators/fd003_w48_public_code/gen43_eval13.pth": "02106a9bcec4980a1e824dcc93f3afad1277a4437b54ce3bec4fde7db49845e2",
+    "checkpoints/evaluators/fd003_w48_public_code/gen43_eval23.pth": "972ff0af1b0d65d215ae38075916c78b694ccfb6efa8216617ab69645ae888a9",
+    "checkpoints/evaluators/fd003_w48_public_code/gen43_eval33.pth": "34b78027193f18002358487f8ff5ff5786b0261cee9c930c0b0deb5d586394ff",
+    "checkpoints/evaluators/fd003_w48_public_code/gen43_eval43.pth": "1389dd25a73f6bb1680b0804180da3cac1f95a0c8870b5395f4e5c0a4b3b2be9",
+    "checkpoints/evaluators/real_data_baseline_w48/FD003_eval3.pth": "5657789c35a2142a399bdf493b9d2905bb40dd04a216e919cdec2eca03351a83",
+    "checkpoints/evaluators/real_data_baseline_w48/FD003_eval13.pth": "c933d4635896b73a307159177965b6d2ce006462a5cf2c3923239c2604030137",
+    "checkpoints/evaluators/real_data_baseline_w48/FD003_eval23.pth": "b72ab66b421baccedd2410ab9d90154e2c9d8d4476540a97b36d05d87cb795e7",
+    "checkpoints/evaluators/real_data_baseline_w48/FD003_eval33.pth": "bb87282a4f5d1f9e4a41e6b16bb7960fe27c1c3ccc1fbb41d7f47fe511510a0e",
+    "checkpoints/evaluators/real_data_baseline_w48/FD003_eval43.pth": "baf9a8c0aa5a3387b89c6e3a706b67a0bfcfe6c2d3d75441ac8c374a70a76c4c",
+    "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_control_eval3.pth": "d0306779100fa9cfe0a0c61666e93e2b8dc423f2ca1acc24ae5451af6defd166",
+    "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_control_eval13.pth": "3dc3ae784186145cc7728bdee40bc336159c729405353c1ef591cd3d587bf4e0",
+    "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_control_eval23.pth": "695f2d87f5dcc8e309bd44101dc0f3c138c97b08262cecd4635a5575e2ad3794",
+    "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_control_eval33.pth": "896bc857b32e434f60b06d4837f82c431d0ae670df7c940f73fd54a075d069d6",
+    "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_control_eval43.pth": "0a637eaf78b59b10ede24f168a55ed84365c07903a5040a78c5693c85e4aeca0",
+    "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_anchor10_eval3.pth": "d0ea192063e52d0a8758f450a964890a2ce93898a1d08329c2ae8c9132865614",
+    "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_anchor10_eval13.pth": "c5690d1fef57f756d8739f5adf60657baa88c4798903048cba864c1b41ff8602",
+    "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_anchor10_eval23.pth": "8eb5dae079406f961733132e629ea751e1a55100072639067d65bed23791a7fc",
+    "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_anchor10_eval33.pth": "70b44ae3a2d39af69b0b64e59216e07c24d09d69ba81c27d19cba8081eeaa222",
+    "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_anchor10_eval43.pth": "70d757fdc0069a6957e70fe08383a7e8888644c1eb42d8209e218ddaabf2f10c"
+  },
+  "protocol": "docs/operations/FD003_PREDICTOR_FIT_DIAGNOSTIC.md",
+  "jobs": [
+    {
+      "source": "headline",
+      "generation_seed": 3,
+      "evaluator_seed": 3,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen3_eval3.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 3,
+      "evaluator_seed": 13,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen3_eval13.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 3,
+      "evaluator_seed": 23,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen3_eval23.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 3,
+      "evaluator_seed": 33,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen3_eval33.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 3,
+      "evaluator_seed": 43,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen3_eval43.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 13,
+      "evaluator_seed": 3,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen13_eval3.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 13,
+      "evaluator_seed": 13,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen13_eval13.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 13,
+      "evaluator_seed": 23,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen13_eval23.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 13,
+      "evaluator_seed": 33,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen13_eval33.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 13,
+      "evaluator_seed": 43,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen13_eval43.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 23,
+      "evaluator_seed": 3,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen23_eval3.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 23,
+      "evaluator_seed": 13,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen23_eval13.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 23,
+      "evaluator_seed": 23,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen23_eval23.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 23,
+      "evaluator_seed": 33,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen23_eval33.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 23,
+      "evaluator_seed": 43,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen23_eval43.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 33,
+      "evaluator_seed": 3,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen33_eval3.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 33,
+      "evaluator_seed": 13,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen33_eval13.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 33,
+      "evaluator_seed": 23,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen33_eval23.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 33,
+      "evaluator_seed": 33,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen33_eval33.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 33,
+      "evaluator_seed": 43,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen33_eval43.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 43,
+      "evaluator_seed": 3,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen43_eval3.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 43,
+      "evaluator_seed": 13,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen43_eval13.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 43,
+      "evaluator_seed": 23,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen43_eval23.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 43,
+      "evaluator_seed": 33,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen43_eval33.pth"
+    },
+    {
+      "source": "headline",
+      "generation_seed": 43,
+      "evaluator_seed": 43,
+      "checkpoint": "checkpoints/evaluators/fd003_w48_public_code/gen43_eval43.pth"
+    },
+    {
+      "source": "real_baseline",
+      "generation_seed": -1,
+      "evaluator_seed": 3,
+      "checkpoint": "checkpoints/evaluators/real_data_baseline_w48/FD003_eval3.pth"
+    },
+    {
+      "source": "real_baseline",
+      "generation_seed": -1,
+      "evaluator_seed": 13,
+      "checkpoint": "checkpoints/evaluators/real_data_baseline_w48/FD003_eval13.pth"
+    },
+    {
+      "source": "real_baseline",
+      "generation_seed": -1,
+      "evaluator_seed": 23,
+      "checkpoint": "checkpoints/evaluators/real_data_baseline_w48/FD003_eval23.pth"
+    },
+    {
+      "source": "real_baseline",
+      "generation_seed": -1,
+      "evaluator_seed": 33,
+      "checkpoint": "checkpoints/evaluators/real_data_baseline_w48/FD003_eval33.pth"
+    },
+    {
+      "source": "real_baseline",
+      "generation_seed": -1,
+      "evaluator_seed": 43,
+      "checkpoint": "checkpoints/evaluators/real_data_baseline_w48/FD003_eval43.pth"
+    },
+    {
+      "source": "anchor_control",
+      "generation_seed": 3,
+      "evaluator_seed": 3,
+      "checkpoint": "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_control_eval3.pth"
+    },
+    {
+      "source": "anchor_control",
+      "generation_seed": 3,
+      "evaluator_seed": 13,
+      "checkpoint": "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_control_eval13.pth"
+    },
+    {
+      "source": "anchor_control",
+      "generation_seed": 3,
+      "evaluator_seed": 23,
+      "checkpoint": "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_control_eval23.pth"
+    },
+    {
+      "source": "anchor_control",
+      "generation_seed": 3,
+      "evaluator_seed": 33,
+      "checkpoint": "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_control_eval33.pth"
+    },
+    {
+      "source": "anchor_control",
+      "generation_seed": 3,
+      "evaluator_seed": 43,
+      "checkpoint": "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_control_eval43.pth"
+    },
+    {
+      "source": "anchor_anchor10",
+      "generation_seed": 3,
+      "evaluator_seed": 3,
+      "checkpoint": "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_anchor10_eval3.pth"
+    },
+    {
+      "source": "anchor_anchor10",
+      "generation_seed": 3,
+      "evaluator_seed": 13,
+      "checkpoint": "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_anchor10_eval13.pth"
+    },
+    {
+      "source": "anchor_anchor10",
+      "generation_seed": 3,
+      "evaluator_seed": 23,
+      "checkpoint": "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_anchor10_eval23.pth"
+    },
+    {
+      "source": "anchor_anchor10",
+      "generation_seed": 3,
+      "evaluator_seed": 33,
+      "checkpoint": "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_anchor10_eval33.pth"
+    },
+    {
+      "source": "anchor_anchor10",
+      "generation_seed": 3,
+      "evaluator_seed": 43,
+      "checkpoint": "checkpoints/evaluators/fd003_local_anchor_20261026/FD003_anchor10_eval43.pth"
+    }
+  ],
+  "bins": [
+    [
+      "0-30",
+      0,
+      30
+    ],
+    [
+      "31-60",
+      31,
+      60
+    ],
+    [
+      "61-90",
+      61,
+      90
+    ],
+    [
+      "91-124",
+      91,
+      124
+    ],
+    [
+      "125",
+      125,
+      125
+    ],
+    [
+      "all",
+      0,
+      125
+    ]
+  ],
+  "inference": {
+    "device": "cpu",
+    "batch_size": 256,
+    "threads": 2,
+    "torch": "2.1.2+cu121",
+    "numpy": "1.23.5",
+    "pandas": "2.2.3",
+    "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]"
+  },
+  "aggregation": "pooled squared errors then sqrt; native and exact-RUL real-test-histogram weighted",
+  "caveats": [
+    "Real train/dev overlap within engines; real-source reference is not an independent generator holdout",
+    "Anchor10 contains209 real donor windows; keep separate from headline"
+  ],
+  "completed_checkpoints": 40,
+  "max_test_replay_difference": 6.103515625e-05,
+  "n_primary_models": 25,
+  "n_reference_models": 5,
+  "n_anchor_followup_models": 10,
+  "real_train_count": 14014,
+  "real_dev_count": 6006,
+  "real_test_engines": 100,
+  "outputs_sha256": {
+    "results/diagnostics/fd003_predictor_fit_20261026/fit_vs_transfer.pdf": "f401a0df120ee06814adb2f745efadd5c730e19b734ff47d8f0c7fc74f828907",
+    "results/diagnostics/fd003_predictor_fit_20261026/closeout_audit.json": "3eb0fb14096c750448e4a38c834891b87354934c92b54545d73f6db3638b2dc4",
+    "results/diagnostics/fd003_predictor_fit_20261026/shared_indices_labels.npz": "f6e763cbe42a2e042dad9f1c98ef8fa68d2534e9ef4463ce961844cfbd9b5c2e",
+    "results/diagnostics/fd003_predictor_fit_20261026/fit_vs_transfer.png": "3694bf2389935df97d109929b4905b5ee004b8cab6cfe92d524935c5ca0bc2b5",
+    "results/diagnostics/fd003_predictor_fit_20261026/checkpoint_replay_checks.csv": "3f0d4249fece985d75020f423714af68e69a44d629e8d585a23d61ec6e55c4f5",
+    "results/diagnostics/fd003_predictor_fit_20261026/by_generation_seed.csv": "43f8cab6e3573a8b7682be16555a5256b74aec24f6d0ccebb6a9416aee0fcd0b",
+    "results/diagnostics/fd003_predictor_fit_20261026/summary.csv": "c954b6427d1ae2bc474dd6c16d7c6fc0d5b34c48fc5dc99821e054475785f218",
+    "results/diagnostics/fd003_predictor_fit_20261026/per_model_segments.csv": "898f8309c8ee647447e9b839d7b1e02e21714430a41d34acbe31c32f16161c86",
+    "results/diagnostics/fd003_predictor_fit_20261026/per_model_exact_rul.csv": "52004096a133dbddfd0b0ad6053c4b795ce3bd4e4777a4510d131ea91863b46f",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen13_eval3.npz": "74d7766bf310df2ddaa2839882ea5c2bb845505bfaaa1d8e6a897922424e9ae8",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/real_baseline_gen-1_eval33.npz": "d963122eb666a9229e74eb9b60cafe635d1e9499e56d26ba07a1752b910c5434",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen13_eval13.npz": "db588ba838105786a4d68b09bb21ee8b45a73fa28f519aea6d7ccb7425caa0d1",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/anchor_anchor10_gen3_eval43.npz": "4ee63c65446ee60a8cacf9bafe701f75837620ccb1dea1ae40de6fb440bc9fa6",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen43_eval33.npz": "d782cf121b5786658976a1423d504b29bc43720c628271b49102bcdd02b861bd",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/anchor_anchor10_gen3_eval23.npz": "b988011674bf7bd2df6e9dcf1abc8c800d955941095c99248075a27c8378b714",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen43_eval13.npz": "f65f999ca2bfa07fd5d70cb0271244dc1fd03522cac8af8e3dc2ddb85b5cb925",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen33_eval3.npz": "7b05377ab881fb48d07e8f73663b1f6f584121249a95f8c2f9e5feb08ed063b2",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/real_baseline_gen-1_eval43.npz": "b8456a5822cd34876a0e763423d3753ef9d7f4fc85b01cd205ed749bb612a333",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen33_eval33.npz": "62c014f540fb6e6314f485019d634766b962de4be0816f95b0885dcd59998ead",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen33_eval13.npz": "e81e0d0bda876c9ee2d239949313b799616630c50ec8c4697d0c0549162f8cfe",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen3_eval13.npz": "3eebe2582a8a40ac0fde5779e26cc193deb332124326c87dff2a94baeabde149",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen13_eval43.npz": "a445dae1ebf3cfbe26849b3ffce0fa637e1e8abc66bd9b2cc8de98686639bda1",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/anchor_anchor10_gen3_eval33.npz": "797382375238908df5f1d81a6ed88fcd1a105d6c0a97f24b936cb6a319da1491",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/real_baseline_gen-1_eval13.npz": "c3c44bf68396b9d1e6e7808bca4d0e39c13367c99210cd020511ba5161947f74",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/anchor_anchor10_gen3_eval13.npz": "ed1835d00c63af21c69061b9aacd67d8828d872f00267b3dd9f9a8d0ad4ab02e",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen23_eval3.npz": "df25a270b2eb57081b79c282db99f72b56feba72b677151fca3e11500ab4dcc3",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen43_eval23.npz": "123e02485d4170021cfadb4dde5f7f8c8b2ce06bb761f06c94b6125dce6102db",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen23_eval23.npz": "d2ee3e385073034d93234149c1940ffa4a5287029519839e0dd2f2749a419c96",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/anchor_control_gen3_eval3.npz": "131b13bb742f12ae05bdd9ee28bd6bb1293c20259767c855405b4b8bfc2be5f1",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen23_eval43.npz": "3a4eb58c0ce52af6df5505ce270405f696ba276687c7d1790bbdc45e75c15dde",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/anchor_control_gen3_eval13.npz": "3eebe2582a8a40ac0fde5779e26cc193deb332124326c87dff2a94baeabde149",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen3_eval43.npz": "03a37f5da93c499e5e597fed10eebfb19a2e824d1a2fb09e96a3625f82a75e6e",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen13_eval33.npz": "d425f0569d39d044b586e4e286b47d0c2c5422a5ee71c721de1b68b1d3f3e652",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen3_eval3.npz": "131b13bb742f12ae05bdd9ee28bd6bb1293c20259767c855405b4b8bfc2be5f1",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen33_eval43.npz": "6842c603af9deba73ab3b50add1660647dcbe4c07f8b4b9eff5e2bf16e7cf0b6",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen43_eval3.npz": "6008b63570f8ba8e8935eef31f615ed814f3a4e701e569b207ea06d54db67694",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen13_eval23.npz": "eb62fe687a0b48ba615e809adab7bd86d51bc05cf92179d666a4c078c77eb1b2",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen23_eval13.npz": "c41b7f5e36b20001c5aed6d11b0ed58f04a8b148d16d723fec8e40e8f288b9d4",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/real_baseline_gen-1_eval3.npz": "241e7ce45f53cc2ee43a2e5b8a71d96fd7f2a13b5f41119ab76f74b511fd8340",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen3_eval33.npz": "8445556f9f1675b94edf752aa6ea0d3b818fb0ac8efbf93bdddd5674f431e7db",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/real_baseline_gen-1_eval23.npz": "d847c52cb2fe28eea943144d7df5704d62d7b17f4361e709184fef70ac012290",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/anchor_anchor10_gen3_eval3.npz": "c59e388917e17a27646fb6f4711ef8179a83247298819c2a6d6e0e883be46843",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/anchor_control_gen3_eval43.npz": "03a37f5da93c499e5e597fed10eebfb19a2e824d1a2fb09e96a3625f82a75e6e",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen33_eval23.npz": "afac303c0f67fabbae773648029befdda9efef2d220de88e94da245ee8e08052",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen3_eval23.npz": "c2e3ffbae7dd38dfcb312c6231486bf7dec6ef5f073748760010e798257c4fef",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen43_eval43.npz": "29854bce058e19ad8fa6d5a69479751142ce32254c173d48aab3f54e63220dc9",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/anchor_control_gen3_eval33.npz": "8445556f9f1675b94edf752aa6ea0d3b818fb0ac8efbf93bdddd5674f431e7db",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/anchor_control_gen3_eval23.npz": "c2e3ffbae7dd38dfcb312c6231486bf7dec6ef5f073748760010e798257c4fef",
+    "results/diagnostics/fd003_predictor_fit_20261026/predictions/headline_gen23_eval33.npz": "59a95185907bc6185bef16d81e2e6012a77f0f78e58f0b30e677ea9429a3c92a"
+  },
+  "finished_at": "2026-10-26T17:26:56.303990+08:00",
+  "report": "docs/conclusions/final/fd003_predictor_fit_20261026_report.md",
+  "report_sha256": "6fb62e72852bd584f7c1e3592ac4a41620683089ad567a3139211a84415e1a2b",
+  "closeout_audit": {
+    "status": "passed",
+    "n_models": 40,
+    "n_segment_rows_recomputed": 1180,
+    "max_native_mse_difference": 2.2737367544323206e-13,
+    "all_input_output_hashes_match": true,
+    "n_real_train_engines": 100,
+    "n_real_dev_engines": 100,
+    "real_train_dev_share_engines": true,
+    "real_test_stage31_60_count": 21,
+    "stage31_60_mean_true_rul": 49.142857142857146,
+    "headline_vs_anchor_control_seed3_prediction_max_differences": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "no_training": true,
+    "checkpoint_replay_max_difference": 6.103515625e-05
+  },
+  "plot_visually_checked": true
+}

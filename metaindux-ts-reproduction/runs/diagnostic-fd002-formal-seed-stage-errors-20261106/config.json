@@ -1,0 +1,59 @@
+{
+  "dataset": "FD002",
+  "window": 48,
+  "generation_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "evaluator_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "bins": [
+    [
+      "0-30",
+      0,
+      30
+    ],
+    [
+      "31-60",
+      31,
+      60
+    ],
+    [
+      "61-90",
+      61,
+      90
+    ],
+    [
+      "91-124",
+      91,
+      124
+    ],
+    [
+      "125",
+      125,
+      125
+    ]
+  ],
+  "test_engines": 259,
+  "test_sample": "Same one terminal window per official test engine; capped125 labels, unclipped output",
+  "RMSE": "For each predictor sqrt(mean squared error in bin), then arithmetic mean5predictor RMSEs; same hierarchy as26.7918",
+  "signed_error": "Mean(prediction minus capped trueRUL), averaged over5predictors and same bin engines",
+  "auxiliary_MSE": "Mean per-predictor MSE, used for additive contributions; pooledRMSE kept separate from main meanRMSE",
+  "common_seed_group": [
+    3,
+    23,
+    33
+  ],
+  "seed43_reference": "Mean per-engine/per-bin MSE of user-named3/23/33, not best-seed selection",
+  "seed43_contribution": "n_bin/259*(MSE43_bin - mean(MSE3_bin,MSE23_bin,MSE33_bin)); sums to overall excessMSE, not additive RMSE difference",
+  "controls": "Existing5real-trained predictor records auxiliary; existing RUL-matched training/dev signal/readout artifacts only, no new inference",
+  "stop": "Descriptive tables, engine-direction overlaps, MSE arithmetic, prior signal evidence cross-reference; no training/sampling/inference, no sensor/neighbor search or test-driven fitting"
+}

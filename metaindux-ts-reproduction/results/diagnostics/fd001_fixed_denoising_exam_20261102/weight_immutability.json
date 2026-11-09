@@ -1,0 +1,65 @@
+[
+  {
+    "checkpoint": "seed23_epoch15",
+    "strict_load": true,
+    "model_state_before": "6836b547b5b2558e6d1cbbf85c6b76fc8fd9fcd0af3a90dd450106aa0c1ca106",
+    "model_state_after": "6836b547b5b2558e6d1cbbf85c6b76fc8fd9fcd0af3a90dd450106aa0c1ca106",
+    "gradients_absent": true,
+    "no_updates": true,
+    "exam_forward_count": 96
+  },
+  {
+    "checkpoint": "seed23_epoch64",
+    "strict_load": true,
+    "model_state_before": "ff21a4af1f49cec190de0809e6b3ab1cdde0033c0e2953044bd5d05053d4d3ab",
+    "model_state_after": "ff21a4af1f49cec190de0809e6b3ab1cdde0033c0e2953044bd5d05053d4d3ab",
+    "gradients_absent": true,
+    "no_updates": true,
+    "exam_forward_count": 96
+  },
+  {
+    "checkpoint": "seed23_epoch70",
+    "strict_load": true,
+    "model_state_before": "d2b2c54380a36a22371bf7db0907b7d97b1e90bddc8be55c895e748dea03a021",
+    "model_state_after": "d2b2c54380a36a22371bf7db0907b7d97b1e90bddc8be55c895e748dea03a021",
+    "gradients_absent": true,
+    "no_updates": true,
+    "exam_forward_count": 96
+  },
+  {
+    "checkpoint": "seed13_epoch64",
+    "strict_load": true,
+    "model_state_before": "d306d24ce0090d2038c90086cb22fede5e69c0d475db42549114f6c2dba059a9",
+    "model_state_after": "d306d24ce0090d2038c90086cb22fede5e69c0d475db42549114f6c2dba059a9",
+    "gradients_absent": true,
+    "no_updates": true,
+    "exam_forward_count": 96
+  },
+  {
+    "checkpoint": "seed13_epoch70",
+    "strict_load": true,
+    "model_state_before": "8ebd993d52fe53c8ead7cdbe8563d730306dd80c69164c0f0f380a38d580b59a",
+    "model_state_after": "8ebd993d52fe53c8ead7cdbe8563d730306dd80c69164c0f0f380a38d580b59a",
+    "gradients_absent": true,
+    "no_updates": true,
+    "exam_forward_count": 96
+  },
+  {
+    "checkpoint": "seed3_epoch43",
+    "strict_load": true,
+    "model_state_before": "b1130bd8c701f76d1a5d13f21dccf3d11b4f1a5c53bf3126c44f4210a8bae8d5",
+    "model_state_after": "b1130bd8c701f76d1a5d13f21dccf3d11b4f1a5c53bf3126c44f4210a8bae8d5",
+    "gradients_absent": true,
+    "no_updates": true,
+    "exam_forward_count": 96
+  },
+  {
+    "checkpoint": "seed3_epoch70",
+    "strict_load": true,
+    "model_state_before": "69211c859cd81487a6030d4cda564b6e7c2bc2615af7f9f45180aaa9dda399aa",
+    "model_state_after": "69211c859cd81487a6030d4cda564b6e7c2bc2615af7f9f45180aaa9dda399aa",
+    "gradients_absent": true,
+    "no_updates": true,
+    "exam_forward_count": 96
+  }
+]

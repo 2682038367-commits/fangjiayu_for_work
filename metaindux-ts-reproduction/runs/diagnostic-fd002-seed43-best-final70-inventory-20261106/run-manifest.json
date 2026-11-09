@@ -1,0 +1,65 @@
+{
+  "run_id": "diagnostic-fd002-seed43-best-final70-inventory-20261106",
+  "scope_class": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261106-fd002-seed43-best-final70-inventory",
+  "status": "complete_no_contrast",
+  "started_at": "2026-11-06T09:12:36.175458+08:00",
+  "config": {
+    "primary": "The two latest native seed43 full70 trainings from the just-completed stage-attribution run",
+    "primary_repeats": [
+      "repeat1",
+      "repeat2"
+    ],
+    "older_fixed_training": "Inventory reference only; do not silently substitute it for either latest training",
+    "checkpoint_rule": "Original e>5, lowest recorded training diffusion loss",
+    "stop": "If best and final70 are identical tensors, record no comparison and run zero sampling or predictor fits",
+    "user_authorization": "Explicit inspect existing best/final70 and compare downstream if distinct; identical epoch70 pair is no comparison",
+    "generator_training_budget": 0,
+    "actual_sampling": 0,
+    "actual_predictor_fits": 0,
+    "no_official_test_access": true
+  },
+  "inputs_sha256": {
+    "analysis/diagnostics/check_fd002_seed43_best_final70_inventory.py": "1027fb111a4ef85c7f737b13c7d9cd185cf1636a97c3afaf8b4062eb42691beb",
+    "docs/operations/FD002_SEED43_BEST_FINAL70_INVENTORY.md": "77d5dc512f91d23a9d720f3aa7580efa3e460c093c3f9a083889f8cb084e485f",
+    "runs/diagnostic-fd002-seed43-best-final70-inventory-20261106/config.json": "62b7bb3e8294514cf458de92df70bc8d165e25e90c6977eb5d621258a9663d27",
+    "runs/diagnostic-fd002-seed43-best-final70-inventory-20261106/source/FD002_SEED43_BEST_FINAL70_INVENTORY.md": "77d5dc512f91d23a9d720f3aa7580efa3e460c093c3f9a083889f8cb084e485f",
+    "runs/diagnostic-fd002-seed43-best-final70-inventory-20261106/source/check_fd002_seed43_best_final70_inventory.py": "1027fb111a4ef85c7f737b13c7d9cd185cf1636a97c3afaf8b4062eb42691beb",
+    "runs/diagnostic-fd002-seed43-best-final70-inventory-20261106/source/latest-parent.json": "3617c6dfb5c98e2585b30e0ea31ae20874a097317c3a69b59bda496618cd5853",
+    "runs/diagnostic-fd002-seed43-best-final70-inventory-20261106/source/earlier-fixed-parent.json": "f7a50b9ce3575608537971047f260b8fb0e4cd9b158bb96fa5c01963c718e0f6",
+    "results/diagnostics/fd002_seed43_variation_stages_20261105/training_native/repeat1/seed43/training_audit.json": "2ea374ab58662575358a4bd6ec86f7a89071f61679f14d3da28b380d65517e36",
+    "results/diagnostics/fd002_seed43_variation_stages_20261105/training_native/repeat1/seed43/training_loss.csv": "9c6ebec66bc5b5d1cc4a49671fcf586c7c07ed88045397596ed0b47a31c593a4",
+    "checkpoints/diagnostics/fd002_seed43_variation_stages_20261105/repeat1/seed43/best.pth": "53f28d080db211cdee75a921cb798274a00acff5e1d23acdfaf1c91ec158e918",
+    "checkpoints/diagnostics/fd002_seed43_variation_stages_20261105/repeat1/seed43/final70.pth": "3c435da8608a04c8548dfd4fb3c97c9cfa011ee298abf0099a169eba302b0079",
+    "results/diagnostics/fd002_seed43_variation_stages_20261105/training_native/repeat2/seed43/training_audit.json": "757793437496f58042bed6baa20367a3b8a1a5eb48996d325ccbea8f5c53c3da",
+    "results/diagnostics/fd002_seed43_variation_stages_20261105/training_native/repeat2/seed43/training_loss.csv": "1d5cd9450b1d1786be47b1cfb5955641baf26941e01efdfa4dedf497df08b8aa",
+    "checkpoints/diagnostics/fd002_seed43_variation_stages_20261105/repeat2/seed43/best.pth": "98408fe697522561efd7a1b4a36524fa08f04455a7b540e18d6d1bb20aaf70ea",
+    "checkpoints/diagnostics/fd002_seed43_variation_stages_20261105/repeat2/seed43/final70.pth": "0ee619cb2f72559f92cb99a0dea3e17dc03a61e122e6bbef29ff9bd42b5133ad",
+    "results/diagnostics/fd002_fixed_conv_full70_20261105/repeat1/seed43/training_audit.json": "2b03edb478cd1ffde2420edca5f40634ea86ec82b2273d33f07d8952fe7baed3",
+    "results/diagnostics/fd002_fixed_conv_full70_20261105/repeat1/seed43/training_loss.csv": "f6df97d4f50d67e42ab049c6609f408cafadd869dbbd15373a3d1127981aa980",
+    "checkpoints/diagnostics/fd002_fixed_conv_full70_20261105/repeat1/seed43/best.pth": "9452d4a1e235b80a0f5670cb4f6802e72ccd45ac1bd8559ca0794c53a8850ffb",
+    "checkpoints/diagnostics/fd002_fixed_conv_full70_20261105/repeat1/seed43/final70.pth": "19ec993e10963336e419047831d7593671008d7cc6bdcd154c2d71082fabb12e",
+    "results/diagnostics/fd002_fixed_conv_full70_20261105/repeat2/seed43/training_audit.json": "7f96ef58efb5cd2fb79908319355aea56bf770ff9773079786e72e4f43c4a46a",
+    "results/diagnostics/fd002_fixed_conv_full70_20261105/repeat2/seed43/training_loss.csv": "f6df97d4f50d67e42ab049c6609f408cafadd869dbbd15373a3d1127981aa980",
+    "checkpoints/diagnostics/fd002_fixed_conv_full70_20261105/repeat2/seed43/best.pth": "9452d4a1e235b80a0f5670cb4f6802e72ccd45ac1bd8559ca0794c53a8850ffb",
+    "checkpoints/diagnostics/fd002_fixed_conv_full70_20261105/repeat2/seed43/final70.pth": "19ec993e10963336e419047831d7593671008d7cc6bdcd154c2d71082fabb12e"
+  },
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/analysis/diagnostics/check_fd002_seed43_best_final70_inventory.py"
+  ],
+  "environment": {
+    "torch": "2.1.2+cu121",
+    "numpy": "1.23.5",
+    "python": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35"
+  },
+  "git_head": "df7e83b2e14317db34a23049db973ec83aa52065",
+  "completed_at": "2026-11-06T09:12:36.312135+08:00",
+  "outputs_sha256": {
+    "results/diagnostics/fd002_seed43_best_final70_inventory_20261106/inventory.json": "d478afbde9d055ee39f11a0f8da07a9fb2995b22a75d51c3417613609e339fc6",
+    "results/diagnostics/fd002_seed43_best_final70_inventory_20261106/inventory.csv": "2df203fdf95affb520769d5ff6592f3044361ac38c4908208842bd5bdc5a61c2",
+    "docs/conclusions/final/fd002_seed43_best_final70_inventory_20261106_report.md": "075ea3fcb26b66c5a6938a035615e852569fb9e92f7c048204ba580efaa9f0ee"
+  }
+}

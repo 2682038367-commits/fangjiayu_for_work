@@ -1,0 +1,16 @@
+{
+  "reason": "Verifier two-stage float32 mean differed from original flatten/global mean; actual scientific loss always original forward",
+  "completed_formal_evaluations_before_recovery": 0,
+  "diagnostic_max_difference": 7.450580596923828e-09,
+  "actual_loss_formula_changed": false,
+  "questions_or_data_or_weights_changed": false,
+  "threshold_relaxed": false,
+  "new_check": "bitwise torch.equal against exact original reduction",
+  "original_failed_snapshot": "runs/diagnostic-fd001-fixed-denoising-exam-20261102/compatibility-recovery-1/run-manifest.json",
+  "source_revisions": {
+    "scripts/run_fd001_fixed_denoising_exam.py": "8384ea37265af53914a4b73a9184fe6149b5f3c66f6a11149f8d2d8594f35051",
+    "runs/diagnostic-fd001-fixed-denoising-exam-20261102/compatibility-recovery-1/corrected_run_fd001_fixed_denoising_exam.py": "8384ea37265af53914a4b73a9184fe6149b5f3c66f6a11149f8d2d8594f35051",
+    "docs/operations/FD001_FIXED_DENOISING_EXAM.md": "ab04d3d0c6f9b48516d6f27984224734f933d846c83415b029dd6c12d37e4723",
+    "runs/diagnostic-fd001-fixed-denoising-exam-20261102/compatibility-recovery-1/corrected_FD001_FIXED_DENOISING_EXAM.md": "ab04d3d0c6f9b48516d6f27984224734f933d846c83415b029dd6c12d37e4723"
+  }
+}

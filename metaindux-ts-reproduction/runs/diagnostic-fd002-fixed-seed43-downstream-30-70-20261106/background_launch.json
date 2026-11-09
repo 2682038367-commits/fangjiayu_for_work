@@ -1,0 +1,22 @@
+{
+  "service": "metaindux-fd002-fixed-seed43-downstream-30-70-20261106.service",
+  "log": "logs/fd002_fixed_seed43_downstream_30_70_20261106.log",
+  "actual_progress": {
+    "status": "running",
+    "started_at": "2026-11-06T09:41:27.440897+08:00",
+    "current_stage": "sample",
+    "current_rule": "best",
+    "completed_sampling": 0,
+    "completed_predictor_fits": 0,
+    "failure": null,
+    "progress": {
+      "generator_seed": 43,
+      "rule": "best",
+      "completed_batches": 1,
+      "total_batches": 163,
+      "elapsed_seconds": 15.889787197113037,
+      "matched_noise_tensors": 1000,
+      "updated_at": "2026-11-06T09:41:46.414852+08:00"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "retrieved_date": "2026-10-23",
+  "sources": [
+    {
+      "file": "Unet1D_fre.py",
+      "source_url": "https://raw.githubusercontent.com/Dolphin-wang/MetaIndux-TS/main/DiffusionFreeGuidence/Unet1D_fre.py",
+      "sha256": "175d1d059cf925c54dab5de7ff843c69ef88c3e2406a189468c4577124a431d9"
+    },
+    {
+      "file": "GaussianDiffusion.py",
+      "source_url": "https://raw.githubusercontent.com/Dolphin-wang/MetaIndux-TS/main/GaussianDiffusion.py",
+      "sha256": "8a6351232cc853ad1e06f2fe94745f17f3460eca8a24ce5fc89a509d28a74aba"
+    }
+  ],
+  "findings": [
+    "TrainCondition.py constructs UNet1D_fre with cond_drop_prob=0.2",
+    "UNet1D_fre has separate learned null_classes_emb; per-sample condition embedding dropout",
+    "forward_with_cond_scale combines null and conditional outputs",
+    "GaussianDiffusion.sample defaults cond_scale=3 and calls that method"
+  ],
+  "limit": "Current author main fetched read-only; no training or changes to active experiment."
+}

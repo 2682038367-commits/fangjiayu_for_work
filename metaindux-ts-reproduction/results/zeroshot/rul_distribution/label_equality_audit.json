@@ -1,0 +1,38 @@
+{
+  "FD001": {
+    "every_seed_labels_equal_real_in_order": {
+      "3": true,
+      "13": true,
+      "23": true,
+      "33": true,
+      "43": true
+    }
+  },
+  "FD002": {
+    "every_seed_labels_equal_real_in_order": {
+      "3": true,
+      "13": true,
+      "23": true,
+      "33": true,
+      "43": true
+    }
+  },
+  "FD003": {
+    "every_seed_labels_equal_real_in_order": {
+      "3": true,
+      "13": true,
+      "23": true,
+      "33": true,
+      "43": true
+    }
+  },
+  "FD004": {
+    "every_seed_labels_equal_real_in_order": {
+      "3": true,
+      "13": true,
+      "23": true,
+      "33": true,
+      "43": true
+    }
+  }
+}

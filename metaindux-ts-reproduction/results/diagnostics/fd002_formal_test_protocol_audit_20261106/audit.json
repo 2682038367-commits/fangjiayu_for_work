@@ -1,0 +1,130 @@
+{
+  "status": "complete_partial_protocol_match",
+  "paper": {
+    "value": 24.565,
+    "pdf_sha256": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+    "table": "I",
+    "physical_page": 7,
+    "printed_page": 18068,
+    "explicit": {
+      "window": 48,
+      "generated_train_fraction": 0.7,
+      "generated_dev_fraction": 0.3,
+      "repetitions": 5,
+      "final": "average of repeated experiment metrics"
+    },
+    "unreported": [
+      "Whether real test means terminal window per engine",
+      "RUL cap125 and output clipping",
+      "Exact five seeds and which stages are rerun",
+      "Whether each generator is evaluated by multiple predictor seeds",
+      "Raw per-repeat RMSE/SD"
+    ]
+  },
+  "local_terminal_protocol": {
+    "test_engines": 259,
+    "input_shape": [
+      259,
+      48,
+      14
+    ],
+    "samples_per_engine": 1,
+    "shorter_than48": 20,
+    "padding": "repeat first observed cycle on left",
+    "raw_RUL_range": [
+      6,
+      194
+    ],
+    "capped_RUL_range": [
+      6.0,
+      125.0
+    ],
+    "raw_RUL_above125": 57,
+    "raw_RUL_equal125": 0,
+    "truth_only_cap125": true,
+    "prediction_clipping": false,
+    "paper_explicit_confirmation": false,
+    "source": "Current retained public-code path and original5run test_shape logs; paper text alone does not specify endpoint/cap",
+    "historical5_run_test_shape_records": 5,
+    "saved_prediction_groups_verified": 35,
+    "saved_predictions_above125": 77,
+    "saved_prediction_range": [
+      5.224580764770508,
+      140.7214813232422
+    ]
+  },
+  "original5": {
+    "mean_RMSE": 26.35851872172872,
+    "SD_across5": 3.0174929331896228,
+    "paper_gap": 1.79351872172872,
+    "relative_gap": 0.07301114275305198,
+    "generation_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "predictors_per_generated_dataset": 1,
+    "aggregation": "Arithmetic mean of five per-model RMSEs, not pooled MSE or ensemble predictions",
+    "sqrt_mean_MSE_different_metric": 26.496334087665844,
+    "historical_split": "Not frozen in original records; current built-in entry passes no split_indices and retained default is80/20; cannot certify original execution used paper70/30",
+    "historic_evaluator_seed_assignment": "Original per-seed JSON lacks explicit evaluator-seed fields; do not equate with later controlled diagonal"
+  },
+  "controlled5x5": {
+    "mean_RMSE": 26.791804090270325,
+    "SD_across5_generation_means": 2.916905960828046,
+    "paper_gap": 2.226804090270324,
+    "relative_gap": 0.09064946428944931,
+    "generation_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "evaluator_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "generated_train_count": 29077,
+    "generated_dev_count": 12462,
+    "train_dev_fraction": "70/30",
+    "split_seed": 20260915,
+    "split_state_sha256": "8c390ebfebf4cc3b18ff4b9e0cfa93c7b883e8d6a213364fc45d8bed80e82c76",
+    "aggregation": "For each generator, arithmetic mean5predictor RMSEs; then arithmetic mean5generator means; equal to mean25cell RMSEs",
+    "sqrt_mean_MSE_different_metric": 26.923677760233364,
+    "paper_exact_seed_hierarchy_matched": "Unknown: paper only says5repetitions and average, not5x5stage design"
+  },
+  "existing7x5": {
+    "mean_RMSE": 28.294635405287494,
+    "generation_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43,
+      53,
+      63
+    ],
+    "evaluator_seeds": [
+      3,
+      13,
+      23,
+      33,
+      43
+    ],
+    "paper_gap": 3.7296354052874925,
+    "source": "results/frequency_threshold_validation/fd002_public_arm_seven_seeds_evaluation_raw.csv",
+    "note": "Existing7x5headline retained separately; do not silently replace common5 with selected seeds"
+  },
+  "conclusion": "Do not freeze1.79as a fully protocol-aligned current gap. Retain1.7935187as historical numerical difference; recommend existing explicit70/30 common5x5 as local working reference26.7918041, observed difference2.2268041, with unresolved paper endpoint/cap/seed-hierarchy details.",
+  "inference_limit": "Paper per-repeat outcomes/variance unavailable; local seed variation material; cannot establish difference exceeds both-side repetition variation or declare numerical reproduction.",
+  "new_training": 0,
+  "new_sampling": 0,
+  "new_model_inference": 0,
+  "next_step": "Freeze formal-test endpoint/cap/mean-per-model aggregation as the local ruler. Stop within-seed43 internal-validation epoch search; no further jobs in this audit."
+}

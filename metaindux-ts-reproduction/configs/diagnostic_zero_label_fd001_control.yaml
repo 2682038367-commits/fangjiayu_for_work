@@ -1,0 +1,31 @@
+experiment:
+  name: diagnostic_zero_label_fd001_control
+  datasets:
+  - FD001
+  window_sizes:
+  - 48
+  generation_seeds:
+  - 3
+  seeds:
+  - 3
+  artifact_tag: zero_label_control
+model:
+  name: DiffUnet_fre
+  input_size: 14
+  frequency_mask_mode: hard_random_quantile
+diffusion:
+  timesteps: 1000
+  beta_schedule: linear
+  sample_type: ddpm
+training:
+  epochs: 70
+  optimizer: adam
+  learning_rate: 0.002
+  lr_schedule: warmup_cosine
+  batch_size: 256
+  grad_clip: 1.0
+  batch_label_zero_prob: 0.1
+runtime:
+  state: train
+  device: cuda
+  wandb_mode: offline

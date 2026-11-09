@@ -1,0 +1,50 @@
+{
+  "original_best_epochs": {
+    "43": 67
+  },
+  "seed": 43,
+  "epochs": 70,
+  "updates_each": 11410,
+  "training_runs": 2,
+  "training_only_changed_factor": "Revert fixed cuDNN convolution settings to original native benchmark=True/deterministic=False",
+  "training_monitor": "Frozen previous full70 wrapper; exact flags/assert/log-label substitutions only",
+  "cells": {
+    "historical_a": {
+      "epoch_one_based": 67,
+      "weight_path": "checkpoints/FD002_w48_seed43.pth",
+      "weight_sha256": "15368beab9a16af631ed1c7ea2b10357d8e7cde0f06555cae6530feeba17aad1"
+    },
+    "historical_a_repeat": {
+      "epoch_one_based": 67,
+      "weight_path": "checkpoints/FD002_w48_seed43.pth",
+      "weight_sha256": "15368beab9a16af631ed1c7ea2b10357d8e7cde0f06555cae6530feeba17aad1"
+    },
+    "native_rerun_b": {
+      "epoch_one_based": 67,
+      "actual_update": 10921,
+      "weight_path": "checkpoints/diagnostics/fd002_final70_two_seeds_20261102/seed43/phase.pth",
+      "weight_sha256": "e511fbfc94b921a5990334fbf0bac554e7a314c0302bb3a63015c5d542c5a95c",
+      "tensors_sha256": "642d3c42699a64df53b225b0dc704f9acfdffd201e4e8b19508e1c9f10e61be5"
+    }
+  },
+  "sampling_seed": 103,
+  "sample_count": 41539,
+  "sampling_only_changed_factor": "Fixed convolution selection benchmark=False/deterministic=True for all three cells",
+  "evaluator_seeds": [
+    3,
+    13,
+    23,
+    33,
+    43
+  ],
+  "maximum_sample_sets": 3,
+  "maximum_discriminator_fits": 15,
+  "stages": "2 native training repeats; historicalA sample/eval; sameA repeat sample/eval; oldrerunB sample/eval",
+  "discriminator_repeat": "Same A weight, labels, actual noise, fixed sampler; require A arrays bit-identical before interpreting repeated evaluation as exact-same-data control",
+  "score_difference_screen": {
+    "mean_absolute_DS_gap": 0.03,
+    "paired_direction_at_least": 4
+  },
+  "stopping": "No extra native repeats if equal. If A sampling arrays differ, stop before B and report unresolved sampler variability. No retries, other seeds, downstream fits or default adoption.",
+  "limitation": "Existing historical input/RNG/kernel trajectory unavailable; prospective controls narrow attribution but cannot recover missing historical state."
+}

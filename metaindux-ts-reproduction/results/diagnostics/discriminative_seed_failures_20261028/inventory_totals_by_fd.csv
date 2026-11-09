@@ -1,0 +1,5 @@
+dataset,failed_runs,evaluated_runs,failure_ratio
+FD001,6,20,0.3
+FD002,10,22,0.45454545454545453
+FD003,2,20,0.1
+FD004,7,15,0.4666666666666667

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": {
+    "epoch_state_hashes.json": true,
+    "update_losses.csv": true,
+    "training_batch_zero_draws.csv": true,
+    "training_loss.csv": true,
+    "all70_training_orders": true,
+    "initial_parameters": true,
+    "best_selection": true,
+    "best_all_named_tensors": true,
+    "phase_all_named_tensors": true,
+    "final70_all_named_tensors": true
+  },
+  "first_different_epoch": null,
+  "observed_epochs": 70,
+  "observed_updates_each": 11410,
+  "limitation": "Two current processes on this environment only; not a cross-device/global determinism guarantee or proof of unique historical attribution."
+}

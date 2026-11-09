@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "base_exact_path_and_output": true,
+  "shared_initialization_equal": true,
+  "gradient_l1": {
+    "prototype_embedding.weight": 0.0013195510255172849,
+    "prototype_projection.0.weight": 0.05991575866937637,
+    "prototype_projection.0.bias": 0.0023601034190505743,
+    "prototype_projection.2.weight": 0.06162206828594208,
+    "prototype_projection.2.bias": 0.007697722874581814
+  },
+  "null_joint_condition": true,
+  "disjoint_engines": true,
+  "prototype_rng_independent": true,
+  "sampling_dropout_calls_checked": true,
+  "empty_bin_fallback_checked": true,
+  "paired_two_update_losses": [
+    [
+      1.2738687992095947,
+      1.23531174659729
+    ],
+    [
+      1.2750831842422485,
+      1.2437609434127808
+    ]
+  ],
+  "sampling_shapes": [
+    [
+      4,
+      14,
+      48
+    ],
+    [
+      4,
+      14,
+      48
+    ]
+  ],
+  "note": "CPU small-batch check; not full training or a downstream result"
+}

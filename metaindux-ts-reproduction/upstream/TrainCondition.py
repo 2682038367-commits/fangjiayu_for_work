@@ -116,6 +116,9 @@ def merge_frequency_threshold_observations(current, stored):
 
 def train(args, train_data, train_label):
     device = args.device
+    batch_label_zero_prob = getattr(args, 'batch_label_zero_prob', 0.1)
+    if not 0.0 <= batch_label_zero_prob <= 1.0:
+        raise ValueError('batch_label_zero_prob must be in [0, 1]')
     best_loss = 9999
     best_epoch = -1
     loss_history = []
@@ -186,7 +189,8 @@ def train(args, train_data, train_label):
                 optimizer.zero_grad()
                 x_0 = images.to(device)
                 labels = labels.to(device)
-                if np.random.rand() < 0.1:
+                # Draw even when disabled to preserve the NumPy RNG sequence.
+                if np.random.rand() < batch_label_zero_prob:
                     labels = torch.zeros_like(labels).to(device)
                 loss = trainer(x_0, classes = labels).sum()
                 loss_list.append(loss.item())

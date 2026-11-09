@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "hash_mismatches": [],
+  "arms": {
+    "control": {
+      "overall_rmse": 16.442200330271156,
+      "nonzero_rmse": 14.768105140939559,
+      "rul0_rmse": 92.55097008952065,
+      "rul0_mean": 86.69683106844242
+    },
+    "no_batch_zero": {
+      "overall_rmse": 19.28908395185278,
+      "nonzero_rmse": 19.344899302546008,
+      "rul0_rmse": 5.45086732554629,
+      "rul0_mean": -2.280882111532757
+    }
+  }
+}

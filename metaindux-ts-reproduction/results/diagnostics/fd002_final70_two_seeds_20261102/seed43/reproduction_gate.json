@@ -1,0 +1,29 @@
+{
+  "generator_seed": 43,
+  "original_epoch": 67,
+  "original_current_sampler_DS": 0.4341237361579201,
+  "rerun_same_epoch_current_sampler_DS": 0.17800914780934035,
+  "absolute_difference": 0.25611458834857975,
+  "max_difference": 0.03,
+  "failure_categories": [
+    true,
+    false
+  ],
+  "passed": false,
+  "exact_tensor_alias": false,
+  "same_serialization": false,
+  "original_DS_per_seed": [
+    0.4654549831487723,
+    0.4288035628310063,
+    0.4209797785267212,
+    0.4211603273952816,
+    0.4342200288878189
+  ],
+  "rerun_DS_per_seed": [
+    0.1654429465575349,
+    0.162253249879634,
+    0.250601829561868,
+    0.1686928261916225,
+    0.1430548868560424
+  ]
+}

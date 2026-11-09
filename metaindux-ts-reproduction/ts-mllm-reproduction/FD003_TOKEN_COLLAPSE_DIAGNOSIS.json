@@ -1,0 +1,74 @@
+{
+  "device": "NVIDIA GeForce RTX 4060 Ti",
+  "initial_state_sha256_verified": true,
+  "val_mask_and_padding_verified": true,
+  "valid_token_range": [
+    165,
+    166
+  ],
+  "before_training": {
+    "n_samples": 92,
+    "n_queries": 3496,
+    "top_token_indices_and_counts": [
+      [
+        112,
+        1787
+      ],
+      [
+        165,
+        734
+      ],
+      [
+        111,
+        342
+      ],
+      [
+        22,
+        255
+      ],
+      [
+        3,
+        227
+      ],
+      [
+        164,
+        114
+      ],
+      [
+        2,
+        37
+      ]
+    ],
+    "mean_top_attention": 0.028627046567730997,
+    "fraction_top_attention_over_0_99": 0.0,
+    "mean_entropy": 4.8779485015629085,
+    "mean_first_last_query_l1": 0.012775483247621552,
+    "median_top1_runnerup_logit_gap": 0.07654184103012085,
+    "median_query_norm": 4.472003221511841,
+    "median_key3_norm": 14.889220714569092,
+    "median_other_valid_key_norm": 16.495604515075684,
+    "median_cache_token3_norm": 102.694091796875,
+    "median_other_valid_cache_norm": 110.50759887695312
+  },
+  "best_checkpoint": {
+    "n_samples": 92,
+    "n_queries": 3496,
+    "top_token_indices_and_counts": [
+      [
+        3,
+        3496
+      ]
+    ],
+    "mean_top_attention": 0.9999991946212214,
+    "fraction_top_attention_over_0_99": 1.0,
+    "mean_entropy": 1.1459810155778155e-05,
+    "mean_first_last_query_l1": 3.393978143134146e-07,
+    "median_top1_runnerup_logit_gap": 19.677867889404297,
+    "median_query_norm": 5.839507341384888,
+    "median_key3_norm": 53.3098201751709,
+    "median_other_valid_key_norm": 28.923439025878906,
+    "median_cache_token3_norm": 102.694091796875,
+    "median_other_valid_cache_norm": 110.50759887695312
+  },
+  "explanation_limit": "Norm and logit statistics identify scale/softmax behavior, not a unique causal root. Token 3 is causally before dynamic statistics but after the visual prefix."
+}

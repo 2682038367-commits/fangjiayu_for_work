@@ -1,0 +1,154 @@
+{
+  "run_id": "diagnostic-fd003-prototype-probe-20261103",
+  "status": "complete",
+  "started_at": "2026-11-03T17:11:22.720463+08:00",
+  "scope": "diagnostic",
+  "role": "supporting",
+  "scope_contract": "scope-20261103-fd003-prototype-probe-v1",
+  "authorization": "Explicit user two CPU ridge fits and frozen FD003 prototype diagnosis",
+  "config": {
+    "run_id": "diagnostic-fd003-prototype-probe-20261103",
+    "parent_run": "ext-prototype-fd003-w48-20261103",
+    "scope": "diagnostic",
+    "scope_contract": "scope-20261103-fd003-prototype-probe-v1",
+    "ridge_alpha": 1.0,
+    "ridge_solver": "svd",
+    "ridge_fits": 2,
+    "ridge_features": "A=frozen-standardized42cluster features; B=same42+unscaled4onehot; intercept both; no prediction clipping",
+    "bins": [
+      [
+        "all",
+        0,
+        125
+      ],
+      [
+        "0-30",
+        0,
+        30
+      ],
+      [
+        "31-60",
+        31,
+        60
+      ],
+      [
+        "31-40",
+        31,
+        40
+      ],
+      [
+        "41-50",
+        41,
+        50
+      ],
+      [
+        "51-60",
+        51,
+        60
+      ],
+      [
+        "61-90",
+        61,
+        90
+      ],
+      [
+        "91-124",
+        91,
+        124
+      ],
+      [
+        "125",
+        125,
+        125
+      ]
+    ],
+    "curve_features": [
+      "middle_energy_fraction",
+      "peak_middle",
+      "sensor_peak_synchrony"
+    ],
+    "matching": "exact_integer_RUL31-60,different_engines,without_window_replacement; each_common_RUL_requires3engines_each_prototype; balanced_engine_usage_tiebreak_engine_id; no_tolerance_fallback",
+    "minimum_engines_each_side": 8,
+    "minimum_matched_pairs": 30,
+    "minimum_common_RUL": 5,
+    "curve_bootstrap": "shared_engine_exponential_weights,within_RULweighted_means,equal_RULmean,descriptive95percentileCI",
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20261103,
+    "plot_sensors": [
+      "s2",
+      "s11",
+      "s20"
+    ],
+    "plot_RUL": 45,
+    "plot_shape": "per_window_sensor_center_and_std_scale; exactRUL45all_engine_curves; medians25-75percentiles; no best_case_selection",
+    "pattern_evidence": "same-direction train/validation contrast with both descriptive engine-level95CI excluding0, only pairs meeting support thresholds; multiple comparisons exploratory",
+    "no_generator_training": true,
+    "no_sampling": true,
+    "no_cluster_fitting": true,
+    "no_official_test_access": true
+  },
+  "command": [
+    "/home/cw_boe/projects/rul/metaindux-ts-reproduction/.venv/bin/python",
+    "metaindux-ts-reproduction/analysis/diagnostics/diagnose_fd003_prototypes.py"
+  ],
+  "git_head": "be3faf93adfdaf6c2bcde50d116dfb1aa007e74f",
+  "input_hashes": {
+    "analysis/diagnostics/diagnose_fd003_prototypes.py": "dfee1423eb4ea6cf78d7cf48f732d306078ffbc92b111f220bbaafed394cda5a",
+    "configs/diagnostics/fd003_prototype_probe.json": "3bb3aefa42787deadcf30310d3e75e378ffe01d3ad2227d10048a9b15a34869f",
+    "docs/operations/FD003_PROTOTYPE_PROBE.md": "d7f55d15feac64a378be1e4f764e0deec081e9e6776fd26834589b5862ca66e4",
+    "upstream/prototype_guidance.py": "73de79aa2a86cff69a598c81ea6fbeb4be517362b215e4c25ccce5ca8d83309b",
+    "scripts/run_prototype_guidance_fd003.py": "83e5448310dd0c654d20a291a93b69388f65be5fa4f50e2f0c30aa77725354ef",
+    "upstream/data/train_FD003.txt": "2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2",
+    "runs/ext-prototype-fd003-w48-20261103/config.json": "7c53f0949f62348fcf4e3cba0602d1cd9e562ccbd3dbe95c4498e8190f1580a9",
+    "runs/ext-prototype-fd003-w48-20261103/train.npz": "8be20fc7ff6ad4231183990aed4329f64158ac60cb0df14b7cd6b15f9759e905",
+    "runs/ext-prototype-fd003-w48-20261103/validation.npz": "e20d33f827860d8b93ee78e1b2888b27ac037e247a0748011ff321436c85b50f",
+    "runs/ext-prototype-fd003-w48-20261103/prototypes.npz": "4f5366901317db9ad6ca7f7ef63c11d1594e40a71d26ded25356296b95454e8a",
+    "runs/ext-prototype-fd003-w48-20261103/normalization.npz": "4264f428c48578aa8cad8452e7ce74189fa3bc5ce8e3304f8ea304cfc3af60ea",
+    "runs/ext-prototype-fd003-w48-20261103/plan.npz": "b50cab630936de65957324ec543cc141152c4a292c4406686464b176e24f2cf8",
+    "runs/ext-prototype-fd003-w48-20261103/manifest.json": "710e1cd8ab49fa4d8f9de5d341deae7b943ad698bf06bf03da2d424d94b74b8a"
+  },
+  "environment": {
+    "python": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]",
+    "numpy": "1.23.5",
+    "pandas": "2.2.3",
+    "sklearn": "1.4.1.post1",
+    "matplotlib": "3.8.3",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "device": "CPU"
+  },
+  "ridge_fits_budget": 2,
+  "finished_at": "2026-11-03T17:11:26.613751+08:00",
+  "ridge_fits_completed": 2,
+  "decision": "两项检查都有正向证据（限于预设形态指标和固定岭回归探针）",
+  "report": "docs/conclusions/final/fd003_prototype_probe_20261103_report.md",
+  "output_hashes": {
+    "results/diagnostics/fd003_prototype_probe_20261103/curves_RUL45_raw.png": "964a49de102e6a1c4572ba57380e2672476516779c0909461f4da97affe7ca90",
+    "results/diagnostics/fd003_prototype_probe_20261103/matched_engine_exposure.csv": "ee6d2eb7532a195bff0979faf8c3e36327823a3f84eea11ae737e3a32d19f982",
+    "results/diagnostics/fd003_prototype_probe_20261103/sensor_only_assignments.csv": "6a8e15068098aa169ae3ea0fd08ad9a3062922a7bdb5b4b5fc3ba74190656c8e",
+    "results/diagnostics/fd003_prototype_probe_20261103/ridge_B.npz": "840cebcf4943b76d2e84cda617026bf3d030d778cd279c4b92cefaeb713416a4",
+    "results/diagnostics/fd003_prototype_probe_20261103/shape_replication.json": "14a833eeced21e217b8c0b518d4fa7ef83e4389735d50f9c948772a270e1e062",
+    "results/diagnostics/fd003_prototype_probe_20261103/probe_design.json": "84521973b6874b37ada73905b75f58ebb4b680d942ec9a7c3a85195d2a583502",
+    "results/diagnostics/fd003_prototype_probe_20261103/implementation_audit.json": "c42c235353955513126e54816cc109ddfcaa2f46aee3a51ba426656049ab8eff",
+    "results/diagnostics/fd003_prototype_probe_20261103/RUL_association.json": "abadcc705b107915ed58a059f9ab4e504beaee4a4527c3a9fdc40dccf343cd24",
+    "results/diagnostics/fd003_prototype_probe_20261103/counts_by_RUL_prototype.csv": "8289417179b6c0dde9a74d8c5d8ae20916e3d72e355ab6a6a4ffbd624e7c9947",
+    "results/diagnostics/fd003_prototype_probe_20261103/probe_per_engine.csv": "acc41c111825afbc89805c68b9fdf442c687cc97cd1baf87d2c995cc514744fe",
+    "results/diagnostics/fd003_prototype_probe_20261103/probe_concentration.json": "04d0bdc6fbfb8564deb0895a18e5cd8c6a904559754eab04009e4cc50bfa4c4a",
+    "results/diagnostics/fd003_prototype_probe_20261103/ridge_A.npz": "baf7105935ba39acc8dc806976192ddec55b43398150e05ab03599baec69e05a",
+    "results/diagnostics/fd003_prototype_probe_20261103/curves_RUL45_standardized.png": "b1bb3a6cbf835b8cdfbc257c29c73c1dc1cd4fabbead2175dc08a395060829e5",
+    "results/diagnostics/fd003_prototype_probe_20261103/matched_curve_contrasts.csv": "f25a18c00745c550e923d4c277ecc0fb7a8136c8ad2cc6e5e7b343a24593cb4d",
+    "results/diagnostics/fd003_prototype_probe_20261103/matched_shape_contrasts.png": "c0bef908126ca1e22614dc355f3bc630ab118f8e99d69d134edeb9b7c06acaa2",
+    "results/diagnostics/fd003_prototype_probe_20261103/window_indices.csv": "c6d788511ffb588b763fc9c33d90d6e18b1320fc4fd27061fa8600e0af23c6ae",
+    "results/diagnostics/fd003_prototype_probe_20261103/matched_windows.csv": "6950eb1097fd50c1fc4feb350e504925b6c80abc81fa8173f56fab1fe3fc50fa",
+    "results/diagnostics/fd003_prototype_probe_20261103/curves_RUL45_raw.pdf": "4aa52f7da3c6cb58c04bcc6fc711c864ddb93fd45fc5844ef16c8ae8b55ecd2d",
+    "results/diagnostics/fd003_prototype_probe_20261103/probe_predictions.npz": "5ee915645d4ce3bf5b29bb8db89abb78321f037e2e3d4a2c53beab5e34fc7c91",
+    "results/diagnostics/fd003_prototype_probe_20261103/counts_by_engine.csv": "1c2700eb62eda8ae803c93f859b721ad299cf43dd835d61b63c64e4257e555e8",
+    "results/diagnostics/fd003_prototype_probe_20261103/probe_summary.csv": "17cef99ec08eedb1ff77ed11b4196fcdc1d9e7f9494b028215c51d1432837f4e",
+    "results/diagnostics/fd003_prototype_probe_20261103/exact_matching_support.csv": "034ba3dd4d5172372d23dea54bf482c9bec6d9e174979b3c4b579fc036e3c396",
+    "results/diagnostics/fd003_prototype_probe_20261103/matched_RUL_distributions.csv": "090fc4020f375e44df7cd4f4320a4f352c8161a662805c765d068a168ff80414",
+    "results/diagnostics/fd003_prototype_probe_20261103/decision.json": "4c433dc40a8775901855410e34fd3c5b130f8417b3941efb8e69be9b72847429",
+    "results/diagnostics/fd003_prototype_probe_20261103/curves_RUL45_standardized.pdf": "95ff8a825073ac9df8d8c8a53251f2ac5d82c384aab07f5c75c8c6700d2a5a21",
+    "results/diagnostics/fd003_prototype_probe_20261103/counts_exact_RUL.csv": "ba5d10b91ed351e3fa01dedf08940df7938caa58ce698c4770fe60d375b30a98",
+    "results/diagnostics/fd003_prototype_probe_20261103/probe_predictions.csv": "c37a7b917dbe4b7063ea067254cb24ab4afe56e2a9e1a97959b2241663cfd4df",
+    "docs/conclusions/final/fd003_prototype_probe_20261103_report.md": "fcdc73873407cb8cac7dfc1ddebcc6e45b721baf881a74db150ae89c832da517"
+  }
+}

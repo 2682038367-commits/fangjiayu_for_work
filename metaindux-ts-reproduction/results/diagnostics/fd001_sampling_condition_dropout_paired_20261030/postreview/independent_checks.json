@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-10-30T11:40:23.631318+08:00",
+  "status": "passed",
+  "checks": [
+    {
+      "checkpoint_seed": 13,
+      "mean_discriminative_scores": {
+        "control": 0.20555381236272358,
+        "retain_condition": 0.2063382491371195
+      },
+      "inverse_rmse_from_saved_predictions": {
+        "control": {
+          "all_windows": 10.199288774756036,
+          "test_matched": 7.819498601745224,
+          "dev_matched": 10.906833108789009
+        },
+        "retain_condition": {
+          "all_windows": 9.579242923716755,
+          "test_matched": 7.291649744757111,
+          "dev_matched": 10.3940034214298
+        }
+      }
+    },
+    {
+      "checkpoint_seed": 23,
+      "mean_discriminative_scores": {
+        "control": 0.4255098839033574,
+        "retain_condition": 0.4257295262001882
+      },
+      "inverse_rmse_from_saved_predictions": {
+        "control": {
+          "all_windows": 14.820461719767351,
+          "test_matched": 13.803234670469829,
+          "dev_matched": 15.810446694823288
+        },
+        "retain_condition": {
+          "all_windows": 14.792901910592878,
+          "test_matched": 14.106537737475536,
+          "dev_matched": 15.824713000529279
+        }
+      }
+    }
+  ],
+  "snapshots_input_output_hashes_verified": true,
+  "screening_confirmation_triggered": false,
+  "original_frozen_plot_and_metrics_unchanged": true,
+  "visualization_note": "Additional standalone plot uses common zero-based scales; original auto plot retained unchanged.",
+  "review_plot_sha256": {
+    "paired_screen_common_scale.png": "fe6800a213e58ef1f3c1ae7d692e74ff79eaf407ecfc626b65ca732cb0d6a8b3",
+    "paired_screen_common_scale.pdf": "9585088fcbaea15b8a0a9fc5959f88013ed3532fc558934f96a0eb57710a8119"
+  }
+}

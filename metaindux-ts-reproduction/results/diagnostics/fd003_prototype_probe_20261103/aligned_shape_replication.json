@@ -1,0 +1,182 @@
+[
+  {
+    "prototype_a": 0,
+    "prototype_b": 1,
+    "feature": "middle_energy_fraction",
+    "support_sufficient": false,
+    "train_delta": NaN,
+    "validation_delta": NaN,
+    "same_sign": false,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 0,
+    "prototype_b": 1,
+    "feature": "peak_middle",
+    "support_sufficient": false,
+    "train_delta": NaN,
+    "validation_delta": NaN,
+    "same_sign": false,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 0,
+    "prototype_b": 1,
+    "feature": "sensor_peak_synchrony",
+    "support_sufficient": false,
+    "train_delta": NaN,
+    "validation_delta": NaN,
+    "same_sign": false,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 0,
+    "prototype_b": 2,
+    "feature": "middle_energy_fraction",
+    "support_sufficient": false,
+    "train_delta": NaN,
+    "validation_delta": NaN,
+    "same_sign": false,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 0,
+    "prototype_b": 2,
+    "feature": "peak_middle",
+    "support_sufficient": false,
+    "train_delta": NaN,
+    "validation_delta": NaN,
+    "same_sign": false,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 0,
+    "prototype_b": 2,
+    "feature": "sensor_peak_synchrony",
+    "support_sufficient": false,
+    "train_delta": NaN,
+    "validation_delta": NaN,
+    "same_sign": false,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 0,
+    "prototype_b": 3,
+    "feature": "middle_energy_fraction",
+    "support_sufficient": false,
+    "train_delta": NaN,
+    "validation_delta": NaN,
+    "same_sign": false,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 0,
+    "prototype_b": 3,
+    "feature": "peak_middle",
+    "support_sufficient": false,
+    "train_delta": NaN,
+    "validation_delta": NaN,
+    "same_sign": false,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 0,
+    "prototype_b": 3,
+    "feature": "sensor_peak_synchrony",
+    "support_sufficient": false,
+    "train_delta": NaN,
+    "validation_delta": NaN,
+    "same_sign": false,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 1,
+    "prototype_b": 2,
+    "feature": "middle_energy_fraction",
+    "support_sufficient": true,
+    "train_delta": -0.01078731608686294,
+    "validation_delta": -0.013333165732536232,
+    "same_sign": true,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 1,
+    "prototype_b": 2,
+    "feature": "peak_middle",
+    "support_sufficient": true,
+    "train_delta": -0.09911932790179112,
+    "validation_delta": -0.10702561327561326,
+    "same_sign": true,
+    "repeated_direction_with_CI": true
+  },
+  {
+    "prototype_a": 1,
+    "prototype_b": 2,
+    "feature": "sensor_peak_synchrony",
+    "support_sufficient": true,
+    "train_delta": 0.059390143915971604,
+    "validation_delta": 0.05375083745619463,
+    "same_sign": true,
+    "repeated_direction_with_CI": true
+  },
+  {
+    "prototype_a": 1,
+    "prototype_b": 3,
+    "feature": "middle_energy_fraction",
+    "support_sufficient": true,
+    "train_delta": 0.0060174703613705355,
+    "validation_delta": -0.03129548375190836,
+    "same_sign": false,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 1,
+    "prototype_b": 3,
+    "feature": "peak_middle",
+    "support_sufficient": true,
+    "train_delta": -0.06077701538227856,
+    "validation_delta": -0.10620782726045884,
+    "same_sign": true,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 1,
+    "prototype_b": 3,
+    "feature": "sensor_peak_synchrony",
+    "support_sufficient": true,
+    "train_delta": 0.045619239087284186,
+    "validation_delta": 0.05811575642402711,
+    "same_sign": true,
+    "repeated_direction_with_CI": true
+  },
+  {
+    "prototype_a": 2,
+    "prototype_b": 3,
+    "feature": "middle_energy_fraction",
+    "support_sufficient": true,
+    "train_delta": 0.01666500018233078,
+    "validation_delta": -0.02919377365066417,
+    "same_sign": false,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 2,
+    "prototype_b": 3,
+    "feature": "peak_middle",
+    "support_sufficient": true,
+    "train_delta": -0.02920948821758538,
+    "validation_delta": -0.052564102564102586,
+    "same_sign": true,
+    "repeated_direction_with_CI": false
+  },
+  {
+    "prototype_a": 2,
+    "prototype_b": 3,
+    "feature": "sensor_peak_synchrony",
+    "support_sufficient": true,
+    "train_delta": -0.0015564367031978233,
+    "validation_delta": 0.011630036630036627,
+    "same_sign": false,
+    "repeated_direction_with_CI": false
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "source_document": {
+    "title": "MetaIndux-TS: Frequency-Aware AIGC Foundation Model for Industrial Time Series",
+    "venue": "IEEE Transactions on Neural Networks and Learning Systems, vol. 36, no. 10, October 2025",
+    "local_pdf_path_at_audit": "/home/cw_boe/\u684c\u9762/\u8bba\u6587\u590d\u73b0/MetaIndux-TS_Frequency-Aware_AIGC_Foundation_Model_for_Industrial_Time_Series.pdf",
+    "pdf_sha256": "122505176ff669ee35b69ee04d6558620b01d88513dd52725734548874d4e5bc",
+    "pdf_page": 9,
+    "printed_page": "18070",
+    "table": "Table V",
+    "table_title": "Performance on zero-shot learning tasks of different diffusion models"
+  },
+  "model": "MetaIndux-TS",
+  "metric": {
+    "name": "predictive_rmse",
+    "lower_is_better": true,
+    "values": {
+      "FD001": 6.353,
+      "FD002": 22.574,
+      "FD003": 11.289,
+      "FD004": 35.062
+    },
+    "reported_average": 18.82
+  },
+  "protocol": "Only normal-condition data train the generator; generated full-lifecycle data train a two-layer LSTM evaluated on real fatigue-condition data (Section IV-D, printed page 18071).",
+  "audit_note": "The paper defines normal as RUL > 30 and fatigue as RUL < 30 but does not state how equality at RUL=30 is handled. Values visually transcribed from PDF page 9; no local zero-shot results exist yet."
+}
